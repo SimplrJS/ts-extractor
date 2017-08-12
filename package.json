@@ -16,9 +16,7 @@
     "author": "",
     "license": "AGPL",
     "dependencies": {
-        "@types/loglevel": "^1.4.29",
         "@types/mz": "0.0.31",
-        "loglevel": "^1.4.1",
         "mz": "^2.6.0",
         "read-package-json": "^2.0.10",
         "typescript": "^2.4.2"
