@@ -1,22 +1,19 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es6",
+        "target": "es5",
         "removeComments": false,
         "outDir": "dist",
-        "rootDir": "src",
-        "inlineSourceMap": true,
-        "inlineSources": true,
+        "rootDir": ".",
+        "sourceMap": false,
         "skipDefaultLibCheck": true,
         "declaration": true,
         "pretty": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "lib": [
-            "es6"
-        ],
-        "types": [
-            "node"
+            "es6",
+            "dom"
         ],
         "typeRoots": [
             "./node_modules/@types"
@@ -26,7 +23,6 @@
         "node_modules",
         "dist",
         "@types",
-        "__tests__",
-        "examples"
+        "__tests__"
     ]
 }
