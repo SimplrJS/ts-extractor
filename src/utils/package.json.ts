@@ -1,5 +1,5 @@
 import * as readPackageJson from "read-package-json";
-import { PackageJson } from "../contracts/package.json";
+import { PackageJson } from "read-package-json";
 
 export async function ReadPackageJson(
     packageJsonPath: string,
@@ -13,6 +13,6 @@ export async function ReadPackageJson(
                 return;
             }
             resolve(data);
-        })
+        });
     });
 }
