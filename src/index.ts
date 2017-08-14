@@ -1,7 +1,7 @@
 import * as path from "path";
 import { ParseConfig, RawTsExtractorConfig } from "./contracts/config";
-import { ReadPackageJson } from "./utils/package.json";
-import { GetCompilerOptions } from "./utils/tsconfig.json";
+import { ReadPackageJson } from "./utils/package-json";
+import { GetCompilerOptions } from "./utils/tsconfig-json";
 
 const config = ParseConfig({
     projectPath: "examples/simple"
