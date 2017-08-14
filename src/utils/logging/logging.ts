@@ -45,7 +45,7 @@ export class Logging {
             return;
         }
 
-        const logLevelString = this.getLogLevelString(level);
+        const logLevelString = this.GetLogLevelString(level);
         const exceptionMessage = exception != null ? exception : "";
 
         switch (level) {
@@ -79,7 +79,7 @@ export class Logging {
         return this.filters[levelName];
     }
 
-    private getLogLevelString(level: LogLevel): string {
+    public GetLogLevelString(level: LogLevel): string {
         switch (level) {
             case LogLevel.Trace:
                 return "trce";
