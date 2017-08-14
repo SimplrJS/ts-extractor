@@ -33,11 +33,13 @@ export class Logging {
         const message: string = formatter(state, exception);
 
         if (this.writeMessageHandler != null) {
-            this.writeMessageHandler(level, message);
+            this.writeMessageHandler(level, message, exception);
+        } else {
+            this.WriteMessage(level, message, exception);
         }
     }
 
-    public WriteMessage(level: LogLevel, message: string, exception: Error): void {
+    public WriteMessage(level: LogLevel, message: string, exception?: Error): void {
         if (this.writeMessageHandler != null) {
             this.writeMessageHandler(level, message, exception);
             return;
