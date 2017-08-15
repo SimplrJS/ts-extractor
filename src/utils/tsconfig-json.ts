@@ -7,7 +7,12 @@ export async function GetCompilerOptions(fileLocation: string): Promise<ts.Compi
     const rawContent = await fs.readFile(fileLocation, "utf-8");
     const json = JSON.parse(rawContent);
 
-    const compilerOptions = ts.convertCompilerOptionsFromJson(json.compilerOptions, path.dirname(fileLocation));
+    const fullPath = path.resolve(fileLocation);
+    const dirName = path.dirname(fullPath);
+
+    const compilerOptions = ts.convertCompilerOptionsFromJson(json.compilerOptions, dirName);
+
+    compilerOptions.options.typeRoots = ["."];
 
     return compilerOptions.options;
 }
