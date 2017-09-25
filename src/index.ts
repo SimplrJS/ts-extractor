@@ -13,8 +13,8 @@ async function main(): Promise<void> {
     const packageJson = await ReadPackageJson(config.packageJsonPath);
     const compilerOptions = await GetCompilerOptions(config.tsConfigPath);
 
-    console.info(packageJson);
-    console.info(compilerOptions);
+    // console.info(packageJson);
+    // console.info(compilerOptions);
 
     const extractor = new Extractor({
         compilerOptions: compilerOptions

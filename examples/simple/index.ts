@@ -4,4 +4,9 @@
  * @summary Some summary about this package version.
  * @summary 2nd of some summary about this package version.
  */
-export const version = "2.1.1";
+export const itemsList: string[] = ["a"];
+export let a = 1, b = 2;
+
+export namespace SomeKindOfModule {
+    export const name = "some-kind-of-module";
+}

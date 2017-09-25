@@ -2,6 +2,7 @@ import * as ts from "typescript";
 import { PackageJson } from "read-package-json";
 
 import { Logger, LogLevel } from "./utils/logger";
+import { ApiSourceFile } from "./definitions/api-source-file";
 
 export interface ExtractorOptions {
     compilerOptions: ts.CompilerOptions;
@@ -10,6 +11,9 @@ export interface ExtractorOptions {
 export class Extractor {
     private compilerOptions: ts.CompilerOptions;
     public typeChecker: ts.TypeChecker;
+
+    // Move this
+    private entryFileSymbol?: ts.Symbol;
 
     constructor(options: ExtractorOptions) {
         this.compilerOptions = options.compilerOptions;
@@ -38,15 +42,8 @@ export class Extractor {
         // TODO: Add getting source from list of files.
         const rootFile: ts.SourceFile = program.getSourceFile(entryFile);
 
-        // SourceFile doesn't have symbol property, weird.
-        const moduleSymbol: ts.Symbol = (rootFile as any).symbol;
-
-        if (moduleSymbol.exports != null) {
-            moduleSymbol.exports.forEach(exportedMember => {
-                console.log(exportedMember.getJsDocTags());
-            });
-        }
-
-
+        const apiSourceFile = new ApiSourceFile(rootFile, {
+            typeChecker: this.typeChecker
+        });
     }
 }
