@@ -1,17 +1,14 @@
 import * as ts from "typescript";
 
 export namespace TSHelpers {
-    export function TypeToString(declaration: ts.Declaration, symbol: ts.Symbol, typeChecker: ts.TypeChecker): string {
-        const typeNode: ts.TypeNode | undefined = GetDeclarationTypeNode(declaration);
-        if (typeNode != null) {
-            return typeNode.getText();
+    export type DeclarationWithTypeNode = ts.Declaration & { type?: ts.TypeNode };
+
+    export function TypeToString(declaration: DeclarationWithTypeNode, symbol: ts.Symbol, typeChecker: ts.TypeChecker): string {
+        if (declaration.type != null) {
+            return declaration.type.getText();
         }
 
         const typeOfSymbol = typeChecker.getTypeOfSymbolAtLocation(symbol, declaration);
         return typeChecker.typeToString(typeOfSymbol);
-    }
-
-    export function GetDeclarationTypeNode(declaration: ts.Declaration): ts.TypeNode | undefined {
-        return (declaration as any).type;
     }
 }
