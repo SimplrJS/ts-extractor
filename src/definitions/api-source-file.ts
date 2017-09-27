@@ -25,6 +25,10 @@ export class ApiSourceFile extends ApiItem {
             if (ts.isVariableDeclaration(declaration)) {
                 this.members[declaration.name.getText()] = new ApiVariable(item, declaration, options);
             }
+            if (ts.isExportDeclaration(declaration)) {
+                const file = TSHelpers.GetSourceFileFromExport(declaration, this.Program);
+                console.log("Hello");
+            }
         });
 
         const theseMembers = this.members;

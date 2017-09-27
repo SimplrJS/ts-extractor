@@ -9,23 +9,19 @@ export interface ExtractorOptions {
 }
 
 export class Extractor {
-    private compilerOptions: ts.CompilerOptions;
-    public typeChecker: ts.TypeChecker;
-
-    // Move this
-    private entryFileSymbol?: ts.Symbol;
-
     constructor(options: ExtractorOptions) {
         this.compilerOptions = options.compilerOptions;
     }
+
+    private compilerOptions: ts.CompilerOptions;
+    private typeChecker: ts.TypeChecker;
+    private files: ApiSourceFile[] = [];
 
     private logErrorHandler(message: string, fileName: string, lineNumber: number | undefined): void {
         Logger.Log(LogLevel.Error, `TypeScript: [${fileName}:${lineNumber}] ${message}`);
     }
 
-    public Analyze(entryFile: string): void {
-        const files: string[] = [entryFile];
-
+    public Analyze(files: string[]): void {
         const program = ts.createProgram(files, this.compilerOptions);
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
@@ -37,13 +33,19 @@ export class Extractor {
 
         this.typeChecker = program.getTypeChecker();
 
-        // We are getting specific file,
-        // because TS program loads other files like: lib.d.ts
-        // TODO: Add getting source from list of files.
-        const rootFile: ts.SourceFile = program.getSourceFile(entryFile);
+        program.getRootFileNames().forEach(fileName => {
+            const sourceFile: ts.SourceFile = program.getSourceFile(files[0]);
 
-        const apiSourceFile = new ApiSourceFile(rootFile, {
-            typeChecker: this.typeChecker
+            const apiSourceFile = new ApiSourceFile(sourceFile, {
+                typeChecker: this.typeChecker,
+                program: program
+            });
+
+            this.files.push(apiSourceFile);
         });
+    }
+
+    public GetFiles(): ApiSourceFile[] {
+        return this.files;
     }
 }

@@ -20,7 +20,7 @@ async function main(): Promise<void> {
         compilerOptions: compilerOptions
     });
 
-    extractor.Analyze(path.resolve("examples/simple/index.ts"));
+    extractor.Analyze([path.resolve("examples/simple/index.ts")]);
 }
 
 main();
