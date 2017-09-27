@@ -14,7 +14,6 @@ export class Extractor {
     }
 
     private compilerOptions: ts.CompilerOptions;
-    private typeChecker: ts.TypeChecker;
     private files: ApiSourceFile[] = [];
 
     private logErrorHandler(message: string, fileName: string, lineNumber: number | undefined): void {
@@ -31,13 +30,13 @@ export class Extractor {
             this.logErrorHandler(diagnostic.messageText.toString(), `${diagnostic.file}`, diagnostic.start);
         }
 
-        this.typeChecker = program.getTypeChecker();
+        const typeChecker = program.getTypeChecker();
 
         program.getRootFileNames().forEach(fileName => {
             const sourceFile: ts.SourceFile = program.getSourceFile(files[0]);
 
             const apiSourceFile = new ApiSourceFile(sourceFile, {
-                typeChecker: this.typeChecker,
+                typeChecker: typeChecker,
                 program: program
             });
 
