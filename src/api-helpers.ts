@@ -6,6 +6,8 @@ import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
 import { ApiFunction } from "./definitions/api-function";
+import { ApiEnum } from "./definitions/api-enum";
+import { ApiInterface } from "./definitions/api-interface";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -18,8 +20,12 @@ export namespace ApiHelpers {
             return new ApiNamespace(declaration, symbol, options);
         } else if (ts.isFunctionDeclaration(declaration)) {
             return new ApiFunction(declaration, symbol, options);
+        } else if (ts.isEnumDeclaration(declaration)) {
+            return new ApiEnum(declaration, symbol, options);
+        } else if (ts.isInterfaceDeclaration(declaration)) {
+            return new ApiInterface(declaration, symbol, options);
         }
-        // // TODO: Change this to the warning.
-        // throw `Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`;
+
+        console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
     }
 }

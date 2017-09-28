@@ -4,11 +4,8 @@ import * as path from "path";
 export namespace TSHelpers {
     export type DeclarationWithTypeNode = ts.Declaration & { type?: ts.TypeNode };
 
+    // TODO: Remove this function.
     export function TypeToString(declaration: DeclarationWithTypeNode, symbol: ts.Symbol, typeChecker: ts.TypeChecker): string {
-        if (declaration.type != null) {
-            return declaration.type.getText();
-        }
-
         const typeOfSymbol = typeChecker.getTypeOfSymbolAtLocation(symbol, declaration);
         return typeChecker.typeToString(typeOfSymbol);
     }

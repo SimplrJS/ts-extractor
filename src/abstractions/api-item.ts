@@ -5,6 +5,7 @@ export interface ApiItemOptions {
     program: ts.Program;
 }
 
+// TODO: Accept generic to have specific Declaration.
 export abstract class ApiItem {
     protected TypeChecker: ts.TypeChecker;
     protected Program: ts.Program;
