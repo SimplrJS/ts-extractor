@@ -9,7 +9,7 @@ export abstract class ApiItem {
     protected TypeChecker: ts.TypeChecker;
     protected Program: ts.Program;
 
-    constructor(protected Symbol: ts.Symbol, options: ApiItemOptions) {
+    constructor(protected Declaration: ts.Declaration, protected Symbol: ts.Symbol, options: ApiItemOptions) {
         this.TypeChecker = options.typeChecker;
         this.Program = options.program;
     }

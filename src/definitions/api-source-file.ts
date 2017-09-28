@@ -2,6 +2,7 @@ import * as ts from "typescript";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
+import { ApiHelpers } from "../api-helpers";
 
 import { ApiVariable } from "./api-variable";
 
@@ -14,21 +15,25 @@ export class ApiSourceFile extends ApiItem {
             throw Error("Should not happen");
         }
 
-        super(symbol, options);
+        super(sourceFile, symbol, options);
         this.members = {};
 
         symbol.exports.forEach(item => {
             if (item.declarations == null) {
                 return;
             }
+
             const declaration: ts.Declaration = item.declarations[0];
-            if (ts.isVariableDeclaration(declaration)) {
-                this.members[declaration.name.getText()] = new ApiVariable(item, declaration, options);
+            const visitedItem = ApiHelpers.VisitApiItem(declaration, item, {
+                program: this.Program,
+                typeChecker: this.TypeChecker
+            });
+
+            if (visitedItem == null) {
+                return;
             }
-            if (ts.isExportDeclaration(declaration)) {
-                const file = TSHelpers.GetSourceFileFromExport(declaration, this.Program);
-                console.log("Hello");
-            }
+
+            this.members[item.getName()] = visitedItem;
         });
 
         const theseMembers = this.members;
