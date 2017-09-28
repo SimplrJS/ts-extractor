@@ -1,9 +1,11 @@
 import * as ts from "typescript";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
-import { ApiPropertySignature } from "./api-property-signature";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
+
+import { ApiProperty } from "./api-property";
+import { ApiMethod } from "./api-method";
 
 export class ApiInterface extends ApiItem {
     constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -15,7 +17,11 @@ export class ApiInterface extends ApiItem {
                 return;
             }
 
-            this.members[memberSymbol.getName()] = this.visitMember(memberDeclaration, memberSymbol, options);
+
+            const item = this.visitMember(memberDeclaration, memberSymbol, options);
+            if (item != null) {
+                this.members[memberSymbol.getName()] = item;
+            }
         });
 
         console.log("hi");
@@ -25,7 +31,9 @@ export class ApiInterface extends ApiItem {
 
     private visitMember(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): ApiItem | undefined {
         if (ts.isPropertySignature(declaration)) {
-            return new ApiPropertySignature(declaration, symbol, options);
+            return new ApiProperty(declaration, symbol, options);
+        } else if (ts.isMethodSignature(declaration)) {
+            return new ApiMethod(declaration, symbol, options);
         }
 
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);

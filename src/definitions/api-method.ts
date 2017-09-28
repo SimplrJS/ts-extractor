@@ -1,14 +1,14 @@
 import * as ts from "typescript";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
-import { ApiParameter } from "./api-parameter";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
-export class ApiFunction extends ApiItem {
-    constructor(declaration: ts.FunctionDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
+import { ApiParameter } from "./api-parameter";
+
+export class ApiMethod extends ApiItem {
+    constructor(declaration: ts.MethodSignature, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
-        this.parameters = {};
 
         declaration.parameters.forEach(parameterDeclaration => {
             const a = ts.getParseTreeNode(parameterDeclaration);
@@ -24,10 +24,10 @@ export class ApiFunction extends ApiItem {
         });
     }
 
-    private parameters: { [key: string]: ApiParameter };
+    private parameters: { [key: string]: any } = {};
 
     public GetReturnType(): string {
-        return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration as ts.FunctionDeclaration, this.TypeChecker);
+        return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration as ts.MethodDeclaration, this.TypeChecker);
     }
 
     public ToJson(): { [key: string]: any; } {
@@ -40,9 +40,10 @@ export class ApiFunction extends ApiItem {
         }
 
         return {
-            Kind: "function",
-            ReturnType: this.GetReturnType(),
-            Parameters: parametersJson
+            Kind: "method",
+            Name: this.Symbol.name,
+            Parameters: parametersJson,
+            ReturnType: this.GetReturnType()
         };
     }
 }

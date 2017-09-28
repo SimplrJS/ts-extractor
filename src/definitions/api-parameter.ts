@@ -17,7 +17,7 @@ export class ApiParameter extends ApiItem {
         return {
             Kind: "parameter",
             Name: this.Symbol.name,
-            Type: this.GetType()
+            ReturnType: this.GetType()
         };
     }
 }

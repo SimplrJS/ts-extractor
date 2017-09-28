@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
-export class ApiPropertySignature extends ApiItem {
+export class ApiProperty extends ApiItem {
     constructor(declaration: ts.PropertySignature, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
     }
@@ -15,9 +15,9 @@ export class ApiPropertySignature extends ApiItem {
 
     public ToJson(): { [key: string]: any; } {
         return {
-            Kind: "property-signature",
+            Kind: "property",
             Name: this.Symbol.name,
-            Type: this.GetType()
+            ReturnType: this.GetType()
         };
     }
 }

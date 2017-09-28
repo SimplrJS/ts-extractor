@@ -10,6 +10,24 @@ export namespace TSHelpers {
         return typeChecker.typeToString(typeOfSymbol);
     }
 
+    export function GetTypeTextFromDeclaration(declaration: DeclarationWithTypeNode): string {
+        if (declaration.type == null) {
+            return "???";
+        }
+
+        return declaration.type.getText();
+    }
+
+    export function GetReturnTypeTextFromDeclaration(declaration: ts.SignatureDeclaration, typeChecker: ts.TypeChecker): string {
+        const signature = typeChecker.getSignatureFromDeclaration(declaration);
+        if (signature == null) {
+            return "???";
+        }
+        const type = typeChecker.getReturnTypeOfSignature(signature);
+
+        return typeChecker.typeToString(type);
+    }
+
     /**
      * Returns the string part of `export * from "./module";`
      */
