@@ -14,7 +14,7 @@ export namespace TSHelpers {
     }
 
     /**
-     * Get the string part of `export * from "./module";`
+     * Returns the string part of `export * from "./module";`
      */
     export function GetExportDeclarationImportString(declaration: ts.ExportDeclaration): string | undefined {
         const stringLiteralNode = declaration.getChildren().find(x => ts.isStringLiteral(x));
@@ -26,7 +26,7 @@ export namespace TSHelpers {
     }
 
     /**
-     * Get `ts.SourceFile` from `ts.ExportDeclaration`.
+     * Returns `ts.SourceFile` from `ts.ExportDeclaration`.
      */
     export function GetSourceFileFromExport(declaration: ts.ExportDeclaration, program: ts.Program): ts.SourceFile | undefined {
         const declarationSourceFilename = declaration.getSourceFile().fileName;
@@ -39,5 +39,21 @@ export namespace TSHelpers {
         // const compilerPaths = program.getCompilerOptions().paths;
         const fullPath = path.resolve(declarationSourceFilename, importString);
         return program.getSourceFiles().find(x => x.fileName.indexOf(fullPath) !== 1 && !x.isDeclarationFile);
+    }
+
+    /**
+     * Returns Symbol from declaration.
+     */
+    export function GetSymbolFromDeclaration(declaration: ts.Declaration, typeChecker: ts.TypeChecker): ts.Symbol | undefined {
+        const symbol: ts.Symbol | undefined = typeChecker.getSymbolAtLocation(declaration);
+        if (symbol != null) {
+            return symbol;
+        }
+
+        /**
+         * HACK: It's the only way to get symbol from declaration.
+         * Remove this when TypeScript compiler will support getting symbols.
+         */
+        return (declaration as any).symbol;
     }
 }

@@ -6,6 +6,10 @@
  */
 export const itemsList: string[] = ["a"];
 
+export function Ok(isIt: boolean): boolean {
+    return isIt;
+}
+
 export namespace SomeKindOfModule {
     export const name = "some-kind-of-module";
 }

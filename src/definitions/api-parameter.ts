@@ -2,9 +2,10 @@ import * as ts from "typescript";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
+import { ApiHelpers } from "../api-helpers";
 
-export class ApiVariable extends ApiItem {
-    constructor(declaration: ts.VariableDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
+export class ApiParameter extends ApiItem {
+    constructor(declaration: ts.ParameterDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
     }
 
@@ -14,9 +15,9 @@ export class ApiVariable extends ApiItem {
 
     public ToJson(): { [key: string]: any; } {
         return {
-            Kind: "variable",
-            Name: this.Symbol.getName(),
-            ReturnType: this.GetType()
+            Kind: "parameter",
+            Name: this.Symbol.name,
+            Type: this.GetType()
         };
     }
 }

@@ -4,25 +4,21 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
-import { ApiVariable } from "./api-variable";
+export class ApiNamespace extends ApiItem {
+    constructor(declaration: ts.ModuleDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
+        super(declaration, symbol, options);
 
-export class ApiSourceFile extends ApiItem {
-    constructor(sourceFile: ts.SourceFile, options: ApiItemOptions) {
-        const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.typeChecker);
-        if (symbol == null || symbol.exports == null) {
-            throw Error("Should not happen");
-        }
-
-        super(sourceFile, symbol, options);
         this.members = {};
-
+        if (symbol.exports == null) {
+            return;
+        }
         symbol.exports.forEach(item => {
             if (item.declarations == null) {
                 return;
             }
 
-            const declaration: ts.Declaration = item.declarations[0];
-            const visitedItem = ApiHelpers.VisitApiItem(declaration, item, {
+            const itemDeclaration: ts.Declaration = item.declarations[0];
+            const visitedItem = ApiHelpers.VisitApiItem(itemDeclaration, item, {
                 program: this.Program,
                 typeChecker: this.TypeChecker
             });
@@ -33,8 +29,6 @@ export class ApiSourceFile extends ApiItem {
 
             this.members[item.getName()] = visitedItem;
         });
-
-        const theseMembers = this.members;
     }
 
     private members: { [key: string]: ApiItem };
@@ -49,9 +43,9 @@ export class ApiSourceFile extends ApiItem {
         }
 
         return {
-            Kind: "source-file",
-            FileName: this.Declaration.getSourceFile().fileName,
+            Kind: "namespace",
             Members: membersJson
         };
     }
+
 }

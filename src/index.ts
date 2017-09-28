@@ -21,6 +21,9 @@ async function main(): Promise<void> {
     });
 
     extractor.Analyze([path.resolve("examples/simple/index.ts")]);
+
+    const json = extractor.GetFiles()[0].ToJson();
+    console.log(json);
 }
 
 main();

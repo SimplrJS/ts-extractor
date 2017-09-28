@@ -4,6 +4,8 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiVariable } from "./definitions/api-variable";
+import { ApiNamespace } from "./definitions/api-namespace";
+import { ApiFunction } from "./definitions/api-function";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -12,6 +14,10 @@ export namespace ApiHelpers {
             return new ApiSourceFile(declaration, options);
         } else if (ts.isVariableDeclaration(declaration)) {
             return new ApiVariable(declaration, symbol, options);
+        } else if (ts.isModuleDeclaration(declaration)) {
+            return new ApiNamespace(declaration, symbol, options);
+        } else if (ts.isFunctionDeclaration(declaration)) {
+            return new ApiFunction(declaration, symbol, options);
         }
         // // TODO: Change this to the warning.
         // throw `Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`;

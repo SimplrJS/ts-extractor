@@ -13,4 +13,9 @@ export abstract class ApiItem {
         this.TypeChecker = options.typeChecker;
         this.Program = options.program;
     }
+
+    /**
+     * Temp method for items debugging.
+     */
+    public abstract ToJson(): { [key: string]: any };
 }
