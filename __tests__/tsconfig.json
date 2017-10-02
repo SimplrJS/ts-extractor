@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "removeComments": false,
+        "sourceMap": false,
+        "skipDefaultLibCheck": true,
+        "pretty": true,
+        "strict": true,
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "typeRoots": [
+            "../"
+        ],
+        "types": [
+            "jest"
+        ],
+        "rootDir": "./"
+    }
+}
