@@ -11,12 +11,12 @@ export class ApiInterface extends ApiItem {
     constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
+        // Members
         declaration.members.forEach(memberDeclaration => {
             const memberSymbol = TSHelpers.GetSymbolFromDeclaration(memberDeclaration, this.TypeChecker);
             if (memberSymbol == null) {
                 return;
             }
-
 
             const item = this.visitMember(memberDeclaration, memberSymbol, options);
             if (item != null) {
@@ -24,9 +24,16 @@ export class ApiInterface extends ApiItem {
             }
         });
 
-        console.log("hi");
+        // Extends
+        if (declaration.heritageClauses != null) {
+            this.extends = TSHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.TypeChecker);
+        }
     }
 
+    /**
+     * Interfaces can extend multiple interfaces.
+     */
+    private extends: string[] = [];
     private members: { [key: string]: any } = {};
 
     private visitMember(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): ApiItem | undefined {
@@ -51,7 +58,8 @@ export class ApiInterface extends ApiItem {
         return {
             Kind: "interface",
             Name: this.Symbol.name,
-            Members: membersJson
+            Members: membersJson,
+            Extends: this.extends
         };
     }
 }

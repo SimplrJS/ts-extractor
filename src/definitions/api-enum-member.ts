@@ -12,6 +12,7 @@ export class ApiEnumMember extends ApiItem {
     public GetValue(): string {
         const firstToken: ts.Node | undefined = this.Declaration ? this.Declaration.getFirstToken() : undefined;
         const lastToken: ts.Node | undefined = this.Declaration ? this.Declaration.getLastToken() : undefined;
+        const declaration: ts.EnumMember = this.Declaration as ts.EnumMember;
         /**
          * TODO: Find a way to get value from this enum:
          * ```tsx
