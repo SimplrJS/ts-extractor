@@ -14,13 +14,12 @@ export class Extractor {
     }
 
     private compilerOptions: ts.CompilerOptions;
-    private files: ApiSourceFile[] = [];
 
     private logErrorHandler(message: string, fileName: string, lineNumber: number | undefined): void {
         Logger.Log(LogLevel.Error, `TypeScript: [${fileName}:${lineNumber}] ${message}`);
     }
 
-    public Analyze(files: string[]): void {
+    public Extract(files: string[]): ApiSourceFile[] {
         const program = ts.createProgram(files, this.compilerOptions);
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
@@ -31,6 +30,7 @@ export class Extractor {
         }
 
         const typeChecker = program.getTypeChecker();
+        const apiSourceFiles: ApiSourceFile[] = [];
 
         program.getRootFileNames().forEach(fileName => {
             const sourceFile: ts.SourceFile = program.getSourceFile(files[0]);
@@ -40,11 +40,9 @@ export class Extractor {
                 program: program
             });
 
-            this.files.push(apiSourceFile);
+            apiSourceFiles.push(apiSourceFile);
         });
-    }
 
-    public GetFiles(): ApiSourceFile[] {
-        return this.files;
+        return apiSourceFiles;
     }
 }

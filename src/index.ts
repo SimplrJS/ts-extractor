@@ -20,9 +20,9 @@ async function main(): Promise<void> {
         compilerOptions: compilerOptions
     });
 
-    extractor.Analyze([path.resolve("examples/simple/index.ts")]);
+    const files = extractor.Extract([path.resolve("examples/simple/index.ts")]);
 
-    const json = extractor.GetFiles()[0].ToJson();
+    const json = files[0].ToJson();
     console.log(JSON.stringify(json));
 }
 
