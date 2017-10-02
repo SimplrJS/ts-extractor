@@ -7,7 +7,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiProperty } from "./api-property";
 import { ApiMethod } from "./api-method";
 
-export class ApiInterface extends ApiItem {
+export class ApiInterface extends ApiItem<ts.InterfaceDeclaration> {
     constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 

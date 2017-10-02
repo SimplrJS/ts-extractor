@@ -5,11 +5,11 @@ import { ApiEnumMember } from "./api-enum-member";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
-export class ApiEnum extends ApiItem {
+export class ApiEnum extends ApiItem<ts.EnumDeclaration> {
     constructor(declaration: ts.EnumDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
-        this.members = {};
 
+        // Members
         declaration.members.forEach(enumMemberDeclaration => {
             const enumMemberSymbol = TSHelpers.GetSymbolFromDeclaration(enumMemberDeclaration, this.TypeChecker);
             if (enumMemberSymbol == null) {
@@ -20,7 +20,7 @@ export class ApiEnum extends ApiItem {
         });
     }
 
-    private members: { [key: string]: ApiEnumMember };
+    private members: { [key: string]: ApiEnumMember } = {};
 
     public ToJson(): { [key: string]: any; } {
         const membersJson: { [key: string]: any } = {};

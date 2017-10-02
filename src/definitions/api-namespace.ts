@@ -4,14 +4,15 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
-export class ApiNamespace extends ApiItem {
+export class ApiNamespace extends ApiItem<ts.ModuleDeclaration> {
     constructor(declaration: ts.ModuleDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        this.members = {};
         if (symbol.exports == null) {
             return;
         }
+
+        // Members
         symbol.exports.forEach(item => {
             if (item.declarations == null) {
                 return;
@@ -31,7 +32,7 @@ export class ApiNamespace extends ApiItem {
         });
     }
 
-    private members: { [key: string]: ApiItem };
+    private members: { [key: string]: ApiItem } = {};
 
     public ToJson(): { [key: string]: any; } {
         const membersJson: { [key: string]: any } = {};

@@ -6,11 +6,11 @@ export interface ApiItemOptions {
 }
 
 // TODO: Accept generic to have specific Declaration.
-export abstract class ApiItem {
+export abstract class ApiItem<TDeclaration = ts.Declaration> {
     protected TypeChecker: ts.TypeChecker;
     protected Program: ts.Program;
 
-    constructor(protected Declaration: ts.Declaration, protected Symbol: ts.Symbol, options: ApiItemOptions) {
+    constructor(protected Declaration: TDeclaration, protected Symbol: ts.Symbol, options: ApiItemOptions) {
         this.TypeChecker = options.typeChecker;
         this.Program = options.program;
     }

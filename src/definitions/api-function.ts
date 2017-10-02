@@ -5,11 +5,11 @@ import { ApiParameter } from "./api-parameter";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
-export class ApiFunction extends ApiItem {
+export class ApiFunction extends ApiItem<ts.FunctionDeclaration> {
     constructor(declaration: ts.FunctionDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
-        this.parameters = {};
 
+        // Parameters
         declaration.parameters.forEach(parameterDeclaration => {
             const a = ts.getParseTreeNode(parameterDeclaration);
             const parameterSymbol = TSHelpers.GetSymbolFromDeclaration(parameterDeclaration, this.TypeChecker);
@@ -24,7 +24,7 @@ export class ApiFunction extends ApiItem {
         });
     }
 
-    private parameters: { [key: string]: ApiParameter };
+    private parameters: { [key: string]: ApiParameter } = {};
 
     public GetReturnType(): string {
         return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration as ts.FunctionDeclaration, this.TypeChecker);

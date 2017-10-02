@@ -6,7 +6,7 @@ import { ApiHelpers } from "../api-helpers";
 
 import { ApiVariable } from "./api-variable";
 
-export class ApiSourceFile extends ApiItem {
+export class ApiSourceFile extends ApiItem<ts.SourceFile> {
     constructor(sourceFile: ts.SourceFile, options: ApiItemOptions) {
         const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.typeChecker);
         if (symbol == null || symbol.exports == null) {

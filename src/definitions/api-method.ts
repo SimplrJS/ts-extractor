@@ -6,7 +6,7 @@ import { ApiHelpers } from "../api-helpers";
 
 import { ApiParameter } from "./api-parameter";
 
-export class ApiMethod extends ApiItem {
+export class ApiMethod extends ApiItem<ts.MethodSignature> {
     constructor(declaration: ts.MethodSignature, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
@@ -27,7 +27,7 @@ export class ApiMethod extends ApiItem {
     private parameters: { [key: string]: any } = {};
 
     public GetReturnType(): string {
-        return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration as ts.MethodDeclaration, this.TypeChecker);
+        return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration, this.TypeChecker);
     }
 
     public ToJson(): { [key: string]: any; } {
