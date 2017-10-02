@@ -15,6 +15,9 @@
         "types": [
             "jest"
         ],
+        "lib": [
+            "es6"
+        ],
         "rootDir": "./"
     }
 }
