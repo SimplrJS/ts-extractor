@@ -19,7 +19,7 @@
         "@types/mz": "0.0.31",
         "mz": "^2.6.0",
         "read-package-json": "^2.0.10",
-        "typescript": "^2.4.2"
+        "typescript": "^2.5.3"
     },
     "devDependencies": {
         "@types/jest": "^20.0.5",

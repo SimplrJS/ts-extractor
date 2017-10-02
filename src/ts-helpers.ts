@@ -74,7 +74,11 @@ export namespace TSHelpers {
 
     export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
 
-    export function GetHeritageList(heritageClauses: ts.HeritageClause[], kind: HeritageKinds, typeChecker: ts.TypeChecker): string[] {
+    export function GetHeritageList(
+        heritageClauses: ts.NodeArray<ts.HeritageClause>,
+        kind: HeritageKinds,
+        typeChecker: ts.TypeChecker
+    ): string[] {
         const list: string[] = [];
 
         heritageClauses.forEach(heritage => {
