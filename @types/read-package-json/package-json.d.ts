@@ -1,6 +1,3 @@
-// TODO: Export this to @types.
-
-// tslint:disable
 export type PackageJson = JsonSchemaForNpmPackageJsonFiles;
 
 /**

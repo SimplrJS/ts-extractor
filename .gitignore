@@ -253,7 +253,6 @@ paket-files/
 yarn.lock
 
 dist
-@types
 package-lock.json
 
 # MacOS
