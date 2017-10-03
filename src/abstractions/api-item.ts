@@ -10,9 +10,17 @@ export abstract class ApiItem<TDeclaration = ts.Declaration> {
     protected TypeChecker: ts.TypeChecker;
     protected Program: ts.Program;
 
-    constructor(protected Declaration: TDeclaration, protected Symbol: ts.Symbol, options: ApiItemOptions) {
+    constructor(private declaration: TDeclaration, private symbol: ts.Symbol, options: ApiItemOptions) {
         this.TypeChecker = options.typeChecker;
         this.Program = options.program;
+    }
+
+    public get Declaration(): TDeclaration {
+        return this.declaration;
+    }
+
+    public get Symbol(): ts.Symbol {
+        return this.symbol;
     }
 
     /**
