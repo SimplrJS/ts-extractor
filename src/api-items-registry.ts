@@ -1,7 +1,8 @@
 import * as ts from "typescript";
 import { ApiItem } from "./abstractions/api-item";
+import { ItemsRegistry } from "./contracts/items-registry";
 
-export class ApiItemsRegistry {
+export class ApiItemsRegistry implements ItemsRegistry<ApiItem, ts.Declaration> {
     private registry: { [id: string]: ApiItem } = {};
     private counts: { [id: string]: number } = {};
 

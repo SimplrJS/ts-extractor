@@ -3,6 +3,7 @@ import { PackageJson } from "read-package-json";
 
 import { Logger, LogLevel } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
+import { ApiItemsRegistry } from "./api-items-registry";
 
 export interface ExtractorOptions {
     compilerOptions: ts.CompilerOptions;
@@ -11,9 +12,11 @@ export interface ExtractorOptions {
 export class Extractor {
     constructor(options: ExtractorOptions) {
         this.compilerOptions = options.compilerOptions;
+        this.itemsRegistry = new ApiItemsRegistry();
     }
 
     private compilerOptions: ts.CompilerOptions;
+    private itemsRegistry: ApiItemsRegistry;
 
     private logErrorHandler(message: string, fileName: string, lineNumber: number | undefined): void {
         Logger.Log(LogLevel.Error, `TypeScript: [${fileName}:${lineNumber}] ${message}`);
@@ -36,8 +39,8 @@ export class Extractor {
             const sourceFile: ts.SourceFile = program.getSourceFile(files[0]);
 
             const apiSourceFile = new ApiSourceFile(sourceFile, {
-                typeChecker: typeChecker,
-                program: program
+                Program: program,
+                ItemsRegistry: this.itemsRegistry
             });
 
             apiSourceFiles.push(apiSourceFile);

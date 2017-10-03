@@ -20,7 +20,8 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration> {
 
             const itemDeclaration: ts.Declaration = item.declarations[0];
             const visitedItem = ApiHelpers.VisitApiItem(itemDeclaration, item, {
-                program: this.Program
+                Program: this.Program,
+                ItemsRegistry: this.ItemsRegistry
             });
 
             if (visitedItem == null) {

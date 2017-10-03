@@ -18,7 +18,8 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration> {
             }
 
             this.parameters[parameterSymbol.name] = new ApiParameter(parameterDeclaration, parameterSymbol, {
-                program: this.Program
+                Program: this.Program,
+                ItemsRegistry: this.ItemsRegistry
             });
         });
     }

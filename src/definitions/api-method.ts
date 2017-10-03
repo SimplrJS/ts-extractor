@@ -18,7 +18,8 @@ export class ApiMethod extends ApiItem<ts.MethodSignature> {
             }
 
             this.parameters[parameterSymbol.name] = new ApiParameter(parameterDeclaration, parameterSymbol, {
-                program: this.Program
+                Program: this.Program,
+                ItemsRegistry: this.ItemsRegistry
             });
         });
     }
