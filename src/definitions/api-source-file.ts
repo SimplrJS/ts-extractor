@@ -8,7 +8,7 @@ import { ApiVariable } from "./api-variable";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile> {
     constructor(sourceFile: ts.SourceFile, options: ApiItemOptions) {
-        const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.typeChecker);
+        const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.program.getTypeChecker());
         if (symbol == null || symbol.exports == null) {
             throw Error("Should not happen");
         }
@@ -23,8 +23,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile> {
 
             const declaration: ts.Declaration = item.declarations[0];
             const visitedItem = ApiHelpers.VisitApiItem(declaration, item, {
-                program: this.Program,
-                typeChecker: this.TypeChecker
+                program: this.Program
             });
 
             if (visitedItem == null) {

@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 
 export interface ApiItemOptions {
-    typeChecker: ts.TypeChecker;
     program: ts.Program;
 }
 
@@ -11,8 +10,8 @@ export abstract class ApiItem<TDeclaration = ts.Declaration> {
     protected Program: ts.Program;
 
     constructor(private declaration: TDeclaration, private symbol: ts.Symbol, options: ApiItemOptions) {
-        this.TypeChecker = options.typeChecker;
         this.Program = options.program;
+        this.TypeChecker = options.program.getTypeChecker();
     }
 
     public get Declaration(): TDeclaration {
