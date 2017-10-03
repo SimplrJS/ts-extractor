@@ -14,44 +14,21 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile> {
         }
 
         super(sourceFile, symbol, options);
-        this.members = {};
 
-        symbol.exports.forEach(item => {
-            if (item.declarations == null) {
-                return;
-            }
-
-            const declaration: ts.Declaration = item.declarations[0];
-            const visitedItem = ApiHelpers.VisitApiItem(declaration, item, {
-                Program: this.Program,
-                ItemsRegistry: this.ItemsRegistry
-            });
-
-            if (visitedItem == null) {
-                return;
-            }
-
-            this.members[item.getName()] = visitedItem;
+        this.members = ApiHelpers.GetExportedItemsIds(symbol.exports, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
         });
-
-        const theseMembers = this.members;
     }
 
-    private members: { [key: string]: ApiItem };
+    private members: string[];
 
     public ToJson(): { [key: string]: any; } {
-        const membersJson: { [key: string]: any } = {};
-
-        for (const memberKey in this.members) {
-            if (this.members.hasOwnProperty(memberKey)) {
-                membersJson[memberKey] = this.members[memberKey].ToJson();
-            }
-        }
-
         return {
-            Kind: "source-file",
+            Kind: this.Declaration.kind,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
             FileName: this.Declaration.getSourceFile().fileName,
-            Members: membersJson
+            Members: this.members
         };
     }
 }

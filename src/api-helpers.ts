@@ -28,4 +28,35 @@ export namespace ApiHelpers {
 
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
     }
+
+    export function GetExportedItemsIds(symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined, options: ApiItemOptions): string[] {
+        const items: string[] = [];
+        if (symbols == null) {
+            return items;
+        }
+
+        symbols.forEach(symbolItem => {
+            if (symbolItem.declarations == null) {
+                return;
+            }
+
+            symbolItem.declarations.forEach(declarationItem => {
+                // Check if declaration already exists in the registry.
+                const declarationId = options.ItemsRegistry.Find(declarationItem);
+                if (declarationId != null) {
+                    items.push(declarationId);
+                    return;
+                }
+
+                const visitedItem = VisitApiItem(declarationItem, symbolItem, options);
+                if (visitedItem == null) {
+                    return;
+                }
+
+                items.push(options.ItemsRegistry.Add(visitedItem));
+            });
+        });
+
+        return items;
+    }
 }
