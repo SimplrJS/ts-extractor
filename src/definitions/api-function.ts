@@ -4,45 +4,44 @@ import { ApiParameter } from "./api-parameter";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
+import { ApiFunctionDto } from "../contracts/api-items/api-function-dto";
+import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
+import { ApiItemType } from "../contracts/api-items/api-item-type";
 
-export class ApiFunction extends ApiItem<ts.FunctionDeclaration> {
+export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto> {
     constructor(declaration: ts.FunctionDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
         // Parameters
-        declaration.parameters.forEach(parameterDeclaration => {
-            const a = ts.getParseTreeNode(parameterDeclaration);
-            const parameterSymbol = TSHelpers.GetSymbolFromDeclaration(parameterDeclaration, this.TypeChecker);
-            if (parameterSymbol == null) {
-                return;
-            }
+        // TODO: Upgrade this.
+        // declaration.parameters.forEach(parameterDeclaration => {
+        //     const a = ts.getParseTreeNode(parameterDeclaration);
+        //     const parameterSymbol = TSHelpers.GetSymbolFromDeclaration(parameterDeclaration, this.TypeChecker);
+        //     if (parameterSymbol == null) {
+        //         return;
+        //     }
 
-            this.parameters[parameterSymbol.name] = new ApiParameter(parameterDeclaration, parameterSymbol, {
-                Program: this.Program,
-                ItemsRegistry: this.ItemsRegistry
-            });
-        });
+        //     this.parameters[parameterSymbol.name] = new ApiParameter(parameterDeclaration, parameterSymbol, {
+        //         Program: this.Program,
+        //         ItemsRegistry: this.ItemsRegistry
+        //     });
+        // });
     }
 
-    private parameters: { [key: string]: ApiParameter } = {};
+    private parameters: ApiItemReferenceDict = {};
 
     public GetReturnType(): string {
         return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration as ts.FunctionDeclaration, this.TypeChecker);
     }
 
-    public Extract(): { [key: string]: any; } {
-        const parametersJson: { [key: string]: any } = {};
-
-        for (const parameterKey in this.parameters) {
-            if (this.parameters.hasOwnProperty(parameterKey)) {
-                parametersJson[parameterKey] = this.parameters[parameterKey].Extract();
-            }
-        }
-
+    public Extract(): ApiFunctionDto {
         return {
-            Kind: "function",
-            ReturnType: this.GetReturnType(),
-            Parameters: parametersJson
+            Type: ApiItemType.Function,
+            Name: this.Symbol.name,
+            Kind: this.Declaration.kind,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
+            Parameters: this.parameters,
+            ReturnType: this.GetReturnType()
         };
     }
 }
