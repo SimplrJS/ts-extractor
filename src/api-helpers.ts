@@ -2,6 +2,9 @@ import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
+import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
+import { TSHelpers } from "./ts-helpers";
+
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
@@ -9,8 +12,8 @@ import { ApiFunction } from "./definitions/api-function";
 import { ApiEnum } from "./definitions/api-enum";
 import { ApiEnumMember } from "./definitions/api-enum-member";
 import { ApiInterface } from "./definitions/api-interface";
-import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
-import { TSHelpers } from "./ts-helpers";
+import { ApiProperty } from "./definitions/api-property";
+import { ApiMethod } from "./definitions/api-method";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -29,6 +32,10 @@ export namespace ApiHelpers {
             return new ApiEnumMember(declaration, symbol, options);
         } else if (ts.isInterfaceDeclaration(declaration)) {
             return new ApiInterface(declaration, symbol, options);
+        } else if (ts.isPropertySignature(declaration)) {
+            return new ApiProperty(declaration, symbol, options);
+        } else if (ts.isMethodSignature(declaration)) {
+            return new ApiMethod(declaration, symbol, options);
         }
 
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
