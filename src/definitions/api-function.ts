@@ -13,19 +13,10 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
         super(declaration, symbol, options);
 
         // Parameters
-        // TODO: Upgrade this.
-        // declaration.parameters.forEach(parameterDeclaration => {
-        //     const a = ts.getParseTreeNode(parameterDeclaration);
-        //     const parameterSymbol = TSHelpers.GetSymbolFromDeclaration(parameterDeclaration, this.TypeChecker);
-        //     if (parameterSymbol == null) {
-        //         return;
-        //     }
-
-        //     this.parameters[parameterSymbol.name] = new ApiParameter(parameterDeclaration, parameterSymbol, {
-        //         Program: this.Program,
-        //         ItemsRegistry: this.ItemsRegistry
-        //     });
-        // });
+        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
+        });
     }
 
     private parameters: ApiItemReferenceDict = {};
