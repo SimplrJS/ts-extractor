@@ -28,12 +28,12 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
 
     public Extract(): ApiSourceFileDto {
         return {
+            Type: ApiItemType.SourceFile,
             Name: this.Declaration.fileName,
             FileName: this.Declaration.fileName,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Members: this.members,
-            Type: ApiItemType.SourceFile
+            Members: this.members
         };
     }
 }

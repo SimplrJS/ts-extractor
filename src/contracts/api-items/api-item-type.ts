@@ -1,3 +1,4 @@
 export enum ApiItemType {
-    SourceFile = "source-file"
+    SourceFile = "source-file",
+    EnumMember = "enum-member"
 }
