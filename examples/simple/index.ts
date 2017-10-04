@@ -48,3 +48,7 @@ export interface Foo<TType> {
 export interface Bar extends Foo<number>, Boo {
     OtherStuff: string[];
 }
+
+export namespace Ok { }
+
+export namespace Ok { }

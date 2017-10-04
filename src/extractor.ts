@@ -45,7 +45,6 @@ export class Extractor {
 
             apiSourceFiles.push(apiSourceFile);
         });
-
         return apiSourceFiles;
     }
 }

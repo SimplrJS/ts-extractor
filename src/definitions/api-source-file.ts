@@ -1,6 +1,9 @@
 import * as ts from "typescript";
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
+import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
+import { ApiSourceFileDto } from "../contracts/api-items/api-source-file-dto";
+import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
@@ -21,14 +24,16 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile> {
         });
     }
 
-    private members: string[];
+    private members: ApiItemReferenceDict;
 
-    public ToJson(): { [key: string]: any; } {
+    public ToJson(): ApiSourceFileDto {
         return {
+            Name: this.Declaration.fileName,
+            FileName: this.Declaration.fileName,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            FileName: this.Declaration.getSourceFile().fileName,
-            Members: this.members
+            Members: this.members,
+            Type: ApiItemType.SourceFile
         };
     }
 }

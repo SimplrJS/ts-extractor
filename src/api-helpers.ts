@@ -8,6 +8,7 @@ import { ApiNamespace } from "./definitions/api-namespace";
 import { ApiFunction } from "./definitions/api-function";
 import { ApiEnum } from "./definitions/api-enum";
 import { ApiInterface } from "./definitions/api-interface";
+import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -29,8 +30,11 @@ export namespace ApiHelpers {
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
     }
 
-    export function GetExportedItemsIds(symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined, options: ApiItemOptions): string[] {
-        const items: string[] = [];
+    export function GetExportedItemsIds(
+        symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
+        options: ApiItemOptions
+    ): ApiItemReferenceDict {
+        const items: ApiItemReferenceDict = {};
         if (symbols == null) {
             return items;
         }
@@ -39,12 +43,13 @@ export namespace ApiHelpers {
             if (symbolItem.declarations == null) {
                 return;
             }
+            const symbolItems: string[] = [];
 
             symbolItem.declarations.forEach(declarationItem => {
                 // Check if declaration already exists in the registry.
                 const declarationId = options.ItemsRegistry.Find(declarationItem);
                 if (declarationId != null) {
-                    items.push(declarationId);
+                    symbolItems.push(declarationId);
                     return;
                 }
 
@@ -53,8 +58,10 @@ export namespace ApiHelpers {
                     return;
                 }
 
-                items.push(options.ItemsRegistry.Add(visitedItem));
+                symbolItems.push(options.ItemsRegistry.Add(visitedItem));
             });
+
+            items[symbolItem.name] = symbolItems.length === 1 ? symbolItems.toString() : symbolItems;
         });
 
         return items;
