@@ -3,5 +3,6 @@ export enum ApiItemType {
     Enum = "enum",
     EnumMember = "enum-member",
     Function = "function",
-    Interface = "interface"
+    Interface = "interface",
+    Method = "method"
 }
