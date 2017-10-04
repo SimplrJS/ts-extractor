@@ -3,7 +3,7 @@ import { ApiItemType } from "./api-item-type";
 
 export interface ApiItemDto {
     Name: string;
-    Type: ApiItemType;
+    ApiType: ApiItemType;
     Kind: ts.SyntaxKind;
     KindString: string;
 }
