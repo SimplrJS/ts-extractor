@@ -4,6 +4,14 @@ import { PackageJson } from "read-package-json";
 import { Logger, LogLevel } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItemsRegistry } from "./api-items-registry";
+import { RegistryDict } from "./contracts/items-registry";
+import { ApiItem } from "./abstractions/api-item";
+import { ApiSourceFileDto } from "./contracts/api-items/api-source-file-dto";
+
+export interface ExtractDto {
+    Registry: RegistryDict<ApiItem>;
+    EntryFiles: ApiSourceFileDto[];
+}
 
 export interface ExtractorOptions {
     compilerOptions: ts.CompilerOptions;
@@ -22,7 +30,7 @@ export class Extractor {
         Logger.Log(LogLevel.Error, `TypeScript: [${fileName}:${lineNumber}] ${message}`);
     }
 
-    public Extract(files: string[]): ApiSourceFile[] {
+    public Extract(files: string[]): ExtractDto {
         const program = ts.createProgram(files, this.compilerOptions);
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
@@ -45,6 +53,10 @@ export class Extractor {
 
             apiSourceFiles.push(apiSourceFile);
         });
-        return apiSourceFiles;
+
+        return {
+            Registry: this.itemsRegistry.GetAll(),
+            EntryFiles: apiSourceFiles.map(x => x.Extract())
+        };
     }
 }
