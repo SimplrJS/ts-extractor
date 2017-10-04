@@ -18,7 +18,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
 
         super(sourceFile, symbol, options);
 
-        this.members = ApiHelpers.GetExportedItemsIds(symbol.exports, {
+        this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, {
             ItemsRegistry: this.ItemsRegistry,
             Program: this.Program
         });

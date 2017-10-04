@@ -10,6 +10,7 @@ import { ApiEnum } from "./definitions/api-enum";
 import { ApiEnumMember } from "./definitions/api-enum-member";
 import { ApiInterface } from "./definitions/api-interface";
 import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
+import { TSHelpers } from "./ts-helpers";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -33,7 +34,7 @@ export namespace ApiHelpers {
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
     }
 
-    export function GetExportedItemsIds(
+    export function GetItemsFromSymbolsIds(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
     ): ApiItemReferenceDict {
@@ -65,6 +66,33 @@ export namespace ApiHelpers {
             });
 
             items[symbolItem.name] = symbolItems.length === 1 ? symbolItems.toString() : symbolItems;
+        });
+
+        return items;
+    }
+
+    export function GetItemsFromDeclarationsIds(declarations: ts.NodeArray<ts.Declaration>, options: ApiItemOptions): ApiItemReferenceDict {
+        const items: ApiItemReferenceDict = {};
+        const typeChecker = options.Program.getTypeChecker();
+
+        declarations.forEach(declarationItem => {
+            const symbol = TSHelpers.GetSymbolFromDeclaration(declarationItem, typeChecker);
+            if (symbol == null) {
+                return;
+            }
+
+            const declarationId = options.ItemsRegistry.Find(declarationItem);
+            if (declarationId != null) {
+                items[symbol.name] = declarationId;
+                return;
+            }
+
+            const visitedItem = VisitApiItem(declarationItem, symbol, options);
+            if (visitedItem == null) {
+                return;
+            }
+
+            items[symbol.name] = options.ItemsRegistry.Add(visitedItem);
         });
 
         return items;
