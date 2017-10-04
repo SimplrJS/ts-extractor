@@ -9,7 +9,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration> {
         return TSHelpers.TypeToString(this.Declaration, this.Symbol, this.TypeChecker);
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         return {
             Kind: "parameter",
             Name: this.Symbol.name,

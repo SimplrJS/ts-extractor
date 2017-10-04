@@ -22,12 +22,12 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration> {
 
     private members: { [key: string]: ApiEnumMember } = {};
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         const membersJson: { [key: string]: any } = {};
 
         for (const memberKey in this.members) {
             if (this.members.hasOwnProperty(memberKey)) {
-                membersJson[memberKey] = this.members[memberKey].ToJson();
+                membersJson[memberKey] = this.members[memberKey].Extract();
             }
         }
 

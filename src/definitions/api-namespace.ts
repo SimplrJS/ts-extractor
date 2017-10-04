@@ -34,12 +34,12 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration> {
 
     private members: { [key: string]: ApiItem } = {};
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         const membersJson: { [key: string]: any } = {};
 
         for (const memberKey in this.members) {
             if (this.members.hasOwnProperty(memberKey)) {
-                membersJson[memberKey] = this.members[memberKey].ToJson();
+                membersJson[memberKey] = this.members[memberKey].Extract();
             }
         }
 

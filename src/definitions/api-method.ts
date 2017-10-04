@@ -30,7 +30,7 @@ export class ApiMethod extends ApiItem<ts.MethodSignature> {
         return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration, this.TypeChecker);
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         const parametersJson: { [key: string]: any } = {};
 
         for (const parameterKey in this.parameters) {

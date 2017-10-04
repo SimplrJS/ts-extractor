@@ -22,7 +22,7 @@ async function main(): Promise<void> {
 
     const files = extractor.Extract([path.resolve("examples/simple/index.ts")]);
 
-    const json = files[0].ToJson();
+    const json = files[0].Extract();
     console.log(JSON.stringify(json));
 }
 

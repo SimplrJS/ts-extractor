@@ -9,7 +9,7 @@ import { ApiHelpers } from "../api-helpers";
 
 import { ApiVariable } from "./api-variable";
 
-export class ApiSourceFile extends ApiItem<ts.SourceFile> {
+export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     constructor(sourceFile: ts.SourceFile, options: ApiItemOptions) {
         const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.Program.getTypeChecker());
         if (symbol == null || symbol.exports == null) {
@@ -26,7 +26,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile> {
 
     private members: ApiItemReferenceDict;
 
-    public ToJson(): ApiSourceFileDto {
+    public Extract(): ApiSourceFileDto {
         return {
             Name: this.Declaration.fileName,
             FileName: this.Declaration.fileName,

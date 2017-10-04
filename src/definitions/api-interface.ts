@@ -46,7 +46,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration> {
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         const membersJson: { [key: string]: any } = {};
 
         for (const memberKey in this.members) {

@@ -9,7 +9,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature> {
         return TSHelpers.TypeToString(this.Declaration, this.Symbol, this.TypeChecker);
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         return {
             Kind: "property",
             Name: this.Symbol.name,

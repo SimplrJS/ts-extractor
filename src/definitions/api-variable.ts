@@ -8,7 +8,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration> {
         return TSHelpers.TypeToString(this.Declaration, this.Symbol, this.TypeChecker);
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         return {
             Kind: "variable",
             Name: this.Symbol.getName(),

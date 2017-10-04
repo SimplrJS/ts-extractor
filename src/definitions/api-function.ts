@@ -30,12 +30,12 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration> {
         return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration as ts.FunctionDeclaration, this.TypeChecker);
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         const parametersJson: { [key: string]: any } = {};
 
         for (const parameterKey in this.parameters) {
             if (this.parameters.hasOwnProperty(parameterKey)) {
-                parametersJson[parameterKey] = this.parameters[parameterKey].ToJson();
+                parametersJson[parameterKey] = this.parameters[parameterKey].Extract();
             }
         }
 

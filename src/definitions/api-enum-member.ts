@@ -26,7 +26,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember> {
         return lastToken.getText();
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): { [key: string]: any; } {
         return {
             Kind: "enum-member",
             Name: this.Symbol.name,
