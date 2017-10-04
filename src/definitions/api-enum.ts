@@ -4,37 +4,30 @@ import { ApiEnumMember } from "./api-enum-member";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
+import { ApiEnumDto } from "../contracts/api-items/api-enum-dto";
+import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
+import { ApiItemType } from "../contracts/api-items/api-item-type";
 
-export class ApiEnum extends ApiItem<ts.EnumDeclaration> {
+export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
     constructor(declaration: ts.EnumDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
         // Members
-        declaration.members.forEach(enumMemberDeclaration => {
-            const enumMemberSymbol = TSHelpers.GetSymbolFromDeclaration(enumMemberDeclaration, this.TypeChecker);
-            if (enumMemberSymbol == null) {
-                return;
-            }
-
-            this.members[enumMemberSymbol.name] = new ApiEnumMember(enumMemberDeclaration, enumMemberSymbol, options);
+        this.members = ApiHelpers.GetExportedItemsIds(symbol.members, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
         });
     }
 
-    private members: { [key: string]: ApiEnumMember } = {};
+    private members: ApiItemReferenceDict = {};
 
-    public Extract(): { [key: string]: any; } {
-        const membersJson: { [key: string]: any } = {};
-
-        for (const memberKey in this.members) {
-            if (this.members.hasOwnProperty(memberKey)) {
-                membersJson[memberKey] = this.members[memberKey].Extract();
-            }
-        }
-
+    public Extract(): ApiEnumDto {
         return {
-            Kind: "enum",
+            Type: ApiItemType.Enum,
             Name: this.Symbol.name,
-            Members: membersJson
+            Kind: this.Declaration.kind,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
+            Members: this.members
         };
     }
 }

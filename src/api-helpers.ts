@@ -7,6 +7,7 @@ import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
 import { ApiFunction } from "./definitions/api-function";
 import { ApiEnum } from "./definitions/api-enum";
+import { ApiEnumMember } from "./definitions/api-enum-member";
 import { ApiInterface } from "./definitions/api-interface";
 import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
 
@@ -23,6 +24,8 @@ export namespace ApiHelpers {
             return new ApiFunction(declaration, symbol, options);
         } else if (ts.isEnumDeclaration(declaration)) {
             return new ApiEnum(declaration, symbol, options);
+        } else if (ts.isEnumMember(declaration)) {
+            return new ApiEnumMember(declaration, symbol, options);
         } else if (ts.isInterfaceDeclaration(declaration)) {
             return new ApiInterface(declaration, symbol, options);
         }
