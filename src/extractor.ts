@@ -7,9 +7,12 @@ import { ApiItemsRegistry } from "./api-items-registry";
 import { RegistryDict } from "./contracts/items-registry";
 import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/api-items/api-source-file-dto";
+import { ApiItemDto } from "./contracts/api-items/api-item-dto";
+
+export type RegistryExtractedItems = { [key: string]: ApiItemDto };
 
 export interface ExtractDto {
-    Registry: RegistryDict<ApiItem>;
+    Registry: RegistryExtractedItems;
     EntryFiles: ApiSourceFileDto[];
 }
 
@@ -55,8 +58,19 @@ export class Extractor {
         });
 
         return {
-            Registry: this.itemsRegistry.GetAll(),
+            Registry: this.getRegistryExtractedItems(),
             EntryFiles: apiSourceFiles.map(x => x.Extract())
         };
+    }
+
+    private getRegistryExtractedItems(): RegistryExtractedItems {
+        const items: RegistryExtractedItems = {};
+        const apiItems = this.itemsRegistry.GetAll();
+
+        Object.keys(apiItems).forEach(itemId => {
+            items[itemId] = apiItems[itemId].Extract();
+        });
+
+        return items;
     }
 }
