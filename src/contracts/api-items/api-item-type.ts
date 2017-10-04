@@ -7,5 +7,6 @@ export enum ApiItemType {
     Method = "method",
     Namespace = "namespace",
     Parameter = "parameter",
-    Property = "property"
+    Property = "property",
+    Variable = "variable"
 }

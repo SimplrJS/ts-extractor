@@ -28,7 +28,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
 
     public Extract(): ApiSourceFileDto {
         return {
-            Type: ApiItemType.SourceFile,
+            ApiType: ApiItemType.SourceFile,
             Name: this.Declaration.fileName,
             FileName: this.Declaration.fileName,
             Kind: this.Declaration.kind,

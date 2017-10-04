@@ -34,7 +34,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
 
     public Extract(): ApiInterfaceDto {
         return {
-            Type: ApiItemType.Interface,
+            ApiType: ApiItemType.Interface,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

@@ -23,7 +23,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
 
     public Extract(): ApiEnumDto {
         return {
-            Type: ApiItemType.Enum,
+            ApiType: ApiItemType.Enum,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

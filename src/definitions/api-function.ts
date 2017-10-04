@@ -27,7 +27,7 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
 
     public Extract(): ApiFunctionDto {
         return {
-            Type: ApiItemType.Function,
+            ApiType: ApiItemType.Function,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

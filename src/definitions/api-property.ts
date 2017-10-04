@@ -13,7 +13,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
 
     public Extract(): ApiPropertyDto {
         return {
-            Type: ApiItemType.Property,
+            ApiType: ApiItemType.Property,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

@@ -26,7 +26,7 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
 
     public Extract(): ApiNamespaceDto {
         return {
-            Type: ApiItemType.Namespace,
+            ApiType: ApiItemType.Namespace,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

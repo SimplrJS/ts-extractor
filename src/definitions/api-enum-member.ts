@@ -30,7 +30,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
 
     public Extract(): ApiEnumMemberDto {
         return {
-            Type: ApiItemType.EnumMember,
+            ApiType: ApiItemType.EnumMember,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

@@ -27,7 +27,7 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
 
     public Extract(): ApiMethodDto {
         return {
-            Type: ApiItemType.Method,
+            ApiType: ApiItemType.Method,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
