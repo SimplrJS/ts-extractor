@@ -14,6 +14,7 @@ import { ApiEnumMember } from "./definitions/api-enum-member";
 import { ApiInterface } from "./definitions/api-interface";
 import { ApiProperty } from "./definitions/api-property";
 import { ApiMethod } from "./definitions/api-method";
+import { ApiParameter } from "./definitions/api-parameter";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -36,6 +37,8 @@ export namespace ApiHelpers {
             return new ApiProperty(declaration, symbol, options);
         } else if (ts.isMethodSignature(declaration)) {
             return new ApiMethod(declaration, symbol, options);
+        } else if (ts.isParameter(declaration)) {
+            return new ApiParameter(declaration, symbol, options);
         }
 
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
