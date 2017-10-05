@@ -1,57 +1,39 @@
 import * as ts from "typescript";
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
+import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
+import { ApiSourceFileDto } from "../contracts/api-items/api-source-file-dto";
+import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
 import { ApiVariable } from "./api-variable";
 
-export class ApiSourceFile extends ApiItem<ts.SourceFile> {
+export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     constructor(sourceFile: ts.SourceFile, options: ApiItemOptions) {
-        const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.typeChecker);
+        const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.Program.getTypeChecker());
         if (symbol == null || symbol.exports == null) {
             throw Error("Should not happen");
         }
 
         super(sourceFile, symbol, options);
-        this.members = {};
 
-        symbol.exports.forEach(item => {
-            if (item.declarations == null) {
-                return;
-            }
-
-            const declaration: ts.Declaration = item.declarations[0];
-            const visitedItem = ApiHelpers.VisitApiItem(declaration, item, {
-                program: this.Program,
-                typeChecker: this.TypeChecker
-            });
-
-            if (visitedItem == null) {
-                return;
-            }
-
-            this.members[item.getName()] = visitedItem;
+        this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
         });
-
-        const theseMembers = this.members;
     }
 
-    private members: { [key: string]: ApiItem };
+    private members: ApiItemReferenceDict;
 
-    public ToJson(): { [key: string]: any; } {
-        const membersJson: { [key: string]: any } = {};
-
-        for (const memberKey in this.members) {
-            if (this.members.hasOwnProperty(memberKey)) {
-                membersJson[memberKey] = this.members[memberKey].ToJson();
-            }
-        }
-
+    public Extract(): ApiSourceFileDto {
         return {
-            Kind: "source-file",
-            FileName: this.Declaration.getSourceFile().fileName,
-            Members: membersJson
+            ApiType: ApiItemType.SourceFile,
+            Name: this.Declaration.fileName,
+            FileName: this.Declaration.fileName,
+            Kind: this.Declaration.kind,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
+            Members: this.members
         };
     }
 }

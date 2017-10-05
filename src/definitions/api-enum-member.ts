@@ -3,8 +3,10 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
+import { ApiEnumMemberDto } from "../contracts/api-items/api-enum-member-dto";
+import { ApiItemType } from "../contracts/api-items/api-item-type";
 
-export class ApiEnumMember extends ApiItem<ts.EnumMember> {
+export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
     public GetValue(): string {
         const firstToken: ts.Node | undefined = this.Declaration ? this.Declaration.getFirstToken() : undefined;
         const lastToken: ts.Node | undefined = this.Declaration ? this.Declaration.getLastToken() : undefined;
@@ -26,10 +28,12 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember> {
         return lastToken.getText();
     }
 
-    public ToJson(): { [key: string]: any; } {
+    public Extract(): ApiEnumMemberDto {
         return {
-            Kind: "enum-member",
+            ApiType: ApiItemType.EnumMember,
             Name: this.Symbol.name,
+            Kind: this.Declaration.kind,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
             Value: this.GetValue()
         };
     }

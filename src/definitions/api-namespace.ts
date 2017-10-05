@@ -3,8 +3,11 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
+import { ApiNamespaceDto } from "../contracts/api-items/api-namespace-dto";
+import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
+import { ApiItemType } from "../contracts/api-items/api-item-type";
 
-export class ApiNamespace extends ApiItem<ts.ModuleDeclaration> {
+export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto> {
     constructor(declaration: ts.ModuleDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
@@ -13,39 +16,21 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration> {
         }
 
         // Members
-        symbol.exports.forEach(item => {
-            if (item.declarations == null) {
-                return;
-            }
-
-            const itemDeclaration: ts.Declaration = item.declarations[0];
-            const visitedItem = ApiHelpers.VisitApiItem(itemDeclaration, item, {
-                program: this.Program,
-                typeChecker: this.TypeChecker
-            });
-
-            if (visitedItem == null) {
-                return;
-            }
-
-            this.members[item.getName()] = visitedItem;
+        this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
         });
     }
 
-    private members: { [key: string]: ApiItem } = {};
+    private members: ApiItemReferenceDict = {};
 
-    public ToJson(): { [key: string]: any; } {
-        const membersJson: { [key: string]: any } = {};
-
-        for (const memberKey in this.members) {
-            if (this.members.hasOwnProperty(memberKey)) {
-                membersJson[memberKey] = this.members[memberKey].ToJson();
-            }
-        }
-
+    public Extract(): ApiNamespaceDto {
         return {
-            Kind: "namespace",
-            Members: membersJson
+            ApiType: ApiItemType.Namespace,
+            Name: this.Symbol.name,
+            Kind: this.Declaration.kind,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
+            Members: this.members
         };
     }
 

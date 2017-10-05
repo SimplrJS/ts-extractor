@@ -1,27 +1,23 @@
 import * as ts from "typescript";
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
+import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
+import { ApiInterfaceDto } from "../contracts/api-items/api-interface-dto";
+import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
+import { ApiItemType } from "../contracts/api-items/api-item-type";
 
 import { ApiProperty } from "./api-property";
 import { ApiMethod } from "./api-method";
 
-export class ApiInterface extends ApiItem<ts.InterfaceDeclaration> {
+export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
     constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
         // Members
-        declaration.members.forEach(memberDeclaration => {
-            const memberSymbol = TSHelpers.GetSymbolFromDeclaration(memberDeclaration, this.TypeChecker);
-            if (memberSymbol == null) {
-                return;
-            }
-
-            const item = this.visitMember(memberDeclaration, memberSymbol, options);
-            if (item != null) {
-                this.members[memberSymbol.getName()] = item;
-            }
+        this.members = ApiHelpers.GetItemsFromDeclarationsIds(declaration.members, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
         });
 
         // Extends
@@ -34,31 +30,15 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration> {
      * Interfaces can extend multiple interfaces.
      */
     private extends: string[] = [];
-    private members: { [key: string]: any } = {};
+    private members: ApiItemReferenceDict = {};
 
-    private visitMember(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): ApiItem | undefined {
-        if (ts.isPropertySignature(declaration)) {
-            return new ApiProperty(declaration, symbol, options);
-        } else if (ts.isMethodSignature(declaration)) {
-            return new ApiMethod(declaration, symbol, options);
-        }
-
-        console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
-    }
-
-    public ToJson(): { [key: string]: any; } {
-        const membersJson: { [key: string]: any } = {};
-
-        for (const memberKey in this.members) {
-            if (this.members.hasOwnProperty(memberKey)) {
-                membersJson[memberKey] = this.members[memberKey].ToJson();
-            }
-        }
-
+    public Extract(): ApiInterfaceDto {
         return {
-            Kind: "interface",
+            ApiType: ApiItemType.Interface,
             Name: this.Symbol.name,
-            Members: membersJson,
+            Kind: this.Declaration.kind,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
+            Members: this.members,
             Extends: this.extends
         };
     }

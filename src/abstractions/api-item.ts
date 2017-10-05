@@ -1,22 +1,31 @@
 import * as ts from "typescript";
 
+import { ItemsRegistry } from "../contracts/items-registry";
+import { ApiItemDto } from "../contracts/api-items/api-item-dto";
+
 export interface ApiItemOptions {
-    typeChecker: ts.TypeChecker;
-    program: ts.Program;
+    Program: ts.Program;
+    ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;
 }
 
-// TODO: Accept generic to have specific Declaration.
-export abstract class ApiItem<TDeclaration = ts.Declaration> {
+export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiItemDto> {
     protected TypeChecker: ts.TypeChecker;
     protected Program: ts.Program;
+    protected ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;
 
-    constructor(protected Declaration: TDeclaration, protected Symbol: ts.Symbol, options: ApiItemOptions) {
-        this.TypeChecker = options.typeChecker;
-        this.Program = options.program;
+    constructor(private declaration: TDeclaration, private symbol: ts.Symbol, options: ApiItemOptions) {
+        this.Program = options.Program;
+        this.TypeChecker = options.Program.getTypeChecker();
+        this.ItemsRegistry = options.ItemsRegistry;
     }
 
-    /**
-     * Temp method for items debugging.
-     */
-    public abstract ToJson(): { [key: string]: any };
+    public get Declaration(): TDeclaration {
+        return this.declaration;
+    }
+
+    public get Symbol(): ts.Symbol {
+        return this.symbol;
+    }
+
+    public abstract Extract(): TExtract;
 }
