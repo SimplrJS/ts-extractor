@@ -46,8 +46,9 @@ export class Extractor {
         const typeChecker = program.getTypeChecker();
         const apiSourceFiles: ApiSourceFile[] = [];
 
-        program.getRootFileNames().forEach(fileName => {
-            const sourceFile: ts.SourceFile = program.getSourceFile(files[0]);
+        const rootFiles = program.getRootFileNames();
+        rootFiles.forEach(fileName => {
+            const sourceFile: ts.SourceFile = program.getSourceFile(fileName);
 
             const apiSourceFile = new ApiSourceFile(sourceFile, {
                 Program: program,
