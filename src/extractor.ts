@@ -29,18 +29,17 @@ export class Extractor {
     private compilerOptions: ts.CompilerOptions;
     private itemsRegistry: ApiItemsRegistry;
 
-    private logErrorHandler(message: string, fileName: string, lineNumber: number | undefined): void {
-        Logger.Log(LogLevel.Error, `TypeScript: [${fileName}:${lineNumber}] ${message}`);
-    }
-
     public Extract(files: string[]): ExtractDto {
         const program = ts.createProgram(files, this.compilerOptions);
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
         // with semantic information (i.e. symbols).  The "diagnostics" are a subset of the everyday
         // compile errors that would result from a full compilation.
-        for (const diagnostic of program.getSemanticDiagnostics()) {
-            this.logErrorHandler(diagnostic.messageText.toString(), `${diagnostic.file}`, diagnostic.start);
+        const diagnostics = program.getSemanticDiagnostics();
+        if (diagnostics.length > 0) {
+            const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), undefined);
+            Logger.Log(LogLevel.Error, str);
+            // TODO: Throw
         }
 
         const typeChecker = program.getTypeChecker();
