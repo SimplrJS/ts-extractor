@@ -3,6 +3,8 @@ import * as ts from "typescript";
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
+import { ApiTypeDto } from "./contracts/api-items/api-type-dto";
+import { ApiItemType } from "./contracts/api-items/api-item-type";
 import { TSHelpers } from "./ts-helpers";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
@@ -106,5 +108,62 @@ export namespace ApiHelpers {
         });
 
         return items;
+    }
+
+    export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
+
+    export function GetHeritageList(
+        heritageClauses: ts.NodeArray<ts.HeritageClause>,
+        kind: HeritageKinds,
+        options: ApiItemOptions
+    ): ApiTypeDto[] {
+        const typeChecker = options.Program.getTypeChecker();
+        const list: ApiTypeDto[] = [];
+
+        heritageClauses.forEach(heritage => {
+            if (heritage.token !== kind) {
+                return;
+            }
+
+            heritage.types.forEach(expressionType => {
+                list.push(GetApiItemDto(expressionType, options));
+            });
+        });
+
+        return list;
+    }
+
+    // TODO: Move this to a separate class.
+    export function GetApiItemDto(typeNode: ts.TypeNode, options: ApiItemOptions): ApiTypeDto {
+        const typeChecker = options.Program.getTypeChecker();
+
+        const type = typeChecker.getTypeFromTypeNode(typeNode);
+        const symbol = type.getSymbol();
+        let generics: ApiTypeDto[] = [];
+        let declarationId: string | undefined;
+        let text: string;
+
+        if (symbol != null) {
+            text = symbol.getName();
+            if (symbol.declarations != null && symbol.declarations.length > 0) {
+                declarationId = options.ItemsRegistry.Find(symbol.declarations[0]);
+            }
+        } else {
+            text = typeChecker.typeToString(type);
+        }
+
+        if ((ts.isExpressionWithTypeArguments(typeNode) || ts.isTypeReferenceNode(typeNode))
+            && typeNode.typeArguments != null) {
+            generics = typeNode.typeArguments.map<ApiTypeDto>(x => GetApiItemDto(x, options));
+        }
+
+        return {
+            ApiType: ApiItemType.Type,
+            Kind: typeNode.kind,
+            KindString: ts.SyntaxKind[typeNode.kind],
+            Reference: declarationId,
+            Generics: (generics.length > 0 ? generics : undefined),
+            Text: text
+        };
     }
 }

@@ -71,27 +71,4 @@ export namespace TSHelpers {
          */
         return (declaration as any).symbol;
     }
-
-    export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
-
-    export function GetHeritageList(
-        heritageClauses: ts.NodeArray<ts.HeritageClause>,
-        kind: HeritageKinds,
-        typeChecker: ts.TypeChecker
-    ): string[] {
-        const list: string[] = [];
-
-        heritageClauses.forEach(heritage => {
-            if (heritage.token !== kind) {
-                return;
-            }
-
-            heritage.types.forEach(expressionType => {
-                const type = typeChecker.getTypeFromTypeNode(expressionType);
-                list.push(typeChecker.typeToString(type));
-            });
-        });
-
-        return list;
-    }
 }
