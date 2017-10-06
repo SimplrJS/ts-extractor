@@ -126,18 +126,18 @@ export namespace ApiHelpers {
             }
 
             heritage.types.forEach(expressionType => {
-                list.push(GetApiItemDto(expressionType, options));
+                const type = typeChecker.getTypeFromTypeNode(expressionType);
+
+                list.push(TypeToApiTypeDto(type, options));
             });
         });
 
         return list;
     }
 
-    // TODO: Move this to a separate class.
-    export function GetApiItemDto(typeNode: ts.TypeNode, options: ApiItemOptions): ApiTypeDto {
+    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): ApiTypeDto {
         const typeChecker = options.Program.getTypeChecker();
 
-        const type = typeChecker.getTypeFromTypeNode(typeNode);
         const symbol = type.getSymbol();
         let generics: ApiTypeDto[] = [];
         let declarationId: string | undefined;
@@ -152,15 +152,12 @@ export namespace ApiHelpers {
             text = typeChecker.typeToString(type);
         }
 
-        if ((ts.isExpressionWithTypeArguments(typeNode) || ts.isTypeReferenceNode(typeNode))
-            && typeNode.typeArguments != null) {
-            generics = typeNode.typeArguments.map<ApiTypeDto>(x => GetApiItemDto(x, options));
+        if (TSHelpers.IsTypeWithTypeArguments(type)) {
+            generics = type.typeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
         }
 
         return {
             ApiType: ApiItemType.Type,
-            Kind: typeNode.kind,
-            KindString: ts.SyntaxKind[typeNode.kind],
             Reference: declarationId,
             Generics: (generics.length > 0 ? generics : undefined),
             Text: text
