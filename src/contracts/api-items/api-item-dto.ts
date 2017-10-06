@@ -1,5 +1,12 @@
-import { ApiBaseDto } from "./api-base-dto";
+import * as ts from "typescript";
+import { ApiItemType } from "./api-item-type";
 
-export interface ApiItemDto extends ApiBaseDto {
+/**
+ * This is the interface for definitions like: interface, class or enum etc.
+ */
+export interface ApiItemDto {
     Name: string;
+    ApiType: ApiItemType;
+    Kind: ts.SyntaxKind;
+    KindString: string;
 }

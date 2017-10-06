@@ -1,6 +1,4 @@
-import { ApiBaseDto } from "./api-base-dto";
-
-export interface ApiTypeDto extends ApiBaseDto {
+export interface ApiTypeDto {
     Reference?: string;
     Generics?: ApiTypeDto[];
     Text: string;
