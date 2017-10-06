@@ -4,7 +4,7 @@ exports[`InterfaceDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
-      "ApiType": "source-file",
+      "ApiKind": "source-file",
       "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration2.ts",
       "Kind": 265,
       "KindString": "SourceFile",
@@ -16,7 +16,7 @@ Object {
   ],
   "Registry": Object {
     "InterfaceDeclaration-0": Object {
-      "ApiType": "interface",
+      "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
@@ -26,11 +26,18 @@ Object {
       "Name": "Foo",
     },
     "PropertySignature-0": Object {
-      "ApiType": "property",
+      "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
       "Name": "Bar",
-      "ReturnType": "string",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
     },
   },
 }

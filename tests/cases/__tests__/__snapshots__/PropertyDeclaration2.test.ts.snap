@@ -4,7 +4,7 @@ exports[`PropertyDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
-      "ApiType": "source-file",
+      "ApiKind": "source-file",
       "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/PropertyDeclaration2.ts",
       "Kind": 265,
       "KindString": "SourceFile",
@@ -16,11 +16,18 @@ Object {
   ],
   "Registry": Object {
     "VariableDeclaration-0": Object {
-      "ApiType": "variable",
+      "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
       "Name": "Foo",
-      "Type": "string",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
     },
   },
 }
