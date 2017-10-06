@@ -3,10 +3,10 @@ import * as ts from "typescript";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiInterfaceDto } from "../contracts/api-items/api-interface-dto";
-import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
-import { ApiTypeDto } from "../contracts/api-items/api-type-dto";
+import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
+import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemTypes } from "../contracts/api-item-types";
+import { ApiTypeDto } from "../contracts/type-dto";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
     constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -37,7 +37,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
 
     public Extract(): ApiInterfaceDto {
         return {
-            ApiType: ApiItemType.Interface,
+            ApiType: ApiItemTypes.Interface,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

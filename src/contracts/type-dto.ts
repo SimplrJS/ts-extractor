@@ -1,7 +1,6 @@
-import { ApiItemType } from "./api-item-type";
+import { ApiItemTypes } from "./api-item-types";
 
 export interface ApiTypeBaseDto {
-    ApiType: ApiItemType;
     Reference?: string;
     Text: string;
 }

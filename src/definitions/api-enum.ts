@@ -4,9 +4,9 @@ import { ApiEnumMember } from "./api-enum-member";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiEnumDto } from "../contracts/api-items/api-enum-dto";
-import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiEnumDto } from "../contracts/definitions/api-enum-dto";
+import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemTypes } from "../contracts/api-item-types";
 
 export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
     constructor(declaration: ts.EnumDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -23,7 +23,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
 
     public Extract(): ApiEnumDto {
         return {
-            ApiType: ApiItemType.Enum,
+            ApiType: ApiItemTypes.Enum,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

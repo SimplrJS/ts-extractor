@@ -3,8 +3,8 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiParameterDto } from "../contracts/api-items/api-parameter-dto";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiParameterDto } from "../contracts/definitions/api-parameter-dto";
+import { ApiItemTypes } from "../contracts/api-item-types";
 
 export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterDto> {
     public GetReturnType(): string {
@@ -13,7 +13,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
 
     public Extract(): ApiParameterDto {
         return {
-            ApiType: ApiItemType.Namespace,
+            ApiType: ApiItemTypes.Namespace,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

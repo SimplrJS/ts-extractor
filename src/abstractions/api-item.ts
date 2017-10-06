@@ -1,14 +1,14 @@
 import * as ts from "typescript";
 
 import { ItemsRegistry } from "../contracts/items-registry";
-import { ApiItemDto } from "../contracts/api-items/api-item-dto";
+import { ApiBaseItemDto } from "../contracts/api-base-item-dto";
 
 export interface ApiItemOptions {
     Program: ts.Program;
     ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;
 }
 
-export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiItemDto> {
+export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseItemDto> {
     protected TypeChecker: ts.TypeChecker;
     protected Program: ts.Program;
     protected ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;

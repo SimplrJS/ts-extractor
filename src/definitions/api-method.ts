@@ -3,9 +3,9 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiMethodDto } from "../contracts/api-items/api-method-dto";
-import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiMethodDto } from "../contracts/definitions/api-method-dto";
+import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemTypes } from "../contracts/api-item-types";
 
 import { ApiParameter } from "./api-parameter";
 
@@ -27,7 +27,7 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
 
     public Extract(): ApiMethodDto {
         return {
-            ApiType: ApiItemType.Method,
+            ApiType: ApiItemTypes.Method,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

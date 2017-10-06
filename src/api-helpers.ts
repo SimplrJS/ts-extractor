@@ -2,9 +2,9 @@ import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
-import { ApiTypeDto } from "./contracts/api-items/api-type-dto";
-import { ApiItemType } from "./contracts/api-items/api-item-type";
+import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
+import { ApiTypeDto } from "./contracts/type-dto";
+import { ApiItemTypes } from "./contracts/api-item-types";
 import { TSHelpers } from "./ts-helpers";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
@@ -135,7 +135,7 @@ export namespace ApiHelpers {
         return list;
     }
 
-    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): ApiTypeDto | ApiTypeDto[] {
+    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): ApiTypeDto {
         const typeChecker = options.Program.getTypeChecker();
 
         const symbol = type.getSymbol();
@@ -164,7 +164,6 @@ export namespace ApiHelpers {
         }
 
         return {
-            ApiType: ApiItemType.Type,
             Reference: declarationId,
             Generics: (generics.length > 0 ? generics : undefined),
             Text: text
