@@ -75,6 +75,10 @@ export namespace TSHelpers {
     export type TypeWithTypeArguments = ts.Type & { typeArguments: ts.Type[] };
 
     export function IsTypeWithTypeArguments(type: ts.Type): type is TypeWithTypeArguments {
-        return (type as any).typeArguments != null;
+        return (type as TypeWithTypeArguments).typeArguments != null;
+    }
+
+    export function IsTypeUnionOrIntersectionType(type: ts.Type): type is ts.UnionOrIntersectionType {
+        return (type as ts.UnionOrIntersectionType).types != null;
     }
 }

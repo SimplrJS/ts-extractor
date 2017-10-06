@@ -1,8 +1,11 @@
 import { ApiItemType } from "./api-item-type";
 
-export interface ApiTypeDto {
+export interface ApiTypeBaseDto {
     ApiType: ApiItemType;
     Reference?: string;
-    Generics?: ApiTypeDto[];
     Text: string;
+}
+
+export interface ApiTypeDto extends ApiTypeBaseDto {
+    Generics?: ApiTypeDto[];
 }

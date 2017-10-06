@@ -135,13 +135,15 @@ export namespace ApiHelpers {
         return list;
     }
 
-    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): ApiTypeDto {
+    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): ApiTypeDto | ApiTypeDto[] {
         const typeChecker = options.Program.getTypeChecker();
 
         const symbol = type.getSymbol();
         let generics: ApiTypeDto[] = [];
         let declarationId: string | undefined;
         let text: string;
+        console.log(typeChecker.typeToString(type));
+        debugger;
 
         if (symbol != null) {
             text = symbol.getName();
@@ -154,6 +156,11 @@ export namespace ApiHelpers {
 
         if (TSHelpers.IsTypeWithTypeArguments(type)) {
             generics = type.typeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
+        }
+
+        if (TSHelpers.IsTypeUnionOrIntersectionType(type)) {
+            const a = type.types.map(x => TypeToApiTypeDto(x, options));
+            debugger;
         }
 
         return {

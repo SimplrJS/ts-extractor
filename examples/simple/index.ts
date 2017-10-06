@@ -1,10 +1,12 @@
-// /**
-//  * Some JSdoc information.
-//  * 2nd line of some JSdoc information.
-//  * @summary Some summary about this package version.
-//  * @summary 2nd of some summary about this package version.
-//  */
-// export const itemsList: string[] = ["a"];
+export type A = number & { ok(): void };
+
+/**
+ * Some JSdoc information.
+ * 2nd line of some JSdoc information.
+ * @summary Some summary about this package version.
+ * @summary 2nd of some summary about this package version.
+ */
+export const itemsList: Array<string | A> = ["a"];
 
 // export function Ok(isIt: boolean): boolean {
 //     return isIt;
@@ -35,16 +37,16 @@
 //     Trecias
 // }
 
-export interface Boo {
-    Boos: string[];
-}
+// export interface Boo {
+//     Boos: string[];
+// }
 
-export interface Foo<TType> {
-    Name: string;
-    Surname: string;
-    Type: TType;
-}
+// export interface Foo<TType> {
+//     Name: string;
+//     Surname: string;
+//     Type: TType;
+// }
 
-export interface Bar extends Foo<number>, Boo {
-    OtherStuff: string[];
-}
+// export interface Bar extends Foo<number>, Boo {
+//     OtherStuff: string[];
+// }
