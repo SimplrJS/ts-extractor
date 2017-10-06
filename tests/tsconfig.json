@@ -6,18 +6,29 @@
         "sourceMap": false,
         "skipDefaultLibCheck": true,
         "pretty": true,
-        "strict": true,
         "noEmit": true,
-        "noUnusedLocals": true,
+        "experimentalDecorators": false,
+        "baseUrl": "./",
         "typeRoots": [
             "../"
         ],
         "types": [
-            "jest"
+            "jest",
+            "typescript",
+            "node"
         ],
         "lib": [
-            "es6"
+            "es6",
+            "dom"
         ],
-        "rootDir": "./"
+        "paths": {
+            "@src/*": [
+                "../src/*"
+            ]
+        },
+        "rootDirs": [
+            "./",
+            "../src"
+        ]
     }
 }

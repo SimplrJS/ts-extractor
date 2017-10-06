@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyDeclaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/PropertyDeclaration2.ts",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "VariableDeclaration-0",
+      },
+      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/PropertyDeclaration2.ts",
+    },
+  ],
+  "Registry": Object {
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Kind": 226,
+      "KindString": "VariableDeclaration",
+      "Name": "Foo",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+  },
+}
+`;

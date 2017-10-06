@@ -23,9 +23,9 @@ export class Logging {
      */
     public Log: LogMessageMethod = (level: LogLevel, ...messages: any[]) => this.log(undefined, level, ...messages);
 
-    private log(formatter: MessageFormatter | undefined, level: LogLevel, ...messages: any[]): void {
+    private log(formatter: MessageFormatter | undefined, level: LogLevel, ...messages: any[]): number {
         if (!this.IsEnabled(level)) {
-            return;
+            return Date.now();
         }
 
         let formattedMessages = (formatter != null) ? formatter(...messages) : messages;
@@ -33,7 +33,8 @@ export class Logging {
             formattedMessages = [formattedMessages];
         }
 
-        return this.WriteMessage(level, messages);
+        this.WriteMessage(level, messages);
+        return Date.now();
     }
 
     /**
