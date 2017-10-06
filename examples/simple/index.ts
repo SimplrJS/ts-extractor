@@ -1,4 +1,4 @@
-export type A = number & { ok(): void };
+export type A<TValue> = number & { ok(): TValue };
 
 /**
  * Some JSdoc information.
@@ -6,7 +6,7 @@ export type A = number & { ok(): void };
  * @summary Some summary about this package version.
  * @summary 2nd of some summary about this package version.
  */
-export const itemsList: Array<string | A> = ["a"];
+export const itemsList: Array<string | A<number>> = ["a"];
 
 // export function Ok(isIt: boolean): boolean {
 //     return isIt;

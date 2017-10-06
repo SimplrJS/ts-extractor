@@ -6,9 +6,8 @@ import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
 import {
     ApiTypeDto,
     ApiTypeDefaultDto,
-    ApiTypeIntersectionDto,
     ApiTypeReferenceDto,
-    ApiTypeUnionDto
+    ApiTypeUnionOrIntersectionDto
 } from "./contracts/type-dto";
 import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
@@ -158,6 +157,8 @@ export namespace ApiHelpers {
         // Generics
         if (TSHelpers.IsTypeWithTypeArguments(type)) {
             generics = type.typeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
+        } else if (type.aliasTypeArguments != null) {
+            generics = type.aliasTypeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
         }
 
         // Find declaration reference.
@@ -170,10 +171,10 @@ export namespace ApiHelpers {
                 if (declarationId != null) {
                     return {
                         ApiTypeKind: TypeKinds.Reference,
-                        Generics: generics,
                         ReferenceId: declarationId,
                         Name: name,
-                        Text: text
+                        Text: text,
+                        Generics: generics
                     } as ApiTypeReferenceDto;
                 }
             }
@@ -196,7 +197,7 @@ export namespace ApiHelpers {
                 Name: name,
                 Text: text,
                 Types: types
-            } as ApiTypeUnionDto | ApiTypeIntersectionDto;
+            } as ApiTypeUnionOrIntersectionDto;
         }
 
         return {

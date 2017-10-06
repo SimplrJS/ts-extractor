@@ -9,29 +9,25 @@ export interface ApiBaseTypeDto {
     Name?: string;
 }
 
-export type ApiTypeDto = ApiTypeDefaultDto | ApiTypeUnionDto | ApiTypeIntersectionDto | ApiTypeReferenceDto;
+export interface ApiTypeScriptSpecificPropertiesDto {
+    Flags: ts.TypeFlags;
+    FlagsString: string;
+}
 
-export interface ApiTypeDefaultDto extends ApiBaseTypeDto {
+export type ApiTypeDto = ApiTypeDefaultDto | ApiTypeUnionOrIntersectionDto | ApiTypeReferenceDto;
+
+export interface ApiTypeDefaultDto extends ApiBaseTypeDto, ApiTypeScriptSpecificPropertiesDto {
     ApiTypeKind: TypeKinds.Default;
     Generics?: ApiTypeDto[];
 }
 
-export interface ApiTypeUnionDto extends ApiBaseTypeDto {
-    ApiTypeKind: TypeKinds.Union;
-    Flags: ts.TypeFlags;
-    FlagsString: string;
-    Types: ApiTypeDto[];
-}
-
-export interface ApiTypeIntersectionDto extends ApiBaseTypeDto {
-    ApiTypeKind: TypeKinds.Intersection;
-    Flags: ts.TypeFlags;
-    FlagsString: string;
+export interface ApiTypeUnionOrIntersectionDto extends ApiBaseTypeDto, ApiTypeScriptSpecificPropertiesDto {
+    ApiTypeKind: TypeKinds.Union | TypeKinds.Intersection;
     Types: ApiTypeDto[];
 }
 
 export interface ApiTypeReferenceDto extends ApiBaseTypeDto {
     ApiTypeKind: TypeKinds.Reference;
-    Generics?: ApiTypeDto[];
     ReferenceId: string;
+    Generics?: ApiTypeDto[];
 }
