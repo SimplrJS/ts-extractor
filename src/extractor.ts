@@ -1,6 +1,7 @@
 import * as ts from "typescript";
 import * as os from "os";
 import { PackageJson } from "read-package-json";
+import * as path from "path";
 
 import { Logger, LogLevel } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
@@ -30,8 +31,15 @@ export class Extractor {
     private compilerOptions: ts.CompilerOptions;
     private itemsRegistry: ApiItemsRegistry;
 
-    public Extract(files: string[]): ExtractDto {
-        const program = ts.createProgram(files, this.compilerOptions);
+    public Extract(files: string[], projectDirectory: string = __dirname): ExtractDto {
+        const rootNames = files.map(file => {
+            if (path.isAbsolute(file)) {
+                return file;
+            }
+            return path.join(projectDirectory, file);
+        });
+
+        const program = ts.createProgram(rootNames, this.compilerOptions);
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
         // with semantic information (i.e. symbols).  The "diagnostics" are a subset of the everyday
@@ -40,6 +48,7 @@ export class Extractor {
         if (diagnostics.length > 0) {
             const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), {
                 getCanonicalFileName: () => __filename,
+                // TODO: Maybe use projetDirectory?
                 getCurrentDirectory: () => __dirname,
                 getNewLine: () => os.EOL
             });
