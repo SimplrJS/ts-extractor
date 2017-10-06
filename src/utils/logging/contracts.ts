@@ -1,6 +1,6 @@
 export type WriteMessageHandler = (level: LogLevel, message: any, exception?: Error) => void;
 
-export type LogMessageMethod = (level: LogLevel, ...messages: any[]) => void;
+export type LogMessageMethod = (level: LogLevel, ...messages: any[]) => number;
 
 export type MessageFormatter = (...messages: any[]) => any | any[];
 
