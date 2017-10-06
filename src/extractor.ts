@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import * as os from "os";
 import { PackageJson } from "read-package-json";
 
 import { Logger, LogLevel } from "./utils/logger";
@@ -37,7 +38,11 @@ export class Extractor {
         // compile errors that would result from a full compilation.
         const diagnostics = program.getSemanticDiagnostics();
         if (diagnostics.length > 0) {
-            const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), undefined);
+            const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), {
+                getCanonicalFileName: () => __filename,
+                getCurrentDirectory: () => __dirname,
+                getNewLine: () => os.EOL
+            });
             Logger.Log(LogLevel.Error, str);
             // TODO: Throw
         }
