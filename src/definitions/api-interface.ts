@@ -30,7 +30,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
     /**
      * Interfaces can extend multiple interfaces.
      */
-    private extends: ApiTypeDto[] = [];
+    private extends: TypeDto[] = [];
     private members: ApiItemReferenceDict = {};
 
     public Extract(): ApiInterfaceDto {

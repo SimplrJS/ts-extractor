@@ -200,6 +200,7 @@ export namespace ApiHelpers {
             } as ApiTypeUnionOrIntersectionDto;
         }
 
+        // Default
         return {
             ApiTypeKind: kind,
             Flags: type.flags,
