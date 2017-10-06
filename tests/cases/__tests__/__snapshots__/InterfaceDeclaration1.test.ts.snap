@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InterfaceDeclaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiType": "source-file",
+      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration1.ts",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "InterfaceDeclaration-0",
+      },
+      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration1.ts",
+    },
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiType": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {},
+      "Name": "Foo",
+    },
+  },
+}
+`;
