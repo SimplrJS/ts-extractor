@@ -1,5 +1,6 @@
 export enum TypeKinds {
-    Type = "type",
+    Default = "default",
     Union = "union",
-    Intersection = "intersection"
+    Intersection = "intersection",
+    Reference = "reference"
 }

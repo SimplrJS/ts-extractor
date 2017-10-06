@@ -3,7 +3,13 @@ import * as ts from "typescript";
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
-import { ApiTypeDto } from "./contracts/type-dto";
+import {
+    ApiTypeDto,
+    ApiTypeDefaultDto,
+    ApiTypeIntersectionDto,
+    ApiTypeReferenceDto,
+    ApiTypeUnionDto
+} from "./contracts/type-dto";
 import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
 import { TSHelpers } from "./ts-helpers";
@@ -145,24 +151,36 @@ export namespace ApiHelpers {
 
         const symbol = type.getSymbol() || type.aliasSymbol;
         let generics: ApiTypeDto[] | undefined;
-        let kind = TypeKinds.Type;
+        let kind = TypeKinds.Default;
         let types: ApiTypeDto[] | undefined;
-        let declarationId: string | undefined;
         let name: string | undefined;
 
-        if (symbol != null) {
-            name = symbol.getName();
-
-            if (symbol.declarations != null && symbol.declarations.length > 0) {
-                declarationId = options.ItemsRegistry.Find(symbol.declarations[0]);
-            }
-        }
-
+        // Generics
         if (TSHelpers.IsTypeWithTypeArguments(type)) {
             generics = type.typeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
         }
 
-        if (TSHelpers.IsTypeUnionOrIntersectionType(type) && declarationId == null) {
+        // Find declaration reference.
+        if (symbol != null) {
+            name = symbol.getName();
+
+            if (symbol.declarations != null && symbol.declarations.length > 0) {
+                const declarationId = options.ItemsRegistry.Find(symbol.declarations[0]);
+
+                if (declarationId != null) {
+                    return {
+                        ApiTypeKind: TypeKinds.Reference,
+                        Generics: generics,
+                        ReferenceId: declarationId,
+                        Name: name,
+                        Text: text
+                    } as ApiTypeReferenceDto;
+                }
+            }
+        }
+
+        // Union or Intersection
+        if (TSHelpers.IsTypeUnionOrIntersectionType(type)) {
             if (TSHelpers.IsTypeUnionType(type)) {
                 kind = TypeKinds.Union;
             } else {
@@ -170,17 +188,24 @@ export namespace ApiHelpers {
             }
 
             types = type.types.map(x => TypeToApiTypeDto(x, options));
+
+            return {
+                ApiTypeKind: kind,
+                Flags: type.flags,
+                FlagsString: ts.TypeFlags[type.flags],
+                Name: name,
+                Text: text,
+                Types: types
+            } as ApiTypeUnionDto | ApiTypeIntersectionDto;
         }
 
         return {
-            ApyTypeKind: kind,
-            Reference: declarationId,
+            ApiTypeKind: kind,
             Flags: type.flags,
             FlagsString: ts.TypeFlags[type.flags],
             Name: name,
             Text: text,
-            Generics: generics,
-            Types: types,
-        };
+            Generics: generics
+        } as ApiTypeDefaultDto;
     }
 }
