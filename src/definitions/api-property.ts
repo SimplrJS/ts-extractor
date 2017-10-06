@@ -3,21 +3,27 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiPropertyDto } from "../contracts/api-items/api-property-dto";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiPropertyDto } from "../contracts/definitions/api-property-dto";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { TypeDto } from "../contracts/type-dto";
 
 export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
-    public GetReturnType(): string {
-        return TSHelpers.TypeToString(this.Declaration, this.Symbol, this.TypeChecker);
+    public GetReturnType(): TypeDto {
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+
+        return ApiHelpers.TypeToApiTypeDto(type, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
+        });
     }
 
     public Extract(): ApiPropertyDto {
         return {
-            ApiType: ApiItemType.Property,
+            ApiKind: ApiItemKinds.Property,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            ReturnType: this.GetReturnType()
+            Type: this.GetReturnType()
         };
     }
 }

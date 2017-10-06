@@ -1,4 +1,4 @@
-export enum ApiItemType {
+export enum ApiItemKinds {
     SourceFile = "source-file",
     Enum = "enum",
     EnumMember = "enum-member",
@@ -8,5 +8,6 @@ export enum ApiItemType {
     Namespace = "namespace",
     Parameter = "parameter",
     Property = "property",
-    Variable = "variable"
+    Variable = "variable",
+    Type = "type"
 }

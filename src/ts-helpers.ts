@@ -72,26 +72,21 @@ export namespace TSHelpers {
         return (declaration as any).symbol;
     }
 
-    export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
+    export type TypeWithTypeArguments = ts.Type & { typeArguments: ts.Type[] };
 
-    export function GetHeritageList(
-        heritageClauses: ts.NodeArray<ts.HeritageClause>,
-        kind: HeritageKinds,
-        typeChecker: ts.TypeChecker
-    ): string[] {
-        const list: string[] = [];
+    export function IsTypeWithTypeArguments(type: ts.Type): type is TypeWithTypeArguments {
+        return (type as TypeWithTypeArguments).typeArguments != null;
+    }
 
-        heritageClauses.forEach(heritage => {
-            if (heritage.token !== kind) {
-                return;
-            }
+    export function IsTypeUnionOrIntersectionType(type: ts.Type): type is ts.UnionOrIntersectionType {
+        return Boolean(type.flags & ts.TypeFlags.UnionOrIntersection);
+    }
 
-            heritage.types.forEach(expressionType => {
-                const type = typeChecker.getTypeFromTypeNode(expressionType);
-                list.push(typeChecker.typeToString(type));
-            });
-        });
+    export function IsTypeUnionType(type: ts.Type): type is ts.UnionType {
+        return Boolean(type.flags & ts.TypeFlags.Union);
+    }
 
-        return list;
+    export function IsTypeIntersectionType(type: ts.Type): type is ts.IntersectionType {
+        return Boolean(type.flags & ts.TypeFlags.Intersection);
     }
 }

@@ -3,9 +3,9 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiNamespaceDto } from "../contracts/api-items/api-namespace-dto";
-import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiNamespaceDto } from "../contracts/definitions/api-namespace-dto";
+import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 
 export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto> {
     constructor(declaration: ts.ModuleDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -26,7 +26,7 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
 
     public Extract(): ApiNamespaceDto {
         return {
-            ApiType: ApiItemType.Namespace,
+            ApiKind: ApiItemKinds.Namespace,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

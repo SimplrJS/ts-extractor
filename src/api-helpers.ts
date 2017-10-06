@@ -2,7 +2,15 @@ import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceDict } from "./contracts/api-items/api-item-reference-dict";
+import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
+import {
+    TypeDto,
+    TypeDefaultDto,
+    TypeReferenceDto,
+    TypeUnionOrIntersectionDto
+} from "./contracts/type-dto";
+import { ApiItemKinds } from "./contracts/api-item-kinds";
+import { TypeKinds } from "./contracts/type-kinds";
 import { TSHelpers } from "./ts-helpers";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
@@ -15,6 +23,7 @@ import { ApiInterface } from "./definitions/api-interface";
 import { ApiProperty } from "./definitions/api-property";
 import { ApiMethod } from "./definitions/api-method";
 import { ApiParameter } from "./definitions/api-parameter";
+import { ApiType } from "./definitions/api-type";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -39,6 +48,8 @@ export namespace ApiHelpers {
             return new ApiMethod(declaration, symbol, options);
         } else if (ts.isParameter(declaration)) {
             return new ApiParameter(declaration, symbol, options);
+        } else if (ts.isTypeAliasDeclaration(declaration)) {
+            return new ApiType(declaration, symbol, options);
         }
 
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
@@ -106,5 +117,97 @@ export namespace ApiHelpers {
         });
 
         return items;
+    }
+
+    export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
+
+    export function GetHeritageList(
+        heritageClauses: ts.NodeArray<ts.HeritageClause>,
+        kind: HeritageKinds,
+        options: ApiItemOptions
+    ): TypeDto[] {
+        const typeChecker = options.Program.getTypeChecker();
+        const list: TypeDto[] = [];
+
+        heritageClauses.forEach(heritage => {
+            if (heritage.token !== kind) {
+                return;
+            }
+
+            heritage.types.forEach(expressionType => {
+                const type = typeChecker.getTypeFromTypeNode(expressionType);
+
+                list.push(TypeToApiTypeDto(type, options));
+            });
+        });
+
+        return list;
+    }
+
+    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): TypeDto {
+        const typeChecker = options.Program.getTypeChecker();
+        const text = typeChecker.typeToString(type);
+
+        const symbol = type.getSymbol() || type.aliasSymbol;
+        let generics: TypeDto[] | undefined;
+        let kind = TypeKinds.Default;
+        let types: TypeDto[] | undefined;
+        let name: string | undefined;
+
+        // Generics
+        if (TSHelpers.IsTypeWithTypeArguments(type)) {
+            generics = type.typeArguments.map<TypeDto>(x => TypeToApiTypeDto(x, options));
+        } else if (type.aliasTypeArguments != null) {
+            generics = type.aliasTypeArguments.map<TypeDto>(x => TypeToApiTypeDto(x, options));
+        }
+
+        // Find declaration reference.
+        if (symbol != null) {
+            name = symbol.getName();
+
+            if (symbol.declarations != null && symbol.declarations.length > 0) {
+                const declarationId = options.ItemsRegistry.Find(symbol.declarations[0]);
+
+                if (declarationId != null) {
+                    return {
+                        ApiTypeKind: TypeKinds.Reference,
+                        ReferenceId: declarationId,
+                        Name: name,
+                        Text: text,
+                        Generics: generics
+                    } as TypeReferenceDto;
+                }
+            }
+        }
+
+        // Union or Intersection
+        if (TSHelpers.IsTypeUnionOrIntersectionType(type)) {
+            if (TSHelpers.IsTypeUnionType(type)) {
+                kind = TypeKinds.Union;
+            } else {
+                kind = TypeKinds.Intersection;
+            }
+
+            types = type.types.map(x => TypeToApiTypeDto(x, options));
+
+            return {
+                ApiTypeKind: kind,
+                Flags: type.flags,
+                FlagsString: ts.TypeFlags[type.flags],
+                Name: name,
+                Text: text,
+                Types: types
+            } as TypeUnionOrIntersectionDto;
+        }
+
+        // Default
+        return {
+            ApiTypeKind: kind,
+            Flags: type.flags,
+            FlagsString: ts.TypeFlags[type.flags],
+            Name: name,
+            Text: text,
+            Generics: generics
+        } as TypeDefaultDto;
     }
 }

@@ -3,8 +3,8 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiEnumMemberDto } from "../contracts/api-items/api-enum-member-dto";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiEnumMemberDto } from "../contracts/definitions/api-enum-member-dto";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 
 export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
     public GetValue(): string {
@@ -30,7 +30,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
 
     public Extract(): ApiEnumMemberDto {
         return {
-            ApiType: ApiItemType.EnumMember,
+            ApiKind: ApiItemKinds.EnumMember,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
