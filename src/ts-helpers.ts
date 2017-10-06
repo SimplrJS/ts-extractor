@@ -79,6 +79,14 @@ export namespace TSHelpers {
     }
 
     export function IsTypeUnionOrIntersectionType(type: ts.Type): type is ts.UnionOrIntersectionType {
-        return (type as ts.UnionOrIntersectionType).types != null;
+        return Boolean(type.flags & ts.TypeFlags.UnionOrIntersection);
+    }
+
+    export function IsTypeUnionType(type: ts.Type): type is ts.UnionType {
+        return Boolean(type.flags & ts.TypeFlags.Union);
+    }
+
+    export function IsTypeIntersectionType(type: ts.Type): type is ts.IntersectionType {
+        return Boolean(type.flags & ts.TypeFlags.Intersection);
     }
 }

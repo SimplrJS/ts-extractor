@@ -5,6 +5,7 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
 import { ApiTypeDto } from "./contracts/type-dto";
 import { ApiItemTypes } from "./contracts/api-item-types";
+import { TypeKinds } from "./contracts/type-kinds";
 import { TSHelpers } from "./ts-helpers";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
@@ -17,6 +18,7 @@ import { ApiInterface } from "./definitions/api-interface";
 import { ApiProperty } from "./definitions/api-property";
 import { ApiMethod } from "./definitions/api-method";
 import { ApiParameter } from "./definitions/api-parameter";
+import { ApiType } from "./definitions/api-type";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -41,6 +43,8 @@ export namespace ApiHelpers {
             return new ApiMethod(declaration, symbol, options);
         } else if (ts.isParameter(declaration)) {
             return new ApiParameter(declaration, symbol, options);
+        } else if (ts.isTypeAliasDeclaration(declaration)) {
+            return new ApiType(declaration, symbol, options);
         }
 
         console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
@@ -137,36 +141,46 @@ export namespace ApiHelpers {
 
     export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): ApiTypeDto {
         const typeChecker = options.Program.getTypeChecker();
+        const text = typeChecker.typeToString(type);
 
-        const symbol = type.getSymbol();
-        let generics: ApiTypeDto[] = [];
+        const symbol = type.getSymbol() || type.aliasSymbol;
+        let generics: ApiTypeDto[] | undefined;
+        let kind = TypeKinds.Type;
+        let types: ApiTypeDto[] | undefined;
         let declarationId: string | undefined;
-        let text: string;
-        console.log(typeChecker.typeToString(type));
-        debugger;
+        let name: string | undefined;
 
         if (symbol != null) {
-            text = symbol.getName();
+            name = symbol.getName();
+
             if (symbol.declarations != null && symbol.declarations.length > 0) {
                 declarationId = options.ItemsRegistry.Find(symbol.declarations[0]);
             }
-        } else {
-            text = typeChecker.typeToString(type);
         }
 
         if (TSHelpers.IsTypeWithTypeArguments(type)) {
             generics = type.typeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
         }
 
-        if (TSHelpers.IsTypeUnionOrIntersectionType(type)) {
-            const a = type.types.map(x => TypeToApiTypeDto(x, options));
-            debugger;
+        if (TSHelpers.IsTypeUnionOrIntersectionType(type) && declarationId == null) {
+            if (TSHelpers.IsTypeUnionType(type)) {
+                kind = TypeKinds.Union;
+            } else {
+                kind = TypeKinds.Intersection;
+            }
+
+            types = type.types.map(x => TypeToApiTypeDto(x, options));
         }
 
         return {
+            Kind: kind,
             Reference: declarationId,
-            Generics: (generics.length > 0 ? generics : undefined),
-            Text: text
+            Flags: type.flags,
+            FlagsString: ts.TypeFlags[type.flags],
+            Name: name,
+            Text: text,
+            Generics: generics,
+            Types: types,
         };
     }
 }
