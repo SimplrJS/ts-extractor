@@ -1,6 +1,8 @@
-export type WriteMessageHandler = (level: LogLevel, message: string, exception?: Error) => void;
+export type WriteMessageHandler = (level: LogLevel, message: any, exception?: Error) => void;
 
-export type MessageFormatter<TMessage = string> = (message: TMessage, exception?: Error) => string;
+export type LogMessageMethod = (level: LogLevel, ...messages: any[]) => void;
+
+export type MessageFormatter = (...messages: any[]) => any | any[];
 
 export type LogLevelFilters = {[key in LogLevels]: boolean};
 
