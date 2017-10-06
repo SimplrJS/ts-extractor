@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import * as os from "os";
 import { PackageJson } from "read-package-json";
 
 import { Logger, LogLevel } from "./utils/logger";
@@ -29,25 +30,29 @@ export class Extractor {
     private compilerOptions: ts.CompilerOptions;
     private itemsRegistry: ApiItemsRegistry;
 
-    private logErrorHandler(message: string, fileName: string, lineNumber: number | undefined): void {
-        Logger.Log(LogLevel.Error, `TypeScript: [${fileName}:${lineNumber}] ${message}`);
-    }
-
     public Extract(files: string[]): ExtractDto {
         const program = ts.createProgram(files, this.compilerOptions);
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
         // with semantic information (i.e. symbols).  The "diagnostics" are a subset of the everyday
         // compile errors that would result from a full compilation.
-        for (const diagnostic of program.getSemanticDiagnostics()) {
-            this.logErrorHandler(diagnostic.messageText.toString(), `${diagnostic.file}`, diagnostic.start);
+        const diagnostics = program.getSemanticDiagnostics();
+        if (diagnostics.length > 0) {
+            const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), {
+                getCanonicalFileName: () => __filename,
+                getCurrentDirectory: () => __dirname,
+                getNewLine: () => os.EOL
+            });
+            Logger.Log(LogLevel.Error, str);
+            // TODO: Throw
         }
 
         const typeChecker = program.getTypeChecker();
         const apiSourceFiles: ApiSourceFile[] = [];
 
-        program.getRootFileNames().forEach(fileName => {
-            const sourceFile: ts.SourceFile = program.getSourceFile(files[0]);
+        const rootFiles = program.getRootFileNames();
+        rootFiles.forEach(fileName => {
+            const sourceFile: ts.SourceFile = program.getSourceFile(fileName);
 
             const apiSourceFile = new ApiSourceFile(sourceFile, {
                 Program: program,
