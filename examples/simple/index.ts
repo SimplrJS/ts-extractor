@@ -1,39 +1,41 @@
-// /**
-//  * Some JSdoc information.
-//  * 2nd line of some JSdoc information.
-//  * @summary Some summary about this package version.
-//  * @summary 2nd of some summary about this package version.
-//  */
-// export const itemsList: string[] = ["a"];
+export type A<TValue> = number & { ok(): TValue };
 
-// export function Ok(isIt: boolean): boolean {
-//     return isIt;
-// }
+/**
+ * Some JSdoc information.
+ * 2nd line of some JSdoc information.
+ * @summary Some summary about this package version.
+ * @summary 2nd of some summary about this package version.
+ */
+export const itemsList: Array<string | A<number>> = ["a"];
 
-// export function OkWithoutReturnType(isIt: boolean) {
-//     return isIt;
-// }
+export function Ok(isIt: boolean): boolean {
+    return isIt;
+}
 
-// export namespace SomeKindOfModule {
-//     export const name = "some-kind-of-module";
-// }
+export function OkWithoutReturnType(isIt: boolean) {
+    return isIt;
+}
 
-// export enum Uogos {
-//     Jokie = "jokie",
-//     Braskes = "braskes"
-// }
+export namespace SomeKindOfModule {
+    export const name = "some-kind-of-module";
+}
 
-// export enum Skaiciai {
-//     Nulis = 0,
-//     Vienas = 1,
-//     Du = 2
-// }
+export enum Uogos {
+    Jokie = "jokie",
+    Braskes = "braskes"
+}
 
-// export enum Sarasas {
-//     Pirmas,
-//     Antras,
-//     Trecias
-// }
+export enum Skaiciai {
+    Nulis = 0,
+    Vienas = 1,
+    Du = 2
+}
+
+export enum Sarasas {
+    Pirmas,
+    Antras,
+    Trecias
+}
 
 export interface Boo {
     Boos: string[];
@@ -48,7 +50,3 @@ export interface Foo<TType> {
 export interface Bar extends Foo<number>, Boo {
     OtherStuff: string[];
 }
-
-export namespace Ok { }
-
-export namespace Ok { }

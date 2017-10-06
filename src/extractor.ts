@@ -8,10 +8,10 @@ import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItemsRegistry } from "./api-items-registry";
 import { RegistryDict } from "./contracts/items-registry";
 import { ApiItem } from "./abstractions/api-item";
-import { ApiSourceFileDto } from "./contracts/api-items/api-source-file-dto";
-import { ApiItemDto } from "./contracts/api-items/api-item-dto";
+import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
+import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
 
-export type RegistryExtractedItems = { [key: string]: ApiItemDto };
+export type RegistryExtractedItems = { [key: string]: ApiBaseItemDto };
 
 export interface ExtractDto {
     Registry: RegistryExtractedItems;

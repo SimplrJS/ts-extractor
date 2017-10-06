@@ -4,9 +4,10 @@ import { ApiParameter } from "./api-parameter";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiFunctionDto } from "../contracts/api-items/api-function-dto";
-import { ApiItemReferenceDict } from "../contracts/api-items/api-item-reference-dict";
-import { ApiItemType } from "../contracts/api-items/api-item-type";
+import { ApiFunctionDto } from "../contracts/definitions/api-function-dto";
+import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { TypeDto } from "../contracts/type-dto";
 
 export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto> {
     constructor(declaration: ts.FunctionDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -21,13 +22,18 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
 
     private parameters: ApiItemReferenceDict = {};
 
-    public GetReturnType(): string {
-        return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration as ts.FunctionDeclaration, this.TypeChecker);
+    public GetReturnType(): TypeDto {
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+
+        return ApiHelpers.TypeToApiTypeDto(type, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
+        });
     }
 
     public Extract(): ApiFunctionDto {
         return {
-            ApiType: ApiItemType.Function,
+            ApiKind: ApiItemKinds.Function,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

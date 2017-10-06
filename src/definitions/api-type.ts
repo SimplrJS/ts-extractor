@@ -3,12 +3,13 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiParameterDto } from "../contracts/definitions/api-parameter-dto";
+
+import { ApiTypeDto } from "../contracts/definitions/api-type-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 
-export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterDto> {
-    public GetReturnType(): TypeDto {
+export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
+    public GetType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
 
         return ApiHelpers.TypeToApiTypeDto(type, {
@@ -17,13 +18,13 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
         });
     }
 
-    public Extract(): ApiParameterDto {
+    public Extract(): ApiTypeDto {
         return {
-            ApiKind: ApiItemKinds.Parameter,
+            ApiKind: ApiItemKinds.Type,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            ReturnType: this.GetReturnType()
+            Type: this.GetType()
         };
     }
 }
