@@ -6,6 +6,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiMethodDto } from "../contracts/definitions/api-method-dto";
 import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 
@@ -21,8 +22,13 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
 
     private parameters: ApiItemReferenceDict = {};
 
-    public GetReturnType(): string {
-        return TSHelpers.GetReturnTypeTextFromDeclaration(this.Declaration, this.TypeChecker);
+    public GetReturnType(): TypeDto {
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+
+        return ApiHelpers.TypeToApiTypeDto(type, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
+        });
     }
 
     public Extract(): ApiMethodDto {

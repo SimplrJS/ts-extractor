@@ -6,10 +6,16 @@ import { ApiHelpers } from "../api-helpers";
 
 import { ApiTypeDto } from "../contracts/definitions/api-type-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { TypeDto } from "../contracts/type-dto";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
-    public GetReturnType(): string {
-        return TSHelpers.TypeToString(this.Declaration, this.Symbol, this.TypeChecker);
+    public GetType(): TypeDto {
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+
+        return ApiHelpers.TypeToApiTypeDto(type, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
+        });
     }
 
     public Extract(): ApiTypeDto {
@@ -18,7 +24,7 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Type: this.GetReturnType()
+            Type: this.GetType()
         };
     }
 }

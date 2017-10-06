@@ -14,20 +14,20 @@ export interface ApiTypeScriptSpecificPropertiesDto {
     FlagsString: string;
 }
 
-export type ApiTypeDto = ApiTypeDefaultDto | ApiTypeUnionOrIntersectionDto | ApiTypeReferenceDto;
+export type TypeDto = ApiTypeDefaultDto | ApiTypeUnionOrIntersectionDto | ApiTypeReferenceDto;
 
 export interface ApiTypeDefaultDto extends ApiBaseTypeDto, ApiTypeScriptSpecificPropertiesDto {
     ApiTypeKind: TypeKinds.Default;
-    Generics?: ApiTypeDto[];
+    Generics?: TypeDto[];
 }
 
 export interface ApiTypeUnionOrIntersectionDto extends ApiBaseTypeDto, ApiTypeScriptSpecificPropertiesDto {
     ApiTypeKind: TypeKinds.Union | TypeKinds.Intersection;
-    Types: ApiTypeDto[];
+    Types: TypeDto[];
 }
 
 export interface ApiTypeReferenceDto extends ApiBaseTypeDto {
     ApiTypeKind: TypeKinds.Reference;
     ReferenceId: string;
-    Generics?: ApiTypeDto[];
+    Generics?: TypeDto[];
 }

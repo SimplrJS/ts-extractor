@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
 import {
-    ApiTypeDto,
+    TypeDto,
     ApiTypeDefaultDto,
     ApiTypeReferenceDto,
     ApiTypeUnionOrIntersectionDto
@@ -125,9 +125,9 @@ export namespace ApiHelpers {
         heritageClauses: ts.NodeArray<ts.HeritageClause>,
         kind: HeritageKinds,
         options: ApiItemOptions
-    ): ApiTypeDto[] {
+    ): TypeDto[] {
         const typeChecker = options.Program.getTypeChecker();
-        const list: ApiTypeDto[] = [];
+        const list: TypeDto[] = [];
 
         heritageClauses.forEach(heritage => {
             if (heritage.token !== kind) {
@@ -144,21 +144,21 @@ export namespace ApiHelpers {
         return list;
     }
 
-    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): ApiTypeDto {
+    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): TypeDto {
         const typeChecker = options.Program.getTypeChecker();
         const text = typeChecker.typeToString(type);
 
         const symbol = type.getSymbol() || type.aliasSymbol;
-        let generics: ApiTypeDto[] | undefined;
+        let generics: TypeDto[] | undefined;
         let kind = TypeKinds.Default;
-        let types: ApiTypeDto[] | undefined;
+        let types: TypeDto[] | undefined;
         let name: string | undefined;
 
         // Generics
         if (TSHelpers.IsTypeWithTypeArguments(type)) {
-            generics = type.typeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
+            generics = type.typeArguments.map<TypeDto>(x => TypeToApiTypeDto(x, options));
         } else if (type.aliasTypeArguments != null) {
-            generics = type.aliasTypeArguments.map<ApiTypeDto>(x => TypeToApiTypeDto(x, options));
+            generics = type.aliasTypeArguments.map<TypeDto>(x => TypeToApiTypeDto(x, options));
         }
 
         // Find declaration reference.

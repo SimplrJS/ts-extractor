@@ -5,20 +5,16 @@ import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiVariableDto } from "../contracts/definitions/api-variable-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiTypeDto } from "../contracts/type-dto";
+import { TypeDto } from "../contracts/type-dto";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
-    public GetType(): ApiTypeDto {
+    public GetType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
 
-        const a = ApiHelpers.TypeToApiTypeDto(type, {
+        return ApiHelpers.TypeToApiTypeDto(type, {
             ItemsRegistry: this.ItemsRegistry,
             Program: this.Program
         });
-
-        debugger;
-
-        return a;
     }
 
     public Extract(): ApiVariableDto {

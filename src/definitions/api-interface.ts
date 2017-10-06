@@ -6,7 +6,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
 import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiTypeDto } from "../contracts/type-dto";
+import { TypeDto } from "../contracts/type-dto";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
     constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -24,8 +24,6 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
                 ItemsRegistry: this.ItemsRegistry,
                 Program: this.Program
             });
-
-            debugger;
         }
     }
 

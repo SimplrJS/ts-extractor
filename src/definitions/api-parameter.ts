@@ -5,10 +5,16 @@ import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiParameterDto } from "../contracts/definitions/api-parameter-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { TypeDto } from "../contracts/type-dto";
 
 export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterDto> {
-    public GetReturnType(): string {
-        return TSHelpers.TypeToString(this.Declaration, this.Symbol, this.TypeChecker);
+    public GetReturnType(): TypeDto {
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+
+        return ApiHelpers.TypeToApiTypeDto(type, {
+            ItemsRegistry: this.ItemsRegistry,
+            Program: this.Program
+        });
     }
 
     public Extract(): ApiParameterDto {
