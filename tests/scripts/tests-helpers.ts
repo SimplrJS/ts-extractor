@@ -15,4 +15,4 @@ export function Tab(size: number = 1): string {
 }
 
 export const TESTS_DIR_NAME = "__tests__";
-export const TESTS_SNAPSHOTS_NAME = "__snapshots__";
+export const TESTS_SNAPSHOTS_DIR_NAME = "__snapshots__";
