@@ -1,12 +1,12 @@
 import * as ts from "typescript";
-import { ApiItemTypes } from "./api-item-types";
+import { ApiItemKinds } from "./api-item-kinds";
 
 /**
  * This is the interface for definitions like: interface, class or enum etc.
  */
 export interface ApiBaseItemDto {
     Name: string;
-    ApiType: ApiItemTypes;
+    ApiKind: ApiItemKinds;
     Kind: ts.SyntaxKind;
     KindString: string;
 }

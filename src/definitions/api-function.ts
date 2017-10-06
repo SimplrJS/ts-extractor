@@ -6,7 +6,7 @@ import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiFunctionDto } from "../contracts/definitions/api-function-dto";
 import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
-import { ApiItemTypes } from "../contracts/api-item-types";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 
 export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto> {
     constructor(declaration: ts.FunctionDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -27,7 +27,7 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
 
     public Extract(): ApiFunctionDto {
         return {
-            ApiType: ApiItemTypes.Function,
+            ApiKind: ApiItemKinds.Function,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiVariableDto } from "../contracts/definitions/api-variable-dto";
-import { ApiItemTypes } from "../contracts/api-item-types";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiTypeDto } from "../contracts/type-dto";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
@@ -23,7 +23,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
 
     public Extract(): ApiVariableDto {
         return {
-            ApiType: ApiItemTypes.Variable,
+            ApiKind: ApiItemKinds.Variable,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

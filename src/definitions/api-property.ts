@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiPropertyDto } from "../contracts/definitions/api-property-dto";
-import { ApiItemTypes } from "../contracts/api-item-types";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 
 export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
     public GetReturnType(): string {
@@ -13,7 +13,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
 
     public Extract(): ApiPropertyDto {
         return {
-            ApiType: ApiItemTypes.Property,
+            ApiKind: ApiItemKinds.Property,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

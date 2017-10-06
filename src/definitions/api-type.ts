@@ -5,7 +5,7 @@ import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
 import { ApiTypeDto } from "../contracts/definitions/api-type-dto";
-import { ApiItemTypes } from "../contracts/api-item-types";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
     public GetReturnType(): string {
@@ -14,7 +14,7 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
 
     public Extract(): ApiTypeDto {
         return {
-            ApiType: ApiItemTypes.Type,
+            ApiKind: ApiItemKinds.Type,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

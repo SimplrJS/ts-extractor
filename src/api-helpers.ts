@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
 import { ApiTypeDto } from "./contracts/type-dto";
-import { ApiItemTypes } from "./contracts/api-item-types";
+import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
 import { TSHelpers } from "./ts-helpers";
 
@@ -173,7 +173,7 @@ export namespace ApiHelpers {
         }
 
         return {
-            Kind: kind,
+            ApyTypeKind: kind,
             Reference: declarationId,
             Flags: type.flags,
             FlagsString: ts.TypeFlags[type.flags],

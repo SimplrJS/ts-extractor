@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
-import { ApiItemTypes } from "../contracts/api-item-types";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
@@ -28,7 +28,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
 
     public Extract(): ApiSourceFileDto {
         return {
-            ApiType: ApiItemTypes.SourceFile,
+            ApiKind: ApiItemKinds.SourceFile,
             Name: this.Declaration.fileName,
             FileName: this.Declaration.fileName,
             Kind: this.Declaration.kind,

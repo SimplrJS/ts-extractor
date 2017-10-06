@@ -1,10 +1,10 @@
 import * as ts from "typescript";
 
-import { ApiItemTypes } from "./api-item-types";
+import { ApiItemKinds } from "./api-item-kinds";
 import { TypeKinds } from "./type-kinds";
 
 export interface ApiTypeDto {
-    Kind: TypeKinds;
+    ApyTypeKind: TypeKinds;
     Generics?: ApiTypeDto[];
     Types?: ApiTypeDto[];
     Reference?: string;

@@ -5,7 +5,7 @@ import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
 import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
-import { ApiItemTypes } from "../contracts/api-item-types";
+import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiTypeDto } from "../contracts/type-dto";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
@@ -37,7 +37,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
 
     public Extract(): ApiInterfaceDto {
         return {
-            ApiType: ApiItemTypes.Interface,
+            ApiKind: ApiItemKinds.Interface,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
