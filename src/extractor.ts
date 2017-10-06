@@ -31,12 +31,13 @@ export class Extractor {
     private compilerOptions: ts.CompilerOptions;
     private itemsRegistry: ApiItemsRegistry;
 
-    public Extract(files: string[], projectDirectory: string = __dirname): ExtractDto {
+    public Extract(files: string[], cwd?: string): ExtractDto {
         const rootNames = files.map(file => {
-            if (path.isAbsolute(file)) {
+            if (cwd == null || path.isAbsolute(file)) {
                 return file;
             }
-            return path.join(projectDirectory, file);
+
+            return path.join(cwd, file);
         });
 
         const program = ts.createProgram(rootNames, this.compilerOptions);
@@ -71,6 +72,7 @@ export class Extractor {
             apiSourceFiles.push(apiSourceFile);
         });
 
+        // TODO: Return EntryFiles filenames without cwd
         return {
             Registry: this.getRegistryExtractedItems(),
             EntryFiles: apiSourceFiles.map(x => x.Extract())
