@@ -5,9 +5,9 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
 import {
     TypeDto,
-    ApiTypeDefaultDto,
-    ApiTypeReferenceDto,
-    ApiTypeUnionOrIntersectionDto
+    TypeDefaultDto,
+    TypeReferenceDto,
+    TypeUnionOrIntersectionDto
 } from "./contracts/type-dto";
 import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
@@ -175,7 +175,7 @@ export namespace ApiHelpers {
                         Name: name,
                         Text: text,
                         Generics: generics
-                    } as ApiTypeReferenceDto;
+                    } as TypeReferenceDto;
                 }
             }
         }
@@ -197,7 +197,7 @@ export namespace ApiHelpers {
                 Name: name,
                 Text: text,
                 Types: types
-            } as ApiTypeUnionOrIntersectionDto;
+            } as TypeUnionOrIntersectionDto;
         }
 
         // Default
@@ -208,6 +208,6 @@ export namespace ApiHelpers {
             Name: name,
             Text: text,
             Generics: generics
-        } as ApiTypeDefaultDto;
+        } as TypeDefaultDto;
     }
 }

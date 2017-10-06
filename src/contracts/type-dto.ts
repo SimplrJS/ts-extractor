@@ -3,30 +3,30 @@ import * as ts from "typescript";
 import { ApiItemKinds } from "./api-item-kinds";
 import { TypeKinds } from "./type-kinds";
 
-export interface ApiBaseTypeDto {
+export interface BaseTypeDto {
     ApiTypeKind: TypeKinds;
     Text: string;
     Name?: string;
 }
 
-export interface ApiTypeScriptSpecificPropertiesDto {
+export interface TypeScriptSpecificPropertiesDto {
     Flags: ts.TypeFlags;
     FlagsString: string;
 }
 
-export type TypeDto = ApiTypeDefaultDto | ApiTypeUnionOrIntersectionDto | ApiTypeReferenceDto;
+export type TypeDto = TypeDefaultDto | TypeUnionOrIntersectionDto | TypeReferenceDto;
 
-export interface ApiTypeDefaultDto extends ApiBaseTypeDto, ApiTypeScriptSpecificPropertiesDto {
+export interface TypeDefaultDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
     ApiTypeKind: TypeKinds.Default;
     Generics?: TypeDto[];
 }
 
-export interface ApiTypeUnionOrIntersectionDto extends ApiBaseTypeDto, ApiTypeScriptSpecificPropertiesDto {
+export interface TypeUnionOrIntersectionDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
     ApiTypeKind: TypeKinds.Union | TypeKinds.Intersection;
     Types: TypeDto[];
 }
 
-export interface ApiTypeReferenceDto extends ApiBaseTypeDto {
+export interface TypeReferenceDto extends BaseTypeDto {
     ApiTypeKind: TypeKinds.Reference;
     ReferenceId: string;
     Generics?: TypeDto[];
