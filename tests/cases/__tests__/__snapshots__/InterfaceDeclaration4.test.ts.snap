@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IntefaceDeclaration4 1`] = `
+exports[`InterfaceDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/IntefaceDeclaration4.ts",
+      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration4.ts",
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
@@ -19,7 +19,7 @@ Object {
         "d": "InterfaceDeclaration-6",
         "instance2": "VariableDeclaration-0",
       },
-      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/IntefaceDeclaration4.ts",
+      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration4.ts",
     },
   ],
   "Registry": Object {
