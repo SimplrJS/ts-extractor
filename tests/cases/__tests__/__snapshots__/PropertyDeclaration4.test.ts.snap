@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyDeclaration4 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/PropertyDeclaration4.ts",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "A": "InterfaceDeclaration-0",
+        "a": "VariableDeclaration-0",
+        "z": "VariableDeclaration-1",
+      },
+      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/PropertyDeclaration4.ts",
+    },
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "b": "PropertySignature-0",
+      },
+      "Name": "A",
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Name": "b",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Kind": 226,
+      "KindString": "VariableDeclaration",
+      "Name": "a",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "A",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "A",
+      },
+    },
+    "VariableDeclaration-1": Object {
+      "ApiKind": "variable",
+      "Kind": 226,
+      "KindString": "VariableDeclaration",
+      "Name": "z",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "A",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "A",
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InterfaceClassMerging 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceClassMerging.ts",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Bar": Array [],
+        "Foo": "InterfaceDeclaration-0",
+        "bar": "VariableDeclaration-0",
+        "foo": "VariableDeclaration-1",
+        "iFoo": "VariableDeclaration-2",
+      },
+      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceClassMerging.ts",
+    },
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "method": "MethodSignature-0",
+        "optionalMethod": "MethodSignature-1",
+        "optionalProperty": "PropertySignature-1",
+        "property": "PropertySignature-0",
+      },
+      "Name": "Foo",
+    },
+    "MethodSignature-0": Object {
+      "ApiKind": "method",
+      "Kind": 150,
+      "KindString": "MethodSignature",
+      "Name": "method",
+      "Parameters": Object {
+        "a": "Parameter-0",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "method",
+        "ReferenceId": "MethodSignature-0",
+        "Text": "(a: number) => string",
+      },
+    },
+    "MethodSignature-1": Object {
+      "ApiKind": "method",
+      "Kind": 150,
+      "KindString": "MethodSignature",
+      "Name": "optionalMethod",
+      "Parameters": Object {
+        "a": "Parameter-1",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "optionalMethod",
+        "ReferenceId": "MethodSignature-1",
+        "Text": "(a: number) => string",
+      },
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "a",
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "a",
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Name": "property",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Name": "optionalProperty",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Kind": 226,
+      "KindString": "VariableDeclaration",
+      "Name": "bar",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": undefined,
+        "Name": "Bar",
+        "Text": "Bar",
+      },
+    },
+    "VariableDeclaration-1": Object {
+      "ApiKind": "variable",
+      "Kind": 226,
+      "KindString": "VariableDeclaration",
+      "Name": "foo",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "Foo",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "Foo",
+      },
+    },
+    "VariableDeclaration-2": Object {
+      "ApiKind": "variable",
+      "Kind": 226,
+      "KindString": "VariableDeclaration",
+      "Name": "iFoo",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "Foo",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "Foo",
+      },
+    },
+  },
+}
+`;
