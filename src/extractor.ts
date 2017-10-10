@@ -27,7 +27,7 @@ export interface ExtractorOptions {
 export class Extractor {
     constructor(options: ExtractorOptions) {
         this.compilerOptions = options.CompilerOptions;
-        this.projectDirectory = options.ProjectDirectory;
+        this.projectDirectory = fs.realpathSync(options.ProjectDirectory);
     }
 
     private compilerOptions: ts.CompilerOptions;
@@ -47,7 +47,8 @@ export class Extractor {
             if (!fs.existsSync(filePath)) {
                 throw new Error(`Given file: ${filePath}, does not exist.`);
             }
-            if (filePath.indexOf(this.projectDirectory) === -1) {
+
+            if (fs.realpathSync(filePath).indexOf(this.projectDirectory) === -1) {
                 throw new Error(`Given file "${filePath}", is not in project directory "${this.projectDirectory}".`);
             }
         });
