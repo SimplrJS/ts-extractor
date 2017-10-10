@@ -33,7 +33,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     }
 
     private getPath(): string {
-        return path.relative(this.ProjectDirectory, this.Declaration.fileName);
+        return path.relative(this.ProjectDirectory, this.Declaration.fileName).split(path.sep).join("/");
     }
 
     public Extract(): ApiSourceFileDto {
