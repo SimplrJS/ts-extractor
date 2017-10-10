@@ -21,8 +21,9 @@ async function main(): Promise<void> {
         ProjectDirectory: path.resolve(__dirname, "../examples/simple/")
     });
 
-    const extract = extractor.Extract([path.resolve("examples/simple/index.ts")]);
-    console.log(JSON.stringify(extract));
+    const extract1 = extractor.Extract([path.resolve("examples/simple/index.ts")]);
+    const extract2 = extractor.Extract([path.resolve("examples/simple/exported-functions.ts")]);
+    console.log(JSON.stringify(extract2));
 }
 
 main();
