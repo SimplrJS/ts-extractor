@@ -28,12 +28,10 @@ export class Extractor {
     constructor(options: ExtractorOptions) {
         this.compilerOptions = options.CompilerOptions;
         this.projectDirectory = options.ProjectDirectory;
-        this.itemsRegistry = new ApiItemsRegistry();
     }
 
     private compilerOptions: ts.CompilerOptions;
     private projectDirectory: string;
-    private itemsRegistry: ApiItemsRegistry;
 
     public Extract(files: string[]): ExtractDto {
         const rootNames = files.map(file => {
@@ -55,6 +53,7 @@ export class Extractor {
         });
 
         const program = ts.createProgram(rootNames, this.compilerOptions);
+        const itemsRegistry = new ApiItemsRegistry();
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
         // with semantic information (i.e. symbols).  The "diagnostics" are a subset of the everyday
@@ -80,7 +79,7 @@ export class Extractor {
 
             const apiSourceFile = new ApiSourceFile(sourceFile, {
                 Program: program,
-                ItemsRegistry: this.itemsRegistry,
+                ItemsRegistry: itemsRegistry,
                 ProjectDirectory: this.projectDirectory
             });
 
@@ -88,14 +87,14 @@ export class Extractor {
         });
 
         return {
-            Registry: this.getRegistryExtractedItems(),
+            Registry: this.getRegistryExtractedItems(itemsRegistry),
             EntryFiles: apiSourceFiles.map(x => x.Extract())
         };
     }
 
-    private getRegistryExtractedItems(): RegistryExtractedItems {
+    private getRegistryExtractedItems(itemsRegistry: ApiItemsRegistry): RegistryExtractedItems {
         const items: RegistryExtractedItems = {};
-        const apiItems = this.itemsRegistry.GetAll();
+        const apiItems = itemsRegistry.GetAll();
 
         Object.keys(apiItems).forEach(itemId => {
             items[itemId] = apiItems[itemId].Extract();
