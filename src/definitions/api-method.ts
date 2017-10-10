@@ -23,8 +23,12 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
 
     private parameters: ApiItemReferenceDict = {};
 
-    public GetReturnType(): TypeDto {
-        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+    public GetReturnType(): TypeDto | undefined {
+        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
+        if (signature == null) {
+            return;
+        }
+        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
 
         return ApiHelpers.TypeToApiTypeDto(type, {
             ItemsRegistry: this.ItemsRegistry,
