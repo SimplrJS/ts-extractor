@@ -18,7 +18,8 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
         // Members
         this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 

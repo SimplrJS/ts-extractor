@@ -15,14 +15,16 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
         // Members
         this.members = ApiHelpers.GetItemsFromDeclarationsIds(declaration.members, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
 
         // Extends
         if (declaration.heritageClauses != null) {
             this.extends = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, {
                 ItemsRegistry: this.ItemsRegistry,
-                Program: this.Program
+                Program: this.Program,
+                ProjectDirectory: this.ProjectDirectory
             });
         }
     }

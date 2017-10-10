@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import * as path from "path";
 
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
@@ -20,17 +21,26 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
 
         this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 
     private members: ApiItemReferenceDict;
 
+    private getFileName(): string {
+        return path.basename(this.Declaration.fileName);
+    }
+
+    private getPath(): string {
+        return path.relative(this.ProjectDirectory, this.Declaration.fileName);
+    }
+
     public Extract(): ApiSourceFileDto {
         return {
             ApiKind: ApiItemKinds.SourceFile,
-            Name: this.Declaration.fileName,
-            FileName: this.Declaration.fileName,
+            Name: this.getFileName(),
+            Path: this.getPath(),
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Members: this.members

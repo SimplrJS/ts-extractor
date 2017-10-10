@@ -17,7 +17,8 @@ async function main(): Promise<void> {
     // console.info(compilerOptions);
 
     const extractor = new Extractor({
-        compilerOptions: compilerOptions
+        CompilerOptions: compilerOptions,
+        ProjectDirectory: path.resolve(__dirname, "../examples/simple/")
     });
 
     const extract = extractor.Extract([path.resolve("examples/simple/index.ts")]);

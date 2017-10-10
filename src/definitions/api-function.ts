@@ -16,7 +16,8 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
         // Parameters
         this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 
@@ -27,7 +28,8 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
 
         return ApiHelpers.TypeToApiTypeDto(type, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 

@@ -19,25 +19,28 @@ export interface ExtractDto {
 }
 
 export interface ExtractorOptions {
-    compilerOptions: ts.CompilerOptions;
+    CompilerOptions: ts.CompilerOptions;
+    ProjectDirectory: string;
 }
 
 export class Extractor {
     constructor(options: ExtractorOptions) {
-        this.compilerOptions = options.compilerOptions;
+        this.compilerOptions = options.CompilerOptions;
+        this.projectDirectory = options.ProjectDirectory;
         this.itemsRegistry = new ApiItemsRegistry();
     }
 
     private compilerOptions: ts.CompilerOptions;
+    private projectDirectory: string;
     private itemsRegistry: ApiItemsRegistry;
 
-    public Extract(files: string[], cwd?: string): ExtractDto {
+    public Extract(files: string[]): ExtractDto {
         const rootNames = files.map(file => {
-            if (cwd == null || path.isAbsolute(file)) {
+            if (path.isAbsolute(file)) {
                 return file;
             }
 
-            return path.join(cwd, file);
+            return path.join(this.projectDirectory, file);
         });
 
         const program = ts.createProgram(rootNames, this.compilerOptions);
@@ -49,8 +52,7 @@ export class Extractor {
         if (diagnostics.length > 0) {
             const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), {
                 getCanonicalFileName: () => __filename,
-                // TODO: Maybe use projetDirectory?
-                getCurrentDirectory: () => __dirname,
+                getCurrentDirectory: () => this.projectDirectory,
                 getNewLine: () => os.EOL
             });
             Logger.Log(LogLevel.Error, str);
@@ -66,7 +68,8 @@ export class Extractor {
 
             const apiSourceFile = new ApiSourceFile(sourceFile, {
                 Program: program,
-                ItemsRegistry: this.itemsRegistry
+                ItemsRegistry: this.itemsRegistry,
+                ProjectDirectory: this.projectDirectory
             });
 
             apiSourceFiles.push(apiSourceFile);

@@ -16,7 +16,8 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
 
         this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 
@@ -27,7 +28,8 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
 
         return ApiHelpers.TypeToApiTypeDto(type, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 

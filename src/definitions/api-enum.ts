@@ -15,7 +15,8 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
         // Members
         this.members = ApiHelpers.GetItemsFromDeclarationsIds(declaration.members, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 

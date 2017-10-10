@@ -13,7 +13,8 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
 
         return ApiHelpers.TypeToApiTypeDto(type, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 

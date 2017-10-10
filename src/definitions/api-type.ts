@@ -14,7 +14,8 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
 
         return ApiHelpers.TypeToApiTypeDto(type, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 

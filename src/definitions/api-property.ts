@@ -13,7 +13,8 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
 
         return ApiHelpers.TypeToApiTypeDto(type, {
             ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
+            Program: this.Program,
+            ProjectDirectory: this.ProjectDirectory
         });
     }
 
