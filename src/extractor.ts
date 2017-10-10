@@ -1,5 +1,6 @@
 import * as ts from "typescript";
 import * as os from "os";
+import * as fs from "fs-extra";
 import { PackageJson } from "read-package-json";
 import * as path from "path";
 
@@ -43,6 +44,13 @@ export class Extractor {
             return path.join(this.projectDirectory, file);
         });
 
+        // Check if files exist.
+        rootNames.forEach(filePath => {
+            if (!fs.existsSync(filePath)) {
+                throw new Error(`Given file: ${filePath}, does not exist.`);
+            }
+        });
+
         const program = ts.createProgram(rootNames, this.compilerOptions);
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
@@ -62,6 +70,7 @@ export class Extractor {
         const typeChecker = program.getTypeChecker();
         const apiSourceFiles: ApiSourceFile[] = [];
 
+        // Go through all given files.
         const rootFiles = program.getRootFileNames();
         rootFiles.forEach(fileName => {
             const sourceFile: ts.SourceFile = program.getSourceFile(fileName);
@@ -75,7 +84,6 @@ export class Extractor {
             apiSourceFiles.push(apiSourceFile);
         });
 
-        // TODO: Return EntryFiles filenames without cwd
         return {
             Registry: this.getRegistryExtractedItems(),
             EntryFiles: apiSourceFiles.map(x => x.Extract())
