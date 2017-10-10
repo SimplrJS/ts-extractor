@@ -44,10 +44,13 @@ export class Extractor {
             return path.join(this.projectDirectory, file);
         });
 
-        // Check if files exist.
+        // Check if files exist and they are in project directory.
         rootNames.forEach(filePath => {
             if (!fs.existsSync(filePath)) {
                 throw new Error(`Given file: ${filePath}, does not exist.`);
+            }
+            if (filePath.indexOf(this.projectDirectory) === -1) {
+                throw new Error(`Given file "${filePath}", is not in project directory "${this.projectDirectory}".`);
             }
         });
 
@@ -64,7 +67,7 @@ export class Extractor {
                 getNewLine: () => os.EOL
             });
             Logger.Log(LogLevel.Error, str);
-            // TODO: Throw
+            throw new Error("TypeScript compilation errors. Please fix them before using extractor.");
         }
 
         const typeChecker = program.getTypeChecker();
