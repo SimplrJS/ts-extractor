@@ -17,11 +17,13 @@ async function main(): Promise<void> {
     // console.info(compilerOptions);
 
     const extractor = new Extractor({
-        compilerOptions: compilerOptions
+        CompilerOptions: compilerOptions,
+        ProjectDirectory: path.resolve(__dirname, "../examples/simple/")
     });
 
-    const extract = extractor.Extract([path.resolve("examples/simple/index.ts")]);
-    console.log(JSON.stringify(extract));
+    const extract1 = extractor.Extract([path.resolve("examples/simple/index.ts")]);
+    const extract2 = extractor.Extract([path.resolve("examples/simple/exported-functions.ts")]);
+    console.log(JSON.stringify(extract2));
 }
 
 main();

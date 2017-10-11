@@ -11,10 +11,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
     public GetType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
 
-        return ApiHelpers.TypeToApiTypeDto(type, {
-            ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
-        });
+        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
     public Extract(): ApiVariableDto {

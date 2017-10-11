@@ -16,10 +16,7 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
         }
 
         // Members
-        this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, {
-            ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
-        });
+        this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, this.Options);
     }
 
     private members: ApiItemReferenceDict = {};
