@@ -33,6 +33,10 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
         if (declaration.heritageClauses != null) {
             this.implements = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ImplementsKeyword, this.Options);
         }
+
+        // IsAbstract
+        const modifiers = ApiHelpers.FromModifiersToModifiersDto(declaration.modifiers);
+        this.isAbstract = modifiers.IsAbstract;
     }
 
     /**
@@ -41,6 +45,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
     private extends: TypeDto | undefined;
     private implements: TypeDto[] = [];
     private members: ApiItemReferenceDict = {};
+    private isAbstract: boolean = false;
 
     public Extract(): ApiClassDto {
         return {
@@ -48,6 +53,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            IsAbstract: this.isAbstract,
             Members: this.members,
             Extends: this.extends,
             Implements: this.implements

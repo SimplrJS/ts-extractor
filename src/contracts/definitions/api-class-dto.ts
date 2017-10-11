@@ -6,4 +6,5 @@ export interface ApiClassDto extends ApiBaseItemDto {
     Members: ApiItemReferenceDict;
     Extends?: TypeDto;
     Implements: TypeDto[];
+    IsAbstract: boolean;
 }
