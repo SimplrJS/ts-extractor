@@ -5,7 +5,6 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration4.ts",
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
@@ -19,7 +18,8 @@ Object {
         "d": "InterfaceDeclaration-6",
         "instance2": "VariableDeclaration-0",
       },
-      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration4.ts",
+      "Name": "InterfaceDeclaration4.ts",
+      "Path": "cases/InterfaceDeclaration4.ts",
     },
   ],
   "Registry": Object {
@@ -129,11 +129,12 @@ Object {
         "s": "Parameter-0",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
-        "Name": "p5",
-        "ReferenceId": "MethodSignature-0",
-        "Text": "(s: number) => string",
+        "Name": undefined,
+        "Text": "string",
       },
     },
     "MethodSignature-1": Object {
@@ -143,11 +144,12 @@ Object {
       "Name": "f1",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "default",
+        "Flags": 1,
+        "FlagsString": "Any",
         "Generics": undefined,
-        "Name": "f1",
-        "ReferenceId": "MethodSignature-1",
-        "Text": "() => any",
+        "Name": undefined,
+        "Text": "any",
       },
     },
     "MethodSignature-2": Object {
@@ -157,11 +159,12 @@ Object {
       "Name": "f2",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "default",
+        "Flags": 1,
+        "FlagsString": "Any",
         "Generics": undefined,
-        "Name": "f2",
-        "ReferenceId": "MethodSignature-2",
-        "Text": "() => any",
+        "Name": undefined,
+        "Text": "any",
       },
     },
     "MethodSignature-3": Object {
@@ -173,11 +176,12 @@ Object {
         "a": "Parameter-1",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
         "Generics": undefined,
-        "Name": "f3",
-        "ReferenceId": "MethodSignature-3",
-        "Text": "(a: string) => number",
+        "Name": undefined,
+        "Text": "number",
       },
     },
     "MethodSignature-4": Object {
@@ -189,11 +193,12 @@ Object {
         "s": "Parameter-2",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
-        "Name": "f4",
-        "ReferenceId": "MethodSignature-4",
-        "Text": "(s: number) => string",
+        "Name": undefined,
+        "Text": "string",
       },
     },
     "Parameter-0": Object {

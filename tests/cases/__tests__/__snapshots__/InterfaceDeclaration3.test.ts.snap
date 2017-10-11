@@ -5,14 +5,14 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration3.ts",
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
         "Generic": "InterfaceDeclaration-0",
         "y": "VariableDeclaration-0",
       },
-      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceDeclaration3.ts",
+      "Name": "InterfaceDeclaration3.ts",
+      "Path": "cases/InterfaceDeclaration3.ts",
     },
   ],
   "Registry": Object {

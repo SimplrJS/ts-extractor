@@ -5,14 +5,14 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceSubtyping.ts",
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
         "Camera": Array [],
         "Face": "InterfaceDeclaration-0",
       },
-      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/InterfaceSubtyping.ts",
+      "Name": "InterfaceSubtyping.ts",
+      "Path": "cases/InterfaceSubtyping.ts",
     },
   ],
   "Registry": Object {
@@ -33,11 +33,12 @@ Object {
       "Name": "foo",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "default",
+        "Flags": 1024,
+        "FlagsString": "Void",
         "Generics": undefined,
-        "Name": "foo",
-        "ReferenceId": "MethodSignature-0",
-        "Text": "() => void",
+        "Name": undefined,
+        "Text": "void",
       },
     },
   },

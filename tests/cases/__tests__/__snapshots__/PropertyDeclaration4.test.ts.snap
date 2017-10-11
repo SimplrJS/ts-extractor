@@ -5,7 +5,6 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "FileName": "D:/Packages/quatrodev/ts-extractor/tests/cases/PropertyDeclaration4.ts",
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
@@ -13,7 +12,8 @@ Object {
         "a": "VariableDeclaration-0",
         "z": "VariableDeclaration-1",
       },
-      "Name": "D:/Packages/quatrodev/ts-extractor/tests/cases/PropertyDeclaration4.ts",
+      "Name": "PropertyDeclaration4.ts",
+      "Path": "cases/PropertyDeclaration4.ts",
     },
   ],
   "Registry": Object {
