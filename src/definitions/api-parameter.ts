@@ -11,11 +11,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
     public GetReturnType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
 
-        return ApiHelpers.TypeToApiTypeDto(type, {
-            ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program,
-            ProjectDirectory: this.ProjectDirectory
-        });
+        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
     public Extract(): ApiParameterDto {

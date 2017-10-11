@@ -10,17 +10,15 @@ export interface ApiItemOptions {
 }
 
 export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseItemDto> {
-    constructor(private declaration: TDeclaration, private symbol: ts.Symbol, options: ApiItemOptions) {
-        this.Program = options.Program;
+    constructor(private declaration: TDeclaration, private symbol: ts.Symbol, private options: ApiItemOptions) {
         this.TypeChecker = options.Program.getTypeChecker();
-        this.ItemsRegistry = options.ItemsRegistry;
-        this.ProjectDirectory = options.ProjectDirectory;
     }
 
     protected TypeChecker: ts.TypeChecker;
-    protected Program: ts.Program;
-    protected ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;
-    protected ProjectDirectory: string;
+
+    public get Options(): ApiItemOptions {
+        return this.options;
+    }
 
     public get Declaration(): TDeclaration {
         return this.declaration;
