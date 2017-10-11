@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InterfaceSubtyping 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Camera": Array [],
+        "Face": "InterfaceDeclaration-0",
+      },
+      "Name": "InterfaceSubtyping.ts",
+      "Path": "cases/InterfaceSubtyping.ts",
+    },
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "foo": "MethodSignature-0",
+      },
+      "Name": "Face",
+    },
+    "MethodSignature-0": Object {
+      "ApiKind": "method",
+      "Kind": 150,
+      "KindString": "MethodSignature",
+      "Name": "foo",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 1024,
+        "FlagsString": "Void",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "void",
+      },
+    },
+  },
+}
+`;
