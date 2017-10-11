@@ -1,6 +1,7 @@
 import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
+import { Logger, LogLevel } from "../utils/logger";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/definitions/api-class-dto";
@@ -13,20 +14,14 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
         super(declaration, symbol, options);
 
         // Members
-        this.members = ApiHelpers.GetItemsFromDeclarationsIds(declaration.members, {
-            ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
-        });
+        this.members = ApiHelpers.GetItemsFromDeclarationsIds(declaration.members, this.Options);
 
         // Extends
         if (declaration.heritageClauses != null) {
-            const extendingList = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, {
-                ItemsRegistry: this.ItemsRegistry,
-                Program: this.Program
-            });
+            const extendingList = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
 
             if (extendingList.length > 1) {
-                // TODO: Add Warning.
+                Logger.Log(LogLevel.Warning, "Extending class more than 1 is not supported!");
             }
 
             if (extendingList.length > 0) {
@@ -36,10 +31,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
 
         // Implements
         if (declaration.heritageClauses != null) {
-            this.implements = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ImplementsKeyword, {
-                ItemsRegistry: this.ItemsRegistry,
-                Program: this.Program
-            });
+            this.implements = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ImplementsKeyword, this.Options);
         }
     }
 

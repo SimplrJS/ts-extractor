@@ -12,6 +12,7 @@ import {
 import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
 import { TSHelpers } from "./ts-helpers";
+import { Logger, LogLevel } from "./utils/logger";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiVariable } from "./definitions/api-variable";
@@ -24,6 +25,7 @@ import { ApiProperty } from "./definitions/api-property";
 import { ApiMethod } from "./definitions/api-method";
 import { ApiParameter } from "./definitions/api-parameter";
 import { ApiType } from "./definitions/api-type";
+import { ApiClass } from "./definitions/api-class";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -50,9 +52,12 @@ export namespace ApiHelpers {
             return new ApiParameter(declaration, symbol, options);
         } else if (ts.isTypeAliasDeclaration(declaration)) {
             return new ApiType(declaration, symbol, options);
+        } else if (ts.isClassDeclaration(declaration)) {
+            return new ApiClass(declaration, symbol, options);
         }
 
-        console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
+        Logger.Log(LogLevel.Warning, `Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported in file:`);
+        Logger.Log(LogLevel.Warning, `${declaration.getSourceFile().fileName}`);
     }
 
     export function GetItemsFromSymbolsIds(
