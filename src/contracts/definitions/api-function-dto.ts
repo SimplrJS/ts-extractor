@@ -4,5 +4,5 @@ import { TypeDto } from "../type-dto";
 
 export interface ApiFunctionDto extends ApiBaseItemDto {
     Parameters: ApiItemReferenceDict;
-    ReturnType: TypeDto;
+    ReturnType?: TypeDto;
 }

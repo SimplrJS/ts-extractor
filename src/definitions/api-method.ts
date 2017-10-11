@@ -14,21 +14,19 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
     constructor(declaration: ts.MethodSignature, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, {
-            ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
-        });
+        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
     }
 
     private parameters: ApiItemReferenceDict = {};
 
-    public GetReturnType(): TypeDto {
-        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+    public GetReturnType(): TypeDto | undefined {
+        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
+        if (signature == null) {
+            return;
+        }
+        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
 
-        return ApiHelpers.TypeToApiTypeDto(type, {
-            ItemsRegistry: this.ItemsRegistry,
-            Program: this.Program
-        });
+        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
     public Extract(): ApiMethodDto {

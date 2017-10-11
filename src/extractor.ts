@@ -1,5 +1,6 @@
 import * as ts from "typescript";
 import * as os from "os";
+import * as fs from "fs-extra";
 import { PackageJson } from "read-package-json";
 import * as path from "path";
 
@@ -19,28 +20,41 @@ export interface ExtractDto {
 }
 
 export interface ExtractorOptions {
-    compilerOptions: ts.CompilerOptions;
+    CompilerOptions: ts.CompilerOptions;
+    ProjectDirectory: string;
 }
 
 export class Extractor {
     constructor(options: ExtractorOptions) {
-        this.compilerOptions = options.compilerOptions;
-        this.itemsRegistry = new ApiItemsRegistry();
+        this.compilerOptions = options.CompilerOptions;
+        this.projectDirectory = fs.realpathSync(options.ProjectDirectory);
     }
 
     private compilerOptions: ts.CompilerOptions;
-    private itemsRegistry: ApiItemsRegistry;
+    private projectDirectory: string;
 
-    public Extract(files: string[], cwd?: string): ExtractDto {
+    public Extract(files: string[]): ExtractDto {
         const rootNames = files.map(file => {
-            if (cwd == null || path.isAbsolute(file)) {
+            if (path.isAbsolute(file)) {
                 return file;
             }
 
-            return path.join(cwd, file);
+            return path.join(this.projectDirectory, file);
+        });
+
+        // Check if files exist and they are in project directory.
+        rootNames.forEach(filePath => {
+            if (!fs.existsSync(filePath)) {
+                throw new Error(`Given file: ${filePath}, does not exist.`);
+            }
+
+            if (fs.realpathSync(filePath).indexOf(this.projectDirectory) === -1) {
+                throw new Error(`Given file "${filePath}", is not in project directory "${this.projectDirectory}".`);
+            }
         });
 
         const program = ts.createProgram(rootNames, this.compilerOptions);
+        const itemsRegistry = new ApiItemsRegistry();
 
         // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
         // with semantic information (i.e. symbols).  The "diagnostics" are a subset of the everyday
@@ -49,39 +63,39 @@ export class Extractor {
         if (diagnostics.length > 0) {
             const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), {
                 getCanonicalFileName: () => __filename,
-                // TODO: Maybe use projetDirectory?
-                getCurrentDirectory: () => __dirname,
+                getCurrentDirectory: () => this.projectDirectory,
                 getNewLine: () => os.EOL
             });
             Logger.Log(LogLevel.Error, str);
-            // TODO: Throw
+            throw new Error("TypeScript compilation errors. Please fix them before using extractor.");
         }
 
         const typeChecker = program.getTypeChecker();
         const apiSourceFiles: ApiSourceFile[] = [];
 
+        // Go through all given files.
         const rootFiles = program.getRootFileNames();
         rootFiles.forEach(fileName => {
             const sourceFile: ts.SourceFile = program.getSourceFile(fileName);
 
             const apiSourceFile = new ApiSourceFile(sourceFile, {
                 Program: program,
-                ItemsRegistry: this.itemsRegistry
+                ItemsRegistry: itemsRegistry,
+                ProjectDirectory: this.projectDirectory
             });
 
             apiSourceFiles.push(apiSourceFile);
         });
 
-        // TODO: Return EntryFiles filenames without cwd
         return {
-            Registry: this.getRegistryExtractedItems(),
+            Registry: this.getRegistryExtractedItems(itemsRegistry),
             EntryFiles: apiSourceFiles.map(x => x.Extract())
         };
     }
 
-    private getRegistryExtractedItems(): RegistryExtractedItems {
+    private getRegistryExtractedItems(itemsRegistry: ApiItemsRegistry): RegistryExtractedItems {
         const items: RegistryExtractedItems = {};
-        const apiItems = this.itemsRegistry.GetAll();
+        const apiItems = itemsRegistry.GetAll();
 
         Object.keys(apiItems).forEach(itemId => {
             items[itemId] = apiItems[itemId].Extract();
