@@ -10,5 +10,7 @@ export enum ApiItemKinds {
     Property = "property",
     Variable = "variable",
     Type = "type",
-    Class = "class"
+    Class = "class",
+    ClassProperty = "class-property",
+    ClassMethod = "class-method"
 }

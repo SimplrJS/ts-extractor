@@ -51,7 +51,12 @@
 //     OtherStuff: string[];
 // }
 
+export abstract class Foo {
+    public Name: string;
 
-export class Foo {
+    public GetName(): string {
+        return this.Name;
+    }
 
+    public abstract Bar(): string;
 }
