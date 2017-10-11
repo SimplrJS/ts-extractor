@@ -3,12 +3,12 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiPropertyDto } from "../contracts/definitions/api-property-dto";
+import { ApiClassPropertyDto } from "../contracts/definitions/api-class-property-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ModifiersDto } from "../contracts/modifiers-dto";
 
-export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiPropertyDto> {
+export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPropertyDto> {
     constructor(declaration: ts.PropertyDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
@@ -23,7 +23,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiPropert
         return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
-    public Extract(): ApiPropertyDto {
+    public Extract(): ApiClassPropertyDto {
         return {
             ApiKind: ApiItemKinds.ClassProperty,
             Name: this.Symbol.name,
