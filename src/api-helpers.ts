@@ -224,23 +224,28 @@ export namespace ApiHelpers {
     }
 
     export function ResolveAccessModifierFromModifiers(modifiers?: ts.NodeArray<ts.Modifier>): AccessModifier {
+        let accessModifier = AccessModifier.Public;
+
         if (modifiers != null) {
             modifiers.forEach(modifier => {
                 switch (modifier.kind) {
                     case ts.SyntaxKind.PublicKeyword: {
-                        return AccessModifier.Public;
+                        accessModifier = AccessModifier.Public;
+                        return;
                     }
                     case ts.SyntaxKind.PrivateKeyword: {
-                        return AccessModifier.Private;
+                        accessModifier = AccessModifier.Private;
+                        return;
                     }
                     case ts.SyntaxKind.ProtectedKeyword: {
-                        return AccessModifier.Protected;
+                        accessModifier = AccessModifier.Protected;
+                        return;
                     }
                 }
             });
         }
 
-        return AccessModifier.Public;
+        return accessModifier;
     }
 
     export function ModifierKindExistsInModifiers(modifiers: ts.NodeArray<ts.Modifier> | undefined, kind: ts.SyntaxKind): boolean {
