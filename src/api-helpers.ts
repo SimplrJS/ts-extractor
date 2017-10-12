@@ -11,7 +11,9 @@ import {
 } from "./contracts/type-dto";
 import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
+import { AccessModifier } from "./contracts/access-modifier";
 import { TSHelpers } from "./ts-helpers";
+import { Logger, LogLevel } from "./utils/logger";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiVariable } from "./definitions/api-variable";
@@ -24,6 +26,9 @@ import { ApiProperty } from "./definitions/api-property";
 import { ApiMethod } from "./definitions/api-method";
 import { ApiParameter } from "./definitions/api-parameter";
 import { ApiType } from "./definitions/api-type";
+import { ApiClass } from "./definitions/api-class";
+import { ApiClassProperty } from "./definitions/api-class-property";
+import { ApiClassMethod } from "./definitions/api-class-method";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -50,9 +55,16 @@ export namespace ApiHelpers {
             return new ApiParameter(declaration, symbol, options);
         } else if (ts.isTypeAliasDeclaration(declaration)) {
             return new ApiType(declaration, symbol, options);
+        } else if (ts.isClassDeclaration(declaration)) {
+            return new ApiClass(declaration, symbol, options);
+        } else if (ts.isPropertyDeclaration(declaration)) {
+            return new ApiClassProperty(declaration, symbol, options);
+        } else if (ts.isMethodDeclaration(declaration)) {
+            return new ApiClassMethod(declaration, symbol, options);
         }
 
-        console.log(`Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported.`);
+        Logger.Log(LogLevel.Warning, `Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported in file:`);
+        Logger.Log(LogLevel.Warning, `${declaration.getSourceFile().fileName}`);
     }
 
     export function GetItemsFromSymbolsIds(
@@ -209,5 +221,38 @@ export namespace ApiHelpers {
             Text: text,
             Generics: generics
         } as TypeDefaultDto;
+    }
+
+    export function ResolveAccessModifierFromModifiers(modifiers?: ts.NodeArray<ts.Modifier>): AccessModifier {
+        let accessModifier = AccessModifier.Public;
+
+        if (modifiers != null) {
+            modifiers.forEach(modifier => {
+                switch (modifier.kind) {
+                    case ts.SyntaxKind.PublicKeyword: {
+                        accessModifier = AccessModifier.Public;
+                        return;
+                    }
+                    case ts.SyntaxKind.PrivateKeyword: {
+                        accessModifier = AccessModifier.Private;
+                        return;
+                    }
+                    case ts.SyntaxKind.ProtectedKeyword: {
+                        accessModifier = AccessModifier.Protected;
+                        return;
+                    }
+                }
+            });
+        }
+
+        return accessModifier;
+    }
+
+    export function ModifierKindExistsInModifiers(modifiers: ts.NodeArray<ts.Modifier> | undefined, kind: ts.SyntaxKind): boolean {
+        if (modifiers != null) {
+            return modifiers.some(x => x.kind === kind);
+        }
+
+        return false;
     }
 }

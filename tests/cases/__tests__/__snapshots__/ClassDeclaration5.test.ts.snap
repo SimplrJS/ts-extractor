@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDeclaration5 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "ClassDeclaration-1",
+        "FooBase": "ClassDeclaration-0",
+      },
+      "Name": "ClassDeclaration5.ts",
+      "Path": "cases/ClassDeclaration5.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": true,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "GetValue": "MethodDeclaration-0",
+      },
+      "Name": "FooBase",
+    },
+    "ClassDeclaration-1": Object {
+      "ApiKind": "class",
+      "Extends": Object {
+        "ApiTypeKind": "reference",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "default",
+            "Flags": 4,
+            "FlagsString": "Number",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "number",
+          },
+        ],
+        "Name": "FooBase",
+        "ReferenceId": "ClassDeclaration-0",
+        "Text": "FooBase<number>",
+      },
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "GetValue": "MethodDeclaration-1",
+      },
+      "Name": "Foo",
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": true,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Name": "GetValue",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
+        "Generics": undefined,
+        "Name": "TValue",
+        "Text": "TValue",
+      },
+    },
+    "MethodDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Name": "GetValue",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+  },
+}
+`;
