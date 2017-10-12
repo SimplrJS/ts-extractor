@@ -1,10 +1,10 @@
 // Implemented 2 interfaces in class.
 
-interface Foo {
+export interface Foo {
     Bar: string;
 }
 
-interface Foo2 {
+export interface Foo2 {
     Bar2: string;
 }
 

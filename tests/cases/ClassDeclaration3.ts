@@ -1,6 +1,6 @@
 // Implemented interface in class.
 
-interface Foo {
+export interface Foo {
     Bar: string;
 }
 
