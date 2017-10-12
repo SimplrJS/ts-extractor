@@ -31,7 +31,7 @@ Object {
       "Name": "Foo",
     },
     "MethodDeclaration-0": Object {
-      "AccessModifier": "public",
+      "AccessModifier": "protected",
       "ApiKind": "class-method",
       "IsAbstract": false,
       "IsStatic": false,
