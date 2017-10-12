@@ -244,17 +244,10 @@ export namespace ApiHelpers {
     }
 
     export function ModifierKindExistsInModifiers(modifiers: ts.NodeArray<ts.Modifier> | undefined, kind: ts.SyntaxKind): boolean {
-        let found = false;
-
         if (modifiers != null) {
-            modifiers.forEach(modifier => {
-                if (modifier.kind === kind) {
-                    found = true;
-                    return;
-                }
-            });
+            return modifiers.some(x => x.kind === kind);
         }
 
-        return found;
+        return false;
     }
 }

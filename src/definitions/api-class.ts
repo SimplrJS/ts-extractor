@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
-import { Logger, LogLevel } from "../utils/logger";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/definitions/api-class-dto";
@@ -19,10 +18,6 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
         // Extends
         if (declaration.heritageClauses != null) {
             const extendingList = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
-
-            if (extendingList.length > 1) {
-                Logger.Log(LogLevel.Warning, "Extending class more than 1 is not supported!");
-            }
 
             if (extendingList.length > 0) {
                 this.extends = extendingList[0];
