@@ -8,7 +8,7 @@ Object {
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
-        "Camera": Array [],
+        "Camera": "ClassDeclaration-0",
         "Face": "InterfaceDeclaration-0",
       },
       "Name": "InterfaceSubtyping.ts",
@@ -16,6 +16,26 @@ Object {
     },
   ],
   "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Generics": undefined,
+          "Name": "Face",
+          "ReferenceId": "InterfaceDeclaration-0",
+          "Text": "Face",
+        },
+      ],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "foo": "MethodDeclaration-0",
+      },
+      "Name": "Camera",
+    },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
@@ -25,6 +45,24 @@ Object {
         "foo": "MethodSignature-0",
       },
       "Name": "Face",
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Name": "foo",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",

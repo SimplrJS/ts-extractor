@@ -14,7 +14,7 @@ Object {
         "a2": "InterfaceDeclaration-2",
         "b": "InterfaceDeclaration-4",
         "c": "InterfaceDeclaration-5",
-        "c1": Array [],
+        "c1": "ClassDeclaration-0",
         "d": "InterfaceDeclaration-6",
         "instance2": "VariableDeclaration-0",
       },
@@ -23,6 +23,24 @@ Object {
     },
   ],
   "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Generics": undefined,
+          "Name": "a",
+          "ReferenceId": "InterfaceDeclaration-3",
+          "Text": "a",
+        },
+      ],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {},
+      "Name": "c1",
+    },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
@@ -206,7 +224,7 @@ Object {
       "Kind": 146,
       "KindString": "Parameter",
       "Name": "s",
-      "ReturnType": Object {
+      "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 4,
         "FlagsString": "Number",
@@ -220,7 +238,7 @@ Object {
       "Kind": 146,
       "KindString": "Parameter",
       "Name": "a",
-      "ReturnType": Object {
+      "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 2,
         "FlagsString": "String",
@@ -234,7 +252,7 @@ Object {
       "Kind": 146,
       "KindString": "Parameter",
       "Name": "s",
-      "ReturnType": Object {
+      "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 4,
         "FlagsString": "Number",
@@ -305,11 +323,10 @@ Object {
       "KindString": "VariableDeclaration",
       "Name": "instance2",
       "Type": Object {
-        "ApiTypeKind": "default",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": undefined,
         "Name": "c1",
+        "ReferenceId": "ClassDeclaration-0",
         "Text": "c1",
       },
     },
