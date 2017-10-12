@@ -35,8 +35,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
         }
 
         // IsAbstract
-        const modifiers = ApiHelpers.FromModifiersToModifiersDto(declaration.modifiers);
-        this.isAbstract = modifiers.IsAbstract;
+        this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
     }
 
     /**

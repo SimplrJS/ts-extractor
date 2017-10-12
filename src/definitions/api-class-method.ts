@@ -6,7 +6,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiClassMethodDto } from "../contracts/definitions/api-class-method-dto";
 import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ModifiersDto } from "../contracts/modifiers-dto";
+import { AccessModifier } from "../contracts/access-modifier";
 import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
@@ -16,11 +16,17 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
         super(declaration, symbol, options);
 
         this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
-        this.modifiers = ApiHelpers.FromModifiersToModifiersDto(declaration.modifiers);
+
+        // Modifiers
+        this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);
+        this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
+        this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.StaticKeyword);
     }
 
     private parameters: ApiItemReferenceDict = {};
-    private modifiers: ModifiersDto;
+    private accessModifier: AccessModifier;
+    private isAbstract: boolean;
+    private isStatic: boolean;
 
     public GetReturnType(): TypeDto | undefined {
         const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
@@ -40,7 +46,9 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Parameters: this.parameters,
             ReturnType: this.GetReturnType(),
-            ...this.modifiers
+            AccessModifier: this.accessModifier,
+            IsAbstract: this.isAbstract,
+            IsStatic: this.isStatic
         };
     }
 }

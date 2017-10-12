@@ -1,5 +1,9 @@
 import { ApiMethodDto } from "./api-method-dto";
 import { ApiItemReferenceDict } from "../api-item-reference-dict";
-import { ModifiersDto } from "../modifiers-dto";
+import { AccessModifier } from "../access-modifier";
 
-export interface ApiClassMethodDto extends ApiMethodDto, ModifiersDto { }
+export interface ApiClassMethodDto extends ApiMethodDto {
+    AccessModifier: AccessModifier;
+    IsAbstract: boolean;
+    IsStatic: boolean;
+}

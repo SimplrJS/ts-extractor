@@ -6,16 +6,23 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiClassPropertyDto } from "../contracts/definitions/api-class-property-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
-import { ModifiersDto } from "../contracts/modifiers-dto";
+import { AccessModifier } from "../contracts/access-modifier";
 
 export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPropertyDto> {
     constructor(declaration: ts.PropertyDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        this.modifiers = ApiHelpers.FromModifiersToModifiersDto(declaration.modifiers);
+        // Modifiers
+        this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);
+        this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
+        this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.StaticKeyword);
+        this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
     }
 
-    private modifiers: ModifiersDto;
+    private accessModifier: AccessModifier;
+    private isAbstract: boolean;
+    private isStatic: boolean;
+    private isReadonly: boolean;
 
     public GetReturnType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
@@ -30,7 +37,10 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Type: this.GetReturnType(),
-            ...this.modifiers
+            AccessModifier: this.accessModifier,
+            IsAbstract: this.isAbstract,
+            IsReadonly: this.isReadonly,
+            IsStatic: this.isStatic
         };
     }
 }

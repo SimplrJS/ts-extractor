@@ -12,7 +12,6 @@ import {
 import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
 import { AccessModifier } from "./contracts/access-modifier";
-import { ModifiersDto } from "./contracts/modifiers-dto";
 import { TSHelpers } from "./ts-helpers";
 import { Logger, LogLevel } from "./utils/logger";
 
@@ -224,44 +223,38 @@ export namespace ApiHelpers {
         } as TypeDefaultDto;
     }
 
-    export function FromModifiersToModifiersDto(modifiers?: ts.NodeArray<ts.Modifier>): ModifiersDto {
-        const data: ModifiersDto = {
-            AccessModifier: AccessModifier.Public,
-            IsAbstract: false,
-            IsStatic: false
-        };
-        if (modifiers == null) {
-            return data;
+    export function ResolveAccessModifierFromModifiers(modifiers?: ts.NodeArray<ts.Modifier>): AccessModifier {
+        if (modifiers != null) {
+            modifiers.forEach(modifier => {
+                switch (modifier.kind) {
+                    case ts.SyntaxKind.PublicKeyword: {
+                        return AccessModifier.Public;
+                    }
+                    case ts.SyntaxKind.PrivateKeyword: {
+                        return AccessModifier.Private;
+                    }
+                    case ts.SyntaxKind.ProtectedKeyword: {
+                        return AccessModifier.Protected;
+                    }
+                }
+            });
         }
 
-        modifiers.forEach(modifier => {
-            switch (modifier.kind) {
-                // AccessModifier cases
-                case ts.SyntaxKind.PublicKeyword: {
-                    data.AccessModifier = AccessModifier.Public;
-                    break;
-                }
-                case ts.SyntaxKind.PrivateKeyword: {
-                    data.AccessModifier = AccessModifier.Private;
-                    break;
-                }
-                case ts.SyntaxKind.ProtectedKeyword: {
-                    data.AccessModifier = AccessModifier.Protected;
-                    break;
-                }
-                // IsAbstract
-                case ts.SyntaxKind.AbstractKeyword: {
-                    data.IsAbstract = true;
-                    break;
-                }
-                // IsStatic
-                case ts.SyntaxKind.StaticKeyword: {
-                    data.IsStatic = true;
-                    break;
-                }
-            }
-        });
+        return AccessModifier.Public;
+    }
 
-        return data;
+    export function ModifierKindExistsInModifiers(modifiers: ts.NodeArray<ts.Modifier> | undefined, kind: ts.SyntaxKind): boolean {
+        let found = false;
+
+        if (modifiers != null) {
+            modifiers.forEach(modifier => {
+                if (modifier.kind === kind) {
+                    found = true;
+                    return;
+                }
+            });
+        }
+
+        return found;
     }
 }
