@@ -112,15 +112,18 @@ export namespace ApiHelpers {
 
         declarations.forEach(declarationItem => {
             const symbol = TSHelpers.GetSymbolFromDeclaration(declarationItem, typeChecker);
-            const name = symbol.name;
-
             if (symbol == null) {
                 return;
             }
+            const name = symbol.name;
 
             let declarationId = options.ItemsRegistry.Find(declarationItem);
             if (declarationId == null) {
                 const visitedItem = VisitApiItem(declarationItem, symbol, options);
+                if (visitedItem == null) {
+                    return;
+                }
+
                 declarationId = options.ItemsRegistry.Add(visitedItem);
             }
 
