@@ -9,6 +9,6 @@ branches:
   - dev
   - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 node_js:
-- stable
+- "node"
 script:
 - npm test
