@@ -24,7 +24,10 @@ Object {
       "KindString": "ClassDeclaration",
       "Members": Object {
         "Bar": "PropertyDeclaration-1",
-        "GetFoo": "MethodDeclaration-1",
+        "GetFoo": Array [
+          "MethodDeclaration-1",
+          "MethodDeclaration-2",
+        ],
         "Id": "PropertyDeclaration-0",
         "SetFoo": "MethodDeclaration-0",
       },
@@ -58,6 +61,26 @@ Object {
       "Kind": 151,
       "KindString": "MethodDeclaration",
       "Name": "GetFoo",
+      "Parameters": Object {
+        "a": "Parameter-1",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "MethodDeclaration-2": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Name": "GetFoo",
       "Parameters": Object {},
       "ReturnType": Object {
         "ApiTypeKind": "default",
@@ -73,6 +96,20 @@ Object {
       "Kind": 146,
       "KindString": "Parameter",
       "Name": "foo",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 2,
