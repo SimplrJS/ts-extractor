@@ -63,8 +63,10 @@ export namespace ApiHelpers {
             return new ApiClassMethod(declaration, symbol, options);
         }
 
-        Logger.Log(LogLevel.Warning, `Declaration: ${ts.SyntaxKind[declaration.kind]} is not supported in file:`);
-        Logger.Log(LogLevel.Warning, `${declaration.getSourceFile().fileName}`);
+        const sourceFile = declaration.getSourceFile();
+        const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
+        const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
+        Logger.Log(LogLevel.Warning, `${linePrefix}: Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`);
     }
 
     export function GetItemsFromSymbolsIds(
