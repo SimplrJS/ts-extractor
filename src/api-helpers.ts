@@ -115,19 +115,28 @@ export namespace ApiHelpers {
             if (symbol == null) {
                 return;
             }
+            const name = symbol.name;
 
-            const declarationId = options.ItemsRegistry.Find(declarationItem);
-            if (declarationId != null) {
-                items[symbol.name] = declarationId;
-                return;
+            let declarationId = options.ItemsRegistry.Find(declarationItem);
+            if (declarationId == null) {
+                const visitedItem = VisitApiItem(declarationItem, symbol, options);
+                if (visitedItem == null) {
+                    return;
+                }
+
+                declarationId = options.ItemsRegistry.Add(visitedItem);
             }
 
-            const visitedItem = VisitApiItem(declarationItem, symbol, options);
-            if (visitedItem == null) {
-                return;
+            if (items[name] == null) {
+                items[name] = declarationId;
+            } else {
+                const refs = items[name];
+                if (Array.isArray(refs)) {
+                    refs.push(declarationId);
+                } else {
+                    items[name] = [refs, declarationId];
+                }
             }
-
-            items[symbol.name] = options.ItemsRegistry.Add(visitedItem);
         });
 
         return items;

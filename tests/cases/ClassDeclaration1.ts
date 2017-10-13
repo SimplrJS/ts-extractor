@@ -3,6 +3,7 @@
 export class Foo {
     protected SetFoo(foo: string): void { }
 
+    public GetFoo(a?: string): string;
     public GetFoo(): string {
         return "";
     }
