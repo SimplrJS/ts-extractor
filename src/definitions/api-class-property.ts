@@ -24,6 +24,10 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
     private isStatic: boolean;
     private isReadonly: boolean;
 
+    public GetIsPrivate(): boolean {
+        return this.accessModifier === AccessModifier.Private;
+    }
+
     public GetReturnType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
 

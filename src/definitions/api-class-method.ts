@@ -28,6 +28,10 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
     private isAbstract: boolean;
     private isStatic: boolean;
 
+    public GetIsPrivate(): boolean {
+        return this.accessModifier === AccessModifier.Private;
+    }
+
     public GetReturnType(): TypeDto | undefined {
         const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
         if (signature == null) {

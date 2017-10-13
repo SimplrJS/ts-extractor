@@ -34,42 +34,50 @@ import { ApiClassMethod } from "./definitions/api-class-method";
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
     export function VisitApiItem(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): ApiItem | undefined {
+        let apiItem: ApiItem | undefined;
         if (ts.isSourceFile(declaration)) {
-            return new ApiSourceFile(declaration, options);
+            apiItem = new ApiSourceFile(declaration, options);
         } else if (ts.isVariableDeclaration(declaration)) {
-            return new ApiVariable(declaration, symbol, options);
+            apiItem = new ApiVariable(declaration, symbol, options);
         } else if (ts.isModuleDeclaration(declaration)) {
-            return new ApiNamespace(declaration, symbol, options);
+            apiItem = new ApiNamespace(declaration, symbol, options);
         } else if (ts.isFunctionDeclaration(declaration)) {
-            return new ApiFunction(declaration, symbol, options);
+            apiItem = new ApiFunction(declaration, symbol, options);
         } else if (ts.isEnumDeclaration(declaration)) {
-            return new ApiEnum(declaration, symbol, options);
+            apiItem = new ApiEnum(declaration, symbol, options);
         } else if (ts.isEnumMember(declaration)) {
-            return new ApiEnumMember(declaration, symbol, options);
+            apiItem = new ApiEnumMember(declaration, symbol, options);
         } else if (ts.isInterfaceDeclaration(declaration)) {
-            return new ApiInterface(declaration, symbol, options);
+            apiItem = new ApiInterface(declaration, symbol, options);
         } else if (ts.isPropertySignature(declaration)) {
-            return new ApiProperty(declaration, symbol, options);
+            apiItem = new ApiProperty(declaration, symbol, options);
         } else if (ts.isMethodSignature(declaration)) {
-            return new ApiMethod(declaration, symbol, options);
+            apiItem = new ApiMethod(declaration, symbol, options);
         } else if (ts.isParameter(declaration)) {
-            return new ApiParameter(declaration, symbol, options);
+            apiItem = new ApiParameter(declaration, symbol, options);
         } else if (ts.isTypeAliasDeclaration(declaration)) {
-            return new ApiType(declaration, symbol, options);
+            apiItem = new ApiType(declaration, symbol, options);
         } else if (ts.isClassDeclaration(declaration)) {
-            return new ApiClass(declaration, symbol, options);
+            apiItem = new ApiClass(declaration, symbol, options);
         } else if (ts.isConstructorDeclaration(declaration)) {
-            return new ApiClassConstructor(declaration, symbol, options);
+            apiItem = new ApiClassConstructor(declaration, symbol, options);
         } else if (ts.isPropertyDeclaration(declaration)) {
-            return new ApiClassProperty(declaration, symbol, options);
+            apiItem = new ApiClassProperty(declaration, symbol, options);
         } else if (ts.isMethodDeclaration(declaration)) {
-            return new ApiClassMethod(declaration, symbol, options);
+            apiItem = new ApiClassMethod(declaration, symbol, options);
         }
 
+        if (apiItem != null && apiItem.GetIsPrivate()) {
+            return;
+        }
+
+        // This declaration is not supported, show a Warning message.
         const sourceFile = declaration.getSourceFile();
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
         const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
         Logger.Log(LogLevel.Warning, `${linePrefix}: Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`);
+
+        return apiItem;
     }
 
     export function GetItemsFromSymbolsIds(
