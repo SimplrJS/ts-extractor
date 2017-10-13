@@ -32,9 +32,20 @@ Object {
       "Kind": 229,
       "KindString": "ClassDeclaration",
       "Members": Object {
+        "__constructor": "Constructor-0",
         "foo": "MethodDeclaration-0",
       },
       "Name": "Camera",
+    },
+    "Constructor-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "Kind": 152,
+      "KindString": "Constructor",
+      "Name": "__constructor",
+      "Parameters": Object {
+        "str": "Parameter-0",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -77,6 +88,20 @@ Object {
         "Generics": undefined,
         "Name": undefined,
         "Text": "void",
+      },
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "str",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
       },
     },
   },

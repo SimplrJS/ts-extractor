@@ -27,6 +27,7 @@ import { ApiMethod } from "./definitions/api-method";
 import { ApiParameter } from "./definitions/api-parameter";
 import { ApiType } from "./definitions/api-type";
 import { ApiClass } from "./definitions/api-class";
+import { ApiClassConstructor } from "./definitions/api-class-constructor";
 import { ApiClassProperty } from "./definitions/api-class-property";
 import { ApiClassMethod } from "./definitions/api-class-method";
 
@@ -57,6 +58,8 @@ export namespace ApiHelpers {
             return new ApiType(declaration, symbol, options);
         } else if (ts.isClassDeclaration(declaration)) {
             return new ApiClass(declaration, symbol, options);
+        } else if (ts.isConstructorDeclaration(declaration)) {
+            return new ApiClassConstructor(declaration, symbol, options);
         } else if (ts.isPropertyDeclaration(declaration)) {
             return new ApiClassProperty(declaration, symbol, options);
         } else if (ts.isMethodDeclaration(declaration)) {
