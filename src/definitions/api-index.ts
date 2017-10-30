@@ -31,7 +31,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
 
     private getType(): TypeDto {
         if (this.Declaration.type == null) {
-            throw new Error("IndexSignature must have type.");
+            throw new Error("IndexSignature must have a type.");
         }
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
         return ApiHelpers.TypeToApiTypeDto(type, this.Options);
