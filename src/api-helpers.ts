@@ -67,15 +67,17 @@ export namespace ApiHelpers {
             apiItem = new ApiClassMethod(declaration, symbol, options);
         }
 
-        if (apiItem != null && apiItem.GetIsPrivate()) {
+        if (apiItem != null && apiItem.IsPrivate()) {
             return;
         }
 
-        // This declaration is not supported, show a Warning message.
-        const sourceFile = declaration.getSourceFile();
-        const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-        const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
-        Logger.Log(LogLevel.Warning, `${linePrefix}: Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`);
+        if (apiItem == null) {
+            // This declaration is not supported, show a Warning message.
+            const sourceFile = declaration.getSourceFile();
+            const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
+            const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
+            Logger.Log(LogLevel.Warning, `${linePrefix}: Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`);
+        }
 
         return apiItem;
     }

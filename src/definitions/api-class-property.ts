@@ -24,8 +24,8 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
     private isStatic: boolean;
     private isReadonly: boolean;
 
-    public GetIsPrivate(): boolean {
-        return super.GetIsPrivate() || this.accessModifier === AccessModifier.Private;
+    public IsPrivate(): boolean {
+        return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
     }
 
     public GetReturnType(): TypeDto {
