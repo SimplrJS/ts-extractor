@@ -28,5 +28,12 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseI
         return this.symbol;
     }
 
+    /**
+     * If ApiItem is private, it will not appear in extracted data.
+     */
+    public IsPrivate(): boolean {
+        return false;
+    }
+
     public abstract Extract(): TExtract;
 }

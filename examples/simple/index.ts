@@ -54,6 +54,8 @@
 export abstract class Foo {
     public Name: string;
 
+    private somePrivateProperty: any;
+
     public GetName(ok: string): string;
     public GetName(ok: string, ok2?: string): string {
         return this.Name;
