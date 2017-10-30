@@ -30,6 +30,7 @@ import { ApiClass } from "./definitions/api-class";
 import { ApiClassConstructor } from "./definitions/api-class-constructor";
 import { ApiClassProperty } from "./definitions/api-class-property";
 import { ApiClassMethod } from "./definitions/api-class-method";
+import { ApiIndex } from "./definitions/api-index";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -65,6 +66,8 @@ export namespace ApiHelpers {
             apiItem = new ApiClassProperty(declaration, symbol, options);
         } else if (ts.isMethodDeclaration(declaration)) {
             apiItem = new ApiClassMethod(declaration, symbol, options);
+        } else if (ts.isIndexSignatureDeclaration(declaration)) {
+            apiItem = new ApiIndex(declaration, symbol, options);
         }
 
         if (apiItem != null && apiItem.IsPrivate()) {
