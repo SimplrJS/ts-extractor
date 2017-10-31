@@ -23,8 +23,6 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
 
     private parameters: ApiItemReferenceDict = {};
     private accessModifier: AccessModifier;
-    private isAbstract: boolean;
-    private isStatic: boolean;
 
     public GetReturnType(): TypeDto | undefined {
         const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
