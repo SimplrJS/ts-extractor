@@ -11,12 +11,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiVariable } from "./api-variable";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
-    constructor(sourceFile: ts.SourceFile, options: ApiItemOptions) {
-        const symbol = TSHelpers.GetSymbolFromDeclaration(sourceFile, options.Program.getTypeChecker());
-        if (symbol == null || symbol.exports == null) {
-            throw Error("Should not happen");
-        }
-
+    constructor(sourceFile: ts.SourceFile, symbol: ts.Symbol, options: ApiItemOptions) {
         super(sourceFile, symbol, options);
 
         this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, this.Options);

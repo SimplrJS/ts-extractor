@@ -37,7 +37,7 @@ export namespace ApiHelpers {
     export function VisitApiItem(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): ApiItem | undefined {
         let apiItem: ApiItem | undefined;
         if (ts.isSourceFile(declaration)) {
-            apiItem = new ApiSourceFile(declaration, options);
+            apiItem = new ApiSourceFile(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
             apiItem = new ApiVariable(declaration, symbol, options);
         } else if (ts.isModuleDeclaration(declaration)) {

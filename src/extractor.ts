@@ -77,8 +77,14 @@ export class Extractor {
         const rootFiles = program.getRootFileNames();
         rootFiles.forEach(fileName => {
             const sourceFile: ts.SourceFile = program.getSourceFile(fileName);
+            const symbol = typeChecker.getSymbolAtLocation(sourceFile);
 
-            const apiSourceFile = new ApiSourceFile(sourceFile, {
+            if (symbol == null) {
+                Logger.Log(LogLevel.Warning, `Source file "${fileName}" is skipped, because no exported members were found!`);
+                return;
+            }
+
+            const apiSourceFile = new ApiSourceFile(sourceFile, symbol, {
                 Program: program,
                 ItemsRegistry: itemsRegistry,
                 ProjectDirectory: this.projectDirectory
