@@ -14,5 +14,6 @@ export enum ApiItemKinds {
     ClassProperty = "class-property",
     ClassMethod = "class-method",
     Index = "index",
-    Call = "call"
+    Call = "call",
+    Construct = "construct"
 }
