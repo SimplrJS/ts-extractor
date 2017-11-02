@@ -48,7 +48,7 @@ export namespace ApiHelpers {
             if (item.HasSourceFileMembers()) {
                 apiItem = item;
             } else {
-                Logger.Log(LogLevel.Warning, "");
+                LogWithDeclarationPosition(LogLevel.Warning, declaration, "ExportDeclaration has no exported members!");
                 return;
             }
         } else if (ts.isExportSpecifier(declaration)) {
@@ -95,10 +95,11 @@ export namespace ApiHelpers {
 
         if (apiItem == null) {
             // This declaration is not supported, show a Warning message.
-            const sourceFile = declaration.getSourceFile();
-            const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-            const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
-            Logger.Log(LogLevel.Warning, `${linePrefix}: Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`);
+            LogWithDeclarationPosition(
+                LogLevel.Warning,
+                declaration,
+                `Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`
+            );
         }
 
         return apiItem;
@@ -300,5 +301,12 @@ export namespace ApiHelpers {
         }
 
         return false;
+    }
+
+    export function LogWithDeclarationPosition(logLevel: LogLevel, declaration: ts.Declaration, message: string): void {
+        const sourceFile = declaration.getSourceFile();
+        const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
+        const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
+        Logger.Log(logLevel, `${linePrefix}: ${message}`);
     }
 }

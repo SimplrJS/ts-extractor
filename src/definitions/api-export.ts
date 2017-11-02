@@ -35,11 +35,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
 
     private getExportPath(): string {
         if (this.apiSourceFile == null) {
-            const sourceFile = this.Declaration.getSourceFile();
-            const position = sourceFile.getLineAndCharacterOfPosition(this.Declaration.getSourceFile().getStart());
-            const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
-            Logger.Log(LogLevel.Warning, `${linePrefix}: Exported source file is not found!`);
-
+            ApiHelpers.LogWithDeclarationPosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
             // This should not happen, because we run Semantic Diagnostics before extraction.
             throw new Error("Exported source file is not found!");
         }
