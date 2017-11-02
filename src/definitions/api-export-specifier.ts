@@ -15,9 +15,12 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
         super(declaration, symbol, options);
 
         this.targetSymbol = this.TypeChecker.getExportSpecifierLocalTargetSymbol(declaration);
+
+        this.apiItems = this.getApiItems();
     }
 
     private targetSymbol: ts.Symbol | undefined;
+    private apiItems: ApiExportSpecifierApiItems;
 
     private getApiItems(): ApiExportSpecifierApiItems {
         const apiItems: ApiExportSpecifierApiItems = [];
@@ -49,7 +52,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            ApiItems: this.getApiItems()
+            ApiItems: this.apiItems
         };
     }
 }
