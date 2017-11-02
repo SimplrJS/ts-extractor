@@ -45,7 +45,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
 
     public Extract(): ApiExportSpecifierDto {
         return {
-            ApiKind: ApiItemKinds.Class,
+            ApiKind: ApiItemKinds.ExportSpecifier,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
