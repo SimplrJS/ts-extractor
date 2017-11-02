@@ -1,8 +1,6 @@
-import { ApiBaseItemDto } from "../api-base-item-dto";
-import { ApiItemReferenceDict } from "../api-item-reference-dict";
+import { ApiConstructorDto } from "./api-construct-dto";
 import { AccessModifier } from "../access-modifier";
 
-export interface ApiClassConstructorDto extends ApiBaseItemDto {
-    Parameters: ApiItemReferenceDict;
+export interface ApiClassConstructorDto extends ApiConstructorDto {
     AccessModifier: AccessModifier;
 }

@@ -23,6 +23,40 @@ Object {
     },
   ],
   "Registry": Object {
+    "CallSignature-0": Object {
+      "ApiKind": "call",
+      "Kind": 155,
+      "KindString": "CallSignature",
+      "Name": "__call",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "CallSignature-1": Object {
+      "ApiKind": "call",
+      "Kind": 155,
+      "KindString": "CallSignature",
+      "Name": "__call",
+      "Parameters": Object {
+        "a": "Parameter-0",
+        "b": "Parameter-1",
+        "c": "Parameter-2",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
     "ClassDeclaration-0": Object {
       "ApiKind": "class",
       "Extends": undefined,
@@ -41,12 +75,28 @@ Object {
       "Members": Object {},
       "Name": "c1",
     },
+    "ConstructSignature-0": Object {
+      "ApiKind": "construct",
+      "Kind": 156,
+      "KindString": "ConstructSignature",
+      "Name": "__new",
+      "Parameters": Object {},
+    },
+    "ConstructSignature-1": Object {
+      "ApiKind": "construct",
+      "Kind": 156,
+      "KindString": "ConstructSignature",
+      "Name": "__new",
+      "Parameters": Object {
+        "s": "Parameter-3",
+      },
+    },
     "IndexSignature-0": Object {
       "ApiKind": "index",
       "Kind": 157,
       "KindString": "IndexSignature",
       "Name": "__index",
-      "Parameter": "Parameter-0",
+      "Parameter": "Parameter-4",
       "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 32768,
@@ -61,7 +111,7 @@ Object {
       "Kind": 157,
       "KindString": "IndexSignature",
       "Name": "__index",
-      "Parameter": "Parameter-1",
+      "Parameter": "Parameter-5",
       "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 1,
@@ -76,7 +126,7 @@ Object {
       "Kind": 157,
       "KindString": "IndexSignature",
       "Name": "__index",
-      "Parameter": "Parameter-5",
+      "Parameter": "Parameter-9",
       "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 4,
@@ -91,7 +141,7 @@ Object {
       "Kind": 157,
       "KindString": "IndexSignature",
       "Name": "__index",
-      "Parameter": "Parameter-6",
+      "Parameter": "Parameter-10",
       "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 4,
@@ -107,9 +157,17 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {
+        "__call": Array [
+          "CallSignature-0",
+          "CallSignature-1",
+        ],
         "__index": Array [
           "IndexSignature-0",
           "IndexSignature-1",
+        ],
+        "__new": Array [
+          "ConstructSignature-0",
+          "ConstructSignature-1",
         ],
         "f1": "MethodSignature-1",
         "f2": "MethodSignature-2",
@@ -212,7 +270,7 @@ Object {
       "KindString": "MethodSignature",
       "Name": "p5",
       "Parameters": Object {
-        "s": "Parameter-2",
+        "s": "Parameter-6",
       },
       "ReturnType": Object {
         "ApiTypeKind": "default",
@@ -259,7 +317,7 @@ Object {
       "KindString": "MethodSignature",
       "Name": "f3",
       "Parameters": Object {
-        "a": "Parameter-3",
+        "a": "Parameter-7",
       },
       "ReturnType": Object {
         "ApiTypeKind": "default",
@@ -276,7 +334,7 @@ Object {
       "KindString": "MethodSignature",
       "Name": "f4",
       "Parameters": Object {
-        "s": "Parameter-4",
+        "s": "Parameter-8",
       },
       "ReturnType": Object {
         "ApiTypeKind": "default",
@@ -291,17 +349,31 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Name": "n",
+      "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
-        "Flags": 4,
-        "FlagsString": "Number",
+        "Flags": 1,
+        "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
-        "Text": "number",
+        "Text": "any",
       },
     },
     "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "b",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 1,
+        "FlagsString": "Any",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "any",
+      },
+    },
+    "Parameter-10": Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
@@ -319,21 +391,21 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Name": "s",
+      "Name": "c",
       "Type": Object {
         "ApiTypeKind": "default",
-        "Flags": 4,
-        "FlagsString": "Number",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
-        "Text": "number",
+        "Text": "string",
       },
     },
     "Parameter-3": Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Name": "a",
+      "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 2,
@@ -347,7 +419,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Name": "s",
+      "Name": "n",
       "Type": Object {
         "ApiTypeKind": "default",
         "Flags": 4,
@@ -361,14 +433,14 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Name": "n",
+      "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
-        "Flags": 4,
-        "FlagsString": "Number",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
-        "Text": "number",
+        "Text": "string",
       },
     },
     "Parameter-6": Object {
@@ -378,11 +450,53 @@ Object {
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+    "Parameter-7": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "a",
+      "Type": Object {
+        "ApiTypeKind": "default",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
         "Text": "string",
+      },
+    },
+    "Parameter-8": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "s",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+    "Parameter-9": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Name": "n",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
       },
     },
     "PropertySignature-0": Object {

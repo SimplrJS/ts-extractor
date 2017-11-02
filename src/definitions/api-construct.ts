@@ -3,7 +3,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiClassConstructorDto } from "../contracts/definitions/api-class-constructor-dto";
+import { ApiConstructorDto } from "../contracts/definitions/api-construct-dto";
 import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
@@ -11,18 +11,14 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 
-export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiClassConstructorDto> {
-    constructor(declaration: ts.ConstructorDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
+export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiConstructorDto> {
+    constructor(declaration: ts.ConstructSignatureDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
         this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
-
-        // Modifiers
-        this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);
     }
 
     private parameters: ApiItemReferenceDict = {};
-    private accessModifier: AccessModifier;
 
     public GetReturnType(): TypeDto | undefined {
         const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
@@ -34,14 +30,13 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
         return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
-    public Extract(): ApiClassConstructorDto {
+    public Extract(): ApiConstructorDto {
         return {
-            ApiKind: ApiItemKinds.ClassMethod,
+            ApiKind: ApiItemKinds.Construct,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Parameters: this.parameters,
-            AccessModifier: this.accessModifier
+            Parameters: this.parameters
         };
     }
 }

@@ -52,7 +52,7 @@
 // }
 
 export interface A {
-    [key: string]: boolean;
+    (aa: boolean): string;
 }
 
 // export abstract class Foo {
