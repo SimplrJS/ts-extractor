@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExportSpecifier2 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "ExportSpecifier-0",
+        "Foo2": "ExportSpecifier-1",
+      },
+      "Name": "ExportSpecifier2.ts",
+      "Path": "cases/ExportSpecifier2.ts",
+    },
+  ],
+  "Registry": Object {
+    "ExportSpecifier-0": Object {
+      "ApiItems": Array [
+        "InterfaceDeclaration-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
+      "Name": "Foo",
+    },
+    "ExportSpecifier-1": Object {
+      "ApiItems": Array [
+        "InterfaceDeclaration-1",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
+      "Name": "Foo2",
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "Bar": "PropertySignature-0",
+      },
+      "Name": "Foo",
+    },
+    "InterfaceDeclaration-1": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "Bar2": "PropertySignature-1",
+      },
+      "Name": "Foo2",
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Name": "Bar",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Name": "Bar2",
+      "Type": Object {
+        "ApiTypeKind": "default",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+  },
+}
+`;

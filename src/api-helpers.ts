@@ -16,6 +16,8 @@ import { TSHelpers } from "./ts-helpers";
 import { Logger, LogLevel } from "./utils/logger";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
+import { ApiExport } from "./definitions/api-export";
+import { ApiExportSpecifier } from "./definitions/api-export-specifier";
 import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
 import { ApiFunction } from "./definitions/api-function";
@@ -40,6 +42,17 @@ export namespace ApiHelpers {
         let apiItem: ApiItem | undefined;
         if (ts.isSourceFile(declaration)) {
             apiItem = new ApiSourceFile(declaration, symbol, options);
+        } else if (ts.isExportDeclaration(declaration)) {
+            const item = new ApiExport(declaration, symbol, options);
+
+            if (item.HasSourceFileMembers()) {
+                apiItem = item;
+            } else {
+                LogWithDeclarationPosition(LogLevel.Warning, declaration, "ExportDeclaration has no exported members!");
+                return;
+            }
+        } else if (ts.isExportSpecifier(declaration)) {
+            apiItem = new ApiExportSpecifier(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
             apiItem = new ApiVariable(declaration, symbol, options);
         } else if (ts.isModuleDeclaration(declaration)) {
@@ -82,10 +95,11 @@ export namespace ApiHelpers {
 
         if (apiItem == null) {
             // This declaration is not supported, show a Warning message.
-            const sourceFile = declaration.getSourceFile();
-            const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-            const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
-            Logger.Log(LogLevel.Warning, `${linePrefix}: Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`);
+            LogWithDeclarationPosition(
+                LogLevel.Warning,
+                declaration,
+                `Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`
+            );
         }
 
         return apiItem;
@@ -287,5 +301,12 @@ export namespace ApiHelpers {
         }
 
         return false;
+    }
+
+    export function LogWithDeclarationPosition(logLevel: LogLevel, declaration: ts.Declaration, message: string): void {
+        const sourceFile = declaration.getSourceFile();
+        const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
+        const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
+        Logger.Log(logLevel, `${linePrefix}: ${message}`);
     }
 }
