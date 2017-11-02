@@ -8,7 +8,6 @@ Object {
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
-        "Foo": "ExportSpecifier-0",
         "__export": "ExportDeclaration-0",
       },
       "Name": "ExportDeclaration1.ts",
@@ -43,15 +42,6 @@ Object {
         "Foo": "ClassDeclaration-0",
       },
       "Name": "__export",
-    },
-    "ExportSpecifier-0": Object {
-      "ApiItems": Array [
-        "ClassDeclaration-1",
-      ],
-      "ApiKind": "export-specifier",
-      "Kind": 246,
-      "KindString": "ExportSpecifier",
-      "Name": "Foo",
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",

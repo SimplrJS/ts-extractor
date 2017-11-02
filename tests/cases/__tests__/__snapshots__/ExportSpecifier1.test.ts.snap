@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExportSpecifier1 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "ExportSpecifier-0",
+      },
+      "Name": "ExportSpecifier1.ts",
+      "Path": "cases/ExportSpecifier1.ts",
+    },
+  ],
+  "Registry": Object {
+    "ExportSpecifier-0": Object {
+      "ApiItems": Array [
+        "ClassDeclaration-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
+      "Name": "Foo",
+    },
+  },
+}
+`;
