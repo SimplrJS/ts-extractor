@@ -1,3 +1,4 @@
+export * from "./exported-functions";
 // export type A<TValue> = number & { ok(): TValue };
 
 // /**

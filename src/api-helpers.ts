@@ -16,6 +16,7 @@ import { TSHelpers } from "./ts-helpers";
 import { Logger, LogLevel } from "./utils/logger";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
+import { ApiExport } from "./definitions/api-export";
 import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
 import { ApiFunction } from "./definitions/api-function";
@@ -40,6 +41,15 @@ export namespace ApiHelpers {
         let apiItem: ApiItem | undefined;
         if (ts.isSourceFile(declaration)) {
             apiItem = new ApiSourceFile(declaration, symbol, options);
+        } else if (ts.isExportDeclaration(declaration)) {
+            const item = new ApiExport(declaration, symbol, options);
+
+            if (item.HasSourceFileMembers()) {
+                apiItem = item;
+            } else {
+                Logger.Log(LogLevel.Warning, "");
+                return;
+            }
         } else if (ts.isVariableDeclaration(declaration)) {
             apiItem = new ApiVariable(declaration, symbol, options);
         } else if (ts.isModuleDeclaration(declaration)) {
