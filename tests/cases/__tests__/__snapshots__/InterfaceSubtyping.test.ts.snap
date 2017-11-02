@@ -11,6 +11,10 @@ Object {
         "Camera": "ClassDeclaration-0",
         "Face": "InterfaceDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceSubtyping.ts",
       "Path": "cases/InterfaceSubtyping.ts",
     },
@@ -35,6 +39,10 @@ Object {
         "__constructor": "Constructor-0",
         "foo": "MethodDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Camera",
     },
     "Constructor-0": Object {
@@ -42,6 +50,10 @@ Object {
       "ApiKind": "class-method",
       "Kind": 152,
       "KindString": "Constructor",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__constructor",
       "Parameters": Object {
         "str": "Parameter-0",
@@ -55,6 +67,10 @@ Object {
       "Members": Object {
         "foo": "MethodSignature-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Face",
     },
     "MethodDeclaration-0": Object {
@@ -64,6 +80,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "foo",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -79,6 +99,10 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "foo",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -94,6 +118,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "str",
       "Type": Object {
         "ApiTypeKind": "default",

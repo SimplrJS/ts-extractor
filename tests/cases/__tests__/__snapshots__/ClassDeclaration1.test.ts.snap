@@ -10,6 +10,10 @@ Object {
       "Members": Object {
         "Foo": "ClassDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ClassDeclaration1.ts",
       "Path": "cases/ClassDeclaration1.ts",
     },
@@ -31,6 +35,10 @@ Object {
         "Id": "PropertyDeclaration-0",
         "SetFoo": "MethodDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo",
     },
     "MethodDeclaration-0": Object {
@@ -40,6 +48,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "SetFoo",
       "Parameters": Object {
         "foo": "Parameter-0",
@@ -60,6 +72,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "GetFoo",
       "Parameters": Object {
         "a": "Parameter-1",
@@ -80,6 +96,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "GetFoo",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -95,6 +115,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "foo",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -109,6 +133,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -127,6 +155,10 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Id",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -145,6 +177,10 @@ Object {
       "IsStatic": true,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",

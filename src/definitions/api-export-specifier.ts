@@ -52,6 +52,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Meta: this.GetItemMeta(),
             ApiItems: this.apiItems
         };
     }

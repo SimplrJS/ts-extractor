@@ -48,6 +48,7 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Meta: this.GetItemMeta(),
             Parameters: this.parameters,
             ReturnType: this.GetReturnType(),
             AccessModifier: this.accessModifier,

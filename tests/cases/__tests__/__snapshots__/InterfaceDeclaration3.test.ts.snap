@@ -11,6 +11,10 @@ Object {
         "Generic": "InterfaceDeclaration-0",
         "y": "VariableDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceDeclaration3.ts",
       "Path": "cases/InterfaceDeclaration3.ts",
     },
@@ -24,12 +28,20 @@ Object {
       "Members": Object {
         "x": "PropertySignature-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Generic",
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "x",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -44,6 +56,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "y",
       "Type": Object {
         "ApiTypeKind": "reference",

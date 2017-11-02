@@ -44,6 +44,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Meta: this.GetItemMeta(),
             Parameter: this.parameter,
             Type: this.getType()
         };

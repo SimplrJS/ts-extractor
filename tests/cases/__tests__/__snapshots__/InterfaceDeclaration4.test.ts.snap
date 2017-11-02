@@ -18,6 +18,10 @@ Object {
         "d": "InterfaceDeclaration-6",
         "instance2": "VariableDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceDeclaration4.ts",
       "Path": "cases/InterfaceDeclaration4.ts",
     },
@@ -27,6 +31,10 @@ Object {
       "ApiKind": "call",
       "Kind": 155,
       "KindString": "CallSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__call",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -42,6 +50,10 @@ Object {
       "ApiKind": "call",
       "Kind": 155,
       "KindString": "CallSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__call",
       "Parameters": Object {
         "a": "Parameter-0",
@@ -73,12 +85,20 @@ Object {
       "Kind": 229,
       "KindString": "ClassDeclaration",
       "Members": Object {},
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "c1",
     },
     "ConstructSignature-0": Object {
       "ApiKind": "construct",
       "Kind": 156,
       "KindString": "ConstructSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__new",
       "Parameters": Object {},
     },
@@ -86,6 +106,10 @@ Object {
       "ApiKind": "construct",
       "Kind": 156,
       "KindString": "ConstructSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__new",
       "Parameters": Object {
         "s": "Parameter-3",
@@ -95,6 +119,10 @@ Object {
       "ApiKind": "index",
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__index",
       "Parameter": "Parameter-4",
       "Type": Object {
@@ -110,6 +138,10 @@ Object {
       "ApiKind": "index",
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__index",
       "Parameter": "Parameter-5",
       "Type": Object {
@@ -125,6 +157,10 @@ Object {
       "ApiKind": "index",
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__index",
       "Parameter": "Parameter-9",
       "Type": Object {
@@ -140,6 +176,10 @@ Object {
       "ApiKind": "index",
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "__index",
       "Parameter": "Parameter-10",
       "Type": Object {
@@ -179,6 +219,10 @@ Object {
         "p4": "PropertySignature-3",
         "p5": "MethodSignature-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a0",
     },
     "InterfaceDeclaration-1": Object {
@@ -188,6 +232,10 @@ Object {
       "KindString": "InterfaceDeclaration",
       "Members": Object {
         "__index": "IndexSignature-2",
+      },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
       },
       "Name": "a1",
     },
@@ -199,6 +247,10 @@ Object {
       "Members": Object {
         "__index": "IndexSignature-3",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a2",
     },
     "InterfaceDeclaration-3": Object {
@@ -207,6 +259,10 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {},
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
     },
     "InterfaceDeclaration-4": Object {
@@ -223,6 +279,10 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {},
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "b",
     },
     "InterfaceDeclaration-5": Object {
@@ -246,6 +306,10 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {},
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "c",
     },
     "InterfaceDeclaration-6": Object {
@@ -262,12 +326,20 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {},
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "d",
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "p5",
       "Parameters": Object {
         "s": "Parameter-6",
@@ -285,6 +357,10 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "f1",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -300,6 +376,10 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "f2",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -315,6 +395,10 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "f3",
       "Parameters": Object {
         "a": "Parameter-7",
@@ -332,6 +416,10 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "f4",
       "Parameters": Object {
         "s": "Parameter-8",
@@ -349,6 +437,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -363,6 +455,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "b",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -377,6 +473,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -391,6 +491,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "c",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -405,6 +509,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -419,6 +527,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "n",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -433,6 +545,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -447,6 +563,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -461,6 +581,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -475,6 +599,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -489,6 +617,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "n",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -503,6 +635,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "p1",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -517,6 +653,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "p3",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -531,6 +671,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "p2",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -545,6 +689,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "p4",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -559,6 +707,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "instance2",
       "Type": Object {
         "ApiTypeKind": "reference",

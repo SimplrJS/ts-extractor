@@ -10,6 +10,10 @@ Object {
       "Members": Object {
         "FOO": "VariableDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "PropertyDeclaration1.ts",
       "Path": "cases/PropertyDeclaration1.ts",
     },
@@ -19,6 +23,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "FOO",
       "Type": Object {
         "ApiTypeKind": "default",

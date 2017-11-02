@@ -12,6 +12,10 @@ Object {
         "a": "VariableDeclaration-0",
         "z": "VariableDeclaration-1",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "PropertyDeclaration4.ts",
       "Path": "cases/PropertyDeclaration4.ts",
     },
@@ -25,12 +29,20 @@ Object {
       "Members": Object {
         "b": "PropertySignature-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "A",
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "b",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -45,6 +57,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "reference",
@@ -58,6 +74,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "z",
       "Type": Object {
         "ApiTypeKind": "reference",

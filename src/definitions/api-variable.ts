@@ -20,6 +20,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Meta: this.GetItemMeta(),
             Type: this.GetType()
         };
     }

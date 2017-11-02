@@ -12,6 +12,10 @@ Object {
         "Foo2": "InterfaceDeclaration-1",
         "FooClass": "ClassDeclaration-0",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ClassDeclaration4.ts",
       "Path": "cases/ClassDeclaration4.ts",
     },
@@ -43,6 +47,10 @@ Object {
         "Bar": "PropertyDeclaration-0",
         "Bar2": "PropertyDeclaration-1",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "FooClass",
     },
     "InterfaceDeclaration-0": Object {
@@ -52,6 +60,10 @@ Object {
       "KindString": "InterfaceDeclaration",
       "Members": Object {
         "Bar": "PropertySignature-0",
+      },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
       },
       "Name": "Foo",
     },
@@ -63,6 +75,10 @@ Object {
       "Members": Object {
         "Bar2": "PropertySignature-1",
       },
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo2",
     },
     "PropertyDeclaration-0": Object {
@@ -73,6 +89,10 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -91,6 +111,10 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar2",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -105,6 +129,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -119,6 +147,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Meta": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar2",
       "Type": Object {
         "ApiTypeKind": "default",

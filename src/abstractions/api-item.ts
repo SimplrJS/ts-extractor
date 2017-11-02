@@ -2,6 +2,7 @@ import * as ts from "typescript";
 
 import { ItemsRegistry } from "../contracts/items-registry";
 import { ApiBaseItemDto } from "../contracts/api-base-item-dto";
+import { ApiMetaDto } from "../contracts/api-meta-dto";
 
 export interface ApiItemOptions {
     Program: ts.Program;
@@ -15,6 +16,13 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseI
     }
 
     protected TypeChecker: ts.TypeChecker;
+
+    protected GetItemMeta(): ApiMetaDto {
+        return {
+            DocumentationComment: this.Symbol.getDocumentationComment(),
+            JSDocTags: this.Symbol.getJsDocTags()
+        };
+    }
 
     public get Options(): ApiItemOptions {
         return this.options;
