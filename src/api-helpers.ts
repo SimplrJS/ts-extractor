@@ -17,6 +17,7 @@ import { Logger, LogLevel } from "./utils/logger";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiExport } from "./definitions/api-export";
+import { ApiExportSpecifier } from "./definitions/api-export-specifier";
 import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
 import { ApiFunction } from "./definitions/api-function";
@@ -50,6 +51,8 @@ export namespace ApiHelpers {
                 Logger.Log(LogLevel.Warning, "");
                 return;
             }
+        } else if (ts.isExportSpecifier(declaration)) {
+            apiItem = new ApiExportSpecifier(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
             apiItem = new ApiVariable(declaration, symbol, options);
         } else if (ts.isModuleDeclaration(declaration)) {
