@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 import { ApiItemKinds } from "./api-item-kinds";
-import { ApiMetadataDto } from "./api-meta-dto";
+import { ApiMetadataDto } from "./api-metadata-dto";
 
 /**
  * This is the interface for definitions like: interface, class or enum etc.

@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ItemsRegistry } from "../contracts/items-registry";
 import { ApiBaseItemDto } from "../contracts/api-base-item-dto";
-import { ApiMetadataDto } from "../contracts/api-meta-dto";
+import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export interface ApiItemOptions {
     Program: ts.Program;
