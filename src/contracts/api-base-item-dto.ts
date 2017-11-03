@@ -10,5 +10,5 @@ export interface ApiBaseItemDto {
     ApiKind: ApiItemKinds;
     Kind: ts.SyntaxKind;
     KindString: string;
-    Meta: ApiMetaDto;
+    Metadata: ApiMetaDto;
 }

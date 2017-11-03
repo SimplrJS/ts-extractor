@@ -11,7 +11,7 @@ Object {
         "Foo": "InterfaceDeclaration-0",
         "FooClass": "ClassDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -38,7 +38,7 @@ Object {
       "Members": Object {
         "Bar": "PropertyDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -52,7 +52,7 @@ Object {
       "Members": Object {
         "Bar": "PropertySignature-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -66,7 +66,7 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -84,7 +84,7 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },

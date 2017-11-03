@@ -10,7 +10,7 @@ Object {
       "Members": Object {
         "Foo": "ClassDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -35,7 +35,7 @@ Object {
         "Id": "PropertyDeclaration-0",
         "SetFoo": "MethodDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [
           Object {
             "kind": "text",
@@ -58,7 +58,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [
           Object {
             "kind": "text",
@@ -87,7 +87,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [
           Object {
             "kind": "text",
@@ -125,7 +125,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [
           Object {
             "kind": "text",
@@ -158,7 +158,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [
           Object {
             "kind": "text",
@@ -181,7 +181,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [
           Object {
             "kind": "text",
@@ -208,7 +208,7 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [
           Object {
             "kind": "text",
@@ -240,7 +240,7 @@ Object {
       "IsStatic": true,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },

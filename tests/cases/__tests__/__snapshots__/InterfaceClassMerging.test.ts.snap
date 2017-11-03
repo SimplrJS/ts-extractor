@@ -17,7 +17,7 @@ Object {
         "foo": "VariableDeclaration-1",
         "iFoo": "VariableDeclaration-2",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -37,7 +37,7 @@ Object {
         "additionalMethod": "MethodDeclaration-0",
         "additionalProperty": "PropertyDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -59,7 +59,7 @@ Object {
       "Members": Object {
         "method": "MethodDeclaration-1",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -76,7 +76,7 @@ Object {
         "optionalProperty": "PropertySignature-1",
         "property": "PropertySignature-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -89,7 +89,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -113,7 +113,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -134,7 +134,7 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -155,7 +155,7 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -176,7 +176,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -194,7 +194,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -212,7 +212,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -230,7 +230,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -252,7 +252,7 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -270,7 +270,7 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -288,7 +288,7 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -306,7 +306,7 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -323,7 +323,7 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -340,7 +340,7 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },

@@ -10,7 +10,7 @@ Object {
       "Members": Object {
         "z": "VariableDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -23,7 +23,7 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },

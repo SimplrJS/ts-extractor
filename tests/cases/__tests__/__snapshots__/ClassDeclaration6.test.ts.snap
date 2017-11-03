@@ -12,7 +12,7 @@ Object {
         "Foo": "ClassDeclaration-1",
         "FooBase": "ClassDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -31,7 +31,7 @@ Object {
       "Members": Object {
         "GetValue": "MethodDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -71,7 +71,7 @@ Object {
         "BarName": "PropertyDeclaration-0",
         "GetValue": "MethodDeclaration-1",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -85,7 +85,7 @@ Object {
       "Members": Object {
         "BarName": "PropertySignature-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -98,7 +98,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -120,7 +120,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -143,7 +143,7 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -161,7 +161,7 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },

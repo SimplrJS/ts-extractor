@@ -24,7 +24,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Meta: this.GetItemMeta(),
+            Metadata: this.GetItemMeta(),
             Members: this.members
         };
     }

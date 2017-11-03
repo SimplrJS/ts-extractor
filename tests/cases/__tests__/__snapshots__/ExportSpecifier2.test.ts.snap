@@ -11,7 +11,7 @@ Object {
         "Foo": "ExportSpecifier-0",
         "Foo2": "ExportSpecifier-1",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -27,7 +27,7 @@ Object {
       "ApiKind": "export-specifier",
       "Kind": 246,
       "KindString": "ExportSpecifier",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -40,7 +40,7 @@ Object {
       "ApiKind": "export-specifier",
       "Kind": 246,
       "KindString": "ExportSpecifier",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -54,7 +54,7 @@ Object {
       "Members": Object {
         "Bar": "PropertySignature-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -68,7 +68,7 @@ Object {
       "Members": Object {
         "Bar2": "PropertySignature-1",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -78,7 +78,7 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -96,7 +96,7 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },

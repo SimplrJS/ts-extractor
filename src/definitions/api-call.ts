@@ -35,7 +35,7 @@ export class ApiCall extends ApiItem<ts.CallSignatureDeclaration, ApiCallDto> {
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Meta: this.GetItemMeta(),
+            Metadata: this.GetItemMeta(),
             Parameters: this.parameters,
             ReturnType: this.GetReturnType()
         };

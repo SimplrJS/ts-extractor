@@ -10,7 +10,7 @@ Object {
       "Members": Object {
         "Foo": "InterfaceDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -25,7 +25,7 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {},
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },

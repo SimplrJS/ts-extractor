@@ -11,7 +11,7 @@ Object {
         "Camera": "ClassDeclaration-0",
         "Face": "InterfaceDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -39,7 +39,7 @@ Object {
         "__constructor": "Constructor-0",
         "foo": "MethodDeclaration-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -50,7 +50,7 @@ Object {
       "ApiKind": "class-method",
       "Kind": 152,
       "KindString": "Constructor",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -67,7 +67,7 @@ Object {
       "Members": Object {
         "foo": "MethodSignature-0",
       },
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -80,7 +80,7 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -99,7 +99,7 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
@@ -118,7 +118,7 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
-      "Meta": Object {
+      "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
