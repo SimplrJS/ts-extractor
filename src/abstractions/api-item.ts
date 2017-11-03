@@ -17,7 +17,7 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseI
 
     protected TypeChecker: ts.TypeChecker;
 
-    protected GetItemMeta(): ApiMetadataDto {
+    protected GetItemMetadata(): ApiMetadataDto {
         return {
             DocumentationComment: this.Symbol.getDocumentationComment(),
             JSDocTags: this.Symbol.getJsDocTags()

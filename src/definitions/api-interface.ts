@@ -33,7 +33,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMeta(),
+            Metadata: this.GetItemMetadata(),
             Members: this.members,
             Extends: this.extends
         };

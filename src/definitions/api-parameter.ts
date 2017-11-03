@@ -20,7 +20,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMeta(),
+            Metadata: this.GetItemMetadata(),
             Type: this.GetReturnType()
         };
     }

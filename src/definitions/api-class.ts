@@ -47,7 +47,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMeta(),
+            Metadata: this.GetItemMetadata(),
             IsAbstract: this.isAbstract,
             Members: this.members,
             Extends: this.extends,
