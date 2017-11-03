@@ -10,6 +10,10 @@ Object {
       "Members": Object {
         "Foo": "InterfaceDeclaration-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceDeclaration1.ts",
       "Path": "cases/InterfaceDeclaration1.ts",
     },
@@ -21,6 +25,10 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {},
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo",
     },
   },

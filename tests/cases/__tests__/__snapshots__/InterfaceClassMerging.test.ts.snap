@@ -17,6 +17,10 @@ Object {
         "foo": "VariableDeclaration-1",
         "iFoo": "VariableDeclaration-2",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceClassMerging.ts",
       "Path": "cases/InterfaceClassMerging.ts",
     },
@@ -32,6 +36,10 @@ Object {
       "Members": Object {
         "additionalMethod": "MethodDeclaration-0",
         "additionalProperty": "PropertyDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
       },
       "Name": "Foo",
     },
@@ -51,6 +59,10 @@ Object {
       "Members": Object {
         "method": "MethodDeclaration-1",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
     },
     "InterfaceDeclaration-0": Object {
@@ -64,6 +76,10 @@ Object {
         "optionalProperty": "PropertySignature-1",
         "property": "PropertySignature-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo",
     },
     "MethodDeclaration-0": Object {
@@ -73,6 +89,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "additionalMethod",
       "Parameters": Object {
         "a": "Parameter-2",
@@ -93,6 +113,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "method",
       "Parameters": Object {
         "a": "Parameter-3",
@@ -110,6 +134,10 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "method",
       "Parameters": Object {
         "a": "Parameter-0",
@@ -127,6 +155,10 @@ Object {
       "ApiKind": "method",
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "optionalMethod",
       "Parameters": Object {
         "a": "Parameter-1",
@@ -144,6 +176,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -158,6 +194,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -172,6 +212,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -186,6 +230,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -204,6 +252,10 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "additionalProperty",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -218,6 +270,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "property",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -232,6 +288,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "optionalProperty",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -246,6 +306,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "bar",
       "Type": Object {
         "ApiTypeKind": "reference",
@@ -259,6 +323,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "foo",
       "Type": Object {
         "ApiTypeKind": "reference",
@@ -272,6 +340,10 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "iFoo",
       "Type": Object {
         "ApiTypeKind": "reference",

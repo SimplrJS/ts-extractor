@@ -11,6 +11,10 @@ Object {
         "Foo": "InterfaceDeclaration-0",
         "FooClass": "ClassDeclaration-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ClassDeclaration3.ts",
       "Path": "cases/ClassDeclaration3.ts",
     },
@@ -34,6 +38,10 @@ Object {
       "Members": Object {
         "Bar": "PropertyDeclaration-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "FooClass",
     },
     "InterfaceDeclaration-0": Object {
@@ -43,6 +51,10 @@ Object {
       "KindString": "InterfaceDeclaration",
       "Members": Object {
         "Bar": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
       },
       "Name": "Foo",
     },
@@ -54,6 +66,10 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -68,6 +84,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",

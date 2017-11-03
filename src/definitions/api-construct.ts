@@ -36,6 +36,7 @@ export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiC
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Metadata: this.GetItemMetadata(),
             Parameters: this.parameters
         };
     }

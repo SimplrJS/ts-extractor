@@ -10,6 +10,10 @@ Object {
       "Members": Object {
         "Foo": "ExportSpecifier-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ExportSpecifier1.ts",
       "Path": "cases/ExportSpecifier1.ts",
     },
@@ -28,6 +32,10 @@ Object {
         "Id": "PropertyDeclaration-0",
         "SetFoo": "MethodDeclaration-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo",
     },
     "ExportSpecifier-0": Object {
@@ -37,6 +45,10 @@ Object {
       "ApiKind": "export-specifier",
       "Kind": 246,
       "KindString": "ExportSpecifier",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo",
     },
     "MethodDeclaration-0": Object {
@@ -46,6 +58,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "SetFoo",
       "Parameters": Object {
         "foo": "Parameter-0",
@@ -66,6 +82,10 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "GetFoo",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -81,6 +101,10 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "foo",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -99,6 +123,10 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Id",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -117,6 +145,10 @@ Object {
       "IsStatic": true,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",

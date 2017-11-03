@@ -27,6 +27,7 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Metadata: this.GetItemMetadata(),
             Members: this.members
         };
     }

@@ -10,6 +10,10 @@ Object {
       "Members": Object {
         "Foo": "ClassDeclaration-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ClassDeclaration1.ts",
       "Path": "cases/ClassDeclaration1.ts",
     },
@@ -31,6 +35,20 @@ Object {
         "Id": "PropertyDeclaration-0",
         "SetFoo": "MethodDeclaration-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Class Foo comment line.",
+          },
+        ],
+        "JSDocTags": Array [
+          Object {
+            "name": "summary",
+            "text": "Summary of comment line.",
+          },
+        ],
+      },
       "Name": "Foo",
     },
     "MethodDeclaration-0": Object {
@@ -40,6 +58,15 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Sets foo.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
       "Name": "SetFoo",
       "Parameters": Object {
         "foo": "Parameter-0",
@@ -60,6 +87,24 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo overload comment.",
+          },
+          Object {
+            "kind": "lineBreak",
+            "text": "
+",
+          },
+          Object {
+            "kind": "text",
+            "text": "GetFoo without A parameter comment line.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
       "Name": "GetFoo",
       "Parameters": Object {
         "a": "Parameter-1",
@@ -80,6 +125,24 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo overload comment.",
+          },
+          Object {
+            "kind": "lineBreak",
+            "text": "
+",
+          },
+          Object {
+            "kind": "text",
+            "text": "GetFoo without A parameter comment line.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
       "Name": "GetFoo",
       "Parameters": Object {},
       "ReturnType": Object {
@@ -95,6 +158,15 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "foo",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
       "Name": "foo",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -109,6 +181,15 @@ Object {
       "ApiKind": "parameter",
       "Kind": 146,
       "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo property comment.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -127,6 +208,20 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Property Id comment line.",
+          },
+        ],
+        "JSDocTags": Array [
+          Object {
+            "name": "readonly",
+            "text": "Id is Immutable.",
+          },
+        ],
+      },
       "Name": "Id",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -145,6 +240,10 @@ Object {
       "IsStatic": true,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",

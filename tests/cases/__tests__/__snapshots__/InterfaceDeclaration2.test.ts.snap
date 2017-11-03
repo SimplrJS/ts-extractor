@@ -10,6 +10,10 @@ Object {
       "Members": Object {
         "Foo": "InterfaceDeclaration-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceDeclaration2.ts",
       "Path": "cases/InterfaceDeclaration2.ts",
     },
@@ -23,12 +27,20 @@ Object {
       "Members": Object {
         "Bar": "PropertySignature-0",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo",
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",

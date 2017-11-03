@@ -20,6 +20,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Metadata: this.GetItemMetadata(),
             Type: this.GetReturnType()
         };
     }

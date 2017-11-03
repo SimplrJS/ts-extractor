@@ -35,6 +35,7 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Metadata: this.GetItemMetadata(),
             Parameters: this.parameters,
             ReturnType: this.GetReturnType()
         };

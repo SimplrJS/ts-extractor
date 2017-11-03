@@ -40,6 +40,7 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Metadata: this.GetItemMetadata(),
             Parameters: this.parameters,
             AccessModifier: this.accessModifier
         };

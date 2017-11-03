@@ -11,6 +11,10 @@ Object {
         "Foo": "ExportSpecifier-0",
         "Foo2": "ExportSpecifier-1",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ExportSpecifier2.ts",
       "Path": "cases/ExportSpecifier2.ts",
     },
@@ -23,6 +27,10 @@ Object {
       "ApiKind": "export-specifier",
       "Kind": 246,
       "KindString": "ExportSpecifier",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo",
     },
     "ExportSpecifier-1": Object {
@@ -32,6 +40,10 @@ Object {
       "ApiKind": "export-specifier",
       "Kind": 246,
       "KindString": "ExportSpecifier",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo2",
     },
     "InterfaceDeclaration-0": Object {
@@ -41,6 +53,10 @@ Object {
       "KindString": "InterfaceDeclaration",
       "Members": Object {
         "Bar": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
       },
       "Name": "Foo",
     },
@@ -52,12 +68,20 @@ Object {
       "Members": Object {
         "Bar2": "PropertySignature-1",
       },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Foo2",
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "default",
@@ -72,6 +96,10 @@ Object {
       "ApiKind": "property",
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "Bar2",
       "Type": Object {
         "ApiTypeKind": "default",

@@ -1,14 +1,14 @@
-export * from "./exported-functions";
-export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
+// export * from "./exported-functions";
+// export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
-// /**
-//  * Some JSdoc information.
-//  * 2nd line of some JSdoc information.
-//  * @summary Some summary about this package version.
-//  * @summary 2nd of some summary about this package version.
-//  */
-// export const itemsList: Array<string | A<number>> = ["a"];
+/**
+ * Some JSdoc information.
+ * 2nd line of some JSdoc information.
+ * @summary Some summary about this package version.
+ * @summary 2nd of some summary about this package version.
+ */
+export const itemsList: string[] = ["a"];
 
 // export function Ok(isIt: boolean): boolean {
 //     return isIt;
@@ -53,9 +53,9 @@ export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
 //     OtherStuff: string[];
 // }
 
-export interface A {
-    (aa: boolean): string;
-}
+// export interface A {
+//     (aa: boolean): string;
+// }
 
 // export abstract class Foo {
 //     public Name: string;

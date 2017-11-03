@@ -40,6 +40,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
+            Metadata: this.GetItemMetadata(),
             Type: this.GetReturnType(),
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
