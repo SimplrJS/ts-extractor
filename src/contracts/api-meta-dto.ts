@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 
-export interface ApiMetaDto {
+export interface ApiMetadataDto {
     DocumentationComment: DocumentationCommentsItem[];
     JSDocTags: JSDocTagItem[];
 }
