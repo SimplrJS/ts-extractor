@@ -36,8 +36,18 @@ Object {
         "SetFoo": "MethodDeclaration-0",
       },
       "Meta": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Class Foo comment line.",
+          },
+        ],
+        "JSDocTags": Array [
+          Object {
+            "name": "summary",
+            "text": "Summary of comment line.",
+          },
+        ],
       },
       "Name": "Foo",
     },
@@ -49,7 +59,12 @@ Object {
       "Kind": 151,
       "KindString": "MethodDeclaration",
       "Meta": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Sets foo.",
+          },
+        ],
         "JSDocTags": Array [],
       },
       "Name": "SetFoo",
@@ -73,7 +88,21 @@ Object {
       "Kind": 151,
       "KindString": "MethodDeclaration",
       "Meta": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo overload comment.",
+          },
+          Object {
+            "kind": "lineBreak",
+            "text": "
+",
+          },
+          Object {
+            "kind": "text",
+            "text": "GetFoo without A parameter comment line.",
+          },
+        ],
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
@@ -97,7 +126,21 @@ Object {
       "Kind": 151,
       "KindString": "MethodDeclaration",
       "Meta": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo overload comment.",
+          },
+          Object {
+            "kind": "lineBreak",
+            "text": "
+",
+          },
+          Object {
+            "kind": "text",
+            "text": "GetFoo without A parameter comment line.",
+          },
+        ],
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
@@ -116,7 +159,12 @@ Object {
       "Kind": 146,
       "KindString": "Parameter",
       "Meta": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "foo",
+          },
+        ],
         "JSDocTags": Array [],
       },
       "Name": "foo",
@@ -134,7 +182,12 @@ Object {
       "Kind": 146,
       "KindString": "Parameter",
       "Meta": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo property comment.",
+          },
+        ],
         "JSDocTags": Array [],
       },
       "Name": "a",
@@ -156,8 +209,18 @@ Object {
       "Kind": 149,
       "KindString": "PropertyDeclaration",
       "Meta": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Property Id comment line.",
+          },
+        ],
+        "JSDocTags": Array [
+          Object {
+            "name": "readonly",
+            "text": "Id is Immutable.",
+          },
+        ],
       },
       "Name": "Id",
       "Type": Object {
