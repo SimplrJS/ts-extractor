@@ -89,7 +89,7 @@ export class Extractor {
 
             const apiSourceFile = new ApiSourceFile(sourceFile, symbol, {
                 Program: program,
-                // ApiSourceFile populates given apiItemsRegistry by modifying it (adding items)
+                // ApiSourceFile populates given apiItemsRegistry by adding items into it
                 ItemsRegistry: apiItemsRegistry,
                 ProjectDirectory: this.projectDirectory,
                 OutputPathSeparator: this.outputPathSeparator
