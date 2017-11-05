@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiMethodDto } from "../contracts/definitions/api-method-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 
@@ -17,7 +17,7 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
         this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
     }
 
-    private parameters: ApiItemReferenceDict = {};
+    private parameters: ApiItemReferenceDictionary = {};
 
     public GetReturnType(): TypeDto | undefined {
         const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);

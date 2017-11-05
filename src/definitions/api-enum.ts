@@ -5,7 +5,7 @@ import { ApiEnumMember } from "./api-enum-member";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiEnumDto } from "../contracts/definitions/api-enum-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 
 export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
@@ -16,7 +16,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
         this.members = ApiHelpers.GetItemsFromDeclarationsIds(declaration.members, this.Options);
     }
 
-    private members: ApiItemReferenceDict = {};
+    private members: ApiItemReferenceDictionary = {};
 
     public Extract(): ApiEnumDto {
         return {

@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassMethodDto } from "../contracts/definitions/api-class-method-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
 import { TypeDto } from "../contracts/type-dto";
@@ -23,7 +23,7 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
         this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.StaticKeyword);
     }
 
-    private parameters: ApiItemReferenceDict = {};
+    private parameters: ApiItemReferenceDictionary = {};
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;

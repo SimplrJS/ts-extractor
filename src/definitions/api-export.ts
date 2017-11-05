@@ -7,7 +7,7 @@ import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportDto } from "../contracts/definitions/api-export-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 
@@ -43,7 +43,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         return path.relative(this.Options.ProjectDirectory, this.apiSourceFile.Declaration.fileName).split(path.sep).join("/");
     }
 
-    private members: ApiItemReferenceDict = {};
+    private members: ApiItemReferenceDictionary = {};
     private apiSourceFile: ApiSourceFile | undefined;
 
     public Extract(): ApiExportDto {

@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiConstructorDto } from "../contracts/definitions/api-construct-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
 import { TypeDto } from "../contracts/type-dto";
@@ -18,7 +18,7 @@ export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiC
         this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
     }
 
-    private parameters: ApiItemReferenceDict = {};
+    private parameters: ApiItemReferenceDictionary = {};
 
     public GetReturnType(): TypeDto | undefined {
         const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);

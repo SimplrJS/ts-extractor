@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/definitions/api-class-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 
@@ -38,7 +38,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
      */
     private extends: TypeDto | undefined;
     private implements: TypeDto[] = [];
-    private members: ApiItemReferenceDict = {};
+    private members: ApiItemReferenceDictionary = {};
     private isAbstract: boolean = false;
 
     public Extract(): ApiClassDto {

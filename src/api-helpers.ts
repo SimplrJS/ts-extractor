@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "./contracts/api-item-reference-dictionary";
 import {
     TypeDto,
     TypeBasicDto,
@@ -108,8 +108,8 @@ export namespace ApiHelpers {
     export function GetItemsFromSymbolsIds(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
-    ): ApiItemReferenceDict {
-        const items: ApiItemReferenceDict = {};
+    ): ApiItemReferenceDictionary {
+        const items: ApiItemReferenceDictionary = {};
         if (symbols == null) {
             return items;
         }
@@ -142,8 +142,8 @@ export namespace ApiHelpers {
         return items;
     }
 
-    export function GetItemsFromDeclarationsIds(declarations: ts.NodeArray<ts.Declaration>, options: ApiItemOptions): ApiItemReferenceDict {
-        const items: ApiItemReferenceDict = {};
+    export function GetItemsFromDeclarationsIds(declarations: ts.NodeArray<ts.Declaration>, options: ApiItemOptions): ApiItemReferenceDictionary {
+        const items: ApiItemReferenceDictionary = {};
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declarationItem => {
