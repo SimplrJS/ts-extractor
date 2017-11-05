@@ -227,6 +227,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a0",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
@@ -241,6 +242,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a1",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-2": Object {
       "ApiKind": "interface",
@@ -255,6 +257,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a2",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-3": Object {
       "ApiKind": "interface",
@@ -267,6 +270,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-4": Object {
       "ApiKind": "interface",
@@ -287,6 +291,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "b",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-5": Object {
       "ApiKind": "interface",
@@ -314,6 +319,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "c",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-6": Object {
       "ApiKind": "interface",
@@ -334,6 +340,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "d",
+      "TypeParameters": Object {},
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",

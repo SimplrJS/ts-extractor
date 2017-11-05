@@ -20,12 +20,18 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
         if (declaration.heritageClauses != null) {
             this.extends = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
         }
+
+        // TypeParameters
+        if (this.Declaration.typeParameters != null) {
+            this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
+        }
     }
 
     /**
      * Interfaces can extend multiple interfaces.
      */
     private extends: TypeDto[] = [];
+    private typeParameters: ApiItemReferenceDictionary = {};
     private members: ApiItemReferenceDictionary = {};
 
     public Extract(): ApiInterfaceDto {
@@ -38,7 +44,8 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Members: this.members,
-            Extends: this.extends
+            Extends: this.extends,
+            TypeParameters: this.typeParameters
         };
     }
 }

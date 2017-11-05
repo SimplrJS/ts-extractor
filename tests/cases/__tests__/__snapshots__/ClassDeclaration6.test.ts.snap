@@ -94,6 +94,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",

@@ -43,7 +43,7 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Object {
-        "T": "TypeParameter-0",
+        "T": "TypeParameter-1",
       },
     },
     "ClassDeclaration-1": Object {
@@ -62,7 +62,7 @@ Object {
       },
       "Name": "Bar",
       "TypeParameters": Object {
-        "T": "TypeParameter-1",
+        "T": "TypeParameter-2",
       },
     },
     "InterfaceDeclaration-0": Object {
@@ -78,6 +78,9 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {
+        "T": "TypeParameter-0",
+      },
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
@@ -92,6 +95,9 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "TypeParameters": Object {
+        "T": "TypeParameter-3",
+      },
     },
     "ModuleDeclaration-0": Object {
       "ApiKind": "namespace",
@@ -197,6 +203,30 @@ Object {
       "Name": "T",
     },
     "TypeParameter-1": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+    "TypeParameter-2": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+    "TypeParameter-3": Object {
       "ApiKind": "type",
       "ContraintType": undefined,
       "DefaultType": undefined,

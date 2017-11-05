@@ -34,6 +34,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "A",
+      "TypeParameters": Object {},
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",

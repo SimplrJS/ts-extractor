@@ -73,6 +73,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Face",
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
