@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceDictionary } from "./contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "./contracts/api-item-reference-dictionary";
 import {
     TypeDto,
     TypeBasicDto,
@@ -212,7 +212,7 @@ export namespace ApiHelpers {
 
         const symbol = type.getSymbol() || type.aliasSymbol;
         let generics: TypeDto[] | undefined;
-        let kind = TypeKinds.Default;
+        let kind = TypeKinds.Basic;
         let types: TypeDto[] | undefined;
         let name: string | undefined;
 

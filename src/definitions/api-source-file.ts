@@ -4,7 +4,7 @@ import * as path from "path";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 

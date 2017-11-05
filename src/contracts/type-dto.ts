@@ -17,7 +17,7 @@ export interface TypeScriptSpecificPropertiesDto {
 export type TypeDto = TypeBasicDto | TypeUnionOrIntersectionDto | TypeReferenceDto;
 
 export interface TypeBasicDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
-    ApiTypeKind: TypeKinds.Default;
+    ApiTypeKind: TypeKinds.Basic;
     Generics?: TypeDto[];
 }
 
