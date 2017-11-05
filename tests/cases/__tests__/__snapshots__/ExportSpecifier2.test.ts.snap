@@ -84,7 +84,7 @@ Object {
       },
       "Name": "Bar",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -102,7 +102,7 @@ Object {
       },
       "Name": "Bar2",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,

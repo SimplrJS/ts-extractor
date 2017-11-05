@@ -45,7 +45,7 @@ Object {
       },
       "Name": "b",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,

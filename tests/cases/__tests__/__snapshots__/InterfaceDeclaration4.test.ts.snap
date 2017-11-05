@@ -38,7 +38,7 @@ Object {
       "Name": "__call",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -61,7 +61,7 @@ Object {
         "c": "Parameter-2",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -126,7 +126,7 @@ Object {
       "Name": "__index",
       "Parameter": "Parameter-4",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 32768,
         "FlagsString": "Object",
         "Generics": undefined,
@@ -145,7 +145,7 @@ Object {
       "Name": "__index",
       "Parameter": "Parameter-5",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1,
         "FlagsString": "Any",
         "Generics": undefined,
@@ -164,7 +164,7 @@ Object {
       "Name": "__index",
       "Parameter": "Parameter-9",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -183,7 +183,7 @@ Object {
       "Name": "__index",
       "Parameter": "Parameter-10",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -345,7 +345,7 @@ Object {
         "s": "Parameter-6",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -364,7 +364,7 @@ Object {
       "Name": "f1",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1,
         "FlagsString": "Any",
         "Generics": undefined,
@@ -383,7 +383,7 @@ Object {
       "Name": "f2",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1,
         "FlagsString": "Any",
         "Generics": undefined,
@@ -404,7 +404,7 @@ Object {
         "a": "Parameter-7",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -425,7 +425,7 @@ Object {
         "s": "Parameter-8",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -443,7 +443,7 @@ Object {
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1,
         "FlagsString": "Any",
         "Generics": undefined,
@@ -461,7 +461,7 @@ Object {
       },
       "Name": "b",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1,
         "FlagsString": "Any",
         "Generics": undefined,
@@ -479,7 +479,7 @@ Object {
       },
       "Name": "s",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -497,7 +497,7 @@ Object {
       },
       "Name": "c",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -515,7 +515,7 @@ Object {
       },
       "Name": "s",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -533,7 +533,7 @@ Object {
       },
       "Name": "n",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -551,7 +551,7 @@ Object {
       },
       "Name": "s",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -569,7 +569,7 @@ Object {
       },
       "Name": "s",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -587,7 +587,7 @@ Object {
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -605,7 +605,7 @@ Object {
       },
       "Name": "s",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -623,7 +623,7 @@ Object {
       },
       "Name": "n",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -641,7 +641,7 @@ Object {
       },
       "Name": "p1",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1,
         "FlagsString": "Any",
         "Generics": undefined,
@@ -659,7 +659,7 @@ Object {
       },
       "Name": "p3",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1,
         "FlagsString": "Any",
         "Generics": undefined,
@@ -677,7 +677,7 @@ Object {
       },
       "Name": "p2",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -695,7 +695,7 @@ Object {
       },
       "Name": "p4",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,

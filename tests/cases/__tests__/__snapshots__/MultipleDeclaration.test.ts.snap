@@ -112,7 +112,7 @@ Object {
       },
       "Name": "b",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -134,7 +134,7 @@ Object {
       },
       "Name": "b",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -152,7 +152,7 @@ Object {
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -170,7 +170,7 @@ Object {
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,

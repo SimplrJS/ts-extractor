@@ -54,7 +54,7 @@ Object {
         "foo": "Parameter-0",
       },
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1024,
         "FlagsString": "Void",
         "Generics": undefined,
@@ -76,7 +76,7 @@ Object {
       "Name": "GetFoo",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -94,7 +94,7 @@ Object {
       },
       "Name": "foo",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -116,7 +116,7 @@ Object {
       },
       "Name": "Id",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -138,7 +138,7 @@ Object {
       },
       "Name": "Bar",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
