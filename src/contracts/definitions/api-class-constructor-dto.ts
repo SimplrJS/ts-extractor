@@ -1,6 +1,6 @@
-import { ApiConstructorDto } from "./api-construct-dto";
+import { ApiConstructDto } from "./api-construct-dto";
 import { AccessModifier } from "../access-modifier";
 
-export interface ApiClassConstructorDto extends ApiConstructorDto {
+export interface ApiClassConstructorDto extends ApiConstructDto {
     AccessModifier: AccessModifier;
 }

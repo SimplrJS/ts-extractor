@@ -4,9 +4,10 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dict";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
+import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
     constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -25,15 +26,17 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
      * Interfaces can extend multiple interfaces.
      */
     private extends: TypeDto[] = [];
-    private members: ApiItemReferenceDict = {};
+    private members: ApiItemReferenceDictionary = {};
 
     public Extract(): ApiInterfaceDto {
+        const metadata: ApiMetadataDto = this.GetItemMetadata();
+
         return {
             ApiKind: ApiItemKinds.Interface,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMetadata(),
+            Metadata: metadata,
             Members: this.members,
             Extends: this.extends
         };

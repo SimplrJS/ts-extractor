@@ -8,6 +8,7 @@ export interface ApiItemOptions {
     Program: ts.Program;
     ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;
     ProjectDirectory: string;
+    OutputPathSeparator: string;
 }
 
 export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseItemDto> {

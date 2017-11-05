@@ -4,11 +4,12 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiIndexDto } from "../contracts/definitions/api-index-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dict";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
+import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto> {
     constructor(declaration: ts.IndexSignatureDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -39,14 +40,17 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
     }
 
     public Extract(): ApiIndexDto {
+        const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const type: TypeDto = this.getType();
+
         return {
             ApiKind: ApiItemKinds.Index,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMetadata(),
+            Metadata: metadata,
             Parameter: this.parameter,
-            Type: this.getType()
+            Type: type
         };
     }
 }

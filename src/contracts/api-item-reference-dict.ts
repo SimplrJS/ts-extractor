@@ -1,1 +1,1 @@
-export type ApiItemReferenceDict = { [key: string]: string | string[] };
+export type ApiItemReferenceDictionary = { [key: string]: string | string[] };

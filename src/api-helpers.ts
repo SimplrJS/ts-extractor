@@ -2,10 +2,10 @@ import * as ts from "typescript";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "./contracts/api-item-reference-dict";
 import {
     TypeDto,
-    TypeDefaultDto,
+    TypeBasicDto,
     TypeReferenceDto,
     TypeUnionOrIntersectionDto
 } from "./contracts/type-dto";
@@ -105,30 +105,30 @@ export namespace ApiHelpers {
         return apiItem;
     }
 
-    export function GetItemsFromSymbolsIds(
+    export function GetItemsIdsFromSymbols(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
-    ): ApiItemReferenceDict {
-        const items: ApiItemReferenceDict = {};
+    ): ApiItemReferenceDictionary {
+        const items: ApiItemReferenceDictionary = {};
         if (symbols == null) {
             return items;
         }
 
-        symbols.forEach(symbolItem => {
-            if (symbolItem.declarations == null) {
+        symbols.forEach(symbol => {
+            if (symbol.declarations == null) {
                 return;
             }
             const symbolItems: string[] = [];
 
-            symbolItem.declarations.forEach(declarationItem => {
+            symbol.declarations.forEach(declaration => {
                 // Check if declaration already exists in the registry.
-                const declarationId = options.ItemsRegistry.Find(declarationItem);
+                const declarationId = options.ItemsRegistry.Find(declaration);
                 if (declarationId != null) {
                     symbolItems.push(declarationId);
                     return;
                 }
 
-                const visitedItem = VisitApiItem(declarationItem, symbolItem, options);
+                const visitedItem = VisitApiItem(declaration, symbol, options);
                 if (visitedItem == null) {
                     return;
                 }
@@ -136,14 +136,17 @@ export namespace ApiHelpers {
                 symbolItems.push(options.ItemsRegistry.Add(visitedItem));
             });
 
-            items[symbolItem.name] = symbolItems.length === 1 ? symbolItems.toString() : symbolItems;
+            items[symbol.name] = symbolItems.length === 1 ? symbolItems.toString() : symbolItems;
         });
 
         return items;
     }
 
-    export function GetItemsFromDeclarationsIds(declarations: ts.NodeArray<ts.Declaration>, options: ApiItemOptions): ApiItemReferenceDict {
-        const items: ApiItemReferenceDict = {};
+    export function GetItemsFromDeclarationsIds(
+        declarations: ts.NodeArray<ts.Declaration>,
+        options: ApiItemOptions
+    ): ApiItemReferenceDictionary {
+        const items: ApiItemReferenceDictionary = {};
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declarationItem => {
@@ -267,7 +270,7 @@ export namespace ApiHelpers {
             Name: name,
             Text: text,
             Generics: generics
-        } as TypeDefaultDto;
+        } as TypeBasicDto;
     }
 
     export function ResolveAccessModifierFromModifiers(modifiers?: ts.NodeArray<ts.Modifier>): AccessModifier {

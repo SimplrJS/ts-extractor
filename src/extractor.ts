@@ -7,7 +7,7 @@ import * as path from "path";
 import { Logger, LogLevel } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItemsRegistry } from "./api-items-registry";
-import { RegistryDict } from "./contracts/items-registry";
+import { Registry } from "./contracts/items-registry";
 import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
 import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
@@ -22,16 +22,19 @@ export interface ExtractDto {
 export interface ExtractorOptions {
     CompilerOptions: ts.CompilerOptions;
     ProjectDirectory: string;
+    OutputPathSeparator?: string;
 }
 
 export class Extractor {
     constructor(options: ExtractorOptions) {
         this.compilerOptions = options.CompilerOptions;
         this.projectDirectory = fs.realpathSync(options.ProjectDirectory);
+        this.outputPathSeparator = options.OutputPathSeparator || "/";
     }
 
     private compilerOptions: ts.CompilerOptions;
     private projectDirectory: string;
+    private outputPathSeparator: string;
 
     public Extract(files: string[]): ExtractDto {
         const rootNames = files.map(file => {
@@ -42,7 +45,7 @@ export class Extractor {
             return path.join(this.projectDirectory, file);
         });
 
-        // Check if files exist and they are in project directory.
+        // Check whether files exist and are in project directory.
         rootNames.forEach(filePath => {
             if (!fs.existsSync(filePath)) {
                 throw new Error(`Given file: ${filePath}, does not exist.`);
@@ -54,10 +57,10 @@ export class Extractor {
         });
 
         const program = ts.createProgram(rootNames, this.compilerOptions);
-        const itemsRegistry = new ApiItemsRegistry();
+        const apiItemsRegistry = new ApiItemsRegistry();
 
-        // This runs a full type analysis, and then augments the Abstract Syntax Tree (i.e. declarations)
-        // with semantic information (i.e. symbols).  The "diagnostics" are a subset of the everyday
+        // This runs a full type analysis, and augments the Abstract Syntax Tree (i.e. declarations)
+        // with semantic information (i.e. symbols). The "diagnostics" are a subset of everyday
         // compile errors that would result from a full compilation.
         const diagnostics = program.getSemanticDiagnostics();
         if (diagnostics.length > 0) {
@@ -80,22 +83,30 @@ export class Extractor {
             const symbol = typeChecker.getSymbolAtLocation(sourceFile);
 
             if (symbol == null) {
-                Logger.Log(LogLevel.Warning, `Source file "${fileName}" is skipped, because no exported members were found!`);
+                Logger.Log(LogLevel.Warning, `Source file "${fileName}" is skipped, because no exported members were found.`);
                 return;
             }
 
             const apiSourceFile = new ApiSourceFile(sourceFile, symbol, {
                 Program: program,
-                ItemsRegistry: itemsRegistry,
-                ProjectDirectory: this.projectDirectory
+                // ApiSourceFile populates given apiItemsRegistry by modifying it (adding items)
+                ItemsRegistry: apiItemsRegistry,
+                ProjectDirectory: this.projectDirectory,
+                OutputPathSeparator: this.outputPathSeparator
             });
 
             apiSourceFiles.push(apiSourceFile);
         });
 
+        // Extracts items from every apiItemsRegistry
+        const registry = this.getRegistryExtractedItems(apiItemsRegistry);
+
+        // Extracts every source file
+        const entryFiles = apiSourceFiles.map(x => x.Extract());
+
         return {
-            Registry: this.getRegistryExtractedItems(itemsRegistry),
-            EntryFiles: apiSourceFiles.map(x => x.Extract())
+            Registry: registry,
+            EntryFiles: entryFiles
         };
     }
 
