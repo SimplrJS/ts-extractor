@@ -9,27 +9,9 @@ import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dict
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiFunctionBase } from "../abstractions/api-function-base";
 
-export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto> {
-    constructor(declaration: ts.FunctionDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        // Parameters
-        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
-    }
-
-    private parameters: ApiItemReferenceDictionary = {};
-
-    public GetReturnType(): TypeDto | undefined {
-        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
-        if (signature == null) {
-            return;
-        }
-        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
-
+export class ApiFunction extends ApiFunctionBase<ts.FunctionDeclaration, ApiFunctionDto> {
     public Extract(): ApiFunctionDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const returnType: TypeDto | undefined = this.GetReturnType();
@@ -40,8 +22,9 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            TypeParameters: this.typeParameters,
             Parameters: this.parameters,
             ReturnType: returnType
         };
     }
-}
+ }

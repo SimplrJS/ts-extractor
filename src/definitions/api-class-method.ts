@@ -11,12 +11,11 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiFunctionBase } from "../abstractions/api-function-base";
 
-export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethodDto> {
+export class ApiClassMethod extends ApiFunctionBase<ts.MethodDeclaration, ApiClassMethodDto> {
     constructor(declaration: ts.MethodDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
-
-        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
 
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);
@@ -24,23 +23,12 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
         this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.StaticKeyword);
     }
 
-    private parameters: ApiItemReferenceDictionary = {};
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;
 
     public IsPrivate(): boolean {
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
-    }
-
-    public GetReturnType(): TypeDto | undefined {
-        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
-        if (signature == null) {
-            return;
-        }
-        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
     public Extract(): ApiClassMethodDto {
@@ -57,7 +45,8 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
             ReturnType: returnType,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
-            IsStatic: this.isStatic
+            IsStatic: this.isStatic,
+            TypeParameters: this.typeParameters
         };
     }
 }

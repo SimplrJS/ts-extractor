@@ -10,26 +10,9 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiFunctionBase } from "../abstractions/api-function-base";
 
-export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
-    constructor(declaration: ts.MethodSignature, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
-    }
-
-    private parameters: ApiItemReferenceDictionary = {};
-
-    public GetReturnType(): TypeDto | undefined {
-        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
-        if (signature == null) {
-            return;
-        }
-        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
-
+export class ApiMethod extends ApiFunctionBase<ts.MethodSignature, ApiMethodDto> {
     public Extract(): ApiMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const returnType: TypeDto | undefined = this.GetReturnType();
@@ -41,7 +24,8 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Parameters: this.parameters,
-            ReturnType: returnType
+            ReturnType: returnType,
+            TypeParameters: this.typeParameters
         };
     }
 }

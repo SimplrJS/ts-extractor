@@ -35,6 +35,7 @@ import { ApiClassMethod } from "./definitions/api-class-method";
 import { ApiIndex } from "./definitions/api-index";
 import { ApiCall } from "./definitions/api-call";
 import { ApiConstruct } from "./definitions/api-construct";
+import { ApiTypeParameter } from "./definitions/api-type-parameter";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -87,6 +88,8 @@ export namespace ApiHelpers {
             apiItem = new ApiCall(declaration, symbol, options);
         } else if (ts.isConstructSignatureDeclaration(declaration)) {
             apiItem = new ApiConstruct(declaration, symbol, options);
+        } else if (ts.isTypeParameterDeclaration(declaration)) {
+            apiItem = new ApiTypeParameter(declaration, symbol, options);
         }
 
         if (apiItem != null && apiItem.IsPrivate()) {
@@ -262,7 +265,7 @@ export namespace ApiHelpers {
             } as TypeUnionOrIntersectionDto;
         }
 
-        // Default
+        // Basic
         return {
             ApiTypeKind: kind,
             Flags: type.flags,
