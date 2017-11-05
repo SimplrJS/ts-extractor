@@ -16,7 +16,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
         super(declaration, symbol, options);
 
         // Parameter
-        const parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
+        const parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
         Object.keys(parameters).forEach(key => {
             const value = parameters[key];
 

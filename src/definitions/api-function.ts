@@ -15,7 +15,7 @@ export class ApiFunction extends ApiItem<ts.FunctionDeclaration, ApiFunctionDto>
         super(declaration, symbol, options);
 
         // Parameters
-        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
+        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
     }
 
     private parameters: ApiItemReferenceDictionary = {};

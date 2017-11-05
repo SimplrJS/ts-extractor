@@ -15,7 +15,7 @@ export class ApiMethod extends ApiItem<ts.MethodSignature, ApiMethodDto> {
     constructor(declaration: ts.MethodSignature, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
+        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
     }
 
     private parameters: ApiItemReferenceDictionary = {};

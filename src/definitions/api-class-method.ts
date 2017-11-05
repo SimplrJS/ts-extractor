@@ -16,7 +16,7 @@ export class ApiClassMethod extends ApiItem<ts.MethodDeclaration, ApiClassMethod
     constructor(declaration: ts.MethodDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
+        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
 
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);

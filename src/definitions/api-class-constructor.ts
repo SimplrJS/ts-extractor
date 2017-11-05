@@ -16,7 +16,7 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
     constructor(declaration: ts.ConstructorDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
+        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
 
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);

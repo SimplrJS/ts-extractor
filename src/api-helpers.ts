@@ -142,7 +142,7 @@ export namespace ApiHelpers {
         return items;
     }
 
-    export function GetItemsFromDeclarationsIds(
+    export function GetItemsIdsFromDeclarations(
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
     ): ApiItemReferenceDictionary {

@@ -14,8 +14,7 @@ export class ApiCall extends ApiItem<ts.CallSignatureDeclaration, ApiCallDto> {
     constructor(declaration: ts.CallSignatureDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        // Parameters
-        this.parameters = ApiHelpers.GetItemsFromDeclarationsIds(declaration.parameters, this.Options);
+        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
     }
 
     private parameters: ApiItemReferenceDictionary = {};

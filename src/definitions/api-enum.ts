@@ -14,7 +14,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
         super(declaration, symbol, options);
 
         // Members
-        this.members = ApiHelpers.GetItemsFromDeclarationsIds(declaration.members, this.Options);
+        this.members = ApiHelpers.GetItemsIdsFromDeclarations(declaration.members, this.Options);
     }
 
     private members: ApiItemReferenceDictionary = {};
