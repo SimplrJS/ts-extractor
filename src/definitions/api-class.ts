@@ -32,6 +32,11 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
 
         // IsAbstract
         this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
+
+        // TypeParameters
+        if (this.Declaration.typeParameters != null) {
+            this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
+        }
     }
 
     /**
@@ -39,6 +44,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
      */
     private extends: TypeDto | undefined;
     private implements: TypeDto[] = [];
+    private typeParameters: ApiItemReferenceDictionary = {};
     private members: ApiItemReferenceDictionary = {};
     private isAbstract: boolean = false;
 
@@ -54,7 +60,8 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
             IsAbstract: this.isAbstract,
             Members: this.members,
             Extends: this.extends,
-            Implements: this.implements
+            Implements: this.implements,
+            TypeParameters: this.typeParameters
         };
     }
 }

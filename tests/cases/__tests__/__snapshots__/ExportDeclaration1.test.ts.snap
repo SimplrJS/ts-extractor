@@ -50,6 +50,7 @@ Object {
         ],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "ExportDeclaration-0": Object {
       "ApiKind": "class",

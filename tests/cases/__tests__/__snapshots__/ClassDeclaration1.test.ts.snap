@@ -50,6 +50,7 @@ Object {
         ],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",

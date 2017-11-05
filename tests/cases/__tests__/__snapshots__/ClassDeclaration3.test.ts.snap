@@ -43,6 +43,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",

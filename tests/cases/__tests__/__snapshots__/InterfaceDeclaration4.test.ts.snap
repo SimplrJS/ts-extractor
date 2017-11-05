@@ -92,6 +92,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "c1",
+      "TypeParameters": Object {},
     },
     "ConstructSignature-0": Object {
       "ApiKind": "construct",

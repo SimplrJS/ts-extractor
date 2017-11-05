@@ -42,6 +42,9 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {
+        "T": "TypeParameter-0",
+      },
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -58,6 +61,9 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "TypeParameters": Object {
+        "T": "TypeParameter-1",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -177,6 +183,30 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+    "TypeParameter-1": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
     },
   },
 }

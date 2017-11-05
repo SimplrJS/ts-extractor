@@ -36,6 +36,9 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooBase",
+      "TypeParameters": Object {
+        "TValue": "TypeParameter-0",
+      },
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -76,6 +79,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -105,11 +109,10 @@ Object {
       "Name": "GetValue",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
+        "ApiTypeKind": "reference",
         "Generics": undefined,
         "Name": "TValue",
+        "ReferenceId": "TypeParameter-0",
         "Text": "TValue",
       },
       "TypeParameters": Object {},
@@ -176,6 +179,18 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
     },
   },
 }

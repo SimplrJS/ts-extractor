@@ -37,6 +37,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "ExportSpecifier-0": Object {
       "ApiItems": Array [
