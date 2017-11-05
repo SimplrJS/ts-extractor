@@ -10,9 +10,9 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiFunctionBase } from "../abstractions/api-function-base";
+import { ApiCallableBase } from "../abstractions/api-callable-base";
 
-export class ApiMethod extends ApiFunctionBase<ts.MethodSignature, ApiMethodDto> {
+export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto> {
     public Extract(): ApiMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const returnType: TypeDto | undefined = this.GetReturnType();

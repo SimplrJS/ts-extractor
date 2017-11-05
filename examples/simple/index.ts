@@ -15,6 +15,10 @@ export function Funkcija<T extends MyConstraintType = MyDefaultType>(): T {
     } as T;
 }
 
+export interface MyInterface {
+    <TValue>(param1: TValue, param2: TValue): boolean;
+}
+
 /**
  * Some JSdoc information.
  * 2nd line of some JSdoc information.

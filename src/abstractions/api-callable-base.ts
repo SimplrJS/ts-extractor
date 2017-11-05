@@ -9,15 +9,17 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
-export abstract class ApiFunctionBase<
-    TDeclaration extends ts.FunctionLikeDeclaration | ts.MethodSignature,
+/**
+ * A callable api item base.
+ */
+export abstract class ApiCallableBase<
+    TDeclaration extends ts.SignatureDeclaration,
     TExtractDto extends ApiFunctionDto
     >
     extends ApiItem<TDeclaration, TExtractDto> {
     constructor(declaration: TDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        // Parameters
         this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
 
         if (this.Declaration.typeParameters != null) {

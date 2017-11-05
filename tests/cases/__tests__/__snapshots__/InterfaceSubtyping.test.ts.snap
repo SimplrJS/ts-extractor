@@ -94,6 +94,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
@@ -113,6 +114,7 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
+      "TypeParameters": Object {},
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

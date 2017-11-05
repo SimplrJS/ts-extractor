@@ -11,9 +11,9 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiFunctionBase } from "../abstractions/api-function-base";
+import { ApiCallableBase } from "../abstractions/api-callable-base";
 
-export class ApiClassMethod extends ApiFunctionBase<ts.MethodDeclaration, ApiClassMethodDto> {
+export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiClassMethodDto> {
     constructor(declaration: ts.MethodDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 

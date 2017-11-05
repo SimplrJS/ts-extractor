@@ -9,9 +9,9 @@ import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dict
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiFunctionBase } from "../abstractions/api-function-base";
+import { ApiCallableBase } from "../abstractions/api-callable-base";
 
-export class ApiFunction extends ApiFunctionBase<ts.FunctionDeclaration, ApiFunctionDto> {
+export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunctionDto> {
     public Extract(): ApiFunctionDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const returnType: TypeDto | undefined = this.GetReturnType();

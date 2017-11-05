@@ -88,6 +88,7 @@ Object {
         "Name": "TValue",
         "Text": "TValue",
       },
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
@@ -110,6 +111,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
+      "TypeParameters": Object {},
     },
   },
 }

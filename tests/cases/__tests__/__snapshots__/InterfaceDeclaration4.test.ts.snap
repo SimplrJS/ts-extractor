@@ -45,6 +45,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "CallSignature-1": Object {
       "ApiKind": "call",
@@ -68,6 +69,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
+      "TypeParameters": Object {},
     },
     "ClassDeclaration-0": Object {
       "ApiKind": "class",
@@ -352,6 +354,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
@@ -371,6 +374,7 @@ Object {
         "Name": undefined,
         "Text": "any",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-2": Object {
       "ApiKind": "method",
@@ -390,6 +394,7 @@ Object {
         "Name": undefined,
         "Text": "any",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-3": Object {
       "ApiKind": "method",
@@ -411,6 +416,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-4": Object {
       "ApiKind": "method",
@@ -432,6 +438,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
