@@ -22,7 +22,7 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
     private typeParameters: ApiItemReferenceDictionary = {};
 
     public GetType(): TypeDto {
-        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+        const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
 
         return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }

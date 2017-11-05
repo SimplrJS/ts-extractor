@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeAliasDeclaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "AnotherType": "TypeAliasDeclaration-1",
+        "MyType": "TypeAliasDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TypeAliasDeclaration1.ts",
+      "Path": "cases/TypeAliasDeclaration1.ts",
+    },
+  ],
+  "Registry": Object {
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "MyType",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": undefined,
+        "Name": "__type",
+        "Text": "MyType",
+      },
+      "TypeParameters": Object {},
+    },
+    "TypeAliasDeclaration-1": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "AnotherType",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": undefined,
+        "Name": "__type",
+        "Text": "MyType",
+      },
+      "TypeParameters": Object {},
+    },
+  },
+}
+`;

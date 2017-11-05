@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeAliasDeclaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "AnotherType": "TypeAliasDeclaration-2",
+        "NoCommonFields1": "TypeAliasDeclaration-0",
+        "NoCommonFields2": "TypeAliasDeclaration-1",
+        "OneCommonField1": "TypeAliasDeclaration-3",
+        "OneCommonField2": "TypeAliasDeclaration-4",
+        "OneCommonFieldTypeIntersection": "TypeAliasDeclaration-5",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TypeAliasDeclaration3.ts",
+      "Path": "cases/TypeAliasDeclaration3.ts",
+    },
+  ],
+  "Registry": Object {
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "NoCommonFields1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "Generics": undefined,
+            "Name": "TType",
+            "ReferenceId": "TypeParameter-0",
+            "Text": "TType",
+          },
+        ],
+        "Name": "__type",
+        "Text": "NoCommonFields1<TType>",
+      },
+      "TypeParameters": Object {
+        "TType": "TypeParameter-0",
+      },
+    },
+    "TypeAliasDeclaration-1": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "NoCommonFields2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "Generics": undefined,
+            "Name": "TType",
+            "ReferenceId": "TypeParameter-1",
+            "Text": "TType",
+          },
+        ],
+        "Name": "__type",
+        "Text": "NoCommonFields2<TType>",
+      },
+      "TypeParameters": Object {
+        "TType": "TypeParameter-1",
+      },
+    },
+    "TypeAliasDeclaration-2": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "AnotherType",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "AnotherType",
+        "ReferenceId": "TypeAliasDeclaration-2",
+        "Text": "AnotherType",
+      },
+      "TypeParameters": Object {},
+    },
+    "TypeAliasDeclaration-3": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonField1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "Generics": undefined,
+            "Name": "TType",
+            "ReferenceId": "TypeParameter-2",
+            "Text": "TType",
+          },
+        ],
+        "Name": "__type",
+        "Text": "OneCommonField1<TType>",
+      },
+      "TypeParameters": Object {
+        "TType": "TypeParameter-2",
+      },
+    },
+    "TypeAliasDeclaration-4": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonField2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "Generics": undefined,
+            "Name": "TType",
+            "ReferenceId": "TypeParameter-3",
+            "Text": "TType",
+          },
+        ],
+        "Name": "__type",
+        "Text": "OneCommonField2<TType>",
+      },
+      "TypeParameters": Object {
+        "TType": "TypeParameter-3",
+      },
+    },
+    "TypeAliasDeclaration-5": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonFieldTypeIntersection",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "OneCommonFieldTypeIntersection",
+        "ReferenceId": "TypeAliasDeclaration-5",
+        "Text": "OneCommonFieldTypeIntersection",
+      },
+      "TypeParameters": Object {},
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+    },
+    "TypeParameter-1": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+    },
+    "TypeParameter-2": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+    },
+    "TypeParameter-3": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+    },
+  },
+}
+`;
