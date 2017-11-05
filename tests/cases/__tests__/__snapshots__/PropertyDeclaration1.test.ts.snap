@@ -29,7 +29,7 @@ Object {
       },
       "Name": "FOO",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2048,
         "FlagsString": "Undefined",
         "Generics": undefined,

@@ -9,6 +9,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiExportSpecifierDto, ApiExportSpecifierApiItems } from "../contracts/definitions/api-export-specifier-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
+import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpecifierDto> {
     constructor(declaration: ts.ExportSpecifier, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -47,12 +48,14 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
     }
 
     public Extract(): ApiExportSpecifierDto {
+        const metadata: ApiMetadataDto = this.GetItemMetadata();
+
         return {
             ApiKind: ApiItemKinds.ExportSpecifier,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMetadata(),
+            Metadata: metadata,
             ApiItems: this.apiItems
         };
     }

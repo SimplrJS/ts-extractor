@@ -87,7 +87,7 @@ Object {
       "Name": "foo",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -106,7 +106,7 @@ Object {
       "Name": "foo",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 1024,
         "FlagsString": "Void",
         "Generics": undefined,
@@ -124,7 +124,7 @@ Object {
       },
       "Name": "str",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,

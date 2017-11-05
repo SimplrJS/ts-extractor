@@ -1,12 +1,12 @@
 import * as ts from "typescript";
 import { ApiItem } from "./abstractions/api-item";
-import { ItemsRegistry, RegistryDict } from "./contracts/items-registry";
+import { ItemsRegistry, Registry } from "./contracts/items-registry";
 
 export class ApiItemsRegistry implements ItemsRegistry<ApiItem, ts.Declaration> {
-    private registry: RegistryDict<ApiItem> = {};
+    private registry: Registry<ApiItem> = {};
     private counts: { [id: string]: number } = {};
 
-    public GetAll(): RegistryDict<ApiItem> {
+    public GetAll(): Registry<ApiItem> {
         return this.registry;
     }
 

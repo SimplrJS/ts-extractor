@@ -43,7 +43,7 @@ Object {
         "ApiTypeKind": "reference",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "default",
+            "ApiTypeKind": "basic",
             "Flags": 4,
             "FlagsString": "Number",
             "Generics": undefined,
@@ -105,7 +105,7 @@ Object {
       "Name": "GetValue",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 16384,
         "FlagsString": "TypeParameter",
         "Generics": undefined,
@@ -127,7 +127,7 @@ Object {
       "Name": "GetValue",
       "Parameters": Object {},
       "ReturnType": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 4,
         "FlagsString": "Number",
         "Generics": undefined,
@@ -149,7 +149,7 @@ Object {
       },
       "Name": "BarName",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
@@ -167,7 +167,7 @@ Object {
       },
       "Name": "BarName",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,

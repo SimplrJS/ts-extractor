@@ -44,7 +44,7 @@ Object {
       },
       "Name": "x",
       "Type": Object {
-        "ApiTypeKind": "default",
+        "ApiTypeKind": "basic",
         "Flags": 16384,
         "FlagsString": "TypeParameter",
         "Generics": undefined,
@@ -65,7 +65,7 @@ Object {
         "ApiTypeKind": "reference",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "default",
+            "ApiTypeKind": "basic",
             "Flags": 4,
             "FlagsString": "Number",
             "Generics": undefined,

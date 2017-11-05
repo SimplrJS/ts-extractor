@@ -6,6 +6,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiVariableDto } from "../contracts/definitions/api-variable-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
+import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
     public GetType(): TypeDto {
@@ -15,13 +16,16 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
     }
 
     public Extract(): ApiVariableDto {
+        const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const type: TypeDto = this.GetType();
+
         return {
             ApiKind: ApiItemKinds.Variable,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMetadata(),
-            Type: this.GetType()
+            Metadata: metadata,
+            Type: type
         };
     }
 }

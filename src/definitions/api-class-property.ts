@@ -7,6 +7,7 @@ import { ApiClassPropertyDto } from "../contracts/definitions/api-class-property
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { AccessModifier } from "../contracts/access-modifier";
+import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPropertyDto> {
     constructor(declaration: ts.PropertyDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -28,20 +29,23 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
     }
 
-    public GetReturnType(): TypeDto {
+    public GetType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
 
         return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
     public Extract(): ApiClassPropertyDto {
+        const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const type: TypeDto = this.GetType();
+
         return {
             ApiKind: ApiItemKinds.ClassProperty,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMetadata(),
-            Type: this.GetReturnType(),
+            Metadata: metadata,
+            Type: type,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsReadonly: this.isReadonly,

@@ -4,8 +4,9 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiNamespaceDto } from "../contracts/definitions/api-namespace-dto";
-import { ApiItemReferenceDict } from "../contracts/api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto> {
     constructor(declaration: ts.ModuleDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
@@ -16,18 +17,20 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
         }
 
         // Members
-        this.members = ApiHelpers.GetItemsFromSymbolsIds(symbol.exports, this.Options);
+        this.members = ApiHelpers.GetItemsIdsFromSymbols(symbol.exports, this.Options);
     }
 
-    private members: ApiItemReferenceDict = {};
+    private members: ApiItemReferenceDictionary = {};
 
     public Extract(): ApiNamespaceDto {
+        const metadata: ApiMetadataDto = this.GetItemMetadata();
+
         return {
             ApiKind: ApiItemKinds.Namespace,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: this.GetItemMetadata(),
+            Metadata: metadata,
             Members: this.members
         };
     }
