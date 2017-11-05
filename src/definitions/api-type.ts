@@ -8,8 +8,19 @@ import { ApiTypeDto } from "../contracts/definitions/api-type-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
+    constructor(declaration: ts.TypeAliasDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
+        super(declaration, symbol, options);
+
+        if (this.Declaration.typeParameters != null) {
+            this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
+        }
+    }
+
+    private typeParameters: ApiItemReferenceDictionary = {};
+
     public GetType(): TypeDto {
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
 
@@ -26,7 +37,8 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Type: type
+            Type: type,
+            TypeParameters: this.typeParameters
         };
     }
 }

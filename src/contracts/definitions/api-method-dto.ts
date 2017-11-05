@@ -1,4 +1,4 @@
-import { ApiItemReferenceDictionary } from "../api-item-reference-dict";
+import { ApiItemReferenceDictionary } from "../api-item-reference-dictionary";
 import { ApiCallableDto } from "../api-callable-dto";
 
 // tslint:disable-next-line:no-empty-interface
