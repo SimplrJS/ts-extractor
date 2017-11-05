@@ -5,7 +5,7 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 import { ApiItemReferenceDict } from "./contracts/api-item-reference-dict";
 import {
     TypeDto,
-    TypeDefaultDto,
+    TypeBasicDto,
     TypeReferenceDto,
     TypeUnionOrIntersectionDto
 } from "./contracts/type-dto";
@@ -209,7 +209,7 @@ export namespace ApiHelpers {
 
         const symbol = type.getSymbol() || type.aliasSymbol;
         let generics: TypeDto[] | undefined;
-        let kind = TypeKinds.Default;
+        let kind = TypeKinds.Basic;
         let types: TypeDto[] | undefined;
         let name: string | undefined;
 
@@ -267,7 +267,7 @@ export namespace ApiHelpers {
             Name: name,
             Text: text,
             Generics: generics
-        } as TypeDefaultDto;
+        } as TypeBasicDto;
     }
 
     export function ResolveAccessModifierFromModifiers(modifiers?: ts.NodeArray<ts.Modifier>): AccessModifier {

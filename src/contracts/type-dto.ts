@@ -14,10 +14,10 @@ export interface TypeScriptSpecificPropertiesDto {
     FlagsString: string;
 }
 
-export type TypeDto = TypeDefaultDto | TypeUnionOrIntersectionDto | TypeReferenceDto;
+export type TypeDto = TypeBasicDto | TypeUnionOrIntersectionDto | TypeReferenceDto;
 
-export interface TypeDefaultDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
-    ApiTypeKind: TypeKinds.Default;
+export interface TypeBasicDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
+    ApiTypeKind: TypeKinds.Basic;
     Generics?: TypeDto[];
 }
 
