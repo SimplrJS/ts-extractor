@@ -25,6 +25,128 @@ Object {
     },
   ],
   "Registry": Object {
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FooName",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TType",
+        "ReferenceId": "TypeParameter-0",
+        "Text": "TType",
+      },
+    },
+    "PropertySignature-2": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BazName",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TType",
+        "ReferenceId": "TypeParameter-1",
+        "Text": "TType",
+      },
+    },
+    "PropertySignature-3": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TType",
+        "ReferenceId": "TypeParameter-2",
+        "Text": "TType",
+      },
+    },
+    "PropertySignature-4": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FooName",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-5": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TType",
+        "ReferenceId": "TypeParameter-3",
+        "Text": "TType",
+      },
+    },
+    "PropertySignature-6": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BazName",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",
       "Kind": 231,
@@ -35,9 +157,7 @@ Object {
       },
       "Name": "NoCommonFields1",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": Array [
           Object {
             "ApiTypeKind": "reference",
@@ -48,6 +168,7 @@ Object {
           },
         ],
         "Name": "__type",
+        "ReferenceId": "TypeLiteral-0",
         "Text": "NoCommonFields1<TType>",
       },
       "TypeParameters": Object {
@@ -64,9 +185,7 @@ Object {
       },
       "Name": "NoCommonFields2",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": Array [
           Object {
             "ApiTypeKind": "reference",
@@ -77,6 +196,7 @@ Object {
           },
         ],
         "Name": "__type",
+        "ReferenceId": "TypeLiteral-1",
         "Text": "NoCommonFields2<TType>",
       },
       "TypeParameters": Object {
@@ -100,9 +220,7 @@ Object {
         "Text": "AnotherType",
         "Types": Array [
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
+            "ApiTypeKind": "reference",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -114,12 +232,11 @@ Object {
               },
             ],
             "Name": "__type",
+            "ReferenceId": "TypeLiteral-0",
             "Text": "NoCommonFields1<number>",
           },
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
+            "ApiTypeKind": "reference",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -131,6 +248,7 @@ Object {
               },
             ],
             "Name": "__type",
+            "ReferenceId": "TypeLiteral-1",
             "Text": "NoCommonFields2<string>",
           },
         ],
@@ -147,9 +265,7 @@ Object {
       },
       "Name": "OneCommonField1",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": Array [
           Object {
             "ApiTypeKind": "reference",
@@ -160,6 +276,7 @@ Object {
           },
         ],
         "Name": "__type",
+        "ReferenceId": "TypeLiteral-2",
         "Text": "OneCommonField1<TType>",
       },
       "TypeParameters": Object {
@@ -176,9 +293,7 @@ Object {
       },
       "Name": "OneCommonField2",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": Array [
           Object {
             "ApiTypeKind": "reference",
@@ -189,6 +304,7 @@ Object {
           },
         ],
         "Name": "__type",
+        "ReferenceId": "TypeLiteral-3",
         "Text": "OneCommonField2<TType>",
       },
       "TypeParameters": Object {
@@ -212,9 +328,7 @@ Object {
         "Text": "OneCommonFieldTypeIntersection",
         "Types": Array [
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
+            "ApiTypeKind": "reference",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -226,12 +340,11 @@ Object {
               },
             ],
             "Name": "__type",
+            "ReferenceId": "TypeLiteral-2",
             "Text": "OneCommonField1<number>",
           },
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
+            "ApiTypeKind": "reference",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -243,6 +356,7 @@ Object {
               },
             ],
             "Name": "__type",
+            "ReferenceId": "TypeLiteral-3",
             "Text": "OneCommonField2<number>",
           },
         ],
@@ -266,9 +380,7 @@ Object {
         "Text": "OneCommonFieldTypeIntersectionWithDifferentTypes",
         "Types": Array [
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
+            "ApiTypeKind": "reference",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -280,12 +392,11 @@ Object {
               },
             ],
             "Name": "__type",
+            "ReferenceId": "TypeLiteral-2",
             "Text": "OneCommonField1<number>",
           },
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
+            "ApiTypeKind": "reference",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -297,11 +408,67 @@ Object {
               },
             ],
             "Name": "__type",
+            "ReferenceId": "TypeLiteral-3",
             "Text": "OneCommonField2<string>",
           },
         ],
       },
       "TypeParameters": Object {},
+    },
+    "TypeLiteral-0": Object {
+      "ApiKind": "type-literal",
+      "Kind": 163,
+      "KindString": "TypeLiteral",
+      "Members": Object {
+        "BarName": "PropertySignature-0",
+        "FooName": "PropertySignature-1",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+    },
+    "TypeLiteral-1": Object {
+      "ApiKind": "type-literal",
+      "Kind": 163,
+      "KindString": "TypeLiteral",
+      "Members": Object {
+        "BazName": "PropertySignature-2",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+    },
+    "TypeLiteral-2": Object {
+      "ApiKind": "type-literal",
+      "Kind": 163,
+      "KindString": "TypeLiteral",
+      "Members": Object {
+        "BarName": "PropertySignature-3",
+        "FooName": "PropertySignature-4",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+    },
+    "TypeLiteral-3": Object {
+      "ApiKind": "type-literal",
+      "Kind": 163,
+      "KindString": "TypeLiteral",
+      "Members": Object {
+        "BarName": "PropertySignature-5",
+        "BazName": "PropertySignature-6",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type",

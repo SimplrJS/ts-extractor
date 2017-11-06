@@ -12,11 +12,9 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
     constructor(declaration: ts.ParameterDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        if (declaration.type != null) {
-            const type = this.TypeChecker.getTypeFromTypeNode(declaration.type);
-
-            this.type = ApiHelpers.TypeToApiTypeDto(type, options);
-        }
+        // Type
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(symbol, declaration);
+        this.type = ApiHelpers.TypeToApiTypeDto(type, options);
     }
 
     private type: TypeDto;

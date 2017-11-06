@@ -20,6 +20,24 @@ Object {
     },
   ],
   "Registry": Object {
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",
       "Kind": 231,
@@ -30,11 +48,10 @@ Object {
       },
       "Name": "MyType",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": undefined,
         "Name": "__type",
+        "ReferenceId": "TypeLiteral-0",
         "Text": "MyType",
       },
       "TypeParameters": Object {},
@@ -49,14 +66,26 @@ Object {
       },
       "Name": "AnotherType",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": undefined,
         "Name": "__type",
+        "ReferenceId": "TypeLiteral-0",
         "Text": "MyType",
       },
       "TypeParameters": Object {},
+    },
+    "TypeLiteral-0": Object {
+      "ApiKind": "type-literal",
+      "Kind": 163,
+      "KindString": "TypeLiteral",
+      "Members": Object {
+        "BarName": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
     },
   },
 }

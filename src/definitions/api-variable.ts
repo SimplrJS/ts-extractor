@@ -13,13 +13,11 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
         super(declaration, symbol, options);
 
         // Type
-        if (this.Declaration.type != null) {
-            const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
-            this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
-        }
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(symbol, declaration);
+        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
-    private type: TypeDto | undefined;
+    private type: TypeDto;
 
     public Extract(): ApiVariableDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();

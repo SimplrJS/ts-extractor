@@ -20,18 +20,15 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
         this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
 
         // Type
-        if (declaration.type != null) {
-            const type = this.TypeChecker.getTypeFromTypeNode(declaration.type);
-
-            this.type = ApiHelpers.TypeToApiTypeDto(type, options);
-        }
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+        this.type = ApiHelpers.TypeToApiTypeDto(type, options);
     }
 
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;
     private isReadonly: boolean;
-    private type: TypeDto | undefined;
+    private type: TypeDto;
 
     public IsPrivate(): boolean {
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;

@@ -12,11 +12,9 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
     constructor(declaration: ts.PropertySignature, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        if (declaration.type != null) {
-            const type = this.TypeChecker.getTypeFromTypeNode(declaration.type);
-
-            this.type = ApiHelpers.TypeToApiTypeDto(type, options);
-        }
+        // Type
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(symbol, declaration);
+        this.type = ApiHelpers.TypeToApiTypeDto(type, options);
     }
 
     private type: TypeDto;
