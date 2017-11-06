@@ -14,6 +14,7 @@ Object {
         "OneCommonField1": "TypeAliasDeclaration-3",
         "OneCommonField2": "TypeAliasDeclaration-4",
         "OneCommonFieldTypeIntersection": "TypeAliasDeclaration-5",
+        "OneCommonFieldTypeIntersectionWithDifferentTypes": "TypeAliasDeclaration-6",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -173,6 +174,24 @@ Object {
         "Name": "OneCommonFieldTypeIntersection",
         "ReferenceId": "TypeAliasDeclaration-5",
         "Text": "OneCommonFieldTypeIntersection",
+      },
+      "TypeParameters": Object {},
+    },
+    "TypeAliasDeclaration-6": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+        "ReferenceId": "TypeAliasDeclaration-6",
+        "Text": "OneCommonFieldTypeIntersectionWithDifferentTypes",
       },
       "TypeParameters": Object {},
     },
