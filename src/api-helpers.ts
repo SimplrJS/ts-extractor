@@ -38,6 +38,7 @@ import { ApiCall } from "./definitions/api-call";
 import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
+import { ApiFunctionType } from "./definitions/api-function-type";
 
 export namespace ApiHelpers {
     // TODO: Add return dictionary of ApiItems.
@@ -94,6 +95,8 @@ export namespace ApiHelpers {
             apiItem = new ApiTypeParameter(declaration, symbol, options);
         } else if (ts.isTypeLiteralNode(declaration)) {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
+        } else if (ts.isFunctionTypeNode(declaration)) {
+            apiItem = new ApiFunctionType(declaration, symbol, options);
         }
 
         if (apiItem != null && apiItem.IsPrivate()) {
