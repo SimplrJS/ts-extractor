@@ -15,7 +15,6 @@ import { ApiCallableBase } from "../abstractions/api-callable-base";
 export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto> {
     public Extract(): ApiMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const returnType: TypeDto | undefined = this.GetReturnType();
 
         return {
             ApiKind: ApiItemKinds.Method,
@@ -24,7 +23,7 @@ export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto>
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Parameters: this.parameters,
-            ReturnType: returnType,
+            ReturnType: this.returnType,
             TypeParameters: this.typeParameters
         };
     }

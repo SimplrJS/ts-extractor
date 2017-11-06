@@ -26,22 +26,21 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
 
             return false;
         });
-    }
 
-    private parameter: string;
-
-    private getType(): TypeDto {
+        // Type
         if (this.Declaration.type == null) {
             // This should not happen, because we run Semantic Diagnostics before extraction.
             throw new Error("An index signature must have a type annotation.");
         }
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
+
+    private parameter: string;
+    private type: TypeDto;
 
     public Extract(): ApiIndexDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const type: TypeDto = this.getType();
 
         return {
             ApiKind: ApiItemKinds.Index,
@@ -50,7 +49,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Parameter: this.parameter,
-            Type: type
+            Type: this.type
         };
     }
 }

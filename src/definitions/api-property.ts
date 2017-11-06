@@ -9,15 +9,20 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
-    public GetType(): TypeDto {
-        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+    constructor(declaration: ts.PropertySignature, symbol: ts.Symbol, options: ApiItemOptions) {
+        super(declaration, symbol, options);
 
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        if (declaration.type != null) {
+            const type = this.TypeChecker.getTypeFromTypeNode(declaration.type);
+
+            this.type = ApiHelpers.TypeToApiTypeDto(type, options);
+        }
     }
+
+    private type: TypeDto;
 
     public Extract(): ApiPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const type: TypeDto = this.GetType();
 
         return {
             ApiKind: ApiItemKinds.Property,
@@ -25,7 +30,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Type: type
+            Type: this.type
         };
     }
 }

@@ -20,23 +20,24 @@ export abstract class ApiCallableBase<
     constructor(declaration: TDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
+        // Parameters
         this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
 
+        // TypeParameters
         if (this.Declaration.typeParameters != null) {
             this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
+        }
+
+        // ReturnType
+        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
+        if (signature != null) {
+            const type = this.TypeChecker.getReturnTypeOfSignature(signature);
+
+            this.returnType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
     }
 
     protected parameters: ApiItemReferenceDictionary = {};
     protected typeParameters: ApiItemReferenceDictionary = {};
-
-    public GetReturnType(): TypeDto | undefined {
-        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
-        if (signature == null) {
-            return;
-        }
-        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
+    protected returnType: TypeDto | undefined;
 }

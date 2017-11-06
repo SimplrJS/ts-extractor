@@ -10,28 +10,27 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTypeParameterDto> {
-    protected GetConstraintType(): TypeDto | undefined {
-        if (this.Declaration.constraint == null) {
-            return;
+    constructor(declaration: ts.TypeParameterDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
+        super(declaration, symbol, options);
+
+        // Constraint type
+        if (this.Declaration.constraint != null) {
+            const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.constraint);
+            this.contraintType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
 
-        const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.constraint);
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
-
-    protected GetDefaultType(): TypeDto | undefined {
-        if (this.Declaration.default == null) {
-            return;
+        // Default type
+        if (this.Declaration.default != null) {
+            const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.default);
+            this.defaultType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
-
-        const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.default);
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
+
+    private contraintType: TypeDto | undefined;
+    private defaultType: TypeDto | undefined;
 
     public Extract(): ApiTypeParameterDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const contraintType: TypeDto | undefined = this.GetConstraintType();
-        const defaultType: TypeDto | undefined = this.GetDefaultType();
 
         return {
             ApiKind: ApiItemKinds.Type,
@@ -39,8 +38,8 @@ export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTy
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            ContraintType: contraintType,
-            DefaultType: defaultType
+            ContraintType: this.contraintType,
+            DefaultType: this.defaultType
         };
     }
 }

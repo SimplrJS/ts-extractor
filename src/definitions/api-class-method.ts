@@ -33,7 +33,6 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
 
     public Extract(): ApiClassMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const returnType: TypeDto | undefined = this.GetReturnType();
 
         return {
             ApiKind: ApiItemKinds.ClassMethod,
@@ -42,7 +41,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Parameters: this.parameters,
-            ReturnType: returnType,
+            ReturnType: this.returnType,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsStatic: this.isStatic,
