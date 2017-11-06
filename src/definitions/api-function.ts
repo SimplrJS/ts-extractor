@@ -27,4 +27,4 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
             ReturnType: returnType
         };
     }
- }
+}
