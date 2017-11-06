@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import * as path from "path";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
@@ -108,6 +109,42 @@ export namespace ApiHelpers {
         return apiItem;
     }
 
+    export function PathIsInside(thePath: string, potentialParent: string): boolean {
+        // For inside-directory checking, we want to allow trailing slashes, so normalize.
+        thePath = StripTrailingSep(thePath);
+        potentialParent = StripTrailingSep(potentialParent);
+
+        // Node treats only Windows as case-insensitive in its path module; we follow those conventions.
+        if (process.platform === "win32") {
+            thePath = thePath.toLowerCase();
+            potentialParent = potentialParent.toLowerCase();
+        }
+
+        thePath = path.normalize(thePath);
+        potentialParent = path.normalize(potentialParent);
+
+        return thePath.lastIndexOf(potentialParent, 0) === 0 &&
+            (
+                thePath[potentialParent.length] === path.sep ||
+                thePath[potentialParent.length] === undefined
+            );
+    }
+
+    function StripTrailingSep(thePath: string): string {
+        if (thePath[thePath.length - 1] === path.sep) {
+            return thePath.slice(0, -1);
+        }
+        return thePath;
+    }
+
+    export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
+        const declarationFileName = declaration.getSourceFile().fileName;
+        if (PathIsInside(declarationFileName, options.ProjectDirectory)) {
+            return true;
+        }
+        return false;
+    }
+
     export function GetItemsIdsFromSymbols(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
@@ -132,7 +169,7 @@ export namespace ApiHelpers {
                 }
 
                 const visitedItem = VisitApiItem(declaration, symbol, options);
-                if (visitedItem == null) {
+                if (visitedItem == null || !ShouldVisit(declaration, options)) {
                     return;
                 }
 
@@ -152,17 +189,17 @@ export namespace ApiHelpers {
         const items: ApiItemReferenceDictionary = {};
         const typeChecker = options.Program.getTypeChecker();
 
-        declarations.forEach(declarationItem => {
-            const symbol = TSHelpers.GetSymbolFromDeclaration(declarationItem, typeChecker);
+        declarations.forEach(declaration => {
+            const symbol = TSHelpers.GetSymbolFromDeclaration(declaration, typeChecker);
             if (symbol == null) {
                 return;
             }
             const name = symbol.name;
 
-            let declarationId = options.ItemsRegistry.Find(declarationItem);
+            let declarationId = options.ItemsRegistry.Find(declaration);
             if (declarationId == null) {
-                const visitedItem = VisitApiItem(declarationItem, symbol, options);
-                if (visitedItem == null) {
+                const visitedItem = VisitApiItem(declaration, symbol, options);
+                if (visitedItem == null || !ShouldVisit(declaration, options)) {
                     return;
                 }
 
@@ -226,25 +263,6 @@ export namespace ApiHelpers {
             generics = type.aliasTypeArguments.map<TypeDto>(x => TypeToApiTypeDto(x, options));
         }
 
-        // Find declaration reference.
-        if (symbol != null) {
-            name = symbol.getName();
-
-            if (symbol.declarations != null && symbol.declarations.length > 0) {
-                const declarationId = options.ItemsRegistry.Find(symbol.declarations[0]);
-
-                if (declarationId != null) {
-                    return {
-                        ApiTypeKind: TypeKinds.Reference,
-                        ReferenceId: declarationId,
-                        Name: name,
-                        Text: text,
-                        Generics: generics
-                    } as TypeReferenceDto;
-                }
-            }
-        }
-
         // Union or Intersection
         if (TSHelpers.IsTypeUnionOrIntersectionType(type)) {
             if (TSHelpers.IsTypeUnionType(type)) {
@@ -263,6 +281,34 @@ export namespace ApiHelpers {
                 Text: text,
                 Types: types
             } as TypeUnionOrIntersectionDto;
+        }
+
+        // Find declaration reference.
+        if (symbol != null) {
+            name = symbol.getName();
+
+            if (symbol.declarations != null && symbol.declarations.length > 0) {
+                const declaration: ts.Declaration = symbol.declarations[0];
+
+                let declarationId = options.ItemsRegistry.Find(declaration);
+
+                if (declarationId == null) {
+                    const apiItem = VisitApiItem(declaration, symbol, options);
+                    if (apiItem != null) {
+                        declarationId = options.ItemsRegistry.Add(apiItem);
+                    }
+                }
+
+                if (declarationId != null) {
+                    return {
+                        ApiTypeKind: TypeKinds.Reference,
+                        ReferenceId: declarationId,
+                        Name: name,
+                        Text: text,
+                        Generics: generics
+                    } as TypeReferenceDto;
+                }
+            }
         }
 
         // Basic
