@@ -14,11 +14,10 @@ export function PathIsInside(thePath: string, potentialParent: string): boolean 
     thePath = path.normalize(thePath);
     potentialParent = path.normalize(potentialParent);
 
-    return thePath.lastIndexOf(potentialParent, 0) === 0 &&
-        (
-            thePath[potentialParent.length] === path.sep ||
-            thePath[potentialParent.length] === undefined
-        );
+    return thePath.lastIndexOf(potentialParent, 0) === 0 && (
+        thePath[potentialParent.length] === path.sep ||
+        thePath[potentialParent.length] === undefined
+    );
 }
 
 function StripTrailingSep(thePath: string): string {
