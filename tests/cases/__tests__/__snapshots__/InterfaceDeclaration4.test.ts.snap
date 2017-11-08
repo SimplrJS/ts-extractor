@@ -45,6 +45,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "CallSignature-1": Object {
       "ApiKind": "call",
@@ -68,6 +69,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
+      "TypeParameters": Object {},
     },
     "ClassDeclaration-0": Object {
       "ApiKind": "class",
@@ -90,6 +92,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "c1",
+      "TypeParameters": Object {},
     },
     "ConstructSignature-0": Object {
       "ApiKind": "construct",
@@ -115,6 +118,26 @@ Object {
         "s": "Parameter-3",
       },
     },
+    "FunctionType-0": Object {
+      "ApiKind": "function",
+      "Kind": 160,
+      "KindString": "FunctionType",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+      "TypeParameters": Object {},
+    },
     "IndexSignature-0": Object {
       "ApiKind": "index",
       "Kind": 157,
@@ -126,11 +149,10 @@ Object {
       "Name": "__index",
       "Parameter": "Parameter-4",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
+        "ApiTypeKind": "reference",
         "Generics": undefined,
         "Name": "__type",
+        "ReferenceId": "FunctionType-0",
         "Text": "() => string",
       },
     },
@@ -224,6 +246,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a0",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
@@ -238,6 +261,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a1",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-2": Object {
       "ApiKind": "interface",
@@ -252,6 +276,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a2",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-3": Object {
       "ApiKind": "interface",
@@ -264,6 +289,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-4": Object {
       "ApiKind": "interface",
@@ -284,6 +310,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "b",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-5": Object {
       "ApiKind": "interface",
@@ -311,6 +338,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "c",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-6": Object {
       "ApiKind": "interface",
@@ -331,6 +359,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "d",
+      "TypeParameters": Object {},
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
@@ -352,6 +381,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
@@ -371,6 +401,7 @@ Object {
         "Name": undefined,
         "Text": "any",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-2": Object {
       "ApiKind": "method",
@@ -390,6 +421,7 @@ Object {
         "Name": undefined,
         "Text": "any",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-3": Object {
       "ApiKind": "method",
@@ -411,6 +443,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-4": Object {
       "ApiKind": "method",
@@ -432,6 +465,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

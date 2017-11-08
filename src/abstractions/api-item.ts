@@ -9,9 +9,10 @@ export interface ApiItemOptions {
     ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;
     ProjectDirectory: string;
     OutputPathSeparator: string;
+    Exclude: string[];
 }
 
-export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseItemDto> {
+export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
     constructor(private declaration: TDeclaration, private symbol: ts.Symbol, private options: ApiItemOptions) {
         this.TypeChecker = options.Program.getTypeChecker();
     }
@@ -44,5 +45,5 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtract = ApiBaseI
         return false;
     }
 
-    public abstract Extract(): TExtract;
+    public abstract Extract(): TExtractDto;
 }

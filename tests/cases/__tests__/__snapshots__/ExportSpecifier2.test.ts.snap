@@ -59,6 +59,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
@@ -73,6 +74,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo2",
+      "TypeParameters": Object {},
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",

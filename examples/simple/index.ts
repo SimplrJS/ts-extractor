@@ -2,13 +2,43 @@
 // export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
+// Two types have a one common field
+export type OneCommonField1 = {
+    BarName: string;
+    FooName: string;
+};
+
+export type OneCommonField2 = {
+    BarName: string;
+    BazName: string;
+};
+
+export type OneCommonFieldTypeIntersection = OneCommonField1 | OneCommonField2;
+
+// export interface MyConstraintType {
+//     myProperty: string;
+// }
+// export interface MyDefaultType extends MyConstraintType {
+//     anotherProperty: number;
+// }
+
+// export function Funkcija<T extends MyConstraintType = MyDefaultType>(): T {
+//     return {
+//         myProperty: "asd"
+//     } as T;
+// }
+
+// export interface MyInterface {
+//     <TValue>(param1: TValue, param2: TValue): boolean;
+// }
+
 /**
  * Some JSdoc information.
  * 2nd line of some JSdoc information.
  * @summary Some summary about this package version.
  * @summary 2nd of some summary about this package version.
  */
-export const itemsList: string[] = ["a"];
+// export const itemsList: string[] = ["a"];
 
 // export function Ok(isIt: boolean): boolean {
 //     return isIt;

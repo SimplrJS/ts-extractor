@@ -33,6 +33,9 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Generic",
+      "TypeParameters": Object {
+        "T": "TypeParameter-0",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
@@ -44,13 +47,24 @@ Object {
       },
       "Name": "x",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
+        "ApiTypeKind": "reference",
         "Generics": undefined,
         "Name": "T",
+        "ReferenceId": "TypeParameter-0",
         "Text": "T",
       },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",

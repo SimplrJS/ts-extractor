@@ -1,4 +1,4 @@
-// Extending another class with generic and implements interface.
+// Extends another class with generic and implements interface.
 
 export abstract class FooBase<TValue> {
     public abstract GetValue(): TValue;

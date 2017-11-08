@@ -37,6 +37,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",
@@ -61,6 +62,7 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
@@ -83,6 +85,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

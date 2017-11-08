@@ -42,6 +42,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -64,6 +65,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -81,6 +83,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
@@ -105,6 +108,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
@@ -129,6 +133,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
@@ -150,6 +155,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
@@ -171,6 +177,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

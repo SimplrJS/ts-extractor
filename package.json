@@ -23,8 +23,8 @@
     "license": "AGPL",
     "dependencies": {
         "@types/fs-extra": "^4.0.2",
-        "read-package-json": "^2.0.10",
         "fs-extra": "^4.0.2",
+        "read-package-json": "^2.0.10",
         "typescript": "^2.6.1"
     },
     "devDependencies": {

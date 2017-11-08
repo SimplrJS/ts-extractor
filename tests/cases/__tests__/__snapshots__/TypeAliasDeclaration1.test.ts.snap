@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PropertyDeclaration4 1`] = `
+exports[`TypeAliasDeclaration1 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
@@ -8,34 +8,18 @@ Object {
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
-        "A": "InterfaceDeclaration-0",
-        "a": "VariableDeclaration-0",
-        "z": "VariableDeclaration-1",
+        "AnotherType": "TypeAliasDeclaration-1",
+        "MyType": "TypeAliasDeclaration-0",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "PropertyDeclaration4.ts",
-      "Path": "cases/PropertyDeclaration4.ts",
+      "Name": "TypeAliasDeclaration1.ts",
+      "Path": "cases/TypeAliasDeclaration1.ts",
     },
   ],
   "Registry": Object {
-    "InterfaceDeclaration-0": Object {
-      "ApiKind": "interface",
-      "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "b": "PropertySignature-0",
-      },
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
-      "Name": "A",
-      "TypeParameters": Object {},
-    },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "Kind": 148,
@@ -44,7 +28,7 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "b",
+      "Name": "BarName",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -54,39 +38,54 @@ Object {
         "Text": "string",
       },
     },
-    "VariableDeclaration-0": Object {
-      "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "a",
+      "Name": "MyType",
       "Type": Object {
         "ApiTypeKind": "reference",
         "Generics": undefined,
-        "Name": "A",
-        "ReferenceId": "InterfaceDeclaration-0",
-        "Text": "A",
+        "Name": "__type",
+        "ReferenceId": "TypeLiteral-0",
+        "Text": "MyType",
       },
+      "TypeParameters": Object {},
     },
-    "VariableDeclaration-1": Object {
-      "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
+    "TypeAliasDeclaration-1": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "z",
+      "Name": "AnotherType",
       "Type": Object {
         "ApiTypeKind": "reference",
         "Generics": undefined,
-        "Name": "A",
-        "ReferenceId": "InterfaceDeclaration-0",
-        "Text": "A",
+        "Name": "__type",
+        "ReferenceId": "TypeLiteral-0",
+        "Text": "MyType",
       },
+      "TypeParameters": Object {},
+    },
+    "TypeLiteral-0": Object {
+      "ApiKind": "type-literal",
+      "Kind": 163,
+      "KindString": "TypeLiteral",
+      "Members": Object {
+        "BarName": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
     },
   },
 }

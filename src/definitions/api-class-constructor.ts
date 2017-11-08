@@ -25,16 +25,6 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
     private parameters: ApiItemReferenceDictionary = {};
     private accessModifier: AccessModifier;
 
-    public GetReturnType(): TypeDto | undefined {
-        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
-        if (signature == null) {
-            return;
-        }
-        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
-
     public Extract(): ApiClassConstructorDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 

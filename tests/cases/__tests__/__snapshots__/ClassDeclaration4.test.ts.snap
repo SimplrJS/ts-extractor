@@ -52,6 +52,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -66,6 +67,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
@@ -80,6 +82,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo2",
+      "TypeParameters": Object {},
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",

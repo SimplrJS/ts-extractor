@@ -37,6 +37,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "TypeParameters": Object {},
     },
     "ExportSpecifier-0": Object {
       "ApiItems": Array [
@@ -74,6 +75,7 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
+      "TypeParameters": Object {},
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
@@ -96,6 +98,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
+      "TypeParameters": Object {},
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
