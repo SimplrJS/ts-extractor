@@ -25,7 +25,7 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
     private parameters: ApiItemReferenceDictionary = {};
     private accessModifier: AccessModifier;
 
-    public Extract(): ApiClassConstructorDto {
+    public OnExtract(): ApiClassConstructorDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

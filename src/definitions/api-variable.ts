@@ -19,7 +19,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
 
     private type: TypeDto;
 
-    public Extract(): ApiVariableDto {
+    public OnExtract(): ApiVariableDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

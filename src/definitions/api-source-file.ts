@@ -14,8 +14,6 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     constructor(sourceFile: ts.SourceFile, symbol: ts.Symbol, options: ApiItemOptions) {
         super(sourceFile, symbol, options);
-
-        this.members = ApiHelpers.GetItemsIdsFromSymbols(symbol.exports, this.Options);
     }
 
     private members: ApiItemReferenceDictionary;
@@ -29,7 +27,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
             .split(path.sep).join(this.Options.OutputPathSeparator);
     }
 
-    public Extract(): ApiSourceFileDto {
+    public OnExtract(): ApiSourceFileDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

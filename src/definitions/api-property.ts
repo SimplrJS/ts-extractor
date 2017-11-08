@@ -19,7 +19,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
 
     private type: TypeDto;
 
-    public Extract(): ApiPropertyDto {
+    public OnExtract(): ApiPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

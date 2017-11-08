@@ -34,7 +34,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
     }
 
-    public Extract(): ApiClassPropertyDto {
+    public OnExtract(): ApiClassPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

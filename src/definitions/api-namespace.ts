@@ -22,7 +22,7 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
 
     private members: ApiItemReferenceDictionary = {};
 
-    public Extract(): ApiNamespaceDto {
+    public OnExtract(): ApiNamespaceDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

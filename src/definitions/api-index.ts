@@ -39,7 +39,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
     private parameter: string;
     private type: TypeDto;
 
-    public Extract(): ApiIndexDto {
+    public OnExtract(): ApiIndexDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

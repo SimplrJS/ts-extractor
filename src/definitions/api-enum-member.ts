@@ -29,7 +29,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
         return lastToken.getText();
     }
 
-    public Extract(): ApiEnumMemberDto {
+    public OnExtract(): ApiEnumMemberDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const value: string = this.GetValue();
 

@@ -34,7 +34,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
     private typeParameters: ApiItemReferenceDictionary = {};
     private members: ApiItemReferenceDictionary = {};
 
-    public Extract(): ApiInterfaceDto {
+    public OnExtract(): ApiInterfaceDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

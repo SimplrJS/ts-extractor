@@ -1,15 +1,20 @@
 import * as ts from "typescript";
 
-import { ItemsRegistry } from "../contracts/items-registry";
+import { Dictionary } from "../contracts/dictionary";
 import { ApiBaseItemDto } from "../contracts/api-base-item-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export interface ApiItemOptions {
     Program: ts.Program;
-    ItemsRegistry: ItemsRegistry<ApiItem, ts.Declaration>;
+    ItemsRegistry: Dictionary<ApiItem, ts.Declaration>;
     ProjectDirectory: string;
     OutputPathSeparator: string;
     Exclude: string[];
+}
+
+export enum ApiItemStatus {
+    Initial,
+    Extracted
 }
 
 export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
@@ -18,6 +23,8 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBa
     }
 
     protected TypeChecker: ts.TypeChecker;
+    protected ItemStatus: ApiItemStatus;
+    protected ExtractedData: TExtractDto;
 
     protected GetItemMetadata(): ApiMetadataDto {
         return {
@@ -38,6 +45,10 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBa
         return this.symbol;
     }
 
+    public get Status(): ApiItemStatus {
+        return this.ItemStatus;
+    }
+
     /**
      * If ApiItem is private, it will not appear in extracted data.
      */
@@ -45,5 +56,13 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBa
         return false;
     }
 
-    public abstract Extract(): TExtractDto;
+    public abstract OnExtract(): TExtractDto;
+
+    public Extract(forceExtraction: boolean = false): TExtractDto {
+        if (this.Status === ApiItemStatus.Initial || forceExtraction) {
+            this.ExtractedData = this.OnExtract();
+            this.ItemStatus = ApiItemStatus.Extracted;
+        }
+        return this.ExtractedData;
+    }
 }

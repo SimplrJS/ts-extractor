@@ -19,7 +19,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
 
     private members: ApiItemReferenceDictionary = {};
 
-    public Extract(): ApiEnumDto {
+    public OnExtract(): ApiEnumDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

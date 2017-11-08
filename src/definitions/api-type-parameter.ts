@@ -29,7 +29,7 @@ export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTy
     private contraintType: TypeDto | undefined;
     private defaultType: TypeDto | undefined;
 
-    public Extract(): ApiTypeParameterDto {
+    public OnExtract(): ApiTypeParameterDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

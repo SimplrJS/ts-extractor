@@ -19,7 +19,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
 
     private type: TypeDto;
 
-    public Extract(): ApiParameterDto {
+    public OnExtract(): ApiParameterDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

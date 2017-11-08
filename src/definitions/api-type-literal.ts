@@ -19,7 +19,7 @@ export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDt
 
     private members: ApiItemReferenceDictionary = {};
 
-    public Extract(): ApiTypeLiteralDto {
+    public OnExtract(): ApiTypeLiteralDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

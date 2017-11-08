@@ -12,7 +12,7 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
 export class ApiFunctionType extends ApiCallableBase<ts.FunctionTypeNode, ApiFunctionTypeDto> {
-    public Extract(): ApiFunctionTypeDto {
+    public OnExtract(): ApiFunctionTypeDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

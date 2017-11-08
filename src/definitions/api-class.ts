@@ -48,7 +48,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
     private members: ApiItemReferenceDictionary = {};
     private isAbstract: boolean = false;
 
-    public Extract(): ApiClassDto {
+    public OnExtract(): ApiClassDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

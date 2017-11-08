@@ -47,7 +47,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
         return apiItems;
     }
 
-    public Extract(): ApiExportSpecifierDto {
+    public OnExtract(): ApiExportSpecifierDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

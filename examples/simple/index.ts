@@ -2,18 +2,39 @@
 // export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
+export class Rawr {
+    public static Hey(): Rawr | null {
+        return new this();
+    }
+}
+
+/**
+ Visit Rawr
+ for each members {
+    visit Hey
+        visit(Rawr) -------->
+ }
+
+
+ -------------->
+ if (!decalration already exists) {
+    visit(declaration)
+ }
+ return find(declaration)
+ */
+
 // Two types have a one common field
-export type OneCommonField1 = {
-    BarName: string;
-    FooName: string;
-};
+// export type OneCommonField1 = {
+//     BarName: string;
+//     FooName: string;
+// };
 
-export type OneCommonField2 = {
-    BarName: string;
-    BazName: string;
-};
+// export type OneCommonField2 = {
+//     BarName: string;
+//     BazName: string;
+// };
 
-export type OneCommonFieldTypeIntersection = OneCommonField1 | OneCommonField2;
+// export type OneCommonFieldTypeIntersection = OneCommonField1 | OneCommonField2;
 
 // export interface MyConstraintType {
 //     myProperty: string;

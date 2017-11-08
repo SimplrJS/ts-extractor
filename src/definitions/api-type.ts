@@ -27,7 +27,7 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
     private typeParameters: ApiItemReferenceDictionary = {};
     private type: TypeDto;
 
-    public Extract(): ApiTypeDto {
+    public OnExtract(): ApiTypeDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

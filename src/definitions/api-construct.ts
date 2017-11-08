@@ -21,7 +21,7 @@ export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiC
 
     private parameters: ApiItemReferenceDictionary = {};
 
-    public Extract(): ApiConstructDto {
+    public OnExtract(): ApiConstructDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

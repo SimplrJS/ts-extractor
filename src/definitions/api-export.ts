@@ -27,7 +27,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         }
         this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, options);
 
-        this.members = this.apiSourceFile.Extract().Members;
+        this.members = this.apiSourceFile.OnExtract().Members;
     }
 
     public HasSourceFileMembers(): boolean {
@@ -47,7 +47,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     private members: ApiItemReferenceDictionary = {};
     private apiSourceFile: ApiSourceFile | undefined;
 
-    public Extract(): ApiExportDto {
+    public OnExtract(): ApiExportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const exportPath: string = this.getExportPath();
 
