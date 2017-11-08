@@ -14,7 +14,6 @@ import { ApiCallableBase } from "../abstractions/api-callable-base";
 export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunctionDto> {
     public Extract(): ApiFunctionDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const returnType: TypeDto | undefined = this.GetReturnType();
 
         return {
             ApiKind: ApiItemKinds.Function,
@@ -24,7 +23,7 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
             Metadata: metadata,
             TypeParameters: this.typeParameters,
             Parameters: this.parameters,
-            ReturnType: returnType
+            ReturnType: this.returnType
         };
     }
 }

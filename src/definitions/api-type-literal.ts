@@ -3,32 +3,32 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiPropertyDto } from "../contracts/definitions/api-property-dto";
+
+import { ApiTypeLiteralDto } from "../contracts/definitions/api-type-literal-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 
-export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
-    constructor(declaration: ts.PropertySignature, symbol: ts.Symbol, options: ApiItemOptions) {
+export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDto> {
+    constructor(declaration: ts.TypeLiteralNode, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
-        // Type
-        const type = this.TypeChecker.getTypeOfSymbolAtLocation(symbol, declaration);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, options);
+        this.members = ApiHelpers.GetItemsIdsFromDeclarations(declaration.members, options);
     }
 
-    private type: TypeDto;
+    private members: ApiItemReferenceDictionary = {};
 
-    public Extract(): ApiPropertyDto {
+    public Extract(): ApiTypeLiteralDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Property,
+            ApiKind: ApiItemKinds.TypeLiteral,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Type: this.type
+            Members: this.members
         };
     }
 }

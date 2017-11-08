@@ -22,6 +22,7 @@ export interface ExtractDto {
 export interface ExtractorOptions {
     CompilerOptions: ts.CompilerOptions;
     ProjectDirectory: string;
+    Exclude: string[];
     OutputPathSeparator?: string;
 }
 
@@ -30,11 +31,13 @@ export class Extractor {
         this.compilerOptions = options.CompilerOptions;
         this.projectDirectory = fs.realpathSync(options.ProjectDirectory);
         this.outputPathSeparator = options.OutputPathSeparator || "/";
+        this.exclude = options.Exclude;
     }
 
     private compilerOptions: ts.CompilerOptions;
     private projectDirectory: string;
     private outputPathSeparator: string;
+    private exclude: string[];
 
     public Extract(files: string[]): ExtractDto {
         const rootNames = files.map(file => {
@@ -92,7 +95,8 @@ export class Extractor {
                 // ApiSourceFile populates given apiItemsRegistry by adding items into it
                 ItemsRegistry: apiItemsRegistry,
                 ProjectDirectory: this.projectDirectory,
-                OutputPathSeparator: this.outputPathSeparator
+                OutputPathSeparator: this.outputPathSeparator,
+                Exclude: this.exclude
             });
 
             apiSourceFiles.push(apiSourceFile);

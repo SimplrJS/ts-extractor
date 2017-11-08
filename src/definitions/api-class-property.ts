@@ -18,26 +18,24 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
         this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
         this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.StaticKeyword);
         this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
+
+        // Type
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
+        this.type = ApiHelpers.TypeToApiTypeDto(type, options);
     }
 
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;
     private isReadonly: boolean;
+    private type: TypeDto;
 
     public IsPrivate(): boolean {
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
     }
 
-    public GetType(): TypeDto {
-        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
-
     public Extract(): ApiClassPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const type: TypeDto = this.GetType();
 
         return {
             ApiKind: ApiItemKinds.ClassProperty,
@@ -45,7 +43,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Type: type,
+            Type: this.type,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsReadonly: this.isReadonly,

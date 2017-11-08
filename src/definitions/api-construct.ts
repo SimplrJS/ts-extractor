@@ -21,16 +21,6 @@ export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiC
 
     private parameters: ApiItemReferenceDictionary = {};
 
-    public GetReturnType(): TypeDto | undefined {
-        const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
-        if (signature == null) {
-            return;
-        }
-        const type = this.TypeChecker.getReturnTypeOfSignature(signature);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
-
     public Extract(): ApiConstructDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 

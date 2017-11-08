@@ -14,22 +14,21 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
     constructor(declaration: ts.TypeAliasDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
         super(declaration, symbol, options);
 
+        // TypeParameters
         if (this.Declaration.typeParameters != null) {
             this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
         }
+
+        // Type
+        const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
+        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
     private typeParameters: ApiItemReferenceDictionary = {};
-
-    public GetType(): TypeDto {
-        const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
-
-        return ApiHelpers.TypeToApiTypeDto(type, this.Options);
-    }
+    private type: TypeDto;
 
     public Extract(): ApiTypeDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const type: TypeDto = this.GetType();
 
         return {
             ApiKind: ApiItemKinds.Type,
@@ -37,7 +36,7 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Type: type,
+            Type: this.type,
             TypeParameters: this.typeParameters
         };
     }
