@@ -21,9 +21,9 @@ export class ApiCall extends ApiCallableBase<ts.CallSignatureDeclaration, ApiCal
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Parameters: this.parameters,
-            ReturnType: this.returnType,
-            TypeParameters: this.typeParameters
+            Parameters: this.Parameters,
+            ReturnType: this.ReturnType,
+            TypeParameters: this.TypeParameters
         };
     }
 }
