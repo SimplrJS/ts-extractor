@@ -9,7 +9,7 @@ export class FooClass {
      * Sets foo.
      * @param foo foo
      */
-    protected SetFoo(foo?: string): void { }
+    protected SetFoo?(foo?: string): void;
 
     /**
      * GetFoo overload comment.
