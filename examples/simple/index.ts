@@ -1,3 +1,5 @@
+// tslint:disable
+
 import { MyInterface } from "./my-types";
 
 // export function Foo(): string {
