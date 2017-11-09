@@ -102,6 +102,8 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {

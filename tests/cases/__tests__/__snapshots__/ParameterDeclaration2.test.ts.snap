@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParameterDeclaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "FooFunction": "FunctionDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ParameterDeclaration2.ts",
+      "Path": "cases/ParameterDeclaration2.ts",
+    },
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "Kind": 228,
+      "KindString": "FunctionDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FooFunction",
+      "Parameters": Object {
+        "bar": "Parameter-0",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1024,
+        "FlagsString": "Void",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "void",
+      },
+      "TypeParameters": Object {},
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {},
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Array",
+      "TypeParameters": Object {},
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": true,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "bar",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 2,
+            "FlagsString": "String",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "string",
+          },
+        ],
+        "Name": "Array",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "string[]",
+      },
+    },
+  },
+}
+`;

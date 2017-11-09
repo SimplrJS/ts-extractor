@@ -181,6 +181,8 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -199,6 +201,8 @@ Object {
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -217,6 +221,8 @@ Object {
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -235,6 +241,8 @@ Object {
     },
     "Parameter-3": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
