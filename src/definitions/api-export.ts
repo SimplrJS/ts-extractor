@@ -13,10 +13,6 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
-    public HasSourceFileMembers(): boolean {
-        return Object.keys(this.members).length > 0;
-    }
-
     private getExportPath(): string {
         if (this.apiSourceFile == null) {
             ApiHelpers.LogWithDeclarationPosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
@@ -46,6 +42,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
             return;
         }
         this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, this.Options);
+        this.apiSourceFile.GatherData();
 
         this.members = this.apiSourceFile.OnExtract().Members;
     }

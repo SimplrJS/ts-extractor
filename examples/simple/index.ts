@@ -1,6 +1,6 @@
 // tslint:disable
 
-import { MyInterface } from "./my-types";
+// import { MyInterface } from "./my-types";
 
 // export function Foo(): string {
 //     return "foo";
@@ -10,17 +10,17 @@ import { MyInterface } from "./my-types";
 //     return "bar";
 // }
 
-// export * from "./exported-functions";
+export * from "./exported-functions";
 // export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
-export class Rawr {
-    public whatever: MyInterface;
+// export class Rawr {
+//     public whatever: MyInterface;
 
-    public static Hey(): Rawr | null {
-        return new this();
-    }
-}
+//     public static Hey(): Rawr | null {
+//         return new this();
+//     }
+// }
 
 /**
  Visit Rawr

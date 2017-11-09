@@ -48,14 +48,7 @@ export namespace ApiHelpers {
         if (ts.isSourceFile(declaration)) {
             apiItem = new ApiSourceFile(declaration, symbol, options);
         } else if (ts.isExportDeclaration(declaration)) {
-            const item = new ApiExport(declaration, symbol, options);
-
-            if (item.HasSourceFileMembers()) {
-                apiItem = item;
-            } else {
-                LogWithDeclarationPosition(LogLevel.Warning, declaration, "ExportDeclaration has no exported members!");
-                return;
-            }
+            apiItem = new ApiExport(declaration, symbol, options);
         } else if (ts.isExportSpecifier(declaration)) {
             apiItem = new ApiExportSpecifier(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
