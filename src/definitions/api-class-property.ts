@@ -14,6 +14,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
     private isAbstract: boolean;
     private isStatic: boolean;
     private isReadonly: boolean;
+    private isOptional: boolean;
     private type: TypeDto;
 
     public IsPrivate(): boolean {
@@ -26,6 +27,9 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
         this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
         this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.StaticKeyword);
         this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
+
+        // IsOptional
+        this.isOptional = Boolean(this.Declaration.questionToken);
 
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
@@ -41,11 +45,12 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Type: this.type,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsReadonly: this.isReadonly,
-            IsStatic: this.isStatic
+            IsStatic: this.isStatic,
+            IsOptional: this.isOptional,
+            Type: this.type
         };
     }
 }
