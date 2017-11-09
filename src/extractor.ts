@@ -6,15 +6,11 @@ import * as path from "path";
 
 import { Logger, LogLevel } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
-// import { ApiItemsRegistry } from "./api-registry";
-// import { Dictionary } from "./contracts/registry";
 import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
 import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
 import { ExtractorOptions } from "./contracts/extractor-options";
 import { ApiRegistry, ExtractedApiRegistry } from "./api-registry";
-
-// export type RegistryExtractedItems = { [key: string]: ApiBaseItemDto };
 
 export interface ExtractDto {
     Registry: ExtractedApiRegistry;

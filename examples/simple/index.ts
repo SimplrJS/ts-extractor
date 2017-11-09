@@ -14,29 +14,6 @@ export * from "./exported-functions";
 // export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
-// export class Rawr {
-//     public whatever: MyInterface;
-
-//     public static Hey(): Rawr | null {
-//         return new this();
-//     }
-// }
-
-/**
- Visit Rawr
- for each members {
-    visit Hey
-        visit(Rawr) -------->
- }
-
-
- -------------->
- if (!decalration already exists) {
-    visit(declaration)
- }
- return find(declaration)
- */
-
 // Two types have a one common field
 // export type OneCommonField1 = {
 //     BarName: string;
