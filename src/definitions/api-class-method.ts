@@ -31,7 +31,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
     }
 
-    public Extract(): ApiClassMethodDto {
+    public OnExtract(): ApiClassMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

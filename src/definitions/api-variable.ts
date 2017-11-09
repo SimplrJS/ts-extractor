@@ -9,17 +9,15 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
-    constructor(declaration: ts.VariableDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
+    private type: TypeDto;
 
+    protected OnGatherData(): void {
         // Type
-        const type = this.TypeChecker.getTypeOfSymbolAtLocation(symbol, declaration);
+        const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
 
-    private type: TypeDto;
-
-    public Extract(): ApiVariableDto {
+    public OnExtract(): ApiVariableDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

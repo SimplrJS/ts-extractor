@@ -8,7 +8,7 @@ Object {
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
-        "Foo": "ClassDeclaration-0",
+        "FooClass": "ClassDeclaration-0",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -27,12 +27,12 @@ Object {
       "Kind": 229,
       "KindString": "ClassDeclaration",
       "Members": Object {
-        "Bar": "PropertyDeclaration-1",
+        "BarProperty": "PropertyDeclaration-1",
         "GetFoo": Array [
           "MethodDeclaration-1",
           "MethodDeclaration-2",
         ],
-        "Id": "PropertyDeclaration-0",
+        "IdProperty": "PropertyDeclaration-0",
         "SetFoo": "MethodDeclaration-0",
       },
       "Metadata": Object {
@@ -49,7 +49,7 @@ Object {
           },
         ],
       },
-      "Name": "Foo",
+      "Name": "FooClass",
       "TypeParameters": Object {},
     },
     "MethodDeclaration-0": Object {
@@ -226,7 +226,7 @@ Object {
           },
         ],
       },
-      "Name": "Id",
+      "Name": "IdProperty",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -248,7 +248,7 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "Bar",
+      "Name": "BarProperty",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,

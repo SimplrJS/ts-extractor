@@ -10,15 +10,20 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
-    constructor(declaration: ts.InterfaceDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
+    /**
+     * Interfaces can extend multiple interfaces.
+     */
+    private extends: TypeDto[] = [];
+    private typeParameters: ApiItemReferenceDictionary = {};
+    private members: ApiItemReferenceDictionary = {};
 
+    protected OnGatherData(): void {
         // Members
-        this.members = ApiHelpers.GetItemsIdsFromDeclarations(declaration.members, this.Options);
+        this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);
 
         // Extends
-        if (declaration.heritageClauses != null) {
-            this.extends = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
+        if (this.Declaration.heritageClauses != null) {
+            this.extends = ApiHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
         }
 
         // TypeParameters
@@ -27,14 +32,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
         }
     }
 
-    /**
-     * Interfaces can extend multiple interfaces.
-     */
-    private extends: TypeDto[] = [];
-    private typeParameters: ApiItemReferenceDictionary = {};
-    private members: ApiItemReferenceDictionary = {};
-
-    public Extract(): ApiInterfaceDto {
+    public OnExtract(): ApiInterfaceDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

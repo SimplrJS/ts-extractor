@@ -12,14 +12,6 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpecifierDto> {
-    constructor(declaration: ts.ExportSpecifier, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        this.targetSymbol = this.TypeChecker.getExportSpecifierLocalTargetSymbol(declaration);
-
-        this.apiItems = this.getApiItems();
-    }
-
     private targetSymbol: ts.Symbol | undefined;
     private apiItems: ApiExportSpecifierApiItems;
 
@@ -29,25 +21,31 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
             return;
         }
 
-        this.targetSymbol.declarations.forEach(declarationItem => {
-            const declarationId = this.Options.ItemsRegistry.Find(declarationItem);
+        this.targetSymbol.declarations.forEach(declaration => {
+            const declarationId = this.Options.Registry.GetDeclarationId(declaration);
             if (declarationId != null) {
                 apiItems.push(declarationId);
                 return;
             }
 
-            const visitedItem = ApiHelpers.VisitApiItem(declarationItem, this.Symbol, this.Options);
+            const visitedItem = ApiHelpers.VisitApiItem(declaration, this.Symbol, this.Options);
             if (visitedItem == null) {
                 return;
             }
 
-            apiItems.push(this.Options.ItemsRegistry.Add(visitedItem));
+            apiItems.push(this.Options.AddItemToRegistry(visitedItem));
         });
 
         return apiItems;
     }
 
-    public Extract(): ApiExportSpecifierDto {
+    protected OnGatherData(): void {
+        this.targetSymbol = this.TypeChecker.getExportSpecifierLocalTargetSymbol(this.Declaration);
+
+        this.apiItems = this.getApiItems();
+    }
+
+    public OnExtract(): ApiExportSpecifierDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

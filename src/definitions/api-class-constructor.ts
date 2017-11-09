@@ -13,19 +13,17 @@ import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiClassConstructorDto> {
-    constructor(declaration: ts.ConstructorDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
-
-        // Modifiers
-        this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);
-    }
-
     private parameters: ApiItemReferenceDictionary = {};
     private accessModifier: AccessModifier;
 
-    public Extract(): ApiClassConstructorDto {
+    protected OnGatherData(): void {
+        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
+
+        // Modifiers
+        this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);
+    }
+
+    public OnExtract(): ApiClassConstructorDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

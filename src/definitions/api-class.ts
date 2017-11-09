@@ -10,35 +10,6 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
-    constructor(declaration: ts.ClassDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        // Members
-        this.members = ApiHelpers.GetItemsIdsFromDeclarations(declaration.members, this.Options);
-
-        // Extends
-        if (declaration.heritageClauses != null) {
-            const extendingList = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
-
-            if (extendingList.length > 0) {
-                this.extends = extendingList[0];
-            }
-        }
-
-        // Implements
-        if (declaration.heritageClauses != null) {
-            this.implements = ApiHelpers.GetHeritageList(declaration.heritageClauses, ts.SyntaxKind.ImplementsKeyword, this.Options);
-        }
-
-        // IsAbstract
-        this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
-
-        // TypeParameters
-        if (this.Declaration.typeParameters != null) {
-            this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
-        }
-    }
-
     /**
      * Interfaces can extend multiple interfaces.
      */
@@ -48,7 +19,34 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
     private members: ApiItemReferenceDictionary = {};
     private isAbstract: boolean = false;
 
-    public Extract(): ApiClassDto {
+    protected OnGatherData(): void {
+        // Members
+        this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);
+
+        // Extends
+        if (this.Declaration.heritageClauses != null) {
+            const extendingList = ApiHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
+
+            if (extendingList.length > 0) {
+                this.extends = extendingList[0];
+            }
+        }
+
+        // Implements
+        if (this.Declaration.heritageClauses != null) {
+            this.implements = ApiHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ImplementsKeyword, this.Options);
+        }
+
+        // IsAbstract
+        this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
+
+        // TypeParameters
+        if (this.Declaration.typeParameters != null) {
+            this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
+        }
+    }
+
+    public OnExtract(): ApiClassDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

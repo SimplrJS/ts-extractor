@@ -4,7 +4,7 @@
  * Class Foo comment line.
  * @summary Summary of comment line.
  */
-export class Foo {
+export class FooClass {
     /**
      * Sets foo.
      * @param foo foo
@@ -27,6 +27,6 @@ export class Foo {
      * Property Id comment line.
      * @readonly Id is Immutable.
      */
-    public readonly Id: string;
-    public static Bar: string;
+    public readonly IdProperty: string;
+    public static BarProperty: string;
 }

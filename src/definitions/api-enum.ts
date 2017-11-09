@@ -10,16 +10,14 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
-    constructor(declaration: ts.EnumDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        // Members
-        this.members = ApiHelpers.GetItemsIdsFromDeclarations(declaration.members, this.Options);
-    }
-
     private members: ApiItemReferenceDictionary = {};
 
-    public Extract(): ApiEnumDto {
+    protected OnGatherData(): void {
+        // Members
+        this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);
+    }
+
+    public OnExtract(): ApiEnumDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {

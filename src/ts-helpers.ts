@@ -38,7 +38,7 @@ export namespace TSHelpers {
      * Returns `ts.SourceFile` from `ts.ExportDeclaration`.
      */
     export function GetSourceFileFromExport(declaration: ts.ExportDeclaration, program: ts.Program): ts.SourceFile | undefined {
-        const declarationSourceFilename = declaration.getSourceFile().fileName;
+        const declarationSourceFile = declaration.getSourceFile();
         const importString = GetExportDeclarationImportString(declaration);
         if (importString == null) {
             return undefined;
@@ -46,8 +46,11 @@ export namespace TSHelpers {
 
         // TODO: Resolve custom paths with custom paths.
         // const compilerPaths = program.getCompilerOptions().paths;
-        const fullPath = path.resolve(declarationSourceFilename, importString);
-        return program.getSourceFiles().find(x => x.fileName.indexOf(fullPath) !== 1 && !x.isDeclarationFile);
+        const resolvedModule = GetResolvedModule(declarationSourceFile, importString);
+        if (resolvedModule == null) {
+            return undefined;
+        }
+        return program.getSourceFile(resolvedModule.resolvedFileName);
     }
 
     /**
@@ -82,5 +85,9 @@ export namespace TSHelpers {
 
     export function IsTypeIntersectionType(type: ts.Type): type is ts.IntersectionType {
         return Boolean(type.flags & ts.TypeFlags.Intersection);
+    }
+
+    export function GetResolvedModule(sourceFile: ts.SourceFile, moduleNameText: string): ts.ResolvedModuleFull | undefined {
+        return sourceFile && (sourceFile as any).resolvedModules && (sourceFile as any).resolvedModules.get(moduleNameText);
     }
 }

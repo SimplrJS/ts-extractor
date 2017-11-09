@@ -6,38 +6,27 @@ import * as path from "path";
 
 import { Logger, LogLevel } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
-import { ApiItemsRegistry } from "./api-items-registry";
-import { Registry } from "./contracts/items-registry";
 import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
 import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
-
-export type RegistryExtractedItems = { [key: string]: ApiBaseItemDto };
+import { ExtractorOptions } from "./contracts/extractor-options";
+import { ApiRegistry, ExtractedApiRegistry } from "./api-registry";
 
 export interface ExtractDto {
-    Registry: RegistryExtractedItems;
+    Registry: ExtractedApiRegistry;
     EntryFiles: ApiSourceFileDto[];
-}
-
-export interface ExtractorOptions {
-    CompilerOptions: ts.CompilerOptions;
-    ProjectDirectory: string;
-    Exclude: string[];
-    OutputPathSeparator?: string;
 }
 
 export class Extractor {
     constructor(options: ExtractorOptions) {
-        this.compilerOptions = options.CompilerOptions;
-        this.projectDirectory = fs.realpathSync(options.ProjectDirectory);
-        this.outputPathSeparator = options.OutputPathSeparator || "/";
-        this.exclude = options.Exclude;
+        this.Options = {
+            ...options,
+            ProjectDirectory: fs.realpathSync(options.ProjectDirectory),
+            OutputPathSeparator: options.OutputPathSeparator || "/"
+        };
     }
 
-    private compilerOptions: ts.CompilerOptions;
-    private projectDirectory: string;
-    private outputPathSeparator: string;
-    private exclude: string[];
+    protected Options: ExtractorOptions;
 
     public Extract(files: string[]): ExtractDto {
         const rootNames = files.map(file => {
@@ -45,22 +34,22 @@ export class Extractor {
                 return file;
             }
 
-            return path.join(this.projectDirectory, file);
+            return path.join(this.Options.ProjectDirectory, file);
         });
 
         // Check whether files exist and are in project directory.
         rootNames.forEach(filePath => {
             if (!fs.existsSync(filePath)) {
-                throw new Error(`Given file: ${filePath}, does not exist.`);
+                throw new Error(`Given file "${filePath}", does not exist.`);
             }
 
-            if (fs.realpathSync(filePath).indexOf(this.projectDirectory) === -1) {
-                throw new Error(`Given file "${filePath}", is not in project directory "${this.projectDirectory}".`);
+            if (fs.realpathSync(filePath).indexOf(this.Options.ProjectDirectory) === -1) {
+                throw new Error(`Given file "${filePath}", is not in project directory "${this.Options.ProjectDirectory}".`);
             }
         });
 
-        const program = ts.createProgram(rootNames, this.compilerOptions);
-        const apiItemsRegistry = new ApiItemsRegistry();
+        const program = ts.createProgram(rootNames, this.Options.CompilerOptions);
+        const apiRegistry = new ApiRegistry();
 
         // This runs a full type analysis, and augments the Abstract Syntax Tree (i.e. declarations)
         // with semantic information (i.e. symbols). The "diagnostics" are a subset of everyday
@@ -69,7 +58,7 @@ export class Extractor {
         if (diagnostics.length > 0) {
             const str = ts.formatDiagnosticsWithColorAndContext(program.getSemanticDiagnostics(), {
                 getCanonicalFileName: () => __filename,
-                getCurrentDirectory: () => this.projectDirectory,
+                getCurrentDirectory: () => this.Options.ProjectDirectory,
                 getNewLine: () => os.EOL
             });
             Logger.Log(LogLevel.Error, str);
@@ -92,36 +81,24 @@ export class Extractor {
 
             const apiSourceFile = new ApiSourceFile(sourceFile, symbol, {
                 Program: program,
+                ExtractorOptions: this.Options,
                 // ApiSourceFile populates given apiItemsRegistry by adding items into it
-                ItemsRegistry: apiItemsRegistry,
-                ProjectDirectory: this.projectDirectory,
-                OutputPathSeparator: this.outputPathSeparator,
-                Exclude: this.exclude
+                Registry: apiRegistry,
+                AddItemToRegistry: (apiItem: ApiItem) => apiRegistry.AddItem(apiItem)
             });
 
             apiSourceFiles.push(apiSourceFile);
+            apiSourceFile.GatherData();
         });
 
-        // Extracts items from every apiItemsRegistry
-        const registry = this.getRegistryExtractedItems(apiItemsRegistry);
+        const extractedApiRegistry = apiRegistry.Extract();
 
         // Extracts every source file
-        const entryFiles = apiSourceFiles.map(x => x.Extract());
+        const extractedEntryFiles = apiSourceFiles.map(x => x.Extract());
 
         return {
-            Registry: registry,
-            EntryFiles: entryFiles
+            Registry: extractedApiRegistry,
+            EntryFiles: extractedEntryFiles
         };
-    }
-
-    private getRegistryExtractedItems(itemsRegistry: ApiItemsRegistry): RegistryExtractedItems {
-        const items: RegistryExtractedItems = {};
-        const apiItems = itemsRegistry.GetAll();
-
-        Object.keys(apiItems).forEach(itemId => {
-            items[itemId] = apiItems[itemId].Extract();
-        });
-
-        return items;
     }
 }
