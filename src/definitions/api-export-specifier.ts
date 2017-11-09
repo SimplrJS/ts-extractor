@@ -30,7 +30,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
         }
 
         this.targetSymbol.declarations.forEach(declarationItem => {
-            const declarationId = this.Options.ItemsRegistry.Find(declarationItem);
+            const declarationId = this.Options.Registry.Find(declarationItem);
             if (declarationId != null) {
                 apiItems.push(declarationId);
                 return;
@@ -41,7 +41,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
                 return;
             }
 
-            apiItems.push(this.Options.ItemsRegistry.Add(visitedItem));
+            apiItems.push(this.Options.Registry.Add(visitedItem));
         });
 
         return apiItems;

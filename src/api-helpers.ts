@@ -118,7 +118,7 @@ export namespace ApiHelpers {
 
     export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
         const declarationFileName = declaration.getSourceFile().fileName;
-        if (PathIsInside(declarationFileName, options.ProjectDirectory)) {
+        if (PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
             return true;
         }
         return false;
@@ -141,8 +141,11 @@ export namespace ApiHelpers {
 
             symbol.declarations.forEach(declaration => {
                 // Check if declaration already exists in the registry.
-                const declarationId = options.ItemsRegistry.Find(declaration);
-                if (declarationId != null) {
+                if (options.Registry.HasDeclaration(symbol, declaration)) {
+                    const declarationId = options.Registry.GetDeclarationId(symbol, declaration);
+                    if (declarationId == null) {
+                        throw new Error(`Declaration id cannot be undefined.`);
+                    }
                     symbolItems.push(declarationId);
                     return;
                 }
@@ -152,7 +155,7 @@ export namespace ApiHelpers {
                     return;
                 }
 
-                symbolItems.push(options.ItemsRegistry.Add(visitedItem));
+                symbolItems.push(options.AddItemToRegistry(visitedItem));
             });
 
             items[symbol.name] = symbolItems.length === 1 ? symbolItems.toString() : symbolItems;
@@ -175,14 +178,14 @@ export namespace ApiHelpers {
             }
             const name = symbol.name;
 
-            let declarationId = options.ItemsRegistry.Find(declaration);
+            let declarationId = options.Registry.GetDeclarationId(symbol, declaration);
             if (declarationId == null) {
                 const visitedItem = VisitApiItem(declaration, symbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
                     return;
                 }
 
-                declarationId = options.ItemsRegistry.Add(visitedItem);
+                declarationId = options.AddItemToRegistry(visitedItem);
             }
 
             if (items[name] == null) {
@@ -269,12 +272,12 @@ export namespace ApiHelpers {
             if (symbol.declarations != null && symbol.declarations.length > 0) {
                 const declaration: ts.Declaration = symbol.declarations[0];
 
-                let declarationId = options.ItemsRegistry.Find(declaration);
+                let declarationId = options.Registry.GetDeclarationId(symbol, declaration);
 
                 if (declarationId == null) {
                     const apiItem = VisitApiItem(declaration, symbol, options);
                     if (apiItem != null) {
-                        declarationId = options.ItemsRegistry.Add(apiItem);
+                        declarationId = options.AddItemToRegistry(apiItem);
                     }
                 }
 

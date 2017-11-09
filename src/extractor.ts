@@ -11,19 +11,14 @@ import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
 import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
+import { ExtractorOptions } from "./contracts/extractor-options";
+import { ApiRegistry } from "./api-registry";
 
 // export type RegistryExtractedItems = { [key: string]: ApiBaseItemDto };
 
 export interface ExtractDto {
     // Registry: RegistryExtractedItems;
     // EntryFiles: ApiSourceFileDto[];
-}
-
-export interface ExtractorOptions {
-    CompilerOptions: ts.CompilerOptions;
-    ProjectDirectory: string;
-    Exclude: string[];
-    OutputPathSeparator?: string;
 }
 
 export class Extractor {
@@ -58,7 +53,7 @@ export class Extractor {
         });
 
         const program = ts.createProgram(rootNames, this.Options.CompilerOptions);
-        // const apiItemsRegistry = new ApiItemsRegistry();
+        const apiRegistry = new ApiRegistry();
 
         // This runs a full type analysis, and augments the Abstract Syntax Tree (i.e. declarations)
         // with semantic information (i.e. symbols). The "diagnostics" are a subset of everyday
@@ -88,18 +83,18 @@ export class Extractor {
                 return;
             }
 
-            debugger;
-            // const apiSourceFile = new ApiSourceFile(sourceFile, symbol, {
-            //     Program: program,
-            //     // ApiSourceFile populates given apiItemsRegistry by adding items into it
-            //     ItemsRegistry: apiItemsRegistry,
-            //     ProjectDirectory: this.projectDirectory,
-            //     OutputPathSeparator: this.outputPathSeparator,
-            //     Exclude: this.exclude
-            // });
+            const apiSourceFile = new ApiSourceFile(sourceFile, symbol, {
+                Program: program,
+                ExtractorOptions: this.Options,
+                // ApiSourceFile populates given apiItemsRegistry by adding items into it
+                Registry: apiRegistry,
+                AddItemToRegistry: (apiItem: ApiItem) => apiRegistry.AddItem(apiItem)
+            });
 
-            // apiSourceFiles.push(apiSourceFile);
+            apiSourceFiles.push(apiSourceFile);
         });
+
+        debugger;
 
         // Extracts items from every apiItemsRegistry
         // const registry = this.getRegistryExtractedItems(apiItemsRegistry);
