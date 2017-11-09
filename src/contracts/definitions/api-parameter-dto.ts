@@ -4,4 +4,6 @@ import { TypeDto } from "../type-dto";
 
 export interface ApiParameterDto extends ApiBaseItemDto {
     Type: TypeDto;
+    IsSpread: boolean;
+    IsOptional: boolean;
 }
