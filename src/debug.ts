@@ -22,9 +22,9 @@ async function main(): Promise<void> {
         Exclude: []
     });
 
-    // const extract1 = extractor.Extract([path.resolve("examples/simple/index.ts")]);
-    const extract2 = extractor.Extract([path.resolve("examples/simple/exported-functions.ts")]);
-    console.trace(JSON.stringify(extract2));
+    const extract1 = extractor.Extract([path.resolve("examples/simple/index.ts")]);
+    // const extract2 = extractor.Extract([path.resolve("examples/simple/exported-functions.ts")]);
+    console.log(JSON.stringify(extract1, null, 4));
 }
 
 main();

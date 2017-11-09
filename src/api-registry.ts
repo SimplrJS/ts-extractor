@@ -2,131 +2,87 @@ import * as ts from "typescript";
 import { ApiItem } from "./abstractions/api-item";
 import { Dictionary } from "./contracts/dictionary";
 import { Registry } from "./contracts/registry";
+import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
+
+export type ExtractedApiRegistry = Dictionary<ApiBaseItemDto>;
 
 export class ApiRegistry implements Registry<ApiItem> {
-    constructor(autoExtract: boolean = true) {
-        this.autoExtract = autoExtract;
-    }
+    protected registry: Map<string, ApiItem> = new Map<string, ApiItem>();
 
-    private separator = ".";
-    protected registry: Map<string, Map<string, ApiItem>> = new Map<string, Map<string, ApiItem>>();
+    protected ExtractedData: ExtractedApiRegistry = {};
+    protected IsDataExtracted: boolean = false;
 
-    public readonly autoExtract: boolean;
-    public Extract(): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public get Registry(): Map<string, Map<string, ApiItem>> {
-        return this.registry;
-    }
-
-    private symbolsToIdsMap = new Map<ts.Symbol, string>();
-    private counters: { [index: string]: number } = {};
-
-    public GetSymbolId(symbol: ts.Symbol): string {
-        if (this.symbolsToIdsMap.has(symbol)) {
-            const symbolId = this.symbolsToIdsMap.get(symbol);
-            if (symbolId != null) {
-                return symbolId;
-            }
+    public Extract(forceExtract: boolean = false): ExtractedApiRegistry {
+        if (this.IsDataExtracted && !forceExtract) {
+            return this.ExtractedData;
         }
 
-        const escapedName = symbol.escapedName.toString();
-        if (this.counters[escapedName] == null) {
-            this.counters[escapedName] = 0;
+        for (const item of this.Registry) {
+            const [key, apiItem] = item;
+            const extractedData = apiItem.Extract(forceExtract);
+
+            this.ExtractedData[key] = extractedData;
         }
 
-        const symbolCounter = this.counters[escapedName]++;
-
-        const symbolId = `${symbol.escapedName}${symbolCounter}`;
-        return symbolId;
+        this.IsDataExtracted = true;
+        return this.ExtractedData;
     }
 
-    public GetDeclarationId(symbol: ts.Symbol | undefined, declaration: ts.Declaration | undefined): string | undefined {
-        if (symbol == null || declaration == null) {
+    public get Registry(): ReadonlyMap<string, ApiItem> {
+        return this.registry as ReadonlyMap<string, ApiItem>;
+    }
+
+    private declarationsToIdsMap: WeakMap<ts.Declaration, string> = new WeakMap<ts.Declaration, string>();
+    private counters: WeakMap<ts.Declaration, number> = new WeakMap<ts.Declaration, number>();
+
+    protected GenerateDeclarationId(declaration: ts.Declaration | undefined): string | undefined {
+        if (declaration == null) {
             return undefined;
         }
 
-        const symbolId = this.GetSymbolId(symbol);
-
-        if (symbol.declarations == null) {
-            return undefined;
-        }
-
-        const declarationKey = symbol.declarations.findIndex(x => x === declaration);
-        if (declarationKey === -1) {
-            return undefined;
-        }
-
+        // Get string syntax kind
         const syntaxKind = ts.SyntaxKind[declaration.kind];
 
-        return `${symbolId}${this.separator}${syntaxKind}-${declarationKey}`;
+        if (!this.counters.has(declaration)) {
+            this.counters.set(declaration, 0);
+        }
+
+        const index = this.counters.get(declaration)! + 1;
+        this.counters.set(declaration, index);
+
+        return `${syntaxKind}-${index}`;
     }
 
-    public HasSymbol(symbol: ts.Symbol | undefined): boolean {
-        if (symbol == null) {
-            return false;
-        }
-
-        const symbolId = this.GetSymbolId(symbol);
-        return this.registry.has(symbolId);
+    public GetDeclarationId(declaration: ts.Declaration): string | undefined {
+        return this.declarationsToIdsMap.get(declaration);
     }
-    public HasDeclaration(symbol: ts.Symbol | undefined, declaration: ts.Declaration | undefined): boolean {
-        if (!this.HasSymbol(symbol)) {
-            return false;
-        }
 
-        // Undefined check inside HasSymbol
-        const symbolId = this.GetSymbolId(symbol!);
-        const items = this.registry.get(symbolId);
-
-        // Should never happen
-        if (items == null) {
-            return false;
-        }
-
-        const declarationId = this.GetDeclarationId(symbol, declaration);
-
-        return declarationId != null && items.has(declarationId);
+    public HasDeclaration(declaration: ts.Declaration): boolean {
+        const declarationId = this.GetDeclarationId(declaration);
+        return declarationId != null && this.registry.has(declarationId);
     }
 
     public Get(id: string): ApiItem | undefined {
-        const splitId = id.split(this.separator);
-        if (splitId.length < 2) {
-            throw new Error(`Id "${id}" is incorrect.`);
-        }
-
-        const [symbolId] = splitId;
-        if (!this.registry.has(symbolId)) {
+        if (id == null) {
             return undefined;
         }
-
-        const items = this.registry.get(symbolId);
-        if (items == null) {
-            return undefined;
-        }
-
-        return items.get(id);
+        return this.registry.get(id);
     }
 
     public AddItem(item: ApiItem): string {
-        const symbolId = this.GetSymbolId(item.Symbol);
-
-        const declarationId = this.GetDeclarationId(item.Symbol, item.Declaration);
+        const declarationId = this.GenerateDeclarationId(item.Declaration);
 
         if (declarationId == null) {
             throw new Error(`Declaration id should always be deterministic.`);
         }
 
-        let items: Map<string, ApiItem>;
-        if (!this.registry.has(symbolId)) {
-            items = new Map<string, ApiItem>();
-        } else {
-            items = this.registry.get(symbolId)!;
+        if (!this.registry.has(declarationId)) {
+            this.registry.set(declarationId, item);
+            this.declarationsToIdsMap.set(item.Declaration, declarationId);
+            this.IsDataExtracted = false;
         }
 
-        items.set(declarationId, item);
-        this.registry = this.registry.set(symbolId, items);
+        item.GatherData();
 
         return declarationId;
     }

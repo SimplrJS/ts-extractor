@@ -9,18 +9,16 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto> {
-    constructor(declaration: ts.ModuleDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
+    private members: ApiItemReferenceDictionary = {};
 
-        if (symbol.exports == null) {
+    protected OnGatherData(): void {
+        if (this.Symbol.exports == null) {
             return;
         }
 
         // Members
-        this.members = ApiHelpers.GetItemsIdsFromSymbols(symbol.exports, this.Options);
+        this.members = ApiHelpers.GetItemsIdsFromSymbols(this.Symbol.exports, this.Options);
     }
-
-    private members: ApiItemReferenceDictionary = {};
 
     public OnExtract(): ApiNamespaceDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();

@@ -11,9 +11,10 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
-    constructor(declaration: ts.TypeAliasDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
+    private typeParameters: ApiItemReferenceDictionary = {};
+    private type: TypeDto;
 
+    protected OnGatherData(): void {
         // TypeParameters
         if (this.Declaration.typeParameters != null) {
             this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
@@ -23,9 +24,6 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
-
-    private typeParameters: ApiItemReferenceDictionary = {};
-    private type: TypeDto;
 
     public OnExtract(): ApiTypeDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();

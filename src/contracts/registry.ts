@@ -3,17 +3,15 @@ import { Dictionary } from "./dictionary";
 
 export interface ReadonlyRegistry<TItem> {
     // Extraction
-    readonly autoExtract: boolean;
     Extract(): void;
 
     // Existance checks
-    HasSymbol(symbol: ts.Symbol | undefined): boolean;
-    HasDeclaration(symbol: ts.Symbol | undefined, declaration: ts.Declaration | undefined): boolean;
+    HasDeclaration(declaration: ts.Declaration | undefined): boolean;
 
-    GetDeclarationId(symbol: ts.Symbol | undefined, declaration: ts.Declaration | undefined): string | undefined;
+    GetDeclarationId(declaration: ts.Declaration | undefined): string | undefined;
     Get(id: string): TItem | undefined;
 
-    Registry: Map<string, Map<string, TItem>>;
+    Registry: ReadonlyMap<string, TItem>;
 
     // GetDeclarationById(id: string): TItem | undefined;
     // GetSymbolDeclarations(symbolId: number): ReadonlyArray<TItem>;

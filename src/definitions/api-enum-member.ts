@@ -29,6 +29,10 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
         return lastToken.getText();
     }
 
+    protected OnGatherData(): void {
+        // No gathering is needed
+    }
+
     public OnExtract(): ApiEnumMemberDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const value: string = this.GetValue();

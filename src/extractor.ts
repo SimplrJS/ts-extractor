@@ -12,13 +12,13 @@ import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
 import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
 import { ExtractorOptions } from "./contracts/extractor-options";
-import { ApiRegistry } from "./api-registry";
+import { ApiRegistry, ExtractedApiRegistry } from "./api-registry";
 
 // export type RegistryExtractedItems = { [key: string]: ApiBaseItemDto };
 
 export interface ExtractDto {
-    // Registry: RegistryExtractedItems;
-    // EntryFiles: ApiSourceFileDto[];
+    Registry: ExtractedApiRegistry;
+    EntryFiles: ApiSourceFileDto[];
 }
 
 export class Extractor {
@@ -88,23 +88,23 @@ export class Extractor {
                 ExtractorOptions: this.Options,
                 // ApiSourceFile populates given apiItemsRegistry by adding items into it
                 Registry: apiRegistry,
-                AddItemToRegistry: (apiItem: ApiItem) => apiRegistry.AddItem(apiItem)
+                AddItemToRegistry: (apiItem: ApiItem) => {
+                    return apiRegistry.AddItem(apiItem);
+                }
             });
 
             apiSourceFiles.push(apiSourceFile);
+            apiSourceFile.GatherData();
         });
 
-        debugger;
+        const extractedApiRegistry = apiRegistry.Extract();
 
-        // Extracts items from every apiItemsRegistry
-        // const registry = this.getRegistryExtractedItems(apiItemsRegistry);
+        // Extracts every source file
+        const extractedEntryFiles = apiSourceFiles.map(x => x.Extract());
 
-        // // Extracts every source file
-        // const entryFiles = apiSourceFiles.map(x => x.OnExtract());
-
-        // return {
-        //     Registry: registry,
-        //     EntryFiles: entryFiles
-        // };
+        return {
+            Registry: extractedApiRegistry,
+            EntryFiles: extractedEntryFiles
+        };
     }
 }

@@ -17,11 +17,14 @@ export abstract class ApiCallableBase<
     TExtractDto extends ApiFunctionDto
     >
     extends ApiItem<TDeclaration, TExtractDto> {
-    constructor(declaration: TDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
 
+    protected parameters: ApiItemReferenceDictionary = {};
+    protected typeParameters: ApiItemReferenceDictionary = {};
+    protected returnType: TypeDto | undefined;
+
+    protected OnGatherData(): void {
         // Parameters
-        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
+        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
 
         // TypeParameters
         if (this.Declaration.typeParameters != null) {
@@ -36,8 +39,4 @@ export abstract class ApiCallableBase<
             this.returnType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
     }
-
-    protected parameters: ApiItemReferenceDictionary = {};
-    protected typeParameters: ApiItemReferenceDictionary = {};
-    protected returnType: TypeDto | undefined;
 }

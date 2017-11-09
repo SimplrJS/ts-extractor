@@ -12,11 +12,12 @@ import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto> {
-    constructor(declaration: ts.IndexSignatureDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
+    private parameter: string;
+    private type: TypeDto;
 
+    protected OnGatherData(): void {
         // Parameter
-        const parameters = ApiHelpers.GetItemsIdsFromDeclarations(declaration.parameters, this.Options);
+        const parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
         Object.keys(parameters).forEach(key => {
             const value = parameters[key];
 
@@ -35,9 +36,6 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
     }
-
-    private parameter: string;
-    private type: TypeDto;
 
     public OnExtract(): ApiIndexDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();

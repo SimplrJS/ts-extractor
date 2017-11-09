@@ -14,21 +14,19 @@ export interface ApiItemOptions {
 }
 
 export enum ApiItemStatus {
-    Initial,
-    Extracted
+    Initial = 0,
+    Gathered = 1 << 0,
+    Extracted = 1 << 1,
+    GatheredAndExtracted = Gathered | Extracted
 }
 
 export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
     constructor(private declaration: TDeclaration, private symbol: ts.Symbol, private options: ApiItemOptions) {
         this.TypeChecker = options.Program.getTypeChecker();
-
-        if (options.Registry.autoExtract) {
-            this.Extract();
-        }
     }
 
     protected TypeChecker: ts.TypeChecker;
-    protected ItemStatus: ApiItemStatus;
+    protected ItemStatus: ApiItemStatus = ApiItemStatus.Initial;
     protected ExtractedData: TExtractDto;
 
     protected GetItemMetadata(): ApiMetadataDto {
@@ -69,5 +67,14 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBa
             this.ItemStatus = ApiItemStatus.Extracted;
         }
         return this.ExtractedData;
+    }
+
+    protected abstract OnGatherData(): void;
+
+    public GatherData(forceGathering: boolean = false): void {
+        if (this.ItemStatus & ApiItemStatus.Gathered) {
+            return;
+        }
+        this.OnGatherData();
     }
 }

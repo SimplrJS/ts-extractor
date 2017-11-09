@@ -13,23 +13,6 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
-    constructor(declaration: ts.ExportDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        // Extract members from Source file.
-        const sourceFileDeclaration = TSHelpers.GetSourceFileFromExport(declaration, options.Program);
-        if (sourceFileDeclaration == null) {
-            return;
-        }
-        const sourceFileSymbol = TSHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
-        if (sourceFileSymbol == null) {
-            return;
-        }
-        this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, options);
-
-        this.members = this.apiSourceFile.OnExtract().Members;
-    }
-
     public HasSourceFileMembers(): boolean {
         return Object.keys(this.members).length > 0;
     }
@@ -41,11 +24,31 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
             throw new Error("Exported source file is not found!");
         }
 
-        return path.relative(this.Options.ProjectDirectory, this.apiSourceFile.Declaration.fileName).split(path.sep).join("/");
+        const projectDirectory = this.Options.ExtractorOptions.ProjectDirectory;
+        const declarationFileName = this.apiSourceFile.Declaration.fileName;
+        return path
+            .relative(projectDirectory, declarationFileName)
+            .split(path.sep)
+            .join("/");
     }
 
     private members: ApiItemReferenceDictionary = {};
     private apiSourceFile: ApiSourceFile | undefined;
+
+    protected OnGatherData(): void {
+        // Extract members from Source file.
+        const sourceFileDeclaration = TSHelpers.GetSourceFileFromExport(this.Declaration, this.Options.Program);
+        if (sourceFileDeclaration == null) {
+            return;
+        }
+        const sourceFileSymbol = TSHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
+        if (sourceFileSymbol == null) {
+            return;
+        }
+        this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, this.Options);
+
+        this.members = this.apiSourceFile.OnExtract().Members;
+    }
 
     public OnExtract(): ApiExportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();

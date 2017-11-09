@@ -11,13 +11,11 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
 
 export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDto> {
-    constructor(declaration: ts.TypeLiteralNode, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        this.members = ApiHelpers.GetItemsIdsFromDeclarations(declaration.members, options);
-    }
-
     private members: ApiItemReferenceDictionary = {};
+
+    protected OnGatherData(): void {
+        this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);
+    }
 
     public OnExtract(): ApiTypeLiteralDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();

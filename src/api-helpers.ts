@@ -141,8 +141,8 @@ export namespace ApiHelpers {
 
             symbol.declarations.forEach(declaration => {
                 // Check if declaration already exists in the registry.
-                if (options.Registry.HasDeclaration(symbol, declaration)) {
-                    const declarationId = options.Registry.GetDeclarationId(symbol, declaration);
+                if (options.Registry.HasDeclaration(declaration)) {
+                    const declarationId = options.Registry.GetDeclarationId(declaration);
                     if (declarationId == null) {
                         throw new Error(`Declaration id cannot be undefined.`);
                     }
@@ -178,7 +178,7 @@ export namespace ApiHelpers {
             }
             const name = symbol.name;
 
-            let declarationId = options.Registry.GetDeclarationId(symbol, declaration);
+            let declarationId = options.Registry.GetDeclarationId(declaration);
             if (declarationId == null) {
                 const visitedItem = VisitApiItem(declaration, symbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
@@ -272,7 +272,7 @@ export namespace ApiHelpers {
             if (symbol.declarations != null && symbol.declarations.length > 0) {
                 const declaration: ts.Declaration = symbol.declarations[0];
 
-                let declarationId = options.Registry.GetDeclarationId(symbol, declaration);
+                let declarationId = options.Registry.GetDeclarationId(declaration);
 
                 if (declarationId == null) {
                     const apiItem = VisitApiItem(declaration, symbol, options);

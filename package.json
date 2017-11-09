@@ -28,6 +28,7 @@
         "fs-extra": "^4.0.2",
         "immutable": "^3.8.2",
         "read-package-json": "^2.0.10",
+        "tslint": "^5.8.0",
         "typescript": "^2.6.1"
     },
     "devDependencies": {

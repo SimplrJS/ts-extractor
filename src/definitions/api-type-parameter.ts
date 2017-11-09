@@ -10,9 +10,10 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTypeParameterDto> {
-    constructor(declaration: ts.TypeParameterDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
+    private contraintType: TypeDto | undefined;
+    private defaultType: TypeDto | undefined;
 
+    protected OnGatherData(): void {
         // Constraint type
         if (this.Declaration.constraint != null) {
             const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.constraint);
@@ -25,9 +26,6 @@ export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTy
             this.defaultType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
     }
-
-    private contraintType: TypeDto | undefined;
-    private defaultType: TypeDto | undefined;
 
     public OnExtract(): ApiTypeParameterDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
