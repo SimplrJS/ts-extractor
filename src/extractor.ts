@@ -88,9 +88,7 @@ export class Extractor {
                 ExtractorOptions: this.Options,
                 // ApiSourceFile populates given apiItemsRegistry by adding items into it
                 Registry: apiRegistry,
-                AddItemToRegistry: (apiItem: ApiItem) => {
-                    return apiRegistry.AddItem(apiItem);
-                }
+                AddItemToRegistry: (apiItem: ApiItem) => apiRegistry.AddItem(apiItem)
             });
 
             apiSourceFiles.push(apiSourceFile);

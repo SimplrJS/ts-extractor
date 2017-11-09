@@ -24,6 +24,7 @@ async function main(): Promise<void> {
 
     const extract1 = extractor.Extract([path.resolve("examples/simple/index.ts")]);
     // const extract2 = extractor.Extract([path.resolve("examples/simple/exported-functions.ts")]);
+    // tslint:disable-next-line:no-console
     console.log(JSON.stringify(extract1, null, 4));
 }
 
