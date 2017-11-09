@@ -689,6 +689,7 @@ Object {
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -707,6 +708,7 @@ Object {
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
+      "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -725,6 +727,7 @@ Object {
     },
     "PropertySignature-2": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -743,6 +746,7 @@ Object {
     },
     "PropertySignature-3": Object {
       "ApiKind": "property",
+      "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
