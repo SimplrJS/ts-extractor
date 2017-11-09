@@ -33,9 +33,9 @@ export class ApiRegistry implements Registry<ApiItem> {
     }
 
     private declarationsToIdsMap: WeakMap<ts.Declaration, string> = new WeakMap<ts.Declaration, string>();
-    private counters: WeakMap<ts.Declaration, number> = new WeakMap<ts.Declaration, number>();
+    private counters: Map<string, number> = new Map<string, number>();
 
-    protected GenerateDeclarationId(declaration: ts.Declaration | undefined): string | undefined {
+    protected GetNextDeclarationId(declaration: ts.Declaration | undefined): string | undefined {
         if (declaration == null) {
             return undefined;
         }
@@ -43,13 +43,15 @@ export class ApiRegistry implements Registry<ApiItem> {
         // Get string syntax kind
         const syntaxKind = ts.SyntaxKind[declaration.kind];
 
-        if (!this.counters.has(declaration)) {
-            this.counters.set(declaration, 0);
+        let index: number;
+        if (this.counters.has(syntaxKind)) {
+            const oldIndex = this.counters.get(syntaxKind)!;
+            index = oldIndex + 1;
+        } else {
+            index = 0;
         }
 
-        const index = this.counters.get(declaration)! + 1;
-        this.counters.set(declaration, index);
-
+        this.counters.set(syntaxKind, index);
         return `${syntaxKind}-${index}`;
     }
 
@@ -70,7 +72,7 @@ export class ApiRegistry implements Registry<ApiItem> {
     }
 
     public AddItem(item: ApiItem): string {
-        const declarationId = this.GenerateDeclarationId(item.Declaration);
+        const declarationId = this.GetNextDeclarationId(item.Declaration);
 
         if (declarationId == null) {
             throw new Error(`Declaration id should always be deterministic.`);
