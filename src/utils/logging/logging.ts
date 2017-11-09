@@ -3,64 +3,74 @@ import {
     WriteMessageHandler,
     MessageFormatter,
     LogLevels,
-    LogLevelFilters
+    LogLevelFilters,
+    LogMessageMethod
 } from "./contracts";
 
-const defaultFormatter: MessageFormatter = message => message;
-
 export class Logging {
-    constructor(
-        private filters?: LogLevelFilters,
-        private writeMessageHandler?: WriteMessageHandler
-    ) { }
+    constructor(private filters?: LogLevelFilters, private writeMessageHandler?: WriteMessageHandler) { }
+
+    /**
+     * @param formatter Function to create a `string` message of the `state` and `exception`.
+     */
+    public WithFormatter = (formatter: MessageFormatter): { Log: LogMessageMethod } => ({ Log: this.log.bind(this, formatter) });
 
     /**
      * Writes a log entry.
+     *
      * @param level Entry will be written on this level.
-     * @param state The entry to be written. Can be also an object.
-     * @param exception The exception related to this entry.
-     * @param formatter Function to create a `string` message of the `state` and `exception`.
+     * @param messages Messages to be written.
      */
-    public Log<TState = string>(
-        level: LogLevel,
-        state: TState,
-        exception: Error | undefined = undefined,
-        formatter: MessageFormatter<TState> = (message, error) => message != null ? message.toString() : message
-    ): void {
-        if (!this.IsEnabled(level)) {
-            return;
-        }
-        const message: string = formatter(state, exception);
+    public Log: LogMessageMethod = (level: LogLevel, ...messages: any[]) => this.log(undefined, level, ...messages);
 
-        if (this.writeMessageHandler != null) {
-            this.writeMessageHandler(level, message, exception);
-        } else {
-            this.WriteMessage(level, message, exception);
+    private log(formatter: MessageFormatter | undefined, level: LogLevel, ...messages: any[]): number {
+        if (!this.IsEnabled(level)) {
+            return Date.now();
         }
+
+        let formattedMessages = (formatter != null) ? formatter(...messages) : messages;
+        if (!Array.isArray(formattedMessages)) {
+            formattedMessages = [formattedMessages];
+        }
+
+        this.WriteMessage(level, messages);
+        return Date.now();
     }
 
-    public WriteMessage(level: LogLevel, message: string, exception?: Error): void {
+    /**
+     * Write a list of messages to the console.
+     *
+     * @param level Entry will be written on this level.
+     * @param messages Messages list to be written.
+     */
+    public WriteMessage(level: LogLevel, messages: any[]): void {
         if (this.writeMessageHandler != null) {
-            this.writeMessageHandler(level, message, exception);
+            this.writeMessageHandler(level, messages);
             return;
         }
 
         const logLevelString = this.GetLogLevelString(level);
-        const exceptionMessage = exception != null ? exception : "";
 
         switch (level) {
             case LogLevel.Critical:
             case LogLevel.Error: {
-                console.error(`${logLevelString}:`, message, exceptionMessage);
+                console.error(`${logLevelString}:`, ...messages);
                 break;
             }
             case LogLevel.Information: {
-                console.info(`${logLevelString}:`, message, exceptionMessage);
+                console.info(`${logLevelString}:`, ...messages);
+                break;
+            }
+            case LogLevel.Warning: {
+                console.warn(`${logLevelString}:`, ...messages);
+                break;
+            }
+            case LogLevel.None: {
                 break;
             }
             default: {
                 // tslint:disable-next-line:no-console
-                console.log(`${logLevelString}:`, message, exceptionMessage);
+                console.log(`${logLevelString}:`, ...messages);
             }
         }
     }
@@ -79,7 +89,7 @@ export class Logging {
         return this.filters[levelName];
     }
 
-    public GetLogLevelString(level: LogLevel): string {
+    protected GetLogLevelString(level: LogLevel): string {
         switch (level) {
             case LogLevel.Trace:
                 return "trce";
@@ -93,8 +103,8 @@ export class Logging {
                 return "fail";
             case LogLevel.Critical:
                 return "crit";
-            default:
-                throw Error(`LogLevel ${level} is not implemented!`);
+            case LogLevel.None:
+                return "none";
         }
     }
 

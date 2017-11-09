@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExportSpecifier2 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "ExportSpecifier-0",
+        "Foo2": "ExportSpecifier-1",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ExportSpecifier2.ts",
+      "Path": "cases/ExportSpecifier2.ts",
+    },
+  ],
+  "Registry": Object {
+    "ExportSpecifier-0": Object {
+      "ApiItems": Array [
+        "InterfaceDeclaration-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+    },
+    "ExportSpecifier-1": Object {
+      "ApiItems": Array [
+        "InterfaceDeclaration-1",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo2",
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "Bar": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Object {},
+    },
+    "InterfaceDeclaration-1": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "Bar2": "PropertySignature-1",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo2",
+      "TypeParameters": Object {},
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+  },
+}
+`;

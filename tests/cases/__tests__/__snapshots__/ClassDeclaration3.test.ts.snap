@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDeclaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "InterfaceDeclaration-0",
+        "FooClass": "ClassDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration3.ts",
+      "Path": "cases/ClassDeclaration3.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Generics": undefined,
+          "Name": "Foo",
+          "ReferenceId": "InterfaceDeclaration-0",
+          "Text": "Foo",
+        },
+      ],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "Bar": "PropertyDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FooClass",
+      "TypeParameters": Object {},
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "Bar": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Object {},
+    },
+    "PropertyDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+  },
+}
+`;

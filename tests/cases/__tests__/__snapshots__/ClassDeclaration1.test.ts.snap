@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDeclaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "FooClass": "ClassDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration1.ts",
+      "Path": "cases/ClassDeclaration1.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "BarProperty": "PropertyDeclaration-1",
+        "GetFoo": Array [
+          "MethodDeclaration-1",
+          "MethodDeclaration-2",
+        ],
+        "IdProperty": "PropertyDeclaration-0",
+        "SetFoo": "MethodDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Class Foo comment line.",
+          },
+        ],
+        "JSDocTags": Array [
+          Object {
+            "name": "summary",
+            "text": "Summary of comment line.",
+          },
+        ],
+      },
+      "Name": "FooClass",
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "protected",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Sets foo.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
+      "Name": "SetFoo",
+      "Parameters": Object {
+        "foo": "Parameter-0",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1024,
+        "FlagsString": "Void",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "void",
+      },
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo overload comment.",
+          },
+          Object {
+            "kind": "lineBreak",
+            "text": "
+",
+          },
+          Object {
+            "kind": "text",
+            "text": "GetFoo without A parameter comment line.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
+      "Name": "GetFoo",
+      "Parameters": Object {
+        "a": "Parameter-1",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-2": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo overload comment.",
+          },
+          Object {
+            "kind": "lineBreak",
+            "text": "
+",
+          },
+          Object {
+            "kind": "text",
+            "text": "GetFoo without A parameter comment line.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
+      "Name": "GetFoo",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+      "TypeParameters": Object {},
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "foo",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
+      "Name": "foo",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "GetFoo property comment.",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertyDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsReadonly": true,
+      "IsStatic": false,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Property Id comment line.",
+          },
+        ],
+        "JSDocTags": Array [
+          Object {
+            "name": "readonly",
+            "text": "Id is Immutable.",
+          },
+        ],
+      },
+      "Name": "IdProperty",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertyDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsReadonly": false,
+      "IsStatic": true,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BarProperty",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+  },
+}
+`;

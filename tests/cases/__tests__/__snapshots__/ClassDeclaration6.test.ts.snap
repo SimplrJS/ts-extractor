@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDeclaration6 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Bar": "InterfaceDeclaration-0",
+        "Foo": "ClassDeclaration-1",
+        "FooBase": "ClassDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration6.ts",
+      "Path": "cases/ClassDeclaration6.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": true,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "GetValue": "MethodDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FooBase",
+      "TypeParameters": Object {
+        "TValue": "TypeParameter-0",
+      },
+    },
+    "ClassDeclaration-1": Object {
+      "ApiKind": "class",
+      "Extends": Object {
+        "ApiTypeKind": "reference",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 4,
+            "FlagsString": "Number",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "number",
+          },
+        ],
+        "Name": "FooBase",
+        "ReferenceId": "ClassDeclaration-0",
+        "Text": "FooBase<number>",
+      },
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Generics": undefined,
+          "Name": "Bar",
+          "ReferenceId": "InterfaceDeclaration-0",
+          "Text": "Bar",
+        },
+      ],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "BarName": "PropertyDeclaration-0",
+        "GetValue": "MethodDeclaration-1",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Object {},
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "BarName": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": true,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "GetValue",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TValue",
+        "ReferenceId": "TypeParameter-0",
+        "Text": "TValue",
+      },
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "GetValue",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+      "TypeParameters": Object {},
+    },
+    "PropertyDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
+    },
+  },
+}
+`;

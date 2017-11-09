@@ -8,31 +8,51 @@
         "url": "https://github.com/SimplrJS/ts-extractor"
     },
     "scripts": {
+        "pretest": "npm run build -- --noEmit && npm run build-tests",
         "test": "jest",
-        "test-watch": "jest --watchAll",
+        "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
         "build": "tsc -p .",
-        "build-watch": "npm run build -- -w"
+        "build-watch": "npm run build -- -w",
+        "build-tests": "cd tests && ts-node ./build-tests.ts -p ./"
     },
-    "author": "",
+    "author": "SimplrJS <simplr@quatrodev.com> (https://github.com/simplrjs)",
+    "contributors": [
+        "Giedrius Grabauskas <giedrius@quatrodev.com>",
+        "Martynas Žilinskas <martynas@quatrodev.com>",
+        "Dovydas Navickas <dovydas@quatrodev.com>"
+    ],
     "license": "AGPL",
     "dependencies": {
-        "@types/mz": "0.0.31",
-        "mz": "^2.6.0",
+        "@types/fs-extra": "^4.0.2",
+        "fs-extra": "^4.0.2",
         "read-package-json": "^2.0.10",
-        "typescript": "^2.4.2"
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1"
     },
     "devDependencies": {
+        "@types/globby": "^6.1.0",
         "@types/jest": "^20.0.5",
         "@types/sinon": "^2.3.3",
+        "globby": "^6.1.0",
         "jest": "^20.0.4",
         "sinon": "^2.4.1",
-        "ts-jest": "^20.0.7"
+        "ts-jest": "^20.0.7",
+        "ts-node": "^3.3.0"
     },
     "jest": {
         "transform": {
             ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
-        "testRegex": "/__tests__/.*\\.(test|spec).(ts|tsx|js)$",
+        "globals": {
+            "ts-jest": {
+                "skipBabel": true,
+                "tsConfigFile": "tests/tsconfig.json"
+            }
+        },
+        "testRegex": "__tests__/.*\\.(test|spec).(ts|tsx|js)$",
+        "moduleNameMapper": {
+            "@src/(.*)": "<rootDir>/src/$1"
+        },
         "moduleFileExtensions": [
             "ts",
             "tsx",

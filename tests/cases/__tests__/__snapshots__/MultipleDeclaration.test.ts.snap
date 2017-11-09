@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipleDeclaration 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Bar": Array [
+          "ClassDeclaration-1",
+          "InterfaceDeclaration-1",
+        ],
+        "Foo": Array [
+          "InterfaceDeclaration-0",
+          "ClassDeclaration-0",
+        ],
+        "M": "ModuleDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "MultipleDeclaration.ts",
+      "Path": "cases/MultipleDeclaration.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "b": "PropertyDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Object {
+        "T": "TypeParameter-1",
+      },
+    },
+    "ClassDeclaration-1": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "b": "PropertyDeclaration-1",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "TypeParameters": Object {
+        "T": "TypeParameter-2",
+      },
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "a": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Object {
+        "T": "TypeParameter-0",
+      },
+    },
+    "InterfaceDeclaration-1": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "a": "PropertySignature-1",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "TypeParameters": Object {
+        "T": "TypeParameter-3",
+      },
+    },
+    "ModuleDeclaration-0": Object {
+      "ApiKind": "namespace",
+      "Kind": 233,
+      "KindString": "ModuleDeclaration",
+      "Members": Object {},
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "M",
+    },
+    "PropertyDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "b",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+    "PropertyDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "b",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+    "TypeParameter-1": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+    "TypeParameter-2": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+    "TypeParameter-3": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+  },
+}
+`;

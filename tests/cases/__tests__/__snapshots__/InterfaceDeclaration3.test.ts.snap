@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InterfaceDeclaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Generic": "InterfaceDeclaration-0",
+        "y": "VariableDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration3.ts",
+      "Path": "cases/InterfaceDeclaration3.ts",
+    },
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "x": "PropertySignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Generic",
+      "TypeParameters": Object {
+        "T": "TypeParameter-0",
+      },
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "x",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "T",
+        "ReferenceId": "TypeParameter-0",
+        "Text": "T",
+      },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type",
+      "ContraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
+    },
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Kind": 226,
+      "KindString": "VariableDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "y",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 4,
+            "FlagsString": "Number",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "number",
+          },
+        ],
+        "Name": "Generic",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "Generic<number>",
+      },
+    },
+  },
+}
+`;

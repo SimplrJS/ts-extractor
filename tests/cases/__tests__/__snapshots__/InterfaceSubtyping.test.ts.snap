@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InterfaceSubtyping 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Camera": "ClassDeclaration-0",
+        "Face": "InterfaceDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceSubtyping.ts",
+      "Path": "cases/InterfaceSubtyping.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Generics": undefined,
+          "Name": "Face",
+          "ReferenceId": "InterfaceDeclaration-0",
+          "Text": "Face",
+        },
+      ],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "__constructor": "Constructor-0",
+        "foo": "MethodDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Camera",
+      "TypeParameters": Object {},
+    },
+    "Constructor-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "Kind": 152,
+      "KindString": "Constructor",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__constructor",
+      "Parameters": Object {
+        "str": "Parameter-0",
+      },
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "foo": "MethodSignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Face",
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "foo",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+      "TypeParameters": Object {},
+    },
+    "MethodSignature-0": Object {
+      "ApiKind": "method",
+      "Kind": 150,
+      "KindString": "MethodSignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "foo",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1024,
+        "FlagsString": "Void",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "void",
+      },
+      "TypeParameters": Object {},
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "str",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDeclaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "Foo": "ClassDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration2.ts",
+      "Path": "cases/ClassDeclaration2.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": true,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {
+        "Bar": "PropertyDeclaration-1",
+        "GetFoo": "MethodDeclaration-1",
+        "Id": "PropertyDeclaration-0",
+        "SetFoo": "MethodDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "protected",
+      "ApiKind": "class-method",
+      "IsAbstract": true,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "SetFoo",
+      "Parameters": Object {
+        "foo": "Parameter-0",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1024,
+        "FlagsString": "Void",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "void",
+      },
+      "TypeParameters": Object {},
+    },
+    "MethodDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "GetFoo",
+      "Parameters": Object {},
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+      "TypeParameters": Object {},
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "foo",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertyDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": true,
+      "IsReadonly": true,
+      "IsStatic": false,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Id",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertyDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsReadonly": false,
+      "IsStatic": true,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+  },
+}
+`;
