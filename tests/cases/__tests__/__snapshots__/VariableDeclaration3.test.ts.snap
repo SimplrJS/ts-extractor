@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PropertyDeclaration1 1`] = `
+exports[`VariableDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
@@ -8,14 +8,14 @@ Object {
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
-        "FOO": "VariableDeclaration-0",
+        "z": "VariableDeclaration-0",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "PropertyDeclaration1.ts",
-      "Path": "cases/PropertyDeclaration1.ts",
+      "Name": "VariableDeclaration3.ts",
+      "Path": "cases/VariableDeclaration3.ts",
     },
   ],
   "Registry": Object {
@@ -27,14 +27,14 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "FOO",
+      "Name": "z",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2048,
-        "FlagsString": "Undefined",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
-        "Text": "undefined",
+        "Text": "string",
       },
     },
   },

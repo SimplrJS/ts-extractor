@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PropertyDeclaration4 1`] = `
+exports[`VariableDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
@@ -16,8 +16,8 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "PropertyDeclaration4.ts",
-      "Path": "cases/PropertyDeclaration4.ts",
+      "Name": "VariableDeclaration4.ts",
+      "Path": "cases/VariableDeclaration4.ts",
     },
   ],
   "Registry": Object {
