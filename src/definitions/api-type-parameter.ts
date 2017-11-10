@@ -31,7 +31,7 @@ export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTy
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Type,
+            ApiKind: ApiItemKinds.TypeParameter,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

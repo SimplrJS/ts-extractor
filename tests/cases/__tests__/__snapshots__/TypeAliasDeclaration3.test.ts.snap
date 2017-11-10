@@ -478,7 +478,7 @@ Object {
       "Name": "__type",
     },
     "TypeParameter-0": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
@@ -490,7 +490,7 @@ Object {
       "Name": "TType",
     },
     "TypeParameter-1": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
@@ -502,7 +502,7 @@ Object {
       "Name": "TType",
     },
     "TypeParameter-2": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
@@ -514,7 +514,7 @@ Object {
       "Name": "TType",
     },
     "TypeParameter-3": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,

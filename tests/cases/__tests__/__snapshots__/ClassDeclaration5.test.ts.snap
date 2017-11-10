@@ -119,7 +119,7 @@ Object {
       "TypeParameters": Object {},
     },
     "TypeParameter-0": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
