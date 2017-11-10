@@ -196,7 +196,7 @@ Object {
     },
     "TypeParameter-0": Object {
       "ApiKind": "type",
-      "ContraintType": undefined,
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
@@ -208,7 +208,7 @@ Object {
     },
     "TypeParameter-1": Object {
       "ApiKind": "type",
-      "ContraintType": undefined,
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
@@ -220,7 +220,7 @@ Object {
     },
     "TypeParameter-2": Object {
       "ApiKind": "type",
-      "ContraintType": undefined,
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
@@ -232,7 +232,7 @@ Object {
     },
     "TypeParameter-3": Object {
       "ApiKind": "type",
-      "ContraintType": undefined,
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",

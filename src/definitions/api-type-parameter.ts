@@ -10,14 +10,14 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTypeParameterDto> {
-    private contraintType: TypeDto | undefined;
+    private constraintType: TypeDto | undefined;
     private defaultType: TypeDto | undefined;
 
     protected OnGatherData(): void {
         // Constraint type
         if (this.Declaration.constraint != null) {
             const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.constraint);
-            this.contraintType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+            this.constraintType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
 
         // Default type
@@ -36,7 +36,7 @@ export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTy
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            ContraintType: this.contraintType,
+            ConstraintType: this.constraintType,
             DefaultType: this.defaultType
         };
     }
