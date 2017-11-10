@@ -3,18 +3,36 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiVariableDto } from "../contracts/definitions/api-variable-dto";
+import { ApiVariableDto, ApiVariableDeclarationType } from "../contracts/definitions/api-variable-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
     private type: TypeDto;
+    private variableDeclarationType: ApiVariableDeclarationType;
 
     protected OnGatherData(): void {
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+
+        // VariableDeclarationType
+        if (this.Declaration.parent != null) {
+            switch (this.Declaration.parent.flags) {
+                case ts.NodeFlags.Const: {
+                    this.variableDeclarationType = ApiVariableDeclarationType.Const;
+                    break;
+                }
+                case ts.NodeFlags.Let: {
+                    this.variableDeclarationType = ApiVariableDeclarationType.Let;
+                    break;
+                }
+                default: {
+                    this.variableDeclarationType = ApiVariableDeclarationType.Var;
+                }
+            }
+        }
     }
 
     public OnExtract(): ApiVariableDto {
@@ -26,6 +44,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            VariableDeclarationType: this.variableDeclarationType,
             Type: this.type
         };
     }

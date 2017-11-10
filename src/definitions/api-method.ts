@@ -13,6 +13,15 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
 export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto> {
+    private isOptional: boolean;
+
+    public OnGatherData(): void {
+        super.OnGatherData();
+
+        // IsOptional
+        this.isOptional = Boolean(this.Declaration.questionToken);
+    }
+
     public OnExtract(): ApiMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
@@ -22,9 +31,10 @@ export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto>
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Parameters: this.parameters,
-            ReturnType: this.returnType,
-            TypeParameters: this.typeParameters
+            Parameters: this.Parameters,
+            ReturnType: this.ReturnType,
+            IsOptional: this.isOptional,
+            TypeParameters: this.TypeParameters
         };
     }
 }

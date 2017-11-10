@@ -56,6 +56,7 @@ Object {
       "AccessModifier": "protected",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsOptional": true,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -86,6 +87,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -125,6 +127,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -160,6 +163,8 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "IsOptional": true,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -183,6 +188,8 @@ Object {
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
+      "IsOptional": true,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -208,6 +215,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-property",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsReadonly": true,
       "IsStatic": false,
       "Kind": 149,
@@ -240,6 +248,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-property",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": true,
       "Kind": 149,

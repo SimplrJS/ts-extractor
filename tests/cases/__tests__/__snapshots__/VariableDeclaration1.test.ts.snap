@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PropertyDeclaration1 1`] = `
+exports[`VariableDeclaration1 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
@@ -14,8 +14,8 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "PropertyDeclaration1.ts",
-      "Path": "cases/PropertyDeclaration1.ts",
+      "Name": "VariableDeclaration1.ts",
+      "Path": "cases/VariableDeclaration1.ts",
     },
   ],
   "Registry": Object {
@@ -36,6 +36,7 @@ Object {
         "Name": undefined,
         "Text": "undefined",
       },
+      "VariableDeclarationType": "const",
     },
   },
 }

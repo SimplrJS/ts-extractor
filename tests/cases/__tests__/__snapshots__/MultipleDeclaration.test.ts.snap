@@ -114,6 +114,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-property",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
       "Kind": 149,
@@ -136,6 +137,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-property",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
       "Kind": 149,
@@ -156,6 +158,7 @@ Object {
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -174,6 +177,7 @@ Object {
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {

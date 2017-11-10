@@ -79,6 +79,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -100,6 +101,7 @@ Object {
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
+      "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -120,6 +122,8 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {

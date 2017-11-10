@@ -89,6 +89,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -114,6 +115,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -137,6 +139,7 @@ Object {
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
+      "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -159,6 +162,7 @@ Object {
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
+      "IsOptional": true,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -181,6 +185,8 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -199,6 +205,8 @@ Object {
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -217,6 +225,8 @@ Object {
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -235,6 +245,8 @@ Object {
     },
     "Parameter-3": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -255,6 +267,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-property",
       "IsAbstract": false,
+      "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
       "Kind": 149,
@@ -275,6 +288,7 @@ Object {
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -293,6 +307,7 @@ Object {
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
+      "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -325,6 +340,7 @@ Object {
         "ReferenceId": "ClassDeclaration-1",
         "Text": "Bar",
       },
+      "VariableDeclarationType": "let",
     },
     "VariableDeclaration-1": Object {
       "ApiKind": "variable",
@@ -342,6 +358,7 @@ Object {
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "Foo",
       },
+      "VariableDeclarationType": "let",
     },
     "VariableDeclaration-2": Object {
       "ApiKind": "variable",
@@ -359,6 +376,7 @@ Object {
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "Foo",
       },
+      "VariableDeclarationType": "let",
     },
   },
 }

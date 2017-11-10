@@ -10,11 +10,15 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
     private type: TypeDto;
+    private isOptional: boolean;
 
     protected OnGatherData(): void {
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+
+        // IsOptional
+        this.isOptional = Boolean(this.Declaration.questionToken);
     }
 
     public OnExtract(): ApiPropertyDto {
@@ -26,6 +30,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            IsOptional: this.isOptional,
             Type: this.type
         };
     }
