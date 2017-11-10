@@ -90,4 +90,25 @@ export namespace TSHelpers {
     export function GetResolvedModule(sourceFile: ts.SourceFile, moduleNameText: string): ts.ResolvedModuleFull | undefined {
         return sourceFile && (sourceFile as any).resolvedModules && (sourceFile as any).resolvedModules.get(moduleNameText);
     }
+
+    /**
+     * Taken from @microsoft/api-extractor (MIT)
+     * Source: https://goo.gl/tLoJUe
+     */
+    export function FollowAliases(symbol: ts.Symbol, typeChecker: ts.TypeChecker): ts.Symbol {
+        let current: ts.Symbol = symbol;
+
+        while (true) {
+            if (!(current.flags & ts.SymbolFlags.Alias)) {
+                break;
+            }
+            const currentAlias: ts.Symbol = typeChecker.getAliasedSymbol(current);
+            if (!currentAlias || currentAlias === current) {
+                break;
+            }
+            current = currentAlias;
+        }
+
+        return current;
+    }
 }

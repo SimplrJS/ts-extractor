@@ -143,7 +143,9 @@ export namespace ApiHelpers {
                     return;
                 }
 
-                const visitedItem = VisitApiItem(declaration, symbol, options);
+                const resolveRealSymbol = TSHelpers.FollowAliases(symbol, options.Program.getTypeChecker());
+
+                const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
                     return;
                 }
@@ -173,7 +175,9 @@ export namespace ApiHelpers {
 
             let declarationId = options.Registry.GetDeclarationId(declaration);
             if (declarationId == null) {
-                const visitedItem = VisitApiItem(declaration, symbol, options);
+                const resolveRealSymbol = TSHelpers.FollowAliases(symbol, options.Program.getTypeChecker());
+
+                const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
                     return;
                 }
@@ -268,7 +272,9 @@ export namespace ApiHelpers {
                 let declarationId = options.Registry.GetDeclarationId(declaration);
 
                 if (declarationId == null) {
-                    const apiItem = VisitApiItem(declaration, symbol, options);
+                    const resolveRealSymbol = TSHelpers.FollowAliases(symbol, typeChecker);
+
+                    const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
                     if (apiItem != null) {
                         declarationId = options.AddItemToRegistry(apiItem);
                     }
