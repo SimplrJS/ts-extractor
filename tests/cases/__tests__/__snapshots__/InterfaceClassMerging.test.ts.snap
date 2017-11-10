@@ -340,6 +340,7 @@ Object {
         "ReferenceId": "ClassDeclaration-1",
         "Text": "Bar",
       },
+      "VariableDeclarationType": "let",
     },
     "VariableDeclaration-1": Object {
       "ApiKind": "variable",
@@ -357,6 +358,7 @@ Object {
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "Foo",
       },
+      "VariableDeclarationType": "let",
     },
     "VariableDeclaration-2": Object {
       "ApiKind": "variable",
@@ -374,6 +376,7 @@ Object {
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "Foo",
       },
+      "VariableDeclarationType": "let",
     },
   },
 }

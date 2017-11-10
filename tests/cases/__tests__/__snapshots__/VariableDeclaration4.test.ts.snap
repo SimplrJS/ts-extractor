@@ -71,6 +71,7 @@ Object {
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "A",
       },
+      "VariableDeclarationType": "const",
     },
     "VariableDeclaration-1": Object {
       "ApiKind": "variable",
@@ -88,6 +89,7 @@ Object {
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "A",
       },
+      "VariableDeclarationType": "const",
     },
   },
 }

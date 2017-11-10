@@ -1,5 +1,7 @@
 // tslint:disable
 
+export let kinta: string = "Hello World";
+
 // import { MyInterface } from "./my-types";
 
 // export function Foo(): string {
@@ -10,7 +12,7 @@
 //     return "bar";
 // }
 
-export * from "./exported-functions";
+// export * from "./exported-functions";
 // export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 

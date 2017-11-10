@@ -92,6 +92,7 @@ Object {
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "Generic<number>",
       },
+      "VariableDeclarationType": "const",
     },
   },
 }

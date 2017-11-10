@@ -784,6 +784,7 @@ Object {
         "ReferenceId": "ClassDeclaration-0",
         "Text": "c1",
       },
+      "VariableDeclarationType": "var",
     },
   },
 }
