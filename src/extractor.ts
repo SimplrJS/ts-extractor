@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 import * as os from "os";
 import * as fs from "fs-extra";
-import { PackageJson } from "read-package-json";
 import * as path from "path";
 import { LogLevel } from "simplr-logger";
 
