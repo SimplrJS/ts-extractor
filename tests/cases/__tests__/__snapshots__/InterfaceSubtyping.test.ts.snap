@@ -48,7 +48,7 @@ Object {
     },
     "Constructor-0": Object {
       "AccessModifier": "public",
-      "ApiKind": "class-method",
+      "ApiKind": "class-constructor",
       "Kind": 152,
       "KindString": "Constructor",
       "Metadata": Object {
