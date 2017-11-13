@@ -1,3 +1,7 @@
-import { LoggerBuilder } from "simplr-logger";
+import { LoggerBuilder, LoggerConfigurationBuilder, LogLevel } from "simplr-logger";
 
-export const Logger = new LoggerBuilder();
+const LoggerConfiguration = new LoggerConfigurationBuilder()
+    .SetLogLevel(LogLevel.Trace)
+    .Build();
+
+export const Logger = new LoggerBuilder(LoggerConfiguration);
