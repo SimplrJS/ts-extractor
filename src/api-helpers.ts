@@ -1,5 +1,6 @@
 import * as ts from "typescript";
 import * as path from "path";
+import { LogLevel } from "simplr-logger";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
@@ -14,7 +15,7 @@ import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
 import { AccessModifier } from "./contracts/access-modifier";
 import { TSHelpers } from "./ts-helpers";
-import { Logger, LogLevel } from "./utils/logger";
+import { Logger } from "./utils/logger";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiExport } from "./definitions/api-export";
