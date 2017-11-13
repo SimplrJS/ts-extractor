@@ -1,7 +1,5 @@
 // tslint:disable
 
-export let kinta: string = "Hello World";
-
 // import { MyInterface } from "./my-types";
 
 // export function Foo(): string {
@@ -13,7 +11,7 @@ export let kinta: string = "Hello World";
 // }
 
 // export * from "./exported-functions";
-// export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
+export { Kintamasis as Pakeistas } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
 // Two types have a one common field

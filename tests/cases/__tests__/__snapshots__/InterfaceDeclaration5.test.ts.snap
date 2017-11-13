@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InterfaceDeclaration5 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "GenericIdentityFn": "InterfaceDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration5.ts",
+      "Path": "cases/InterfaceDeclaration5.ts",
+    },
+  ],
+  "Registry": Object {
+    "CallSignature-0": Object {
+      "ApiKind": "call",
+      "Kind": 155,
+      "KindString": "CallSignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__call",
+      "Parameters": Object {
+        "value": "Parameter-0",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TValue",
+        "ReferenceId": "TypeParameter-0",
+        "Text": "TValue",
+      },
+      "TypeParameters": Object {
+        "TValue": "TypeParameter-0",
+      },
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Object {
+        "__call": "CallSignature-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "GenericIdentityFn",
+      "TypeParameters": Object {},
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "value",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TValue",
+        "ReferenceId": "TypeParameter-0",
+        "Text": "TValue",
+      },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
+    },
+  },
+}
+`;

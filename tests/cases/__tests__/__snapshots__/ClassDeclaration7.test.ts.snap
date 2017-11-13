@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDeclaration7 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "FooClass": "ClassDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration7.ts",
+      "Path": "cases/ClassDeclaration7.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Members": Object {},
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FooClass",
+      "TypeParameters": Object {
+        "TValue": "TypeParameter-0",
+      },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
+    },
+  },
+}
+`;

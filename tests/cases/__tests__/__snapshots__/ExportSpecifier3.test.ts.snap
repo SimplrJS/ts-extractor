@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MultipleDeclaration 1`] = `
+exports[`ExportSpecifier3 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
@@ -8,62 +8,76 @@ Object {
       "Kind": 265,
       "KindString": "SourceFile",
       "Members": Object {
-        "Bar": Array [
-          "ClassDeclaration-1",
-          "InterfaceDeclaration-1",
-        ],
-        "Foo": Array [
-          "InterfaceDeclaration-0",
-          "ClassDeclaration-0",
-        ],
-        "M": "ModuleDeclaration-0",
+        "Bar": "ExportSpecifier-0",
+        "FooClass": "ExportSpecifier-1",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "MultipleDeclaration.ts",
-      "Path": "cases/MultipleDeclaration.ts",
+      "Name": "ExportSpecifier3.ts",
+      "Path": "cases/ExportSpecifier3.ts",
     },
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
       "ApiKind": "class",
       "Extends": undefined,
-      "Implements": Array [],
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Generics": undefined,
+          "Name": "Foo",
+          "ReferenceId": "InterfaceDeclaration-0",
+          "Text": "Foo",
+        },
+        Object {
+          "ApiTypeKind": "reference",
+          "Generics": undefined,
+          "Name": "Foo2",
+          "ReferenceId": "InterfaceDeclaration-1",
+          "Text": "Foo2",
+        },
+      ],
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
       "Members": Object {
-        "b": "PropertyDeclaration-0",
+        "Bar": "PropertyDeclaration-0",
+        "Bar2": "PropertyDeclaration-1",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "Foo",
-      "TypeParameters": Object {
-        "T": "TypeParameter-1",
-      },
+      "Name": "FooClass",
+      "TypeParameters": Object {},
     },
-    "ClassDeclaration-1": Object {
-      "ApiKind": "class",
-      "Extends": undefined,
-      "Implements": Array [],
-      "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
-      "Members": Object {
-        "b": "PropertyDeclaration-1",
-      },
+    "ExportSpecifier-0": Object {
+      "ApiItems": Array [
+        "ClassDeclaration-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "Bar",
-      "TypeParameters": Object {
-        "T": "TypeParameter-2",
+      "Name": "FooClass",
+    },
+    "ExportSpecifier-1": Object {
+      "ApiItems": Array [
+        "ClassDeclaration-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
       },
+      "Name": "FooClass",
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -71,16 +85,14 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {
-        "a": "PropertySignature-0",
+        "Bar": "PropertySignature-0",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {
-        "T": "TypeParameter-0",
-      },
+      "TypeParameters": Object {},
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
@@ -88,27 +100,14 @@ Object {
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
       "Members": Object {
-        "a": "PropertySignature-1",
+        "Bar2": "PropertySignature-1",
       },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "Bar",
-      "TypeParameters": Object {
-        "T": "TypeParameter-3",
-      },
-    },
-    "ModuleDeclaration-0": Object {
-      "ApiKind": "namespace",
-      "Kind": 233,
-      "KindString": "ModuleDeclaration",
-      "Members": Object {},
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
-      "Name": "M",
+      "Name": "Foo2",
+      "TypeParameters": Object {},
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",
@@ -123,14 +122,14 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "b",
+      "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
-        "Text": "number",
+        "Text": "string",
       },
     },
     "PropertyDeclaration-1": Object {
@@ -146,14 +145,14 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "b",
+      "Name": "Bar2",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
-        "Text": "number",
+        "Text": "string",
       },
     },
     "PropertySignature-0": Object {
@@ -165,7 +164,7 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "a",
+      "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -184,7 +183,7 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "a",
+      "Name": "Bar2",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -193,54 +192,6 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-    },
-    "TypeParameter-0": Object {
-      "ApiKind": "type-parameter",
-      "ConstraintType": undefined,
-      "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
-      "Name": "T",
-    },
-    "TypeParameter-1": Object {
-      "ApiKind": "type-parameter",
-      "ConstraintType": undefined,
-      "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
-      "Name": "T",
-    },
-    "TypeParameter-2": Object {
-      "ApiKind": "type-parameter",
-      "ConstraintType": undefined,
-      "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
-      "Name": "T",
-    },
-    "TypeParameter-3": Object {
-      "ApiKind": "type-parameter",
-      "ConstraintType": undefined,
-      "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
-      "Name": "T",
     },
   },
 }
