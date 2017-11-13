@@ -143,7 +143,7 @@ export namespace ApiHelpers {
                     return;
                 }
 
-                const resolveRealSymbol = TSHelpers.FollowAliases(symbol, options.Program.getTypeChecker());
+                const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
 
                 const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
@@ -175,7 +175,7 @@ export namespace ApiHelpers {
 
             let declarationId = options.Registry.GetDeclarationId(declaration);
             if (declarationId == null) {
-                const resolveRealSymbol = TSHelpers.FollowAliases(symbol, options.Program.getTypeChecker());
+                const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
 
                 const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
@@ -272,7 +272,7 @@ export namespace ApiHelpers {
                 let declarationId = options.Registry.GetDeclarationId(declaration);
 
                 if (declarationId == null) {
-                    const resolveRealSymbol = TSHelpers.FollowAliases(symbol, typeChecker);
+                    const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, typeChecker);
 
                     const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
                     if (apiItem != null) {

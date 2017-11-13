@@ -95,7 +95,7 @@ export namespace TSHelpers {
      * Taken from @microsoft/api-extractor (MIT)
      * Source: https://goo.gl/tLoJUe
      */
-    export function FollowAliases(symbol: ts.Symbol, typeChecker: ts.TypeChecker): ts.Symbol {
+    export function FollowSymbolAliases(symbol: ts.Symbol, typeChecker: ts.TypeChecker): ts.Symbol {
         let current: ts.Symbol = symbol;
 
         while (true) {
