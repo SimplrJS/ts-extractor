@@ -1,4 +1,3 @@
-import { Logging } from "./logging/logging";
+import { LoggerBuilder } from "simplr-logger";
 
-export const Logger = new Logging();
-export * from "./logging/contracts";
+export const Logger = new LoggerBuilder();

@@ -1,7 +1,8 @@
 import * as ts from "typescript";
 import * as path from "path";
+import { LogLevel } from "simplr-logger";
 
-import { Logger, LogLevel } from "../utils/logger";
+import { Logger } from "../utils/logger";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
