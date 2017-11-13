@@ -1,7 +1,8 @@
 import * as readPackageJson from "read-package-json";
 import { PackageJson } from "read-package-json";
+import { LogLevel } from "simplr-logger";
 
-import { Logger, LogLevel } from "./logger";
+import { Logger } from "./logger";
 
 export function ErrorReporter(...messages: string[]): void {
     Logger.Log(LogLevel.Error, messages.join(" "));
