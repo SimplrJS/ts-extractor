@@ -1,6 +1,6 @@
 {
-    "name": "@simplrjs/ts-extractor",
-    "version": "1.0.0",
+    "name": "ts-extractor",
+    "version": "0.1.0",
     "description": "",
     "main": "index.js",
     "repository": {
