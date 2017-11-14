@@ -12,3 +12,11 @@ node_js:
 - "node"
 script:
 - npm test
+deploy:
+  provider: npm
+  email: dovydas@quatrodev.com
+  api_key: $SIMPLR_NPM_API_KEY
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: SimplrJS/ts-extractor
