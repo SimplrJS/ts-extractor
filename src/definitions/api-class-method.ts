@@ -14,21 +14,25 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
 export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiClassMethodDto> {
-    constructor(declaration: ts.MethodDeclaration, symbol: ts.Symbol, options: ApiItemOptions) {
-        super(declaration, symbol, options);
-
-        // Modifiers
-        this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(declaration.modifiers);
-        this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
-        this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(declaration.modifiers, ts.SyntaxKind.StaticKeyword);
-    }
-
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;
+    private isOptional: boolean;
 
     public IsPrivate(): boolean {
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
+    }
+
+    public OnGatherData(): void {
+        super.OnGatherData();
+
+        // Modifiers
+        this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);
+        this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
+        this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.StaticKeyword);
+
+        // IsOptional
+        this.isOptional = Boolean((this.Declaration as ts.FunctionLikeDeclarationBase).questionToken);
     }
 
     public OnExtract(): ApiClassMethodDto {
@@ -40,12 +44,13 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            Parameters: this.parameters,
-            ReturnType: this.returnType,
+            Parameters: this.Parameters,
+            ReturnType: this.ReturnType,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsStatic: this.isStatic,
-            TypeParameters: this.typeParameters
+            IsOptional: this.isOptional,
+            TypeParameters: this.TypeParameters
         };
     }
 }

@@ -21,9 +21,9 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
-            TypeParameters: this.typeParameters,
-            Parameters: this.parameters,
-            ReturnType: this.returnType
+            TypeParameters: this.TypeParameters,
+            Parameters: this.Parameters,
+            ReturnType: this.ReturnType
         };
     }
 }

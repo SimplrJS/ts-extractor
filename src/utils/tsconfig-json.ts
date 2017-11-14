@@ -3,6 +3,9 @@ import * as path from "path";
 import * as ts from "typescript";
 
 // TODO: Fool proof.
+/**
+ * Get TypeScript compiler options from tsconfig.json.
+ */
 export async function GetCompilerOptions(fileLocation: string): Promise<ts.CompilerOptions> {
     const json = await fs.readJSON(fileLocation);
 

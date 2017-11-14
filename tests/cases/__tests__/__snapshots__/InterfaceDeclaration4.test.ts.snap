@@ -363,6 +363,7 @@ Object {
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
+      "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -385,6 +386,7 @@ Object {
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
+      "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -405,6 +407,7 @@ Object {
     },
     "MethodSignature-2": Object {
       "ApiKind": "method",
+      "IsOptional": true,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -425,6 +428,7 @@ Object {
     },
     "MethodSignature-3": Object {
       "ApiKind": "method",
+      "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -447,6 +451,7 @@ Object {
     },
     "MethodSignature-4": Object {
       "ApiKind": "method",
+      "IsOptional": true,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Metadata": Object {
@@ -469,6 +474,8 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -487,6 +494,8 @@ Object {
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -505,6 +514,8 @@ Object {
     },
     "Parameter-10": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -523,6 +534,8 @@ Object {
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
+      "IsOptional": true,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -541,6 +554,8 @@ Object {
     },
     "Parameter-3": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -559,6 +574,8 @@ Object {
     },
     "Parameter-4": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -577,6 +594,8 @@ Object {
     },
     "Parameter-5": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -595,6 +614,8 @@ Object {
     },
     "Parameter-6": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -613,6 +634,8 @@ Object {
     },
     "Parameter-7": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -631,6 +654,8 @@ Object {
     },
     "Parameter-8": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -649,6 +674,8 @@ Object {
     },
     "Parameter-9": Object {
       "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Metadata": Object {
@@ -667,6 +694,7 @@ Object {
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -685,6 +713,7 @@ Object {
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
+      "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -703,6 +732,7 @@ Object {
     },
     "PropertySignature-2": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -721,6 +751,7 @@ Object {
     },
     "PropertySignature-3": Object {
       "ApiKind": "property",
+      "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -753,6 +784,7 @@ Object {
         "ReferenceId": "ClassDeclaration-0",
         "Text": "c1",
       },
+      "VariableDeclarationType": "var",
     },
   },
 }

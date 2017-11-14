@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParameterDeclaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Object {
+        "FooFunction": "FunctionDeclaration-0",
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ParameterDeclaration1.ts",
+      "Path": "cases/ParameterDeclaration1.ts",
+    },
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "Kind": 228,
+      "KindString": "FunctionDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FooFunction",
+      "Parameters": Object {
+        "bar": "Parameter-0",
+      },
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1024,
+        "FlagsString": "Void",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "void",
+      },
+      "TypeParameters": Object {},
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "IsOptional": true,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "bar",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Flags": 65544,
+        "FlagsString": undefined,
+        "Name": undefined,
+        "Text": "boolean",
+        "Types": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "true",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "false",
+          },
+        ],
+      },
+    },
+  },
+}
+`;

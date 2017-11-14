@@ -22,6 +22,7 @@ Object {
   "Registry": Object {
     "PropertySignature-0": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {

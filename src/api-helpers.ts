@@ -1,5 +1,6 @@
 import * as ts from "typescript";
 import * as path from "path";
+import { LogLevel } from "simplr-logger";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
@@ -14,7 +15,7 @@ import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
 import { AccessModifier } from "./contracts/access-modifier";
 import { TSHelpers } from "./ts-helpers";
-import { Logger, LogLevel } from "./utils/logger";
+import { Logger } from "./utils/logger";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiExport } from "./definitions/api-export";
@@ -143,7 +144,9 @@ export namespace ApiHelpers {
                     return;
                 }
 
-                const visitedItem = VisitApiItem(declaration, symbol, options);
+                const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
+
+                const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
                     return;
                 }
@@ -173,7 +176,9 @@ export namespace ApiHelpers {
 
             let declarationId = options.Registry.GetDeclarationId(declaration);
             if (declarationId == null) {
-                const visitedItem = VisitApiItem(declaration, symbol, options);
+                const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
+
+                const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
                 if (visitedItem == null || !ShouldVisit(declaration, options)) {
                     return;
                 }
@@ -268,7 +273,9 @@ export namespace ApiHelpers {
                 let declarationId = options.Registry.GetDeclarationId(declaration);
 
                 if (declarationId == null) {
-                    const apiItem = VisitApiItem(declaration, symbol, options);
+                    const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, typeChecker);
+
+                    const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
                     if (apiItem != null) {
                         declarationId = options.AddItemToRegistry(apiItem);
                     }

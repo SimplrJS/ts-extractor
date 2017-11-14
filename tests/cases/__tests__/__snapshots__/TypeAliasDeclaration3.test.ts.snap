@@ -27,6 +27,7 @@ Object {
   "Registry": Object {
     "PropertySignature-0": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -45,6 +46,7 @@ Object {
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -62,6 +64,7 @@ Object {
     },
     "PropertySignature-2": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -79,6 +82,7 @@ Object {
     },
     "PropertySignature-3": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -96,6 +100,7 @@ Object {
     },
     "PropertySignature-4": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -114,6 +119,7 @@ Object {
     },
     "PropertySignature-5": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -131,6 +137,7 @@ Object {
     },
     "PropertySignature-6": Object {
       "ApiKind": "property",
+      "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Metadata": Object {
@@ -471,8 +478,8 @@ Object {
       "Name": "__type",
     },
     "TypeParameter-0": Object {
-      "ApiKind": "type",
-      "ContraintType": undefined,
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
@@ -483,8 +490,8 @@ Object {
       "Name": "TType",
     },
     "TypeParameter-1": Object {
-      "ApiKind": "type",
-      "ContraintType": undefined,
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
@@ -495,8 +502,8 @@ Object {
       "Name": "TType",
     },
     "TypeParameter-2": Object {
-      "ApiKind": "type",
-      "ContraintType": undefined,
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
@@ -507,8 +514,8 @@ Object {
       "Name": "TType",
     },
     "TypeParameter-3": Object {
-      "ApiKind": "type",
-      "ContraintType": undefined,
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",

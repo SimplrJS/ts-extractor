@@ -10,8 +10,8 @@
 //     return "bar";
 // }
 
-export * from "./exported-functions";
-// export { Kintamasis, Kintamasis2 } from "./exported-const-variables";
+// export * from "./exported-functions";
+export { Kintamasis as Pakeistas } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
 // Two types have a one common field

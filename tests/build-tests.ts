@@ -1,7 +1,8 @@
 import * as os from "os";
 import * as process from "process";
 import * as fs from "fs-extra";
-import { Logger, LogLevel } from "../src/utils/logger";
+import { LogLevel } from "simplr-logger";
+import { Logger } from "../src/utils/logger";
 
 import { TestsBuilder } from "./scripts/tests-builder";
 import { TestsCleanup } from "./scripts/tests-cleanup";

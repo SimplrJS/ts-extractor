@@ -27,7 +27,7 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.ClassMethod,
+            ApiKind: ApiItemKinds.ClassConstructor,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

@@ -8,27 +8,28 @@ import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dict
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiCallableDto } from "../contracts/api-callable-dto";
 
 /**
  * A callable api item base.
  */
 export abstract class ApiCallableBase<
     TDeclaration extends ts.SignatureDeclaration,
-    TExtractDto extends ApiFunctionDto
+    TExtractDto extends ApiCallableDto
     >
     extends ApiItem<TDeclaration, TExtractDto> {
 
-    protected parameters: ApiItemReferenceDictionary = {};
-    protected typeParameters: ApiItemReferenceDictionary = {};
-    protected returnType: TypeDto | undefined;
+    protected Parameters: ApiItemReferenceDictionary = {};
+    protected TypeParameters: ApiItemReferenceDictionary = {};
+    protected ReturnType: TypeDto | undefined;
 
     protected OnGatherData(): void {
         // Parameters
-        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
+        this.Parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
 
         // TypeParameters
         if (this.Declaration.typeParameters != null) {
-            this.typeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
+            this.TypeParameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.typeParameters, this.Options);
         }
 
         // ReturnType
@@ -36,7 +37,7 @@ export abstract class ApiCallableBase<
         if (signature != null) {
             const type = this.TypeChecker.getReturnTypeOfSignature(signature);
 
-            this.returnType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+            this.ReturnType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
     }
 }

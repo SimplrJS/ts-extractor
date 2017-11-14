@@ -1,10 +1,10 @@
 import * as ts from "typescript";
 import * as os from "os";
 import * as fs from "fs-extra";
-import { PackageJson } from "read-package-json";
 import * as path from "path";
+import { LogLevel } from "simplr-logger";
 
-import { Logger, LogLevel } from "./utils/logger";
+import { Logger } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
