@@ -13,7 +13,8 @@
         "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
         "build": "tsc -p .",
         "build-watch": "npm run build -- -w",
-        "build-tests": "cd tests && ts-node ./build-tests.ts -p ./"
+        "build-tests": "cd tests && ts-node ./build-tests.ts -p ./",
+        "prepublishOnly": "npm run build && rimraf dist/debug.*"
     },
     "author": "SimplrJS <simplr@quatrodev.com> (https://github.com/simplrjs)",
     "contributors": [
@@ -36,10 +37,17 @@
         "@types/sinon": "^2.3.3",
         "globby": "^6.1.0",
         "jest": "^20.0.4",
+        "rimraf": "^2.6.2",
         "sinon": "^2.4.1",
         "ts-jest": "^20.0.7",
         "ts-node": "^3.3.0"
     },
+    "files": [
+        "dist",
+        "**/*.md",
+        "@types",
+        "!/examples"
+    ],
     "jest": {
         "transform": {
             ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
