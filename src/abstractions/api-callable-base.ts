@@ -8,13 +8,14 @@ import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dict
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiCallableDto } from "../contracts/api-callable-dto";
 
 /**
  * A callable api item base.
  */
 export abstract class ApiCallableBase<
     TDeclaration extends ts.SignatureDeclaration,
-    TExtractDto extends ApiFunctionDto
+    TExtractDto extends ApiCallableDto
     >
     extends ApiItem<TDeclaration, TExtractDto> {
 

@@ -53,7 +53,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         const exportPath: string = this.getExportPath();
 
         return {
-            ApiKind: ApiItemKinds.Class,
+            ApiKind: ApiItemKinds.Export,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

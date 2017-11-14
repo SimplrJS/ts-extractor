@@ -53,7 +53,7 @@ Object {
       "TypeParameters": Object {},
     },
     "ExportDeclaration-0": Object {
-      "ApiKind": "class",
+      "ApiKind": "export",
       "ExportPath": "cases/ClassDeclaration1.ts",
       "Kind": 244,
       "KindString": "ExportDeclaration",
