@@ -111,14 +111,25 @@ export namespace ApiHelpers {
     }
 
     export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
-        const declarationFileName = declaration.getSourceFile().fileName;
-        if (PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
-            return true;
+        const declarationSourceFile = declaration.getSourceFile();
+        const declarationFileName = declarationSourceFile.fileName;
+
+        if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
+            return false;
         }
-        return false;
+
+        if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
+            return false;
+        }
+
+        return true;
     }
 
     export function GetItemId(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): string | undefined {
+        if (!ShouldVisit(declaration, options)) {
+            return undefined;
+        }
+
         if (options.Registry.HasDeclaration(declaration)) {
             return options.Registry.GetDeclarationId(declaration);
         }
