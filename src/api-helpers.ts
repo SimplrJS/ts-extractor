@@ -181,7 +181,7 @@ export namespace ApiHelpers {
             const index = items.findIndex(x => x != null && x.length === 2 && x[0] === symbol.name);
 
             if (index === -1) {
-                items[index] = [symbol.name, [itemId]];
+                items.push([symbol.name, [itemId]]);
             } else {
                 items[index][1].push(itemId);
             }
