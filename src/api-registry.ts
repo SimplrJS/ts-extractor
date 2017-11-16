@@ -2,9 +2,9 @@ import * as ts from "typescript";
 import { ApiItem } from "./abstractions/api-item";
 import { Dictionary } from "./contracts/dictionary";
 import { Registry } from "./contracts/registry";
-import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
+import { ApiItemDto } from "./contracts/api-item-dto";
 
-export type ExtractedApiRegistry = Dictionary<ApiBaseItemDto>;
+export type ExtractedApiRegistry = Dictionary<ApiItemDto>;
 
 export class ApiRegistry implements Registry<ApiItem> {
     protected registry: Map<string, ApiItem> = new Map<string, ApiItem>();
@@ -21,7 +21,7 @@ export class ApiRegistry implements Registry<ApiItem> {
             const [key, apiItem] = item;
             const extractedData = apiItem.Extract(forceExtract);
 
-            this.ExtractedData[key] = extractedData;
+            this.ExtractedData[key] = extractedData as ApiItemDto;
         }
 
         this.IsDataExtracted = true;
