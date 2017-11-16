@@ -12,7 +12,6 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { Logger } from "../utils/logger";
 
 export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto> {
     private parameter: string;
@@ -21,7 +20,6 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
     protected OnGatherData(): void {
         // Parameter
         const parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
-        Logger.Warn(JSON.stringify(parameters));
 
         if (parameters.length !== 1) {
             // This should not happen, because we run Semantic Diagnostics before extraction.
