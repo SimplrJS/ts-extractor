@@ -1,4 +1,6 @@
 import * as ts from "typescript";
+import { LogLevel } from "simplr-logger";
+
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 
 import { TSHelpers } from "../ts-helpers";
@@ -18,15 +20,22 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
     protected OnGatherData(): void {
         // Parameter
         const parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
-        Object.keys(parameters).forEach(key => {
-            const value = parameters[key];
+        if (parameters.length !== 1) {
+            // This should not happen, because we run Semantic Diagnostics before extraction.
+            throw new Error("An index signature must have exactly one parameter.");
+        } else {
+            const [name, references] = parameters[0];
 
-            if (!Array.isArray(value)) {
-                this.parameter = value;
+            if (references.length === 0) {
+                ApiHelpers.LogWithDeclarationPosition(
+                    LogLevel.Error,
+                    this.Declaration,
+                    "An index signature parameter has more than one declaration."
+                );
+            } else {
+                this.parameter = references[0];
             }
-
-            return false;
-        });
+        }
 
         // Type
         if (this.Declaration.type == null) {
