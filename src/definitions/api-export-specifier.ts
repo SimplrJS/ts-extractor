@@ -1,8 +1,6 @@
 import * as ts from "typescript";
 import * as path from "path";
-import { LogLevel } from "simplr-logger";
 
-import { Logger } from "../utils/logger";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
@@ -23,18 +21,17 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
         }
 
         this.targetSymbol.declarations.forEach(declaration => {
-            const declarationId = this.Options.Registry.GetDeclarationId(declaration);
-            if (declarationId != null) {
-                apiItems.push(declarationId);
+            const symbol = TSHelpers.GetSymbolFromDeclaration(declaration, this.TypeChecker);
+            if (symbol == null) {
                 return;
             }
 
-            const visitedItem = ApiHelpers.VisitApiItem(declaration, this.Symbol, this.Options);
-            if (visitedItem == null) {
+            const itemId = ApiHelpers.GetItemId(declaration, symbol, this.Options);
+            if (itemId == null) {
                 return;
             }
 
-            apiItems.push(this.Options.AddItemToRegistry(visitedItem));
+            apiItems.push(itemId);
         });
 
         return apiItems;
