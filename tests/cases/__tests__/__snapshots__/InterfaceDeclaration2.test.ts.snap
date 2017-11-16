@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Foo": "InterfaceDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -24,15 +29,20 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "Bar": "PropertySignature-0",
-      },
+      "Members": Array [
+        Array [
+          "Bar",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",

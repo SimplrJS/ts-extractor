@@ -7,11 +7,26 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "OneCommonField1": "TypeAliasDeclaration-0",
-        "OneCommonField2": "TypeAliasDeclaration-1",
-        "OneCommonFieldTypeIntersection": "TypeAliasDeclaration-2",
-      },
+      "Members": Array [
+        Array [
+          "OneCommonField1",
+          Array [
+            "TypeAliasDeclaration-0",
+          ],
+        ],
+        Array [
+          "OneCommonField2",
+          Array [
+            "TypeAliasDeclaration-1",
+          ],
+        ],
+        Array [
+          "OneCommonFieldTypeIntersection",
+          Array [
+            "TypeAliasDeclaration-2",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -113,7 +128,7 @@ Object {
         "ReferenceId": "TypeLiteral-0",
         "Text": "OneCommonField1",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeAliasDeclaration-1": Object {
       "ApiKind": "type",
@@ -131,7 +146,7 @@ Object {
         "ReferenceId": "TypeLiteral-1",
         "Text": "OneCommonField2",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeAliasDeclaration-2": Object {
       "ApiKind": "type",
@@ -165,16 +180,26 @@ Object {
           },
         ],
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeLiteral-0": Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
-      "Members": Object {
-        "BarName": "PropertySignature-0",
-        "FooName": "PropertySignature-1",
-      },
+      "Members": Array [
+        Array [
+          "BarName",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+        Array [
+          "FooName",
+          Array [
+            "PropertySignature-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -185,10 +210,20 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
-      "Members": Object {
-        "BarName": "PropertySignature-2",
-        "BazName": "PropertySignature-3",
-      },
+      "Members": Array [
+        Array [
+          "BarName",
+          Array [
+            "PropertySignature-2",
+          ],
+        ],
+        Array [
+          "BazName",
+          Array [
+            "PropertySignature-3",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

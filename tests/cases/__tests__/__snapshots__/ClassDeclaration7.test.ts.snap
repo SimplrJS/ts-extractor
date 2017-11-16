@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "FooClass": "ClassDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "FooClass",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -26,15 +31,20 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {},
+      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
-      "TypeParameters": Object {
-        "TValue": "TypeParameter-0",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TValue",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

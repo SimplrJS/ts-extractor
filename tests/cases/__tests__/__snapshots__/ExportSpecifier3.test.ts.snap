@@ -7,10 +7,20 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Bar": "ExportSpecifier-0",
-        "FooClass": "ExportSpecifier-1",
-      },
+      "Members": Array [
+        Array [
+          "Bar",
+          Array [
+            "ExportSpecifier-0",
+          ],
+        ],
+        Array [
+          "FooClass",
+          Array [
+            "ExportSpecifier-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -42,16 +52,26 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "Bar": "PropertyDeclaration-0",
-        "Bar2": "PropertyDeclaration-1",
-      },
+      "Members": Array [
+        Array [
+          "Bar",
+          Array [
+            "PropertyDeclaration-0",
+          ],
+        ],
+        Array [
+          "Bar2",
+          Array [
+            "PropertyDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "ExportSpecifier-0": Object {
       "ApiItems": Array [
@@ -84,30 +104,40 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "Bar": "PropertySignature-0",
-      },
+      "Members": Array [
+        Array [
+          "Bar",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "Bar2": "PropertySignature-1",
-      },
+      "Members": Array [
+        Array [
+          "Bar2",
+          Array [
+            "PropertySignature-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo2",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",

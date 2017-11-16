@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "FOO": "VariableDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "FOO",
+          Array [
+            "VariableDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

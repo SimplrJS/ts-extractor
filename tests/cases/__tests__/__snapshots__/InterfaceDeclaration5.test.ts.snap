@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "GenericIdentityFn": "InterfaceDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "GenericIdentityFn",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -28,9 +33,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__call",
-      "Parameters": Object {
-        "value": "Parameter-0",
-      },
+      "Parameters": Array [
+        Array [
+          "value",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "reference",
         "Generics": undefined,
@@ -38,24 +48,34 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "TValue",
       },
-      "TypeParameters": Object {
-        "TValue": "TypeParameter-0",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TValue",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "__call": "CallSignature-0",
-      },
+      "Members": Array [
+        Array [
+          "__call",
+          Array [
+            "CallSignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "GenericIdentityFn",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
