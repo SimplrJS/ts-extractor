@@ -4,7 +4,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceDictionary } from "./contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "./contracts/api-item-reference-tuple";
 import {
     TypeDto,
     TypeBasicDto,
@@ -121,8 +121,8 @@ export namespace ApiHelpers {
     export function GetItemsIdsFromSymbols(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
-    ): ApiItemReferenceDictionary {
-        const items: ApiItemReferenceDictionary = {};
+    ): ApiItemReferenceTuple {
+        const items: ApiItemReferenceTuple = {};
         if (symbols == null) {
             return items;
         }
@@ -163,8 +163,8 @@ export namespace ApiHelpers {
     export function GetItemsIdsFromDeclarations(
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
-    ): ApiItemReferenceDictionary {
-        const items: ApiItemReferenceDictionary = {};
+    ): ApiItemReferenceTuple {
+        const items: ApiItemReferenceTuple = {};
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {

@@ -2,7 +2,7 @@ export * from "./contracts/access-modifier";
 export * from "./contracts/api-base-item-dto";
 export * from "./contracts/api-callable-dto";
 export * from "./contracts/api-item-kinds";
-export * from "./contracts/api-item-reference-dictionary";
+export * from "./contracts/api-item-reference-tuple";
 export * from "./contracts/api-metadata-dto";
 export * from "./contracts/config";
 export * from "./contracts/definitions/api-call-dto";
