@@ -205,6 +205,7 @@ Object {
     },
     "IndexSignature-0": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {
@@ -223,6 +224,7 @@ Object {
     },
     "IndexSignature-1": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {
@@ -242,6 +244,7 @@ Object {
     },
     "IndexSignature-2": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {
@@ -261,6 +264,7 @@ Object {
     },
     "IndexSignature-3": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {

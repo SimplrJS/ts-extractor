@@ -1,3 +1,3 @@
-interface Foo {
+export interface Foo {
     readonly [key: string]: number;
 }
