@@ -8,10 +8,10 @@ import { ApiTypeLiteralDto } from "../contracts/definitions/api-type-literal-dto
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 
 export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDto> {
-    private members: ApiItemReferenceDictionary = {};
+    private members: ApiItemReferenceTuple = [];
 
     protected OnGatherData(): void {
         this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);

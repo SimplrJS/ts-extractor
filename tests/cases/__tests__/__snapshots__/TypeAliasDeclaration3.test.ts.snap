@@ -7,15 +7,50 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "AnotherType": "TypeAliasDeclaration-2",
-        "NoCommonFields1": "TypeAliasDeclaration-0",
-        "NoCommonFields2": "TypeAliasDeclaration-1",
-        "OneCommonField1": "TypeAliasDeclaration-3",
-        "OneCommonField2": "TypeAliasDeclaration-4",
-        "OneCommonFieldTypeIntersection": "TypeAliasDeclaration-5",
-        "OneCommonFieldTypeIntersectionWithDifferentTypes": "TypeAliasDeclaration-6",
-      },
+      "Members": Array [
+        Array [
+          "NoCommonFields1",
+          Array [
+            "TypeAliasDeclaration-0",
+          ],
+        ],
+        Array [
+          "NoCommonFields2",
+          Array [
+            "TypeAliasDeclaration-1",
+          ],
+        ],
+        Array [
+          "AnotherType",
+          Array [
+            "TypeAliasDeclaration-2",
+          ],
+        ],
+        Array [
+          "OneCommonField1",
+          Array [
+            "TypeAliasDeclaration-3",
+          ],
+        ],
+        Array [
+          "OneCommonField2",
+          Array [
+            "TypeAliasDeclaration-4",
+          ],
+        ],
+        Array [
+          "OneCommonFieldTypeIntersection",
+          Array [
+            "TypeAliasDeclaration-5",
+          ],
+        ],
+        Array [
+          "OneCommonFieldTypeIntersectionWithDifferentTypes",
+          Array [
+            "TypeAliasDeclaration-6",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -178,9 +213,14 @@ Object {
         "ReferenceId": "TypeLiteral-0",
         "Text": "NoCommonFields1<TType>",
       },
-      "TypeParameters": Object {
-        "TType": "TypeParameter-0",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TType",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
     },
     "TypeAliasDeclaration-1": Object {
       "ApiKind": "type",
@@ -206,9 +246,14 @@ Object {
         "ReferenceId": "TypeLiteral-1",
         "Text": "NoCommonFields2<TType>",
       },
-      "TypeParameters": Object {
-        "TType": "TypeParameter-1",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TType",
+          Array [
+            "TypeParameter-1",
+          ],
+        ],
+      ],
     },
     "TypeAliasDeclaration-2": Object {
       "ApiKind": "type",
@@ -260,7 +305,7 @@ Object {
           },
         ],
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeAliasDeclaration-3": Object {
       "ApiKind": "type",
@@ -286,9 +331,14 @@ Object {
         "ReferenceId": "TypeLiteral-2",
         "Text": "OneCommonField1<TType>",
       },
-      "TypeParameters": Object {
-        "TType": "TypeParameter-2",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TType",
+          Array [
+            "TypeParameter-2",
+          ],
+        ],
+      ],
     },
     "TypeAliasDeclaration-4": Object {
       "ApiKind": "type",
@@ -314,9 +364,14 @@ Object {
         "ReferenceId": "TypeLiteral-3",
         "Text": "OneCommonField2<TType>",
       },
-      "TypeParameters": Object {
-        "TType": "TypeParameter-3",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TType",
+          Array [
+            "TypeParameter-3",
+          ],
+        ],
+      ],
     },
     "TypeAliasDeclaration-5": Object {
       "ApiKind": "type",
@@ -368,7 +423,7 @@ Object {
           },
         ],
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeAliasDeclaration-6": Object {
       "ApiKind": "type",
@@ -420,16 +475,26 @@ Object {
           },
         ],
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeLiteral-0": Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
-      "Members": Object {
-        "BarName": "PropertySignature-0",
-        "FooName": "PropertySignature-1",
-      },
+      "Members": Array [
+        Array [
+          "BarName",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+        Array [
+          "FooName",
+          Array [
+            "PropertySignature-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -440,9 +505,14 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
-      "Members": Object {
-        "BazName": "PropertySignature-2",
-      },
+      "Members": Array [
+        Array [
+          "BazName",
+          Array [
+            "PropertySignature-2",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -453,10 +523,20 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
-      "Members": Object {
-        "BarName": "PropertySignature-3",
-        "FooName": "PropertySignature-4",
-      },
+      "Members": Array [
+        Array [
+          "BarName",
+          Array [
+            "PropertySignature-3",
+          ],
+        ],
+        Array [
+          "FooName",
+          Array [
+            "PropertySignature-4",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -467,10 +547,20 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
-      "Members": Object {
-        "BarName": "PropertySignature-5",
-        "BazName": "PropertySignature-6",
-      },
+      "Members": Array [
+        Array [
+          "BarName",
+          Array [
+            "PropertySignature-5",
+          ],
+        ],
+        Array [
+          "BazName",
+          Array [
+            "PropertySignature-6",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

@@ -7,11 +7,26 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Button": "ClassDeclaration-1",
-        "Control": "ClassDeclaration-0",
-        "SelectableControl": "InterfaceDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "Control",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+        Array [
+          "SelectableControl",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "Button",
+          Array [
+            "ClassDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -28,15 +43,20 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "state": "PropertyDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "state",
+          Array [
+            "PropertyDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Control",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -59,15 +79,20 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "select": "MethodDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "select",
+          Array [
+            "MethodDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Button",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -82,15 +107,20 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "select": "MethodSignature-0",
-      },
+      "Members": Array [
+        Array [
+          "select",
+          Array [
+            "MethodSignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "SelectableControl",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
@@ -105,7 +135,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "select",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1024,
@@ -114,7 +144,7 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
@@ -126,7 +156,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "select",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1024,
@@ -135,7 +165,7 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "private",

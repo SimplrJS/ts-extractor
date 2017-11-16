@@ -5,12 +5,12 @@ import { ApiEnumMember } from "./api-enum-member";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiEnumDto } from "../contracts/definitions/api-enum-dto";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
-    private members: ApiItemReferenceDictionary = {};
+    private members: ApiItemReferenceTuple = [];
 
     protected OnGatherData(): void {
         // Members

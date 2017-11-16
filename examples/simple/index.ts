@@ -11,7 +11,7 @@
 // }
 
 // export * from "./exported-functions";
-export { Kintamasis as Pakeistas } from "./exported-const-variables";
+// export { Kintamasis as Pakeistas } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
 // Two types have a one common field
@@ -85,11 +85,11 @@ export { Kintamasis as Pakeistas } from "./exported-const-variables";
 //     Boos: string[];
 // }
 
-// export interface Foo<TType> {
-//     Name: string;
-//     Surname: string;
-//     Type: TType;
-// }
+export interface Foo<TType> {
+    Name: string;
+    Surname: string;
+    Type: TType;
+}
 
 // export interface Bar extends Foo<number>, Boo {
 //     OtherStuff: string[];

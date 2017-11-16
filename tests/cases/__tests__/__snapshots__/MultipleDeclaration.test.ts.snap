@@ -7,17 +7,28 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Bar": Array [
-          "ClassDeclaration-1",
-          "InterfaceDeclaration-1",
+      "Members": Array [
+        Array [
+          "M",
+          Array [
+            "ModuleDeclaration-0",
+          ],
         ],
-        "Foo": Array [
-          "InterfaceDeclaration-0",
-          "ClassDeclaration-0",
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+            "ClassDeclaration-0",
+          ],
         ],
-        "M": "ModuleDeclaration-0",
-      },
+        Array [
+          "Bar",
+          Array [
+            "ClassDeclaration-1",
+            "InterfaceDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -34,17 +45,27 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "b": "PropertyDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "b",
+          Array [
+            "PropertyDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {
-        "T": "TypeParameter-1",
-      },
+      "TypeParameters": Array [
+        Array [
+          "T",
+          Array [
+            "TypeParameter-1",
+          ],
+        ],
+      ],
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -53,57 +74,87 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "b": "PropertyDeclaration-1",
-      },
+      "Members": Array [
+        Array [
+          "b",
+          Array [
+            "PropertyDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Bar",
-      "TypeParameters": Object {
-        "T": "TypeParameter-2",
-      },
+      "TypeParameters": Array [
+        Array [
+          "T",
+          Array [
+            "TypeParameter-2",
+          ],
+        ],
+      ],
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "a": "PropertySignature-0",
-      },
+      "Members": Array [
+        Array [
+          "a",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {
-        "T": "TypeParameter-0",
-      },
+      "TypeParameters": Array [
+        Array [
+          "T",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "a": "PropertySignature-1",
-      },
+      "Members": Array [
+        Array [
+          "a",
+          Array [
+            "PropertySignature-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Bar",
-      "TypeParameters": Object {
-        "T": "TypeParameter-3",
-      },
+      "TypeParameters": Array [
+        Array [
+          "T",
+          Array [
+            "TypeParameter-3",
+          ],
+        ],
+      ],
     },
     "ModuleDeclaration-0": Object {
       "ApiKind": "namespace",
       "Kind": 233,
       "KindString": "ModuleDeclaration",
-      "Members": Object {},
+      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

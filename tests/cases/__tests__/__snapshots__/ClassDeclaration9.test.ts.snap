@@ -7,10 +7,20 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Point": "ClassDeclaration-0",
-        "Point3d": "ClassDeclaration-1",
-      },
+      "Members": Array [
+        Array [
+          "Point",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+        Array [
+          "Point3d",
+          Array [
+            "ClassDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -27,16 +37,26 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "x": "PropertyDeclaration-0",
-        "y": "PropertyDeclaration-1",
-      },
+      "Members": Array [
+        Array [
+          "x",
+          Array [
+            "PropertyDeclaration-0",
+          ],
+        ],
+        Array [
+          "y",
+          Array [
+            "PropertyDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Point",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -53,17 +73,32 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "x": "PropertyDeclaration-2",
-        "y": "PropertyDeclaration-3",
-        "z": "PropertyDeclaration-4",
-      },
+      "Members": Array [
+        Array [
+          "x",
+          Array [
+            "PropertyDeclaration-2",
+          ],
+        ],
+        Array [
+          "y",
+          Array [
+            "PropertyDeclaration-3",
+          ],
+        ],
+        Array [
+          "z",
+          Array [
+            "PropertyDeclaration-4",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Point3d",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",

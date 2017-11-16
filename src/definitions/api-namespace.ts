@@ -4,12 +4,12 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiNamespaceDto } from "../contracts/definitions/api-namespace-dto";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto> {
-    private members: ApiItemReferenceDictionary = {};
+    private members: ApiItemReferenceTuple = [];
 
     protected OnGatherData(): void {
         if (this.Symbol.exports == null) {

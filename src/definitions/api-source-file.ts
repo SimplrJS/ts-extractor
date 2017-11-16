@@ -4,7 +4,7 @@ import * as path from "path";
 import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
@@ -12,7 +12,7 @@ import { ApiVariable } from "./api-variable";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
-    private members: ApiItemReferenceDictionary;
+    private members: ApiItemReferenceTuple;
 
     private getFileName(): string {
         return path.basename(this.Declaration.fileName);
