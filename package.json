@@ -25,22 +25,22 @@
     ],
     "license": "AGPL",
     "dependencies": {
-        "@types/fs-extra": "^4.0.2",
+        "@types/fs-extra": "^4.0.5",
         "fs-extra": "^4.0.2",
-        "read-package-json": "^2.0.10",
-        "simplr-logger": "^0.1.1",
+        "read-package-json": "^2.0.12",
+        "simplr-logger": "^0.3.0",
         "tslint": "^5.8.0",
         "typescript": "^2.6.1"
     },
     "devDependencies": {
         "@types/globby": "^6.1.0",
-        "@types/jest": "^20.0.5",
-        "@types/sinon": "^2.3.3",
-        "globby": "^6.1.0",
-        "jest": "^20.0.4",
+        "@types/jest": "^21.1.6",
+        "@types/sinon": "^4.0.0",
+        "globby": "^7.0.0",
+        "jest": "^21.2.1",
         "rimraf": "^2.6.2",
-        "sinon": "^2.4.1",
-        "ts-jest": "^20.0.7",
+        "sinon": "^4.1.2",
+        "ts-jest": "^21.2.3",
         "ts-node": "^3.3.0"
     },
     "files": [
