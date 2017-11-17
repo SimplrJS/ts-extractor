@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "FunctionDeclaration-0": Object {
       "ApiKind": "function",
+      "IsAsync": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
       "Metadata": Object {

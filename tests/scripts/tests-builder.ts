@@ -7,7 +7,7 @@ import * as ts from "typescript";
 import { FixSep, Tab, TESTS_DIR_NAME } from "./tests-helpers";
 
 export const EXTRACTOR_COMPILER_OPTIONS: ts.CompilerOptions = {
-    target: ts.ScriptTarget.ES5,
+    target: ts.ScriptTarget.ES2016,
     module: ts.ModuleKind.CommonJS,
     skipLibCheck: true,
     skipDefaultLibCheck: true

@@ -23,9 +23,7 @@ export class FooClass {
         return "";
     }
 
-    public async AsyncGetFoo(): Promise<string> {
-        return "";
-    }
+    public async AsyncGetFoo?(): Promise<string>;
 
     /**
      * Property Id comment line.

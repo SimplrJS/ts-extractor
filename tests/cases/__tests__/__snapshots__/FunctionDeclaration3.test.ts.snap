@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FunctionDeclaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "AsyncFoo",
+          Array [
+            "FunctionDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "FunctionDeclaration3.ts",
+      "Path": "cases/FunctionDeclaration3.ts",
+    },
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "IsAsync": true,
+      "Kind": 228,
+      "KindString": "FunctionDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "AsyncFoo",
+      "Parameters": Array [],
+      "ReturnType": Object {
+        "ApiTypeKind": "reference",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 1024,
+            "FlagsString": "Void",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "void",
+          },
+        ],
+        "Name": "Promise",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "Promise<void>",
+      },
+      "TypeParameters": Array [],
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": Array [
+          Object {
+            "kind": "text",
+            "text": "Represents the completion of an asynchronous operation",
+          },
+        ],
+        "JSDocTags": Array [],
+      },
+      "Name": "Promise",
+      "TypeParameters": Array [],
+    },
+  },
+}
+`;
