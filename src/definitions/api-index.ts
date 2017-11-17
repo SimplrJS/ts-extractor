@@ -16,6 +16,7 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto> {
     private parameter: string;
     private type: TypeDto;
+    private isReadonly: boolean;
 
     protected OnGatherData(): void {
         // Parameter
@@ -51,6 +52,9 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
         }
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+
+        // Modifiers
+        this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
     }
 
     public OnExtract(): ApiIndexDto {
@@ -63,6 +67,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Parameter: this.parameter,
+            IsReadonly: this.isReadonly,
             Type: this.type
         };
     }
