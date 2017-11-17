@@ -23,6 +23,10 @@ export class FooClass {
         return "";
     }
 
+    public async AsyncGetFoo(): Promise<string> {
+        return "";
+    }
+
     /**
      * Property Id comment line.
      * @readonly Id is Immutable.
