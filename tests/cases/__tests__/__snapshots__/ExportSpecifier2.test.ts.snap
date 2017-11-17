@@ -7,10 +7,20 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Foo": "ExportSpecifier-0",
-        "Foo2": "ExportSpecifier-1",
-      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "ExportSpecifier-0",
+          ],
+        ],
+        Array [
+          "Foo2",
+          Array [
+            "ExportSpecifier-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -51,30 +61,40 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "Bar": "PropertySignature-0",
-      },
+      "Members": Array [
+        Array [
+          "Bar",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "Bar2": "PropertySignature-1",
-      },
+      "Members": Array [
+        Array [
+          "Bar2",
+          Array [
+            "PropertySignature-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo2",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",

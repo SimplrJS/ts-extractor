@@ -4,7 +4,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceDictionary } from "./contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "./contracts/api-item-reference-tuple";
 import {
     TypeDto,
     TypeBasicDto,
@@ -111,18 +111,43 @@ export namespace ApiHelpers {
     }
 
     export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
-        const declarationFileName = declaration.getSourceFile().fileName;
-        if (PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
-            return true;
+        const declarationSourceFile = declaration.getSourceFile();
+        const declarationFileName = declarationSourceFile.fileName;
+
+        if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
+            return false;
         }
-        return false;
+
+        if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    export function GetItemId(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): string | undefined {
+        if (!ShouldVisit(declaration, options)) {
+            return undefined;
+        }
+
+        if (options.Registry.HasDeclaration(declaration)) {
+            return options.Registry.GetDeclarationId(declaration);
+        }
+
+        const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
+        const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
+        if (apiItem == null) {
+            return undefined;
+        }
+
+        return options.AddItemToRegistry(apiItem);
     }
 
     export function GetItemsIdsFromSymbols(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
-    ): ApiItemReferenceDictionary {
-        const items: ApiItemReferenceDictionary = {};
+    ): ApiItemReferenceTuple {
+        const items: ApiItemReferenceTuple = [];
         if (symbols == null) {
             return items;
         }
@@ -134,27 +159,13 @@ export namespace ApiHelpers {
             const symbolItems: string[] = [];
 
             symbol.declarations.forEach(declaration => {
-                // Check if declaration already exists in the registry.
-                if (options.Registry.HasDeclaration(declaration)) {
-                    const declarationId = options.Registry.GetDeclarationId(declaration);
-                    if (declarationId == null) {
-                        throw new Error(`Declaration id cannot be undefined.`);
-                    }
-                    symbolItems.push(declarationId);
-                    return;
+                const itemId = GetItemId(declaration, symbol, options);
+                if (itemId != null) {
+                    symbolItems.push(itemId);
                 }
-
-                const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
-
-                const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
-                if (visitedItem == null || !ShouldVisit(declaration, options)) {
-                    return;
-                }
-
-                symbolItems.push(options.AddItemToRegistry(visitedItem));
             });
 
-            items[symbol.name] = symbolItems.length === 1 ? symbolItems.toString() : symbolItems;
+            items.push([symbol.name, symbolItems]);
         });
 
         return items;
@@ -163,8 +174,8 @@ export namespace ApiHelpers {
     export function GetItemsIdsFromDeclarations(
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
-    ): ApiItemReferenceDictionary {
-        const items: ApiItemReferenceDictionary = {};
+    ): ApiItemReferenceTuple {
+        const items: ApiItemReferenceTuple = [];
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {
@@ -172,29 +183,18 @@ export namespace ApiHelpers {
             if (symbol == null) {
                 return;
             }
-            const name = symbol.name;
 
-            let declarationId = options.Registry.GetDeclarationId(declaration);
-            if (declarationId == null) {
-                const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
-
-                const visitedItem = VisitApiItem(declaration, resolveRealSymbol, options);
-                if (visitedItem == null || !ShouldVisit(declaration, options)) {
-                    return;
-                }
-
-                declarationId = options.AddItemToRegistry(visitedItem);
+            const itemId = GetItemId(declaration, symbol, options);
+            if (itemId == null) {
+                return;
             }
 
-            if (items[name] == null) {
-                items[name] = declarationId;
+            const index = items.findIndex(x => x != null && x.length === 2 && x[0] === symbol.name);
+
+            if (index === -1) {
+                items.push([symbol.name, [itemId]]);
             } else {
-                const refs = items[name];
-                if (Array.isArray(refs)) {
-                    refs.push(declarationId);
-                } else {
-                    items[name] = [refs, declarationId];
-                }
+                items[index][1].push(itemId);
             }
         });
 
@@ -270,17 +270,7 @@ export namespace ApiHelpers {
             if (symbol.declarations != null && symbol.declarations.length > 0) {
                 const declaration: ts.Declaration = symbol.declarations[0];
 
-                let declarationId = options.Registry.GetDeclarationId(declaration);
-
-                if (declarationId == null) {
-                    const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, typeChecker);
-
-                    const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
-                    if (apiItem != null) {
-                        declarationId = options.AddItemToRegistry(apiItem);
-                    }
-                }
-
+                const declarationId = GetItemId(declaration, symbol, options);
                 if (declarationId != null) {
                     return {
                         ApiTypeKind: TypeKinds.Reference,

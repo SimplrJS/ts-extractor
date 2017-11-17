@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassMethodDto } from "../contracts/definitions/api-class-method-dto";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
 import { TypeDto } from "../contracts/type-dto";
@@ -18,6 +18,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
     private isAbstract: boolean;
     private isStatic: boolean;
     private isOptional: boolean;
+    private isAsync: boolean;
 
     public IsPrivate(): boolean {
         return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
@@ -30,6 +31,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);
         this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
         this.isStatic = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.StaticKeyword);
+        this.isAsync = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AsyncKeyword);
 
         // IsOptional
         this.isOptional = Boolean((this.Declaration as ts.FunctionLikeDeclarationBase).questionToken);
@@ -50,6 +52,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
             IsAbstract: this.isAbstract,
             IsStatic: this.isStatic,
             IsOptional: this.isOptional,
+            IsAsync: this.isAsync,
             TypeParameters: this.TypeParameters
         };
     }

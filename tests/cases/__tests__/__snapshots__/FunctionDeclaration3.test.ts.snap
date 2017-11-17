@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FunctionDeclaration1 1`] = `
+exports[`FunctionDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
@@ -9,7 +9,7 @@ Object {
       "KindString": "SourceFile",
       "Members": Array [
         Array [
-          "Foo",
+          "AsyncFoo",
           Array [
             "FunctionDeclaration-0",
           ],
@@ -19,29 +19,38 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "FunctionDeclaration1.ts",
-      "Path": "cases/FunctionDeclaration1.ts",
+      "Name": "FunctionDeclaration3.ts",
+      "Path": "cases/FunctionDeclaration3.ts",
     },
   ],
   "Registry": Object {
     "FunctionDeclaration-0": Object {
       "ApiKind": "function",
-      "IsAsync": false,
+      "IsAsync": true,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "Foo",
+      "Name": "AsyncFoo",
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "Text": "string",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 1024,
+            "FlagsString": "Void",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "void",
+          },
+        ],
+        "Name": "Promise",
+        "Text": "Promise<void>",
       },
       "TypeParameters": Array [],
     },

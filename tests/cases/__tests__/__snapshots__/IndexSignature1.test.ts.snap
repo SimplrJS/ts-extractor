@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InterfaceDeclaration2 1`] = `
+exports[`IndexSignature1 1`] = `
 Object {
   "EntryFiles": Array [
     Object {
@@ -19,11 +19,31 @@ Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "InterfaceDeclaration2.ts",
-      "Path": "cases/InterfaceDeclaration2.ts",
+      "Name": "IndexSignature1.ts",
+      "Path": "cases/IndexSignature1.ts",
     },
   ],
   "Registry": Object {
+    "IndexSignature-0": Object {
+      "ApiKind": "index",
+      "IsReadonly": false,
+      "Kind": 157,
+      "KindString": "IndexSignature",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__index",
+      "Parameter": "Parameter-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
@@ -31,9 +51,9 @@ Object {
       "KindString": "InterfaceDeclaration",
       "Members": Array [
         Array [
-          "Bar",
+          "__index",
           Array [
-            "PropertySignature-0",
+            "IndexSignature-0",
           ],
         ],
       ],
@@ -44,16 +64,17 @@ Object {
       "Name": "Foo",
       "TypeParameters": Array [],
     },
-    "PropertySignature-0": Object {
-      "ApiKind": "property",
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
       "IsOptional": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
-      "Name": "Bar",
+      "Name": "key",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,

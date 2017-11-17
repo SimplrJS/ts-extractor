@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Foo": "ClassDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -26,23 +31,44 @@ Object {
       "IsAbstract": true,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "Bar": "PropertyDeclaration-1",
-        "GetFoo": "MethodDeclaration-1",
-        "Id": "PropertyDeclaration-0",
-        "SetFoo": "MethodDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "SetFoo",
+          Array [
+            "MethodDeclaration-0",
+          ],
+        ],
+        Array [
+          "GetFoo",
+          Array [
+            "MethodDeclaration-1",
+          ],
+        ],
+        Array [
+          "Id",
+          Array [
+            "PropertyDeclaration-0",
+          ],
+        ],
+        Array [
+          "Bar",
+          Array [
+            "PropertyDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",
       "ApiKind": "class-method",
       "IsAbstract": true,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
@@ -52,9 +78,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "SetFoo",
-      "Parameters": Object {
-        "foo": "Parameter-0",
-      },
+      "Parameters": Array [
+        Array [
+          "foo",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1024,
@@ -63,12 +94,13 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
@@ -78,7 +110,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -87,7 +119,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

@@ -10,7 +10,7 @@ export interface ApiItemOptions {
     Program: ts.Program;
     ExtractorOptions: ExtractorOptions;
     Registry: ReadonlyRegistry<ApiItem>;
-    AddItemToRegistry: (item: ApiItem) => string;
+    AddItemToRegistry(item: ApiItem): string;
 }
 
 export enum ApiItemStatus {

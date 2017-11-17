@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "FooClass": "ClassDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "FooClass",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -26,15 +31,39 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "BarProperty": "PropertyDeclaration-1",
-        "GetFoo": Array [
-          "MethodDeclaration-1",
-          "MethodDeclaration-2",
+      "Members": Array [
+        Array [
+          "SetFoo",
+          Array [
+            "MethodDeclaration-0",
+          ],
         ],
-        "IdProperty": "PropertyDeclaration-0",
-        "SetFoo": "MethodDeclaration-0",
-      },
+        Array [
+          "GetFoo",
+          Array [
+            "MethodDeclaration-1",
+            "MethodDeclaration-2",
+          ],
+        ],
+        Array [
+          "AsyncGetFoo",
+          Array [
+            "MethodDeclaration-3",
+          ],
+        ],
+        Array [
+          "IdProperty",
+          Array [
+            "PropertyDeclaration-0",
+          ],
+        ],
+        Array [
+          "BarProperty",
+          Array [
+            "PropertyDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [
           Object {
@@ -50,12 +79,13 @@ Object {
         ],
       },
       "Name": "FooClass",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsAsync": false,
       "IsOptional": true,
       "IsStatic": false,
       "Kind": 151,
@@ -70,9 +100,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "SetFoo",
-      "Parameters": Object {
-        "foo": "Parameter-0",
-      },
+      "Parameters": Array [
+        Array [
+          "foo",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1024,
@@ -81,12 +116,13 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
@@ -110,9 +146,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
-      "Parameters": Object {
-        "a": "Parameter-1",
-      },
+      "Parameters": Array [
+        Array [
+          "a",
+          Array [
+            "Parameter-1",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -121,12 +162,13 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-2": Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
@@ -150,7 +192,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -159,7 +201,41 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
+    },
+    "MethodDeclaration-3": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsAsync": true,
+      "IsOptional": true,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "AsyncGetFoo",
+      "Parameters": Array [],
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 2,
+            "FlagsString": "String",
+            "Generics": undefined,
+            "Name": undefined,
+            "Text": "string",
+          },
+        ],
+        "Name": "Promise",
+        "Text": "Promise<string>",
+      },
+      "TypeParameters": Array [],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

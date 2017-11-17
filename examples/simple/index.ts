@@ -11,7 +11,7 @@
 // }
 
 // export * from "./exported-functions";
-export { Kintamasis as Pakeistas } from "./exported-const-variables";
+// export { Kintamasis as Pakeistas } from "./exported-const-variables";
 // export type A<TValue> = number & { ok(): TValue };
 
 // Two types have a one common field
@@ -90,6 +90,10 @@ export { Kintamasis as Pakeistas } from "./exported-const-variables";
 //     Surname: string;
 //     Type: TType;
 // }
+
+export async function GetFoo(): Promise<void> {
+    return;
+}
 
 // export interface Bar extends Foo<number>, Boo {
 //     OtherStuff: string[];

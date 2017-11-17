@@ -7,17 +7,62 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "a": "InterfaceDeclaration-3",
-        "a0": "InterfaceDeclaration-0",
-        "a1": "InterfaceDeclaration-1",
-        "a2": "InterfaceDeclaration-2",
-        "b": "InterfaceDeclaration-4",
-        "c": "InterfaceDeclaration-5",
-        "c1": "ClassDeclaration-0",
-        "d": "InterfaceDeclaration-6",
-        "instance2": "VariableDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "a0",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "a1",
+          Array [
+            "InterfaceDeclaration-1",
+          ],
+        ],
+        Array [
+          "a2",
+          Array [
+            "InterfaceDeclaration-2",
+          ],
+        ],
+        Array [
+          "a",
+          Array [
+            "InterfaceDeclaration-3",
+          ],
+        ],
+        Array [
+          "b",
+          Array [
+            "InterfaceDeclaration-4",
+          ],
+        ],
+        Array [
+          "c",
+          Array [
+            "InterfaceDeclaration-5",
+          ],
+        ],
+        Array [
+          "d",
+          Array [
+            "InterfaceDeclaration-6",
+          ],
+        ],
+        Array [
+          "c1",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+        Array [
+          "instance2",
+          Array [
+            "VariableDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -36,7 +81,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__call",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -45,7 +90,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "CallSignature-1": Object {
       "ApiKind": "call",
@@ -56,11 +101,26 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__call",
-      "Parameters": Object {
-        "a": "Parameter-0",
-        "b": "Parameter-1",
-        "c": "Parameter-2",
-      },
+      "Parameters": Array [
+        Array [
+          "a",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+        Array [
+          "b",
+          Array [
+            "Parameter-1",
+          ],
+        ],
+        Array [
+          "c",
+          Array [
+            "Parameter-2",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 4,
@@ -69,7 +129,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "ClassDeclaration-0": Object {
       "ApiKind": "class",
@@ -86,13 +146,13 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {},
+      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "c1",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "ConstructSignature-0": Object {
       "ApiKind": "construct",
@@ -103,7 +163,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__new",
-      "Parameters": Object {},
+      "Parameters": Array [],
     },
     "ConstructSignature-1": Object {
       "ApiKind": "construct",
@@ -114,9 +174,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__new",
-      "Parameters": Object {
-        "s": "Parameter-3",
-      },
+      "Parameters": Array [
+        Array [
+          "s",
+          Array [
+            "Parameter-3",
+          ],
+        ],
+      ],
     },
     "FunctionType-0": Object {
       "ApiKind": "function",
@@ -127,7 +192,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -136,10 +201,11 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "IndexSignature-0": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {
@@ -158,6 +224,7 @@ Object {
     },
     "IndexSignature-1": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {
@@ -177,6 +244,7 @@ Object {
     },
     "IndexSignature-2": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {
@@ -196,6 +264,7 @@ Object {
     },
     "IndexSignature-3": Object {
       "ApiKind": "index",
+      "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
       "Metadata": Object {
@@ -218,78 +287,142 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "__call": Array [
-          "CallSignature-0",
-          "CallSignature-1",
+      "Members": Array [
+        Array [
+          "__call",
+          Array [
+            "CallSignature-0",
+            "CallSignature-1",
+          ],
         ],
-        "__index": Array [
-          "IndexSignature-0",
-          "IndexSignature-1",
+        Array [
+          "__new",
+          Array [
+            "ConstructSignature-0",
+            "ConstructSignature-1",
+          ],
         ],
-        "__new": Array [
-          "ConstructSignature-0",
-          "ConstructSignature-1",
+        Array [
+          "__index",
+          Array [
+            "IndexSignature-0",
+            "IndexSignature-1",
+          ],
         ],
-        "f1": "MethodSignature-1",
-        "f2": "MethodSignature-2",
-        "f3": "MethodSignature-3",
-        "f4": "MethodSignature-4",
-        "p1": "PropertySignature-0",
-        "p2": "PropertySignature-2",
-        "p3": "PropertySignature-1",
-        "p4": "PropertySignature-3",
-        "p5": "MethodSignature-0",
-      },
+        Array [
+          "p1",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+        Array [
+          "p3",
+          Array [
+            "PropertySignature-1",
+          ],
+        ],
+        Array [
+          "p2",
+          Array [
+            "PropertySignature-2",
+          ],
+        ],
+        Array [
+          "p4",
+          Array [
+            "PropertySignature-3",
+          ],
+        ],
+        Array [
+          "p5",
+          Array [
+            "MethodSignature-0",
+          ],
+        ],
+        Array [
+          "f1",
+          Array [
+            "MethodSignature-1",
+          ],
+        ],
+        Array [
+          "f2",
+          Array [
+            "MethodSignature-2",
+          ],
+        ],
+        Array [
+          "f3",
+          Array [
+            "MethodSignature-3",
+          ],
+        ],
+        Array [
+          "f4",
+          Array [
+            "MethodSignature-4",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "a0",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "__index": "IndexSignature-2",
-      },
+      "Members": Array [
+        Array [
+          "__index",
+          Array [
+            "IndexSignature-2",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "a1",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-2": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "__index": "IndexSignature-3",
-      },
+      "Members": Array [
+        Array [
+          "__index",
+          Array [
+            "IndexSignature-3",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "a2",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-3": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {},
+      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "a",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-4": Object {
       "ApiKind": "interface",
@@ -304,13 +437,13 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {},
+      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "b",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-5": Object {
       "ApiKind": "interface",
@@ -332,13 +465,13 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {},
+      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "c",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-6": Object {
       "ApiKind": "interface",
@@ -353,13 +486,13 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {},
+      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "d",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
@@ -371,9 +504,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "p5",
-      "Parameters": Object {
-        "s": "Parameter-6",
-      },
+      "Parameters": Array [
+        Array [
+          "s",
+          Array [
+            "Parameter-6",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -382,7 +520,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
@@ -394,7 +532,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "f1",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1,
@@ -403,7 +541,7 @@ Object {
         "Name": undefined,
         "Text": "any",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodSignature-2": Object {
       "ApiKind": "method",
@@ -415,7 +553,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "f2",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1,
@@ -424,7 +562,7 @@ Object {
         "Name": undefined,
         "Text": "any",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodSignature-3": Object {
       "ApiKind": "method",
@@ -436,9 +574,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "f3",
-      "Parameters": Object {
-        "a": "Parameter-7",
-      },
+      "Parameters": Array [
+        Array [
+          "a",
+          Array [
+            "Parameter-7",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 4,
@@ -447,7 +590,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodSignature-4": Object {
       "ApiKind": "method",
@@ -459,9 +602,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "f4",
-      "Parameters": Object {
-        "s": "Parameter-8",
-      },
+      "Parameters": Array [
+        Array [
+          "s",
+          Array [
+            "Parameter-8",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -470,7 +618,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

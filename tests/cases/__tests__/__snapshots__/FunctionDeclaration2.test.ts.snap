@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Foo": "FunctionDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "FunctionDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -21,6 +26,7 @@ Object {
   "Registry": Object {
     "FunctionDeclaration-0": Object {
       "ApiKind": "function",
+      "IsAsync": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
       "Metadata": Object {
@@ -28,9 +34,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "Parameters": Object {
-        "value": "Parameter-0",
-      },
+      "Parameters": Array [
+        Array [
+          "value",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1024,
@@ -39,9 +50,14 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
-      "TypeParameters": Object {
-        "TValue": "TypeParameter-0",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TValue",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

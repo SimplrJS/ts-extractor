@@ -5,13 +5,22 @@ import { ApiParameter } from "./api-parameter";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiFunctionDto } from "../contracts/definitions/api-function-dto";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
 export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunctionDto> {
+    private isAsync: boolean;
+
+    public OnGatherData(): void {
+        super.OnGatherData();
+
+        // Modifiers
+        this.isAsync = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AsyncKeyword);
+    }
+
     public OnExtract(): ApiFunctionDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
@@ -23,6 +32,7 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
             Metadata: metadata,
             TypeParameters: this.TypeParameters,
             Parameters: this.Parameters,
+            IsAsync: this.isAsync,
             ReturnType: this.ReturnType
         };
     }

@@ -4,7 +4,7 @@ import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiFunctionDto } from "../contracts/definitions/api-function-dto";
-import { ApiItemReferenceDictionary } from "../contracts/api-item-reference-dictionary";
+import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -19,8 +19,8 @@ export abstract class ApiCallableBase<
     >
     extends ApiItem<TDeclaration, TExtractDto> {
 
-    protected Parameters: ApiItemReferenceDictionary = {};
-    protected TypeParameters: ApiItemReferenceDictionary = {};
+    protected Parameters: ApiItemReferenceTuple = [];
+    protected TypeParameters: ApiItemReferenceTuple = [];
     protected ReturnType: TypeDto | undefined;
 
     protected OnGatherData(): void {

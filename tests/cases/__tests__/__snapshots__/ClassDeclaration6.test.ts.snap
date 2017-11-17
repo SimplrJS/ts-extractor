@@ -7,11 +7,26 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Bar": "InterfaceDeclaration-0",
-        "Foo": "ClassDeclaration-1",
-        "FooBase": "ClassDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "FooBase",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+        Array [
+          "Bar",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "Foo",
+          Array [
+            "ClassDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -28,17 +43,27 @@ Object {
       "IsAbstract": true,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "GetValue": "MethodDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "GetValue",
+          Array [
+            "MethodDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "FooBase",
-      "TypeParameters": Object {
-        "TValue": "TypeParameter-0",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TValue",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -70,36 +95,52 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "BarName": "PropertyDeclaration-0",
-        "GetValue": "MethodDeclaration-1",
-      },
+      "Members": Array [
+        Array [
+          "GetValue",
+          Array [
+            "MethodDeclaration-1",
+          ],
+        ],
+        Array [
+          "BarName",
+          Array [
+            "PropertyDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "BarName": "PropertySignature-0",
-      },
+      "Members": Array [
+        Array [
+          "BarName",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Bar",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": true,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
@@ -109,7 +150,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetValue",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "reference",
         "Generics": undefined,
@@ -117,12 +158,13 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "TValue",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
@@ -132,7 +174,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetValue",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 4,
@@ -141,7 +183,7 @@ Object {
         "Name": undefined,
         "Text": "number",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",

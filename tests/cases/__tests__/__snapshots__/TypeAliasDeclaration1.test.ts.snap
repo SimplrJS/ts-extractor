@@ -7,10 +7,20 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "AnotherType": "TypeAliasDeclaration-1",
-        "MyType": "TypeAliasDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "MyType",
+          Array [
+            "TypeAliasDeclaration-0",
+          ],
+        ],
+        Array [
+          "AnotherType",
+          Array [
+            "TypeAliasDeclaration-1",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -55,7 +65,7 @@ Object {
         "ReferenceId": "TypeLiteral-0",
         "Text": "MyType",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeAliasDeclaration-1": Object {
       "ApiKind": "type",
@@ -73,15 +83,20 @@ Object {
         "ReferenceId": "TypeLiteral-0",
         "Text": "MyType",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "TypeLiteral-0": Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
-      "Members": Object {
-        "BarName": "PropertySignature-0",
-      },
+      "Members": Array [
+        Array [
+          "BarName",
+          Array [
+            "PropertySignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

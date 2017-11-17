@@ -7,9 +7,14 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Foo": "InterfaceDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -24,17 +29,27 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "Bar": "MethodSignature-0",
-      },
+      "Members": Array [
+        Array [
+          "Bar",
+          Array [
+            "MethodSignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Foo",
-      "TypeParameters": Object {
-        "TValue": "TypeParameter-1",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TValue",
+          Array [
+            "TypeParameter-1",
+          ],
+        ],
+      ],
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
@@ -46,9 +61,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
-      "Parameters": Object {
-        "args": "Parameter-0",
-      },
+      "Parameters": Array [
+        Array [
+          "args",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1024,
@@ -57,9 +77,14 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
-      "TypeParameters": Object {
-        "TValue": "TypeParameter-0",
-      },
+      "TypeParameters": Array [
+        Array [
+          "TValue",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",

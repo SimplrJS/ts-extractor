@@ -7,10 +7,20 @@ Object {
       "ApiKind": "source-file",
       "Kind": 265,
       "KindString": "SourceFile",
-      "Members": Object {
-        "Camera": "ClassDeclaration-0",
-        "Face": "InterfaceDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "Face",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "Camera",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -35,16 +45,26 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
-      "Members": Object {
-        "__constructor": "Constructor-0",
-        "foo": "MethodDeclaration-0",
-      },
+      "Members": Array [
+        Array [
+          "__constructor",
+          Array [
+            "Constructor-0",
+          ],
+        ],
+        Array [
+          "foo",
+          Array [
+            "MethodDeclaration-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Camera",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "Constructor-0": Object {
       "AccessModifier": "public",
@@ -56,29 +76,40 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__constructor",
-      "Parameters": Object {
-        "str": "Parameter-0",
-      },
+      "Parameters": Array [
+        Array [
+          "str",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
-      "Members": Object {
-        "foo": "MethodSignature-0",
-      },
+      "Members": Array [
+        Array [
+          "foo",
+          Array [
+            "MethodSignature-0",
+          ],
+        ],
+      ],
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
       },
       "Name": "Face",
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,
@@ -88,7 +119,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "foo",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -97,7 +128,7 @@ Object {
         "Name": undefined,
         "Text": "string",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
@@ -109,7 +140,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "foo",
-      "Parameters": Object {},
+      "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 1024,
@@ -118,7 +149,7 @@ Object {
         "Name": undefined,
         "Text": "void",
       },
-      "TypeParameters": Object {},
+      "TypeParameters": Array [],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
