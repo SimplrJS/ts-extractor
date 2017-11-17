@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "FunctionDeclaration-0": Object {
       "ApiKind": "function",
+      "IsAsync": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
       "Metadata": Object {
@@ -51,19 +52,6 @@ Object {
       },
       "TypeParameters": Array [],
     },
-    "InterfaceDeclaration-0": Object {
-      "ApiKind": "interface",
-      "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
-      "Members": Array [],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
-      "Name": "Array",
-      "TypeParameters": Array [],
-    },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "IsOptional": false,
@@ -76,7 +64,9 @@ Object {
       },
       "Name": "bar",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
             "ApiTypeKind": "basic",
@@ -88,7 +78,6 @@ Object {
           },
         ],
         "Name": "Array",
-        "ReferenceId": "InterfaceDeclaration-0",
         "Text": "string[]",
       },
     },

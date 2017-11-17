@@ -36,7 +36,9 @@ Object {
       "Name": "AsyncFoo",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
             "ApiTypeKind": "basic",
@@ -48,27 +50,8 @@ Object {
           },
         ],
         "Name": "Promise",
-        "ReferenceId": "InterfaceDeclaration-0",
         "Text": "Promise<void>",
       },
-      "TypeParameters": Array [],
-    },
-    "InterfaceDeclaration-0": Object {
-      "ApiKind": "interface",
-      "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
-      "Members": Array [],
-      "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Represents the completion of an asynchronous operation",
-          },
-        ],
-        "JSDocTags": Array [],
-      },
-      "Name": "Promise",
       "TypeParameters": Array [],
     },
   },
