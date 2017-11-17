@@ -7,5 +7,6 @@ export interface ApiClassMethodDto extends ApiCallableDto {
     AccessModifier: AccessModifier;
     IsOptional: boolean;
     IsAbstract: boolean;
+    IsAsync: boolean;
     IsStatic: boolean;
 }

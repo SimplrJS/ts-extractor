@@ -270,17 +270,7 @@ export namespace ApiHelpers {
             if (symbol.declarations != null && symbol.declarations.length > 0) {
                 const declaration: ts.Declaration = symbol.declarations[0];
 
-                let declarationId = options.Registry.GetDeclarationId(declaration);
-
-                if (declarationId == null) {
-                    const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, typeChecker);
-
-                    const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
-                    if (apiItem != null) {
-                        declarationId = options.AddItemToRegistry(apiItem);
-                    }
-                }
-
+                const declarationId = GetItemId(declaration, symbol, options);
                 if (declarationId != null) {
                     return {
                         ApiTypeKind: TypeKinds.Reference,

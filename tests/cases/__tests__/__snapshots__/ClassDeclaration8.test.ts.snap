@@ -126,6 +126,7 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
+      "IsAsync": false,
       "IsOptional": false,
       "IsStatic": false,
       "Kind": 151,

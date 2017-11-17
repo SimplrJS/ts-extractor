@@ -85,10 +85,14 @@
 //     Boos: string[];
 // }
 
-export interface Foo<TType> {
-    Name: string;
-    Surname: string;
-    Type: TType;
+// export interface Foo<TType> {
+//     Name: string;
+//     Surname: string;
+//     Type: TType;
+// }
+
+export async function GetFoo(): Promise<void> {
+    return;
 }
 
 // export interface Bar extends Foo<number>, Boo {
