@@ -28,7 +28,7 @@
         "@types/fs-extra": "^4.0.5",
         "fs-extra": "^4.0.2",
         "read-package-json": "^2.0.12",
-        "simplr-logger": "^0.3.0",
+        "simplr-logger": "^0.4.0",
         "tslint": "^5.8.0",
         "typescript": "^2.6.1"
     },
