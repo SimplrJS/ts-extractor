@@ -359,8 +359,6 @@ export namespace ApiHelpers {
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
         const fileName = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
 
-        debugger;
-
         return {
             FileName: StandardizeRelativePath(fileName, options),
             Line: position.line,
