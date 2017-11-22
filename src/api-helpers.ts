@@ -44,9 +44,12 @@ import { ApiFunctionType } from "./definitions/api-function-type";
 import { PathIsInside } from "./utils/path-is-inside";
 
 export namespace ApiHelpers {
-    // TODO: Add return dictionary of ApiItems.
-    export function VisitApiItem(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): ApiItem | undefined {
-        let apiItem: ApiItem | undefined;
+    export function VisitApiItem(
+        declaration: ts.Declaration,
+        symbol: ts.Symbol,
+        options: ApiItemOptions
+    ): ApiItem | ApiSourceFile | undefined {
+        let apiItem: ApiSourceFile | ApiItem | undefined;
         if (ts.isSourceFile(declaration)) {
             apiItem = new ApiSourceFile(declaration, symbol, options);
         } else if (ts.isExportDeclaration(declaration)) {
