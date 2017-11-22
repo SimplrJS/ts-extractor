@@ -40,13 +40,14 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
     public OnExtract(): ApiClassPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = this.GetDeclarationLocation();
-        
+
         return {
             ApiKind: ApiItemKinds.ClassProperty,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsReadonly: this.isReadonly,
