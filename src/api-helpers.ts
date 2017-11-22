@@ -16,6 +16,7 @@ import { TypeKinds } from "./contracts/type-kinds";
 import { AccessModifier } from "./contracts/access-modifier";
 import { TSHelpers } from "./ts-helpers";
 import { Logger } from "./utils/logger";
+import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiExport } from "./definitions/api-export";
@@ -332,5 +333,18 @@ export namespace ApiHelpers {
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
         const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
         Logger.Log(logLevel, `${linePrefix}: ${message}`);
+    }
+
+    export function GetApiItemLocationDtoFromDeclaration(declaration: ts.Declaration, options: ApiItemOptions): ApiItemLocationDto {
+        const sourceFile = declaration.getSourceFile();
+
+        const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
+        const fileName = path.relative(sourceFile.fileName, options.ExtractorOptions.ProjectDirectory);
+
+        return {
+            FileName: fileName,
+            Line: position.line,
+            Character: position.character
+        };
     }
 }
