@@ -15,6 +15,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ParameterDeclaration2.ts",
       "Path": "./cases/ParameterDeclaration2.ts",
     },

@@ -15,6 +15,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "IndexSignature1.ts",
       "Path": "./cases/IndexSignature1.ts",
     },

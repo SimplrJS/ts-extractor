@@ -29,6 +29,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "MultipleDeclaration.ts",
       "Path": "./cases/MultipleDeclaration.ts",
     },

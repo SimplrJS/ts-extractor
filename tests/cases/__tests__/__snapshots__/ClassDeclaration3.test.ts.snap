@@ -21,6 +21,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ClassDeclaration3.ts",
       "Path": "./cases/ClassDeclaration3.ts",
     },

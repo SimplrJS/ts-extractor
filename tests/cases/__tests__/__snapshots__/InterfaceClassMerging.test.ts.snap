@@ -40,6 +40,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceClassMerging.ts",
       "Path": "./cases/InterfaceClassMerging.ts",
     },

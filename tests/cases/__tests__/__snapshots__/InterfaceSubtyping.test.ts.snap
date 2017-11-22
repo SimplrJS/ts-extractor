@@ -21,6 +21,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceSubtyping.ts",
       "Path": "./cases/InterfaceSubtyping.ts",
     },

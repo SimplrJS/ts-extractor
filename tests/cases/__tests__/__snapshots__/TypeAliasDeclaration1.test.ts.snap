@@ -21,6 +21,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "TypeAliasDeclaration1.ts",
       "Path": "./cases/TypeAliasDeclaration1.ts",
     },

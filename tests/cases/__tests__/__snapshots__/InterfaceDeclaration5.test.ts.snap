@@ -15,6 +15,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "InterfaceDeclaration5.ts",
       "Path": "./cases/InterfaceDeclaration5.ts",
     },

@@ -21,6 +21,10 @@ Object {
           ],
         ],
       ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
       "Name": "ExportSpecifier2.ts",
       "Path": "./cases/ExportSpecifier2.ts",
     },
