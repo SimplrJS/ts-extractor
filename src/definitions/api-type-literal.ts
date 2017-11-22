@@ -20,7 +20,7 @@ export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDt
 
     public OnExtract(): ApiTypeLiteralDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = this.GetDeclarationLocation();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.TypeLiteral,

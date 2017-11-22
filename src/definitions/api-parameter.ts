@@ -28,7 +28,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
 
     public OnExtract(): ApiParameterDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = this.GetDeclarationLocation();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Parameter,

@@ -52,7 +52,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     public OnExtract(): ApiExportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const exportPath: string = this.getExportPath();
-        const location: ApiItemLocationDto = this.GetDeclarationLocation();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Export,

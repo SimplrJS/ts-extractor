@@ -6,7 +6,6 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ExtractorOptions } from "../contracts/extractor-options";
 import { ReadonlyRegistry } from "../contracts/registry";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiHelpers } from "../api-helpers";
 
 export interface ApiItemOptions {
     Program: ts.Program;
@@ -36,10 +35,6 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
             DocumentationComment: this.Symbol.getDocumentationComment(),
             JSDocTags: this.Symbol.getJsDocTags()
         };
-    }
-
-    protected GetDeclarationLocation(): ApiItemLocationDto {
-        return ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.declaration, this.options);
     }
 
     public get Options(): ApiItemOptions {

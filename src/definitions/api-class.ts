@@ -49,7 +49,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
 
     public OnExtract(): ApiClassDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = this.GetDeclarationLocation();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Class,

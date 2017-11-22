@@ -15,7 +15,7 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 export class ApiCall extends ApiCallableBase<ts.CallSignatureDeclaration, ApiCallDto> {
     public OnExtract(): ApiCallDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = this.GetDeclarationLocation();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Call,

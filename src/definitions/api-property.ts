@@ -24,7 +24,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
 
     public OnExtract(): ApiPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = this.GetDeclarationLocation();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Property,
