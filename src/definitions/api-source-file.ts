@@ -20,8 +20,8 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     }
 
     private getPath(): string {
-        return path.relative(this.Options.ExtractorOptions.ProjectDirectory, this.Declaration.fileName)
-            .split(path.sep).join(this.Options.ExtractorOptions.OutputPathSeparator);
+        const relativePath = path.relative(this.Options.ExtractorOptions.ProjectDirectory, this.Declaration.fileName);
+        return ApiHelpers.StandardizeRelativePath(relativePath, this.Options);
     }
 
     protected OnGatherData(): void {

@@ -24,10 +24,9 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
 
         const projectDirectory = this.Options.ExtractorOptions.ProjectDirectory;
         const declarationFileName = this.apiSourceFile.Declaration.fileName;
-        return path
-            .relative(projectDirectory, declarationFileName)
-            .split(path.sep)
-            .join("/");
+        const exportRelativePath = path.relative(projectDirectory, declarationFileName);
+
+        return ApiHelpers.StandardizeRelativePath(exportRelativePath, this.Options);
     }
 
     private members: ApiItemReferenceTuple = [];

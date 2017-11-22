@@ -338,14 +338,31 @@ export namespace ApiHelpers {
         Logger.Log(logLevel, `${linePrefix}: ${message}`);
     }
 
+    export function StandardizeRelativePath(location: string, options: ApiItemOptions): string {
+        const workingSep = options.ExtractorOptions.OutputPathSeparator;
+        const fixedLocation = location.split(path.sep).join(workingSep);
+
+        if ((path.isAbsolute(fixedLocation) && fixedLocation[0] !== workingSep) || fixedLocation[0] === ".") {
+            return fixedLocation;
+        }
+
+        if (fixedLocation[0] === workingSep) {
+            return `.${fixedLocation}`;
+        }
+
+        return `.${workingSep}${fixedLocation}`;
+    }
+
     export function GetApiItemLocationDtoFromDeclaration(declaration: ts.Declaration, options: ApiItemOptions): ApiItemLocationDto {
         const sourceFile = declaration.getSourceFile();
 
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-        const fileName = path.relative(sourceFile.fileName, options.ExtractorOptions.ProjectDirectory);
+        const fileName = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
+
+        debugger;
 
         return {
-            FileName: fileName,
+            FileName: StandardizeRelativePath(fileName, options),
             Line: position.line,
             Character: position.character
         };
