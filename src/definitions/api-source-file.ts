@@ -36,6 +36,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
             Name: this.getFileName(),
             Path: this.getPath(),
             Kind: this.Declaration.kind,
+            Metadata: metadata,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Members: this.members
         };
