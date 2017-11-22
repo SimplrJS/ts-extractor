@@ -15,12 +15,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "ClassDeclaration2.ts",
-      "Path": "cases/ClassDeclaration2.ts",
+      "Path": "./cases/ClassDeclaration2.ts",
     },
   ],
   "Registry": Object {
@@ -31,6 +27,11 @@ Object {
       "IsAbstract": true,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration2.ts",
+        "Line": 2,
+      },
       "Members": Array [
         Array [
           "SetFoo",
@@ -73,6 +74,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration2.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -105,6 +111,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration2.ts",
+        "Line": 5,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -127,6 +138,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 30,
+        "FileName": "./cases/ClassDeclaration2.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -150,6 +166,11 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration2.ts",
+        "Line": 9,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -173,6 +194,11 @@ Object {
       "IsStatic": true,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration2.ts",
+        "Line": 10,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

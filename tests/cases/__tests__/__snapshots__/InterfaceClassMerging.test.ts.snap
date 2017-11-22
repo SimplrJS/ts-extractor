@@ -40,12 +40,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "InterfaceClassMerging.ts",
-      "Path": "cases/InterfaceClassMerging.ts",
+      "Path": "./cases/InterfaceClassMerging.ts",
     },
   ],
   "Registry": Object {
@@ -56,6 +52,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 7,
+      },
       "Members": Array [
         Array [
           "additionalProperty",
@@ -90,6 +91,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 15,
+      },
       "Members": Array [
         Array [
           "method",
@@ -110,6 +116,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "method",
@@ -152,6 +163,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 10,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -184,6 +200,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 16,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -212,6 +233,11 @@ Object {
       "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -240,6 +266,11 @@ Object {
       "IsOptional": true,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -269,6 +300,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -289,6 +325,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -309,6 +350,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 10,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -329,6 +375,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 18,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 16,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -352,6 +403,11 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 8,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -371,6 +427,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -390,6 +451,11 @@ Object {
       "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 4,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -408,6 +474,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 21,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -426,6 +497,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 22,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -444,6 +520,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 23,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

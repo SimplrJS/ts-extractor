@@ -15,12 +15,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "IndexSignature2.ts",
-      "Path": "cases/IndexSignature2.ts",
+      "Path": "./cases/IndexSignature2.ts",
     },
   ],
   "Registry": Object {
@@ -29,6 +25,11 @@ Object {
       "IsReadonly": true,
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/IndexSignature2.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -49,6 +50,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/IndexSignature2.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "__index",
@@ -70,6 +76,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 14,
+        "FileName": "./cases/IndexSignature2.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

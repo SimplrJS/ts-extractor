@@ -29,12 +29,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "MultipleDeclaration.ts",
-      "Path": "cases/MultipleDeclaration.ts",
+      "Path": "./cases/MultipleDeclaration.ts",
     },
   ],
   "Registry": Object {
@@ -45,6 +41,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 11,
+      },
       "Members": Array [
         Array [
           "b",
@@ -74,6 +75,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 15,
+      },
       "Members": Array [
         Array [
           "b",
@@ -101,6 +107,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 7,
+      },
       "Members": Array [
         Array [
           "a",
@@ -128,6 +139,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 19,
+      },
       "Members": Array [
         Array [
           "a",
@@ -154,6 +170,11 @@ Object {
       "ApiKind": "namespace",
       "Kind": 233,
       "KindString": "ModuleDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 0,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -170,6 +191,11 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 12,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -193,6 +219,11 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 16,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -212,6 +243,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 8,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -231,6 +267,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 20,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -251,6 +292,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 21,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 7,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -263,6 +309,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 17,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 11,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -275,6 +326,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 17,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 15,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -287,6 +343,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 21,
+        "FileName": "./cases/MultipleDeclaration.ts",
+        "Line": 19,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

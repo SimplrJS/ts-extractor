@@ -15,12 +15,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "VariableDeclaration3.ts",
-      "Path": "cases/VariableDeclaration3.ts",
+      "Path": "./cases/VariableDeclaration3.ts",
     },
   ],
   "Registry": Object {
@@ -28,6 +24,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./cases/VariableDeclaration3.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

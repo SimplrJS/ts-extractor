@@ -21,12 +21,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "InterfaceDeclaration3.ts",
-      "Path": "cases/InterfaceDeclaration3.ts",
+      "Path": "./cases/InterfaceDeclaration3.ts",
     },
   ],
   "Registry": Object {
@@ -35,6 +31,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration3.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "x",
@@ -62,6 +63,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration3.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -81,6 +87,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 25,
+        "FileName": "./cases/InterfaceDeclaration3.ts",
+        "Line": 0,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -91,6 +102,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./cases/InterfaceDeclaration3.ts",
+        "Line": 4,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

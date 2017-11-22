@@ -15,12 +15,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "FunctionDeclaration1.ts",
-      "Path": "cases/FunctionDeclaration1.ts",
+      "Path": "./cases/FunctionDeclaration1.ts",
     },
   ],
   "Registry": Object {
@@ -29,6 +25,11 @@ Object {
       "IsAsync": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration1.ts",
+        "Line": 0,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

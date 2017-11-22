@@ -15,12 +15,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "InterfaceDeclaration2.ts",
-      "Path": "cases/InterfaceDeclaration2.ts",
+      "Path": "./cases/InterfaceDeclaration2.ts",
     },
   ],
   "Registry": Object {
@@ -29,6 +25,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration2.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "Bar",
@@ -49,6 +50,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 2,
+        "FileName": "./cases/InterfaceDeclaration2.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

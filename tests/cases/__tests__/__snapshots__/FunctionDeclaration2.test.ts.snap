@@ -15,12 +15,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "FunctionDeclaration2.ts",
-      "Path": "cases/FunctionDeclaration2.ts",
+      "Path": "./cases/FunctionDeclaration2.ts",
     },
   ],
   "Registry": Object {
@@ -29,6 +25,11 @@ Object {
       "IsAsync": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration2.ts",
+        "Line": 0,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -65,6 +66,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/FunctionDeclaration2.ts",
+        "Line": 0,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -84,6 +90,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./cases/FunctionDeclaration2.ts",
+        "Line": 0,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

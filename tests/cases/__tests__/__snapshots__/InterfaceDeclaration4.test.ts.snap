@@ -63,12 +63,8 @@ Object {
           ],
         ],
       ],
-      "Metadata": Object {
-        "DocumentationComment": Array [],
-        "JSDocTags": Array [],
-      },
       "Name": "InterfaceDeclaration4.ts",
-      "Path": "cases/InterfaceDeclaration4.ts",
+      "Path": "./cases/InterfaceDeclaration4.ts",
     },
   ],
   "Registry": Object {
@@ -76,6 +72,11 @@ Object {
       "ApiKind": "call",
       "Kind": 155,
       "KindString": "CallSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -96,6 +97,11 @@ Object {
       "ApiKind": "call",
       "Kind": 155,
       "KindString": "CallSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -146,6 +152,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 42,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -158,6 +169,11 @@ Object {
       "ApiKind": "construct",
       "Kind": 156,
       "KindString": "ConstructSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 4,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -169,6 +185,11 @@ Object {
       "ApiKind": "construct",
       "Kind": 156,
       "KindString": "ConstructSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 5,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -187,6 +208,11 @@ Object {
       "ApiKind": "function",
       "Kind": 160,
       "KindString": "FunctionType",
+      "Location": Object {
+        "Character": 17,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 7,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -208,6 +234,11 @@ Object {
       "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 7,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -227,6 +258,11 @@ Object {
       "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 8,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -247,6 +283,11 @@ Object {
       "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 23,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -267,6 +308,11 @@ Object {
       "IsReadonly": false,
       "Kind": 157,
       "KindString": "IndexSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 27,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -287,6 +333,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "__call",
@@ -376,6 +427,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 22,
+      },
       "Members": Array [
         Array [
           "__index",
@@ -396,6 +452,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 26,
+      },
       "Members": Array [
         Array [
           "__index",
@@ -416,6 +477,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 30,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -437,6 +503,11 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 33,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -465,6 +536,11 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 36,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -486,6 +562,11 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 39,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -499,6 +580,11 @@ Object {
       "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 14,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -527,6 +613,11 @@ Object {
       "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 16,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -548,6 +639,11 @@ Object {
       "IsOptional": true,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 17,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -569,6 +665,11 @@ Object {
       "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 18,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -597,6 +698,11 @@ Object {
       "IsOptional": true,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 19,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -626,6 +732,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -646,6 +757,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -666,6 +782,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 27,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -686,6 +807,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -706,6 +832,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 5,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -726,6 +857,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 7,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -746,6 +882,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 8,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -766,6 +907,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 7,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 14,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -786,6 +932,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 7,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 18,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -806,6 +957,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 19,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -826,6 +982,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 23,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -845,6 +1006,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 10,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -864,6 +1030,11 @@ Object {
       "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 11,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -883,6 +1054,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 12,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -902,6 +1078,11 @@ Object {
       "IsOptional": true,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 13,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -920,6 +1101,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 45,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
