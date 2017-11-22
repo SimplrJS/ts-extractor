@@ -1,9 +1,12 @@
-import { ApiBaseItemDto } from "../api-base-item-dto";
+import * as ts from "typescript";
 import { ApiItemReferenceTuple } from "../api-item-reference-tuple";
 import { ApiItemKinds } from "../api-item-kinds";
 
-export interface ApiSourceFileDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.SourceFile;
+export interface ApiSourceFileDto {
+    Name: string;
+    Kind: ts.SyntaxKind;
+    KindString: string;
     Path: string;
+    ApiKind: ApiItemKinds.SourceFile;
     Members: ApiItemReferenceTuple;
 }

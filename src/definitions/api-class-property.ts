@@ -8,6 +8,7 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { AccessModifier } from "../contracts/access-modifier";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPropertyDto> {
     private accessModifier: AccessModifier;
@@ -38,7 +39,8 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
 
     public OnExtract(): ApiClassPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
+        
         return {
             ApiKind: ApiItemKinds.ClassProperty,
             Name: this.Symbol.name,

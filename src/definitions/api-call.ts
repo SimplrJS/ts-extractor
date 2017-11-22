@@ -10,10 +10,12 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiCall extends ApiCallableBase<ts.CallSignatureDeclaration, ApiCallDto> {
     public OnExtract(): ApiCallDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Call,
@@ -21,6 +23,7 @@ export class ApiCall extends ApiCallableBase<ts.CallSignatureDeclaration, ApiCal
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType,
             TypeParameters: this.TypeParameters

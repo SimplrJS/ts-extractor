@@ -8,6 +8,7 @@ import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
     /**
@@ -34,6 +35,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
 
     public OnExtract(): ApiInterfaceDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Interface,
@@ -41,6 +43,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Members: this.members,
             Extends: this.extends,
             TypeParameters: this.typeParameters

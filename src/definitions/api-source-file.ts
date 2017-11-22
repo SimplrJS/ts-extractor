@@ -10,6 +10,7 @@ import { ApiHelpers } from "../api-helpers";
 
 import { ApiVariable } from "./api-variable";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     private members: ApiItemReferenceTuple;
@@ -36,7 +37,6 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
             Path: this.getPath(),
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
-            Metadata: metadata,
             Members: this.members
         };
     }

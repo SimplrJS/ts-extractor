@@ -8,6 +8,7 @@ import { ApiEnumDto } from "../contracts/definitions/api-enum-dto";
 import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
     private members: ApiItemReferenceTuple = [];
@@ -19,6 +20,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
 
     public OnExtract(): ApiEnumDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Enum,
@@ -26,6 +28,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Members: this.members
         };
     }

@@ -7,6 +7,7 @@ import { ApiPropertyDto } from "../contracts/definitions/api-property-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
     private type: TypeDto;
@@ -23,6 +24,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
 
     public OnExtract(): ApiPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Property,
@@ -30,6 +32,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             IsOptional: this.isOptional,
             Type: this.type
         };

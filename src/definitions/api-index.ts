@@ -12,6 +12,7 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto> {
     private parameter: string;
@@ -59,6 +60,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
 
     public OnExtract(): ApiIndexDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Index,
@@ -66,6 +68,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Parameter: this.parameter,
             IsReadonly: this.isReadonly,
             Type: this.type

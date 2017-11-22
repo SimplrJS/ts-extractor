@@ -6,6 +6,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiEnumMemberDto } from "../contracts/definitions/api-enum-member-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
     public GetValue(): string {
@@ -35,6 +36,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
 
     public OnExtract(): ApiEnumMemberDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
         const value: string = this.GetValue();
 
         return {
@@ -43,6 +45,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Value: value
         };
     }

@@ -11,6 +11,7 @@ import { TypeDto } from "../contracts/type-dto";
 
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiConstructDto> {
     private parameters: ApiItemReferenceTuple = [];
@@ -21,6 +22,7 @@ export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiC
 
     public OnExtract(): ApiConstructDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Construct,
@@ -28,6 +30,7 @@ export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiC
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Parameters: this.parameters
         };
     }

@@ -5,6 +5,8 @@ import { ApiBaseItemDto } from "../contracts/api-base-item-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ExtractorOptions } from "../contracts/extractor-options";
 import { ReadonlyRegistry } from "../contracts/registry";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiHelpers } from "../api-helpers";
 
 export interface ApiItemOptions {
     Program: ts.Program;
@@ -20,7 +22,7 @@ export enum ApiItemStatus {
     GatheredAndExtracted = Gathered | Extracted
 }
 
-export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
+export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
     constructor(private declaration: TDeclaration, private symbol: ts.Symbol, private options: ApiItemOptions) {
         this.TypeChecker = options.Program.getTypeChecker();
     }
@@ -34,6 +36,10 @@ export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBa
             DocumentationComment: this.Symbol.getDocumentationComment(),
             JSDocTags: this.Symbol.getJsDocTags()
         };
+    }
+
+    protected GetDeclarationLocation(): ApiItemLocationDto {
+        return ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.declaration, this.options);
     }
 
     public get Options(): ApiItemOptions {

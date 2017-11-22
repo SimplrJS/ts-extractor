@@ -12,6 +12,7 @@ import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     private getExportPath(): string {
@@ -51,6 +52,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     public OnExtract(): ApiExportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const exportPath: string = this.getExportPath();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Export,
@@ -58,6 +60,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Members: this.members,
             ExportPath: exportPath
         };

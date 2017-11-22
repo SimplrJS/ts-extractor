@@ -7,6 +7,7 @@ import { ApiVariableDto, ApiVariableDeclarationType } from "../contracts/definit
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
     private type: TypeDto;
@@ -37,6 +38,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
 
     public OnExtract(): ApiVariableDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Variable,
@@ -44,6 +46,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             VariableDeclarationType: this.variableDeclarationType,
             Type: this.type
         };

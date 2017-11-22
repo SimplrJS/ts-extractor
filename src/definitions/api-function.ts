@@ -10,6 +10,7 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunctionDto> {
     private isAsync: boolean;
@@ -23,6 +24,7 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
 
     public OnExtract(): ApiFunctionDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = this.GetDeclarationLocation();
 
         return {
             ApiKind: ApiItemKinds.Function,
@@ -30,6 +32,7 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             TypeParameters: this.TypeParameters,
             Parameters: this.Parameters,
             IsAsync: this.isAsync,
