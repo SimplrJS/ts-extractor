@@ -11,6 +11,7 @@
     "scripts": {
         "pretest": "npm run build -- --noEmit && npm run build-tests",
         "test": "npm run tslint && jest && echo All tests passed successfully.",
+        "pretest-ci": "npm run pretest",
         "test-ci": "npm run tslint && npm run jest && echo All tests passed successfully.",
         "jest": "jest --maxWorkers=4",
         "tslint": "tslint --project . --config ./tslint.json && echo Successfully passed tslint test.",
