@@ -40,7 +40,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
 
         /**
          * Type
-         * type Could be undefined, but getTypeFromTypeNode handles undefined and returns `any` type.
+         * getTypeFromTypeNode method handles undefined and returns `any` type.
          */
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type!);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
