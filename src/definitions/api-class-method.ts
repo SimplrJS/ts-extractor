@@ -12,6 +12,7 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiClassMethodDto> {
     private accessModifier: AccessModifier;
@@ -39,6 +40,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
 
     public OnExtract(): ApiClassMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ClassMethod,
@@ -46,6 +48,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType,
             AccessModifier: this.accessModifier,

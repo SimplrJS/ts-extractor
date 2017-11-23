@@ -20,7 +20,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration1.ts",
-      "Path": "cases/ClassDeclaration1.ts",
+      "Path": "./cases/ClassDeclaration1.ts",
     },
   ],
   "Registry": Object {
@@ -31,6 +31,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 6,
+      },
       "Members": Array [
         Array [
           "SetFoo",
@@ -90,6 +95,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 11,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [
           Object {
@@ -127,6 +137,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 17,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [
           Object {
@@ -173,6 +188,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 21,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [
           Object {
@@ -212,6 +232,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 25,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -243,6 +268,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 22,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 11,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [
           Object {
@@ -268,6 +298,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 18,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 17,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [
           Object {
@@ -296,6 +331,11 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 31,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [
           Object {
@@ -329,6 +369,11 @@ Object {
       "IsStatic": true,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 32,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

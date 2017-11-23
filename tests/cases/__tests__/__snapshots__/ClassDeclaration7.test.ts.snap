@@ -20,7 +20,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration7.ts",
-      "Path": "cases/ClassDeclaration7.ts",
+      "Path": "./cases/ClassDeclaration7.ts",
     },
   ],
   "Registry": Object {
@@ -31,6 +31,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration7.ts",
+        "Line": 2,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],
@@ -52,6 +57,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 22,
+        "FileName": "./cases/ClassDeclaration7.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

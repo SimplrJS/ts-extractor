@@ -7,6 +7,7 @@ import { ApiParameterDto } from "../contracts/definitions/api-parameter-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterDto> {
     private type: TypeDto;
@@ -27,6 +28,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
 
     public OnExtract(): ApiParameterDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Parameter,
@@ -34,6 +36,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             IsOptional: this.isOptional,
             IsSpread: this.isSpread,
             Type: this.type

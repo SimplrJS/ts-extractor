@@ -20,7 +20,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration1.ts",
-      "Path": "cases/InterfaceDeclaration1.ts",
+      "Path": "./cases/InterfaceDeclaration1.ts",
     },
   ],
   "Registry": Object {
@@ -29,6 +29,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration1.ts",
+        "Line": 0,
+      },
       "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": Array [],

@@ -20,7 +20,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ParameterDeclaration1.ts",
-      "Path": "cases/ParameterDeclaration1.ts",
+      "Path": "./cases/ParameterDeclaration1.ts",
     },
   ],
   "Registry": Object {
@@ -29,6 +29,11 @@ Object {
       "IsAsync": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ParameterDeclaration1.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -58,6 +63,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/ParameterDeclaration1.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

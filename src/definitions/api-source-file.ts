@@ -10,6 +10,7 @@ import { ApiHelpers } from "../api-helpers";
 
 import { ApiVariable } from "./api-variable";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     private members: ApiItemReferenceTuple;
@@ -19,8 +20,8 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     }
 
     private getPath(): string {
-        return path.relative(this.Options.ExtractorOptions.ProjectDirectory, this.Declaration.fileName)
-            .split(path.sep).join(this.Options.ExtractorOptions.OutputPathSeparator);
+        const relativePath = path.relative(this.Options.ExtractorOptions.ProjectDirectory, this.Declaration.fileName);
+        return ApiHelpers.StandardizeRelativePath(relativePath, this.Options);
     }
 
     protected OnGatherData(): void {
@@ -35,8 +36,8 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
             Name: this.getFileName(),
             Path: this.getPath(),
             Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            KindString: ts.SyntaxKind[this.Declaration.kind],
             Members: this.members
         };
     }

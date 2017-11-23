@@ -16,6 +16,7 @@ import { TypeKinds } from "./contracts/type-kinds";
 import { AccessModifier } from "./contracts/access-modifier";
 import { TSHelpers } from "./ts-helpers";
 import { Logger } from "./utils/logger";
+import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiExport } from "./definitions/api-export";
@@ -43,9 +44,12 @@ import { ApiFunctionType } from "./definitions/api-function-type";
 import { PathIsInside } from "./utils/path-is-inside";
 
 export namespace ApiHelpers {
-    // TODO: Add return dictionary of ApiItems.
-    export function VisitApiItem(declaration: ts.Declaration, symbol: ts.Symbol, options: ApiItemOptions): ApiItem | undefined {
-        let apiItem: ApiItem | undefined;
+    export function VisitApiItem(
+        declaration: ts.Declaration,
+        symbol: ts.Symbol,
+        options: ApiItemOptions
+    ): ApiItem | ApiSourceFile | undefined {
+        let apiItem: ApiSourceFile | ApiItem | undefined;
         if (ts.isSourceFile(declaration)) {
             apiItem = new ApiSourceFile(declaration, symbol, options);
         } else if (ts.isExportDeclaration(declaration)) {
@@ -332,5 +336,33 @@ export namespace ApiHelpers {
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
         const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
         Logger.Log(logLevel, `${linePrefix}: ${message}`);
+    }
+
+    export function StandardizeRelativePath(location: string, options: ApiItemOptions): string {
+        const workingSep = options.ExtractorOptions.OutputPathSeparator;
+        const fixedLocation = location.split(path.sep).join(workingSep);
+
+        if ((path.isAbsolute(fixedLocation) && fixedLocation[0] !== workingSep) || fixedLocation[0] === ".") {
+            return fixedLocation;
+        }
+
+        if (fixedLocation[0] === workingSep) {
+            return `.${fixedLocation}`;
+        }
+
+        return `.${workingSep}${fixedLocation}`;
+    }
+
+    export function GetApiItemLocationDtoFromDeclaration(declaration: ts.Declaration, options: ApiItemOptions): ApiItemLocationDto {
+        const sourceFile = declaration.getSourceFile();
+
+        const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
+        const fileName = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
+
+        return {
+            FileName: StandardizeRelativePath(fileName, options),
+            Line: position.line,
+            Character: position.character
+        };
     }
 }

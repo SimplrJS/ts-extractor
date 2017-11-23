@@ -56,7 +56,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration3.ts",
-      "Path": "cases/TypeAliasDeclaration3.ts",
+      "Path": "./cases/TypeAliasDeclaration3.ts",
     },
   ],
   "Registry": Object {
@@ -65,6 +65,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 4,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -84,6 +89,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 5,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -102,6 +112,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 9,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -120,6 +135,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 18,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -138,6 +158,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 19,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -157,6 +182,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 23,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -175,6 +205,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 24,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -193,6 +228,11 @@ Object {
       "ApiKind": "type",
       "Kind": 231,
       "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -226,6 +266,11 @@ Object {
       "ApiKind": "type",
       "Kind": 231,
       "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 8,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -259,6 +304,11 @@ Object {
       "ApiKind": "type",
       "Kind": 231,
       "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 12,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -311,6 +361,11 @@ Object {
       "ApiKind": "type",
       "Kind": 231,
       "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 17,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -344,6 +399,11 @@ Object {
       "ApiKind": "type",
       "Kind": 231,
       "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 22,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -377,6 +437,11 @@ Object {
       "ApiKind": "type",
       "Kind": 231,
       "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 27,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -429,6 +494,11 @@ Object {
       "ApiKind": "type",
       "Kind": 231,
       "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 29,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -481,6 +551,11 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 3,
+      },
       "Members": Array [
         Array [
           "BarName",
@@ -505,6 +580,11 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 8,
+      },
       "Members": Array [
         Array [
           "BazName",
@@ -523,6 +603,11 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 17,
+      },
       "Members": Array [
         Array [
           "BarName",
@@ -547,6 +632,11 @@ Object {
       "ApiKind": "type-literal",
       "Kind": 163,
       "KindString": "TypeLiteral",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 22,
+      },
       "Members": Array [
         Array [
           "BarName",
@@ -573,6 +663,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -585,6 +680,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 8,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -597,6 +697,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 17,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -609,6 +714,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 22,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

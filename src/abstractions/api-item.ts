@@ -5,12 +5,13 @@ import { ApiBaseItemDto } from "../contracts/api-base-item-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ExtractorOptions } from "../contracts/extractor-options";
 import { ReadonlyRegistry } from "../contracts/registry";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export interface ApiItemOptions {
     Program: ts.Program;
     ExtractorOptions: ExtractorOptions;
     Registry: ReadonlyRegistry<ApiItem>;
-    AddItemToRegistry(item: ApiItem): string;
+    AddItemToRegistry(item: ApiItem<ts.Declaration, any>): string;
 }
 
 export enum ApiItemStatus {
@@ -20,7 +21,7 @@ export enum ApiItemStatus {
     GatheredAndExtracted = Gathered | Extracted
 }
 
-export abstract class ApiItem<TDeclaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
+export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
     constructor(private declaration: TDeclaration, private symbol: ts.Symbol, private options: ApiItemOptions) {
         this.TypeChecker = options.Program.getTypeChecker();
     }

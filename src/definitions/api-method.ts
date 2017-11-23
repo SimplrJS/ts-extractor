@@ -11,6 +11,7 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto> {
     private isOptional: boolean;
@@ -24,6 +25,7 @@ export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto>
 
     public OnExtract(): ApiMethodDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Method,
@@ -31,6 +33,7 @@ export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto>
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType,
             IsOptional: this.isOptional,
