@@ -1,24 +1,13 @@
-<p>
-    <a href="https://npmjs.org/package/ts-extractor">
-        <img src="https://img.shields.io/npm/v/ts-extractor.svg?style=flat-square" alt="version" />
-    </a>
-    <a href="https://travis-ci.org/SimplrJS/ts-extractor">
-        <img src="https://img.shields.io/travis/SimplrJS/ts-extractor.svg?style=flat-square" alt="build" />
-    </a>
-    <a href="https://david-dm.org/simplrjs/ts-extractor">
-        <img src="https://img.shields.io/david/SimplrJS/ts-extractor.svg?style=flat-square" alt="dependencies" />
-    </a>
-    <a href="https://david-dm.org/simplrjs/ts-extractor?type=dev">
-        <img src="https://img.shields.io/david/dev/SimplrJS/ts-extractor.svg?style=flat-square" alt="devDependencies" />
-    </a>
-    <a href="https://npmjs.org/package/ts-extractor">
-        <img src="https://img.shields.io/npm/l/ts-extractor.svg?style=flat-square" alt="license" />
-    </a>
-</p>
+# ts-extractor
 
-<h1 align="center">ts-extractor</h1>
+[![NPM version](https://img.shields.io/npm/v/ts-extractor.svg)](https://www.npmjs.com/package/ts-extractor)
+[![Build Status](https://travis-ci.org/SimplrJS/ts-extractor.svg?branch=master)](https://travis-ci.org/SimplrJS/ts-extractor)
+[![Coverage Status](https://coveralls.io/repos/github/SimplrJS/ts-extractor/badge.svg?branch=master)](https://coveralls.io/github/SimplrJS/ts-extractor?branch=master)
+[![dependencies Status](https://david-dm.org/SimplrJS/ts-extractor/status.svg)](https://david-dm.org/SimplrJS/ts-extractor)
+[![devDependencies Status](https://david-dm.org/SimplrJS/ts-extractor/dev-status.svg)](https://david-dm.org/SimplrJS/ts-extractor?type=dev)
+[![devDependencies Status](https://img.shields.io/npm/l/ts-extractor.svg)](https://npmjs.org/package/ts-extractor)
 
-TypeScript AST extractor to useful structs.
+TypeScript AST extractor to useful JSON structure.
 
 The purpose of this package is to extract AST into flat JSON structures.
 

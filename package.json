@@ -1,7 +1,15 @@
 {
     "name": "ts-extractor",
     "version": "1.0.0",
-    "description": "",
+    "description": "TypeScript AST extractor to useful JSON structure.",
+    "keywords": [
+        "typescript",
+        "extractor",
+        "ast",
+        "abstract",
+        "syntax",
+        "tree"
+    ],
     "main": "index.js",
     "types": "./dist/index.d.ts",
     "repository": {
@@ -10,7 +18,12 @@
     },
     "scripts": {
         "pretest": "npm run build -- --noEmit && npm run build-tests",
-        "test": "jest",
+        "test": "npm run tslint && jest && echo All tests passed successfully.",
+        "pretest-ci": "npm run pretest",
+        "test-ci": "npm run tslint && npm run jest && echo All tests passed successfully.",
+        "jest": "jest --maxWorkers=4",
+        "tslint": "tslint --project . --config ./tslint.json && echo Successfully passed tslint test.",
+        "coveralls": "coveralls < coverage/lcov.info",
         "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
         "build": "tsc -p .",
         "build-watch": "npm run build -- -w",
@@ -19,9 +32,9 @@
     },
     "author": "SimplrJS <simplr@quatrodev.com> (https://github.com/simplrjs)",
     "contributors": [
-        "Giedrius Grabauskas <giedrius@quatrodev.com>",
-        "Martynas Žilinskas <martynas@quatrodev.com>",
-        "Dovydas Navickas <dovydas@quatrodev.com>"
+        "Giedrius Grabauskas <giedrius@quatrodev.com> (https://github.com/GiedriusGrabauskas)",
+        "Martynas Žilinskas <martynas@quatrodev.com> (https://github.com/MartynasZilinskas)",
+        "Dovydas Navickas <dovydas@quatrodev.com> (https://github.com/DovydasNavickas)"
     ],
     "license": "AGPL",
     "dependencies": {
@@ -29,19 +42,21 @@
         "fs-extra": "^4.0.2",
         "read-package-json": "^2.0.12",
         "simplr-logger": "^0.4.0",
-        "tslint": "^5.8.0",
         "typescript": "^2.6.1"
     },
     "devDependencies": {
         "@types/globby": "^6.1.0",
-        "@types/jest": "^21.1.6",
+        "@types/jest": "^21.1.8",
         "@types/sinon": "^4.0.0",
-        "globby": "^7.0.0",
+        "coveralls": "^3.0.0",
+        "globby": "^7.1.1",
         "jest": "^21.2.1",
         "rimraf": "^2.6.2",
+        "simplr-tslint": "0.0.1",
         "sinon": "^4.1.2",
         "ts-jest": "^21.2.3",
-        "ts-node": "^3.3.0"
+        "ts-node": "^3.3.0",
+        "tslint": "^5.8.0"
     },
     "files": [
         "dist",
@@ -50,6 +65,8 @@
         "!/examples"
     ],
     "jest": {
+        "collectCoverage": true,
+        "mapCoverage": true,
         "transform": {
             ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
@@ -63,6 +80,10 @@
         "moduleNameMapper": {
             "@src/(.*)": "<rootDir>/src/$1"
         },
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "/tests/"
+        ],
         "moduleFileExtensions": [
             "ts",
             "tsx",

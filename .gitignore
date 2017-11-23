@@ -263,3 +263,5 @@ dist
 **/webpack.config.js
 
 **/*.js.map
+
+coverage
