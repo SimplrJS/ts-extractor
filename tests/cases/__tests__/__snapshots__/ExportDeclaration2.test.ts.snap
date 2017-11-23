@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExportDeclaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "__export",
+          Array [
+            "ExportDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "ExportDeclaration2.ts",
+      "Path": "./cases/ExportDeclaration2.ts",
+    },
+  ],
+  "Registry": Object {
+    "ExportDeclaration-0": Object {
+      "ApiKind": "export",
+      "ExportPath": undefined,
+      "Kind": 244,
+      "KindString": "ExportDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ExportDeclaration2.ts",
+        "Line": 1,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__export",
+    },
+  },
+}
+`;

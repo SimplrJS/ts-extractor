@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NamespaceDeclaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "ModuleDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "NamespaceDeclaration2.ts",
+      "Path": "./cases/NamespaceDeclaration2.ts",
+    },
+  ],
+  "Registry": Object {
+    "ModuleDeclaration-0": Object {
+      "ApiKind": "namespace",
+      "Kind": 233,
+      "KindString": "ModuleDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/NamespaceDeclaration2.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "Bar",
+          Array [
+            "ModuleDeclaration-1",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+    },
+    "ModuleDeclaration-1": Object {
+      "ApiKind": "namespace",
+      "Kind": 233,
+      "KindString": "ModuleDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/NamespaceDeclaration2.ts",
+        "Line": 1,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+    },
+  },
+}
+`;

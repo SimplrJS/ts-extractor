@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexSignature3 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "IndexSignature3.ts",
+      "Path": "./cases/IndexSignature3.ts",
+    },
+  ],
+  "Registry": Object {
+    "IndexSignature-0": Object {
+      "ApiKind": "index",
+      "IsReadonly": false,
+      "Kind": 157,
+      "KindString": "IndexSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/IndexSignature3.ts",
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__index",
+      "Parameter": undefined,
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+    "IndexSignature-1": Object {
+      "ApiKind": "index",
+      "IsReadonly": false,
+      "Kind": 157,
+      "KindString": "IndexSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/IndexSignature3.ts",
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "__index",
+      "Parameter": "Parameter-2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1,
+        "FlagsString": "Any",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "any",
+      },
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/IndexSignature3.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "__index",
+          Array [
+            "IndexSignature-0",
+            "IndexSignature-1",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Array [],
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/IndexSignature3.ts",
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "key",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 18,
+        "FileName": "./cases/IndexSignature3.ts",
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "key2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/IndexSignature3.ts",
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "number",
+      },
+    },
+  },
+}
+`;

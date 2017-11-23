@@ -9,25 +9,28 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
+
     public GetValue(): string {
-        const firstToken: ts.Node | undefined = this.Declaration ? this.Declaration.getFirstToken() : undefined;
-        const lastToken: ts.Node | undefined = this.Declaration ? this.Declaration.getLastToken() : undefined;
-        const declaration: ts.EnumMember = this.Declaration;
-        /**
-         * TODO: Find a way to get value from this enum:
-         * ```tsx
-         * export enum ListOfItems {
-         *     First,
-         *     Second,
-         *     Third
-         * }
-         * ```
-         */
-        if (lastToken == null || lastToken === firstToken) {
-            return "";
+        for (const item of this.Declaration.getChildren()) {
+            if (ts.isNumericLiteral(item) ||
+                ts.isStringLiteral(item) ||
+                ts.isBinaryExpression(item)) {
+                return item.getText();
+            }
         }
 
-        return lastToken.getText();
+        let valueIndex: string | undefined;
+        if (this.Declaration.parent != null) {
+            const parentChildren = this.Declaration.parent.members;
+            for (const index in parentChildren) {
+                if (parentChildren.hasOwnProperty(index) &&
+                    parentChildren[index] === this.Declaration) {
+                    valueIndex = index;
+                }
+            }
+        }
+
+        return valueIndex || "";
     }
 
     protected OnGatherData(): void {
