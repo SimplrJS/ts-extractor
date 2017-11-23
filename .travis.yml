@@ -11,7 +11,7 @@ branches:
 node_js:
 - "node"
 script:
-- npm test
+- npm test -- --maxWorkers=4
 after_script:
 - npm run coveralls
 deploy:
