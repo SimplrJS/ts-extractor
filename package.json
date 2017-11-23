@@ -15,7 +15,7 @@
         "test-ci": "npm run tslint && npm run jest && echo All tests passed successfully.",
         "jest": "jest --maxWorkers=4",
         "tslint": "tslint --project . --config ./tslint.json && echo Successfully passed tslint test.",
-        "coveralls": "coveralls",
+        "coveralls": "coveralls < coverage/lcov.info",
         "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
         "build": "tsc -p .",
         "build-watch": "npm run build -- -w",
