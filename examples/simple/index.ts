@@ -87,10 +87,12 @@
 //     Trecias
 // }
 
-export interface Boo {
-    [key: string]: string[];
-    Boos: string[];
-}
+export namespace Foo { }
+
+// export interface Boo {
+//     [key: string]: string[];
+//     Boos: string[];
+// }
 
 // export interface Foo<TType> {
 //     Name: string;

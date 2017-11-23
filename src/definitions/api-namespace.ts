@@ -13,10 +13,6 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto>
     private members: ApiItemReferenceTuple = [];
 
     protected OnGatherData(): void {
-        if (this.Symbol.exports == null) {
-            return;
-        }
-
         // Members
         this.members = ApiHelpers.GetItemsIdsFromSymbols(this.Symbol.exports, this.Options);
     }
