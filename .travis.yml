@@ -12,6 +12,8 @@ node_js:
 - "node"
 script:
 - npm test
+after_script:
+- npm run coveralls
 deploy:
   provider: npm
   email: dovydas@quatrodev.com
