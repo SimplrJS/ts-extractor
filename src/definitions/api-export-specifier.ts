@@ -12,36 +12,33 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpecifierDto> {
-    private targetSymbol: ts.Symbol | undefined;
     private apiItems: ApiExportSpecifierApiItems;
 
-    private getApiItems(): ApiExportSpecifierApiItems {
+    private getApiItems(targetSymbol: ts.Symbol | undefined): ApiExportSpecifierApiItems {
         const apiItems: ApiExportSpecifierApiItems = [];
-        if (this.targetSymbol == null || this.targetSymbol.declarations == null) {
+        if (targetSymbol == null || targetSymbol.declarations == null) {
             return undefined;
         }
 
-        this.targetSymbol.declarations.forEach(declaration => {
+        targetSymbol.declarations.forEach(declaration => {
             const symbol = TSHelpers.GetSymbolFromDeclaration(declaration, this.TypeChecker);
-            if (symbol == null) {
-                return;
-            }
 
-            const itemId = ApiHelpers.GetItemId(declaration, symbol, this.Options);
-            if (itemId == null) {
-                return;
-            }
+            if (symbol != null) {
+                const itemId = ApiHelpers.GetItemId(declaration, symbol, this.Options);
 
-            apiItems.push(itemId);
+                if (itemId != null) {
+                    apiItems.push(itemId);
+                }
+            }
         });
 
         return apiItems;
     }
 
     protected OnGatherData(): void {
-        this.targetSymbol = this.TypeChecker.getExportSpecifierLocalTargetSymbol(this.Declaration);
+        const targetSymbol = this.TypeChecker.getExportSpecifierLocalTargetSymbol(this.Declaration);
 
-        this.apiItems = this.getApiItems();
+        this.apiItems = this.getApiItems(targetSymbol);
     }
 
     public OnExtract(): ApiExportSpecifierDto {

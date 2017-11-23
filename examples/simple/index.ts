@@ -6,17 +6,11 @@
 /**
  * Defines logging severity levels.
  */
-export enum LogLevel {
-    None,
-    Critical,
-    Error,
-    Warning,
-    Information,
-    Debug,
-    Trace
-}
 
-// import { MyInterface } from "./my-types";
+
+export { MyInterface } from "./my-types";
+// @ts-ignore
+export { NotValid } from "./aaa";
 
 // export function Foo(): string {
 //     return "foo";
