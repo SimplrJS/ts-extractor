@@ -11,7 +11,7 @@
     "scripts": {
         "pretest": "npm run build -- --noEmit && npm run build-tests",
         "test": "npm run tslint && npm run jest && echo All tests passed successfully.",
-        "jest": "npm run jest",
+        "jest": "jest",
         "tslint": "tslint --project . --config ./tslint.json && echo Successfully passed tslint test.",
         "coveralls": "coveralls",
         "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
