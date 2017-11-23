@@ -32,7 +32,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration8.ts",
-      "Path": "cases/ClassDeclaration8.ts",
+      "Path": "./cases/ClassDeclaration8.ts",
     },
   ],
   "Registry": Object {
@@ -43,6 +43,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration8.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "state",
@@ -79,6 +84,11 @@ Object {
       "IsAbstract": false,
       "Kind": 229,
       "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration8.ts",
+        "Line": 8,
+      },
       "Members": Array [
         Array [
           "select",
@@ -107,6 +117,11 @@ Object {
       ],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration8.ts",
+        "Line": 4,
+      },
       "Members": Array [
         Array [
           "select",
@@ -131,6 +146,11 @@ Object {
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration8.ts",
+        "Line": 9,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -152,6 +172,11 @@ Object {
       "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration8.ts",
+        "Line": 5,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -177,6 +202,11 @@ Object {
       "IsStatic": false,
       "Kind": 149,
       "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration8.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

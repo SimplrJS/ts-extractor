@@ -6,27 +6,31 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiEnumMemberDto } from "../contracts/definitions/api-enum-member-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
+
     public GetValue(): string {
-        const firstToken: ts.Node | undefined = this.Declaration ? this.Declaration.getFirstToken() : undefined;
-        const lastToken: ts.Node | undefined = this.Declaration ? this.Declaration.getLastToken() : undefined;
-        const declaration: ts.EnumMember = this.Declaration as ts.EnumMember;
-        /**
-         * TODO: Find a way to get value from this enum:
-         * ```tsx
-         * export enum ListOfItems {
-         *     First,
-         *     Second,
-         *     Third
-         * }
-         * ```
-         */
-        if (lastToken == null || lastToken === firstToken) {
-            return "";
+        for (const item of this.Declaration.getChildren()) {
+            if (ts.isNumericLiteral(item) ||
+                ts.isStringLiteral(item) ||
+                ts.isBinaryExpression(item)) {
+                return item.getText();
+            }
         }
 
-        return lastToken.getText();
+        let valueIndex: string | undefined;
+        if (this.Declaration.parent != null) {
+            const parentChildren = this.Declaration.parent.members;
+            for (const index in parentChildren) {
+                if (parentChildren.hasOwnProperty(index) &&
+                    parentChildren[index] === this.Declaration) {
+                    valueIndex = index;
+                }
+            }
+        }
+
+        return valueIndex || "";
     }
 
     protected OnGatherData(): void {
@@ -35,6 +39,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
 
     public OnExtract(): ApiEnumMemberDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
         const value: string = this.GetValue();
 
         return {
@@ -43,6 +48,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
+            Location: location,
             Value: value
         };
     }

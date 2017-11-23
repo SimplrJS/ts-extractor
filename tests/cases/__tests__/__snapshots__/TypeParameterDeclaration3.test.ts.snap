@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeParameterDeclaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "FunctionDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TypeParameterDeclaration3.ts",
+      "Path": "./cases/TypeParameterDeclaration3.ts",
+    },
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "IsAsync": false,
+      "Kind": 228,
+      "KindString": "FunctionDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeParameterDeclaration3.ts",
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "Parameters": Array [
+        Array [
+          "a",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1024,
+        "FlagsString": "Void",
+        "Generics": undefined,
+        "Name": undefined,
+        "Text": "void",
+      },
+      "TypeParameters": Array [
+        Array [
+          "TValue",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 48,
+        "FileName": "./cases/TypeParameterDeclaration3.ts",
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Generics": undefined,
+        "Name": "TValue",
+        "ReferenceId": "TypeParameter-0",
+        "Text": "TValue",
+      },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": undefined,
+        "Name": "Date",
+        "Text": "Date",
+      },
+      "DefaultType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": undefined,
+        "Name": "Date",
+        "Text": "Date",
+      },
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./cases/TypeParameterDeclaration3.ts",
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
+    },
+  },
+}
+`;

@@ -26,7 +26,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ExportSpecifier2.ts",
-      "Path": "cases/ExportSpecifier2.ts",
+      "Path": "./cases/ExportSpecifier2.ts",
     },
   ],
   "Registry": Object {
@@ -37,6 +37,11 @@ Object {
       "ApiKind": "export-specifier",
       "Kind": 246,
       "KindString": "ExportSpecifier",
+      "Location": Object {
+        "Character": 9,
+        "FileName": "./cases/ExportSpecifier2.ts",
+        "Line": 0,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -50,6 +55,11 @@ Object {
       "ApiKind": "export-specifier",
       "Kind": 246,
       "KindString": "ExportSpecifier",
+      "Location": Object {
+        "Character": 14,
+        "FileName": "./cases/ExportSpecifier2.ts",
+        "Line": 0,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -61,6 +71,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration4.ts",
+        "Line": 2,
+      },
       "Members": Array [
         Array [
           "Bar",
@@ -81,6 +96,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration4.ts",
+        "Line": 6,
+      },
       "Members": Array [
         Array [
           "Bar2",
@@ -101,6 +121,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration4.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -120,6 +145,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration4.ts",
+        "Line": 7,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

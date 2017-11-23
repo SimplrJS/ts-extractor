@@ -32,7 +32,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration4.ts",
-      "Path": "cases/VariableDeclaration4.ts",
+      "Path": "./cases/VariableDeclaration4.ts",
     },
   ],
   "Registry": Object {
@@ -41,6 +41,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/VariableDeclaration4.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "b",
@@ -61,6 +66,11 @@ Object {
       "IsOptional": false,
       "Kind": 148,
       "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/VariableDeclaration4.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -79,6 +89,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./cases/VariableDeclaration4.ts",
+        "Line": 4,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -97,6 +112,11 @@ Object {
       "ApiKind": "variable",
       "Kind": 226,
       "KindString": "VariableDeclaration",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./cases/VariableDeclaration4.ts",
+        "Line": 8,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

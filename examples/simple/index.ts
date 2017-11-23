@@ -1,6 +1,12 @@
 // tslint:disable
 
-// import { MyInterface } from "./my-types";
+
+// Enum with specified value.
+
+/**
+ * Defines logging severity levels.
+ */
+
 
 // export function Foo(): string {
 //     return "foo";
@@ -81,7 +87,10 @@
 //     Trecias
 // }
 
+export namespace Foo { }
+
 // export interface Boo {
+//     [key: string]: string[];
 //     Boos: string[];
 // }
 
@@ -91,9 +100,9 @@
 //     Type: TType;
 // }
 
-export async function GetFoo(): Promise<void> {
-    return;
-}
+// export async function GetFoo(): Promise<void> {
+//     return;
+// }
 
 // export interface Bar extends Foo<number>, Boo {
 //     OtherStuff: string[];

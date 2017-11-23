@@ -253,7 +253,6 @@ paket-files/
 yarn.lock
 
 dist
-package-lock.json
 
 # MacOS
 .DS_Store
@@ -264,3 +263,5 @@ package-lock.json
 **/webpack.config.js
 
 **/*.js.map
+
+coverage

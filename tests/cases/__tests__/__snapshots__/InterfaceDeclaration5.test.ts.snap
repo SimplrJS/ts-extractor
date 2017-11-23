@@ -20,7 +20,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration5.ts",
-      "Path": "cases/InterfaceDeclaration5.ts",
+      "Path": "./cases/InterfaceDeclaration5.ts",
     },
   ],
   "Registry": Object {
@@ -28,6 +28,11 @@ Object {
       "ApiKind": "call",
       "Kind": 155,
       "KindString": "CallSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration5.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -62,6 +67,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration5.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "__call",
@@ -83,6 +93,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./cases/InterfaceDeclaration5.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -102,6 +117,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./cases/InterfaceDeclaration5.ts",
+        "Line": 1,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],

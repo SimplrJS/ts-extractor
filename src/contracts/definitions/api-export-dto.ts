@@ -5,5 +5,5 @@ import { ApiItemKinds } from "../api-item-kinds";
 export interface ApiExportDto extends ApiBaseItemDto {
     ApiKind: ApiItemKinds.Export;
     Members: ApiItemReferenceTuple;
-    ExportPath: string;
+    ExportPath: string | undefined;
 }

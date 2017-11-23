@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NamespaceDeclaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "ModuleDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "NamespaceDeclaration1.ts",
+      "Path": "./cases/NamespaceDeclaration1.ts",
+    },
+  ],
+  "Registry": Object {
+    "ModuleDeclaration-0": Object {
+      "ApiKind": "namespace",
+      "Kind": 233,
+      "KindString": "ModuleDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/NamespaceDeclaration1.ts",
+        "Line": 0,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+    },
+  },
+}
+`;

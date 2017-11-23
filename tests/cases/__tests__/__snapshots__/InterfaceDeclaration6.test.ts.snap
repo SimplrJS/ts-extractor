@@ -20,7 +20,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration6.ts",
-      "Path": "cases/InterfaceDeclaration6.ts",
+      "Path": "./cases/InterfaceDeclaration6.ts",
     },
   ],
   "Registry": Object {
@@ -29,6 +29,11 @@ Object {
       "Extends": Array [],
       "Kind": 230,
       "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration6.ts",
+        "Line": 2,
+      },
       "Members": Array [
         Array [
           "Bar",
@@ -56,6 +61,11 @@ Object {
       "IsOptional": false,
       "Kind": 150,
       "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration6.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -92,6 +102,11 @@ Object {
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
+      "Location": Object {
+        "Character": 16,
+        "FileName": "./cases/InterfaceDeclaration6.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -112,6 +127,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./cases/InterfaceDeclaration6.ts",
+        "Line": 3,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
@@ -124,6 +144,11 @@ Object {
       "DefaultType": undefined,
       "Kind": 145,
       "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 21,
+        "FileName": "./cases/InterfaceDeclaration6.ts",
+        "Line": 2,
+      },
       "Metadata": Object {
         "DocumentationComment": Array [],
         "JSDocTags": Array [],
