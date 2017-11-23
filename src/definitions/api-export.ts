@@ -15,11 +15,10 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
-    private getExportPath(): string {
+    private getExportPath(): string | undefined {
         if (this.apiSourceFile == null) {
             ApiHelpers.LogWithDeclarationPosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
-            // This should not happen, because we run Semantic Diagnostics before extraction.
-            throw new Error("Exported source file is not found!");
+            return undefined;
         }
 
         const projectDirectory = this.Options.ExtractorOptions.ProjectDirectory;
@@ -35,22 +34,22 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     protected OnGatherData(): void {
         // Extract members from Source file.
         const sourceFileDeclaration = TSHelpers.GetSourceFileFromExport(this.Declaration, this.Options.Program);
-        if (sourceFileDeclaration == null) {
-            return;
-        }
-        const sourceFileSymbol = TSHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
-        if (sourceFileSymbol == null) {
-            return;
-        }
-        this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, this.Options);
-        this.apiSourceFile.GatherData();
 
-        this.members = this.apiSourceFile.OnExtract().Members;
+        if (sourceFileDeclaration != null) {
+            const sourceFileSymbol = TSHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
+
+            if (sourceFileSymbol != null) {
+                this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, this.Options);
+                this.apiSourceFile.GatherData();
+
+                this.members = this.apiSourceFile.OnExtract().Members;
+            }
+        }
     }
 
     public OnExtract(): ApiExportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const exportPath: string = this.getExportPath();
+        const exportPath: string | undefined = this.getExportPath();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
