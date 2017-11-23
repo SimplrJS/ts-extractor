@@ -11,7 +11,7 @@ branches:
 node_js:
 - "node"
 script:
-- npm test-ci
+- npm run test-ci
 after_script:
 - npm run coveralls
 deploy:
