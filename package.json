@@ -10,7 +10,8 @@
     },
     "scripts": {
         "pretest": "npm run build -- --noEmit && npm run build-tests",
-        "test": "jest",
+        "test": "npm run tslint && jest",
+        "tslint": "tslint --project . --config ./tslint.json",
         "coveralls": "coveralls",
         "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
         "build": "tsc -p .",
@@ -30,7 +31,6 @@
         "fs-extra": "^4.0.2",
         "read-package-json": "^2.0.12",
         "simplr-logger": "^0.4.0",
-        "tslint": "^5.8.0",
         "typescript": "^2.6.1"
     },
     "devDependencies": {
@@ -41,9 +41,11 @@
         "globby": "^7.1.1",
         "jest": "^21.2.1",
         "rimraf": "^2.6.2",
+        "simplr-tslint": "0.0.1",
         "sinon": "^4.1.2",
         "ts-jest": "^21.2.3",
-        "ts-node": "^3.3.0"
+        "ts-node": "^3.3.0",
+        "tslint": "^5.8.0"
     },
     "files": [
         "dist",
