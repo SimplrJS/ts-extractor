@@ -1,5 +1,21 @@
 // tslint:disable
 
+
+// Enum with specified value.
+
+/**
+ * Defines logging severity levels.
+ */
+export enum LogLevel {
+    None,
+    Critical,
+    Error,
+    Warning,
+    Information,
+    Debug,
+    Trace
+}
+
 // import { MyInterface } from "./my-types";
 
 // export function Foo(): string {
@@ -91,9 +107,9 @@
 //     Type: TType;
 // }
 
-export async function GetFoo(): Promise<void> {
-    return;
-}
+// export async function GetFoo(): Promise<void> {
+//     return;
+// }
 
 // export interface Bar extends Foo<number>, Boo {
 //     OtherStuff: string[];

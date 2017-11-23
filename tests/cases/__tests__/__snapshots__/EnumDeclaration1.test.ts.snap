@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EnumDeclaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 265,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "LogLevel",
+          Array [
+            "EnumDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "EnumDeclaration1.ts",
+      "Path": "./cases/EnumDeclaration1.ts",
+    },
+  ],
+  "Registry": Object {
+    "EnumDeclaration-0": Object {
+      "ApiKind": "enum",
+      "Kind": 232,
+      "KindString": "EnumDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 2,
+      },
+      "Members": Array [
+        Array [
+          "None",
+          Array [
+            "EnumMember-0",
+          ],
+        ],
+        Array [
+          "Critical",
+          Array [
+            "EnumMember-1",
+          ],
+        ],
+        Array [
+          "Error",
+          Array [
+            "EnumMember-2",
+          ],
+        ],
+        Array [
+          "Warning",
+          Array [
+            "EnumMember-3",
+          ],
+        ],
+        Array [
+          "Information",
+          Array [
+            "EnumMember-4",
+          ],
+        ],
+        Array [
+          "Debug",
+          Array [
+            "EnumMember-5",
+          ],
+        ],
+        Array [
+          "Trace",
+          Array [
+            "EnumMember-6",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "LogLevel",
+    },
+    "EnumMember-0": Object {
+      "ApiKind": "enum-member",
+      "Kind": 264,
+      "KindString": "EnumMember",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "None",
+      "Value": "0",
+    },
+    "EnumMember-1": Object {
+      "ApiKind": "enum-member",
+      "Kind": 264,
+      "KindString": "EnumMember",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Critical",
+      "Value": "1",
+    },
+    "EnumMember-2": Object {
+      "ApiKind": "enum-member",
+      "Kind": 264,
+      "KindString": "EnumMember",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Error",
+      "Value": "2",
+    },
+    "EnumMember-3": Object {
+      "ApiKind": "enum-member",
+      "Kind": 264,
+      "KindString": "EnumMember",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 6,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Warning",
+      "Value": "3",
+    },
+    "EnumMember-4": Object {
+      "ApiKind": "enum-member",
+      "Kind": 264,
+      "KindString": "EnumMember",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Information",
+      "Value": "4",
+    },
+    "EnumMember-5": Object {
+      "ApiKind": "enum-member",
+      "Kind": 264,
+      "KindString": "EnumMember",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Debug",
+      "Value": "5",
+    },
+    "EnumMember-6": Object {
+      "ApiKind": "enum-member",
+      "Kind": 264,
+      "KindString": "EnumMember",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "Line": 9,
+      },
+      "Metadata": Object {
+        "DocumentationComment": Array [],
+        "JSDocTags": Array [],
+      },
+      "Name": "Trace",
+      "Value": "6",
+    },
+  },
+}
+`;
