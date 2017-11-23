@@ -2,6 +2,14 @@
     "name": "ts-extractor",
     "version": "1.0.0",
     "description": "TypeScript AST extractor to useful JSON structure.",
+    "keywords": [
+        "typescript",
+        "extractor",
+        "ast",
+        "abstract",
+        "syntax",
+        "tree"
+    ],
     "main": "index.js",
     "types": "./dist/index.d.ts",
     "repository": {
