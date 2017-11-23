@@ -99,7 +99,7 @@ export namespace ApiHelpers {
         }
 
         if (apiItem != null && apiItem.IsPrivate()) {
-            return;
+            return undefined;
         }
 
         if (apiItem == null) {

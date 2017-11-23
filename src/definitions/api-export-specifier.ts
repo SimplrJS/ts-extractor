@@ -18,7 +18,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
     private getApiItems(): ApiExportSpecifierApiItems {
         const apiItems: ApiExportSpecifierApiItems = [];
         if (this.targetSymbol == null || this.targetSymbol.declarations == null) {
-            return;
+            return undefined;
         }
 
         this.targetSymbol.declarations.forEach(declaration => {
