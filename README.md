@@ -7,7 +7,7 @@
 [![devDependencies Status](https://david-dm.org/SimplrJS/ts-extractor/dev-status.svg)](https://david-dm.org/SimplrJS/ts-extractor?type=dev)
 [![devDependencies Status](https://img.shields.io/npm/l/ts-extractor.svg)](https://npmjs.org/package/ts-extractor)
 
-TypeScript AST extractor to useful structs.
+TypeScript AST extractor to useful JSON structure.
 
 The purpose of this package is to extract AST into flat JSON structures.
 
