@@ -8,10 +8,6 @@
  */
 
 
-export { MyInterface } from "./my-types";
-// @ts-ignore
-export { NotValid } from "./aaa";
-
 // export function Foo(): string {
 //     return "foo";
 // }
@@ -91,9 +87,10 @@ export { NotValid } from "./aaa";
 //     Trecias
 // }
 
-// export interface Boo {
-//     Boos: string[];
-// }
+export interface Boo {
+    [key: string]: string[];
+    Boos: string[];
+}
 
 // export interface Foo<TType> {
 //     Name: string;
