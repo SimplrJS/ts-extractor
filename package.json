@@ -10,7 +10,8 @@
     },
     "scripts": {
         "pretest": "npm run build -- --noEmit && npm run build-tests",
-        "test": "npm run tslint && jest",
+        "test": "npm run tslint && npm run jest && echo All tests passed successfully.",
+        "jest": "npm run jest",
         "tslint": "tslint --project . --config ./tslint.json && echo Successfully passed tslint test.",
         "coveralls": "coveralls",
         "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
@@ -21,9 +22,9 @@
     },
     "author": "SimplrJS <simplr@quatrodev.com> (https://github.com/simplrjs)",
     "contributors": [
-        "Giedrius Grabauskas <giedrius@quatrodev.com>",
-        "Martynas Žilinskas <martynas@quatrodev.com>",
-        "Dovydas Navickas <dovydas@quatrodev.com>"
+        "Giedrius Grabauskas <giedrius@quatrodev.com> (https://github.com/GiedriusGrabauskas)",
+        "Martynas Žilinskas <martynas@quatrodev.com> (https://github.com/MartynasZilinskas)",
+        "Dovydas Navickas <dovydas@quatrodev.com> (https://github.com/DovydasNavickas)"
     ],
     "license": "AGPL",
     "dependencies": {
