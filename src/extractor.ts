@@ -61,7 +61,7 @@ export class Extractor {
                 getCurrentDirectory: () => this.Options.ProjectDirectory,
                 getNewLine: () => os.EOL
             });
-            Logger.Log(LogLevel.Error, str);
+            Logger.Error(str);
             throw new Error("TypeScript compilation errors. Please fix them before using extractor.");
         }
 
@@ -75,7 +75,7 @@ export class Extractor {
             const symbol = typeChecker.getSymbolAtLocation(sourceFile);
 
             if (symbol == null) {
-                Logger.Log(LogLevel.Warning, `Source file "${fileName}" is skipped, because no exported members were found.`);
+                Logger.Warn(`Source file "${fileName}" is skipped, because no exported members were found.`);
                 return;
             }
 
