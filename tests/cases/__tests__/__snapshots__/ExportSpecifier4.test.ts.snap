@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [

@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -90,7 +90,7 @@ Object {
     },
     "EnumMember-0": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -111,7 +111,7 @@ Object {
     },
     "EnumMember-1": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -133,7 +133,7 @@ or a catastrophic failure that requires immediate attention.",
     },
     "EnumMember-2": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -155,7 +155,7 @@ These should indicate a failure in the current activity, not an application-wide
     },
     "EnumMember-3": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -177,7 +177,7 @@ but do not otherwise cause the application execution to stop.",
     },
     "EnumMember-4": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -198,7 +198,7 @@ but do not otherwise cause the application execution to stop.",
     },
     "EnumMember-5": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -220,7 +220,7 @@ These logs should primarily contain information useful for debugging and have no
     },
     "EnumMember-6": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
