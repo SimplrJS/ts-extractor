@@ -5,6 +5,7 @@
         "removeComments": false,
         "outDir": "dist",
         "rootDir": "src",
+        "noUnusedLocals": true,
         "inlineSourceMap": true,
         "inlineSources": true,
         "skipDefaultLibCheck": true,

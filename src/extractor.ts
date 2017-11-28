@@ -2,13 +2,11 @@ import * as ts from "typescript";
 import * as os from "os";
 import * as fs from "fs-extra";
 import * as path from "path";
-import { LogLevel } from "simplr-logger";
 
 import { Logger } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItem } from "./abstractions/api-item";
 import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
-import { ApiBaseItemDto } from "./contracts/api-base-item-dto";
 import { ExtractorOptions } from "./contracts/extractor-options";
 import { ApiRegistry, ExtractedApiRegistry } from "./api-registry";
 

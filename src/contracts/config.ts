@@ -1,4 +1,3 @@
-import * as fs from "fs-extra";
 import * as path from "path";
 
 export interface RawTsExtractorConfig extends Partial<TsExtractorConfig> {

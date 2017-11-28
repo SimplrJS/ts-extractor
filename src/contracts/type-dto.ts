@@ -1,6 +1,5 @@
 import * as ts from "typescript";
 
-import { ApiItemKinds } from "./api-item-kinds";
 import { TypeKinds } from "./type-kinds";
 
 export interface BaseTypeDto {

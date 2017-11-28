@@ -1,11 +1,10 @@
 import * as ts from "typescript";
-import { Dictionary } from "./dictionary";
 
 export interface ReadonlyRegistry<TItem> {
     // Extraction
     Extract(): void;
 
-    // Existance checks
+    // Existence checks
     HasDeclaration(declaration: ts.Declaration | undefined): boolean;
 
     GetDeclarationId(declaration: ts.Declaration | undefined): string | undefined;
