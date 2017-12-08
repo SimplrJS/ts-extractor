@@ -48,7 +48,9 @@ Object {
         ],
       ],
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TValue",
         "ReferenceId": "TypeParameter-0",
@@ -105,7 +107,9 @@ Object {
       },
       "Name": "value",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TValue",
         "ReferenceId": "TypeParameter-0",

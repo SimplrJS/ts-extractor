@@ -67,7 +67,9 @@ Object {
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
       "Extends": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
             "ApiTypeKind": "basic",
@@ -75,6 +77,7 @@ Object {
             "FlagsString": "Number",
             "Generics": undefined,
             "Name": undefined,
+            "ReferenceId": undefined,
             "Text": "number",
           },
         ],
@@ -128,7 +131,9 @@ Object {
       "Name": "GetValue",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TValue",
         "ReferenceId": "TypeParameter-0",
@@ -163,6 +168,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
       "TypeParameters": Array [],

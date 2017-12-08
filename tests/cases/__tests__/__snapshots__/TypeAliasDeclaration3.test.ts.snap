@@ -81,6 +81,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -100,7 +101,9 @@ Object {
       },
       "Name": "FooName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-0",
@@ -123,7 +126,9 @@ Object {
       },
       "Name": "BazName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-1",
@@ -146,7 +151,9 @@ Object {
       },
       "Name": "BarName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-2",
@@ -174,6 +181,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -193,7 +201,9 @@ Object {
       },
       "Name": "BarName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-3",
@@ -221,6 +231,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -239,10 +250,14 @@ Object {
       },
       "Name": "NoCommonFields1",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-0",
@@ -277,10 +292,14 @@ Object {
       },
       "Name": "NoCommonFields2",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-1",
@@ -318,11 +337,14 @@ Object {
         "ApiTypeKind": "union",
         "Flags": 65536,
         "FlagsString": "Union",
-        "Name": undefined,
+        "Name": "AnotherType",
+        "ReferenceId": "TypeAliasDeclaration-2",
         "Text": "AnotherType",
         "Types": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -330,6 +352,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -338,7 +361,9 @@ Object {
             "Text": "NoCommonFields1<number>",
           },
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -346,6 +371,7 @@ Object {
                 "FlagsString": "String",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "string",
               },
             ],
@@ -372,10 +398,14 @@ Object {
       },
       "Name": "OneCommonField1",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-2",
@@ -410,10 +440,14 @@ Object {
       },
       "Name": "OneCommonField2",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-3",
@@ -451,11 +485,14 @@ Object {
         "ApiTypeKind": "union",
         "Flags": 65536,
         "FlagsString": "Union",
-        "Name": undefined,
+        "Name": "OneCommonFieldTypeIntersection",
+        "ReferenceId": "TypeAliasDeclaration-5",
         "Text": "OneCommonFieldTypeIntersection",
         "Types": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -463,6 +500,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -471,7 +509,9 @@ Object {
             "Text": "OneCommonField1<number>",
           },
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -479,6 +519,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -508,11 +549,14 @@ Object {
         "ApiTypeKind": "intersection",
         "Flags": 131072,
         "FlagsString": "Intersection",
-        "Name": undefined,
+        "Name": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+        "ReferenceId": "TypeAliasDeclaration-6",
         "Text": "OneCommonFieldTypeIntersectionWithDifferentTypes",
         "Types": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -520,6 +564,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -528,7 +573,9 @@ Object {
             "Text": "OneCommonField1<number>",
           },
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -536,6 +583,7 @@ Object {
                 "FlagsString": "String",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "string",
               },
             ],

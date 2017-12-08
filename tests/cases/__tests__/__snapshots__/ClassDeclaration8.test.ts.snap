@@ -66,7 +66,9 @@ Object {
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
       "Extends": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": undefined,
         "Name": "Control",
         "ReferenceId": "ClassDeclaration-0",
@@ -74,7 +76,9 @@ Object {
       },
       "Implements": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "SelectableControl",
           "ReferenceId": "InterfaceDeclaration-0",
@@ -108,7 +112,9 @@ Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "Control",
           "ReferenceId": "ClassDeclaration-0",
@@ -164,6 +170,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [],
@@ -191,6 +198,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [],
@@ -220,6 +228,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
     },
