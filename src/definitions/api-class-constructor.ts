@@ -11,10 +11,15 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiClassConstructorDto> {
+    private isOverloadBase: boolean;
     private parameters: ApiItemReferenceTuple = [];
     private accessModifier: AccessModifier;
 
     protected OnGatherData(): void {
+        // Overload
+        this.isOverloadBase = this.TypeChecker.isImplementationOfOverload(this.Declaration) || false;
+
+        // Parameters
         this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
 
         // Modifiers
@@ -32,6 +37,7 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
+            IsOverloadBase: this.isOverloadBase,
             Parameters: this.parameters,
             AccessModifier: this.accessModifier
         };

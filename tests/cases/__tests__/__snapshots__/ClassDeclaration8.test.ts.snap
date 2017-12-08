@@ -28,7 +28,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration8.ts",
@@ -57,7 +57,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Control",
@@ -66,7 +66,9 @@ Object {
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
       "Extends": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": undefined,
         "Name": "Control",
         "ReferenceId": "ClassDeclaration-0",
@@ -74,7 +76,9 @@ Object {
       },
       "Implements": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "SelectableControl",
           "ReferenceId": "InterfaceDeclaration-0",
@@ -98,7 +102,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Button",
@@ -108,7 +112,9 @@ Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "Control",
           "ReferenceId": "ClassDeclaration-0",
@@ -131,7 +137,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "SelectableControl",
@@ -143,6 +149,7 @@ Object {
       "IsAbstract": false,
       "IsAsync": false,
       "IsOptional": false,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -152,7 +159,7 @@ Object {
         "Line": 9,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "select",
@@ -163,6 +170,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [],
@@ -170,6 +178,7 @@ Object {
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -178,7 +187,7 @@ Object {
         "Line": 5,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "select",
@@ -189,6 +198,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [],
@@ -208,7 +218,7 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "state",
@@ -218,6 +228,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
     },

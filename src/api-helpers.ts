@@ -8,7 +8,6 @@ import { ApiItemReferenceTuple } from "./contracts/api-item-reference-tuple";
 import {
     TypeDto,
     TypeBasicDto,
-    TypeReferenceDto,
     TypeUnionOrIntersectionDto
 } from "./contracts/type-dto";
 import { TypeKinds } from "./contracts/type-kinds";
@@ -238,6 +237,18 @@ export namespace ApiHelpers {
         let kind = TypeKinds.Basic;
         let types: TypeDto[] | undefined;
         let name: string | undefined;
+        let referenceId: string | undefined;
+
+        // Find declaration reference.
+        if (symbol != null) {
+            name = symbol.getName();
+
+            if (symbol.declarations != null && symbol.declarations.length > 0) {
+                const declaration: ts.Declaration = symbol.declarations[0];
+
+                referenceId = GetItemId(declaration, symbol, options);
+            }
+        }
 
         // Generics
         if (TSHelpers.IsTypeWithTypeArguments(type)) {
@@ -262,28 +273,9 @@ export namespace ApiHelpers {
                 FlagsString: ts.TypeFlags[type.flags],
                 Name: name,
                 Text: text,
-                Types: types
+                Types: types,
+                ReferenceId: referenceId
             } as TypeUnionOrIntersectionDto;
-        }
-
-        // Find declaration reference.
-        if (symbol != null) {
-            name = symbol.getName();
-
-            if (symbol.declarations != null && symbol.declarations.length > 0) {
-                const declaration: ts.Declaration = symbol.declarations[0];
-
-                const declarationId = GetItemId(declaration, symbol, options);
-                if (declarationId != null) {
-                    return {
-                        ApiTypeKind: TypeKinds.Reference,
-                        ReferenceId: declarationId,
-                        Name: name,
-                        Text: text,
-                        Generics: generics
-                    } as TypeReferenceDto;
-                }
-            }
         }
 
         // Basic
@@ -293,7 +285,8 @@ export namespace ApiHelpers {
             FlagsString: ts.TypeFlags[type.flags],
             Name: name,
             Text: text,
-            Generics: generics
+            Generics: generics,
+            ReferenceId: referenceId
         } as TypeBasicDto;
     }
 

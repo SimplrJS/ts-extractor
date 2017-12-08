@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration1.ts",
@@ -48,12 +48,13 @@ Object {
           Array [
             "MethodDeclaration-1",
             "MethodDeclaration-2",
+            "MethodDeclaration-3",
           ],
         ],
         Array [
           "AsyncGetFoo",
           Array [
-            "MethodDeclaration-3",
+            "MethodDeclaration-4",
           ],
         ],
         Array [
@@ -70,12 +71,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Class Foo comment line.",
-          },
-        ],
+        "DocumentationComment": "Class Foo comment line.",
         "JSDocTags": Array [
           Object {
             "name": "summary",
@@ -92,6 +88,7 @@ Object {
       "IsAbstract": false,
       "IsAsync": false,
       "IsOptional": true,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -101,12 +98,7 @@ Object {
         "Line": 11,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Sets foo.",
-          },
-        ],
+        "DocumentationComment": "Sets foo.",
         "JSDocTags": Array [],
       },
       "Name": "SetFoo",
@@ -124,6 +116,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [],
@@ -134,6 +127,7 @@ Object {
       "IsAbstract": false,
       "IsAsync": false,
       "IsOptional": false,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -143,27 +137,15 @@ Object {
         "Line": 17,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo without A parameter comment line.",
-          },
-        ],
+        "DocumentationComment": "GetFoo overload comment.
+GetFoo overload comment.
+GetFoo without A parameter comment line.",
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
       "Parameters": Array [
         Array [
-          "a",
+          "text",
           Array [
             "Parameter-1",
           ],
@@ -175,6 +157,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
       "TypeParameters": Array [],
@@ -185,40 +168,37 @@ Object {
       "IsAbstract": false,
       "IsAsync": false,
       "IsOptional": false,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
-        "Line": 21,
+        "Line": 22,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo without A parameter comment line.",
-          },
-        ],
+        "DocumentationComment": "GetFoo overload comment.
+GetFoo overload comment.
+GetFoo without A parameter comment line.",
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
-      "Parameters": Array [],
+      "Parameters": Array [
+        Array [
+          "open",
+          Array [
+            "Parameter-2",
+          ],
+        ],
+      ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
       "TypeParameters": Array [],
@@ -227,18 +207,60 @@ Object {
       "AccessModifier": "public",
       "ApiKind": "class-method",
       "IsAbstract": false,
-      "IsAsync": true,
-      "IsOptional": true,
+      "IsAsync": false,
+      "IsOptional": false,
+      "IsOverloadBase": true,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
-        "Line": 25,
+        "Line": 26,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "GetFoo overload comment.
+GetFoo overload comment.
+GetFoo without A parameter comment line.",
+        "JSDocTags": Array [],
+      },
+      "Name": "GetFoo",
+      "Parameters": Array [
+        Array [
+          "arg",
+          Array [
+            "Parameter-3",
+          ],
+        ],
+      ],
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+    },
+    "MethodDeclaration-4": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsAsync": true,
+      "IsOptional": true,
+      "IsOverloadBase": false,
+      "IsStatic": false,
+      "Kind": 151,
+      "KindString": "MethodDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 30,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "AsyncGetFoo",
@@ -254,10 +276,12 @@ Object {
             "FlagsString": "String",
             "Generics": undefined,
             "Name": undefined,
+            "ReferenceId": undefined,
             "Text": "string",
           },
         ],
         "Name": "Promise",
+        "ReferenceId": undefined,
         "Text": "Promise<string>",
       },
       "TypeParameters": Array [],
@@ -274,12 +298,7 @@ Object {
         "Line": 11,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "foo",
-          },
-        ],
+        "DocumentationComment": "foo",
         "JSDocTags": Array [],
       },
       "Name": "foo",
@@ -289,12 +308,13 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
-      "IsOptional": true,
+      "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
@@ -304,22 +324,117 @@ Object {
         "Line": 17,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo property comment.",
-          },
-        ],
+        "DocumentationComment": "GetFoo property comment.",
         "JSDocTags": Array [],
       },
-      "Name": "a",
+      "Name": "text",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
+      },
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 18,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 22,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "GetFoo property comment.",
+        "JSDocTags": Array [],
+      },
+      "Name": "open",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Flags": 65544,
+        "FlagsString": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "boolean",
+        "Types": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "true",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "false",
+          },
+        ],
+      },
+    },
+    "Parameter-3": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 18,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 26,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Flags": 65536,
+        "FlagsString": "Union",
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string | boolean",
+        "Types": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 2,
+            "FlagsString": "String",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "string",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "true",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "false",
+          },
+        ],
       },
     },
     "PropertyDeclaration-0": Object {
@@ -334,15 +449,10 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
-        "Line": 31,
+        "Line": 36,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Property Id comment line.",
-          },
-        ],
+        "DocumentationComment": "Property Id comment line.",
         "JSDocTags": Array [
           Object {
             "name": "readonly",
@@ -357,6 +467,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -372,10 +483,10 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
-        "Line": 32,
+        "Line": 37,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BarProperty",
@@ -385,6 +496,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },

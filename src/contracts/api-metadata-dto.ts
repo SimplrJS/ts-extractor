@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 
 export interface ApiMetadataDto {
-    DocumentationComment: DocumentationCommentsItem[];
+    DocumentationComment: string;
     JSDocTags: JSDocTagItem[];
 }
 

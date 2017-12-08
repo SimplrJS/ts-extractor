@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TypeParameterDeclaration2.ts",
@@ -27,6 +27,7 @@ Object {
     "FunctionDeclaration-0": Object {
       "ApiKind": "function",
       "IsAsync": false,
+      "IsOverloadBase": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
       "Location": Object {
@@ -35,7 +36,7 @@ Object {
         "Line": 0,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Foo",
@@ -53,6 +54,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [
@@ -76,12 +78,14 @@ Object {
         "Line": 0,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TValue",
         "ReferenceId": "TypeParameter-0",
@@ -96,6 +100,7 @@ Object {
         "FlagsString": "Object",
         "Generics": undefined,
         "Name": "Date",
+        "ReferenceId": undefined,
         "Text": "Date",
       },
       "DefaultType": undefined,
@@ -107,7 +112,7 @@ Object {
         "Line": 0,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TValue",

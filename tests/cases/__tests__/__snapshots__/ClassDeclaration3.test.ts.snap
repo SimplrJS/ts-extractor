@@ -22,7 +22,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration3.ts",
@@ -35,7 +35,9 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "Foo",
           "ReferenceId": "InterfaceDeclaration-0",
@@ -59,7 +61,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
@@ -84,7 +86,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Foo",
@@ -105,7 +107,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar",
@@ -115,6 +117,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -129,7 +132,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar",
@@ -139,6 +142,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },

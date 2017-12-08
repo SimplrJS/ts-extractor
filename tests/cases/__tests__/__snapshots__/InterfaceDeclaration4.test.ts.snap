@@ -64,7 +64,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration4.ts",
@@ -74,6 +74,7 @@ Object {
   "Registry": Object {
     "CallSignature-0": Object {
       "ApiKind": "call",
+      "IsOverloadBase": false,
       "Kind": 155,
       "KindString": "CallSignature",
       "Location": Object {
@@ -82,7 +83,7 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__call",
@@ -93,12 +94,14 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
       "TypeParameters": Array [],
     },
     "CallSignature-1": Object {
       "ApiKind": "call",
+      "IsOverloadBase": false,
       "Kind": 155,
       "KindString": "CallSignature",
       "Location": Object {
@@ -107,7 +110,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__call",
@@ -137,6 +140,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
       "TypeParameters": Array [],
@@ -146,7 +150,9 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "a",
           "ReferenceId": "InterfaceDeclaration-3",
@@ -163,7 +169,7 @@ Object {
       },
       "Members": Array [],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "c1",
@@ -171,6 +177,7 @@ Object {
     },
     "ConstructSignature-0": Object {
       "ApiKind": "construct",
+      "IsOverloadBase": false,
       "Kind": 156,
       "KindString": "ConstructSignature",
       "Location": Object {
@@ -179,7 +186,7 @@ Object {
         "Line": 4,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__new",
@@ -187,6 +194,7 @@ Object {
     },
     "ConstructSignature-1": Object {
       "ApiKind": "construct",
+      "IsOverloadBase": false,
       "Kind": 156,
       "KindString": "ConstructSignature",
       "Location": Object {
@@ -195,7 +203,7 @@ Object {
         "Line": 5,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__new",
@@ -210,6 +218,7 @@ Object {
     },
     "FunctionType-0": Object {
       "ApiKind": "function",
+      "IsOverloadBase": false,
       "Kind": 160,
       "KindString": "FunctionType",
       "Location": Object {
@@ -218,7 +227,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__type",
@@ -229,6 +238,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
       "TypeParameters": Array [],
@@ -244,13 +254,15 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__index",
       "Parameter": "Parameter-4",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": undefined,
         "Name": "__type",
         "ReferenceId": "FunctionType-0",
@@ -268,7 +280,7 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__index",
@@ -279,6 +291,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
     },
@@ -293,7 +306,7 @@ Object {
         "Line": 23,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__index",
@@ -304,6 +317,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -318,7 +332,7 @@ Object {
         "Line": 27,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__index",
@@ -329,6 +343,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -420,7 +435,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a0",
@@ -445,7 +460,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a1",
@@ -470,7 +485,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a2",
@@ -488,7 +503,7 @@ Object {
       },
       "Members": Array [],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a",
@@ -498,7 +513,9 @@ Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "a",
           "ReferenceId": "InterfaceDeclaration-3",
@@ -514,7 +531,7 @@ Object {
       },
       "Members": Array [],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "b",
@@ -524,14 +541,18 @@ Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "a",
           "ReferenceId": "InterfaceDeclaration-3",
           "Text": "a",
         },
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "b",
           "ReferenceId": "InterfaceDeclaration-4",
@@ -547,7 +568,7 @@ Object {
       },
       "Members": Array [],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "c",
@@ -557,7 +578,9 @@ Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "a",
           "ReferenceId": "InterfaceDeclaration-3",
@@ -573,7 +596,7 @@ Object {
       },
       "Members": Array [],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "d",
@@ -582,6 +605,7 @@ Object {
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -590,7 +614,7 @@ Object {
         "Line": 14,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "p5",
@@ -608,6 +632,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
       "TypeParameters": Array [],
@@ -615,6 +640,7 @@ Object {
     "MethodSignature-1": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -623,7 +649,7 @@ Object {
         "Line": 16,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "f1",
@@ -634,6 +660,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
       "TypeParameters": Array [],
@@ -641,6 +668,7 @@ Object {
     "MethodSignature-2": Object {
       "ApiKind": "method",
       "IsOptional": true,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -649,7 +677,7 @@ Object {
         "Line": 17,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "f2",
@@ -660,6 +688,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
       "TypeParameters": Array [],
@@ -667,6 +696,7 @@ Object {
     "MethodSignature-3": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -675,7 +705,7 @@ Object {
         "Line": 18,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "f3",
@@ -693,6 +723,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
       "TypeParameters": Array [],
@@ -700,6 +731,7 @@ Object {
     "MethodSignature-4": Object {
       "ApiKind": "method",
       "IsOptional": true,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -708,7 +740,7 @@ Object {
         "Line": 19,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "f4",
@@ -726,6 +758,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
       "TypeParameters": Array [],
@@ -742,7 +775,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a",
@@ -752,6 +785,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
     },
@@ -767,7 +801,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "b",
@@ -777,6 +811,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
     },
@@ -792,7 +827,7 @@ Object {
         "Line": 27,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "s",
@@ -802,6 +837,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -817,7 +853,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "c",
@@ -827,6 +863,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -842,7 +879,7 @@ Object {
         "Line": 5,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "s",
@@ -852,6 +889,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -867,7 +905,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "n",
@@ -877,6 +915,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -892,7 +931,7 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "s",
@@ -902,6 +941,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -917,7 +957,7 @@ Object {
         "Line": 14,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "s",
@@ -927,6 +967,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -942,7 +983,7 @@ Object {
         "Line": 18,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a",
@@ -952,6 +993,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -967,7 +1009,7 @@ Object {
         "Line": 19,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "s",
@@ -977,6 +1019,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -992,7 +1035,7 @@ Object {
         "Line": 23,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "n",
@@ -1002,6 +1045,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -1016,7 +1060,7 @@ Object {
         "Line": 10,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "p1",
@@ -1026,6 +1070,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
     },
@@ -1040,7 +1085,7 @@ Object {
         "Line": 11,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "p3",
@@ -1050,6 +1095,7 @@ Object {
         "FlagsString": "Any",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "any",
       },
     },
@@ -1064,7 +1110,7 @@ Object {
         "Line": 12,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "p2",
@@ -1074,6 +1120,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -1088,7 +1135,7 @@ Object {
         "Line": 13,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "p4",
@@ -1098,6 +1145,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -1111,12 +1159,14 @@ Object {
         "Line": 45,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "instance2",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": undefined,
         "Name": "c1",
         "ReferenceId": "ClassDeclaration-0",

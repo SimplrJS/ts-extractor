@@ -4,5 +4,6 @@ import { ApiItemKinds } from "../api-item-kinds";
 
 export interface ApiEnumDto extends ApiBaseItemDto {
     ApiKind: ApiItemKinds.Enum;
+    IsConst: boolean;
     Members: ApiItemReferenceTuple;
 }

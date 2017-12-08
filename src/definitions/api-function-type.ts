@@ -19,6 +19,7 @@ export class ApiFunctionType extends ApiCallableBase<ts.FunctionTypeNode, ApiFun
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
+            IsOverloadBase: this.IsOverloadBase,
             TypeParameters: this.TypeParameters,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType

@@ -13,13 +13,18 @@ export class FooClass {
 
     /**
      * GetFoo overload comment.
-     * @param a GetFoo property comment.
+     * @param text GetFoo property comment.
      */
-    public GetFoo(a?: string): string;
+    public GetFoo(text: string): string;
+    /**
+     * GetFoo overload comment.
+     * @param open GetFoo property comment.
+     */
+    public GetFoo(open: boolean): string;
     /**
      * GetFoo without A parameter comment line.
      */
-    public GetFoo(): string {
+    public GetFoo(arg: string | boolean): string {
         return "";
     }
 

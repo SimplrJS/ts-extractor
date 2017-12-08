@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "EnumDeclaration1.ts",
@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "EnumDeclaration-0": Object {
       "ApiKind": "enum",
+      "IsConst": false,
       "Kind": 232,
       "KindString": "EnumDeclaration",
       "Location": Object {
@@ -78,7 +79,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "LogLevel",
@@ -93,7 +94,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "None",
@@ -109,7 +110,7 @@ Object {
         "Line": 4,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Critical",
@@ -125,7 +126,7 @@ Object {
         "Line": 5,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Error",
@@ -141,7 +142,7 @@ Object {
         "Line": 6,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Warning",
@@ -157,7 +158,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Information",
@@ -173,7 +174,7 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Debug",
@@ -189,7 +190,7 @@ Object {
         "Line": 9,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Trace",

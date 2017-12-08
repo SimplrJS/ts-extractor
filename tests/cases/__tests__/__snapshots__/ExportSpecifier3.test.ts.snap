@@ -22,7 +22,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ExportSpecifier3.ts",
@@ -35,14 +35,18 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "Foo",
           "ReferenceId": "InterfaceDeclaration-0",
           "Text": "Foo",
         },
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "Foo2",
           "ReferenceId": "InterfaceDeclaration-1",
@@ -72,7 +76,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
@@ -91,7 +95,7 @@ Object {
         "Line": 0,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
@@ -109,7 +113,7 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
@@ -133,7 +137,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Foo",
@@ -158,7 +162,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Foo2",
@@ -179,7 +183,7 @@ Object {
         "Line": 11,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar",
@@ -189,6 +193,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -207,7 +212,7 @@ Object {
         "Line": 12,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar2",
@@ -217,6 +222,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -231,7 +237,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar",
@@ -241,6 +247,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -255,7 +262,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar2",
@@ -265,6 +272,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },

@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration2.ts",
@@ -43,7 +43,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Foo",
@@ -60,7 +60,7 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar",
@@ -70,6 +70,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },

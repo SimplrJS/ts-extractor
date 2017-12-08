@@ -4,5 +4,6 @@ import { ApiItemKinds } from "../api-item-kinds";
 
 export interface ApiConstructDto extends ApiBaseItemDto {
     ApiKind: ApiItemKinds.Construct;
+    IsOverloadBase: boolean;
     Parameters: ApiItemReferenceTuple;
 }

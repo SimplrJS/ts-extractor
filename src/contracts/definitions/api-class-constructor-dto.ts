@@ -5,6 +5,7 @@ import { ApiItemKinds } from "../api-item-kinds";
 
 export interface ApiClassConstructorDto extends ApiBaseItemDto {
     ApiKind: ApiItemKinds.ClassConstructor;
+    IsOverloadBase: boolean;
     Parameters: ApiItemReferenceTuple;
     AccessModifier: AccessModifier;
 }

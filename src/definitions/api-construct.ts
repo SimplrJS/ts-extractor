@@ -10,9 +10,14 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiConstructDto> {
+    private isOverloadBase: boolean;
     private parameters: ApiItemReferenceTuple = [];
 
     protected OnGatherData(): void {
+        // Overload
+        this.isOverloadBase = this.TypeChecker.isImplementationOfOverload(this.Declaration) || false;
+
+        // Parameters
         this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
     }
 
@@ -27,6 +32,7 @@ export class ApiConstruct extends ApiItem<ts.ConstructSignatureDeclaration, ApiC
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
+            IsOverloadBase: this.isOverloadBase,
             Parameters: this.parameters
         };
     }

@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDeclaration10 1`] = `
+Object {
+  "EntryFiles": Array [
+    Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Members": Array [
+        Array [
+          "FooClass",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration10.ts",
+      "Path": "./cases/ClassDeclaration10.ts",
+    },
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "Line": 2,
+      },
+      "Members": Array [
+        Array [
+          "__constructor",
+          Array [
+            "Constructor-0",
+            "Constructor-1",
+            "Constructor-2",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooClass",
+      "TypeParameters": Array [],
+    },
+    "Constructor-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-constructor",
+      "IsOverloadBase": false,
+      "Kind": 152,
+      "KindString": "Constructor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
+        "JSDocTags": Array [],
+      },
+      "Name": "__constructor",
+      "Parameters": Array [
+        Array [
+          "text",
+          Array [
+            "Parameter-0",
+          ],
+        ],
+      ],
+    },
+    "Constructor-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-constructor",
+      "IsOverloadBase": false,
+      "Kind": 152,
+      "KindString": "Constructor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "Line": 12,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
+        "JSDocTags": Array [],
+      },
+      "Name": "__constructor",
+      "Parameters": Array [
+        Array [
+          "should",
+          Array [
+            "Parameter-1",
+          ],
+        ],
+      ],
+    },
+    "Constructor-2": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-constructor",
+      "IsOverloadBase": true,
+      "Kind": 152,
+      "KindString": "Constructor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "Line": 14,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
+        "JSDocTags": Array [],
+      },
+      "Name": "__constructor",
+      "Parameters": Array [
+        Array [
+          "arg",
+          Array [
+            "Parameter-2",
+          ],
+        ],
+      ],
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 16,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Text for the foo class.",
+        "JSDocTags": Array [],
+      },
+      "Name": "text",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 16,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "Line": 12,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Boolean for foo class.",
+        "JSDocTags": Array [],
+      },
+      "Name": "should",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Flags": 65544,
+        "FlagsString": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "boolean",
+        "Types": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "true",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "false",
+          },
+        ],
+      },
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 16,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "Line": 14,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Flags": 65536,
+        "FlagsString": "Union",
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string | boolean",
+        "Types": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 2,
+            "FlagsString": "String",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "string",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "true",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "false",
+          },
+        ],
+      },
+    },
+  },
+}
+`;

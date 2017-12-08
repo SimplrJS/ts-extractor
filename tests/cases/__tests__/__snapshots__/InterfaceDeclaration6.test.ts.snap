@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration6.ts",
@@ -43,7 +43,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Foo",
@@ -59,6 +59,7 @@ Object {
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -67,7 +68,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar",
@@ -85,6 +86,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [
@@ -108,7 +110,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "args",
@@ -118,6 +120,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -133,7 +136,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TValue",
@@ -150,7 +153,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TValue",

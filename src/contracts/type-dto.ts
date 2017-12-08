@@ -4,6 +4,7 @@ import { TypeKinds } from "./type-kinds";
 
 export interface BaseTypeDto {
     ApiTypeKind: TypeKinds;
+    ReferenceId: string | undefined;
     Text: string;
     Name?: string;
 }
@@ -13,7 +14,7 @@ export interface TypeScriptSpecificPropertiesDto {
     FlagsString: string;
 }
 
-export type TypeDto = TypeBasicDto | TypeUnionOrIntersectionDto | TypeReferenceDto;
+export type TypeDto = TypeBasicDto | TypeUnionOrIntersectionDto;
 
 export interface TypeBasicDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
     ApiTypeKind: TypeKinds.Basic;
@@ -23,10 +24,4 @@ export interface TypeBasicDto extends BaseTypeDto, TypeScriptSpecificPropertiesD
 export interface TypeUnionOrIntersectionDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
     ApiTypeKind: TypeKinds.Union | TypeKinds.Intersection;
     Types: TypeDto[];
-}
-
-export interface TypeReferenceDto extends BaseTypeDto {
-    ApiTypeKind: TypeKinds.Reference;
-    ReferenceId: string;
-    Generics?: TypeDto[];
 }
