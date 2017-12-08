@@ -11,7 +11,6 @@ import {
     TypeReferenceDto,
     TypeUnionOrIntersectionDto
 } from "./contracts/type-dto";
-import { ApiItemKinds } from "./contracts/api-item-kinds";
 import { TypeKinds } from "./contracts/type-kinds";
 import { AccessModifier } from "./contracts/access-modifier";
 import { TSHelpers } from "./ts-helpers";

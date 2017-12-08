@@ -1,5 +1,4 @@
 import * as ts from "typescript";
-import * as path from "path";
 
 export namespace TSHelpers {
     export type DeclarationWithTypeNode = ts.Declaration & { type?: ts.TypeNode };

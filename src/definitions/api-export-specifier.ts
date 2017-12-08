@@ -1,13 +1,10 @@
 import * as ts from "typescript";
-import * as path from "path";
 
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
-import { ApiSourceFile } from "./api-source-file";
+import { ApiItem } from "../abstractions/api-item";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportSpecifierDto, ApiExportSpecifierApiItems } from "../contracts/definitions/api-export-specifier-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 

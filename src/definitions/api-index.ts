@@ -1,16 +1,13 @@
 import * as ts from "typescript";
 import { LogLevel } from "simplr-logger";
 
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
+import { ApiItem } from "../abstractions/api-item";
 
-import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiIndexDto } from "../contracts/definitions/api-index-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 
-import { ApiParameter } from "./api-parameter";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
@@ -31,7 +28,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
                 message
             );
         } else {
-            const [name, references] = parameters[0];
+            const [, references] = parameters[0];
 
             if (references.length > 0) {
                 this.parameter = references[0];

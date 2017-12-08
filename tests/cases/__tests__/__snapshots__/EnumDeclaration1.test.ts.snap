@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -85,7 +85,7 @@ Object {
     },
     "EnumMember-0": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -101,7 +101,7 @@ Object {
     },
     "EnumMember-1": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -117,7 +117,7 @@ Object {
     },
     "EnumMember-2": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -133,7 +133,7 @@ Object {
     },
     "EnumMember-3": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -149,7 +149,7 @@ Object {
     },
     "EnumMember-4": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -165,7 +165,7 @@ Object {
     },
     "EnumMember-5": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -181,7 +181,7 @@ Object {
     },
     "EnumMember-6": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,

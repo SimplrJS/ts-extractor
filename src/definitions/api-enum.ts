@@ -1,8 +1,6 @@
 import * as ts from "typescript";
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
-import { ApiEnumMember } from "./api-enum-member";
+import { ApiItem } from "../abstractions/api-item";
 
-import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiEnumDto } from "../contracts/definitions/api-enum-dto";
 import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
