@@ -27,6 +27,7 @@ Object {
     "FunctionDeclaration-0": Object {
       "ApiKind": "function",
       "IsAsync": true,
+      "IsOverloadBase": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
       "Location": Object {

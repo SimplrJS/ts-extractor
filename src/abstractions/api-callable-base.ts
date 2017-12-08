@@ -15,11 +15,15 @@ export abstract class ApiCallableBase<
     >
     extends ApiItem<TDeclaration, TExtractDto> {
 
+    protected IsOverloadBase: boolean;
     protected Parameters: ApiItemReferenceTuple = [];
     protected TypeParameters: ApiItemReferenceTuple = [];
     protected ReturnType: TypeDto | undefined;
 
     protected OnGatherData(): void {
+        // Overload
+        this.IsOverloadBase = this.TypeChecker.isImplementationOfOverload(this.Declaration as ts.FunctionLike) || false;
+
         // Parameters
         this.Parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
 

@@ -164,6 +164,7 @@ Object {
       "IsAbstract": false,
       "IsAsync": false,
       "IsOptional": false,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -201,6 +202,7 @@ Object {
       "IsAbstract": false,
       "IsAsync": false,
       "IsOptional": false,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -235,6 +237,7 @@ Object {
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -268,6 +271,7 @@ Object {
     "MethodSignature-1": Object {
       "ApiKind": "method",
       "IsOptional": true,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {

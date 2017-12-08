@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "CallSignature-0": Object {
       "ApiKind": "call",
+      "IsOverloadBase": false,
       "Kind": 155,
       "KindString": "CallSignature",
       "Location": Object {

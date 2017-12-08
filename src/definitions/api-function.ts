@@ -28,6 +28,7 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
+            IsOverloadBase: this.IsOverloadBase,
             TypeParameters: this.TypeParameters,
             Parameters: this.Parameters,
             IsAsync: this.isAsync,

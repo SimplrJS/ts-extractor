@@ -59,6 +59,7 @@ Object {
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {

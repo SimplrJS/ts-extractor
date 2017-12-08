@@ -74,6 +74,7 @@ Object {
   "Registry": Object {
     "CallSignature-0": Object {
       "ApiKind": "call",
+      "IsOverloadBase": false,
       "Kind": 155,
       "KindString": "CallSignature",
       "Location": Object {
@@ -99,6 +100,7 @@ Object {
     },
     "CallSignature-1": Object {
       "ApiKind": "call",
+      "IsOverloadBase": false,
       "Kind": 155,
       "KindString": "CallSignature",
       "Location": Object {
@@ -210,6 +212,7 @@ Object {
     },
     "FunctionType-0": Object {
       "ApiKind": "function",
+      "IsOverloadBase": false,
       "Kind": 160,
       "KindString": "FunctionType",
       "Location": Object {
@@ -582,6 +585,7 @@ Object {
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -615,6 +619,7 @@ Object {
     "MethodSignature-1": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -641,6 +646,7 @@ Object {
     "MethodSignature-2": Object {
       "ApiKind": "method",
       "IsOptional": true,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -667,6 +673,7 @@ Object {
     "MethodSignature-3": Object {
       "ApiKind": "method",
       "IsOptional": false,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
@@ -700,6 +707,7 @@ Object {
     "MethodSignature-4": Object {
       "ApiKind": "method",
       "IsOptional": true,
+      "IsOverloadBase": false,
       "Kind": 150,
       "KindString": "MethodSignature",
       "Location": Object {
