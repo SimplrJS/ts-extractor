@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration10.ts",
@@ -47,7 +47,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
@@ -65,21 +65,8 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Creating foo with text.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "Creating foo with boolean.",
-          },
-        ],
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
         "JSDocTags": Array [],
       },
       "Name": "__constructor",
@@ -104,21 +91,8 @@ Object {
         "Line": 12,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Creating foo with text.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "Creating foo with boolean.",
-          },
-        ],
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
         "JSDocTags": Array [],
       },
       "Name": "__constructor",
@@ -143,21 +117,8 @@ Object {
         "Line": 14,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Creating foo with text.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "Creating foo with boolean.",
-          },
-        ],
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
         "JSDocTags": Array [],
       },
       "Name": "__constructor",
@@ -182,12 +143,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Text for the foo class.",
-          },
-        ],
+        "DocumentationComment": "Text for the foo class.",
         "JSDocTags": Array [],
       },
       "Name": "text",
@@ -212,12 +168,7 @@ Object {
         "Line": 12,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Boolean for foo class.",
-          },
-        ],
+        "DocumentationComment": "Boolean for foo class.",
         "JSDocTags": Array [],
       },
       "Name": "should",
@@ -259,7 +210,7 @@ Object {
         "Line": 14,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "arg",

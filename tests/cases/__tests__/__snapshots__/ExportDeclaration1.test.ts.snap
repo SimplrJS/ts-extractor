@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ExportDeclaration1.ts",
@@ -71,12 +71,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Class Foo comment line.",
-          },
-        ],
+        "DocumentationComment": "Class Foo comment line.",
         "JSDocTags": Array [
           Object {
             "name": "summary",
@@ -106,7 +101,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__export",
@@ -127,12 +122,7 @@ Object {
         "Line": 11,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Sets foo.",
-          },
-        ],
+        "DocumentationComment": "Sets foo.",
         "JSDocTags": Array [],
       },
       "Name": "SetFoo",
@@ -170,30 +160,9 @@ Object {
         "Line": 17,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo without A parameter comment line.",
-          },
-        ],
+        "DocumentationComment": "GetFoo overload comment.
+GetFoo overload comment.
+GetFoo without A parameter comment line.",
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
@@ -231,30 +200,9 @@ Object {
         "Line": 22,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo without A parameter comment line.",
-          },
-        ],
+        "DocumentationComment": "GetFoo overload comment.
+GetFoo overload comment.
+GetFoo without A parameter comment line.",
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
@@ -292,30 +240,9 @@ Object {
         "Line": 26,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo overload comment.",
-          },
-          Object {
-            "kind": "lineBreak",
-            "text": "
-",
-          },
-          Object {
-            "kind": "text",
-            "text": "GetFoo without A parameter comment line.",
-          },
-        ],
+        "DocumentationComment": "GetFoo overload comment.
+GetFoo overload comment.
+GetFoo without A parameter comment line.",
         "JSDocTags": Array [],
       },
       "Name": "GetFoo",
@@ -353,7 +280,7 @@ Object {
         "Line": 30,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "AsyncGetFoo",
@@ -389,12 +316,7 @@ Object {
         "Line": 11,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "foo",
-          },
-        ],
+        "DocumentationComment": "foo",
         "JSDocTags": Array [],
       },
       "Name": "foo",
@@ -419,12 +341,7 @@ Object {
         "Line": 17,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo property comment.",
-          },
-        ],
+        "DocumentationComment": "GetFoo property comment.",
         "JSDocTags": Array [],
       },
       "Name": "text",
@@ -449,12 +366,7 @@ Object {
         "Line": 22,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "GetFoo property comment.",
-          },
-        ],
+        "DocumentationComment": "GetFoo property comment.",
         "JSDocTags": Array [],
       },
       "Name": "open",
@@ -496,7 +408,7 @@ Object {
         "Line": 26,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "arg",
@@ -549,12 +461,7 @@ Object {
         "Line": 36,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Property Id comment line.",
-          },
-        ],
+        "DocumentationComment": "Property Id comment line.",
         "JSDocTags": Array [
           Object {
             "name": "readonly",
@@ -587,7 +494,7 @@ Object {
         "Line": 37,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BarProperty",
