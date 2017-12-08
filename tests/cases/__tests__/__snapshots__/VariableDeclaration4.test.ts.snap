@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -28,7 +28,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration4.ts",
@@ -55,7 +55,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "A",
@@ -72,7 +72,7 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "b",
@@ -82,6 +82,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -95,12 +96,14 @@ Object {
         "Line": 4,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": undefined,
         "Name": "A",
         "ReferenceId": "InterfaceDeclaration-0",
@@ -118,12 +121,14 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "z",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": undefined,
         "Name": "A",
         "ReferenceId": "InterfaceDeclaration-0",

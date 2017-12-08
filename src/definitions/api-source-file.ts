@@ -1,16 +1,13 @@
 import * as ts from "typescript";
 import * as path from "path";
 
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
+import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
-import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 
-import { ApiVariable } from "./api-variable";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     private members: ApiItemReferenceTuple;

@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration5.ts",
@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "CallSignature-0": Object {
       "ApiKind": "call",
+      "IsOverloadBase": false,
       "Kind": 155,
       "KindString": "CallSignature",
       "Location": Object {
@@ -34,7 +35,7 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__call",
@@ -47,7 +48,9 @@ Object {
         ],
       ],
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TValue",
         "ReferenceId": "TypeParameter-0",
@@ -81,7 +84,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "GenericIdentityFn",
@@ -99,12 +102,14 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "value",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TValue",
         "ReferenceId": "TypeParameter-0",
@@ -123,7 +128,7 @@ Object {
         "Line": 1,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TValue",

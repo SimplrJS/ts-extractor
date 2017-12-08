@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -22,7 +22,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration9.ts",
@@ -57,7 +57,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Point",
@@ -68,7 +68,9 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "Point",
           "ReferenceId": "ClassDeclaration-0",
@@ -104,7 +106,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Point3d",
@@ -125,7 +127,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "x",
@@ -135,6 +137,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -153,7 +156,7 @@ Object {
         "Line": 4,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "y",
@@ -163,6 +166,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -181,7 +185,7 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "x",
@@ -191,6 +195,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -209,7 +214,7 @@ Object {
         "Line": 9,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "y",
@@ -219,6 +224,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },
@@ -237,7 +243,7 @@ Object {
         "Line": 10,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "z",
@@ -247,6 +253,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
     },

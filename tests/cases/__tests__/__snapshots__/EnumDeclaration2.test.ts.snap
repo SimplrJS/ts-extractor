@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "EnumDeclaration2.ts",
@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "EnumDeclaration-0": Object {
       "ApiKind": "enum",
+      "IsConst": false,
       "Kind": 232,
       "KindString": "EnumDeclaration",
       "Location": Object {
@@ -78,19 +79,14 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Defines logging severity levels.",
-          },
-        ],
+        "DocumentationComment": "Defines logging severity levels.",
         "JSDocTags": Array [],
       },
       "Name": "LogLevel",
     },
     "EnumMember-0": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -98,12 +94,7 @@ Object {
         "Line": 9,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Not used for writing log messages. Specifies that a logging category should not write any messages.",
-          },
-        ],
+        "DocumentationComment": "Not used for writing log messages. Specifies that a logging category should not write any messages.",
         "JSDocTags": Array [],
       },
       "Name": "None",
@@ -111,7 +102,7 @@ Object {
     },
     "EnumMember-1": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -119,13 +110,8 @@ Object {
         "Line": 15,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Logs that describe an unrecoverable application or system crash,
+        "DocumentationComment": "Logs that describe an unrecoverable application or system crash,
 or a catastrophic failure that requires immediate attention.",
-          },
-        ],
         "JSDocTags": Array [],
       },
       "Name": "Critical",
@@ -133,7 +119,7 @@ or a catastrophic failure that requires immediate attention.",
     },
     "EnumMember-2": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -141,13 +127,8 @@ or a catastrophic failure that requires immediate attention.",
         "Line": 21,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Logs that highlight when the current flow of execution is stopped due to a failure.
+        "DocumentationComment": "Logs that highlight when the current flow of execution is stopped due to a failure.
 These should indicate a failure in the current activity, not an application-wide failure.",
-          },
-        ],
         "JSDocTags": Array [],
       },
       "Name": "Error",
@@ -155,7 +136,7 @@ These should indicate a failure in the current activity, not an application-wide
     },
     "EnumMember-3": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -163,13 +144,8 @@ These should indicate a failure in the current activity, not an application-wide
         "Line": 27,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Logs that highlight an abnormal or unexpected event in the application flow,
+        "DocumentationComment": "Logs that highlight an abnormal or unexpected event in the application flow,
 but do not otherwise cause the application execution to stop.",
-          },
-        ],
         "JSDocTags": Array [],
       },
       "Name": "Warning",
@@ -177,7 +153,7 @@ but do not otherwise cause the application execution to stop.",
     },
     "EnumMember-4": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -185,12 +161,7 @@ but do not otherwise cause the application execution to stop.",
         "Line": 32,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Logs that track the general flow of the application. These logs should have long-term value.",
-          },
-        ],
+        "DocumentationComment": "Logs that track the general flow of the application. These logs should have long-term value.",
         "JSDocTags": Array [],
       },
       "Name": "Information",
@@ -198,7 +169,7 @@ but do not otherwise cause the application execution to stop.",
     },
     "EnumMember-5": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -206,13 +177,8 @@ but do not otherwise cause the application execution to stop.",
         "Line": 38,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Logs that are used for interactive investigation during development.
+        "DocumentationComment": "Logs that are used for interactive investigation during development.
 These logs should primarily contain information useful for debugging and have no long-term value.",
-          },
-        ],
         "JSDocTags": Array [],
       },
       "Name": "Debug",
@@ -220,7 +186,7 @@ These logs should primarily contain information useful for debugging and have no
     },
     "EnumMember-6": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -228,13 +194,8 @@ These logs should primarily contain information useful for debugging and have no
         "Line": 44,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [
-          Object {
-            "kind": "text",
-            "text": "Logs that contain the most detailed messages. These messages may contain sensitive application data.
+        "DocumentationComment": "Logs that contain the most detailed messages. These messages may contain sensitive application data.
 These messages are disabled by default and should never be enabled in a production environment.",
-          },
-        ],
         "JSDocTags": Array [],
       },
       "Name": "Trace",

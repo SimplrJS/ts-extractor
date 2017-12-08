@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -28,7 +28,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration6.ts",
@@ -57,7 +57,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooBase",
@@ -73,7 +73,9 @@ Object {
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
       "Extends": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
             "ApiTypeKind": "basic",
@@ -81,6 +83,7 @@ Object {
             "FlagsString": "Number",
             "Generics": undefined,
             "Name": undefined,
+            "ReferenceId": undefined,
             "Text": "number",
           },
         ],
@@ -90,7 +93,9 @@ Object {
       },
       "Implements": Array [
         Object {
-          "ApiTypeKind": "reference",
+          "ApiTypeKind": "basic",
+          "Flags": 32768,
+          "FlagsString": "Object",
           "Generics": undefined,
           "Name": "Bar",
           "ReferenceId": "InterfaceDeclaration-0",
@@ -120,7 +125,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Foo",
@@ -145,7 +150,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Bar",
@@ -157,6 +162,7 @@ Object {
       "IsAbstract": true,
       "IsAsync": false,
       "IsOptional": false,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -166,13 +172,15 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "GetValue",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TValue",
         "ReferenceId": "TypeParameter-0",
@@ -186,6 +194,7 @@ Object {
       "IsAbstract": false,
       "IsAsync": false,
       "IsOptional": false,
+      "IsOverloadBase": false,
       "IsStatic": false,
       "Kind": 151,
       "KindString": "MethodDeclaration",
@@ -195,7 +204,7 @@ Object {
         "Line": 11,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "GetValue",
@@ -206,6 +215,7 @@ Object {
         "FlagsString": "Number",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "number",
       },
       "TypeParameters": Array [],
@@ -225,7 +235,7 @@ Object {
         "Line": 15,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BarName",
@@ -235,6 +245,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -249,7 +260,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BarName",
@@ -259,6 +270,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -274,7 +286,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TValue",

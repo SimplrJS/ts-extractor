@@ -1,11 +1,9 @@
 import * as ts from "typescript";
 
-import { Dictionary } from "../contracts/dictionary";
 import { ApiBaseItemDto } from "../contracts/api-base-item-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ExtractorOptions } from "../contracts/extractor-options";
 import { ReadonlyRegistry } from "../contracts/registry";
-import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export interface ApiItemOptions {
     Program: ts.Program;
@@ -32,7 +30,7 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
 
     protected GetItemMetadata(): ApiMetadataDto {
         return {
-            DocumentationComment: this.Symbol.getDocumentationComment(),
+            DocumentationComment: ts.displayPartsToString(this.Symbol.getDocumentationComment()),
             JSDocTags: this.Symbol.getJsDocTags()
         };
     }

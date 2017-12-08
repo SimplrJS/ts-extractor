@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "EnumDeclaration1.ts",
@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "EnumDeclaration-0": Object {
       "ApiKind": "enum",
+      "IsConst": false,
       "Kind": 232,
       "KindString": "EnumDeclaration",
       "Location": Object {
@@ -78,14 +79,14 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "LogLevel",
     },
     "EnumMember-0": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -93,7 +94,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "None",
@@ -101,7 +102,7 @@ Object {
     },
     "EnumMember-1": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -109,7 +110,7 @@ Object {
         "Line": 4,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Critical",
@@ -117,7 +118,7 @@ Object {
     },
     "EnumMember-2": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -125,7 +126,7 @@ Object {
         "Line": 5,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Error",
@@ -133,7 +134,7 @@ Object {
     },
     "EnumMember-3": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -141,7 +142,7 @@ Object {
         "Line": 6,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Warning",
@@ -149,7 +150,7 @@ Object {
     },
     "EnumMember-4": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -157,7 +158,7 @@ Object {
         "Line": 7,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Information",
@@ -165,7 +166,7 @@ Object {
     },
     "EnumMember-5": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -173,7 +174,7 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Debug",
@@ -181,7 +182,7 @@ Object {
     },
     "EnumMember-6": Object {
       "ApiKind": "enum-member",
-      "Kind": 264,
+      "Kind": 267,
       "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
@@ -189,7 +190,7 @@ Object {
         "Line": 9,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "Trace",

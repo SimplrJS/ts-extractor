@@ -2,15 +2,13 @@ import * as ts from "typescript";
 import * as path from "path";
 import { LogLevel } from "simplr-logger";
 
-import { Logger } from "../utils/logger";
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
+import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportDto } from "../contracts/definitions/api-export-dto";
 import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 

@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
-import { TSHelpers } from "../ts-helpers";
+import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/definitions/api-class-dto";
 import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";

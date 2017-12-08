@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -52,7 +52,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration3.ts",
@@ -71,7 +71,7 @@ Object {
         "Line": 4,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BarName",
@@ -81,6 +81,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -95,12 +96,14 @@ Object {
         "Line": 5,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-0",
@@ -118,12 +121,14 @@ Object {
         "Line": 9,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BazName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-1",
@@ -141,12 +146,14 @@ Object {
         "Line": 18,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BarName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-2",
@@ -164,7 +171,7 @@ Object {
         "Line": 19,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooName",
@@ -174,6 +181,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -188,12 +196,14 @@ Object {
         "Line": 23,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BarName",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
         "Generics": undefined,
         "Name": "TType",
         "ReferenceId": "TypeParameter-3",
@@ -211,7 +221,7 @@ Object {
         "Line": 24,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "BazName",
@@ -221,6 +231,7 @@ Object {
         "FlagsString": "String",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "string",
       },
     },
@@ -234,15 +245,19 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "NoCommonFields1",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-0",
@@ -272,15 +287,19 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "NoCommonFields2",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-1",
@@ -310,7 +329,7 @@ Object {
         "Line": 12,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "AnotherType",
@@ -318,11 +337,14 @@ Object {
         "ApiTypeKind": "union",
         "Flags": 65536,
         "FlagsString": "Union",
-        "Name": undefined,
+        "Name": "AnotherType",
+        "ReferenceId": "TypeAliasDeclaration-2",
         "Text": "AnotherType",
         "Types": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -330,6 +352,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -338,7 +361,9 @@ Object {
             "Text": "NoCommonFields1<number>",
           },
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -346,6 +371,7 @@ Object {
                 "FlagsString": "String",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "string",
               },
             ],
@@ -367,15 +393,19 @@ Object {
         "Line": 17,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "OneCommonField1",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-2",
@@ -405,15 +435,19 @@ Object {
         "Line": 22,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "OneCommonField2",
       "Type": Object {
-        "ApiTypeKind": "reference",
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
         "Generics": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 16384,
+            "FlagsString": "TypeParameter",
             "Generics": undefined,
             "Name": "TType",
             "ReferenceId": "TypeParameter-3",
@@ -443,7 +477,7 @@ Object {
         "Line": 27,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "OneCommonFieldTypeIntersection",
@@ -451,11 +485,14 @@ Object {
         "ApiTypeKind": "union",
         "Flags": 65536,
         "FlagsString": "Union",
-        "Name": undefined,
+        "Name": "OneCommonFieldTypeIntersection",
+        "ReferenceId": "TypeAliasDeclaration-5",
         "Text": "OneCommonFieldTypeIntersection",
         "Types": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -463,6 +500,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -471,7 +509,9 @@ Object {
             "Text": "OneCommonField1<number>",
           },
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -479,6 +519,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -500,7 +541,7 @@ Object {
         "Line": 29,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "OneCommonFieldTypeIntersectionWithDifferentTypes",
@@ -508,11 +549,14 @@ Object {
         "ApiTypeKind": "intersection",
         "Flags": 131072,
         "FlagsString": "Intersection",
-        "Name": undefined,
+        "Name": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+        "ReferenceId": "TypeAliasDeclaration-6",
         "Text": "OneCommonFieldTypeIntersectionWithDifferentTypes",
         "Types": Array [
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -520,6 +564,7 @@ Object {
                 "FlagsString": "Number",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "number",
               },
             ],
@@ -528,7 +573,9 @@ Object {
             "Text": "OneCommonField1<number>",
           },
           Object {
-            "ApiTypeKind": "reference",
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
             "Generics": Array [
               Object {
                 "ApiTypeKind": "basic",
@@ -536,6 +583,7 @@ Object {
                 "FlagsString": "String",
                 "Generics": undefined,
                 "Name": undefined,
+                "ReferenceId": undefined,
                 "Text": "string",
               },
             ],
@@ -571,7 +619,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__type",
@@ -594,7 +642,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__type",
@@ -623,7 +671,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__type",
@@ -652,7 +700,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__type",
@@ -669,7 +717,7 @@ Object {
         "Line": 3,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TType",
@@ -686,7 +734,7 @@ Object {
         "Line": 8,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TType",
@@ -703,7 +751,7 @@ Object {
         "Line": 17,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TType",
@@ -720,7 +768,7 @@ Object {
         "Line": 22,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "TType",

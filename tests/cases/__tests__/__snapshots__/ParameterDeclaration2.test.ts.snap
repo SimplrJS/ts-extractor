@@ -5,7 +5,7 @@ Object {
   "EntryFiles": Array [
     Object {
       "ApiKind": "source-file",
-      "Kind": 265,
+      "Kind": 268,
       "KindString": "SourceFile",
       "Members": Array [
         Array [
@@ -16,7 +16,7 @@ Object {
         ],
       ],
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "ParameterDeclaration2.ts",
@@ -27,6 +27,7 @@ Object {
     "FunctionDeclaration-0": Object {
       "ApiKind": "function",
       "IsAsync": false,
+      "IsOverloadBase": false,
       "Kind": 228,
       "KindString": "FunctionDeclaration",
       "Location": Object {
@@ -35,7 +36,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "FooFunction",
@@ -53,6 +54,7 @@ Object {
         "FlagsString": "Void",
         "Generics": undefined,
         "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "void",
       },
       "TypeParameters": Array [],
@@ -69,7 +71,7 @@ Object {
         "Line": 2,
       },
       "Metadata": Object {
-        "DocumentationComment": Array [],
+        "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "bar",
@@ -84,10 +86,12 @@ Object {
             "FlagsString": "String",
             "Generics": undefined,
             "Name": undefined,
+            "ReferenceId": undefined,
             "Text": "string",
           },
         ],
         "Name": "Array",
+        "ReferenceId": undefined,
         "Text": "string[]",
       },
     },

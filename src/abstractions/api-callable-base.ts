@@ -1,13 +1,9 @@
 import * as ts from "typescript";
-import { ApiItem, ApiItemOptions } from "../abstractions/api-item";
+import { ApiItem } from "../abstractions/api-item";
 
-import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiFunctionDto } from "../contracts/definitions/api-function-dto";
 import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
-import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableDto } from "../contracts/api-callable-dto";
 
 /**
@@ -19,11 +15,15 @@ export abstract class ApiCallableBase<
     >
     extends ApiItem<TDeclaration, TExtractDto> {
 
+    protected IsOverloadBase: boolean;
     protected Parameters: ApiItemReferenceTuple = [];
     protected TypeParameters: ApiItemReferenceTuple = [];
     protected ReturnType: TypeDto | undefined;
 
     protected OnGatherData(): void {
+        // Overload
+        this.IsOverloadBase = this.TypeChecker.isImplementationOfOverload(this.Declaration as ts.FunctionLike) || false;
+
         // Parameters
         this.Parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
 
