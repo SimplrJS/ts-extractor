@@ -26,6 +26,7 @@ Object {
   "Registry": Object {
     "EnumDeclaration-0": Object {
       "ApiKind": "enum",
+      "IsConst": false,
       "Kind": 232,
       "KindString": "EnumDeclaration",
       "Location": Object {

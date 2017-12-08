@@ -10,10 +10,15 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
     private members: ApiItemReferenceTuple = [];
+    private isConst: boolean;
 
     protected OnGatherData(): void {
+        // IsConst
+        this.isConst = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.ConstKeyword);
+
         // Members
         this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);
+
     }
 
     public OnExtract(): ApiEnumDto {
@@ -27,6 +32,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
+            IsConst: this.isConst,
             Members: this.members
         };
     }
