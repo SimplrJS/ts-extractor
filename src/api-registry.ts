@@ -17,8 +17,7 @@ export class ApiRegistry implements Registry<ApiItem> {
             return this.ExtractedData;
         }
 
-        for (const item of this.Registry) {
-            const [key, apiItem] = item;
+        for (const [key, apiItem] of this.Registry) {
             const extractedData = apiItem.Extract(forceExtract);
 
             this.ExtractedData[key] = extractedData as ApiItemDto;
