@@ -165,7 +165,7 @@ export namespace ApiHelpers {
         }
 
         symbols.forEach(symbol => {
-            const referenceTuple = GetItemIdsFromSymbols(symbol, options);
+            const referenceTuple = GetItemIdsFromSymbol(symbol, options);
             if (referenceTuple != null) {
                 items.push(referenceTuple);
             }
@@ -174,8 +174,8 @@ export namespace ApiHelpers {
         return items;
     }
 
-    export function GetItemIdsFromSymbols(symbol: ts.Symbol, options: ApiItemOptions): ApiItemReferenceTuple | undefined {
-        if (symbol.declarations == null) {
+    export function GetItemIdsFromSymbol(symbol: ts.Symbol | undefined, options: ApiItemOptions): ApiItemReferenceTuple | undefined {
+        if (symbol == null || symbol.declarations == null) {
             return undefined;
         }
         const symbolItems: string[] = [];
