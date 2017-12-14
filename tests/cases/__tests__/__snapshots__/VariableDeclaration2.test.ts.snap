@@ -28,7 +28,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration2.ts",
-      "Path": "./cases/VariableDeclaration2.ts",
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",

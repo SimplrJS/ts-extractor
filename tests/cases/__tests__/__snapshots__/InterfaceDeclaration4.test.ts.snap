@@ -1153,7 +1153,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration4.ts",
-      "Path": "./cases/InterfaceDeclaration4.ts",
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",

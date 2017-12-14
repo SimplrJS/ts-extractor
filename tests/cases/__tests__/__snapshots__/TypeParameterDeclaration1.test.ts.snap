@@ -96,7 +96,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeParameterDeclaration1.ts",
-      "Path": "./cases/TypeParameterDeclaration1.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

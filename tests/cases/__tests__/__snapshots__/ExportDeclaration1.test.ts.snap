@@ -528,7 +528,6 @@ GetFoo without A parameter comment line.",
         "JSDocTags": Array [],
       },
       "Name": "ExportDeclaration1.ts",
-      "Path": "./cases/ExportDeclaration1.ts",
     },
   },
 }

@@ -177,7 +177,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration5.ts",
-      "Path": "./cases/ClassDeclaration5.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

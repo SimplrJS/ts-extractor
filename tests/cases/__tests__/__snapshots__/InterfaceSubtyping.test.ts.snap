@@ -213,7 +213,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceSubtyping.ts",
-      "Path": "./cases/InterfaceSubtyping.ts",
     },
   },
 }

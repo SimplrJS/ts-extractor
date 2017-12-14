@@ -120,7 +120,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration5.ts",
-      "Path": "./cases/InterfaceDeclaration5.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

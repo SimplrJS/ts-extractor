@@ -298,7 +298,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "MultipleDeclaration.ts",
-      "Path": "./cases/MultipleDeclaration.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

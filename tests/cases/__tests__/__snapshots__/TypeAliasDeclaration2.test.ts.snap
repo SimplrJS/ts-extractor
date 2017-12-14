@@ -140,7 +140,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration2.ts",
-      "Path": "./cases/TypeAliasDeclaration2.ts",
     },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",

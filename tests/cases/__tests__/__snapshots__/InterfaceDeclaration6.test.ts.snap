@@ -128,7 +128,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration6.ts",
-      "Path": "./cases/InterfaceDeclaration6.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

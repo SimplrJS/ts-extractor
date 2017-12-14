@@ -504,7 +504,6 @@ GetFoo without A parameter comment line.",
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration1.ts",
-      "Path": "./cases/ClassDeclaration1.ts",
     },
   },
 }

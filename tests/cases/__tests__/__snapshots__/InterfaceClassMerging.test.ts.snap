@@ -495,7 +495,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceClassMerging.ts",
-      "Path": "./cases/InterfaceClassMerging.ts",
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",

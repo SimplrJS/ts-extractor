@@ -59,7 +59,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration1.ts",
-      "Path": "./cases/TypeAliasDeclaration1.ts",
     },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",

@@ -91,7 +91,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration3.ts",
-      "Path": "./cases/InterfaceDeclaration3.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

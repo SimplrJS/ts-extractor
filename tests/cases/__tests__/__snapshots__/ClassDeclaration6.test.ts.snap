@@ -278,7 +278,6 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration6.ts",
-      "Path": "./cases/ClassDeclaration6.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

@@ -205,7 +205,6 @@ These messages are disabled by default and should never be enabled in a producti
         "JSDocTags": Array [],
       },
       "Name": "EnumDeclaration3.ts",
-      "Path": "./cases/EnumDeclaration3.ts",
     },
   },
 }
