@@ -3,73 +3,7 @@
 exports[`InterfaceDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "a0",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "a1",
-          Array [
-            "InterfaceDeclaration-1",
-          ],
-        ],
-        Array [
-          "a2",
-          Array [
-            "InterfaceDeclaration-2",
-          ],
-        ],
-        Array [
-          "a",
-          Array [
-            "InterfaceDeclaration-3",
-          ],
-        ],
-        Array [
-          "b",
-          Array [
-            "InterfaceDeclaration-4",
-          ],
-        ],
-        Array [
-          "c",
-          Array [
-            "InterfaceDeclaration-5",
-          ],
-        ],
-        Array [
-          "d",
-          Array [
-            "InterfaceDeclaration-6",
-          ],
-        ],
-        Array [
-          "c1",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-        Array [
-          "instance2",
-          Array [
-            "VariableDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration4.ts",
-      "Path": "./cases/InterfaceDeclaration4.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "CallSignature-0": Object {
@@ -1148,6 +1082,77 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "a0",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "a1",
+          Array [
+            "InterfaceDeclaration-1",
+          ],
+        ],
+        Array [
+          "a2",
+          Array [
+            "InterfaceDeclaration-2",
+          ],
+        ],
+        Array [
+          "a",
+          Array [
+            "InterfaceDeclaration-3",
+          ],
+        ],
+        Array [
+          "b",
+          Array [
+            "InterfaceDeclaration-4",
+          ],
+        ],
+        Array [
+          "c",
+          Array [
+            "InterfaceDeclaration-5",
+          ],
+        ],
+        Array [
+          "d",
+          Array [
+            "InterfaceDeclaration-6",
+          ],
+        ],
+        Array [
+          "c1",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+        Array [
+          "instance2",
+          Array [
+            "VariableDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration4.ts",
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",

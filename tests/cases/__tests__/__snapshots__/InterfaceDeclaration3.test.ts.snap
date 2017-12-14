@@ -3,31 +3,7 @@
 exports[`InterfaceDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Generic",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "y",
-          Array [
-            "VariableDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration3.ts",
-      "Path": "./cases/InterfaceDeclaration3.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "InterfaceDeclaration-0": Object {
@@ -86,6 +62,35 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "T",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration3.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "Generic",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "y",
+          Array [
+            "VariableDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration3.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

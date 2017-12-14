@@ -46,8 +46,8 @@ export namespace ApiHelpers {
         declaration: ts.Declaration,
         symbol: ts.Symbol,
         options: ApiItemOptions
-    ): ApiItem | ApiSourceFile | undefined {
-        let apiItem: ApiSourceFile | ApiItem | undefined;
+    ): ApiItem | undefined {
+        let apiItem: ApiItem | undefined;
         if (ts.isSourceFile(declaration)) {
             apiItem = new ApiSourceFile(declaration, symbol, options);
         } else if (ts.isExportDeclaration(declaration)) {
