@@ -8,6 +8,7 @@ import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
 import { ApiHelpers } from "../api-helpers";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
+import { ApiItemLocationDto } from "../contracts";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     private members: ApiItemReferenceTuple;
@@ -27,6 +28,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
 
     public OnExtract(): ApiSourceFileDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.SourceFile,
@@ -34,6 +36,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
             Path: this.getPath(),
             Kind: this.Declaration.kind,
             Metadata: metadata,
+            Location: location,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Members: this.members
         };
