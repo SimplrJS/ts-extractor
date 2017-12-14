@@ -39,6 +39,7 @@ import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
+import { PathIsInside } from "./utils/path-is-inside";
 
 export namespace ApiHelpers {
     export function VisitApiItem(
@@ -115,16 +116,21 @@ export namespace ApiHelpers {
 
     export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
         const declarationSourceFile = declaration.getSourceFile();
+        const declarationFileName = declarationSourceFile.fileName;
 
         if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
             const match = declarationSourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
-            if (match == null) {
+            const packageName = match != null ? match[1] : undefined;
+
+            if (packageName != null) {
+                return options.ExternalPackages.
+                    findIndex(x => x.toLowerCase() === packageName.toLowerCase()) !== -1;
+            } else {
                 return false;
             }
-            const [, packageName] = match;
-
-            return options.ExternalPackages.
-                findIndex(x => x.toLowerCase() === packageName.toLowerCase()) !== -1;
+        } else if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
+            // If it's not external package, it should be in project directory.
+            return false;
         }
 
         return true;
