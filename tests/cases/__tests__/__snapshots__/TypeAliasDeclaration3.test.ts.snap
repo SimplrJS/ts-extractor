@@ -3,61 +3,7 @@
 exports[`TypeAliasDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "NoCommonFields1",
-          Array [
-            "TypeAliasDeclaration-0",
-          ],
-        ],
-        Array [
-          "NoCommonFields2",
-          Array [
-            "TypeAliasDeclaration-1",
-          ],
-        ],
-        Array [
-          "AnotherType",
-          Array [
-            "TypeAliasDeclaration-2",
-          ],
-        ],
-        Array [
-          "OneCommonField1",
-          Array [
-            "TypeAliasDeclaration-3",
-          ],
-        ],
-        Array [
-          "OneCommonField2",
-          Array [
-            "TypeAliasDeclaration-4",
-          ],
-        ],
-        Array [
-          "OneCommonFieldTypeIntersection",
-          Array [
-            "TypeAliasDeclaration-5",
-          ],
-        ],
-        Array [
-          "OneCommonFieldTypeIntersectionWithDifferentTypes",
-          Array [
-            "TypeAliasDeclaration-6",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "TypeAliasDeclaration3.ts",
-      "Path": "./cases/TypeAliasDeclaration3.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "PropertySignature-0": Object {
@@ -234,6 +180,65 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "Line": 3,
+      },
+      "Members": Array [
+        Array [
+          "NoCommonFields1",
+          Array [
+            "TypeAliasDeclaration-0",
+          ],
+        ],
+        Array [
+          "NoCommonFields2",
+          Array [
+            "TypeAliasDeclaration-1",
+          ],
+        ],
+        Array [
+          "AnotherType",
+          Array [
+            "TypeAliasDeclaration-2",
+          ],
+        ],
+        Array [
+          "OneCommonField1",
+          Array [
+            "TypeAliasDeclaration-3",
+          ],
+        ],
+        Array [
+          "OneCommonField2",
+          Array [
+            "TypeAliasDeclaration-4",
+          ],
+        ],
+        Array [
+          "OneCommonFieldTypeIntersection",
+          Array [
+            "TypeAliasDeclaration-5",
+          ],
+        ],
+        Array [
+          "OneCommonFieldTypeIntersectionWithDifferentTypes",
+          Array [
+            "TypeAliasDeclaration-6",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TypeAliasDeclaration3.ts",
     },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",

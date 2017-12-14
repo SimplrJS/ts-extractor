@@ -3,25 +3,7 @@
 exports[`ClassDeclaration1 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "FooClass",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration1.ts",
-      "Path": "./cases/ClassDeclaration1.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -499,6 +481,29 @@ GetFoo without A parameter comment line.",
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "Line": 6,
+      },
+      "Members": Array [
+        Array [
+          "FooClass",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration1.ts",
     },
   },
 }

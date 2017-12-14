@@ -3,37 +3,7 @@
 exports[`VariableDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "A",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "a",
-          Array [
-            "VariableDeclaration-0",
-          ],
-        ],
-        Array [
-          "z",
-          Array [
-            "VariableDeclaration-1",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "VariableDeclaration4.ts",
-      "Path": "./cases/VariableDeclaration4.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "InterfaceDeclaration-0": Object {
@@ -85,6 +55,41 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/VariableDeclaration4.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "A",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "a",
+          Array [
+            "VariableDeclaration-0",
+          ],
+        ],
+        Array [
+          "z",
+          Array [
+            "VariableDeclaration-1",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "VariableDeclaration4.ts",
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",

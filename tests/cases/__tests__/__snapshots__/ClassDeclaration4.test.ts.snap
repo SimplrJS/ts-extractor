@@ -3,37 +3,7 @@
 exports[`ClassDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "Foo2",
-          Array [
-            "InterfaceDeclaration-1",
-          ],
-        ],
-        Array [
-          "FooClass",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration4.ts",
-      "Path": "./cases/ClassDeclaration4.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -245,6 +215,41 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration4.ts",
+        "Line": 2,
+      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+        Array [
+          "Foo2",
+          Array [
+            "InterfaceDeclaration-1",
+          ],
+        ],
+        Array [
+          "FooClass",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration4.ts",
     },
   },
 }

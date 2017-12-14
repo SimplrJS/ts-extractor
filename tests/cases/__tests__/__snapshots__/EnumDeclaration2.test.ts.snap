@@ -3,25 +3,7 @@
 exports[`EnumDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "LogLevel",
-          Array [
-            "EnumDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "EnumDeclaration2.ts",
-      "Path": "./cases/EnumDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "EnumDeclaration-0": Object {
@@ -200,6 +182,29 @@ These messages are disabled by default and should never be enabled in a producti
       },
       "Name": "Trace",
       "Value": "1 << 5",
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/EnumDeclaration2.ts",
+        "Line": 5,
+      },
+      "Members": Array [
+        Array [
+          "LogLevel",
+          Array [
+            "EnumDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "EnumDeclaration2.ts",
     },
   },
 }

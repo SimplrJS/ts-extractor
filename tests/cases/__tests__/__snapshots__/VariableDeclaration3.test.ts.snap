@@ -3,10 +3,18 @@
 exports[`VariableDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "SourceFile-0": Object {
       "ApiKind": "source-file",
       "Kind": 268,
       "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/VariableDeclaration3.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "z",
@@ -20,10 +28,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration3.ts",
-      "Path": "./cases/VariableDeclaration3.ts",
     },
-  ],
-  "Registry": Object {
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
       "Kind": 226,
