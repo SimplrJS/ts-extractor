@@ -97,10 +97,6 @@ export namespace ApiHelpers {
             apiItem = new ApiFunctionType(declaration, symbol, options);
         }
 
-        if (apiItem != null && apiItem.IsPrivate()) {
-            return undefined;
-        }
-
         if (apiItem == null) {
             // This declaration is not supported, show a Warning message.
             LogWithDeclarationPosition(

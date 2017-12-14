@@ -52,13 +52,6 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
         return this.ItemStatus;
     }
 
-    /**
-     * If ApiItem is private, it will not appear in the extracted data.
-     */
-    public IsPrivate(): boolean {
-        return false;
-    }
-
     protected abstract OnExtract(): TExtractDto;
 
     public Extract(forceExtraction: boolean = false): TExtractDto {
