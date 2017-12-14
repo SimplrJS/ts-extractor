@@ -4,14 +4,14 @@ import * as path from "path";
 import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
 import { ApiHelpers } from "../api-helpers";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
-    private members: ApiItemReferenceTuple;
+    private members: ApiItemReferenceTuplesList;
 
     private getFileName(): string {
         return path.basename(this.Declaration.fileName);

@@ -3,13 +3,13 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiNamespaceDto } from "../contracts/definitions/api-namespace-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto> {
-    private members: ApiItemReferenceTuple = [];
+    private members: ApiItemReferenceTuplesList = [];
 
     protected OnGatherData(): void {
         // Members

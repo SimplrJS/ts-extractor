@@ -1,1 +1,2 @@
-export type ApiItemReferenceTuple = Array<[string, string[]]>;
+export type ApiItemReferenceTuplesList = ApiItemReferenceTuple[];
+export type ApiItemReferenceTuple = [string, string[]];

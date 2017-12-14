@@ -7,7 +7,7 @@ import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportDto } from "../contracts/definitions/api-export-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -26,7 +26,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         return ApiHelpers.StandardizeRelativePath(exportRelativePath, this.Options);
     }
 
-    private members: ApiItemReferenceTuple = [];
+    private members: ApiItemReferenceTuplesList = [];
     private apiSourceFile: ApiSourceFile | undefined;
 
     protected OnGatherData(): void {

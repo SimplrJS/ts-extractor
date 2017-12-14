@@ -7,11 +7,11 @@ import { ApiTypeDto } from "../contracts/definitions/api-type-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
-    private typeParameters: ApiItemReferenceTuple = [];
+    private typeParameters: ApiItemReferenceTuplesList = [];
     private type: TypeDto;
 
     protected OnGatherData(): void {

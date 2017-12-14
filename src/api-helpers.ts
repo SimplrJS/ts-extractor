@@ -4,7 +4,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceTuple } from "./contracts/api-item-reference-tuple";
+import { ApiItemReferenceTuplesList } from "./contracts/api-item-reference-tuple";
 import {
     TypeDto,
     TypeBasicDto,
@@ -40,6 +40,7 @@ import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
 import { PathIsInside } from "./utils/path-is-inside";
+import { ApiItemReferenceTuple } from "./contracts";
 
 export namespace ApiHelpers {
     export function VisitApiItem(
@@ -157,36 +158,43 @@ export namespace ApiHelpers {
     export function GetItemsIdsFromSymbols(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
-    ): ApiItemReferenceTuple {
-        const items: ApiItemReferenceTuple = [];
+    ): ApiItemReferenceTuplesList {
+        const items: ApiItemReferenceTuplesList = [];
         if (symbols == null) {
             return items;
         }
 
         symbols.forEach(symbol => {
-            if (symbol.declarations == null) {
-                return;
+            const referenceTuple = GetItemIdsFromSymbols(symbol, options);
+            if (referenceTuple != null) {
+                items.push(referenceTuple);
             }
-            const symbolItems: string[] = [];
-
-            symbol.declarations.forEach(declaration => {
-                const itemId = GetItemId(declaration, symbol, options);
-                if (itemId != null) {
-                    symbolItems.push(itemId);
-                }
-            });
-
-            items.push([symbol.name, symbolItems]);
         });
 
         return items;
     }
 
+    export function GetItemIdsFromSymbols(symbol: ts.Symbol, options: ApiItemOptions): ApiItemReferenceTuple | undefined {
+        if (symbol.declarations == null) {
+            return undefined;
+        }
+        const symbolItems: string[] = [];
+
+        symbol.declarations.forEach(declaration => {
+            const itemId = GetItemId(declaration, symbol, options);
+            if (itemId != null) {
+                symbolItems.push(itemId);
+            }
+        });
+
+        return [symbol.name, symbolItems];
+    }
+
     export function GetItemsIdsFromDeclarations(
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
-    ): ApiItemReferenceTuple {
-        const items: ApiItemReferenceTuple = [];
+    ): ApiItemReferenceTuplesList {
+        const items: ApiItemReferenceTuplesList = [];
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {

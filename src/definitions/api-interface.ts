@@ -3,7 +3,7 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -14,8 +14,8 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
      * Interfaces can extend multiple interfaces.
      */
     private extends: TypeDto[] = [];
-    private typeParameters: ApiItemReferenceTuple = [];
-    private members: ApiItemReferenceTuple = [];
+    private typeParameters: ApiItemReferenceTuplesList = [];
+    private members: ApiItemReferenceTuplesList = [];
 
     protected OnGatherData(): void {
         // Members
