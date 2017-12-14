@@ -3,50 +3,7 @@
 exports[`InterfaceClassMerging 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-            "ClassDeclaration-0",
-          ],
-        ],
-        Array [
-          "Bar",
-          Array [
-            "ClassDeclaration-1",
-          ],
-        ],
-        Array [
-          "bar",
-          Array [
-            "VariableDeclaration-0",
-          ],
-        ],
-        Array [
-          "foo",
-          Array [
-            "VariableDeclaration-1",
-          ],
-        ],
-        Array [
-          "iFoo",
-          Array [
-            "VariableDeclaration-2",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceClassMerging.ts",
-      "Path": "./cases/InterfaceClassMerging.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -490,6 +447,55 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+            "ClassDeclaration-0",
+          ],
+        ],
+        Array [
+          "Bar",
+          Array [
+            "ClassDeclaration-1",
+          ],
+        ],
+        Array [
+          "bar",
+          Array [
+            "VariableDeclaration-0",
+          ],
+        ],
+        Array [
+          "foo",
+          Array [
+            "VariableDeclaration-1",
+          ],
+        ],
+        Array [
+          "iFoo",
+          Array [
+            "VariableDeclaration-2",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceClassMerging.ts",
+      "Path": "./cases/InterfaceClassMerging.ts",
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",

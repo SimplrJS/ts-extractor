@@ -3,25 +3,7 @@
 exports[`ParameterDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "FooFunction",
-          Array [
-            "FunctionDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ParameterDeclaration2.ts",
-      "Path": "./cases/ParameterDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "FunctionDeclaration-0": Object {
@@ -94,6 +76,30 @@ Object {
         "ReferenceId": undefined,
         "Text": "string[]",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ParameterDeclaration2.ts",
+        "Line": 2,
+      },
+      "Members": Array [
+        Array [
+          "FooFunction",
+          Array [
+            "FunctionDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ParameterDeclaration2.ts",
+      "Path": "./cases/ParameterDeclaration2.ts",
     },
   },
 }

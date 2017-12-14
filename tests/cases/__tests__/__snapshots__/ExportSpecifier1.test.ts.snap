@@ -3,25 +3,7 @@
 exports[`ExportSpecifier1 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "ExportSpecifier-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ExportSpecifier1.ts",
-      "Path": "./cases/ExportSpecifier1.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -241,6 +223,30 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ExportSpecifier1.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "ExportSpecifier-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ExportSpecifier1.ts",
+      "Path": "./cases/ExportSpecifier1.ts",
     },
   },
 }

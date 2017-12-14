@@ -3,25 +3,7 @@
 exports[`IndexSignature3 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "IndexSignature3.ts",
-      "Path": "./cases/IndexSignature3.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "IndexSignature-0": Object {
@@ -179,6 +161,30 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/IndexSignature3.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "IndexSignature3.ts",
+      "Path": "./cases/IndexSignature3.ts",
     },
   },
 }

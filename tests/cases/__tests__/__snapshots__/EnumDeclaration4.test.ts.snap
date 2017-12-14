@@ -3,25 +3,7 @@
 exports[`EnumDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "LogLevel",
-          Array [
-            "EnumDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "EnumDeclaration4.ts",
-      "Path": "./cases/EnumDeclaration4.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "EnumDeclaration-0": Object {
@@ -195,6 +177,30 @@ Object {
       },
       "Name": "Trace",
       "Value": "6",
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/EnumDeclaration4.ts",
+        "Line": 2,
+      },
+      "Members": Array [
+        Array [
+          "LogLevel",
+          Array [
+            "EnumDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "EnumDeclaration4.ts",
+      "Path": "./cases/EnumDeclaration4.ts",
     },
   },
 }

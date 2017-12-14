@@ -3,31 +3,7 @@
 exports[`ClassDeclaration9 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Point",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-        Array [
-          "Point3d",
-          Array [
-            "ClassDeclaration-1",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration9.ts",
-      "Path": "./cases/ClassDeclaration9.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -256,6 +232,36 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration9.ts",
+        "Line": 2,
+      },
+      "Members": Array [
+        Array [
+          "Point",
+          Array [
+            "ClassDeclaration-0",
+          ],
+        ],
+        Array [
+          "Point3d",
+          Array [
+            "ClassDeclaration-1",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration9.ts",
+      "Path": "./cases/ClassDeclaration9.ts",
     },
   },
 }

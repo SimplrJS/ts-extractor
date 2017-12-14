@@ -3,25 +3,7 @@
 exports[`FunctionDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "AsyncFoo",
-          Array [
-            "FunctionDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "FunctionDeclaration3.ts",
-      "Path": "./cases/FunctionDeclaration3.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "FunctionDeclaration-0": Object {
@@ -61,6 +43,30 @@ Object {
         "Text": "Promise<void>",
       },
       "TypeParameters": Array [],
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration3.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "AsyncFoo",
+          Array [
+            "FunctionDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FunctionDeclaration3.ts",
+      "Path": "./cases/FunctionDeclaration3.ts",
     },
   },
 }

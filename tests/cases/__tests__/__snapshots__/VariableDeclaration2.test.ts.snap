@@ -3,10 +3,18 @@
 exports[`VariableDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "SourceFile-0": Object {
       "ApiKind": "source-file",
       "Kind": 268,
       "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/VariableDeclaration2.ts",
+        "Line": 0,
+      },
       "Members": Array [
         Array [
           "Foo",
@@ -22,8 +30,6 @@ Object {
       "Name": "VariableDeclaration2.ts",
       "Path": "./cases/VariableDeclaration2.ts",
     },
-  ],
-  "Registry": Object {
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
       "Kind": 226,

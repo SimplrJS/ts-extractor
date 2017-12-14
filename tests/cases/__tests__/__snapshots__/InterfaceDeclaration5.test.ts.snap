@@ -3,25 +3,7 @@
 exports[`InterfaceDeclaration5 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "GenericIdentityFn",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration5.ts",
-      "Path": "./cases/InterfaceDeclaration5.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "CallSignature-0": Object {
@@ -115,6 +97,30 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "TValue",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration5.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "GenericIdentityFn",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration5.ts",
+      "Path": "./cases/InterfaceDeclaration5.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",

@@ -3,25 +3,7 @@
 exports[`InterfaceDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration2.ts",
-      "Path": "./cases/InterfaceDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "InterfaceDeclaration-0": Object {
@@ -73,6 +55,30 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration2.ts",
+        "Line": 0,
+      },
+      "Members": Array [
+        Array [
+          "Foo",
+          Array [
+            "InterfaceDeclaration-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration2.ts",
+      "Path": "./cases/InterfaceDeclaration2.ts",
     },
   },
 }
