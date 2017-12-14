@@ -39,7 +39,6 @@ import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
-import { PathIsInside } from "./utils/path-is-inside";
 
 export namespace ApiHelpers {
     export function VisitApiItem(
@@ -112,16 +111,20 @@ export namespace ApiHelpers {
         return apiItem;
     }
 
+    export const NODE_MODULES_PACKAGE_REGEX = /\/node_modules\/(.+?)\//;
+
     export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
         const declarationSourceFile = declaration.getSourceFile();
-        const declarationFileName = declarationSourceFile.fileName;
-
-        if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
-            return false;
-        }
 
         if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
-            return false;
+            const match = declarationSourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
+            if (match == null) {
+                return false;
+            }
+            const [, packageName] = match;
+
+            return options.ExternalPackages.
+                findIndex(x => x.toLowerCase() === packageName.toLowerCase()) !== -1;
         }
 
         return true;
@@ -348,13 +351,25 @@ export namespace ApiHelpers {
     export function GetApiItemLocationDtoFromDeclaration(declaration: ts.Declaration, options: ApiItemOptions): ApiItemLocationDto {
         const sourceFile = declaration.getSourceFile();
 
+        const isExternalPackage = options.Program.isSourceFileFromExternalLibrary(sourceFile);
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-        const fileName = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
+        const fileNamePath = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
+        let fileName = StandardizeRelativePath(fileNamePath, options);
+
+        if (isExternalPackage) {
+            const packageFullPath = fileName.match(/\/node_modules\/(.+?)$/);
+
+            if (packageFullPath != null) {
+                const [, packagePath] = packageFullPath;
+                fileName = packagePath;
+            }
+        }
 
         return {
-            FileName: StandardizeRelativePath(fileName, options),
+            FileName: fileName,
             Line: position.line,
-            Character: position.character
+            Character: position.character,
+            IsExternalPackage: isExternalPackage
         };
     }
 }

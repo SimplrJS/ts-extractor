@@ -1,5 +1,5 @@
 // tslint:disable
-
+export { SyntaxKind } from "typescript";
 
 // Enum with specified value.
 
@@ -87,7 +87,9 @@
 //     Trecias
 // }
 
-export namespace Foo { }
+// export namespace Foo { }
+
+// export const SyntaxKind: ts.SyntaxKind = ts.SyntaxKind.SourceFile;
 
 // export interface Boo {
 //     [key: string]: string[];

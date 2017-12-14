@@ -8,6 +8,7 @@ import { ReadonlyRegistry } from "../contracts/registry";
 export interface ApiItemOptions {
     Program: ts.Program;
     ExtractorOptions: ExtractorOptions;
+    ExternalPackages: string[];
     Registry: ReadonlyRegistry<ApiItem>;
     AddItemToRegistry(item: ApiItem<ts.Declaration, any>): string;
 }
