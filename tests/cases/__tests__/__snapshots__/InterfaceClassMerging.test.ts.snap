@@ -16,6 +16,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Members": Array [
@@ -57,6 +58,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 15,
       },
       "Members": Array [
@@ -82,6 +84,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -130,6 +133,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Metadata": Object {
@@ -169,6 +173,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 16,
       },
       "Metadata": Object {
@@ -204,6 +209,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -239,6 +245,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -274,6 +281,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -300,6 +308,7 @@ Object {
       "Location": Object {
         "Character": 20,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -326,6 +335,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Metadata": Object {
@@ -352,6 +362,7 @@ Object {
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 16,
       },
       "Metadata": Object {
@@ -381,6 +392,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -406,6 +418,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -431,6 +444,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -455,6 +469,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -503,6 +518,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 21,
       },
       "Metadata": Object {
@@ -528,6 +544,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Metadata": Object {
@@ -553,6 +570,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 23,
       },
       "Metadata": Object {

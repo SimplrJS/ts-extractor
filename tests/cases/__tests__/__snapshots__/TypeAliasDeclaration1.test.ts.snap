@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -38,6 +39,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
@@ -67,6 +69,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -92,6 +95,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Metadata": Object {
@@ -117,6 +121,7 @@ Object {
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [

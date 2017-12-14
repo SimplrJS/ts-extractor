@@ -15,6 +15,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ParameterDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -41,6 +42,100 @@ Object {
       },
       "TypeParameters": Array [],
     },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+        "IsExternalPackage": false,
+        "Line": 20,
+      },
+      "Members": Array [
+        Array [
+          "includes",
+          Array [
+            "MethodSignature-0",
+          ],
+        ],
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Array",
+      "TypeParameters": Array [
+        Array [
+          "T",
+          Array [
+            "TypeParameter-0",
+          ],
+        ],
+      ],
+    },
+    "MethodSignature-0": Object {
+      "ApiKind": "method",
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "Kind": 150,
+      "KindString": "MethodSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+        "IsExternalPackage": false,
+        "Line": 26,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Determines whether an array includes a certain element, returning true or false as appropriate.",
+        "JSDocTags": Array [],
+      },
+      "Name": "includes",
+      "Parameters": Array [
+        Array [
+          "searchElement",
+          Array [
+            "Parameter-1",
+          ],
+        ],
+        Array [
+          "fromIndex",
+          Array [
+            "Parameter-2",
+          ],
+        ],
+      ],
+      "ReturnType": Object {
+        "ApiTypeKind": "union",
+        "Flags": 65544,
+        "FlagsString": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "boolean",
+        "Types": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "true",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 128,
+            "FlagsString": "BooleanLiteral",
+            "Generics": undefined,
+            "Name": undefined,
+            "ReferenceId": undefined,
+            "Text": "false",
+          },
+        ],
+      },
+      "TypeParameters": Array [],
+    },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "IsOptional": false,
@@ -50,6 +145,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/ParameterDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -73,8 +169,62 @@ Object {
           },
         ],
         "Name": "Array",
-        "ReferenceId": undefined,
+        "ReferenceId": "InterfaceDeclaration-0",
         "Text": "string[]",
+      },
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+        "IsExternalPackage": false,
+        "Line": 26,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "The element to search for.",
+        "JSDocTags": Array [],
+      },
+      "Name": "searchElement",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 16384,
+        "FlagsString": "TypeParameter",
+        "Generics": undefined,
+        "Name": "T",
+        "ReferenceId": "TypeParameter-0",
+        "Text": "T",
+      },
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "IsOptional": true,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 31,
+        "FileName": "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+        "IsExternalPackage": false,
+        "Line": 26,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "The position in this array at which to begin searching for searchElement.",
+        "JSDocTags": Array [],
+      },
+      "Name": "fromIndex",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 4,
+        "FlagsString": "Number",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "number",
       },
     },
     "SourceFile-0": Object {
@@ -84,6 +234,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ParameterDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
@@ -99,6 +250,24 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ParameterDeclaration2.ts",
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Kind": 145,
+      "KindString": "TypeParameter",
+      "Location": Object {
+        "Character": 16,
+        "FileName": "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+        "IsExternalPackage": false,
+        "Line": 20,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "T",
     },
   },
 }

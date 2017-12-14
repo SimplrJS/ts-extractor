@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
@@ -73,6 +74,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -89,6 +91,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -105,6 +108,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -121,6 +125,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Metadata": Object {
@@ -137,6 +142,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -153,6 +159,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -169,6 +176,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 9,
       },
       "Metadata": Object {
@@ -185,6 +193,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [

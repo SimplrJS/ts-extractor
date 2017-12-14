@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -39,6 +40,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -63,6 +65,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -98,6 +101,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -123,6 +127,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {

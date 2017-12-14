@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [],
@@ -31,6 +32,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [

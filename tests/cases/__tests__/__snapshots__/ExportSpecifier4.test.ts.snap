@@ -16,6 +16,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
@@ -61,6 +62,7 @@ Object {
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ExportSpecifier4.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {
@@ -77,6 +79,7 @@ Object {
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ExportSpecifier4.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -98,6 +101,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -137,6 +141,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -165,6 +170,7 @@ Object {
       "Location": Object {
         "Character": 30,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -194,6 +200,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 9,
       },
       "Metadata": Object {
@@ -223,6 +230,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Metadata": Object {
@@ -247,6 +255,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportSpecifier4.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [

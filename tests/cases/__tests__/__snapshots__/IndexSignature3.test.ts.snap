@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -40,6 +41,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -66,6 +68,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -93,6 +96,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -119,6 +123,7 @@ Object {
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -145,6 +150,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -169,6 +175,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [

@@ -16,6 +16,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
@@ -44,6 +45,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -70,6 +72,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -96,6 +99,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 14,
       },
       "Metadata": Object {
@@ -122,6 +126,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -148,6 +153,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -193,6 +199,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 14,
       },
       "Metadata": Object {
@@ -245,6 +252,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [

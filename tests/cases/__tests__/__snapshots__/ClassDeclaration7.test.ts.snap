@@ -16,6 +16,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [],
@@ -40,6 +41,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
@@ -65,6 +67,7 @@ Object {
       "Location": Object {
         "Character": 22,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {

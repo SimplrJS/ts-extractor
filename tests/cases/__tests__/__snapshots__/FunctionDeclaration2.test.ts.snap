@@ -15,6 +15,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/FunctionDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {
@@ -57,6 +58,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/FunctionDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {
@@ -81,6 +83,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/FunctionDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -106,6 +109,7 @@ Object {
       "Location": Object {
         "Character": 20,
         "FileName": "./cases/FunctionDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {

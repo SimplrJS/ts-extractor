@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -55,6 +56,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -81,6 +83,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -105,6 +108,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -130,6 +134,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {

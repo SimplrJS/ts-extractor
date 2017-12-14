@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Members": Array [],
@@ -30,6 +31,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Members": Array [

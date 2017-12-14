@@ -26,6 +26,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Members": Array [
@@ -58,6 +59,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -82,6 +84,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
@@ -112,6 +115,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -140,6 +144,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -168,6 +173,7 @@ Object {
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -192,6 +198,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
