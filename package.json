@@ -47,13 +47,11 @@
     "devDependencies": {
         "@types/globby": "^6.1.0",
         "@types/jest": "^21.1.8",
-        "@types/sinon": "^4.1.0",
         "coveralls": "^3.0.0",
         "globby": "^7.1.1",
-        "jest": "^21.3.0-beta.14",
+        "jest": "^21.2.1",
         "rimraf": "^2.6.2",
         "simplr-tslint": "0.0.1",
-        "sinon": "^4.1.3",
         "ts-jest": "^21.2.4",
         "ts-node": "^3.3.0",
         "tslint": "^5.8.0"
