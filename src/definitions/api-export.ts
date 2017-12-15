@@ -7,7 +7,6 @@ import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportDto } from "../contracts/definitions/api-export-dto";
-import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -26,7 +25,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         return ApiHelpers.StandardizeRelativePath(exportRelativePath, this.Options);
     }
 
-    private members: ApiItemReference[] = [];
+    private sourceFileId: string | undefined;
     private apiSourceFile: ApiSourceFile | undefined;
 
     protected OnGatherData(): void {
@@ -38,9 +37,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
 
             if (sourceFileSymbol != null) {
                 this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, this.Options);
-                this.apiSourceFile.GatherData();
-
-                this.members = this.apiSourceFile.OnExtract().Members;
+                this.sourceFileId = this.Options.AddItemToRegistry(this.apiSourceFile);
             }
         }
     }
@@ -57,7 +54,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
-            Members: this.members,
+            SourceFileId: this.sourceFileId,
             ExportPath: exportPath
         };
     }
