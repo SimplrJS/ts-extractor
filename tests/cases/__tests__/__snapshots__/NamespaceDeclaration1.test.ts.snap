@@ -34,12 +34,12 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Foo",
-          Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
             "ModuleDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

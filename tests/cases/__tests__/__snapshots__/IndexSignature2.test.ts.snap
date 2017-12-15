@@ -45,12 +45,12 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "__index",
-          Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -97,12 +97,12 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Foo",
-          Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

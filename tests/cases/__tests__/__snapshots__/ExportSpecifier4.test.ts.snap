@@ -20,36 +20,36 @@ Object {
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "SetFoo",
-          Array [
+        Object {
+          "Alias": "SetFoo",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
-        Array [
-          "property",
-          Array [
+        },
+        Object {
+          "Alias": "property",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "GetFoo",
-          Array [
+        },
+        Object {
+          "Alias": "GetFoo",
+          "Ids": Array [
             "MethodDeclaration-1",
           ],
-        ],
-        Array [
-          "Id",
-          Array [
+        },
+        Object {
+          "Alias": "Id",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
-        Array [
-          "Bar",
-          Array [
+        },
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertyDeclaration-2",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -116,12 +116,12 @@ Object {
       },
       "Name": "SetFoo",
       "Parameters": Array [
-        Array [
-          "foo",
-          Array [
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -295,18 +295,18 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Foo",
-          Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
             "ExportSpecifier-0",
           ],
-        ],
-        Array [
-          "NotValid",
-          Array [
+        },
+        Object {
+          "Alias": "NotValid",
+          "Ids": Array [
             "ExportSpecifier-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

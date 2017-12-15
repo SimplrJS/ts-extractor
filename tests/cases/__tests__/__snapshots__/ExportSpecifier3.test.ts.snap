@@ -39,18 +39,18 @@ Object {
         "Line": 10,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "Bar2",
-          Array [
+        },
+        Object {
+          "Alias": "Bar2",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -109,12 +109,12 @@ Object {
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -135,12 +135,12 @@ Object {
         "Line": 6,
       },
       "Members": Array [
-        Array [
-          "Bar2",
-          Array [
+        Object {
+          "Alias": "Bar2",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -272,18 +272,18 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "ExportSpecifier-0",
           ],
-        ],
-        Array [
-          "FooClass",
-          Array [
+        },
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
             "ExportSpecifier-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

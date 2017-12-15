@@ -20,18 +20,18 @@ Object {
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "x",
-          Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "y",
-          Array [
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -64,24 +64,24 @@ Object {
         "Line": 7,
       },
       "Members": Array [
-        Array [
-          "x",
-          Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
             "PropertyDeclaration-2",
           ],
-        ],
-        Array [
-          "y",
-          Array [
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
             "PropertyDeclaration-3",
           ],
-        ],
-        Array [
-          "z",
-          Array [
+        },
+        Object {
+          "Alias": "z",
+          "Ids": Array [
             "PropertyDeclaration-4",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -251,18 +251,18 @@ Object {
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "Point",
-          Array [
+        Object {
+          "Alias": "Point",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
-        Array [
-          "Point3d",
-          Array [
+        },
+        Object {
+          "Alias": "Point3d",
+          "Ids": Array [
             "ClassDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

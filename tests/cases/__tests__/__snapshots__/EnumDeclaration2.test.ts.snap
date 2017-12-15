@@ -18,48 +18,48 @@ Object {
         "Line": 5,
       },
       "Members": Array [
-        Array [
-          "None",
-          Array [
+        Object {
+          "Alias": "None",
+          "Ids": Array [
             "EnumMember-0",
           ],
-        ],
-        Array [
-          "Critical",
-          Array [
+        },
+        Object {
+          "Alias": "Critical",
+          "Ids": Array [
             "EnumMember-1",
           ],
-        ],
-        Array [
-          "Error",
-          Array [
+        },
+        Object {
+          "Alias": "Error",
+          "Ids": Array [
             "EnumMember-2",
           ],
-        ],
-        Array [
-          "Warning",
-          Array [
+        },
+        Object {
+          "Alias": "Warning",
+          "Ids": Array [
             "EnumMember-3",
           ],
-        ],
-        Array [
-          "Information",
-          Array [
+        },
+        Object {
+          "Alias": "Information",
+          "Ids": Array [
             "EnumMember-4",
           ],
-        ],
-        Array [
-          "Debug",
-          Array [
+        },
+        Object {
+          "Alias": "Debug",
+          "Ids": Array [
             "EnumMember-5",
           ],
-        ],
-        Array [
-          "Trace",
-          Array [
+        },
+        Object {
+          "Alias": "Trace",
+          "Ids": Array [
             "EnumMember-6",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "Defines logging severity levels.",
@@ -202,12 +202,12 @@ These messages are disabled by default and should never be enabled in a producti
         "Line": 5,
       },
       "Members": Array [
-        Array [
-          "LogLevel",
-          Array [
+        Object {
+          "Alias": "LogLevel",
+          "Ids": Array [
             "EnumDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

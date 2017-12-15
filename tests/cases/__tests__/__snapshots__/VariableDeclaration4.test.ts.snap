@@ -18,12 +18,12 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "b",
-          Array [
+        Object {
+          "Alias": "b",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -69,24 +69,24 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "A",
-          Array [
+        Object {
+          "Alias": "A",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
-        Array [
-          "a",
-          Array [
+        },
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "VariableDeclaration-0",
           ],
-        ],
-        Array [
-          "z",
-          Array [
+        },
+        Object {
+          "Alias": "z",
+          "Ids": Array [
             "VariableDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

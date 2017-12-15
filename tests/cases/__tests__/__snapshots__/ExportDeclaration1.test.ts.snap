@@ -20,38 +20,38 @@ Object {
         "Line": 6,
       },
       "Members": Array [
-        Array [
-          "SetFoo",
-          Array [
+        Object {
+          "Alias": "SetFoo",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
-        Array [
-          "GetFoo",
-          Array [
+        },
+        Object {
+          "Alias": "GetFoo",
+          "Ids": Array [
             "MethodDeclaration-1",
             "MethodDeclaration-2",
             "MethodDeclaration-3",
           ],
-        ],
-        Array [
-          "AsyncGetFoo",
-          Array [
+        },
+        Object {
+          "Alias": "AsyncGetFoo",
+          "Ids": Array [
             "MethodDeclaration-4",
           ],
-        ],
-        Array [
-          "IdProperty",
-          Array [
+        },
+        Object {
+          "Alias": "IdProperty",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "BarProperty",
-          Array [
+        },
+        Object {
+          "Alias": "BarProperty",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "Class Foo comment line.",
@@ -77,12 +77,12 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "FooClass",
-          Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -112,12 +112,12 @@ Object {
       },
       "Name": "SetFoo",
       "Parameters": Array [
-        Array [
-          "foo",
-          Array [
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -154,12 +154,12 @@ GetFoo without A parameter comment line.",
       },
       "Name": "GetFoo",
       "Parameters": Array [
-        Array [
-          "text",
-          Array [
+        Object {
+          "Alias": "text",
+          "Ids": Array [
             "Parameter-1",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -196,12 +196,12 @@ GetFoo without A parameter comment line.",
       },
       "Name": "GetFoo",
       "Parameters": Array [
-        Array [
-          "open",
-          Array [
+        Object {
+          "Alias": "open",
+          "Ids": Array [
             "Parameter-2",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -238,12 +238,12 @@ GetFoo without A parameter comment line.",
       },
       "Name": "GetFoo",
       "Parameters": Array [
-        Array [
-          "arg",
-          Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
             "Parameter-3",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -530,12 +530,12 @@ GetFoo without A parameter comment line.",
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "__export",
-          Array [
+        Object {
+          "Alias": "__export",
+          "Ids": Array [
             "ExportDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

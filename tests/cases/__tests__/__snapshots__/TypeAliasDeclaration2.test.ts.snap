@@ -121,24 +121,24 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "OneCommonField1",
-          Array [
+        Object {
+          "Alias": "OneCommonField1",
+          "Ids": Array [
             "TypeAliasDeclaration-0",
           ],
-        ],
-        Array [
-          "OneCommonField2",
-          Array [
+        },
+        Object {
+          "Alias": "OneCommonField2",
+          "Ids": Array [
             "TypeAliasDeclaration-1",
           ],
-        ],
-        Array [
-          "OneCommonFieldTypeIntersection",
-          Array [
+        },
+        Object {
+          "Alias": "OneCommonFieldTypeIntersection",
+          "Ids": Array [
             "TypeAliasDeclaration-2",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -254,18 +254,18 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
-        Array [
-          "FooName",
-          Array [
+        },
+        Object {
+          "Alias": "FooName",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -284,18 +284,18 @@ Object {
         "Line": 5,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-2",
           ],
-        ],
-        Array [
-          "BazName",
-          Array [
+        },
+        Object {
+          "Alias": "BazName",
+          "Ids": Array [
             "PropertySignature-3",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

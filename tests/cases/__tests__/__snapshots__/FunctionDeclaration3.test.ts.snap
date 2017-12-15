@@ -56,12 +56,12 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "AsyncFoo",
-          Array [
+        Object {
+          "Alias": "AsyncFoo",
+          "Ids": Array [
             "FunctionDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

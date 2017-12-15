@@ -43,18 +43,18 @@ Object {
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "MyType",
-          Array [
+        Object {
+          "Alias": "MyType",
+          "Ids": Array [
             "TypeAliasDeclaration-0",
           ],
-        ],
-        Array [
-          "AnotherType",
-          Array [
+        },
+        Object {
+          "Alias": "AnotherType",
+          "Ids": Array [
             "TypeAliasDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -125,12 +125,12 @@ Object {
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

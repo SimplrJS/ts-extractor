@@ -20,14 +20,14 @@ Object {
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "__constructor",
-          Array [
+        Object {
+          "Alias": "__constructor",
+          "Ids": Array [
             "Constructor-0",
             "Constructor-1",
             "Constructor-2",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -55,12 +55,12 @@ Creating foo with boolean.",
       },
       "Name": "__constructor",
       "Parameters": Array [
-        Array [
-          "text",
-          Array [
+        Object {
+          "Alias": "text",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
     },
     "Constructor-1": Object {
@@ -82,12 +82,12 @@ Creating foo with boolean.",
       },
       "Name": "__constructor",
       "Parameters": Array [
-        Array [
-          "should",
-          Array [
+        Object {
+          "Alias": "should",
+          "Ids": Array [
             "Parameter-1",
           ],
-        ],
+        },
       ],
     },
     "Constructor-2": Object {
@@ -109,12 +109,12 @@ Creating foo with boolean.",
       },
       "Name": "__constructor",
       "Parameters": Array [
-        Array [
-          "arg",
-          Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
             "Parameter-2",
           ],
-        ],
+        },
       ],
     },
     "Parameter-0": Object {
@@ -256,12 +256,12 @@ Creating foo with boolean.",
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "FooClass",
-          Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

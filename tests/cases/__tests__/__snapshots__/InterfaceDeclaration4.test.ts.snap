@@ -51,24 +51,24 @@ Object {
       },
       "Name": "__call",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
-        Array [
-          "b",
-          Array [
+        },
+        Object {
+          "Alias": "b",
+          "Ids": Array [
             "Parameter-1",
           ],
-        ],
-        Array [
-          "c",
-          Array [
+        },
+        Object {
+          "Alias": "c",
+          "Ids": Array [
             "Parameter-2",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -147,12 +147,12 @@ Object {
       },
       "Name": "__new",
       "Parameters": Array [
-        Array [
-          "s",
-          Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
             "Parameter-3",
           ],
-        ],
+        },
       ],
     },
     "FunctionType-0": Object {
@@ -303,81 +303,81 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "__call",
-          Array [
+        Object {
+          "Alias": "__call",
+          "Ids": Array [
             "CallSignature-0",
             "CallSignature-1",
           ],
-        ],
-        Array [
-          "__new",
-          Array [
+        },
+        Object {
+          "Alias": "__new",
+          "Ids": Array [
             "ConstructSignature-0",
             "ConstructSignature-1",
           ],
-        ],
-        Array [
-          "__index",
-          Array [
+        },
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-0",
             "IndexSignature-1",
           ],
-        ],
-        Array [
-          "p1",
-          Array [
+        },
+        Object {
+          "Alias": "p1",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
-        Array [
-          "p3",
-          Array [
+        },
+        Object {
+          "Alias": "p3",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
-        Array [
-          "p2",
-          Array [
+        },
+        Object {
+          "Alias": "p2",
+          "Ids": Array [
             "PropertySignature-2",
           ],
-        ],
-        Array [
-          "p4",
-          Array [
+        },
+        Object {
+          "Alias": "p4",
+          "Ids": Array [
             "PropertySignature-3",
           ],
-        ],
-        Array [
-          "p5",
-          Array [
+        },
+        Object {
+          "Alias": "p5",
+          "Ids": Array [
             "MethodSignature-0",
           ],
-        ],
-        Array [
-          "f1",
-          Array [
+        },
+        Object {
+          "Alias": "f1",
+          "Ids": Array [
             "MethodSignature-1",
           ],
-        ],
-        Array [
-          "f2",
-          Array [
+        },
+        Object {
+          "Alias": "f2",
+          "Ids": Array [
             "MethodSignature-2",
           ],
-        ],
-        Array [
-          "f3",
-          Array [
+        },
+        Object {
+          "Alias": "f3",
+          "Ids": Array [
             "MethodSignature-3",
           ],
-        ],
-        Array [
-          "f4",
-          Array [
+        },
+        Object {
+          "Alias": "f4",
+          "Ids": Array [
             "MethodSignature-4",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -398,12 +398,12 @@ Object {
         "Line": 22,
       },
       "Members": Array [
-        Array [
-          "__index",
-          Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-2",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -424,12 +424,12 @@ Object {
         "Line": 26,
       },
       "Members": Array [
-        Array [
-          "__index",
-          Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-3",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -571,12 +571,12 @@ Object {
       },
       "Name": "p5",
       "Parameters": Array [
-        Array [
-          "s",
-          Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
             "Parameter-6",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -665,12 +665,12 @@ Object {
       },
       "Name": "f3",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-7",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -701,12 +701,12 @@ Object {
       },
       "Name": "f4",
       "Parameters": Array [
-        Array [
-          "s",
-          Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
             "Parameter-8",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -1131,60 +1131,60 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "a0",
-          Array [
+        Object {
+          "Alias": "a0",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
-        Array [
-          "a1",
-          Array [
+        },
+        Object {
+          "Alias": "a1",
+          "Ids": Array [
             "InterfaceDeclaration-1",
           ],
-        ],
-        Array [
-          "a2",
-          Array [
+        },
+        Object {
+          "Alias": "a2",
+          "Ids": Array [
             "InterfaceDeclaration-2",
           ],
-        ],
-        Array [
-          "a",
-          Array [
+        },
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "InterfaceDeclaration-3",
           ],
-        ],
-        Array [
-          "b",
-          Array [
+        },
+        Object {
+          "Alias": "b",
+          "Ids": Array [
             "InterfaceDeclaration-4",
           ],
-        ],
-        Array [
-          "c",
-          Array [
+        },
+        Object {
+          "Alias": "c",
+          "Ids": Array [
             "InterfaceDeclaration-5",
           ],
-        ],
-        Array [
-          "d",
-          Array [
+        },
+        Object {
+          "Alias": "d",
+          "Ids": Array [
             "InterfaceDeclaration-6",
           ],
-        ],
-        Array [
-          "c1",
-          Array [
+        },
+        Object {
+          "Alias": "c1",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
-        Array [
-          "instance2",
-          Array [
+        },
+        Object {
+          "Alias": "instance2",
+          "Ids": Array [
             "VariableDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

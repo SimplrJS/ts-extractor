@@ -17,12 +17,12 @@ Object {
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "z",
-          Array [
+        Object {
+          "Alias": "z",
+          "Ids": Array [
             "VariableDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
