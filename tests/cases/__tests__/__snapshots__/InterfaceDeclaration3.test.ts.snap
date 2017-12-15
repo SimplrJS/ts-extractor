@@ -14,15 +14,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "x",
-          Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -30,12 +31,12 @@ Object {
       },
       "Name": "Generic",
       "TypeParameters": Array [
-        Array [
-          "T",
-          Array [
+        Object {
+          "Alias": "T",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "PropertySignature-0": Object {
@@ -46,6 +47,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -70,21 +72,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Generic",
-          Array [
+        Object {
+          "Alias": "Generic",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
-        Array [
-          "y",
-          Array [
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
             "VariableDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -101,6 +104,7 @@ Object {
       "Location": Object {
         "Character": 25,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {
@@ -116,6 +120,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {

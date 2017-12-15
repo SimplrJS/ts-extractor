@@ -13,15 +13,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "FOO",
-          Array [
+        Object {
+          "Alias": "FOO",
+          "Ids": Array [
             "VariableDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -36,6 +37,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {

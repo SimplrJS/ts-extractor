@@ -13,15 +13,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/NamespaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "ModuleDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -36,15 +37,16 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/NamespaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Members": Array [
-        Array [
-          "Hello",
-          Array [
+        Object {
+          "Alias": "Hello",
+          "Ids": Array [
             "VariableDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -59,15 +61,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/NamespaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Foo",
-          Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
             "ModuleDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -82,6 +85,7 @@ Object {
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/NamespaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {

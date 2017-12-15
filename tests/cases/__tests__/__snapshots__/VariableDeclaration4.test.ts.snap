@@ -14,15 +14,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "b",
-          Array [
+        Object {
+          "Alias": "b",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -39,6 +40,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -63,27 +65,28 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "A",
-          Array [
+        Object {
+          "Alias": "A",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
-        Array [
-          "a",
-          Array [
+        },
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "VariableDeclaration-0",
           ],
-        ],
-        Array [
-          "z",
-          Array [
+        },
+        Object {
+          "Alias": "z",
+          "Ids": Array [
             "VariableDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -98,6 +101,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -123,6 +127,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {

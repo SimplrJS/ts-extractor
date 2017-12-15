@@ -16,6 +16,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [],
@@ -25,12 +26,12 @@ Object {
       },
       "Name": "FooClass",
       "TypeParameters": Array [
-        Array [
-          "TValue",
-          Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "SourceFile-0": Object {
@@ -40,15 +41,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "FooClass",
-          Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -65,6 +67,7 @@ Object {
       "Location": Object {
         "Character": 22,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {

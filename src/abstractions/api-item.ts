@@ -8,6 +8,7 @@ import { ReadonlyRegistry } from "../contracts/registry";
 export interface ApiItemOptions {
     Program: ts.Program;
     ExtractorOptions: ExtractorOptions;
+    ExternalPackages: string[];
     Registry: ReadonlyRegistry<ApiItem>;
     AddItemToRegistry(item: ApiItem<ts.Declaration, any>): string;
 }
@@ -49,13 +50,6 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
 
     public get Status(): ApiItemStatus {
         return this.ItemStatus;
-    }
-
-    /**
-     * If ApiItem is private, it will not appear in the extracted data.
-     */
-    public IsPrivate(): boolean {
-        return false;
     }
 
     protected abstract OnExtract(): TExtractDto;

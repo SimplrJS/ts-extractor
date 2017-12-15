@@ -15,6 +15,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ParameterDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -23,12 +24,12 @@ Object {
       },
       "Name": "FooFunction",
       "Parameters": Array [
-        Array [
-          "bar",
-          Array [
+        Object {
+          "Alias": "bar",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -50,6 +51,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/ParameterDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -93,15 +95,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ParameterDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "FooFunction",
-          Array [
+        Object {
+          "Alias": "FooFunction",
+          "Ids": Array [
             "FunctionDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

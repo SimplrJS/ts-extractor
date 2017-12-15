@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Members": Array [],
@@ -30,15 +31,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Members": Array [
-        Array [
-          "__export",
-          Array [
+        Object {
+          "Alias": "__export",
+          "Ids": Array [
             "ExportDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

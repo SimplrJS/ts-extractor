@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -22,12 +23,12 @@ Object {
       },
       "Name": "__call",
       "Parameters": Array [
-        Array [
-          "value",
-          Array [
+        Object {
+          "Alias": "value",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -39,12 +40,12 @@ Object {
         "Text": "TValue",
       },
       "TypeParameters": Array [
-        Array [
-          "TValue",
-          Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "InterfaceDeclaration-0": Object {
@@ -55,15 +56,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "__call",
-          Array [
+        Object {
+          "Alias": "__call",
+          "Ids": Array [
             "CallSignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -81,6 +83,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -105,15 +108,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "GenericIdentityFn",
-          Array [
+        Object {
+          "Alias": "GenericIdentityFn",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -130,6 +134,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration5.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
