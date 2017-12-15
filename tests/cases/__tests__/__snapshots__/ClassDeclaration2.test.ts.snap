@@ -16,33 +16,40 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "SetFoo",
-          Array [
+        Object {
+          "Alias": "SetFoo",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
-        Array [
-          "GetFoo",
-          Array [
-            "MethodDeclaration-1",
-          ],
-        ],
-        Array [
-          "Id",
-          Array [
+        },
+        Object {
+          "Alias": "property",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "Bar",
-          Array [
+        },
+        Object {
+          "Alias": "GetFoo",
+          "Ids": Array [
+            "MethodDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "Id",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
+            "PropertyDeclaration-2",
+          ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -64,6 +71,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -72,12 +80,12 @@ Object {
       },
       "Name": "SetFoo",
       "Parameters": Array [
-        Array [
-          "foo",
-          Array [
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -103,7 +111,8 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
-        "Line": 5,
+        "IsExternalPackage": false,
+        "Line": 7,
       },
       "Metadata": Object {
         "DocumentationComment": "",
@@ -131,6 +140,7 @@ Object {
       "Location": Object {
         "Character": 30,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -149,6 +159,36 @@ Object {
       },
     },
     "PropertyDeclaration-0": Object {
+      "AccessModifier": "private",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Kind": 149,
+      "KindString": "PropertyDeclaration",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "property",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "PropertyDeclaration-1": Object {
       "AccessModifier": "public",
       "ApiKind": "class-property",
       "IsAbstract": true,
@@ -160,7 +200,8 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
-        "Line": 9,
+        "IsExternalPackage": false,
+        "Line": 11,
       },
       "Metadata": Object {
         "DocumentationComment": "",
@@ -177,7 +218,7 @@ Object {
         "Text": "string",
       },
     },
-    "PropertyDeclaration-1": Object {
+    "PropertyDeclaration-2": Object {
       "AccessModifier": "public",
       "ApiKind": "class-property",
       "IsAbstract": false,
@@ -189,7 +230,8 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
-        "Line": 10,
+        "IsExternalPackage": false,
+        "Line": 12,
       },
       "Metadata": Object {
         "DocumentationComment": "",
@@ -213,15 +255,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "Foo",
-          Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

@@ -26,21 +26,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Members": Array [
-        Array [
-          "__constructor",
-          Array [
+        Object {
+          "Alias": "__constructor",
+          "Ids": Array [
             "Constructor-0",
           ],
-        ],
-        Array [
-          "foo",
-          Array [
+        },
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -58,6 +59,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -66,12 +68,12 @@ Object {
       },
       "Name": "__constructor",
       "Parameters": Array [
-        Array [
-          "str",
-          Array [
+        Object {
+          "Alias": "str",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
     },
     "InterfaceDeclaration-0": Object {
@@ -82,15 +84,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "foo",
-          Array [
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
             "MethodSignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -112,6 +115,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -140,6 +144,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -168,6 +173,7 @@ Object {
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -192,21 +198,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Face",
-          Array [
+        Object {
+          "Alias": "Face",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
-        Array [
-          "Camera",
-          Array [
+        },
+        Object {
+          "Alias": "Camera",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

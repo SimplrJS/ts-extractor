@@ -4,21 +4,21 @@ import * as path from "path";
 import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiHelpers } from "../api-helpers";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
-    private members: ApiItemReferenceTuple;
+    private members: ApiItemReference[];
 
     private getFileName(): string {
         return path.basename(this.Declaration.fileName);
     }
 
     protected OnGatherData(): void {
-        this.members = ApiHelpers.GetItemsIdsFromSymbols(this.Symbol.exports, this.Options);
+        this.members = ApiHelpers.GetItemsIdsFromSymbolsMap(this.Symbol.exports, this.Options);
     }
 
     public OnExtract(): ApiSourceFileDto {

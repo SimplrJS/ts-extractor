@@ -16,15 +16,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Members": Array [
-        Array [
-          "b",
-          Array [
+        Object {
+          "Alias": "b",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -32,12 +33,12 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [
-        Array [
-          "T",
-          Array [
+        Object {
+          "Alias": "T",
+          "Ids": Array [
             "TypeParameter-1",
           ],
-        ],
+        },
       ],
     },
     "ClassDeclaration-1": Object {
@@ -50,15 +51,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 15,
       },
       "Members": Array [
-        Array [
-          "b",
-          Array [
+        Object {
+          "Alias": "b",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -66,12 +68,12 @@ Object {
       },
       "Name": "Bar",
       "TypeParameters": Array [
-        Array [
-          "T",
-          Array [
+        Object {
+          "Alias": "T",
+          "Ids": Array [
             "TypeParameter-2",
           ],
-        ],
+        },
       ],
     },
     "InterfaceDeclaration-0": Object {
@@ -82,15 +84,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Members": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -98,12 +101,12 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [
-        Array [
-          "T",
-          Array [
+        Object {
+          "Alias": "T",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "InterfaceDeclaration-1": Object {
@@ -114,15 +117,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 19,
       },
       "Members": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -130,12 +134,12 @@ Object {
       },
       "Name": "Bar",
       "TypeParameters": Array [
-        Array [
-          "T",
-          Array [
+        Object {
+          "Alias": "T",
+          "Ids": Array [
             "TypeParameter-3",
           ],
-        ],
+        },
       ],
     },
     "ModuleDeclaration-0": Object {
@@ -145,6 +149,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [],
@@ -166,6 +171,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -195,6 +201,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 16,
       },
       "Metadata": Object {
@@ -220,6 +227,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -245,6 +253,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 20,
       },
       "Metadata": Object {
@@ -269,29 +278,30 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "M",
-          Array [
+        Object {
+          "Alias": "M",
+          "Ids": Array [
             "ModuleDeclaration-0",
           ],
-        ],
-        Array [
-          "Foo",
-          Array [
+        },
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
             "InterfaceDeclaration-0",
             "ClassDeclaration-0",
           ],
-        ],
-        Array [
-          "Bar",
-          Array [
+        },
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "ClassDeclaration-1",
             "InterfaceDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -308,6 +318,7 @@ Object {
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -325,6 +336,7 @@ Object {
       "Location": Object {
         "Character": 17,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Metadata": Object {
@@ -342,6 +354,7 @@ Object {
       "Location": Object {
         "Character": 17,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 15,
       },
       "Metadata": Object {
@@ -359,6 +372,7 @@ Object {
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/MultipleDeclaration.ts",
+        "IsExternalPackage": false,
         "Line": 19,
       },
       "Metadata": Object {

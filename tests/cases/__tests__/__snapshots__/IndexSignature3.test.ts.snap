@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -40,6 +41,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -66,16 +68,17 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "__index",
-          Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-0",
             "IndexSignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -93,6 +96,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -119,6 +123,7 @@ Object {
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -145,6 +150,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -169,15 +175,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/IndexSignature3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Foo",
-          Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
             "InterfaceDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

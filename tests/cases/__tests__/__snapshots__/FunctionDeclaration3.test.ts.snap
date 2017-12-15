@@ -15,6 +15,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/FunctionDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {
@@ -51,15 +52,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/FunctionDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "AsyncFoo",
-          Array [
+        Object {
+          "Alias": "AsyncFoo",
+          "Ids": Array [
             "FunctionDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

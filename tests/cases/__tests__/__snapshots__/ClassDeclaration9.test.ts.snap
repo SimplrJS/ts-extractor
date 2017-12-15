@@ -16,21 +16,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "x",
-          Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "y",
-          Array [
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -59,27 +60,28 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Members": Array [
-        Array [
-          "x",
-          Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
             "PropertyDeclaration-2",
           ],
-        ],
-        Array [
-          "y",
-          Array [
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
             "PropertyDeclaration-3",
           ],
-        ],
-        Array [
-          "z",
-          Array [
+        },
+        Object {
+          "Alias": "z",
+          "Ids": Array [
             "PropertyDeclaration-4",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -100,6 +102,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -129,6 +132,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -158,6 +162,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -187,6 +192,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 9,
       },
       "Metadata": Object {
@@ -216,6 +222,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Metadata": Object {
@@ -240,21 +247,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration9.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "Point",
-          Array [
+        Object {
+          "Alias": "Point",
+          "Ids": Array [
             "ClassDeclaration-0",
           ],
-        ],
-        Array [
-          "Point3d",
-          Array [
+        },
+        Object {
+          "Alias": "Point3d",
+          "Ids": Array [
             "ClassDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

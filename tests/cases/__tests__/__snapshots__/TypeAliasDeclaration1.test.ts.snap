@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -38,21 +39,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "MyType",
-          Array [
+        Object {
+          "Alias": "MyType",
+          "Ids": Array [
             "TypeAliasDeclaration-0",
           ],
-        ],
-        Array [
-          "AnotherType",
-          Array [
+        },
+        Object {
+          "Alias": "AnotherType",
+          "Ids": Array [
             "TypeAliasDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -67,6 +69,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -92,6 +95,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Metadata": Object {
@@ -117,15 +121,16 @@ Object {
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

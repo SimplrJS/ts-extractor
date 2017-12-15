@@ -16,10 +16,6 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
     private isOptional: boolean;
     private isAsync: boolean;
 
-    public IsPrivate(): boolean {
-        return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
-    }
-
     public OnGatherData(): void {
         super.OnGatherData();
 

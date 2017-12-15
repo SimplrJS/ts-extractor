@@ -17,10 +17,6 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
     private isOptional: boolean;
     private type: TypeDto;
 
-    public IsPrivate(): boolean {
-        return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
-    }
-
     protected OnGatherData(): void {
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);

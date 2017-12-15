@@ -4,7 +4,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceTuple } from "./contracts/api-item-reference-tuple";
+import { ApiItemReference } from "./contracts/api-item-reference";
 import {
     TypeDto,
     TypeBasicDto,
@@ -96,10 +96,6 @@ export namespace ApiHelpers {
             apiItem = new ApiFunctionType(declaration, symbol, options);
         }
 
-        if (apiItem != null && apiItem.IsPrivate()) {
-            return undefined;
-        }
-
         if (apiItem == null) {
             // This declaration is not supported, show a Warning message.
             LogWithDeclarationPosition(
@@ -112,15 +108,24 @@ export namespace ApiHelpers {
         return apiItem;
     }
 
+    export const NODE_MODULES_PACKAGE_REGEX = /\/node_modules\/(.+?)\//;
+
     export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
         const declarationSourceFile = declaration.getSourceFile();
         const declarationFileName = declarationSourceFile.fileName;
 
-        if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
-            return false;
-        }
-
         if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
+            const match = declarationSourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
+            const packageName = match != null ? match[1] : undefined;
+
+            if (packageName != null) {
+                return options.ExternalPackages.
+                    findIndex(x => x.toLowerCase() === packageName.toLowerCase()) !== -1;
+            } else {
+                return false;
+            }
+        } else if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
+            // If it's not external package, it should be in project directory.
             return false;
         }
 
@@ -145,39 +150,49 @@ export namespace ApiHelpers {
         return options.AddItemToRegistry(apiItem);
     }
 
-    export function GetItemsIdsFromSymbols(
+    export function GetItemsIdsFromSymbolsMap(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
-    ): ApiItemReferenceTuple {
-        const items: ApiItemReferenceTuple = [];
+    ): ApiItemReference[] {
+        const items: ApiItemReference[] = [];
         if (symbols == null) {
             return items;
         }
 
         symbols.forEach(symbol => {
-            if (symbol.declarations == null) {
-                return;
+            const referenceTuple = GetItemIdsFromSymbol(symbol, options);
+            if (referenceTuple != null) {
+                items.push(referenceTuple);
             }
-            const symbolItems: string[] = [];
-
-            symbol.declarations.forEach(declaration => {
-                const itemId = GetItemId(declaration, symbol, options);
-                if (itemId != null) {
-                    symbolItems.push(itemId);
-                }
-            });
-
-            items.push([symbol.name, symbolItems]);
         });
 
         return items;
     }
 
+    export function GetItemIdsFromSymbol(symbol: ts.Symbol | undefined, options: ApiItemOptions): ApiItemReference | undefined {
+        if (symbol == null || symbol.declarations == null) {
+            return undefined;
+        }
+        const symbolItems: string[] = [];
+
+        symbol.declarations.forEach(declaration => {
+            const itemId = GetItemId(declaration, symbol, options);
+            if (itemId != null) {
+                symbolItems.push(itemId);
+            }
+        });
+
+        return {
+            Alias: symbol.name,
+            Ids: symbolItems
+        };
+    }
+
     export function GetItemsIdsFromDeclarations(
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
-    ): ApiItemReferenceTuple {
-        const items: ApiItemReferenceTuple = [];
+    ): ApiItemReference[] {
+        const items: ApiItemReference[] = [];
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {
@@ -191,12 +206,15 @@ export namespace ApiHelpers {
                 return;
             }
 
-            const index = items.findIndex(x => x != null && x.length === 2 && x[0] === symbol.name);
+            const index = items.findIndex(x => x != null && x.Alias === symbol.name);
 
             if (index === -1) {
-                items.push([symbol.name, [itemId]]);
+                items.push({
+                    Alias: symbol.name,
+                    Ids: [itemId]
+                });
             } else {
-                items[index][1].push(itemId);
+                items[index].Ids.push(itemId);
             }
         });
 
@@ -348,13 +366,25 @@ export namespace ApiHelpers {
     export function GetApiItemLocationDtoFromDeclaration(declaration: ts.Declaration, options: ApiItemOptions): ApiItemLocationDto {
         const sourceFile = declaration.getSourceFile();
 
+        const isExternalPackage = options.Program.isSourceFileFromExternalLibrary(sourceFile);
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-        const fileName = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
+        const fileNamePath = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
+        let fileName = StandardizeRelativePath(fileNamePath, options);
+
+        if (isExternalPackage) {
+            const packageFullPath = fileName.match(/\/node_modules\/(.+?)$/);
+
+            if (packageFullPath != null) {
+                const [, packagePath] = packageFullPath;
+                fileName = packagePath;
+            }
+        }
 
         return {
-            FileName: StandardizeRelativePath(fileName, options),
+            FileName: fileName,
             Line: position.line,
-            Character: position.character
+            Character: position.character,
+            IsExternalPackage: isExternalPackage
         };
     }
 }

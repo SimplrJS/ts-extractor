@@ -14,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -39,6 +40,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -64,6 +66,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 9,
       },
       "Metadata": Object {
@@ -89,6 +92,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 18,
       },
       "Metadata": Object {
@@ -114,6 +118,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 19,
       },
       "Metadata": Object {
@@ -139,6 +144,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 23,
       },
       "Metadata": Object {
@@ -164,6 +170,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 24,
       },
       "Metadata": Object {
@@ -188,51 +195,52 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Members": Array [
-        Array [
-          "NoCommonFields1",
-          Array [
+        Object {
+          "Alias": "NoCommonFields1",
+          "Ids": Array [
             "TypeAliasDeclaration-0",
           ],
-        ],
-        Array [
-          "NoCommonFields2",
-          Array [
+        },
+        Object {
+          "Alias": "NoCommonFields2",
+          "Ids": Array [
             "TypeAliasDeclaration-1",
           ],
-        ],
-        Array [
-          "AnotherType",
-          Array [
+        },
+        Object {
+          "Alias": "AnotherType",
+          "Ids": Array [
             "TypeAliasDeclaration-2",
           ],
-        ],
-        Array [
-          "OneCommonField1",
-          Array [
+        },
+        Object {
+          "Alias": "OneCommonField1",
+          "Ids": Array [
             "TypeAliasDeclaration-3",
           ],
-        ],
-        Array [
-          "OneCommonField2",
-          Array [
+        },
+        Object {
+          "Alias": "OneCommonField2",
+          "Ids": Array [
             "TypeAliasDeclaration-4",
           ],
-        ],
-        Array [
-          "OneCommonFieldTypeIntersection",
-          Array [
+        },
+        Object {
+          "Alias": "OneCommonFieldTypeIntersection",
+          "Ids": Array [
             "TypeAliasDeclaration-5",
           ],
-        ],
-        Array [
-          "OneCommonFieldTypeIntersectionWithDifferentTypes",
-          Array [
+        },
+        Object {
+          "Alias": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+          "Ids": Array [
             "TypeAliasDeclaration-6",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -247,6 +255,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -274,12 +283,12 @@ Object {
         "Text": "NoCommonFields1<TType>",
       },
       "TypeParameters": Array [
-        Array [
-          "TType",
-          Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "TypeAliasDeclaration-1": Object {
@@ -289,6 +298,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -316,12 +326,12 @@ Object {
         "Text": "NoCommonFields2<TType>",
       },
       "TypeParameters": Array [
-        Array [
-          "TType",
-          Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
             "TypeParameter-1",
           ],
-        ],
+        },
       ],
     },
     "TypeAliasDeclaration-2": Object {
@@ -331,6 +341,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -395,6 +406,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 17,
       },
       "Metadata": Object {
@@ -422,12 +434,12 @@ Object {
         "Text": "OneCommonField1<TType>",
       },
       "TypeParameters": Array [
-        Array [
-          "TType",
-          Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
             "TypeParameter-2",
           ],
-        ],
+        },
       ],
     },
     "TypeAliasDeclaration-4": Object {
@@ -437,6 +449,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Metadata": Object {
@@ -464,12 +477,12 @@ Object {
         "Text": "OneCommonField2<TType>",
       },
       "TypeParameters": Array [
-        Array [
-          "TType",
-          Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
             "TypeParameter-3",
           ],
-        ],
+        },
       ],
     },
     "TypeAliasDeclaration-5": Object {
@@ -479,6 +492,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 27,
       },
       "Metadata": Object {
@@ -543,6 +557,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 29,
       },
       "Metadata": Object {
@@ -607,21 +622,22 @@ Object {
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
-        Array [
-          "FooName",
-          Array [
+        },
+        Object {
+          "Alias": "FooName",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -636,15 +652,16 @@ Object {
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Members": Array [
-        Array [
-          "BazName",
-          Array [
+        Object {
+          "Alias": "BazName",
+          "Ids": Array [
             "PropertySignature-2",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -659,21 +676,22 @@ Object {
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 17,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-3",
           ],
-        ],
-        Array [
-          "FooName",
-          Array [
+        },
+        Object {
+          "Alias": "FooName",
+          "Ids": Array [
             "PropertySignature-4",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -688,21 +706,22 @@ Object {
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-5",
           ],
-        ],
-        Array [
-          "BazName",
-          Array [
+        },
+        Object {
+          "Alias": "BazName",
+          "Ids": Array [
             "PropertySignature-6",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -719,6 +738,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -736,6 +756,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -753,6 +774,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 17,
       },
       "Metadata": Object {
@@ -770,6 +792,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Metadata": Object {
