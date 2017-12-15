@@ -13,11 +13,10 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
 
     protected OnGatherData(): void {
         const targetSymbol = this.TypeChecker.getExportSpecifierLocalTargetSymbol(this.Declaration);
-        const referenceTuple = ApiHelpers.GetItemIdsFromSymbol(targetSymbol, this.Options);
+        const symbolReferences = ApiHelpers.GetItemIdsFromSymbol(targetSymbol, this.Options);
 
-        if (referenceTuple != null) {
-            const [, items] = referenceTuple;
-            this.apiItems = items;
+        if (symbolReferences != null) {
+            this.apiItems = symbolReferences.Ids;
         } else {
             ApiHelpers.LogWithDeclarationPosition(LogLevel.Warning, this.Declaration, "Exported item does not exist.");
         }

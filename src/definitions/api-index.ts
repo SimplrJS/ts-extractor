@@ -28,8 +28,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
                 message
             );
         } else {
-            const [, references] = parameters[0];
-            this.parameter = references[0];
+            this.parameter = parameters[0].Ids[0];
         }
 
         /**

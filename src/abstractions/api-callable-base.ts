@@ -2,7 +2,7 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiCallableDto } from "../contracts/api-callable-dto";
 
@@ -16,8 +16,8 @@ export abstract class ApiCallableBase<
     extends ApiItem<TDeclaration, TExtractDto> {
 
     protected IsOverloadBase: boolean;
-    protected Parameters: ApiItemReferenceTuplesList = [];
-    protected TypeParameters: ApiItemReferenceTuplesList = [];
+    protected Parameters: ApiItemReference[] = [];
+    protected TypeParameters: ApiItemReference[] = [];
     protected ReturnType: TypeDto | undefined;
 
     protected OnGatherData(): void {

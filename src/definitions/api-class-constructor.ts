@@ -3,7 +3,7 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassConstructorDto } from "../contracts/definitions/api-class-constructor-dto";
-import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
 
@@ -12,7 +12,7 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiClassConstructorDto> {
     private isOverloadBase: boolean;
-    private parameters: ApiItemReferenceTuplesList = [];
+    private parameters: ApiItemReference[] = [];
     private accessModifier: AccessModifier;
 
     protected OnGatherData(): void {

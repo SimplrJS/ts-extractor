@@ -3,7 +3,7 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/definitions/api-class-dto";
-import { ApiItemReferenceTuplesList } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -15,8 +15,8 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
      */
     private extends: TypeDto | undefined;
     private implements: TypeDto[] = [];
-    private typeParameters: ApiItemReferenceTuplesList = [];
-    private members: ApiItemReferenceTuplesList = [];
+    private typeParameters: ApiItemReference[] = [];
+    private members: ApiItemReference[] = [];
     private isAbstract: boolean = false;
 
     protected OnGatherData(): void {

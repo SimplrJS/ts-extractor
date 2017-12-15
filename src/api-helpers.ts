@@ -4,7 +4,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
-import { ApiItemReferenceTuplesList } from "./contracts/api-item-reference-tuple";
+import { ApiItemReference } from "./contracts/api-item-reference";
 import {
     TypeDto,
     TypeBasicDto,
@@ -40,7 +40,6 @@ import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
 import { PathIsInside } from "./utils/path-is-inside";
-import { ApiItemReferenceTuple } from "./contracts";
 
 export namespace ApiHelpers {
     export function VisitApiItem(
@@ -151,11 +150,11 @@ export namespace ApiHelpers {
         return options.AddItemToRegistry(apiItem);
     }
 
-    export function GetItemsIdsFromSymbols(
+    export function GetItemsIdsFromSymbolsMap(
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined,
         options: ApiItemOptions
-    ): ApiItemReferenceTuplesList {
-        const items: ApiItemReferenceTuplesList = [];
+    ): ApiItemReference[] {
+        const items: ApiItemReference[] = [];
         if (symbols == null) {
             return items;
         }
@@ -170,7 +169,7 @@ export namespace ApiHelpers {
         return items;
     }
 
-    export function GetItemIdsFromSymbol(symbol: ts.Symbol | undefined, options: ApiItemOptions): ApiItemReferenceTuple | undefined {
+    export function GetItemIdsFromSymbol(symbol: ts.Symbol | undefined, options: ApiItemOptions): ApiItemReference | undefined {
         if (symbol == null || symbol.declarations == null) {
             return undefined;
         }
@@ -183,14 +182,17 @@ export namespace ApiHelpers {
             }
         });
 
-        return [symbol.name, symbolItems];
+        return {
+            Alias: symbol.name,
+            Ids: symbolItems
+        };
     }
 
     export function GetItemsIdsFromDeclarations(
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
-    ): ApiItemReferenceTuplesList {
-        const items: ApiItemReferenceTuplesList = [];
+    ): ApiItemReference[] {
+        const items: ApiItemReference[] = [];
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {
@@ -204,12 +206,15 @@ export namespace ApiHelpers {
                 return;
             }
 
-            const index = items.findIndex(x => x != null && x.length === 2 && x[0] === symbol.name);
+            const index = items.findIndex(x => x != null && x.Alias === symbol.name);
 
             if (index === -1) {
-                items.push([symbol.name, [itemId]]);
+                items.push({
+                    Alias: symbol.name,
+                    Ids: [itemId]
+                });
             } else {
-                items[index][1].push(itemId);
+                items[index].Ids.push(itemId);
             }
         });
 
