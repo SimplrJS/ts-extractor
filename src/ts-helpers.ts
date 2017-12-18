@@ -4,7 +4,9 @@ export namespace TSHelpers {
     /**
      * Returns the string part of `export * from "./module";`
      */
-    export function GetExportImportString(declaration: ts.ExportDeclaration | ts.ImportDeclaration): string | undefined {
+    export function GetExportImportString(
+        declaration: ts.ExportDeclaration | ts.ImportDeclaration | ts.ImportSpecifier
+    ): string | undefined {
         const stringLiteralNode = declaration.getChildren().find(x => ts.isStringLiteral(x));
         if (stringLiteralNode == null || !ts.isStringLiteral(stringLiteralNode)) {
             return undefined;
@@ -17,7 +19,7 @@ export namespace TSHelpers {
      * Returns `ts.SourceFile` from `ts.ExportDeclaration`.
      */
     export function ResolveSourceFile(
-        declaration: ts.ExportDeclaration | ts.ImportDeclaration,
+        declaration: ts.ExportDeclaration | ts.ImportDeclaration | ts.ImportSpecifier,
         program: ts.Program
     ): ts.SourceFile | undefined {
         const declarationSourceFile = declaration.getSourceFile();
@@ -49,6 +51,16 @@ export namespace TSHelpers {
          * Remove this when TypeScript compiler will support getting symbols.
          */
         return (declaration as any).symbol;
+    }
+
+    export function GetExportSpecifierLocalTargetSymbol(declaration: ts.ImportSpecifier, program: ts.Program): ts.Symbol | undefined {
+        const sourceFile = ResolveSourceFile(declaration, program);
+        if (sourceFile != null) {
+            return undefined;
+        }
+        
+
+        return undefined;
     }
 
     export type TypeWithTypeArguments = ts.Type & { typeArguments: ts.Type[] };
