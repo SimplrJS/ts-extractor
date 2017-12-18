@@ -30,7 +30,7 @@ export class ApiExport extends ApiItem<ts.ImportDeclaration, ApiImportDto> {
 
     protected OnGatherData(): void {
         // Extract members from Source file.
-        const sourceFileDeclaration = TSHelpers.GetSourceFileFromExport(this.Declaration, this.Options.Program);
+        const sourceFileDeclaration = TSHelpers.ResolveSourceFile(this.Declaration, this.Options.Program);
 
         if (sourceFileDeclaration != null) {
             const sourceFileSymbol = TSHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);

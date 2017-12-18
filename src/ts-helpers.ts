@@ -4,7 +4,7 @@ export namespace TSHelpers {
     /**
      * Returns the string part of `export * from "./module";`
      */
-    export function GetExportDeclarationImportString(declaration: ts.ExportDeclaration): string | undefined {
+    export function GetExportImportString(declaration: ts.ExportDeclaration | ts.ImportDeclaration): string | undefined {
         const stringLiteralNode = declaration.getChildren().find(x => ts.isStringLiteral(x));
         if (stringLiteralNode == null || !ts.isStringLiteral(stringLiteralNode)) {
             return undefined;
@@ -16,9 +16,12 @@ export namespace TSHelpers {
     /**
      * Returns `ts.SourceFile` from `ts.ExportDeclaration`.
      */
-    export function GetSourceFileFromExport(declaration: ts.ExportDeclaration, program: ts.Program): ts.SourceFile | undefined {
+    export function ResolveSourceFile(
+        declaration: ts.ExportDeclaration | ts.ImportDeclaration,
+        program: ts.Program
+    ): ts.SourceFile | undefined {
         const declarationSourceFile = declaration.getSourceFile();
-        const importString = GetExportDeclarationImportString(declaration);
+        const importString = GetExportImportString(declaration);
         if (importString == null) {
             return undefined;
         }
