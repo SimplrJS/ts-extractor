@@ -62,7 +62,7 @@ export namespace ApiHelpers {
             apiItem = new ApiImportSpecifier(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
             apiItem = new ApiVariable(declaration, symbol, options);
-        } else if (ts.isModuleDeclaration(declaration)) {
+        } else if (ts.isModuleDeclaration(declaration) || ts.isNamespaceImport(declaration)) {
             apiItem = new ApiNamespace(declaration, symbol, options);
         } else if (ts.isFunctionDeclaration(declaration)) {
             apiItem = new ApiFunction(declaration, symbol, options);

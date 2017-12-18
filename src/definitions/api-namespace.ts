@@ -8,7 +8,7 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
-export class ApiNamespace extends ApiItem<ts.ModuleDeclaration, ApiNamespaceDto> {
+export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImport, ApiNamespaceDto> {
     private members: ApiItemReference[] = [];
 
     protected OnGatherData(): void {
