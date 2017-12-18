@@ -40,6 +40,7 @@ import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
 import { PathIsInside } from "./utils/path-is-inside";
+import { ApiImport } from "./definitions/api-import";
 
 export namespace ApiHelpers {
     export function VisitApiItem(
@@ -47,13 +48,15 @@ export namespace ApiHelpers {
         symbol: ts.Symbol,
         options: ApiItemOptions
     ): ApiItem | undefined {
-        let apiItem: ApiItem | undefined;
+        let apiItem: ApiItem<any> | undefined;
         if (ts.isSourceFile(declaration)) {
             apiItem = new ApiSourceFile(declaration, symbol, options);
         } else if (ts.isExportDeclaration(declaration)) {
             apiItem = new ApiExport(declaration, symbol, options);
         } else if (ts.isExportSpecifier(declaration)) {
             apiItem = new ApiExportSpecifier(declaration, symbol, options);
+        } else if (ts.isImportDeclaration(declaration)) {
+            apiItem = new ApiImport(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
             apiItem = new ApiVariable(declaration, symbol, options);
         } else if (ts.isModuleDeclaration(declaration)) {

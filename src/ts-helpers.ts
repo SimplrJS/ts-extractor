@@ -5,7 +5,7 @@ export namespace TSHelpers {
      * Returns the string part of `export * from "./module";`
      */
     export function GetExportImportString(
-        declaration: ts.ExportDeclaration | ts.ImportDeclaration | ts.ImportSpecifier
+        declaration: ts.ExportDeclaration | ts.ImportDeclaration
     ): string | undefined {
         const stringLiteralNode = declaration.getChildren().find(x => ts.isStringLiteral(x));
         if (stringLiteralNode == null || !ts.isStringLiteral(stringLiteralNode)) {
@@ -19,7 +19,7 @@ export namespace TSHelpers {
      * Returns `ts.SourceFile` from `ts.ExportDeclaration`.
      */
     export function ResolveSourceFile(
-        declaration: ts.ExportDeclaration | ts.ImportDeclaration | ts.ImportSpecifier,
+        declaration: ts.ExportDeclaration | ts.ImportDeclaration,
         program: ts.Program
     ): ts.SourceFile | undefined {
         const declarationSourceFile = declaration.getSourceFile();
@@ -40,7 +40,11 @@ export namespace TSHelpers {
     /**
      * Returns Symbol from declaration.
      */
-    export function GetSymbolFromDeclaration(declaration: ts.Declaration, typeChecker: ts.TypeChecker): ts.Symbol | undefined {
+    export function GetSymbolFromDeclaration(declaration: ts.Declaration | undefined, typeChecker: ts.TypeChecker): ts.Symbol | undefined {
+        if (declaration == null) {
+            return undefined;
+        }
+
         const symbol: ts.Symbol | undefined = typeChecker.getSymbolAtLocation(declaration);
         if (symbol != null) {
             return symbol;
@@ -53,14 +57,39 @@ export namespace TSHelpers {
         return (declaration as any).symbol;
     }
 
-    export function GetExportSpecifierLocalTargetSymbol(declaration: ts.ImportSpecifier, program: ts.Program): ts.Symbol | undefined {
-        const sourceFile = ResolveSourceFile(declaration, program);
-        if (sourceFile != null) {
+    export function GetDeclarationParent(declaration: ts.Declaration, kind: ts.SyntaxKind): ts.Node | undefined {
+        let current: ts.Node | undefined = declaration;
+
+        while (true) {
+            if (current != null && current.kind === kind) {
+                break;
+            } else if (current != null) {
+                current = current.parent;
+            } else {
+                break;
+            }
+        }
+
+        return current;
+    }
+
+    export function GetImportSpecifierLocalTargetSymbol(declaration: ts.ImportSpecifier, program: ts.Program): ts.Symbol | undefined {
+        // Get ImportDeclaration
+        const importDeclaration = GetDeclarationParent(declaration, ts.SyntaxKind.ImportDeclaration);
+        if (importDeclaration == null || !ts.isImportDeclaration(importDeclaration)) {
             return undefined;
         }
-        
 
-        return undefined;
+        // Resolve target SourceFile
+        const symbol = GetSymbolFromDeclaration(declaration, program.getTypeChecker());
+        const sourceFile = ResolveSourceFile(importDeclaration, program);
+        const sourceFileSymbol = GetSymbolFromDeclaration(sourceFile, program.getTypeChecker());
+        if (sourceFile == null || symbol == null || sourceFileSymbol == null || sourceFileSymbol.exports == null) {
+            return undefined;
+        }
+
+        // Return from resolved source file exported symbol of ImportSpecifier
+        return sourceFileSymbol.exports.get(symbol.escapedName);
     }
 
     export type TypeWithTypeArguments = ts.Type & { typeArguments: ts.Type[] };
