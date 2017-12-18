@@ -15,6 +15,8 @@ export * from "./contracts/definitions/api-enum-dto";
 export * from "./contracts/definitions/api-enum-member-dto";
 export * from "./contracts/definitions/api-export-dto";
 export * from "./contracts/definitions/api-export-specifier-dto";
+export * from "./contracts/definitions/api-import-dto";
+export * from "./contracts/definitions/api-import-specifier-dto";
 export * from "./contracts/definitions/api-function-dto";
 export * from "./contracts/definitions/api-function-type-dto";
 export * from "./contracts/definitions/api-index-dto";
