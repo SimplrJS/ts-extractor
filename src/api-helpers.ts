@@ -98,7 +98,7 @@ export namespace ApiHelpers {
 
         if (apiItem == null) {
             // This declaration is not supported, show a Warning message.
-            LogWithDeclarationPosition(
+            LogWithNodePosition(
                 LogLevel.Warning,
                 declaration,
                 `Declaration "${ts.SyntaxKind[declaration.kind]}" is not supported yet.`
@@ -341,7 +341,7 @@ export namespace ApiHelpers {
         return false;
     }
 
-    export function LogWithDeclarationPosition(logLevel: LogLevel, declaration: ts.Declaration, message: string): void {
+    export function LogWithNodePosition(logLevel: LogLevel, declaration: ts.Node, message: string): void {
         const sourceFile = declaration.getSourceFile();
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
         const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
@@ -363,11 +363,11 @@ export namespace ApiHelpers {
         return `.${workingSep}${fixedLocation}`;
     }
 
-    export function GetApiItemLocationDtoFromDeclaration(declaration: ts.Declaration, options: ApiItemOptions): ApiItemLocationDto {
-        const sourceFile = declaration.getSourceFile();
+    export function GetApiItemLocationDtoFromNode(node: ts.Node, options: ApiItemOptions): ApiItemLocationDto {
+        const sourceFile = node.getSourceFile();
 
         const isExternalPackage = options.Program.isSourceFileFromExternalLibrary(sourceFile);
-        const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
+        const position = sourceFile.getLineAndCharacterOfPosition(node.getStart());
         const fileNamePath = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
         let fileName = StandardizeRelativePath(fileNamePath, options);
 

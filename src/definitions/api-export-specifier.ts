@@ -18,13 +18,13 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
         if (symbolReferences != null) {
             this.apiItems = symbolReferences.Ids;
         } else {
-            ApiHelpers.LogWithDeclarationPosition(LogLevel.Warning, this.Declaration, "Exported item does not exist.");
+            ApiHelpers.LogWithNodePosition(LogLevel.Warning, this.Declaration, "Exported item does not exist.");
         }
     }
 
     public OnExtract(): ApiExportSpecifierDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ExportSpecifier,

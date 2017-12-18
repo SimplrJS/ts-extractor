@@ -6,12 +6,12 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiExportDto } from "../contracts/definitions/api-export-dto";
+import { ApiImportDto } from "../contracts/definitions/api-import-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
-export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
+export class ApiExport extends ApiItem<ts.ImportDeclaration, ApiImportDto> {
     private getExportPath(): string | undefined {
         if (this.apiSourceFile == null) {
             ApiHelpers.LogWithNodePosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
@@ -42,20 +42,20 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         }
     }
 
-    public OnExtract(): ApiExportDto {
+    public OnExtract(): ApiImportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const exportPath: string | undefined = this.getExportPath();
+        const importPath: string | undefined = this.getExportPath();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.Export,
+            ApiKind: ApiItemKinds.Import,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             SourceFileId: this.sourceFileId,
-            ExportPath: exportPath
+            ImportPath: importPath
         };
     }
 }
