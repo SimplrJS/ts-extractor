@@ -11,18 +11,18 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
-export class ApiExport extends ApiItem<ts.ImportDeclaration, ApiImportDto> {
-    private getExportPath(): string | undefined {
+export class ApiImport extends ApiItem<ts.ImportDeclaration, ApiImportDto> {
+    private getImportPath(): string | undefined {
         if (this.apiSourceFile == null) {
-            ApiHelpers.LogWithNodePosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
+            ApiHelpers.LogWithNodePosition(LogLevel.Warning, this.Declaration, "Imported source file is not found!");
             return undefined;
         }
 
         const projectDirectory = this.Options.ExtractorOptions.ProjectDirectory;
         const declarationFileName = this.apiSourceFile.Declaration.fileName;
-        const exportRelativePath = path.relative(projectDirectory, declarationFileName);
+        const importRelativePath = path.relative(projectDirectory, declarationFileName);
 
-        return ApiHelpers.StandardizeRelativePath(exportRelativePath, this.Options);
+        return ApiHelpers.StandardizeRelativePath(importRelativePath, this.Options);
     }
 
     private sourceFileId: string | undefined;
@@ -44,7 +44,7 @@ export class ApiExport extends ApiItem<ts.ImportDeclaration, ApiImportDto> {
 
     public OnExtract(): ApiImportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const importPath: string | undefined = this.getExportPath();
+        const importPath: string | undefined = this.getImportPath();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
