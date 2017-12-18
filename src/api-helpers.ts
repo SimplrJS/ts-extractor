@@ -19,6 +19,8 @@ import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiExport } from "./definitions/api-export";
 import { ApiExportSpecifier } from "./definitions/api-export-specifier";
+import { ApiImport } from "./definitions/api-import";
+import { ApiImportSpecifier } from "./definitions/api-import-specifier";
 import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
 import { ApiFunction } from "./definitions/api-function";
@@ -40,7 +42,6 @@ import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
 import { PathIsInside } from "./utils/path-is-inside";
-import { ApiImport } from "./definitions/api-import";
 
 export namespace ApiHelpers {
     export function VisitApiItem(
@@ -57,6 +58,8 @@ export namespace ApiHelpers {
             apiItem = new ApiExportSpecifier(declaration, symbol, options);
         } else if (ts.isImportDeclaration(declaration)) {
             apiItem = new ApiImport(declaration, symbol, options);
+        } else if (ts.isImportSpecifier(declaration)) {
+            apiItem = new ApiImportSpecifier(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
             apiItem = new ApiVariable(declaration, symbol, options);
         } else if (ts.isModuleDeclaration(declaration)) {
