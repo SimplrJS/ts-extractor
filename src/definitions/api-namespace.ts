@@ -22,7 +22,7 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImp
 
         return {
             ApiKind: ApiItemKinds.Namespace,
-            Name: this.Symbol.name,
+            Name: this.Declaration.name.getText(),
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
