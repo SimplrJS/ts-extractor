@@ -57,7 +57,7 @@ export namespace TSHelpers {
         return (declaration as any).symbol;
     }
 
-    export function GetDeclarationParent(declaration: ts.Declaration, kind: ts.SyntaxKind): ts.Node | undefined {
+    export function GetDeclarationParentByKind(declaration: ts.Declaration, kind: ts.SyntaxKind): ts.Node | undefined {
         let current: ts.Node | undefined = declaration;
 
         while (true) {
@@ -75,7 +75,7 @@ export namespace TSHelpers {
 
     export function GetImportSpecifierLocalTargetSymbol(declaration: ts.ImportSpecifier, program: ts.Program): ts.Symbol | undefined {
         // Get ImportDeclaration
-        const importDeclaration = GetDeclarationParent(declaration, ts.SyntaxKind.ImportDeclaration);
+        const importDeclaration = GetDeclarationParentByKind(declaration, ts.SyntaxKind.ImportDeclaration);
         if (importDeclaration == null || !ts.isImportDeclaration(importDeclaration)) {
             return undefined;
         }
