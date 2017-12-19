@@ -82,7 +82,7 @@ Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "\\"/home/user/projects/simplrjs/ts-extractor/tests/cases/ClassDeclaration1\\"",
+      "Name": "Something",
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",

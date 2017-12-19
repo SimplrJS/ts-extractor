@@ -92,7 +92,7 @@ Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "unknown",
+      "Name": "NotValid",
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",

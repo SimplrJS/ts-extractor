@@ -23,7 +23,7 @@ Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "unknown",
+      "Name": "DoesNotExist",
     },
     "ImportSpecifier-0": Object {
       "ApiItems": undefined,
