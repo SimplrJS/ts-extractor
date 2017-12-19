@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExportDeclaration1 1`] = `
+exports[`ImportDeclaration1 1`] = `
 Object {
   "EntryFiles": Array [
     "SourceFile-0",
@@ -65,23 +65,24 @@ Object {
       "Name": "FooClass",
       "TypeParameters": Array [],
     },
-    "ExportDeclaration-0": Object {
-      "ApiKind": "export",
-      "ExportPath": "./cases/ClassDeclaration1.ts",
-      "Kind": 244,
-      "KindString": "ExportDeclaration",
+    "ExportSpecifier-0": Object {
+      "ApiItems": Array [
+        "NamespaceImport-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
       "Location": Object {
-        "Character": 0,
-        "FileName": "./cases/ExportDeclaration1.ts",
+        "Character": 9,
+        "FileName": "./cases/ImportDeclaration1.ts",
         "IsExternalPackage": false,
-        "Line": 0,
+        "Line": 2,
       },
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "__export",
-      "SourceFileId": "SourceFile-1",
+      "Name": "\\"/home/user/projects/simplrjs/ts-extractor/tests/cases/ClassDeclaration1\\"",
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",
@@ -291,6 +292,30 @@ GetFoo without A parameter comment line.",
         "Text": "Promise<string>",
       },
       "TypeParameters": Array [],
+    },
+    "NamespaceImport-0": Object {
+      "ApiKind": "namespace",
+      "Kind": 240,
+      "KindString": "NamespaceImport",
+      "Location": Object {
+        "Character": 7,
+        "FileName": "./cases/ImportDeclaration1.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Something",
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
@@ -518,15 +543,15 @@ GetFoo without A parameter comment line.",
       "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/ExportDeclaration1.ts",
+        "FileName": "./cases/ImportDeclaration1.ts",
         "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
         Object {
-          "Alias": "__export",
+          "Alias": "Something",
           "Ids": Array [
-            "ExportDeclaration-0",
+            "ExportSpecifier-0",
           ],
         },
       ],
@@ -534,31 +559,7 @@ GetFoo without A parameter comment line.",
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "ExportDeclaration1.ts",
-    },
-    "SourceFile-1": Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Location": Object {
-        "Character": 0,
-        "FileName": "./cases/ClassDeclaration1.ts",
-        "IsExternalPackage": false,
-        "Line": 6,
-      },
-      "Members": Array [
-        Object {
-          "Alias": "FooClass",
-          "Ids": Array [
-            "ClassDeclaration-0",
-          ],
-        },
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration1.ts",
+      "Name": "ImportDeclaration1.ts",
     },
   },
 }
