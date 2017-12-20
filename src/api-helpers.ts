@@ -19,7 +19,6 @@ import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiExport } from "./definitions/api-export";
 import { ApiExportSpecifier } from "./definitions/api-export-specifier";
-import { ApiImport } from "./definitions/api-import";
 import { ApiImportSpecifier } from "./definitions/api-import-specifier";
 import { ApiVariable } from "./definitions/api-variable";
 import { ApiNamespace } from "./definitions/api-namespace";
@@ -56,8 +55,6 @@ export namespace ApiHelpers {
             apiItem = new ApiExport(declaration, symbol, options);
         } else if (ts.isExportSpecifier(declaration)) {
             apiItem = new ApiExportSpecifier(declaration, symbol, options);
-        } else if (ts.isImportDeclaration(declaration)) {
-            apiItem = new ApiImport(declaration, symbol, options);
         } else if (ts.isImportSpecifier(declaration)) {
             apiItem = new ApiImportSpecifier(declaration, symbol, options);
         } else if (ts.isVariableDeclaration(declaration)) {
