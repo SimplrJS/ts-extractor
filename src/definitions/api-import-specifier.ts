@@ -1,13 +1,13 @@
 import * as ts from "typescript";
 import { LogLevel } from "simplr-logger";
 
-import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
-import { ApiImportSpecifierDto, ApiImportSpecifierApiItems } from "../contracts/definitions/api-import-specifier-dto";
+import { TSHelpers } from "../ts-helpers";
+import { ApiItem } from "../abstractions/api-item";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { TSHelpers } from "../index";
+import { ApiImportSpecifierDto, ApiImportSpecifierApiItems } from "../contracts/definitions/api-import-specifier-dto";
 
 export class ApiImportSpecifier extends ApiItem<ts.ImportSpecifier, ApiImportSpecifierDto> {
     private apiItems: ApiImportSpecifierApiItems;
