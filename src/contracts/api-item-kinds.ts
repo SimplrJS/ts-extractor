@@ -19,6 +19,7 @@ export enum ApiItemKinds {
     Construct = "construct",
     Export = "export",
     ExportSpecifier = "export-specifier",
+    ImportSpecifier = "import-specifier",
     TypeParameter = "type-parameter",
     TypeLiteral = "type-literal",
     FunctionType = "function-type"

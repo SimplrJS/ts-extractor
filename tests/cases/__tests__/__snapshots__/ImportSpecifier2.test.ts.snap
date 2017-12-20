@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImportSpecifier2 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ExportSpecifier-0": Object {
+      "ApiItems": Array [
+        "ImportSpecifier-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Kind": 246,
+      "KindString": "ExportSpecifier",
+      "Location": Object {
+        "Character": 9,
+        "FileName": "./cases/ImportSpecifier2.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "DoesNotExist",
+    },
+    "ImportSpecifier-0": Object {
+      "ApiItems": undefined,
+      "ApiKind": "import-specifier",
+      "Kind": 242,
+      "KindString": "ImportSpecifier",
+      "Location": Object {
+        "Character": 9,
+        "FileName": "./cases/ImportSpecifier2.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "unknown",
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ImportSpecifier2.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "DoesNotExist",
+          "Ids": Array [
+            "ExportSpecifier-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ImportSpecifier2.ts",
+    },
+  },
+}
+`;

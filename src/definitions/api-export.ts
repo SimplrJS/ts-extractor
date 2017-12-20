@@ -7,7 +7,6 @@ import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportDto } from "../contracts/definitions/api-export-dto";
-import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -15,7 +14,7 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     private getExportPath(): string | undefined {
         if (this.apiSourceFile == null) {
-            ApiHelpers.LogWithDeclarationPosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
+            ApiHelpers.LogWithNodePosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
             return undefined;
         }
 
@@ -26,21 +25,19 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         return ApiHelpers.StandardizeRelativePath(exportRelativePath, this.Options);
     }
 
-    private members: ApiItemReference[] = [];
+    private sourceFileId: string | undefined;
     private apiSourceFile: ApiSourceFile | undefined;
 
     protected OnGatherData(): void {
         // Extract members from Source file.
-        const sourceFileDeclaration = TSHelpers.GetSourceFileFromExport(this.Declaration, this.Options.Program);
+        const sourceFileDeclaration = TSHelpers.ResolveSourceFile(this.Declaration, this.Options.Program);
 
         if (sourceFileDeclaration != null) {
             const sourceFileSymbol = TSHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
 
             if (sourceFileSymbol != null) {
                 this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, this.Options);
-                this.apiSourceFile.GatherData();
-
-                this.members = this.apiSourceFile.OnExtract().Members;
+                this.sourceFileId = this.Options.AddItemToRegistry(this.apiSourceFile);
             }
         }
     }
@@ -48,7 +45,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     public OnExtract(): ApiExportDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const exportPath: string | undefined = this.getExportPath();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Export,
@@ -57,7 +54,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
-            Members: this.members,
+            SourceFileId: this.sourceFileId,
             ExportPath: exportPath
         };
     }

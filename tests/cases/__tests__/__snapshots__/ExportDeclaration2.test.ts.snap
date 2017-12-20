@@ -17,12 +17,12 @@ Object {
         "IsExternalPackage": false,
         "Line": 1,
       },
-      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__export",
+      "SourceFileId": undefined,
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
