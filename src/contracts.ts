@@ -4,7 +4,6 @@ export * from "./contracts/api-callable-dto";
 export * from "./contracts/api-item-kinds";
 export * from "./contracts/api-item-reference";
 export * from "./contracts/api-metadata-dto";
-export * from "./contracts/config";
 export * from "./contracts/definitions/api-call-dto";
 export * from "./contracts/definitions/api-class-constructor-dto";
 export * from "./contracts/definitions/api-class-dto";
