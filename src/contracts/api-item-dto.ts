@@ -8,6 +8,7 @@ import { ApiEnumDto } from "./definitions/api-enum-dto";
 import { ApiEnumMemberDto } from "./definitions/api-enum-member-dto";
 import { ApiExportDto } from "./definitions/api-export-dto";
 import { ApiExportSpecifierDto } from "./definitions/api-export-specifier-dto";
+import { ApiImportSpecifierDto } from "./definitions/api-import-specifier-dto";
 import { ApiFunctionDto } from "./definitions/api-function-dto";
 import { ApiFunctionTypeDto } from "./definitions/api-function-type-dto";
 import { ApiIndexDto } from "./definitions/api-index-dto";
@@ -32,6 +33,7 @@ export type ApiItemDto = ApiCallDto |
     ApiEnumMemberDto |
     ApiExportDto |
     ApiExportSpecifierDto |
+    ApiImportSpecifierDto |
     ApiFunctionDto |
     ApiFunctionTypeDto |
     ApiIndexDto |
