@@ -3,37 +3,7 @@
 exports[`ClassDeclaration6 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "FooBase",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-        Array [
-          "Bar",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "Foo",
-          Array [
-            "ClassDeclaration-1",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration6.ts",
-      "Path": "./cases/ClassDeclaration6.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -46,15 +16,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "GetValue",
-          Array [
+        Object {
+          "Alias": "GetValue",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -62,12 +33,12 @@ Object {
       },
       "Name": "FooBase",
       "TypeParameters": Array [
-        Array [
-          "TValue",
-          Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "ClassDeclaration-1": Object {
@@ -108,21 +79,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Members": Array [
-        Array [
-          "GetValue",
-          Array [
+        Object {
+          "Alias": "GetValue",
+          "Ids": Array [
             "MethodDeclaration-1",
           ],
-        ],
-        Array [
-          "BarName",
-          Array [
+        },
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -139,15 +111,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -169,6 +142,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -178,7 +152,7 @@ Object {
       "Name": "GetValue",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "basic",
+        "ApiTypeKind": "type-parameter",
         "Flags": 16384,
         "FlagsString": "TypeParameter",
         "Generics": undefined,
@@ -201,6 +175,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Metadata": Object {
@@ -232,6 +207,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 15,
       },
       "Metadata": Object {
@@ -257,6 +233,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -274,6 +251,42 @@ Object {
         "Text": "string",
       },
     },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooBase",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "ClassDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration6.ts",
+    },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
@@ -283,6 +296,7 @@ Object {
       "Location": Object {
         "Character": 30,
         "FileName": "./cases/ClassDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {

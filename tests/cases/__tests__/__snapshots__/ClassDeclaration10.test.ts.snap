@@ -3,25 +3,7 @@
 exports[`ClassDeclaration10 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "FooClass",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration10.ts",
-      "Path": "./cases/ClassDeclaration10.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -34,17 +16,18 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "__constructor",
-          Array [
+        Object {
+          "Alias": "__constructor",
+          "Ids": Array [
             "Constructor-0",
             "Constructor-1",
             "Constructor-2",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -62,6 +45,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -71,12 +55,12 @@ Creating foo with boolean.",
       },
       "Name": "__constructor",
       "Parameters": Array [
-        Array [
-          "text",
-          Array [
+        Object {
+          "Alias": "text",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
     },
     "Constructor-1": Object {
@@ -88,6 +72,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -97,12 +82,12 @@ Creating foo with boolean.",
       },
       "Name": "__constructor",
       "Parameters": Array [
-        Array [
-          "should",
-          Array [
+        Object {
+          "Alias": "should",
+          "Ids": Array [
             "Parameter-1",
           ],
-        ],
+        },
       ],
     },
     "Constructor-2": Object {
@@ -114,6 +99,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 14,
       },
       "Metadata": Object {
@@ -123,12 +109,12 @@ Creating foo with boolean.",
       },
       "Name": "__constructor",
       "Parameters": Array [
-        Array [
-          "arg",
-          Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
             "Parameter-2",
           ],
-        ],
+        },
       ],
     },
     "Parameter-0": Object {
@@ -140,6 +126,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -166,6 +153,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -211,6 +199,7 @@ Creating foo with boolean.",
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
         "Line": 14,
       },
       "Metadata": Object {
@@ -255,6 +244,30 @@ Creating foo with boolean.",
           },
         ],
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration10.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration10.ts",
     },
   },
 }

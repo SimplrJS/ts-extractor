@@ -3,7 +3,7 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassConstructorDto } from "../contracts/definitions/api-class-constructor-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
 
@@ -12,7 +12,7 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiClassConstructorDto> {
     private isOverloadBase: boolean;
-    private parameters: ApiItemReferenceTuple = [];
+    private parameters: ApiItemReference[] = [];
     private accessModifier: AccessModifier;
 
     protected OnGatherData(): void {
@@ -28,7 +28,7 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
 
     public OnExtract(): ApiClassConstructorDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ClassConstructor,

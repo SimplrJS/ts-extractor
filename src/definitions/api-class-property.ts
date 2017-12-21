@@ -17,10 +17,6 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
     private isOptional: boolean;
     private type: TypeDto;
 
-    public IsPrivate(): boolean {
-        return super.IsPrivate() || this.accessModifier === AccessModifier.Private;
-    }
-
     protected OnGatherData(): void {
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);
@@ -38,7 +34,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
 
     public OnExtract(): ApiClassPropertyDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ClassProperty,

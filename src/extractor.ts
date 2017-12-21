@@ -6,13 +6,12 @@ import * as path from "path";
 import { Logger } from "./utils/logger";
 import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItem } from "./abstractions/api-item";
-import { ApiSourceFileDto } from "./contracts/definitions/api-source-file-dto";
 import { ExtractorOptions } from "./contracts/extractor-options";
 import { ApiRegistry, ExtractedApiRegistry } from "./api-registry";
 
 export interface ExtractDto {
     Registry: ExtractedApiRegistry;
-    EntryFiles: ApiSourceFileDto[];
+    EntryFiles: string[];
 }
 
 export class Extractor {
@@ -64,7 +63,7 @@ export class Extractor {
         }
 
         const typeChecker = program.getTypeChecker();
-        const apiSourceFiles: ApiSourceFile[] = [];
+        const apiSourceFiles: string[] = [];
 
         // Go through all given files.
         const rootFiles = program.getRootFileNames();
@@ -82,21 +81,19 @@ export class Extractor {
                 ExtractorOptions: this.Options,
                 // ApiSourceFile populates given apiItemsRegistry by adding items into it
                 Registry: apiRegistry,
+                ExternalPackages: this.Options.ExternalPackages || [],
                 AddItemToRegistry: (apiItem: ApiItem) => apiRegistry.AddItem(apiItem)
             });
 
-            apiSourceFiles.push(apiSourceFile);
-            apiSourceFile.GatherData();
+            const apiItemId = apiRegistry.AddItem(apiSourceFile);
+            apiSourceFiles.push(apiItemId);
         });
 
         const extractedApiRegistry = apiRegistry.Extract();
 
-        // Extracts every source file
-        const extractedEntryFiles = apiSourceFiles.map(x => x.Extract());
-
         return {
             Registry: extractedApiRegistry,
-            EntryFiles: extractedEntryFiles
+            EntryFiles: apiSourceFiles
         };
     }
 }

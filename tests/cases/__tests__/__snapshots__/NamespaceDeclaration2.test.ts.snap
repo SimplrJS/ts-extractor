@@ -3,25 +3,7 @@
 exports[`NamespaceDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "ModuleDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "NamespaceDeclaration2.ts",
-      "Path": "./cases/NamespaceDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ModuleDeclaration-0": Object {
@@ -31,15 +13,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/NamespaceDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "ModuleDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -54,6 +37,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/NamespaceDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Members": Array [],
@@ -62,6 +46,30 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/NamespaceDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "ModuleDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "NamespaceDeclaration2.ts",
     },
   },
 }

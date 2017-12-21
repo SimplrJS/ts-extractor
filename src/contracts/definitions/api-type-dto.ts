@@ -1,10 +1,10 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
 import { TypeDto } from "../type-dto";
-import { ApiItemReferenceTuple } from "../api-item-reference-tuple";
+import { ApiItemReference } from "../api-item-reference";
 import { ApiItemKinds } from "../api-item-kinds";
 
 export interface ApiTypeDto extends ApiBaseItemDto {
     ApiKind: ApiItemKinds.Type;
-    TypeParameters: ApiItemReferenceTuple;
+    TypeParameters: ApiItemReference[];
     Type: TypeDto;
 }

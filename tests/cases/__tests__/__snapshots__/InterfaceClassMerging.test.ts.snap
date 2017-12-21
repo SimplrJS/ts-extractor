@@ -3,50 +3,7 @@
 exports[`InterfaceClassMerging 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-            "ClassDeclaration-0",
-          ],
-        ],
-        Array [
-          "Bar",
-          Array [
-            "ClassDeclaration-1",
-          ],
-        ],
-        Array [
-          "bar",
-          Array [
-            "VariableDeclaration-0",
-          ],
-        ],
-        Array [
-          "foo",
-          Array [
-            "VariableDeclaration-1",
-          ],
-        ],
-        Array [
-          "iFoo",
-          Array [
-            "VariableDeclaration-2",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceClassMerging.ts",
-      "Path": "./cases/InterfaceClassMerging.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -59,21 +16,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Members": Array [
-        Array [
-          "additionalProperty",
-          Array [
+        Object {
+          "Alias": "additionalProperty",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "additionalMethod",
-          Array [
+        },
+        Object {
+          "Alias": "additionalMethod",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -100,15 +58,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 15,
       },
       "Members": Array [
-        Array [
-          "method",
-          Array [
+        Object {
+          "Alias": "method",
+          "Ids": Array [
             "MethodDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -125,33 +84,34 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "method",
-          Array [
+        Object {
+          "Alias": "method",
+          "Ids": Array [
             "MethodSignature-0",
           ],
-        ],
-        Array [
-          "optionalMethod",
-          Array [
+        },
+        Object {
+          "Alias": "optionalMethod",
+          "Ids": Array [
             "MethodSignature-1",
           ],
-        ],
-        Array [
-          "property",
-          Array [
+        },
+        Object {
+          "Alias": "property",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
-        Array [
-          "optionalProperty",
-          Array [
+        },
+        Object {
+          "Alias": "optionalProperty",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -173,6 +133,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Metadata": Object {
@@ -181,12 +142,12 @@ Object {
       },
       "Name": "additionalMethod",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-2",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -212,6 +173,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 16,
       },
       "Metadata": Object {
@@ -220,12 +182,12 @@ Object {
       },
       "Name": "method",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-3",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -247,6 +209,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -255,12 +218,12 @@ Object {
       },
       "Name": "method",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -282,6 +245,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -290,12 +254,12 @@ Object {
       },
       "Name": "optionalMethod",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-1",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -317,6 +281,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -343,6 +308,7 @@ Object {
       "Location": Object {
         "Character": 20,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -369,6 +335,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Metadata": Object {
@@ -395,6 +362,7 @@ Object {
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 16,
       },
       "Metadata": Object {
@@ -424,6 +392,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -449,6 +418,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -474,6 +444,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -491,6 +462,55 @@ Object {
         "Text": "string",
       },
     },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+            "ClassDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
+            "ClassDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "bar",
+          "Ids": Array [
+            "VariableDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
+            "VariableDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "iFoo",
+          "Ids": Array [
+            "VariableDeclaration-2",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceClassMerging.ts",
+    },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
       "Kind": 226,
@@ -498,6 +518,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 21,
       },
       "Metadata": Object {
@@ -523,6 +544,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Metadata": Object {
@@ -548,6 +570,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
+        "IsExternalPackage": false,
         "Line": 23,
       },
       "Metadata": Object {

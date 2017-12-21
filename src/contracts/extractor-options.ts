@@ -8,4 +8,5 @@ export interface ExtractorOptions {
      */
     Exclude?: string[];
     OutputPathSeparator?: string;
+    ExternalPackages?: string[];
 }

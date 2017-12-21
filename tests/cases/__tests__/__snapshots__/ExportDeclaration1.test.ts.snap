@@ -3,25 +3,7 @@
 exports[`ExportDeclaration1 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "__export",
-          Array [
-            "ExportDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ExportDeclaration1.ts",
-      "Path": "./cases/ExportDeclaration1.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -34,41 +16,42 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Members": Array [
-        Array [
-          "SetFoo",
-          Array [
+        Object {
+          "Alias": "SetFoo",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
-        Array [
-          "GetFoo",
-          Array [
+        },
+        Object {
+          "Alias": "GetFoo",
+          "Ids": Array [
             "MethodDeclaration-1",
             "MethodDeclaration-2",
             "MethodDeclaration-3",
           ],
-        ],
-        Array [
-          "AsyncGetFoo",
-          Array [
+        },
+        Object {
+          "Alias": "AsyncGetFoo",
+          "Ids": Array [
             "MethodDeclaration-4",
           ],
-        ],
-        Array [
-          "IdProperty",
-          Array [
+        },
+        Object {
+          "Alias": "IdProperty",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "BarProperty",
-          Array [
+        },
+        Object {
+          "Alias": "BarProperty",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "Class Foo comment line.",
@@ -90,21 +73,15 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
-      "Members": Array [
-        Array [
-          "FooClass",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-      ],
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__export",
+      "SourceFileId": "SourceFile-1",
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",
@@ -119,6 +96,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Metadata": Object {
@@ -127,12 +105,12 @@ Object {
       },
       "Name": "SetFoo",
       "Parameters": Array [
-        Array [
-          "foo",
-          Array [
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -158,6 +136,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 17,
       },
       "Metadata": Object {
@@ -168,12 +147,12 @@ GetFoo without A parameter comment line.",
       },
       "Name": "GetFoo",
       "Parameters": Array [
-        Array [
-          "text",
-          Array [
+        Object {
+          "Alias": "text",
+          "Ids": Array [
             "Parameter-1",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -199,6 +178,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Metadata": Object {
@@ -209,12 +189,12 @@ GetFoo without A parameter comment line.",
       },
       "Name": "GetFoo",
       "Parameters": Array [
-        Array [
-          "open",
-          Array [
+        Object {
+          "Alias": "open",
+          "Ids": Array [
             "Parameter-2",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -240,6 +220,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 26,
       },
       "Metadata": Object {
@@ -250,12 +231,12 @@ GetFoo without A parameter comment line.",
       },
       "Name": "GetFoo",
       "Parameters": Array [
-        Array [
-          "arg",
-          Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
             "Parameter-3",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -281,6 +262,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 30,
       },
       "Metadata": Object {
@@ -319,6 +301,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 22,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Metadata": Object {
@@ -345,6 +328,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 17,
       },
       "Metadata": Object {
@@ -371,6 +355,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Metadata": Object {
@@ -416,6 +401,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 26,
       },
       "Metadata": Object {
@@ -473,6 +459,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 36,
       },
       "Metadata": Object {
@@ -507,6 +494,7 @@ GetFoo without A parameter comment line.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 37,
       },
       "Metadata": Object {
@@ -523,6 +511,54 @@ GetFoo without A parameter comment line.",
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ExportDeclaration1.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "__export",
+          "Ids": Array [
+            "ExportDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ExportDeclaration1.ts",
+    },
+    "SourceFile-1": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration1.ts",
+        "IsExternalPackage": false,
+        "Line": 6,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration1.ts",
     },
   },
 }

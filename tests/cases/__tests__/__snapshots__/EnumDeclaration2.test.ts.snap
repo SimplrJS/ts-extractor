@@ -3,25 +3,7 @@
 exports[`EnumDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "LogLevel",
-          Array [
-            "EnumDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "EnumDeclaration2.ts",
-      "Path": "./cases/EnumDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "EnumDeclaration-0": Object {
@@ -32,51 +14,52 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Members": Array [
-        Array [
-          "None",
-          Array [
+        Object {
+          "Alias": "None",
+          "Ids": Array [
             "EnumMember-0",
           ],
-        ],
-        Array [
-          "Critical",
-          Array [
+        },
+        Object {
+          "Alias": "Critical",
+          "Ids": Array [
             "EnumMember-1",
           ],
-        ],
-        Array [
-          "Error",
-          Array [
+        },
+        Object {
+          "Alias": "Error",
+          "Ids": Array [
             "EnumMember-2",
           ],
-        ],
-        Array [
-          "Warning",
-          Array [
+        },
+        Object {
+          "Alias": "Warning",
+          "Ids": Array [
             "EnumMember-3",
           ],
-        ],
-        Array [
-          "Information",
-          Array [
+        },
+        Object {
+          "Alias": "Information",
+          "Ids": Array [
             "EnumMember-4",
           ],
-        ],
-        Array [
-          "Debug",
-          Array [
+        },
+        Object {
+          "Alias": "Debug",
+          "Ids": Array [
             "EnumMember-5",
           ],
-        ],
-        Array [
-          "Trace",
-          Array [
+        },
+        Object {
+          "Alias": "Trace",
+          "Ids": Array [
             "EnumMember-6",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "Defines logging severity levels.",
@@ -91,6 +74,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 9,
       },
       "Metadata": Object {
@@ -107,6 +91,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 15,
       },
       "Metadata": Object {
@@ -124,6 +109,7 @@ or a catastrophic failure that requires immediate attention.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 21,
       },
       "Metadata": Object {
@@ -141,6 +127,7 @@ These should indicate a failure in the current activity, not an application-wide
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 27,
       },
       "Metadata": Object {
@@ -158,6 +145,7 @@ but do not otherwise cause the application execution to stop.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 32,
       },
       "Metadata": Object {
@@ -174,6 +162,7 @@ but do not otherwise cause the application execution to stop.",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 38,
       },
       "Metadata": Object {
@@ -191,6 +180,7 @@ These logs should primarily contain information useful for debugging and have no
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 44,
       },
       "Metadata": Object {
@@ -200,6 +190,30 @@ These messages are disabled by default and should never be enabled in a producti
       },
       "Name": "Trace",
       "Value": "1 << 5",
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/EnumDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "LogLevel",
+          "Ids": Array [
+            "EnumDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "EnumDeclaration2.ts",
     },
   },
 }

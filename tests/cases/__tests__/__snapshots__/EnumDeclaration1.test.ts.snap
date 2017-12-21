@@ -3,25 +3,7 @@
 exports[`EnumDeclaration1 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "LogLevel",
-          Array [
-            "EnumDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "EnumDeclaration1.ts",
-      "Path": "./cases/EnumDeclaration1.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "EnumDeclaration-0": Object {
@@ -32,51 +14,52 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "None",
-          Array [
+        Object {
+          "Alias": "None",
+          "Ids": Array [
             "EnumMember-0",
           ],
-        ],
-        Array [
-          "Critical",
-          Array [
+        },
+        Object {
+          "Alias": "Critical",
+          "Ids": Array [
             "EnumMember-1",
           ],
-        ],
-        Array [
-          "Error",
-          Array [
+        },
+        Object {
+          "Alias": "Error",
+          "Ids": Array [
             "EnumMember-2",
           ],
-        ],
-        Array [
-          "Warning",
-          Array [
+        },
+        Object {
+          "Alias": "Warning",
+          "Ids": Array [
             "EnumMember-3",
           ],
-        ],
-        Array [
-          "Information",
-          Array [
+        },
+        Object {
+          "Alias": "Information",
+          "Ids": Array [
             "EnumMember-4",
           ],
-        ],
-        Array [
-          "Debug",
-          Array [
+        },
+        Object {
+          "Alias": "Debug",
+          "Ids": Array [
             "EnumMember-5",
           ],
-        ],
-        Array [
-          "Trace",
-          Array [
+        },
+        Object {
+          "Alias": "Trace",
+          "Ids": Array [
             "EnumMember-6",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -91,6 +74,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -107,6 +91,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -123,6 +108,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -139,6 +125,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Metadata": Object {
@@ -155,6 +142,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -171,6 +159,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -187,6 +176,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 9,
       },
       "Metadata": Object {
@@ -195,6 +185,30 @@ Object {
       },
       "Name": "Trace",
       "Value": "6",
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/EnumDeclaration1.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "LogLevel",
+          "Ids": Array [
+            "EnumDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "EnumDeclaration1.ts",
     },
   },
 }

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Successfully get compiler options 1`] = `
+Object {
+  "experimentalDecorators": false,
+  "module": 1,
+  "noEmit": true,
+  "pretty": true,
+  "removeComments": false,
+  "skipDefaultLibCheck": true,
+  "sourceMap": false,
+  "target": 2,
+  "typeRoots": Array [
+    ".",
+  ],
+}
+`;

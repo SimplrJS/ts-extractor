@@ -1,7 +1,7 @@
 import * as ts from "typescript";
+import { LogLevel } from "simplr-logger";
 
 import { ApiItem } from "../abstractions/api-item";
-import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportSpecifierDto, ApiExportSpecifierApiItems } from "../contracts/definitions/api-export-specifier-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
@@ -11,40 +11,24 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpecifierDto> {
     private apiItems: ApiExportSpecifierApiItems;
 
-    private getApiItems(targetSymbol: ts.Symbol | undefined): ApiExportSpecifierApiItems {
-        const apiItems: ApiExportSpecifierApiItems = [];
-        if (targetSymbol == null || targetSymbol.declarations == null) {
-            return undefined;
-        }
-
-        targetSymbol.declarations.forEach(declaration => {
-            const symbol = TSHelpers.GetSymbolFromDeclaration(declaration, this.TypeChecker);
-
-            if (symbol != null) {
-                const itemId = ApiHelpers.GetItemId(declaration, symbol, this.Options);
-
-                if (itemId != null) {
-                    apiItems.push(itemId);
-                }
-            }
-        });
-
-        return apiItems;
-    }
-
     protected OnGatherData(): void {
         const targetSymbol = this.TypeChecker.getExportSpecifierLocalTargetSymbol(this.Declaration);
+        const symbolReferences = ApiHelpers.GetItemIdsFromSymbol(targetSymbol, this.Options);
 
-        this.apiItems = this.getApiItems(targetSymbol);
+        if (symbolReferences != null) {
+            this.apiItems = symbolReferences.Ids;
+        } else {
+            ApiHelpers.LogWithNodePosition(LogLevel.Warning, this.Declaration, "Exported item does not exist.");
+        }
     }
 
     public OnExtract(): ApiExportSpecifierDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ExportSpecifier,
-            Name: this.Symbol.name,
+            Name: this.Declaration.name.getText(),
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,

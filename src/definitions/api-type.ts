@@ -7,11 +7,11 @@ import { ApiTypeDto } from "../contracts/definitions/api-type-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
-    private typeParameters: ApiItemReferenceTuple = [];
+    private typeParameters: ApiItemReference[] = [];
     private type: TypeDto;
 
     protected OnGatherData(): void {
@@ -27,7 +27,7 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
 
     public OnExtract(): ApiTypeDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Type,

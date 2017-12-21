@@ -3,73 +3,7 @@
 exports[`InterfaceDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "a0",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "a1",
-          Array [
-            "InterfaceDeclaration-1",
-          ],
-        ],
-        Array [
-          "a2",
-          Array [
-            "InterfaceDeclaration-2",
-          ],
-        ],
-        Array [
-          "a",
-          Array [
-            "InterfaceDeclaration-3",
-          ],
-        ],
-        Array [
-          "b",
-          Array [
-            "InterfaceDeclaration-4",
-          ],
-        ],
-        Array [
-          "c",
-          Array [
-            "InterfaceDeclaration-5",
-          ],
-        ],
-        Array [
-          "d",
-          Array [
-            "InterfaceDeclaration-6",
-          ],
-        ],
-        Array [
-          "c1",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-        Array [
-          "instance2",
-          Array [
-            "VariableDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration4.ts",
-      "Path": "./cases/InterfaceDeclaration4.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "CallSignature-0": Object {
@@ -80,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -107,6 +42,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -115,24 +51,24 @@ Object {
       },
       "Name": "__call",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
-        Array [
-          "b",
-          Array [
+        },
+        Object {
+          "Alias": "b",
+          "Ids": Array [
             "Parameter-1",
           ],
-        ],
-        Array [
-          "c",
-          Array [
+        },
+        Object {
+          "Alias": "c",
+          "Ids": Array [
             "Parameter-2",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -165,6 +101,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 42,
       },
       "Members": Array [],
@@ -183,6 +120,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {
@@ -200,6 +138,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -208,12 +147,12 @@ Object {
       },
       "Name": "__new",
       "Parameters": Array [
-        Array [
-          "s",
-          Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
             "Parameter-3",
           ],
-        ],
+        },
       ],
     },
     "FunctionType-0": Object {
@@ -224,6 +163,7 @@ Object {
       "Location": Object {
         "Character": 17,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -251,6 +191,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -277,6 +218,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -303,6 +245,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 23,
       },
       "Metadata": Object {
@@ -329,6 +272,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 27,
       },
       "Metadata": Object {
@@ -355,84 +299,85 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "__call",
-          Array [
+        Object {
+          "Alias": "__call",
+          "Ids": Array [
             "CallSignature-0",
             "CallSignature-1",
           ],
-        ],
-        Array [
-          "__new",
-          Array [
+        },
+        Object {
+          "Alias": "__new",
+          "Ids": Array [
             "ConstructSignature-0",
             "ConstructSignature-1",
           ],
-        ],
-        Array [
-          "__index",
-          Array [
+        },
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-0",
             "IndexSignature-1",
           ],
-        ],
-        Array [
-          "p1",
-          Array [
+        },
+        Object {
+          "Alias": "p1",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
-        Array [
-          "p3",
-          Array [
+        },
+        Object {
+          "Alias": "p3",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
-        Array [
-          "p2",
-          Array [
+        },
+        Object {
+          "Alias": "p2",
+          "Ids": Array [
             "PropertySignature-2",
           ],
-        ],
-        Array [
-          "p4",
-          Array [
+        },
+        Object {
+          "Alias": "p4",
+          "Ids": Array [
             "PropertySignature-3",
           ],
-        ],
-        Array [
-          "p5",
-          Array [
+        },
+        Object {
+          "Alias": "p5",
+          "Ids": Array [
             "MethodSignature-0",
           ],
-        ],
-        Array [
-          "f1",
-          Array [
+        },
+        Object {
+          "Alias": "f1",
+          "Ids": Array [
             "MethodSignature-1",
           ],
-        ],
-        Array [
-          "f2",
-          Array [
+        },
+        Object {
+          "Alias": "f2",
+          "Ids": Array [
             "MethodSignature-2",
           ],
-        ],
-        Array [
-          "f3",
-          Array [
+        },
+        Object {
+          "Alias": "f3",
+          "Ids": Array [
             "MethodSignature-3",
           ],
-        ],
-        Array [
-          "f4",
-          Array [
+        },
+        Object {
+          "Alias": "f4",
+          "Ids": Array [
             "MethodSignature-4",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -449,15 +394,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 22,
       },
       "Members": Array [
-        Array [
-          "__index",
-          Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-2",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -474,15 +420,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 26,
       },
       "Members": Array [
-        Array [
-          "__index",
-          Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
             "IndexSignature-3",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -499,6 +446,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 30,
       },
       "Members": Array [],
@@ -527,6 +475,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 33,
       },
       "Members": Array [],
@@ -564,6 +513,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 36,
       },
       "Members": Array [],
@@ -592,6 +542,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 39,
       },
       "Members": Array [],
@@ -611,6 +562,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 14,
       },
       "Metadata": Object {
@@ -619,12 +571,12 @@ Object {
       },
       "Name": "p5",
       "Parameters": Array [
-        Array [
-          "s",
-          Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
             "Parameter-6",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -646,6 +598,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 16,
       },
       "Metadata": Object {
@@ -674,6 +627,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 17,
       },
       "Metadata": Object {
@@ -702,6 +656,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 18,
       },
       "Metadata": Object {
@@ -710,12 +665,12 @@ Object {
       },
       "Name": "f3",
       "Parameters": Array [
-        Array [
-          "a",
-          Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
             "Parameter-7",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -737,6 +692,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 19,
       },
       "Metadata": Object {
@@ -745,12 +701,12 @@ Object {
       },
       "Name": "f4",
       "Parameters": Array [
-        Array [
-          "s",
-          Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
             "Parameter-8",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -772,6 +728,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -798,6 +755,7 @@ Object {
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -824,6 +782,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 27,
       },
       "Metadata": Object {
@@ -850,6 +809,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -876,6 +836,7 @@ Object {
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -902,6 +863,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -928,6 +890,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Metadata": Object {
@@ -954,6 +917,7 @@ Object {
       "Location": Object {
         "Character": 7,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 14,
       },
       "Metadata": Object {
@@ -980,6 +944,7 @@ Object {
       "Location": Object {
         "Character": 7,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 18,
       },
       "Metadata": Object {
@@ -1006,6 +971,7 @@ Object {
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 19,
       },
       "Metadata": Object {
@@ -1032,6 +998,7 @@ Object {
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 23,
       },
       "Metadata": Object {
@@ -1057,6 +1024,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Metadata": Object {
@@ -1082,6 +1050,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Metadata": Object {
@@ -1107,6 +1076,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -1132,6 +1102,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 13,
       },
       "Metadata": Object {
@@ -1149,6 +1120,78 @@ Object {
         "Text": "number",
       },
     },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "a0",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "a1",
+          "Ids": Array [
+            "InterfaceDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "a2",
+          "Ids": Array [
+            "InterfaceDeclaration-2",
+          ],
+        },
+        Object {
+          "Alias": "a",
+          "Ids": Array [
+            "InterfaceDeclaration-3",
+          ],
+        },
+        Object {
+          "Alias": "b",
+          "Ids": Array [
+            "InterfaceDeclaration-4",
+          ],
+        },
+        Object {
+          "Alias": "c",
+          "Ids": Array [
+            "InterfaceDeclaration-5",
+          ],
+        },
+        Object {
+          "Alias": "d",
+          "Ids": Array [
+            "InterfaceDeclaration-6",
+          ],
+        },
+        Object {
+          "Alias": "c1",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "instance2",
+          "Ids": Array [
+            "VariableDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration4.ts",
+    },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
       "Kind": 226,
@@ -1156,6 +1199,7 @@ Object {
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 45,
       },
       "Metadata": Object {

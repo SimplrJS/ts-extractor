@@ -3,25 +3,7 @@
 exports[`InterfaceDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration2.ts",
-      "Path": "./cases/InterfaceDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "InterfaceDeclaration-0": Object {
@@ -32,15 +14,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -57,6 +40,7 @@ Object {
       "Location": Object {
         "Character": 2,
         "FileName": "./cases/InterfaceDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -73,6 +57,30 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration2.ts",
     },
   },
 }

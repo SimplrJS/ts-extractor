@@ -6,11 +6,11 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiTypeLiteralDto } from "../contracts/definitions/api-type-literal-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDto> {
-    private members: ApiItemReferenceTuple = [];
+    private members: ApiItemReference[] = [];
 
     protected OnGatherData(): void {
         this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);
@@ -18,7 +18,7 @@ export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDt
 
     public OnExtract(): ApiTypeLiteralDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.TypeLiteral,

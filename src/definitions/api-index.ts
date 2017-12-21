@@ -22,17 +22,13 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
 
         if (parameters.length !== 1) {
             const message = `An index signature must have exactly one parameter, it has ${parameters.length}.`;
-            ApiHelpers.LogWithDeclarationPosition(
+            ApiHelpers.LogWithNodePosition(
                 LogLevel.Error,
                 this.Declaration,
                 message
             );
         } else {
-            const [, references] = parameters[0];
-
-            if (references.length > 0) {
-                this.parameter = references[0];
-            }
+            this.parameter = parameters[0].Ids[0];
         }
 
         /**
@@ -48,7 +44,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
 
     public OnExtract(): ApiIndexDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Index,

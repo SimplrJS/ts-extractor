@@ -1,10 +1,10 @@
 import { ApiBaseItemDto } from "./api-base-item-dto";
-import { ApiItemReferenceTuple } from "./api-item-reference-tuple";
+import { ApiItemReference } from "./api-item-reference";
 import { TypeDto } from "./type-dto";
 
 export interface ApiCallableDto extends ApiBaseItemDto {
-    TypeParameters: ApiItemReferenceTuple;
-    Parameters: ApiItemReferenceTuple;
+    TypeParameters: ApiItemReference[];
+    Parameters: ApiItemReference[];
     IsOverloadBase: boolean;
     ReturnType?: TypeDto;
 }

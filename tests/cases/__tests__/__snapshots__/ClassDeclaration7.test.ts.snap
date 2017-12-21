@@ -3,25 +3,7 @@
 exports[`ClassDeclaration7 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "FooClass",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration7.ts",
-      "Path": "./cases/ClassDeclaration7.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -34,6 +16,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [],
@@ -43,13 +26,37 @@ Object {
       },
       "Name": "FooClass",
       "TypeParameters": Array [
-        Array [
-          "TValue",
-          Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration7.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
@@ -60,6 +67,7 @@ Object {
       "Location": Object {
         "Character": 22,
         "FileName": "./cases/ClassDeclaration7.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {

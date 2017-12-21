@@ -3,37 +3,7 @@
 exports[`ClassDeclaration8 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Control",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-        Array [
-          "SelectableControl",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "Button",
-          Array [
-            "ClassDeclaration-1",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration8.ts",
-      "Path": "./cases/ClassDeclaration8.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -46,15 +16,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration8.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "state",
-          Array [
+        Object {
+          "Alias": "state",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -91,15 +62,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration8.ts",
+        "IsExternalPackage": false,
         "Line": 8,
       },
       "Members": Array [
-        Array [
-          "select",
-          Array [
+        Object {
+          "Alias": "select",
+          "Ids": Array [
             "MethodDeclaration-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -126,15 +98,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration8.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Members": Array [
-        Array [
-          "select",
-          Array [
+        Object {
+          "Alias": "select",
+          "Ids": Array [
             "MethodSignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -156,6 +129,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration8.ts",
+        "IsExternalPackage": false,
         "Line": 9,
       },
       "Metadata": Object {
@@ -184,6 +158,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration8.ts",
+        "IsExternalPackage": false,
         "Line": 5,
       },
       "Metadata": Object {
@@ -215,6 +190,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration8.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -231,6 +207,42 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Control",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "SelectableControl",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Button",
+          "Ids": Array [
+            "ClassDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration8.ts",
     },
   },
 }

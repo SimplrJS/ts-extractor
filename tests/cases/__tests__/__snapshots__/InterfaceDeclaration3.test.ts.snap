@@ -3,31 +3,7 @@
 exports[`InterfaceDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Generic",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "y",
-          Array [
-            "VariableDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration3.ts",
-      "Path": "./cases/InterfaceDeclaration3.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "InterfaceDeclaration-0": Object {
@@ -38,15 +14,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
-        Array [
-          "x",
-          Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -54,12 +31,12 @@ Object {
       },
       "Name": "Generic",
       "TypeParameters": Array [
-        Array [
-          "T",
-          Array [
+        Object {
+          "Alias": "T",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "PropertySignature-0": Object {
@@ -70,6 +47,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -78,7 +56,7 @@ Object {
       },
       "Name": "x",
       "Type": Object {
-        "ApiTypeKind": "basic",
+        "ApiTypeKind": "type-parameter",
         "Flags": 16384,
         "FlagsString": "TypeParameter",
         "Generics": undefined,
@@ -86,6 +64,36 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "T",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Generic",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
+            "VariableDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration3.ts",
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
@@ -96,6 +104,7 @@ Object {
       "Location": Object {
         "Character": 25,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {
@@ -111,6 +120,7 @@ Object {
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/InterfaceDeclaration3.ts",
+        "IsExternalPackage": false,
         "Line": 4,
       },
       "Metadata": Object {

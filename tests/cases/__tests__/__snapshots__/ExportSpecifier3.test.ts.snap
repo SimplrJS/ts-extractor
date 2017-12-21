@@ -3,31 +3,7 @@
 exports[`ExportSpecifier3 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Bar",
-          Array [
-            "ExportSpecifier-0",
-          ],
-        ],
-        Array [
-          "FooClass",
-          Array [
-            "ExportSpecifier-1",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ExportSpecifier3.ts",
-      "Path": "./cases/ExportSpecifier3.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -59,21 +35,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "Bar2",
-          Array [
+        },
+        Object {
+          "Alias": "Bar2",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -92,13 +69,14 @@ Object {
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ExportSpecifier3.ts",
+        "IsExternalPackage": false,
         "Line": 0,
       },
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "FooClass",
+      "Name": "Bar",
     },
     "ExportSpecifier-1": Object {
       "ApiItems": Array [
@@ -110,6 +88,7 @@ Object {
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ExportSpecifier3.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
       "Metadata": Object {
@@ -126,15 +105,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -151,15 +131,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Members": Array [
-        Array [
-          "Bar2",
-          Array [
+        Object {
+          "Alias": "Bar2",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -180,6 +161,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Metadata": Object {
@@ -209,6 +191,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -234,6 +217,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -259,6 +243,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -275,6 +260,36 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ExportSpecifier3.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
+            "ExportSpecifier-0",
+          ],
+        },
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ExportSpecifier-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ExportSpecifier3.ts",
     },
   },
 }

@@ -3,13 +3,13 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiEnumDto } from "../contracts/definitions/api-enum-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
-    private members: ApiItemReferenceTuple = [];
+    private members: ApiItemReference[] = [];
     private isConst: boolean;
 
     protected OnGatherData(): void {
@@ -23,7 +23,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
 
     public OnExtract(): ApiEnumDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Enum,

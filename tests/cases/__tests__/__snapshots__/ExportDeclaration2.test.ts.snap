@@ -3,25 +3,7 @@
 exports[`ExportDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "__export",
-          Array [
-            "ExportDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ExportDeclaration2.ts",
-      "Path": "./cases/ExportDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ExportDeclaration-0": Object {
@@ -32,14 +14,39 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 1,
       },
-      "Members": Array [],
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
       "Name": "__export",
+      "SourceFileId": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ExportDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "__export",
+          "Ids": Array [
+            "ExportDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ExportDeclaration2.ts",
     },
   },
 }

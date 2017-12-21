@@ -3,31 +3,7 @@
 exports[`TypeAliasDeclaration1 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "MyType",
-          Array [
-            "TypeAliasDeclaration-0",
-          ],
-        ],
-        Array [
-          "AnotherType",
-          Array [
-            "TypeAliasDeclaration-1",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "TypeAliasDeclaration1.ts",
-      "Path": "./cases/TypeAliasDeclaration1.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "PropertySignature-0": Object {
@@ -38,6 +14,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -55,6 +32,36 @@ Object {
         "Text": "string",
       },
     },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "MyType",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "AnotherType",
+          "Ids": Array [
+            "TypeAliasDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TypeAliasDeclaration1.ts",
+    },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",
       "Kind": 231,
@@ -62,6 +69,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -87,6 +95,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Metadata": Object {
@@ -112,15 +121,16 @@ Object {
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "BarName",
-          Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",

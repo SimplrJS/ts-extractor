@@ -3,37 +3,7 @@
 exports[`ClassDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-        Array [
-          "Foo2",
-          Array [
-            "InterfaceDeclaration-1",
-          ],
-        ],
-        Array [
-          "FooClass",
-          Array [
-            "ClassDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ClassDeclaration4.ts",
-      "Path": "./cases/ClassDeclaration4.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "ClassDeclaration-0": Object {
@@ -65,21 +35,22 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 10,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertyDeclaration-0",
           ],
-        ],
-        Array [
-          "Bar2",
-          Array [
+        },
+        Object {
+          "Alias": "Bar2",
+          "Ids": Array [
             "PropertyDeclaration-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -96,15 +67,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "PropertySignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -121,15 +93,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 6,
       },
       "Members": Array [
-        Array [
-          "Bar2",
-          Array [
+        Object {
+          "Alias": "Bar2",
+          "Ids": Array [
             "PropertySignature-1",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -150,6 +123,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 11,
       },
       "Metadata": Object {
@@ -179,6 +153,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 12,
       },
       "Metadata": Object {
@@ -204,6 +179,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -229,6 +205,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
         "Line": 7,
       },
       "Metadata": Object {
@@ -245,6 +222,42 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Foo2",
+          "Ids": Array [
+            "InterfaceDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration4.ts",
     },
   },
 }

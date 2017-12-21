@@ -3,7 +3,7 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/definitions/api-class-dto";
-import { ApiItemReferenceTuple } from "../contracts/api-item-reference-tuple";
+import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -15,8 +15,8 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
      */
     private extends: TypeDto | undefined;
     private implements: TypeDto[] = [];
-    private typeParameters: ApiItemReferenceTuple = [];
-    private members: ApiItemReferenceTuple = [];
+    private typeParameters: ApiItemReference[] = [];
+    private members: ApiItemReference[] = [];
     private isAbstract: boolean = false;
 
     protected OnGatherData(): void {
@@ -48,7 +48,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
 
     public OnExtract(): ApiClassDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromDeclaration(this.Declaration, this.Options);
+        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Class,

@@ -3,25 +3,7 @@
 exports[`InterfaceDeclaration6 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "Foo",
-          Array [
-            "InterfaceDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "InterfaceDeclaration6.ts",
-      "Path": "./cases/InterfaceDeclaration6.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "InterfaceDeclaration-0": Object {
@@ -32,15 +14,16 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Members": Array [
-        Array [
-          "Bar",
-          Array [
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
             "MethodSignature-0",
           ],
-        ],
+        },
       ],
       "Metadata": Object {
         "DocumentationComment": "",
@@ -48,12 +31,12 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [
-        Array [
-          "TValue",
-          Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
             "TypeParameter-1",
           ],
-        ],
+        },
       ],
     },
     "MethodSignature-0": Object {
@@ -65,6 +48,7 @@ Object {
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -73,12 +57,12 @@ Object {
       },
       "Name": "Bar",
       "Parameters": Array [
-        Array [
-          "args",
-          Array [
+        Object {
+          "Alias": "args",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -90,12 +74,12 @@ Object {
         "Text": "void",
       },
       "TypeParameters": Array [
-        Array [
-          "TValue",
-          Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
             "TypeParameter-0",
           ],
-        ],
+        },
       ],
     },
     "Parameter-0": Object {
@@ -107,6 +91,7 @@ Object {
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/InterfaceDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -124,6 +109,30 @@ Object {
         "Text": "string",
       },
     },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/InterfaceDeclaration6.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "InterfaceDeclaration6.ts",
+    },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
@@ -133,6 +142,7 @@ Object {
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 3,
       },
       "Metadata": Object {
@@ -150,6 +160,7 @@ Object {
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/InterfaceDeclaration6.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {

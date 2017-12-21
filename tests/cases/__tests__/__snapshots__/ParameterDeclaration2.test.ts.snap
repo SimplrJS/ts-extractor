@@ -3,25 +3,7 @@
 exports[`ParameterDeclaration2 1`] = `
 Object {
   "EntryFiles": Array [
-    Object {
-      "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
-      "Members": Array [
-        Array [
-          "FooFunction",
-          Array [
-            "FunctionDeclaration-0",
-          ],
-        ],
-      ],
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "ParameterDeclaration2.ts",
-      "Path": "./cases/ParameterDeclaration2.ts",
-    },
+    "SourceFile-0",
   ],
   "Registry": Object {
     "FunctionDeclaration-0": Object {
@@ -33,6 +15,7 @@ Object {
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ParameterDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -41,12 +24,12 @@ Object {
       },
       "Name": "FooFunction",
       "Parameters": Array [
-        Array [
-          "bar",
-          Array [
+        Object {
+          "Alias": "bar",
+          "Ids": Array [
             "Parameter-0",
           ],
-        ],
+        },
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
@@ -68,6 +51,7 @@ Object {
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/ParameterDeclaration2.ts",
+        "IsExternalPackage": false,
         "Line": 2,
       },
       "Metadata": Object {
@@ -94,6 +78,30 @@ Object {
         "ReferenceId": undefined,
         "Text": "string[]",
       },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ParameterDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooFunction",
+          "Ids": Array [
+            "FunctionDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ParameterDeclaration2.ts",
     },
   },
 }
