@@ -134,4 +134,8 @@ export namespace TSHelpers {
 
         return current;
     }
+
+    export function IsInternalSymbolName(name: string): boolean {
+        return Object.values(ts.InternalSymbolName).indexOf(name) !== -1;
+    }
 }
