@@ -110,6 +110,10 @@ export namespace TSHelpers {
         return Boolean(type.flags & ts.TypeFlags.Intersection);
     }
 
+    export function IsTypeTypeParameter(type: ts.Type): type is ts.TypeParameter {
+        return Boolean(type.flags & ts.TypeFlags.TypeParameter);
+    }
+
     export function GetResolvedModule(sourceFile: ts.SourceFile, moduleNameText: string): ts.ResolvedModuleFull | undefined {
         return sourceFile && (sourceFile as any).resolvedModules && (sourceFile as any).resolvedModules.get(moduleNameText);
     }

@@ -299,6 +299,11 @@ export namespace ApiHelpers {
             } as TypeUnionOrIntersectionDto;
         }
 
+        // Resolve other type kinds
+        if (TSHelpers.IsTypeTypeParameter(type)) {
+            kind = TypeKinds.TypeParameter;
+        }
+
         // Basic
         return {
             ApiTypeKind: kind,
