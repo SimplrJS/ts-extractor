@@ -31,7 +31,7 @@ Object {
         },
       ],
       "ReturnType": Object {
-        "ApiTypeKind": "basic",
+        "ApiTypeKind": "type-parameter",
         "Flags": 16384,
         "FlagsString": "TypeParameter",
         "Generics": undefined,
@@ -92,7 +92,7 @@ Object {
       },
       "Name": "value",
       "Type": Object {
-        "ApiTypeKind": "basic",
+        "ApiTypeKind": "type-parameter",
         "Flags": 16384,
         "FlagsString": "TypeParameter",
         "Generics": undefined,
