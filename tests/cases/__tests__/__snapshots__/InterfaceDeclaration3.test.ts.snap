@@ -56,7 +56,7 @@ Object {
       },
       "Name": "x",
       "Type": Object {
-        "ApiTypeKind": "basic",
+        "ApiTypeKind": "type-parameter",
         "Flags": 16384,
         "FlagsString": "TypeParameter",
         "Generics": undefined,
