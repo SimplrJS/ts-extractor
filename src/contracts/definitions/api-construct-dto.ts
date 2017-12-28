@@ -1,9 +1,6 @@
-import { ApiBaseItemDto } from "../api-base-item-dto";
-import { ApiItemReference } from "../api-item-reference";
 import { ApiItemKinds } from "../api-item-kinds";
+import { ApiCallableDto } from "../api-callable-dto";
 
-export interface ApiConstructDto extends ApiBaseItemDto {
+export interface ApiConstructDto extends ApiCallableDto {
     ApiKind: ApiItemKinds.Construct;
-    IsOverloadBase: boolean;
-    Parameters: ApiItemReference[];
 }
