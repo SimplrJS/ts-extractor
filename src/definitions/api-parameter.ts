@@ -12,6 +12,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
     private type: TypeDto;
     private isOptional: boolean;
     private isSpread: boolean;
+    private initializer: string | undefined;
 
     protected OnGatherData(): void {
         // Type
@@ -23,6 +24,9 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
 
         // IsSpread
         this.isSpread = Boolean(this.Declaration.dotDotDotToken);
+
+        // Initializer
+        this.initializer = this.Declaration.initializer != null ? this.Declaration.initializer.getText() : undefined;
     }
 
     public OnExtract(): ApiParameterDto {
@@ -38,6 +42,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
             Location: location,
             IsOptional: this.isOptional,
             IsSpread: this.isSpread,
+            Initializer: this.initializer,
             Type: this.type
         };
     }
