@@ -5,5 +5,6 @@ import { ApiItemKinds } from "../api-item-kinds";
 export interface ApiPropertyDto extends ApiBaseItemDto {
     ApiKind: ApiItemKinds.Property;
     IsOptional: boolean;
+    IsReadonly: boolean;
     Type: TypeDto;
 }
