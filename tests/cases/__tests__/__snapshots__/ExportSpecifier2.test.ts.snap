@@ -99,6 +99,7 @@ Object {
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -125,6 +126,7 @@ Object {
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {

@@ -274,6 +274,7 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
@@ -301,6 +302,7 @@ Object {
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
@@ -328,6 +330,7 @@ Object {
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
@@ -355,6 +358,7 @@ Object {
     },
     "Parameter-3": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
@@ -413,6 +417,7 @@ Object {
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -439,6 +444,7 @@ Object {
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": true,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {

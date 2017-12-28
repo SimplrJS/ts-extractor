@@ -89,6 +89,7 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
@@ -116,6 +117,7 @@ Object {
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
@@ -143,6 +145,7 @@ Object {
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TypeParameterDeclaration1 1`] = `
+exports[`ParameterDeclaration3 1`] = `
 Object {
   "EntryFiles": Array [
     "SourceFile-0",
@@ -14,18 +14,18 @@ Object {
       "KindString": "FunctionDeclaration",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/TypeParameterDeclaration1.ts",
+        "FileName": "./cases/ParameterDeclaration3.ts",
         "IsExternalPackage": false,
-        "Line": 0,
+        "Line": 2,
       },
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "Foo",
+      "Name": "FooFunction",
       "Parameters": Array [
         Object {
-          "Alias": "a",
+          "Alias": "bar",
           "Ids": Array [
             "Parameter-0",
           ],
@@ -40,41 +40,34 @@ Object {
         "ReferenceId": undefined,
         "Text": "void",
       },
-      "TypeParameters": Array [
-        Object {
-          "Alias": "TValue",
-          "Ids": Array [
-            "TypeParameter-0",
-          ],
-        },
-      ],
+      "TypeParameters": Array [],
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
-      "Initializer": undefined,
+      "Initializer": "\\"Hello World!\\"",
       "IsOptional": false,
       "IsSpread": false,
       "Kind": 146,
       "KindString": "Parameter",
       "Location": Object {
-        "Character": 37,
-        "FileName": "./cases/TypeParameterDeclaration1.ts",
+        "Character": 28,
+        "FileName": "./cases/ParameterDeclaration3.ts",
         "IsExternalPackage": false,
-        "Line": 0,
+        "Line": 2,
       },
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "a",
+      "Name": "bar",
       "Type": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
         "Generics": undefined,
-        "Name": "TValue",
-        "ReferenceId": "TypeParameter-0",
-        "Text": "TValue",
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
       },
     },
     "SourceFile-0": Object {
@@ -83,13 +76,13 @@ Object {
       "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/TypeParameterDeclaration1.ts",
+        "FileName": "./cases/ParameterDeclaration3.ts",
         "IsExternalPackage": false,
-        "Line": 0,
+        "Line": 2,
       },
       "Members": Array [
         Object {
-          "Alias": "Foo",
+          "Alias": "FooFunction",
           "Ids": Array [
             "FunctionDeclaration-0",
           ],
@@ -99,33 +92,7 @@ Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "TypeParameterDeclaration1.ts",
-    },
-    "TypeParameter-0": Object {
-      "ApiKind": "type-parameter",
-      "ConstraintType": undefined,
-      "DefaultType": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
-        "Text": "string",
-      },
-      "Kind": 145,
-      "KindString": "TypeParameter",
-      "Location": Object {
-        "Character": 20,
-        "FileName": "./cases/TypeParameterDeclaration1.ts",
-        "IsExternalPackage": false,
-        "Line": 0,
-      },
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "TValue",
+      "Name": "ParameterDeclaration3.ts",
     },
   },
 }
