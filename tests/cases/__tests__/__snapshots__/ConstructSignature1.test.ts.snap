@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConstructSignature1 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ConstructSignature-0": Object {
+      "ApiKind": "construct",
+      "IsOverloadBase": false,
+      "Kind": 156,
+      "KindString": "ConstructSignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/ConstructSignature1.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__new",
+      "Parameters": Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": undefined,
+        "Name": "Foo",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "Foo",
+      },
+      "TypeParameters": Array [],
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Kind": 230,
+      "KindString": "InterfaceDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ConstructSignature1.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "__new",
+          "Ids": Array [
+            "ConstructSignature-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Array [],
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./cases/ConstructSignature1.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ConstructSignature1.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ConstructSignature1.ts",
+    },
+  },
+}
+`;

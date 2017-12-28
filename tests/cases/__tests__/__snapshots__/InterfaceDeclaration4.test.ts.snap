@@ -129,6 +129,16 @@ Object {
       },
       "Name": "__new",
       "Parameters": Array [],
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
     },
     "ConstructSignature-1": Object {
       "ApiKind": "construct",
@@ -154,6 +164,16 @@ Object {
           ],
         },
       ],
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 1,
+        "FlagsString": "Any",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "any",
+      },
+      "TypeParameters": Array [],
     },
     "FunctionType-0": Object {
       "ApiKind": "function",
