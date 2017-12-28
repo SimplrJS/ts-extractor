@@ -11,6 +11,7 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
     private type: TypeDto;
     private isOptional: boolean;
+    private isReadonly: boolean;
 
     protected OnGatherData(): void {
         // Type
@@ -19,6 +20,9 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
 
         // IsOptional
         this.isOptional = Boolean(this.Declaration.questionToken);
+
+        // IsReadonly
+        this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
     }
 
     public OnExtract(): ApiPropertyDto {
@@ -33,6 +37,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
             Metadata: metadata,
             Location: location,
             IsOptional: this.isOptional,
+            IsReadonly: this.isReadonly,
             Type: this.type
         };
     }

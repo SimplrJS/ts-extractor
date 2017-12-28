@@ -6,5 +6,6 @@ export interface ApiParameterDto extends ApiBaseItemDto {
     ApiKind: ApiItemKinds.Parameter;
     Type: TypeDto;
     IsSpread: boolean;
+    Initializer: string | undefined;
     IsOptional: boolean;
 }

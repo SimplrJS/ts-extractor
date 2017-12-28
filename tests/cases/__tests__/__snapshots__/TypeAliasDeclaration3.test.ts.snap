@@ -9,6 +9,7 @@ Object {
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -35,6 +36,7 @@ Object {
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -61,6 +63,7 @@ Object {
     "PropertySignature-2": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -87,6 +90,7 @@ Object {
     "PropertySignature-3": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -113,6 +117,7 @@ Object {
     "PropertySignature-4": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -139,6 +144,7 @@ Object {
     "PropertySignature-5": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {
@@ -165,6 +171,7 @@ Object {
     "PropertySignature-6": Object {
       "ApiKind": "property",
       "IsOptional": false,
+      "IsReadonly": false,
       "Kind": 148,
       "KindString": "PropertySignature",
       "Location": Object {

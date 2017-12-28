@@ -44,6 +44,7 @@ Object {
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
+      "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": true,
       "Kind": 146,

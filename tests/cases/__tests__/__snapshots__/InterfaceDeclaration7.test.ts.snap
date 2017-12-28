@@ -1,38 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IndexSignature2 1`] = `
+exports[`InterfaceDeclaration7 1`] = `
 Object {
   "EntryFiles": Array [
     "SourceFile-0",
   ],
   "Registry": Object {
-    "IndexSignature-0": Object {
-      "ApiKind": "index",
-      "IsReadonly": true,
-      "Kind": 157,
-      "KindString": "IndexSignature",
-      "Location": Object {
-        "Character": 4,
-        "FileName": "./cases/IndexSignature2.ts",
-        "IsExternalPackage": false,
-        "Line": 1,
-      },
-      "Metadata": Object {
-        "DocumentationComment": "",
-        "JSDocTags": Array [],
-      },
-      "Name": "__index",
-      "Parameter": "Parameter-0",
-      "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
-        "Text": "number",
-      },
-    },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
@@ -40,15 +13,15 @@ Object {
       "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/IndexSignature2.ts",
+        "FileName": "./cases/InterfaceDeclaration7.ts",
         "IsExternalPackage": false,
         "Line": 0,
       },
       "Members": Array [
         Object {
-          "Alias": "__index",
+          "Alias": "Bar",
           "Ids": Array [
-            "IndexSignature-0",
+            "PropertySignature-0",
           ],
         },
       ],
@@ -59,16 +32,15 @@ Object {
       "Name": "Foo",
       "TypeParameters": Array [],
     },
-    "Parameter-0": Object {
-      "ApiKind": "parameter",
-      "Initializer": undefined,
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
       "IsOptional": false,
-      "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
+      "IsReadonly": true,
+      "Kind": 148,
+      "KindString": "PropertySignature",
       "Location": Object {
-        "Character": 14,
-        "FileName": "./cases/IndexSignature2.ts",
+        "Character": 4,
+        "FileName": "./cases/InterfaceDeclaration7.ts",
         "IsExternalPackage": false,
         "Line": 1,
       },
@@ -76,7 +48,7 @@ Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "key",
+      "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -93,7 +65,7 @@ Object {
       "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/IndexSignature2.ts",
+        "FileName": "./cases/InterfaceDeclaration7.ts",
         "IsExternalPackage": false,
         "Line": 0,
       },
@@ -109,7 +81,7 @@ Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "IndexSignature2.ts",
+      "Name": "InterfaceDeclaration7.ts",
     },
   },
 }
