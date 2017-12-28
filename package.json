@@ -1,6 +1,6 @@
 {
     "name": "ts-extractor",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "description": "TypeScript AST extractor to useful JSON structure.",
     "keywords": [
         "typescript",
