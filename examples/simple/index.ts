@@ -1,6 +1,9 @@
-import { Bar, Foo } from "./exported-functions";
+export class Foo {
+    public get foo(): string {
+        return "";
+    }
 
-export {
-    Bar,
-    Foo
-};
+    public set foo(arg: string) {
+        console.info(arg);
+    }
+}

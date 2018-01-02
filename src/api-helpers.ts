@@ -34,6 +34,8 @@ import { ApiClass } from "./definitions/api-class";
 import { ApiClassConstructor } from "./definitions/api-class-constructor";
 import { ApiClassProperty } from "./definitions/api-class-property";
 import { ApiClassMethod } from "./definitions/api-class-method";
+import { ApiGetAccessor } from "./definitions/api-get-accessor";
+import { ApiSetAccessor } from "./definitions/api-set-accessor";
 import { ApiIndex } from "./definitions/api-index";
 import { ApiCall } from "./definitions/api-call";
 import { ApiConstruct } from "./definitions/api-construct";
@@ -85,6 +87,10 @@ export namespace ApiHelpers {
             apiItem = new ApiClassProperty(declaration, symbol, options);
         } else if (ts.isMethodDeclaration(declaration)) {
             apiItem = new ApiClassMethod(declaration, symbol, options);
+        } else if (ts.isGetAccessorDeclaration(declaration)) {
+            apiItem = new ApiGetAccessor(declaration, symbol, options);
+        } else if (ts.isSetAccessorDeclaration(declaration)) {
+            apiItem = new ApiSetAccessor(declaration, symbol, options);
         } else if (ts.isIndexSignatureDeclaration(declaration)) {
             apiItem = new ApiIndex(declaration, symbol, options);
         } else if (ts.isCallSignatureDeclaration(declaration)) {
