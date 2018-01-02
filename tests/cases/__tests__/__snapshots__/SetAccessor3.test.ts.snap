@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SetAccessor3 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": true,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "SetAccessor-0",
+          ],
+        },
+        Object {
+          "Alias": "StaticFoo",
+          "Ids": Array [
+            "SetAccessor-1",
+          ],
+        },
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
+            "SetAccessor-2",
+          ],
+        },
+        Object {
+          "Alias": "ProtectedFoo",
+          "Ids": Array [
+            "SetAccessor-3",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Array [],
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 32,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "Parameter-3": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Kind": 146,
+      "KindString": "Parameter",
+      "Location": Object {
+        "Character": 31,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "SetAccessor-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "set-accessor",
+      "IsAbstract": true,
+      "IsStatic": false,
+      "Kind": 154,
+      "KindString": "SetAccessor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-0",
+        ],
+      },
+    },
+    "SetAccessor-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "set-accessor",
+      "IsAbstract": false,
+      "IsStatic": true,
+      "Kind": 154,
+      "KindString": "SetAccessor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "StaticFoo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-1",
+        ],
+      },
+    },
+    "SetAccessor-2": Object {
+      "AccessModifier": "private",
+      "ApiKind": "set-accessor",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 154,
+      "KindString": "SetAccessor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "foo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-2",
+        ],
+      },
+    },
+    "SetAccessor-3": Object {
+      "AccessModifier": "protected",
+      "ApiKind": "set-accessor",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Kind": 154,
+      "KindString": "SetAccessor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ProtectedFoo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-3",
+        ],
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/SetAccessor3.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "SetAccessor3.ts",
+    },
+  },
+}
+`;

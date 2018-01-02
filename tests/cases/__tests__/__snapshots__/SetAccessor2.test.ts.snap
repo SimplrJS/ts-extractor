@@ -91,7 +91,10 @@ Object {
       },
     },
     "SetAccessor-0": Object {
+      "AccessModifier": "public",
       "ApiKind": "set-accessor",
+      "IsAbstract": false,
+      "IsStatic": false,
       "Kind": 154,
       "KindString": "SetAccessor",
       "Location": Object {
