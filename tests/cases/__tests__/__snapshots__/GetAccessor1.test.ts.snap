@@ -35,7 +35,10 @@ Object {
       "TypeParameters": Array [],
     },
     "GetAccessor-0": Object {
+      "AccessModifier": "public",
       "ApiKind": "get-accessor",
+      "IsAbstract": false,
+      "IsStatic": false,
       "Kind": 153,
       "KindString": "GetAccessor",
       "Location": Object {
