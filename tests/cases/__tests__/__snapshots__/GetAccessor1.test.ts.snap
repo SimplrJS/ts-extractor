@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GetAccessor1 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Kind": 229,
+      "KindString": "ClassDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/GetAccessor1.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "GetAccessor-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Array [],
+    },
+    "GetAccessor-0": Object {
+      "ApiKind": "get-accessor",
+      "Kind": 153,
+      "KindString": "GetAccessor",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/GetAccessor1.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/GetAccessor1.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "GetAccessor1.ts",
+    },
+  },
+}
+`;
