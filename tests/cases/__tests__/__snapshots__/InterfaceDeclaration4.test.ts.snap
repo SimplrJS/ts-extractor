@@ -177,7 +177,6 @@ Object {
     },
     "FunctionType-0": Object {
       "ApiKind": "function-type",
-      "IsAsync": false,
       "IsOverloadBase": false,
       "Kind": 160,
       "KindString": "FunctionType",
