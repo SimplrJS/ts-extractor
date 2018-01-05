@@ -8,18 +8,28 @@ import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiFunctionType extends ApiCallableBase<ts.FunctionTypeNode, ApiFunctionTypeDto> {
+    private isAsync: boolean;
+
+    public OnGatherData(): void {
+        super.OnGatherData();
+
+        // Modifiers
+        this.isAsync = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AsyncKeyword);
+    }
+
     public OnExtract(): ApiFunctionTypeDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.Function,
+            ApiKind: ApiItemKinds.FunctionType,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
+            IsAsync: this.isAsync,
             TypeParameters: this.TypeParameters,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType
