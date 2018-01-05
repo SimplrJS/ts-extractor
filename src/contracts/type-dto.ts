@@ -23,6 +23,7 @@ export type TypeDto = TypeBasicDto | TypeUnionOrIntersectionDto;
  * Basic type. It can be "basic", "type-parameter" etc.
  */
 export interface TypeBasicDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
+    ApiTypeKind: TypeKinds.Basic | TypeKinds.TypeParameter;
     Generics?: TypeDto[];
 }
 
