@@ -2,6 +2,9 @@ import * as ts from "typescript";
 
 import { TypeKinds } from "./type-kinds";
 
+/**
+ * Base type interface.
+ */
 export interface BaseTypeDto {
     ApiTypeKind: TypeKinds;
     ReferenceId: string | undefined;
@@ -16,8 +19,10 @@ export interface TypeScriptSpecificPropertiesDto {
 
 export type TypeDto = TypeBasicDto | TypeUnionOrIntersectionDto;
 
+/**
+ * Basic type. It can be "basic", "type-parameter" etc.
+ */
 export interface TypeBasicDto extends BaseTypeDto, TypeScriptSpecificPropertiesDto {
-    ApiTypeKind: TypeKinds.Basic;
     Generics?: TypeDto[];
 }
 
