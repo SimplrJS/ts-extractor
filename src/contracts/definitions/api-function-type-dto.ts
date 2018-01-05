@@ -3,5 +3,4 @@ import { ApiItemKinds } from "../api-item-kinds";
 
 export interface ApiFunctionTypeDto extends ApiCallableDto {
     ApiKind: ApiItemKinds.FunctionType;
-    IsAsync: boolean;
 }
