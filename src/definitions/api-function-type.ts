@@ -13,7 +13,7 @@ export class ApiFunctionType extends ApiCallableBase<ts.FunctionTypeNode, ApiFun
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.Function,
+            ApiKind: ApiItemKinds.FunctionType,
             Name: this.Symbol.name,
             Kind: this.Declaration.kind,
             KindString: ts.SyntaxKind[this.Declaration.kind],

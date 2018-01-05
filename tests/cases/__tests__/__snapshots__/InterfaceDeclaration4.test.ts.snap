@@ -176,7 +176,7 @@ Object {
       "TypeParameters": Array [],
     },
     "FunctionType-0": Object {
-      "ApiKind": "function",
+      "ApiKind": "function-type",
       "IsOverloadBase": false,
       "Kind": 160,
       "KindString": "FunctionType",
