@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeAliasDeclaration4 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Kind": 148,
+      "KindString": "PropertySignature",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Name",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 2,
+        "FlagsString": "String",
+        "Generics": undefined,
+        "Name": undefined,
+        "ReferenceId": undefined,
+        "Text": "string",
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Kind": 268,
+      "KindString": "SourceFile",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "User",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "ReadonlyUser",
+          "Ids": Array [
+            "TypeAliasDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TypeAliasDeclaration4.ts",
+    },
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "User",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": undefined,
+        "Name": "__type",
+        "ReferenceId": "TypeLiteral-0",
+        "Text": "User",
+      },
+      "TypeParameters": Array [],
+    },
+    "TypeAliasDeclaration-1": Object {
+      "ApiKind": "type",
+      "Kind": 231,
+      "KindString": "TypeAliasDeclaration",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ReadonlyUser",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Flags": 32768,
+        "FlagsString": "Object",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
+            "Generics": undefined,
+            "Name": "User",
+            "ReferenceId": "TypeAliasDeclaration-0",
+            "Text": "User",
+          },
+        ],
+        "Name": "Readonly",
+        "ReferenceId": undefined,
+        "Text": "Readonly<User>",
+      },
+      "TypeParameters": Array [],
+    },
+    "TypeLiteral-0": Object {
+      "ApiKind": "type-literal",
+      "Kind": 163,
+      "KindString": "TypeLiteral",
+      "Location": Object {
+        "Character": 19,
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Name",
+          "Ids": Array [
+            "PropertySignature-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+    },
+  },
+}
+`;
