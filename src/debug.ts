@@ -1,5 +1,6 @@
 import * as path from "path";
 import { GetCompilerOptions } from "./utils/tsconfig-json";
+import * as fs from "fs-extra";
 
 import { Extractor } from "./extractor";
 
@@ -17,6 +18,8 @@ async function main(): Promise<void> {
     const extract1 = extractor.Extract([path.resolve("examples/simple/index.ts")]);
     // tslint:disable-next-line:no-console
     console.log(JSON.stringify(extract1, null, 4));
+
+    await fs.writeJson("./debug.json", extract1);
 }
 
 main();
