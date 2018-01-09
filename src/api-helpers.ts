@@ -255,6 +255,12 @@ export namespace ApiHelpers {
         return list;
     }
 
+    /**
+     * Converts from TypeScript type AST to TypeDto.
+     * @param type TypeScript type
+     * @param options ApiItem options
+     * @param self This is only for `TypeAliasDeclaration`
+     */
     export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions, self?: boolean): TypeDto {
         const typeChecker = options.Program.getTypeChecker();
         const text = typeChecker.typeToString(type);
