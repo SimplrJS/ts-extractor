@@ -255,11 +255,10 @@ export namespace ApiHelpers {
         return list;
     }
 
-    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions): TypeDto {
+    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions, self?: boolean): TypeDto {
         const typeChecker = options.Program.getTypeChecker();
         const text = typeChecker.typeToString(type);
 
-        const symbol = type.getSymbol() || type.aliasSymbol;
         let generics: TypeDto[] | undefined;
         let kind = TypeKinds.Basic;
         let types: TypeDto[] | undefined;
@@ -267,6 +266,7 @@ export namespace ApiHelpers {
         let referenceId: string | undefined;
 
         // Find declaration reference.
+        const symbol = self ? type.getSymbol() : type.aliasSymbol || type.getSymbol();
         if (symbol != null) {
             name = symbol.getName();
 

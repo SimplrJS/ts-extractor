@@ -1,9 +1,7 @@
-export class Foo {
-    public get foo(): string {
-        return "";
-    }
+export type Hello = {
+    prop: string;
+};
 
-    public set foo(arg: string) {
-        console.info(arg);
-    }
-}
+export type ProxyHello1 = Hello;
+
+export type ProxyHello2 = ProxyHello1;

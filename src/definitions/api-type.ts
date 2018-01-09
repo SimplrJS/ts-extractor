@@ -22,7 +22,8 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
 
         // Type
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        const self = type.aliasSymbol === this.Symbol;
+        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options, self);
     }
 
     public OnExtract(): ApiTypeDto {
