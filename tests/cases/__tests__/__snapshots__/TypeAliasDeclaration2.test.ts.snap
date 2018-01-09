@@ -221,8 +221,8 @@ Object {
         "ApiTypeKind": "union",
         "Flags": 65536,
         "FlagsString": "Union",
-        "Name": "OneCommonFieldTypeIntersection",
-        "ReferenceId": "TypeAliasDeclaration-2",
+        "Name": undefined,
+        "ReferenceId": undefined,
         "Text": "OneCommonFieldTypeIntersection",
         "Types": Array [
           Object {
@@ -230,8 +230,8 @@ Object {
             "Flags": 32768,
             "FlagsString": "Object",
             "Generics": undefined,
-            "Name": "__type",
-            "ReferenceId": "TypeLiteral-0",
+            "Name": "OneCommonField1",
+            "ReferenceId": "TypeAliasDeclaration-0",
             "Text": "OneCommonField1",
           },
           Object {
@@ -239,8 +239,8 @@ Object {
             "Flags": 32768,
             "FlagsString": "Object",
             "Generics": undefined,
-            "Name": "__type",
-            "ReferenceId": "TypeLiteral-1",
+            "Name": "OneCommonField2",
+            "ReferenceId": "TypeAliasDeclaration-1",
             "Text": "OneCommonField2",
           },
         ],

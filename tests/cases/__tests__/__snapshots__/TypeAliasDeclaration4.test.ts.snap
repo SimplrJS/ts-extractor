@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TypeAliasDeclaration1 1`] = `
+exports[`TypeAliasDeclaration4 1`] = `
 Object {
   "EntryFiles": Array [
     "SourceFile-0",
@@ -14,15 +14,15 @@ Object {
       "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
-        "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
         "IsExternalPackage": false,
-        "Line": 3,
+        "Line": 1,
       },
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "BarName",
+      "Name": "Name",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 2,
@@ -39,19 +39,19 @@ Object {
       "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
         "IsExternalPackage": false,
-        "Line": 2,
+        "Line": 0,
       },
       "Members": Array [
         Object {
-          "Alias": "MyType",
+          "Alias": "User",
           "Ids": Array [
             "TypeAliasDeclaration-0",
           ],
         },
         Object {
-          "Alias": "AnotherType",
+          "Alias": "ReadonlyUser",
           "Ids": Array [
             "TypeAliasDeclaration-1",
           ],
@@ -61,7 +61,7 @@ Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "TypeAliasDeclaration1.ts",
+      "Name": "TypeAliasDeclaration4.ts",
     },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",
@@ -69,15 +69,15 @@ Object {
       "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
         "IsExternalPackage": false,
-        "Line": 2,
+        "Line": 0,
       },
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "MyType",
+      "Name": "User",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 32768,
@@ -85,7 +85,7 @@ Object {
         "Generics": undefined,
         "Name": "__type",
         "ReferenceId": "TypeLiteral-0",
-        "Text": "MyType",
+        "Text": "User",
       },
       "TypeParameters": Array [],
     },
@@ -95,23 +95,33 @@ Object {
       "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
-        "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
         "IsExternalPackage": false,
-        "Line": 6,
+        "Line": 4,
       },
       "Metadata": Object {
         "DocumentationComment": "",
         "JSDocTags": Array [],
       },
-      "Name": "AnotherType",
+      "Name": "ReadonlyUser",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Flags": 32768,
         "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "MyType",
-        "ReferenceId": "TypeAliasDeclaration-0",
-        "Text": "MyType",
+        "Generics": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Flags": 32768,
+            "FlagsString": "Object",
+            "Generics": undefined,
+            "Name": "User",
+            "ReferenceId": "TypeAliasDeclaration-0",
+            "Text": "User",
+          },
+        ],
+        "Name": "Readonly",
+        "ReferenceId": undefined,
+        "Text": "Readonly<User>",
       },
       "TypeParameters": Array [],
     },
@@ -120,14 +130,14 @@ Object {
       "Kind": 163,
       "KindString": "TypeLiteral",
       "Location": Object {
-        "Character": 21,
-        "FileName": "./cases/TypeAliasDeclaration1.ts",
+        "Character": 19,
+        "FileName": "./cases/TypeAliasDeclaration4.ts",
         "IsExternalPackage": false,
-        "Line": 2,
+        "Line": 0,
       },
       "Members": Array [
         Object {
-          "Alias": "BarName",
+          "Alias": "Name",
           "Ids": Array [
             "PropertySignature-0",
           ],
