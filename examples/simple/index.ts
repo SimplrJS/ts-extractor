@@ -5,4 +5,4 @@ export enum ApiItemKindsAdditional {
     ___Any2 = "any2"
 }
 
-export type SyntaxKinds___ = [string, number];
+export type SyntaxKinds___ = ApiItemKindsAdditional[];
