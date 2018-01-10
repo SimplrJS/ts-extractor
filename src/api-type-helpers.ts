@@ -1,15 +1,20 @@
 import * as ts from "typescript";
 import { ApiItemOptions } from "./abstractions/api-item";
-import { ApiHelpers } from "./index";
+import { ApiHelpers } from "./api-helpers";
 
 export namespace ApiTypeHelpers {
-    export type ApiType = ApiReferenceType | any;
+    export type ApiType = ApiBasicType |
+        ApiReferenceType |
+        ApiUnionOrIntersectionType |
+        ArrayType;
 
     export enum ApiTypeKind {
         Basic = "basic",
+        TypeParameter = "type-parameter",
         Reference = "reference",
         Union = "union",
-        Intersection = "intersection"
+        Intersection = "intersection",
+        Array = "array"
     }
 
     export interface ApiBaseType {
@@ -19,6 +24,10 @@ export namespace ApiTypeHelpers {
 
     export interface ApiMembersBaseType {
         Members: ApiType[];
+    }
+
+    export interface ApiBasicType extends ApiBaseType {
+        ApiTypeKind: ApiTypeKind.Basic | ApiTypeKind.TypeParameter;
     }
 
     export interface ApiReferenceType extends ApiBaseType {
@@ -33,15 +42,27 @@ export namespace ApiTypeHelpers {
         ApiTypeKind: ApiTypeKind.Intersection | ApiTypeKind.Union;
     }
 
+    export interface ArrayType extends ApiBaseType {
+        ApiTypeKind: ApiTypeKind.Array;
+        Type: ApiType;
+    }
+
     export function TypeNodeToTypeDto(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
         if (ts.isTypeReferenceNode(typeNode)) {
             return TypeReferenceNodeToTypeDto(typeNode, options, self);
         } else if (ts.isUnionTypeNode(typeNode) || ts.isIntersectionTypeNode(typeNode)) {
             return TypeNodeUnionOrIntersectionToTypeDto(typeNode, options);
+        } else if (ts.isArrayTypeNode(typeNode)) {
+            return ArrayTypeNodeToTypeDto(typeNode, options);
         }
+
+        return TypeNodeToApiBasicType(typeNode, options);
     }
 
-    export function TypeNodeToBaseType(typeNode: ts.TypeNode, options: ApiItemOptions): ApiBaseType {
+    /**
+     * @internal
+     */
+    export function typeNodeToBaseType(typeNode: ts.TypeNode, options: ApiItemOptions): ApiBaseType {
         const typeChecker = options.Program.getTypeChecker();
         const type = typeChecker.getTypeFromTypeNode(typeNode);
         const text = typeChecker.typeToString(type);
@@ -49,6 +70,14 @@ export namespace ApiTypeHelpers {
         return {
             ApiTypeKind: ApiTypeKind.Basic,
             Text: text
+        };
+    }
+
+    export function TypeNodeToApiBasicType(typeNode: ts.TypeNode, options: ApiItemOptions): ApiBasicType {
+        // TODO: TypeParameters
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.Basic
         };
     }
 
@@ -73,7 +102,7 @@ export namespace ApiTypeHelpers {
         }
 
         return {
-            ...TypeNodeToBaseType(typeNode, options),
+            ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: ApiTypeKind.Reference,
             NameText: nameText,
             ReferenceId: refenceId,
@@ -93,12 +122,22 @@ export namespace ApiTypeHelpers {
             apiTypeKind = ApiTypeKind.Intersection;
         }
 
-        const members = typeNode.types.map(x => TypeNodeToTypeDto(typeNode, options));
+        const members = typeNode.types.map(x => TypeNodeToTypeDto(x, options));
 
         return {
-            ...TypeNodeToBaseType(typeNode, options),
+            ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: apiTypeKind,
             Members: members
+        };
+    }
+
+    export function ArrayTypeNodeToTypeDto(typeNode: ts.ArrayTypeNode, options: ApiItemOptions): any {
+        const type = TypeNodeToTypeDto(typeNode.elementType, options);
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.Array,
+            Type: type
         };
     }
 }
