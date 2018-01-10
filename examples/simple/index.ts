@@ -1,7 +1,8 @@
-export type Hello = {
-    prop: string;
-};
+import * as ts from "typescript";
 
-export type ProxyHello1 = Hello;
+export enum ApiItemKindsAdditional {
+    ___Any = "any",
+    ___Any2 = "any2"
+}
 
-export type ProxyHello2 = ProxyHello1;
+export type SupportedApiItemKindType = ts.SyntaxKind | ApiItemKindsAdditional;

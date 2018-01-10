@@ -13,7 +13,7 @@ export interface BaseTypeDto {
 }
 
 export interface TypeScriptSpecificPropertiesDto {
-    Flags: ts.TypeFlags;
+    Flags: ts.TypeFlags | ts.NodeFlags;
     FlagsString: string;
 }
 
