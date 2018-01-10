@@ -6,7 +6,9 @@ export namespace ApiTypeHelpers {
     export type ApiType = ApiBasicType |
         ApiReferenceType |
         ApiUnionOrIntersectionType |
-        ArrayType;
+        ArrayType |
+        TupleType |
+        TypeLiteralType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -14,7 +16,9 @@ export namespace ApiTypeHelpers {
         Reference = "reference",
         Union = "union",
         Intersection = "intersection",
-        Array = "array"
+        Array = "array",
+        Tuple = "tuple",
+        TypeLiteral = "type-literal"
     }
 
     export interface ApiBaseType {
@@ -47,13 +51,26 @@ export namespace ApiTypeHelpers {
         Type: ApiType;
     }
 
-    export function TypeNodeToTypeDto(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
+    export interface TupleType extends ApiBaseType, ApiMembersBaseType {
+        ApiTypeKind: ApiTypeKind.Tuple;
+    }
+
+    export interface TypeLiteralType extends ApiBaseType {
+        ApiTypeKind: ApiTypeKind.TypeLiteral;
+        ReferenceId?: string;
+    }
+
+    export function TypeNodeToApiType(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
         if (ts.isTypeReferenceNode(typeNode)) {
-            return TypeReferenceNodeToTypeDto(typeNode, options, self);
+            return TypeReferenceNodeToApiType(typeNode, options, self);
         } else if (ts.isUnionTypeNode(typeNode) || ts.isIntersectionTypeNode(typeNode)) {
-            return TypeNodeUnionOrIntersectionToTypeDto(typeNode, options);
+            return TypeNodeUnionOrIntersectionToApiType(typeNode, options);
         } else if (ts.isArrayTypeNode(typeNode)) {
-            return ArrayTypeNodeToTypeDto(typeNode, options);
+            return ArrayTypeNodeToApiType(typeNode, options);
+        } else if (ts.isTupleTypeNode(typeNode)) {
+            return TupleTypeNodeToApiType(typeNode, options);
+        } else if (ts.isTypeLiteralNode(typeNode)) {
+            return TypeLiteralTypeNodeToTypeDto(typeNode, options);
         }
 
         return TypeNodeToApiBasicType(typeNode, options);
@@ -81,7 +98,7 @@ export namespace ApiTypeHelpers {
         };
     }
 
-    export function TypeReferenceNodeToTypeDto(typeNode: ts.TypeReferenceNode, options: ApiItemOptions, self?: boolean): ApiReferenceType {
+    export function TypeReferenceNodeToApiType(typeNode: ts.TypeReferenceNode, options: ApiItemOptions, self?: boolean): ApiReferenceType {
         const typeChecker = options.Program.getTypeChecker();
         const type = typeChecker.getTypeFromTypeNode(typeNode);
 
@@ -91,7 +108,7 @@ export namespace ApiTypeHelpers {
         let refenceId: string | undefined;
 
         if (typeNode.typeArguments != null) {
-            typeParameters = typeNode.typeArguments.map(x => TypeNodeToTypeDto(x, options));
+            typeParameters = typeNode.typeArguments.map(x => TypeNodeToApiType(x, options));
         }
 
         const symbol = self ? type.getSymbol() : type.aliasSymbol || type.getSymbol();
@@ -111,7 +128,7 @@ export namespace ApiTypeHelpers {
         };
     }
 
-    export function TypeNodeUnionOrIntersectionToTypeDto(
+    export function TypeNodeUnionOrIntersectionToApiType(
         typeNode: ts.UnionTypeNode | ts.IntersectionTypeNode,
         options: ApiItemOptions
     ): ApiUnionOrIntersectionType {
@@ -122,7 +139,7 @@ export namespace ApiTypeHelpers {
             apiTypeKind = ApiTypeKind.Intersection;
         }
 
-        const members = typeNode.types.map(x => TypeNodeToTypeDto(x, options));
+        const members = typeNode.types.map(x => TypeNodeToApiType(x, options));
 
         return {
             ...typeNodeToBaseType(typeNode, options),
@@ -131,13 +148,40 @@ export namespace ApiTypeHelpers {
         };
     }
 
-    export function ArrayTypeNodeToTypeDto(typeNode: ts.ArrayTypeNode, options: ApiItemOptions): any {
-        const type = TypeNodeToTypeDto(typeNode.elementType, options);
+    export function ArrayTypeNodeToApiType(typeNode: ts.ArrayTypeNode, options: ApiItemOptions): ArrayType {
+        const type = TypeNodeToApiType(typeNode.elementType, options);
 
         return {
             ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: ApiTypeKind.Array,
             Type: type
+        };
+    }
+
+    export function TupleTypeNodeToApiType(typeNode: ts.TupleTypeNode, options: ApiItemOptions): TupleType {
+        const members = typeNode.elementTypes.map(x => TypeNodeToApiType(x, options));
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.Tuple,
+            Members: members
+        };
+    }
+
+    export function TypeLiteralTypeNodeToTypeDto(typeNode: ts.TypeLiteralNode, options: ApiItemOptions): TypeLiteralType {
+        const typeChecker = options.Program.getTypeChecker();
+        const type = typeChecker.getTypeFromTypeNode(typeNode);
+        const symbol = type.getSymbol();
+        let referenceId: string | undefined;
+
+        if (symbol != null) {
+            referenceId = ApiHelpers.resolveTypeItemReference(symbol, options).referenceId;
+        }
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.TypeLiteral,
+            ReferenceId: referenceId
         };
     }
 }
