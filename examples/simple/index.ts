@@ -15,6 +15,12 @@
 
 // // export var x: this is string;
 
-export type SyntaxKinds___ = () => void;
+// export type SyntaxKinds___<TValue> = TValue;
+
+export class Foo {
+    public Bar(): this {
+        return this;
+    }
+}
 
 // export declare const mapped: { [K in "a-b-c"]: number }

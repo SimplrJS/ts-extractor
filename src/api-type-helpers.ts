@@ -10,7 +10,8 @@ export namespace ApiTypeHelpers {
         TupleType |
         TypeLiteralType |
         MappedType |
-        FunctionTypeType;
+        FunctionTypeType |
+        ThisType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -22,7 +23,8 @@ export namespace ApiTypeHelpers {
         Tuple = "tuple",
         TypeLiteral = "type-literal",
         Mapped = "mapped",
-        FunctionType = "function-type"
+        FunctionType = "function-type",
+        This = "this"
     }
 
     export interface ApiBaseType {
@@ -75,6 +77,10 @@ export namespace ApiTypeHelpers {
         ApiTypeKind: ApiTypeKind.Mapped;
     }
 
+    export interface ThisType extends ApiBaseType, ApiReferenceBaseType {
+        ApiTypeKind: ApiTypeKind.This;
+    }
+
     export function TypeNodeToApiType(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
         if (ts.isTypeReferenceNode(typeNode)) {
             return TypeReferenceNodeToApiType(typeNode, options, self);
@@ -90,6 +96,8 @@ export namespace ApiTypeHelpers {
             return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.Mapped) as MappedType;
         } else if (ts.isFunctionTypeNode(typeNode)) {
             return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.FunctionType) as FunctionTypeType;
+        } else if (ts.isThisTypeNode(typeNode)) {
+            return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.This) as ThisType;
         }
 
         return TypeNodeToApiBasicType(typeNode, options);
