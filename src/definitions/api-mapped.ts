@@ -32,8 +32,8 @@ export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type!);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
 
-        // Modifiers
-        this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
+        // Readonly
+        this.isReadonly = Boolean(this.Declaration.readonlyToken);
 
         // Optional
         this.isOptional = Boolean(this.Declaration.questionToken);
