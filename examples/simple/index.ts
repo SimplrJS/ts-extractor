@@ -24,6 +24,6 @@ export interface Foo {
 //     }
 // }
 
-export type TYPE__ = {
-    [T in keyof Foo]: Foo[T]
+export type TYPE__ = new () => {
+    name: string;
 };

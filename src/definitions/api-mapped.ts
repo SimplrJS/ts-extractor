@@ -9,7 +9,6 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { TSHelpers } from "../ts-helpers";
 import { TypeDto } from "../contracts/type-dto";
-import { ApiTypeHelpers } from "../api-type-helpers";
 
 // export declare const mapped: { [K in 'a-b-c']: number }
 // TODO: Add tests.
@@ -32,10 +31,6 @@ export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
          */
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type!);
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
-
-        const result = ApiTypeHelpers.TypeNodeToApiType(this.Declaration.type!, this.Options);
-        console.log(result);
-        debugger;
 
         // Modifiers
         this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);

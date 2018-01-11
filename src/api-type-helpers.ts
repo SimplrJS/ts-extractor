@@ -15,7 +15,8 @@ export namespace ApiTypeHelpers {
         TypePredicateType |
         TypeOperatorType |
         IndexedAccessType |
-        ParenthesizedType;
+        ParenthesizedType |
+        ConstructorType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -32,7 +33,8 @@ export namespace ApiTypeHelpers {
         TypePredicate = "type-predicate",
         TypeOperator = "type-operator",
         IndexedAccess = "indexed-access",
-        Parenthesized = "parenthesized"
+        Parenthesized = "parenthesized",
+        Constructor = "constructor"
     }
 
     export enum TypeOperator {
@@ -94,6 +96,10 @@ export namespace ApiTypeHelpers {
         ApiTypeKind: ApiTypeKind.This;
     }
 
+    export interface ConstructorType extends ApiReferenceBaseType {
+        ApiTypeKind: ApiTypeKind.Constructor;
+    }
+
     export interface TypePredicateType extends ApiBaseType {
         ApiTypeKind: ApiTypeKind.TypePredicate;
         ParameterName: string;
@@ -134,6 +140,8 @@ export namespace ApiTypeHelpers {
             return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.FunctionType) as FunctionTypeType;
         } else if (ts.isThisTypeNode(typeNode)) {
             return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.This) as ThisType;
+        } else if (ts.isConstructorTypeNode(typeNode)) {
+            return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.Constructor) as ConstructorType;
         } else if (ts.isTypePredicateNode(typeNode)) {
             return TypePredicateNodeToApiType(typeNode, options);
         } else if (ts.isTypeOperatorNode(typeNode)) {

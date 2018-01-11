@@ -96,7 +96,7 @@ export namespace ApiHelpers {
             apiItem = new ApiIndex(declaration, symbol, options);
         } else if (ts.isCallSignatureDeclaration(declaration)) {
             apiItem = new ApiCall(declaration, symbol, options);
-        } else if (ts.isConstructSignatureDeclaration(declaration)) {
+        } else if (ts.isConstructSignatureDeclaration(declaration) || ts.isConstructorTypeNode(declaration)) {
             apiItem = new ApiConstruct(declaration, symbol, options);
         } else if (ts.isTypeParameterDeclaration(declaration)) {
             apiItem = new ApiTypeParameter(declaration, symbol, options);
