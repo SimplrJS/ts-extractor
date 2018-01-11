@@ -267,7 +267,7 @@ export namespace ApiHelpers {
     }
 
     /**
-     * @internal This is temporary solution to get ApiItems instead of ApiItems members.
+     * @internal
      */
     export function resolveTypeItemReference(symbol: ts.Symbol, options: ApiItemOptions): ResolvedTypeItemReference {
         if (symbol.declarations != null && symbol.declarations.length > 0) {
