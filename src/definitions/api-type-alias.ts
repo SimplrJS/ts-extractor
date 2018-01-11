@@ -3,16 +3,17 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 
-import { ApiTypeDto } from "../contracts/definitions/api-type-dto";
+import { ApiTypeAliasDto } from "../contracts/definitions/api-type-alias-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiType } from "../contracts";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
-export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
+export class ApiTypeAlias extends ApiItem<ts.TypeAliasDeclaration, ApiTypeAliasDto> {
     private typeParameters: ApiItemReference[] = [];
-    private type: TypeDto;
+    private type: ApiType;
 
     protected OnGatherData(): void {
         // TypeParameters
@@ -23,15 +24,15 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
         // Type
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type);
         const self = type.aliasSymbol === this.Symbol;
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options, self);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type, self);
     }
 
-    public OnExtract(): ApiTypeDto {
+    public OnExtract(): ApiTypeAliasDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.Type,
+            ApiKind: ApiItemKinds.TypeAlias,
             Name: this.Symbol.name,
             Metadata: metadata,
             Location: location,

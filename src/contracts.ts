@@ -24,7 +24,7 @@ export * from "./contracts/definitions/api-namespace-dto";
 export * from "./contracts/definitions/api-parameter-dto";
 export * from "./contracts/definitions/api-property-dto";
 export * from "./contracts/definitions/api-source-file-dto";
-export * from "./contracts/definitions/api-type-dto";
+export * from "./contracts/definitions/api-type-alias-dto";
 export * from "./contracts/definitions/api-type-literal-dto";
 export * from "./contracts/definitions/api-type-parameter-dto";
 export * from "./contracts/definitions/api-variable-dto";

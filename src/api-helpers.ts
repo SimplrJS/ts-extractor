@@ -23,7 +23,7 @@ import { ApiInterface } from "./definitions/api-interface";
 import { ApiProperty } from "./definitions/api-property";
 import { ApiMethod } from "./definitions/api-method";
 import { ApiParameter } from "./definitions/api-parameter";
-import { ApiType } from "./definitions/api-type";
+import { ApiTypeAlias } from "./definitions/api-type-alias";
 import { ApiClass } from "./definitions/api-class";
 import { ApiClassConstructor } from "./definitions/api-class-constructor";
 import { ApiClassProperty } from "./definitions/api-class-property";
@@ -73,7 +73,7 @@ export namespace ApiHelpers {
         } else if (ts.isParameter(declaration)) {
             apiItem = new ApiParameter(declaration, symbol, options);
         } else if (ts.isTypeAliasDeclaration(declaration)) {
-            apiItem = new ApiType(declaration, symbol, options);
+            apiItem = new ApiTypeAlias(declaration, symbol, options);
         } else if (ts.isClassDeclaration(declaration)) {
             apiItem = new ApiClass(declaration, symbol, options);
         } else if (ts.isConstructorDeclaration(declaration)) {
