@@ -24,5 +24,6 @@ export enum ApiItemKinds {
     ImportSpecifier = "import-specifier",
     TypeParameter = "type-parameter",
     TypeLiteral = "type-literal",
-    FunctionType = "function-type"
+    FunctionType = "function-type",
+    Mapped = "mapped"
 }

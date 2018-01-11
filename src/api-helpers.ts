@@ -42,6 +42,7 @@ import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
+import { ApiMapped } from "./definitions/api-mapped";
 import { PathIsInside } from "./utils/path-is-inside";
 
 export namespace ApiHelpers {
@@ -103,6 +104,8 @@ export namespace ApiHelpers {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
         } else if (ts.isFunctionTypeNode(declaration)) {
             apiItem = new ApiFunctionType(declaration, symbol, options);
+        } else if (ts.isMappedTypeNode(declaration)) {
+            apiItem = new ApiMapped(declaration, symbol, options);
         }
 
         if (apiItem == null) {
