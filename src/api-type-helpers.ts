@@ -64,7 +64,7 @@ export namespace ApiTypeHelpers {
             return TypeQueryToApiType(options, type, typeNode);
         }
 
-        return TypeNodeToApiBasicType(options, type, typeNode);
+        return ResolveApiBasicType(options, type, typeNode);
     }
 
     /**
@@ -89,7 +89,34 @@ export namespace ApiTypeHelpers {
         return result;
     }
 
-    export function TypeNodeToApiBasicType(options: ApiItemOptions, type: ts.Type, typeNode: ts.TypeNode): ApiBasicType {
+    /**
+     * @internal
+     */
+    export interface ResolvedTypeItemReference {
+        name?: string;
+        referenceId?: string;
+    }
+
+    /**
+     * @internal
+     */
+    export function resolveTypeItemReference(symbol: ts.Symbol, options: ApiItemOptions): ResolvedTypeItemReference {
+        if (symbol.declarations != null && symbol.declarations.length > 0) {
+            const declaration: ts.Declaration = symbol.declarations[0];
+
+            return {
+                name: symbol.getName(),
+                referenceId: ApiHelpers.GetItemId(declaration, symbol, options)
+            };
+        }
+
+        return {
+            name: symbol.getName()
+        };
+    }
+
+
+    export function ResolveApiBasicType(options: ApiItemOptions, type: ts.Type, typeNode: ts.TypeNode): ApiBasicType {
         return {
             ...typeNodeToBaseType(options, type, typeNode),
             ApiTypeKind: ApiTypeKind.Basic
@@ -110,7 +137,7 @@ export namespace ApiTypeHelpers {
         let referenceId: string | undefined;
 
         if (symbol != null) {
-            referenceId = ApiHelpers.resolveTypeItemReference(symbol, options).referenceId;
+            referenceId = resolveTypeItemReference(symbol, options).referenceId;
         }
 
         return {
@@ -149,7 +176,7 @@ export namespace ApiTypeHelpers {
 
         const symbol = self ? type.getSymbol() : type.aliasSymbol || type.getSymbol();
         if (symbol != null) {
-            const { name, referenceId } = ApiHelpers.resolveTypeItemReference(symbol, options);
+            const { name, referenceId } = resolveTypeItemReference(symbol, options);
             refenceId = referenceId;
             symbolName = name;
         }
@@ -345,5 +372,30 @@ export namespace ApiTypeHelpers {
             ApiTypeKind: ApiTypeKind.TypeQuery,
             Keyword: TypeQuery.Typeof
         };
+    }
+
+    export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
+
+    export function GetHeritageList(
+        heritageClauses: ts.NodeArray<ts.HeritageClause>,
+        kind: HeritageKinds,
+        options: ApiItemOptions
+    ): ApiType[] {
+        const typeChecker = options.Program.getTypeChecker();
+        const list: ApiType[] = [];
+
+        heritageClauses.forEach(heritage => {
+            if (heritage.token !== kind) {
+                return;
+            }
+
+            heritage.types.forEach(expressionType => {
+                const type = typeChecker.getTypeFromTypeNode(expressionType);
+
+                list.push(ResolveApiType(options, type, expressionType));
+            });
+        });
+
+        return list;
     }
 }
