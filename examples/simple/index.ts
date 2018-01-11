@@ -15,6 +15,6 @@
 
 // // export var x: this is string;
 
-// export type SyntaxKinds___ = (Foo | Bar)[];
+export type SyntaxKinds___ = () => void;
 
-export declare const mapped: { [K in "a-b-c"]: number }
+// export declare const mapped: { [K in "a-b-c"]: number }

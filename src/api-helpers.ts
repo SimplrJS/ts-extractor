@@ -355,19 +355,6 @@ export namespace ApiHelpers {
         if (symbol.declarations != null && symbol.declarations.length > 0) {
             const declaration: ts.Declaration = symbol.declarations[0];
 
-            // EnumMember -> Enum
-            if (ts.isEnumMember(declaration)) {
-                const parentDeclaration = declaration.parent;
-                const parentSymbol = TSHelpers.GetSymbolFromDeclaration(declaration, options.Program.getTypeChecker());
-
-                if (parentDeclaration != null && parentSymbol != null) {
-                    return {
-                        name: parentSymbol.getName(),
-                        referenceId: GetItemId(parentDeclaration, parentSymbol, options)
-                    };
-                }
-            }
-
             return {
                 name: symbol.getName(),
                 referenceId: GetItemId(declaration, symbol, options)

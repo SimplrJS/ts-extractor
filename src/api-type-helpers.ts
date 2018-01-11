@@ -8,7 +8,9 @@ export namespace ApiTypeHelpers {
         ApiUnionOrIntersectionType |
         ArrayType |
         TupleType |
-        TypeLiteralType;
+        TypeLiteralType |
+        MappedType |
+        FunctionTypeType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -18,7 +20,9 @@ export namespace ApiTypeHelpers {
         Intersection = "intersection",
         Array = "array",
         Tuple = "tuple",
-        TypeLiteral = "type-literal"
+        TypeLiteral = "type-literal",
+        Mapped = "mapped",
+        FunctionType = "function-type"
     }
 
     export interface ApiBaseType {
@@ -26,23 +30,26 @@ export namespace ApiTypeHelpers {
         Text: string;
     }
 
-    export interface ApiMembersBaseType {
+    export interface ApiMembersBaseType extends ApiBaseType {
         Members: ApiType[];
+    }
+
+    export interface ApiReferenceBaseType extends ApiBaseType {
+        ReferenceId?: string;
     }
 
     export interface ApiBasicType extends ApiBaseType {
         ApiTypeKind: ApiTypeKind.Basic | ApiTypeKind.TypeParameter;
     }
 
-    export interface ApiReferenceType extends ApiBaseType {
+    export interface ApiReferenceType extends ApiReferenceBaseType {
         ApiTypeKind: ApiTypeKind.Reference;
         NameText: string;
         TypeParameters: ApiType[] | undefined;
         SymbolName?: string;
-        ReferenceId?: string;
     }
 
-    export interface ApiUnionOrIntersectionType extends ApiBaseType, ApiMembersBaseType {
+    export interface ApiUnionOrIntersectionType extends ApiMembersBaseType {
         ApiTypeKind: ApiTypeKind.Intersection | ApiTypeKind.Union;
     }
 
@@ -51,13 +58,21 @@ export namespace ApiTypeHelpers {
         Type: ApiType;
     }
 
-    export interface TupleType extends ApiBaseType, ApiMembersBaseType {
+    export interface TupleType extends ApiMembersBaseType {
         ApiTypeKind: ApiTypeKind.Tuple;
     }
 
     export interface TypeLiteralType extends ApiBaseType {
         ApiTypeKind: ApiTypeKind.TypeLiteral;
         ReferenceId?: string;
+    }
+
+    export interface MappedType extends ApiBaseType, ApiReferenceBaseType {
+        ApiTypeKind: ApiTypeKind.Mapped;
+    }
+
+    export interface FunctionTypeType extends ApiBaseType, ApiReferenceBaseType {
+        ApiTypeKind: ApiTypeKind.Mapped;
     }
 
     export function TypeNodeToApiType(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
@@ -70,7 +85,11 @@ export namespace ApiTypeHelpers {
         } else if (ts.isTupleTypeNode(typeNode)) {
             return TupleTypeNodeToApiType(typeNode, options);
         } else if (ts.isTypeLiteralNode(typeNode)) {
-            return TypeLiteralTypeNodeToTypeDto(typeNode, options);
+            return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.TypeLiteral) as TypeLiteralType;
+        } else if (ts.isMappedTypeNode(typeNode)) {
+            return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.Mapped) as MappedType;
+        } else if (ts.isFunctionTypeNode(typeNode)) {
+            return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.FunctionType) as FunctionTypeType;
         }
 
         return TypeNodeToApiBasicType(typeNode, options);
@@ -95,6 +114,31 @@ export namespace ApiTypeHelpers {
         return {
             ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: ApiTypeKind.Basic
+        };
+    }
+
+    /**
+     * Resolving `Definition` reference.
+     * @param kind `ApiReferenceBaseType` ApiTypeKind value
+     */
+    export function ReferenceBaseTypeToTypeDto(
+        typeNode: ts.TypeNode,
+        options: ApiItemOptions,
+        kind: ApiTypeKind
+    ): ApiReferenceBaseType {
+        const typeChecker = options.Program.getTypeChecker();
+        const type = typeChecker.getTypeFromTypeNode(typeNode);
+        const symbol = type.getSymbol();
+        let referenceId: string | undefined;
+
+        if (symbol != null) {
+            referenceId = ApiHelpers.resolveTypeItemReference(symbol, options).referenceId;
+        }
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: kind,
+            ReferenceId: referenceId
         };
     }
 
@@ -165,23 +209,6 @@ export namespace ApiTypeHelpers {
             ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: ApiTypeKind.Tuple,
             Members: members
-        };
-    }
-
-    export function TypeLiteralTypeNodeToTypeDto(typeNode: ts.TypeLiteralNode, options: ApiItemOptions): TypeLiteralType {
-        const typeChecker = options.Program.getTypeChecker();
-        const type = typeChecker.getTypeFromTypeNode(typeNode);
-        const symbol = type.getSymbol();
-        let referenceId: string | undefined;
-
-        if (symbol != null) {
-            referenceId = ApiHelpers.resolveTypeItemReference(symbol, options).referenceId;
-        }
-
-        return {
-            ...typeNodeToBaseType(typeNode, options),
-            ApiTypeKind: ApiTypeKind.TypeLiteral,
-            ReferenceId: referenceId
         };
     }
 }
