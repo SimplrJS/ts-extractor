@@ -46,14 +46,13 @@ export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
         return {
             ApiKind: ApiItemKinds.Mapped,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             TypeParameter: this.typeParameter,
             IsOptional: this.isOptional,
             IsReadonly: this.isReadonly,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

@@ -16,14 +16,13 @@ export class ApiConstruct extends ApiCallableBase<ts.ConstructSignatureDeclarati
         return {
             ApiKind: ApiItemKinds.Construct,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType,
-            TypeParameters: this.TypeParameters
+            TypeParameters: this.TypeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

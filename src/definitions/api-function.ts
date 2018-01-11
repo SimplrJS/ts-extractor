@@ -24,15 +24,14 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
         return {
             ApiKind: ApiItemKinds.Function,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
             TypeParameters: this.TypeParameters,
             Parameters: this.Parameters,
             IsAsync: this.isAsync,
-            ReturnType: this.ReturnType
+            ReturnType: this.ReturnType,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

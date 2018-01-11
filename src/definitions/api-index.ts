@@ -49,13 +49,12 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
         return {
             ApiKind: ApiItemKinds.Index,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             Parameter: this.parameter,
             IsReadonly: this.isReadonly,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

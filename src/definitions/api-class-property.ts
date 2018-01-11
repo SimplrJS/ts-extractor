@@ -39,8 +39,6 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
         return {
             ApiKind: ApiItemKinds.ClassProperty,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             AccessModifier: this.accessModifier,
@@ -48,7 +46,8 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
             IsReadonly: this.isReadonly,
             IsStatic: this.isStatic,
             IsOptional: this.isOptional,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

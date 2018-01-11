@@ -50,12 +50,11 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         return {
             ApiKind: ApiItemKinds.Export,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             SourceFileId: this.sourceFileId,
-            ExportPath: exportPath
+            ExportPath: exportPath,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

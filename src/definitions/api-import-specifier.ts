@@ -30,11 +30,10 @@ export class ApiImportSpecifier extends ApiItem<ts.ImportSpecifier, ApiImportSpe
         return {
             ApiKind: ApiItemKinds.ImportSpecifier,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
-            ApiItems: this.apiItems
+            ApiItems: this.apiItems,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

@@ -32,13 +32,12 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
         return {
             ApiKind: ApiItemKinds.Property,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOptional: this.isOptional,
             IsReadonly: this.isReadonly,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

@@ -9,7 +9,6 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
     private typeParameters: ApiItemReference[] = [];
@@ -34,12 +33,11 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
         return {
             ApiKind: ApiItemKinds.Type,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             Type: this.type,
-            TypeParameters: this.typeParameters
+            TypeParameters: this.typeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

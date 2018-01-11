@@ -23,11 +23,10 @@ export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDt
         return {
             ApiKind: ApiItemKinds.TypeLiteral,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
-            Members: this.members
+            Members: this.members,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }
