@@ -10,8 +10,6 @@ Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -32,13 +30,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -59,13 +59,15 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "TType",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-2": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -86,13 +88,15 @@ Object {
         "ReferenceId": "TypeParameter-1",
         "Text": "TType",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-3": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -113,13 +117,15 @@ Object {
         "ReferenceId": "TypeParameter-2",
         "Text": "TType",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-4": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -140,13 +146,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-5": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -167,13 +175,15 @@ Object {
         "ReferenceId": "TypeParameter-3",
         "Text": "TType",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-6": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -194,11 +204,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -254,11 +266,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -297,11 +311,13 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeAliasDeclaration-1": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -340,11 +356,13 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeAliasDeclaration-2": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -405,11 +423,13 @@ Object {
         ],
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeAliasDeclaration-3": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -448,11 +468,13 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeAliasDeclaration-4": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -491,11 +513,13 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeAliasDeclaration-5": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -556,11 +580,13 @@ Object {
         ],
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeAliasDeclaration-6": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -621,11 +647,13 @@ Object {
         ],
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeLiteral-0": Object {
       "ApiKind": "type-literal",
-      "Kind": 163,
-      "KindString": "TypeLiteral",
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -651,11 +679,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "_ts": Object {
+        "Kind": 163,
+        "KindString": "TypeLiteral",
+      },
     },
     "TypeLiteral-1": Object {
       "ApiKind": "type-literal",
-      "Kind": 163,
-      "KindString": "TypeLiteral",
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -675,11 +705,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "_ts": Object {
+        "Kind": 163,
+        "KindString": "TypeLiteral",
+      },
     },
     "TypeLiteral-2": Object {
       "ApiKind": "type-literal",
-      "Kind": 163,
-      "KindString": "TypeLiteral",
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -705,11 +737,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "_ts": Object {
+        "Kind": 163,
+        "KindString": "TypeLiteral",
+      },
     },
     "TypeLiteral-3": Object {
       "ApiKind": "type-literal",
-      "Kind": 163,
-      "KindString": "TypeLiteral",
       "Location": Object {
         "Character": 37,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -735,13 +769,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "_ts": Object {
+        "Kind": 163,
+        "KindString": "TypeLiteral",
+      },
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -753,13 +789,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
     "TypeParameter-1": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -771,13 +809,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
     "TypeParameter-2": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -789,13 +829,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
     "TypeParameter-3": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/TypeAliasDeclaration3.ts",
@@ -807,6 +849,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
   },
 }

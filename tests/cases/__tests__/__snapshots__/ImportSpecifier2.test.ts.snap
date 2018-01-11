@@ -11,8 +11,6 @@ Object {
         "ImportSpecifier-0",
       ],
       "ApiKind": "export-specifier",
-      "Kind": 246,
-      "KindString": "ExportSpecifier",
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ImportSpecifier2.ts",
@@ -24,12 +22,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "DoesNotExist",
+      "_ts": Object {
+        "Kind": 246,
+        "KindString": "ExportSpecifier",
+      },
     },
     "ImportSpecifier-0": Object {
       "ApiItems": undefined,
       "ApiKind": "import-specifier",
-      "Kind": 242,
-      "KindString": "ImportSpecifier",
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ImportSpecifier2.ts",
@@ -41,11 +41,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "unknown",
+      "_ts": Object {
+        "Kind": 242,
+        "KindString": "ImportSpecifier",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ImportSpecifier2.ts",
@@ -65,6 +67,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ImportSpecifier2.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

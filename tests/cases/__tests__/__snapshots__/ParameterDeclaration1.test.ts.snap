@@ -10,8 +10,6 @@ Object {
       "ApiKind": "function",
       "IsAsync": false,
       "IsOverloadBase": false,
-      "Kind": 228,
-      "KindString": "FunctionDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ParameterDeclaration1.ts",
@@ -41,14 +39,16 @@ Object {
         "Text": "void",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 228,
+        "KindString": "FunctionDeclaration",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": true,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/ParameterDeclaration1.ts",
@@ -88,11 +88,13 @@ Object {
           },
         ],
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ParameterDeclaration1.ts",
@@ -112,6 +114,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ParameterDeclaration1.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

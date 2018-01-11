@@ -9,8 +9,6 @@ Object {
     "ExportDeclaration-0": Object {
       "ApiKind": "export",
       "ExportPath": undefined,
-      "Kind": 244,
-      "KindString": "ExportDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration2.ts",
@@ -23,11 +21,13 @@ Object {
       },
       "Name": "__export",
       "SourceFileId": undefined,
+      "_ts": Object {
+        "Kind": 244,
+        "KindString": "ExportDeclaration",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportDeclaration2.ts",
@@ -47,6 +47,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ExportDeclaration2.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

@@ -8,8 +8,6 @@ Object {
   "Registry": Object {
     "ModuleDeclaration-0": Object {
       "ApiKind": "namespace",
-      "Kind": 233,
-      "KindString": "ModuleDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/NamespaceDeclaration1.ts",
@@ -22,11 +20,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "_ts": Object {
+        "Kind": 233,
+        "KindString": "ModuleDeclaration",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/NamespaceDeclaration1.ts",
@@ -46,6 +46,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "NamespaceDeclaration1.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

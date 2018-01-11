@@ -9,8 +9,6 @@ Object {
     "CallSignature-0": Object {
       "ApiKind": "call",
       "IsOverloadBase": false,
-      "Kind": 155,
-      "KindString": "CallSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -33,12 +31,14 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 155,
+        "KindString": "CallSignature",
+      },
     },
     "CallSignature-1": Object {
       "ApiKind": "call",
       "IsOverloadBase": false,
-      "Kind": 155,
-      "KindString": "CallSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -80,6 +80,10 @@ Object {
         "Text": "number",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 155,
+        "KindString": "CallSignature",
+      },
     },
     "ClassDeclaration-0": Object {
       "ApiKind": "class",
@@ -96,8 +100,6 @@ Object {
         },
       ],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -111,12 +113,14 @@ Object {
       },
       "Name": "c1",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ConstructSignature-0": Object {
       "ApiKind": "construct",
       "IsOverloadBase": false,
-      "Kind": 156,
-      "KindString": "ConstructSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -139,12 +143,14 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 156,
+        "KindString": "ConstructSignature",
+      },
     },
     "ConstructSignature-1": Object {
       "ApiKind": "construct",
       "IsOverloadBase": false,
-      "Kind": 156,
-      "KindString": "ConstructSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -174,12 +180,14 @@ Object {
         "Text": "any",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 156,
+        "KindString": "ConstructSignature",
+      },
     },
     "FunctionType-0": Object {
       "ApiKind": "function-type",
       "IsOverloadBase": false,
-      "Kind": 160,
-      "KindString": "FunctionType",
       "Location": Object {
         "Character": 17,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -202,12 +210,14 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 160,
+        "KindString": "FunctionType",
+      },
     },
     "IndexSignature-0": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -229,12 +239,14 @@ Object {
         "ReferenceId": "FunctionType-0",
         "Text": "() => string",
       },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
+      },
     },
     "IndexSignature-1": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -256,12 +268,14 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
+      },
     },
     "IndexSignature-2": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -283,12 +297,14 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
+      },
     },
     "IndexSignature-3": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -310,12 +326,14 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -405,12 +423,14 @@ Object {
       },
       "Name": "a0",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -431,12 +451,14 @@ Object {
       },
       "Name": "a1",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-2": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -457,12 +479,14 @@ Object {
       },
       "Name": "a2",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-3": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -476,6 +500,10 @@ Object {
       },
       "Name": "a",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-4": Object {
       "ApiKind": "interface",
@@ -490,8 +518,6 @@ Object {
           "Text": "a",
         },
       ],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -505,6 +531,10 @@ Object {
       },
       "Name": "b",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-5": Object {
       "ApiKind": "interface",
@@ -528,8 +558,6 @@ Object {
           "Text": "b",
         },
       ],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -543,6 +571,10 @@ Object {
       },
       "Name": "c",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-6": Object {
       "ApiKind": "interface",
@@ -557,8 +589,6 @@ Object {
           "Text": "a",
         },
       ],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -572,13 +602,15 @@ Object {
       },
       "Name": "d",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -608,13 +640,15 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -637,13 +671,15 @@ Object {
         "Text": "any",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-2": Object {
       "ApiKind": "method",
       "IsOptional": true,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -666,13 +702,15 @@ Object {
         "Text": "any",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-3": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -702,13 +740,15 @@ Object {
         "Text": "number",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-4": Object {
       "ApiKind": "method",
       "IsOptional": true,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -738,14 +778,16 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -766,14 +808,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -794,14 +838,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-10": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -822,14 +868,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": true,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -850,14 +898,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-3": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -878,14 +928,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-4": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -906,14 +958,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-5": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -934,14 +988,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-6": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 7,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -962,14 +1018,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-7": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 7,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -990,14 +1048,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-8": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1018,14 +1078,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-9": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1046,13 +1108,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1073,13 +1137,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": true,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1100,13 +1166,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-2": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1127,13 +1195,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-3": Object {
       "ApiKind": "property",
       "IsOptional": true,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1154,11 +1224,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1226,11 +1298,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration4.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1252,6 +1326,10 @@ Object {
         "Text": "c1",
       },
       "VariableDeclarationType": "var",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
   },
 }

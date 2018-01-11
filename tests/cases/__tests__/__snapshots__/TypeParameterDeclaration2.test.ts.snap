@@ -10,8 +10,6 @@ Object {
       "ApiKind": "function",
       "IsAsync": false,
       "IsOverloadBase": false,
-      "Kind": 228,
-      "KindString": "FunctionDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeParameterDeclaration2.ts",
@@ -48,14 +46,16 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 228,
+        "KindString": "FunctionDeclaration",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 41,
         "FileName": "./cases/TypeParameterDeclaration2.ts",
@@ -76,11 +76,13 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "TValue",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeParameterDeclaration2.ts",
@@ -100,6 +102,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeParameterDeclaration2.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
@@ -113,8 +119,6 @@ Object {
         "Text": "Date",
       },
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 20,
         "FileName": "./cases/TypeParameterDeclaration2.ts",
@@ -126,6 +130,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
   },
 }

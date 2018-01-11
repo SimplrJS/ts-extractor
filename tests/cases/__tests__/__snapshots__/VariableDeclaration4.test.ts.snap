@@ -9,8 +9,6 @@ Object {
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration4.ts",
@@ -31,13 +29,15 @@ Object {
       },
       "Name": "A",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/VariableDeclaration4.ts",
@@ -58,11 +58,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration4.ts",
@@ -94,11 +96,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration4.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration4.ts",
@@ -120,11 +124,13 @@ Object {
         "Text": "A",
       },
       "VariableDeclarationType": "const",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
     "VariableDeclaration-1": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration4.ts",
@@ -146,6 +152,10 @@ Object {
         "Text": "A",
       },
       "VariableDeclarationType": "const",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
   },
 }

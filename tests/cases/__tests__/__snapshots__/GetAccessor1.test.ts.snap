@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/GetAccessor1.ts",
@@ -33,14 +31,16 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "GetAccessor-0": Object {
       "AccessModifier": "public",
       "ApiKind": "get-accessor",
       "IsAbstract": false,
       "IsStatic": false,
-      "Kind": 153,
-      "KindString": "GetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/GetAccessor1.ts",
@@ -61,11 +61,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 153,
+        "KindString": "GetAccessor",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/GetAccessor1.ts",
@@ -85,6 +87,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetAccessor1.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

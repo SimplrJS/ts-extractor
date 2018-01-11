@@ -21,8 +21,6 @@ Object {
         },
       ],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration3.ts",
@@ -43,12 +41,14 @@ Object {
       },
       "Name": "FooClass",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration3.ts",
@@ -69,6 +69,10 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",
@@ -77,8 +81,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration3.ts",
@@ -99,13 +101,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration3.ts",
@@ -126,11 +130,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration3.ts",
@@ -156,6 +162,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }
