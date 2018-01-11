@@ -20,7 +20,6 @@ export namespace ApiTypeHelpers {
 
     export enum ApiTypeKind {
         Basic = "basic",
-        TypeParameter = "type-parameter",
         Reference = "reference",
         Union = "union",
         Intersection = "intersection",
@@ -42,9 +41,15 @@ export namespace ApiTypeHelpers {
         Keyof = "keyof"
     }
 
+    export interface TypeScriptTypeNodeDebug {
+        Kind: ts.SyntaxKind;
+        KindString: string;
+    }
+
     export interface ApiBaseType {
         ApiTypeKind: ApiTypeKind;
         Text: string;
+        _ts?: TypeScriptTypeNodeDebug;
     }
 
     export interface ApiMembersBaseType extends ApiBaseType {
@@ -56,7 +61,7 @@ export namespace ApiTypeHelpers {
     }
 
     export interface ApiBasicType extends ApiBaseType {
-        ApiTypeKind: ApiTypeKind.Basic | ApiTypeKind.TypeParameter;
+        ApiTypeKind: ApiTypeKind.Basic;
     }
 
     export interface ApiReferenceType extends ApiReferenceBaseType {
@@ -163,14 +168,22 @@ export namespace ApiTypeHelpers {
         const type = typeChecker.getTypeFromTypeNode(typeNode);
         const text = typeChecker.typeToString(type);
 
-        return {
+        const result: ApiBaseType = {
             ApiTypeKind: ApiTypeKind.Basic,
             Text: text
         };
+
+        if (options.ExtractorOptions.IncludeTsDebugInfo) {
+            result._ts = {
+                Kind: typeNode.kind,
+                KindString: ts.SyntaxKind[typeNode.kind]
+            };
+        }
+
+        return result;
     }
 
     export function TypeNodeToApiBasicType(typeNode: ts.TypeNode, options: ApiItemOptions): ApiBasicType {
-        // TODO: TypeParameters
         return {
             ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: ApiTypeKind.Basic
