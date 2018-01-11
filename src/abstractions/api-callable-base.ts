@@ -5,6 +5,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { TypeDto } from "../contracts/type-dto";
 import { ApiCallableDto } from "../contracts/api-callable-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 /**
  * A callable api item base.
@@ -36,6 +37,8 @@ export abstract class ApiCallableBase<
         const signature = this.TypeChecker.getSignatureFromDeclaration(this.Declaration);
         if (signature != null) {
             const type = this.TypeChecker.getReturnTypeOfSignature(signature);
+            const apiType = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
+            console.log(apiType);
 
             this.ReturnType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }

@@ -1,29 +1,10 @@
-// import * as ts from "typescript";
-
-// export enum ApiItemKindsAdditional {
-//     ___Any = "any",
-//     ___Any2 = "any2"
-// }
-
-export interface Foo {
-    Name: string;
-    Surname: string;
+export interface Foo<TValue> {
+    Name: TValue;
 }
 
-// export interface Bar {
-//     Number: number;
-// }
+export class Bar { }
 
-// // export var x: this is string;
-
-// export type SyntaxKinds___<TValue> = TValue;
-
-// export class Foo {
-//     public Bar(arg: any): arg is string {
-//         return true;
-//     }
-// }
-
-export type TYPE__ = new () => {
-    name: string;
-};
+// tslint:disable-next-line:typedef
+export function Result(arg: any) {
+    return arg as string | number;
+}
