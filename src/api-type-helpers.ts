@@ -14,7 +14,8 @@ export namespace ApiTypeHelpers {
         ThisType |
         TypePredicateType |
         TypeOperatorType |
-        IndexedAccessType;
+        IndexedAccessType |
+        ParenthesizedType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -30,7 +31,8 @@ export namespace ApiTypeHelpers {
         This = "this",
         TypePredicate = "type-predicate",
         TypeOperator = "type-operator",
-        IndexedAccess = "indexed-access"
+        IndexedAccess = "indexed-access",
+        Parenthesized = "parenthesized"
     }
 
     export enum TypeOperator {
@@ -110,6 +112,11 @@ export namespace ApiTypeHelpers {
         IndexType: ApiType;
     }
 
+    export interface ParenthesizedType extends ApiBaseType {
+        ApiTypeKind: ApiTypeKind.Parenthesized;
+        Type: ApiType;
+    }
+
     export function TypeNodeToApiType(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
         if (ts.isTypeReferenceNode(typeNode)) {
             return TypeReferenceNodeToApiType(typeNode, options, self);
@@ -133,6 +140,8 @@ export namespace ApiTypeHelpers {
             return TypeOperatorNodeToApiType(typeNode, options);
         } else if (ts.isIndexedAccessTypeNode(typeNode)) {
             return IndexedAccessTypeNodeToApiType(typeNode, options);
+        } else if (ts.isParenthesizedTypeNode(typeNode)) {
+            return ParenthesizedTypeNodeToApiType(typeNode, options);
         }
 
         return TypeNodeToApiBasicType(typeNode, options);
@@ -315,6 +324,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example: `Foo[T]`.
+     */
     export function IndexedAccessTypeNodeToApiType(typeNode: ts.IndexedAccessTypeNode, options: ApiItemOptions): IndexedAccessType {
         const objectType = TypeNodeToApiType(typeNode.objectType, options);
         const indexType = TypeNodeToApiType(typeNode.indexType, options);
@@ -324,6 +336,19 @@ export namespace ApiTypeHelpers {
             ApiTypeKind: ApiTypeKind.IndexedAccess,
             ObjectType: objectType,
             IndexType: indexType
+        };
+    }
+
+    /**
+     * Example: `(string | number)`.
+     */
+    export function ParenthesizedTypeNodeToApiType(typeNode: ts.ParenthesizedTypeNode, options: ApiItemOptions): ParenthesizedType {
+        const type = TypeNodeToApiType(typeNode.type, options);
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.Parenthesized,
+            Type: type
         };
     }
 }
