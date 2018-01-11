@@ -18,8 +18,8 @@
 // export type SyntaxKinds___<TValue> = TValue;
 
 export class Foo {
-    public Bar(): this {
-        return this;
+    public Bar(arg: any): arg is string {
+        return true;
     }
 }
 

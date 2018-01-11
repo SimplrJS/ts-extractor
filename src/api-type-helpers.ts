@@ -11,7 +11,8 @@ export namespace ApiTypeHelpers {
         TypeLiteralType |
         MappedType |
         FunctionTypeType |
-        ThisType;
+        ThisType |
+        TypePredicateType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -24,7 +25,8 @@ export namespace ApiTypeHelpers {
         TypeLiteral = "type-literal",
         Mapped = "mapped",
         FunctionType = "function-type",
-        This = "this"
+        This = "this",
+        TypePredicate = "type-predicate"
     }
 
     export interface ApiBaseType {
@@ -77,8 +79,14 @@ export namespace ApiTypeHelpers {
         ApiTypeKind: ApiTypeKind.Mapped;
     }
 
-    export interface ThisType extends ApiBaseType, ApiReferenceBaseType {
+    export interface ThisType extends ApiReferenceBaseType {
         ApiTypeKind: ApiTypeKind.This;
+    }
+
+    export interface TypePredicateType extends ApiBaseType {
+        ApiTypeKind: ApiTypeKind.TypePredicate;
+        ParameterName: string;
+        Type: ApiType;
     }
 
     export function TypeNodeToApiType(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
@@ -98,6 +106,8 @@ export namespace ApiTypeHelpers {
             return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.FunctionType) as FunctionTypeType;
         } else if (ts.isThisTypeNode(typeNode)) {
             return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.This) as ThisType;
+        } else if (ts.isTypePredicateNode(typeNode)) {
+            return TypePredicateNodeToApiType(typeNode, options);
         }
 
         return TypeNodeToApiBasicType(typeNode, options);
@@ -217,6 +227,22 @@ export namespace ApiTypeHelpers {
             ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: ApiTypeKind.Tuple,
             Members: members
+        };
+    }
+
+    export function TypePredicateNodeToApiType(typeNode: ts.TypePredicateNode, options: ApiItemOptions): TypePredicateType {
+        const parameterName: string = typeNode.parameterName.getText();
+        const type = TypeNodeToApiType(typeNode.type, options);
+
+        // Otherwise text will be "boolean".
+        const text = `${parameterName} is ${type.Text}`;
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.TypePredicate,
+            ParameterName: parameterName,
+            Type: type,
+            Text: text
         };
     }
 }
