@@ -9,7 +9,7 @@ import { TypeDto } from "../contracts/type-dto";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-// import { ApiTypeHelpers } from "../api-type-helpers";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
     private typeParameters: ApiItemReference[] = [];
@@ -26,9 +26,9 @@ export class ApiType extends ApiItem<ts.TypeAliasDeclaration, ApiTypeDto> {
         const self = type.aliasSymbol === this.Symbol;
         this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options, self);
 
-        // const typeFromTypeNode = ApiTypeHelpers.TypeNodeToApiType(this.Declaration.type, this.Options, self);
-        // console.log(ts.SyntaxKind[this.Declaration.type.kind]);
-        // console.log(typeFromTypeNode);
+        const typeFromTypeNode = ApiTypeHelpers.TypeNodeToApiType(this.Declaration.type, this.Options, self);
+        console.log(ts.SyntaxKind[this.Declaration.type.kind]);
+        console.log(typeFromTypeNode);
     }
 
     public OnExtract(): ApiTypeDto {

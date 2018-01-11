@@ -8,7 +8,6 @@ import { AccessModifier } from "../contracts/access-modifier";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiClassMethodDto> {
     private accessModifier: AccessModifier;
@@ -28,10 +27,6 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
 
         // IsOptional
         this.isOptional = Boolean((this.Declaration as ts.FunctionLikeDeclarationBase).questionToken);
-
-        const typeFromTypeNode = ApiTypeHelpers.TypeNodeToApiType(this.Declaration.type!, this.Options);
-        console.log(ts.SyntaxKind[this.Declaration.type!.kind]);
-        console.log(typeFromTypeNode);
     }
 
     public OnExtract(): ApiClassMethodDto {

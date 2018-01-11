@@ -12,7 +12,8 @@ export namespace ApiTypeHelpers {
         MappedType |
         FunctionTypeType |
         ThisType |
-        TypePredicateType;
+        TypePredicateType |
+        TypeOperatorType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -26,7 +27,13 @@ export namespace ApiTypeHelpers {
         Mapped = "mapped",
         FunctionType = "function-type",
         This = "this",
-        TypePredicate = "type-predicate"
+        TypePredicate = "type-predicate",
+        TypeOperator = "type-operator"
+    }
+
+    export enum TypeOperator {
+        Unknown = "???",
+        Keyof = "keyof"
     }
 
     export interface ApiBaseType {
@@ -89,6 +96,12 @@ export namespace ApiTypeHelpers {
         Type: ApiType;
     }
 
+    export interface TypeOperatorType extends ApiBaseType {
+        ApiTypeKind: ApiTypeKind.TypeOperator;
+        Operator: TypeOperator;
+        Type: ApiType;
+    }
+
     export function TypeNodeToApiType(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
         if (ts.isTypeReferenceNode(typeNode)) {
             return TypeReferenceNodeToApiType(typeNode, options, self);
@@ -108,6 +121,8 @@ export namespace ApiTypeHelpers {
             return ReferenceBaseTypeToTypeDto(typeNode, options, ApiTypeKind.This) as ThisType;
         } else if (ts.isTypePredicateNode(typeNode)) {
             return TypePredicateNodeToApiType(typeNode, options);
+        } else if (ts.isTypeOperatorNode(typeNode)) {
+            return TypeOperatorNodeToApiType(typeNode, options);
         }
 
         return TypeNodeToApiBasicType(typeNode, options);
@@ -241,6 +256,32 @@ export namespace ApiTypeHelpers {
             ...typeNodeToBaseType(typeNode, options),
             ApiTypeKind: ApiTypeKind.TypePredicate,
             ParameterName: parameterName,
+            Type: type,
+            Text: text
+        };
+    }
+
+    export function TypeOperatorNodeToApiType(typeNode: ts.TypeOperatorNode, options: ApiItemOptions): TypeOperatorType {
+        const type = TypeNodeToApiType(typeNode.type, options);
+        let operator: TypeOperator;
+
+        switch (typeNode.operator) {
+            case ts.SyntaxKind.KeyOfKeyword: {
+                operator = TypeOperator.Keyof;
+                break;
+            }
+            default: {
+                operator = TypeOperator.Unknown;
+            }
+        }
+
+        // Otherwise text will be union.
+        const text = `${operator} ${type.Text}`;
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.TypeOperator,
+            Operator: operator,
             Type: type,
             Text: text
         };

@@ -5,9 +5,10 @@
 //     ___Any2 = "any2"
 // }
 
-// export interface Foo {
-//     Name: string;
-// }
+export interface Foo {
+    Name: string;
+    Surname: string;
+}
 
 // export interface Bar {
 //     Number: number;
@@ -17,10 +18,10 @@
 
 // export type SyntaxKinds___<TValue> = TValue;
 
-export class Foo {
-    public Bar(arg: any): arg is string {
-        return true;
-    }
-}
+// export class Foo {
+//     public Bar(arg: any): arg is string {
+//         return true;
+//     }
+// }
 
-// export declare const mapped: { [K in "a-b-c"]: number }
+export type TYPE__ = keyof Foo;
