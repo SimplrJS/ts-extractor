@@ -10,8 +10,6 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { TSHelpers } from "../ts-helpers";
 import { TypeDto } from "../contracts/type-dto";
 
-// export declare const mapped: { [K in 'a-b-c']: number }
-// TODO: Add tests.
 export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
     private typeParameter: string | undefined;
     private type: TypeDto;
