@@ -13,7 +13,8 @@ export namespace ApiTypeHelpers {
         FunctionTypeType |
         ThisType |
         TypePredicateType |
-        TypeOperatorType;
+        TypeOperatorType |
+        IndexedAccessType;
 
     export enum ApiTypeKind {
         Basic = "basic",
@@ -28,7 +29,8 @@ export namespace ApiTypeHelpers {
         FunctionType = "function-type",
         This = "this",
         TypePredicate = "type-predicate",
-        TypeOperator = "type-operator"
+        TypeOperator = "type-operator",
+        IndexedAccess = "indexed-access"
     }
 
     export enum TypeOperator {
@@ -102,6 +104,12 @@ export namespace ApiTypeHelpers {
         Type: ApiType;
     }
 
+    export interface IndexedAccessType extends ApiBaseType {
+        ApiTypeKind: ApiTypeKind.IndexedAccess;
+        ObjectType: ApiType;
+        IndexType: ApiType;
+    }
+
     export function TypeNodeToApiType(typeNode: ts.TypeNode, options: ApiItemOptions, self?: boolean): ApiType {
         if (ts.isTypeReferenceNode(typeNode)) {
             return TypeReferenceNodeToApiType(typeNode, options, self);
@@ -123,6 +131,8 @@ export namespace ApiTypeHelpers {
             return TypePredicateNodeToApiType(typeNode, options);
         } else if (ts.isTypeOperatorNode(typeNode)) {
             return TypeOperatorNodeToApiType(typeNode, options);
+        } else if (ts.isIndexedAccessTypeNode(typeNode)) {
+            return IndexedAccessTypeNodeToApiType(typeNode, options);
         }
 
         return TypeNodeToApiBasicType(typeNode, options);
@@ -175,6 +185,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example `Foo`.
+     */
     export function TypeReferenceNodeToApiType(typeNode: ts.TypeReferenceNode, options: ApiItemOptions, self?: boolean): ApiReferenceType {
         const typeChecker = options.Program.getTypeChecker();
         const type = typeChecker.getTypeFromTypeNode(typeNode);
@@ -205,6 +218,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example `string | number` or `string & number`.
+     */
     export function TypeNodeUnionOrIntersectionToApiType(
         typeNode: ts.UnionTypeNode | ts.IntersectionTypeNode,
         options: ApiItemOptions
@@ -225,6 +241,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example `string[]`.
+     */
     export function ArrayTypeNodeToApiType(typeNode: ts.ArrayTypeNode, options: ApiItemOptions): ArrayType {
         const type = TypeNodeToApiType(typeNode.elementType, options);
 
@@ -235,6 +254,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example `[string, number]`.
+     */
     export function TupleTypeNodeToApiType(typeNode: ts.TupleTypeNode, options: ApiItemOptions): TupleType {
         const members = typeNode.elementTypes.map(x => TypeNodeToApiType(x, options));
 
@@ -245,6 +267,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example `arg is string`.
+     */
     export function TypePredicateNodeToApiType(typeNode: ts.TypePredicateNode, options: ApiItemOptions): TypePredicateType {
         const parameterName: string = typeNode.parameterName.getText();
         const type = TypeNodeToApiType(typeNode.type, options);
@@ -261,6 +286,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example `keyof Foo`.
+     */
     export function TypeOperatorNodeToApiType(typeNode: ts.TypeOperatorNode, options: ApiItemOptions): TypeOperatorType {
         const type = TypeNodeToApiType(typeNode.type, options);
         let operator: TypeOperator;
@@ -284,6 +312,18 @@ export namespace ApiTypeHelpers {
             Operator: operator,
             Type: type,
             Text: text
+        };
+    }
+
+    export function IndexedAccessTypeNodeToApiType(typeNode: ts.IndexedAccessTypeNode, options: ApiItemOptions): IndexedAccessType {
+        const objectType = TypeNodeToApiType(typeNode.objectType, options);
+        const indexType = TypeNodeToApiType(typeNode.indexType, options);
+
+        return {
+            ...typeNodeToBaseType(typeNode, options),
+            ApiTypeKind: ApiTypeKind.IndexedAccess,
+            ObjectType: objectType,
+            IndexType: indexType
         };
     }
 }
