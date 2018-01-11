@@ -10,8 +10,6 @@ Object {
       "ApiKind": "function",
       "IsAsync": true,
       "IsOverloadBase": false,
-      "Kind": 228,
-      "KindString": "FunctionDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/FunctionDeclaration3.ts",
@@ -44,11 +42,13 @@ Object {
         "Text": "Promise<void>",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 228,
+        "KindString": "FunctionDeclaration",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/FunctionDeclaration3.ts",
@@ -68,6 +68,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FunctionDeclaration3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

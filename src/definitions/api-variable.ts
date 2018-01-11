@@ -42,12 +42,11 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
         return {
             ApiKind: ApiItemKinds.Variable,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             VariableDeclarationType: this.variableDeclarationType,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

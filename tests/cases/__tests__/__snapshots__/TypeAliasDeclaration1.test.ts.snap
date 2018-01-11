@@ -10,8 +10,6 @@ Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
@@ -32,11 +30,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
@@ -62,11 +62,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration1.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeAliasDeclaration-0": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
@@ -88,11 +90,13 @@ Object {
         "Text": "MyType",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeAliasDeclaration-1": Object {
       "ApiKind": "type",
-      "Kind": 231,
-      "KindString": "TypeAliasDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
@@ -114,11 +118,13 @@ Object {
         "Text": "MyType",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
     },
     "TypeLiteral-0": Object {
       "ApiKind": "type-literal",
-      "Kind": 163,
-      "KindString": "TypeLiteral",
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
@@ -138,6 +144,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "_ts": Object {
+        "Kind": 163,
+        "KindString": "TypeLiteral",
+      },
     },
   },
 }

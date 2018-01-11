@@ -42,6 +42,7 @@ import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
+import { ApiMapped } from "./definitions/api-mapped";
 import { PathIsInside } from "./utils/path-is-inside";
 
 export namespace ApiHelpers {
@@ -95,7 +96,7 @@ export namespace ApiHelpers {
             apiItem = new ApiIndex(declaration, symbol, options);
         } else if (ts.isCallSignatureDeclaration(declaration)) {
             apiItem = new ApiCall(declaration, symbol, options);
-        } else if (ts.isConstructSignatureDeclaration(declaration)) {
+        } else if (ts.isConstructSignatureDeclaration(declaration) || ts.isConstructorTypeNode(declaration)) {
             apiItem = new ApiConstruct(declaration, symbol, options);
         } else if (ts.isTypeParameterDeclaration(declaration)) {
             apiItem = new ApiTypeParameter(declaration, symbol, options);
@@ -103,6 +104,8 @@ export namespace ApiHelpers {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
         } else if (ts.isFunctionTypeNode(declaration)) {
             apiItem = new ApiFunctionType(declaration, symbol, options);
+        } else if (ts.isMappedTypeNode(declaration)) {
+            apiItem = new ApiMapped(declaration, symbol, options);
         }
 
         if (apiItem == null) {
@@ -256,6 +259,32 @@ export namespace ApiHelpers {
     }
 
     /**
+     * @internal
+     */
+    export interface ResolvedTypeItemReference {
+        name?: string;
+        referenceId?: string;
+    }
+
+    /**
+     * @internal
+     */
+    export function resolveTypeItemReference(symbol: ts.Symbol, options: ApiItemOptions): ResolvedTypeItemReference {
+        if (symbol.declarations != null && symbol.declarations.length > 0) {
+            const declaration: ts.Declaration = symbol.declarations[0];
+
+            return {
+                name: symbol.getName(),
+                referenceId: GetItemId(declaration, symbol, options)
+            };
+        }
+
+        return {
+            name: symbol.getName()
+        };
+    }
+
+    /**
      * Converts from TypeScript type AST to TypeDto.
      * @param type TypeScript type
      * @param options ApiItem options
@@ -274,13 +303,9 @@ export namespace ApiHelpers {
         // Find declaration reference.
         const symbol = self ? type.getSymbol() : type.aliasSymbol || type.getSymbol();
         if (symbol != null) {
-            name = symbol.getName();
-
-            if (symbol.declarations != null && symbol.declarations.length > 0) {
-                const declaration: ts.Declaration = symbol.declarations[0];
-
-                referenceId = GetItemId(declaration, symbol, options);
-            }
+            const resolvedReference = resolveTypeItemReference(symbol, options);
+            name = resolvedReference.name;
+            referenceId = resolvedReference.referenceId;
         }
 
         // Generics

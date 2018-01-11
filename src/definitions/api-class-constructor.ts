@@ -33,13 +33,12 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
         return {
             ApiKind: ApiItemKinds.ClassConstructor,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.isOverloadBase,
             Parameters: this.parameters,
-            AccessModifier: this.accessModifier
+            AccessModifier: this.accessModifier,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

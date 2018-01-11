@@ -25,15 +25,14 @@ export class ApiMethod extends ApiCallableBase<ts.MethodSignature, ApiMethodDto>
         return {
             ApiKind: ApiItemKinds.Method,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType,
             IsOptional: this.isOptional,
-            TypeParameters: this.TypeParameters
+            TypeParameters: this.TypeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

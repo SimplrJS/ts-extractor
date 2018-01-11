@@ -29,11 +29,10 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
         return {
             ApiKind: ApiItemKinds.ExportSpecifier,
             Name: this.Declaration.name.getText(),
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
-            ApiItems: this.apiItems
+            ApiItems: this.apiItems,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

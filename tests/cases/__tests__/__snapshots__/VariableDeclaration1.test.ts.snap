@@ -8,8 +8,6 @@ Object {
   "Registry": Object {
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/VariableDeclaration1.ts",
@@ -29,11 +27,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration1.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/VariableDeclaration1.ts",
@@ -55,6 +55,10 @@ Object {
         "Text": "undefined",
       },
       "VariableDeclarationType": "const",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
   },
 }

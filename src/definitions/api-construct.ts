@@ -8,7 +8,7 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
-export class ApiConstruct extends ApiCallableBase<ts.ConstructSignatureDeclaration, ApiConstructDto> {
+export class ApiConstruct extends ApiCallableBase<ts.ConstructSignatureDeclaration | ts.ConstructorTypeNode, ApiConstructDto> {
     public OnExtract(): ApiConstructDto {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
@@ -16,14 +16,13 @@ export class ApiConstruct extends ApiCallableBase<ts.ConstructSignatureDeclarati
         return {
             ApiKind: ApiItemKinds.Construct,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType,
-            TypeParameters: this.TypeParameters
+            TypeParameters: this.TypeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

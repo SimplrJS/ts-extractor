@@ -44,11 +44,10 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
         return {
             ApiKind: ApiItemKinds.EnumMember,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
-            Value: value
+            Value: value,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

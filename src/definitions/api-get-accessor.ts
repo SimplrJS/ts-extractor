@@ -33,14 +33,13 @@ export class ApiGetAccessor extends ApiItem<ts.GetAccessorDeclaration, ApiGetAcc
         return {
             ApiKind: ApiItemKinds.GetAccessor,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsStatic: this.isStatic,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

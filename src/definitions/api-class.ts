@@ -53,15 +53,14 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
         return {
             ApiKind: ApiItemKinds.Class,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsAbstract: this.isAbstract,
             Members: this.members,
             Extends: this.extends,
             Implements: this.implements,
-            TypeParameters: this.typeParameters
+            TypeParameters: this.typeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

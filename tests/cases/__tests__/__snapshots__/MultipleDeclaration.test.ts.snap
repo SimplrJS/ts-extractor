@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -40,14 +38,16 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -75,12 +75,14 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -108,12 +110,14 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -141,11 +145,13 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "ModuleDeclaration-0": Object {
       "ApiKind": "namespace",
-      "Kind": 233,
-      "KindString": "ModuleDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -158,6 +164,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "M",
+      "_ts": Object {
+        "Kind": 233,
+        "KindString": "ModuleDeclaration",
+      },
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",
@@ -166,8 +176,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -188,6 +196,10 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
+      },
     },
     "PropertyDeclaration-1": Object {
       "AccessModifier": "public",
@@ -196,8 +208,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -218,13 +228,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -245,13 +257,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -272,11 +286,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -310,13 +326,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "MultipleDeclaration.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -328,13 +346,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
     "TypeParameter-1": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 17,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -346,13 +366,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
     "TypeParameter-2": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 17,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -364,13 +386,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
     "TypeParameter-3": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/MultipleDeclaration.ts",
@@ -382,6 +406,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
   },
 }

@@ -30,8 +30,6 @@ Object {
         },
       ],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
@@ -58,14 +56,16 @@ Object {
       },
       "Name": "FooClass",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ExportSpecifier-0": Object {
       "ApiItems": Array [
         "ClassDeclaration-0",
       ],
       "ApiKind": "export-specifier",
-      "Kind": 246,
-      "KindString": "ExportSpecifier",
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ExportSpecifier3.ts",
@@ -77,14 +77,16 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "_ts": Object {
+        "Kind": 246,
+        "KindString": "ExportSpecifier",
+      },
     },
     "ExportSpecifier-1": Object {
       "ApiItems": Array [
         "ClassDeclaration-0",
       ],
       "ApiKind": "export-specifier",
-      "Kind": 246,
-      "KindString": "ExportSpecifier",
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ExportSpecifier3.ts",
@@ -96,12 +98,14 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
+      "_ts": Object {
+        "Kind": 246,
+        "KindString": "ExportSpecifier",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
@@ -122,12 +126,14 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration4.ts",
@@ -148,6 +154,10 @@ Object {
       },
       "Name": "Foo2",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",
@@ -156,8 +166,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
@@ -178,6 +186,10 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
+      },
     },
     "PropertyDeclaration-1": Object {
       "AccessModifier": "public",
@@ -186,8 +198,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
@@ -208,13 +218,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
@@ -235,13 +247,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration4.ts",
@@ -262,11 +276,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportSpecifier3.ts",
@@ -292,6 +308,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ExportSpecifier3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

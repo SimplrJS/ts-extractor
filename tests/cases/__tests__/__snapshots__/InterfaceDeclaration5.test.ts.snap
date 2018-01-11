@@ -9,8 +9,6 @@ Object {
     "CallSignature-0": Object {
       "ApiKind": "call",
       "IsOverloadBase": false,
-      "Kind": 155,
-      "KindString": "CallSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration5.ts",
@@ -47,12 +45,14 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 155,
+        "KindString": "CallSignature",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration5.ts",
@@ -73,14 +73,16 @@ Object {
       },
       "Name": "GenericIdentityFn",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/InterfaceDeclaration5.ts",
@@ -101,11 +103,13 @@ Object {
         "ReferenceId": "TypeParameter-0",
         "Text": "TValue",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration5.ts",
@@ -125,13 +129,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration5.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration5.ts",
@@ -143,6 +149,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
   },
 }

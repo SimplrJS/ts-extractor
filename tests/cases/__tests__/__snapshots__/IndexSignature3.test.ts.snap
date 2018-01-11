@@ -9,8 +9,6 @@ Object {
     "IndexSignature-0": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/IndexSignature3.ts",
@@ -32,12 +30,14 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
+      },
     },
     "IndexSignature-1": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/IndexSignature3.ts",
@@ -59,12 +59,14 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/IndexSignature3.ts",
@@ -86,14 +88,16 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/IndexSignature3.ts",
@@ -114,14 +118,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/IndexSignature3.ts",
@@ -142,14 +148,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/IndexSignature3.ts",
@@ -170,11 +178,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/IndexSignature3.ts",
@@ -194,6 +204,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "IndexSignature3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

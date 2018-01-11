@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration8.ts",
@@ -33,6 +31,10 @@ Object {
       },
       "Name": "Control",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -57,8 +59,6 @@ Object {
         },
       ],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration8.ts",
@@ -79,6 +79,10 @@ Object {
       },
       "Name": "Button",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
@@ -93,8 +97,6 @@ Object {
           "Text": "Control",
         },
       ],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration8.ts",
@@ -115,6 +117,10 @@ Object {
       },
       "Name": "SelectableControl",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
@@ -124,8 +130,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration8.ts",
@@ -148,13 +152,15 @@ Object {
         "Text": "void",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration8.ts",
@@ -177,6 +183,10 @@ Object {
         "Text": "void",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "private",
@@ -185,8 +195,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration8.ts",
@@ -207,11 +215,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "any",
       },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration8.ts",
@@ -243,6 +253,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration8.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

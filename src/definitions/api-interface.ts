@@ -39,13 +39,12 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
         return {
             ApiKind: ApiItemKinds.Interface,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             Members: this.members,
             Extends: this.extends,
-            TypeParameters: this.typeParameters
+            TypeParameters: this.typeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -39,6 +37,10 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
@@ -53,8 +55,6 @@ Object {
       },
       "Implements": Array [],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -75,12 +75,14 @@ Object {
       },
       "Name": "Bar",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -119,6 +121,10 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
@@ -128,8 +134,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -159,6 +163,10 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
@@ -168,8 +176,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -199,13 +205,15 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -235,13 +243,15 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
       "IsOptional": true,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -271,14 +281,16 @@ Object {
         "Text": "string",
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -299,14 +311,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-1": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 20,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -327,14 +341,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-2": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -355,14 +371,16 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "Parameter-3": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 18,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -383,6 +401,10 @@ Object {
         "ReferenceId": undefined,
         "Text": "number",
       },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",
@@ -391,8 +413,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -413,13 +433,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -440,13 +462,15 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": true,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -467,11 +491,13 @@ Object {
         "ReferenceId": undefined,
         "Text": "string",
       },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -516,11 +542,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceClassMerging.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -542,11 +570,13 @@ Object {
         "Text": "Bar",
       },
       "VariableDeclarationType": "let",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
     "VariableDeclaration-1": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -568,11 +598,13 @@ Object {
         "Text": "Foo",
       },
       "VariableDeclarationType": "let",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
     "VariableDeclaration-2": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceClassMerging.ts",
@@ -594,6 +626,10 @@ Object {
         "Text": "Foo",
       },
       "VariableDeclarationType": "let",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
   },
 }

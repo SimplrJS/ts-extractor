@@ -36,14 +36,13 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
         return {
             ApiKind: ApiItemKinds.Parameter,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOptional: this.isOptional,
             IsSpread: this.isSpread,
             Initializer: this.initializer,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

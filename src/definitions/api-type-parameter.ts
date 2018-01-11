@@ -34,12 +34,11 @@ export class ApiTypeParameter extends ApiItem<ts.TypeParameterDeclaration, ApiTy
         return {
             ApiKind: ApiItemKinds.TypeParameter,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             ConstraintType: this.constraintType,
-            DefaultType: this.defaultType
+            DefaultType: this.defaultType,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

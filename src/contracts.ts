@@ -30,6 +30,7 @@ export * from "./contracts/definitions/api-type-parameter-dto";
 export * from "./contracts/definitions/api-variable-dto";
 export * from "./contracts/definitions/api-set-accessor-dto";
 export * from "./contracts/definitions/api-get-accessor-dto";
+export * from "./contracts/definitions/api-mapped-dto";
 export * from "./contracts/dictionary";
 export * from "./contracts/extractor-options";
 export * from "./contracts/registry";
