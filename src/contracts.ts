@@ -34,7 +34,6 @@ export * from "./contracts/definitions/api-mapped-dto";
 export * from "./contracts/dictionary";
 export * from "./contracts/extractor-options";
 export * from "./contracts/registry";
-export * from "./contracts/type-dto";
-export * from "./contracts/type-kinds";
 export * from "./contracts/api-item-dto";
 export * from "./contracts/api-item-location-dto";
+export * from "./contracts/api-type";

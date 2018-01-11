@@ -38,7 +38,6 @@ export abstract class ApiCallableBase<
         if (signature != null) {
             const type = this.TypeChecker.getReturnTypeOfSignature(signature);
             const apiType = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
-            console.log(apiType);
 
             this.ReturnType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
         }
