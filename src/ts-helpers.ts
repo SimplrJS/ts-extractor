@@ -98,22 +98,6 @@ export namespace TSHelpers {
         return (type as TypeWithTypeArguments).typeArguments != null;
     }
 
-    export function IsTypeUnionOrIntersectionType(type: ts.Type): type is ts.UnionOrIntersectionType {
-        return Boolean(type.flags & ts.TypeFlags.UnionOrIntersection);
-    }
-
-    export function IsTypeUnionType(type: ts.Type): type is ts.UnionType {
-        return Boolean(type.flags & ts.TypeFlags.Union);
-    }
-
-    export function IsTypeIntersectionType(type: ts.Type): type is ts.IntersectionType {
-        return Boolean(type.flags & ts.TypeFlags.Intersection);
-    }
-
-    export function IsTypeTypeParameter(type: ts.Type): type is ts.TypeParameter {
-        return Boolean(type.flags & ts.TypeFlags.TypeParameter);
-    }
-
     export function GetResolvedModule(sourceFile: ts.SourceFile, moduleNameText: string): ts.ResolvedModuleFull | undefined {
         return sourceFile && (sourceFile as any).resolvedModules && (sourceFile as any).resolvedModules.get(moduleNameText);
     }
