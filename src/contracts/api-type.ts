@@ -35,15 +35,12 @@ export enum ApiTypeKind {
     TypeQuery = "type-query"
 }
 
-export enum TypeOperator {
+export enum TypeKeywords {
     Unknown = "???",
-    Keyof = "keyof"
-}
-
-export enum TypeQuery {
-    Unknown = "???",
+    Keyof = "keyof",
     Typeof = "typeof"
 }
+
 
 export interface TypeScriptTypeNodeDebug {
     Kind: ts.SyntaxKind;
@@ -116,7 +113,7 @@ export interface TypePredicateType extends ApiBaseType {
 
 export interface TypeOperatorType extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.TypeOperator;
-    Keyword: TypeOperator;
+    Keyword: TypeKeywords.Keyof | TypeKeywords.Unknown;
     Type: ApiType;
 }
 
@@ -133,5 +130,5 @@ export interface ParenthesizedType extends ApiBaseType {
 
 export interface TypeQueryType extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.TypeQuery;
-    Keyword: TypeQuery;
+    Keyword: TypeKeywords.Typeof;
 }

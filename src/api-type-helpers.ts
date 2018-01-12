@@ -19,11 +19,10 @@ import {
     ArrayType,
     ParenthesizedType,
     TupleType,
-    TypeOperator,
     TypeOperatorType,
     TypePredicateType,
-    TypeQuery,
-    TypeQueryType
+    TypeQueryType,
+    TypeKeywords
 } from "./contracts/api-type";
 
 export namespace ApiTypeHelpers {
@@ -308,15 +307,15 @@ export namespace ApiTypeHelpers {
     ): TypeOperatorType {
         const typeChecker = options.Program.getTypeChecker();
         const apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
-        let operator: TypeOperator;
+        let operator: TypeKeywords;
 
         switch (typeNode.operator) {
             case ts.SyntaxKind.KeyOfKeyword: {
-                operator = TypeOperator.Keyof;
+                operator = TypeKeywords.Keyof;
                 break;
             }
             default: {
-                operator = TypeOperator.Unknown;
+                operator = TypeKeywords.Unknown;
             }
         }
 
@@ -377,7 +376,7 @@ export namespace ApiTypeHelpers {
         return {
             ...ReferenceBaseTypeToTypeDto(options, type, typeNode),
             ApiTypeKind: ApiTypeKind.TypeQuery,
-            Keyword: TypeQuery.Typeof
+            Keyword: TypeKeywords.Typeof
         };
     }
 
