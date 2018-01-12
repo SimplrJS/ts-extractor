@@ -70,7 +70,6 @@ export interface ApiBasicType extends ApiBaseType {
 
 export interface ApiReferenceType extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.Reference;
-    NameText: string;
     TypeParameters: ApiType[] | undefined;
     SymbolName?: string;
 }

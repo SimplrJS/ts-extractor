@@ -1,10 +1,7 @@
-export interface Foo<TValue> {
-    Name: TValue;
+export interface Foo {
+    Bar: string;
 }
 
-export class Bar { }
-
-// tslint:disable-next-line:typedef
-export function Result(arg: any) {
-    return arg as string | number;
+export class FooClass implements Foo {
+    public Bar: string;
 }

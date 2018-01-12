@@ -34,7 +34,7 @@ export namespace ApiTypeHelpers {
             typeNode = typeChecker.typeToTypeNode(type);
         }
 
-        if (ts.isTypeReferenceNode(typeNode)) {
+        if (ts.isTypeReferenceNode(typeNode) || ts.isExpressionWithTypeArguments(typeNode)) {
             return TypeReferenceNodeToApiType(options, type, typeNode, self);
         } else if (ts.isUnionTypeNode(typeNode) || ts.isIntersectionTypeNode(typeNode)) {
             return TypeNodeUnionOrIntersectionToApiType(options, type as ts.UnionOrIntersectionType, typeNode);
@@ -153,7 +153,7 @@ export namespace ApiTypeHelpers {
     export function TypeReferenceNodeToApiType(
         options: ApiItemOptions,
         type: ts.Type,
-        typeNode: ts.TypeReferenceNode,
+        typeNode: ts.TypeReferenceType,
         self?: boolean
     ): ApiReferenceType {
         const typeChecker = options.Program.getTypeChecker();
@@ -161,13 +161,6 @@ export namespace ApiTypeHelpers {
         let symbolName: string | undefined;
         let typeParameters: ApiType[] | undefined;
         let refenceId: string | undefined;
-
-        let nameText: string;
-        if (ts.isIdentifier(typeNode.typeName)) {
-            nameText = typeNode.typeName.escapedText.toString();
-        } else {
-            nameText = typeNode.typeName.getText();
-        }
 
         if (TSHelpers.IsTypeWithTypeArguments(type)) {
             typeParameters = type.typeArguments
@@ -184,7 +177,6 @@ export namespace ApiTypeHelpers {
         return {
             ...typeNodeToBaseType(options, type, typeNode),
             ApiTypeKind: ApiTypeKind.Reference,
-            NameText: nameText,
             ReferenceId: refenceId,
             TypeParameters: typeParameters,
             SymbolName: symbolName
