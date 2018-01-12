@@ -4,12 +4,13 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiParameterDto } from "../contracts/definitions/api-parameter-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterDto> {
-    private type: TypeDto;
+    private type: ApiType;
     private isOptional: boolean;
     private isSpread: boolean;
     private initializer: string | undefined;
@@ -17,7 +18,7 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
     protected OnGatherData(): void {
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
 
         // IsOptional
         this.isOptional = Boolean(this.Declaration.questionToken);

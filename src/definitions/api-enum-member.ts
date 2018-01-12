@@ -8,7 +8,6 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
-
     public GetValue(): string {
         for (const item of this.Declaration.getChildren()) {
             if (ts.isNumericLiteral(item) ||

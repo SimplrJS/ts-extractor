@@ -7,12 +7,13 @@ import { ApiMappedDto } from "../contracts/definitions/api-mapped-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiType } from "../contracts/api-type";
 import { TSHelpers } from "../ts-helpers";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
     private typeParameter: string | undefined;
-    private type: TypeDto;
+    private type: ApiType;
     private isReadonly: boolean;
     private isOptional: boolean;
 
@@ -28,7 +29,7 @@ export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
          * getTypeFromTypeNode method handles undefined and returns `any` type.
          */
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type!);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
 
         // Readonly
         this.isReadonly = Boolean(this.Declaration.readonlyToken);
