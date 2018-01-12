@@ -28,7 +28,8 @@
         "build": "tsc -p .",
         "build-watch": "npm run build -- -w",
         "build-tests": "cd tests && ts-node ./build-tests.ts -p ./",
-        "prepublishOnly": "npm run build && rimraf dist/debug.*"
+        "prepublishOnly": "npm run build && rimraf dist/debug.*",
+        "travis-release": "node ./tools/travis-release/release.js"
     },
     "author": "SimplrJS <simplr@quatrodev.com> (https://github.com/simplrjs)",
     "contributors": [
