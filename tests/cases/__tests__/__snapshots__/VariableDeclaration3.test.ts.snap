@@ -46,13 +46,14 @@ Object {
       },
       "Name": "z",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
+        "ApiTypeKind": "type-query",
+        "Keyword": "typeof",
         "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 162,
+          "KindString": "TypeQuery",
+        },
       },
       "VariableDeclarationType": "const",
       "_ts": Object {

@@ -51,12 +51,11 @@ Object {
       "Name": "b",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -115,13 +114,15 @@ Object {
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "A",
+        "ApiTypeKind": "reference",
         "ReferenceId": "InterfaceDeclaration-0",
+        "SymbolName": "A",
         "Text": "A",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "VariableDeclarationType": "const",
       "_ts": Object {
@@ -143,13 +144,14 @@ Object {
       },
       "Name": "z",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "A",
+        "ApiTypeKind": "type-query",
+        "Keyword": "typeof",
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "A",
+        "_ts": Object {
+          "Kind": 162,
+          "KindString": "TypeQuery",
+        },
       },
       "VariableDeclarationType": "const",
       "_ts": Object {

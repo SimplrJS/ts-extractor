@@ -22,13 +22,15 @@ Object {
       "Name": "__new",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "T",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "T",
         "Text": "T",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "TypeParameters": Array [
         Object {

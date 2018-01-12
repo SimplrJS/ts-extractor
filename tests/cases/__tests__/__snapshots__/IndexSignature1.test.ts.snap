@@ -23,12 +23,11 @@ Object {
       "Parameter": "Parameter-0",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 157,
@@ -81,12 +80,11 @@ Object {
       "Name": "key",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 146,

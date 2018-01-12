@@ -47,12 +47,11 @@ Object {
       "Name": "FOO",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2048,
-        "FlagsString": "Undefined",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "undefined",
+        "_ts": Object {
+          "Kind": 139,
+          "KindString": "UndefinedKeyword",
+        },
       },
       "VariableDeclarationType": "const",
       "_ts": Object {

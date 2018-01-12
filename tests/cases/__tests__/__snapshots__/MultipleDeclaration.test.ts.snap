@@ -189,12 +189,11 @@ Object {
       "Name": "b",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -221,12 +220,11 @@ Object {
       "Name": "b",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -250,12 +248,11 @@ Object {
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -279,12 +276,11 @@ Object {
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,

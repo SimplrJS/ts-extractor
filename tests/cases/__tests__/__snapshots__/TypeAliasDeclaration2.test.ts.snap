@@ -23,12 +23,11 @@ Object {
       "Name": "BarName",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -52,12 +51,11 @@ Object {
       "Name": "FooName",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -81,12 +79,11 @@ Object {
       "Name": "BarName",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -110,12 +107,11 @@ Object {
       "Name": "BazName",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -161,7 +157,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-0": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration2.ts",
@@ -174,13 +170,13 @@ Object {
       },
       "Name": "OneCommonField1",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "__type",
+        "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-0",
         "Text": "OneCommonField1",
+        "_ts": Object {
+          "Kind": 163,
+          "KindString": "TypeLiteral",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -189,7 +185,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-1": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration2.ts",
@@ -202,13 +198,13 @@ Object {
       },
       "Name": "OneCommonField2",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "__type",
+        "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-1",
         "Text": "OneCommonField2",
+        "_ts": Object {
+          "Kind": 163,
+          "KindString": "TypeLiteral",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -217,7 +213,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-2": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration2.ts",
@@ -231,31 +227,35 @@ Object {
       "Name": "OneCommonFieldTypeIntersection",
       "Type": Object {
         "ApiTypeKind": "union",
-        "Flags": 65536,
-        "FlagsString": "Union",
-        "Name": undefined,
-        "ReferenceId": undefined,
-        "Text": "OneCommonFieldTypeIntersection",
-        "Types": Array [
+        "Members": Array [
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
-            "Generics": undefined,
-            "Name": "OneCommonField1",
+            "ApiTypeKind": "reference",
             "ReferenceId": "TypeAliasDeclaration-0",
+            "SymbolName": "OneCommonField1",
             "Text": "OneCommonField1",
+            "TypeParameters": undefined,
+            "_ts": Object {
+              "Kind": 159,
+              "KindString": "TypeReference",
+            },
           },
           Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
-            "Generics": undefined,
-            "Name": "OneCommonField2",
+            "ApiTypeKind": "reference",
             "ReferenceId": "TypeAliasDeclaration-1",
+            "SymbolName": "OneCommonField2",
             "Text": "OneCommonField2",
+            "TypeParameters": undefined,
+            "_ts": Object {
+              "Kind": 159,
+              "KindString": "TypeReference",
+            },
           },
         ],
+        "Text": "OneCommonFieldTypeIntersection",
+        "_ts": Object {
+          "Kind": 166,
+          "KindString": "UnionType",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {

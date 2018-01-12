@@ -11,22 +11,26 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "Foo",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-0",
+          "SymbolName": "Foo",
           "Text": "Foo",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "Foo2",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-1",
+          "SymbolName": "Foo2",
           "Text": "Foo2",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
       "IsAbstract": false,
@@ -137,12 +141,11 @@ Object {
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -169,12 +172,11 @@ Object {
       "Name": "Bar2",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -198,12 +200,11 @@ Object {
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -227,12 +228,11 @@ Object {
       "Name": "Bar2",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,

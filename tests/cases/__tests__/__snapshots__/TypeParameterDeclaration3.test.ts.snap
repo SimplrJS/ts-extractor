@@ -31,12 +31,11 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1024,
-        "FlagsString": "Void",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "void",
+        "_ts": Object {
+          "Kind": 105,
+          "KindString": "VoidKeyword",
+        },
       },
       "TypeParameters": Array [
         Object {
@@ -68,13 +67,15 @@ Object {
       },
       "Name": "a",
       "Type": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "TValue",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "TValue",
         "Text": "TValue",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "_ts": Object {
         "Kind": 146,
@@ -110,22 +111,26 @@ Object {
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "Date",
+        "ApiTypeKind": "reference",
         "ReferenceId": undefined,
+        "SymbolName": "Date",
         "Text": "Date",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "DefaultType": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "Date",
+        "ApiTypeKind": "reference",
         "ReferenceId": undefined,
+        "SymbolName": "Date",
         "Text": "Date",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "Location": Object {
         "Character": 20,

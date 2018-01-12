@@ -23,12 +23,11 @@ Object {
       "Name": "BarName",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -68,7 +67,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-0": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
@@ -81,13 +80,13 @@ Object {
       },
       "Name": "MyType",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "__type",
+        "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-0",
         "Text": "MyType",
+        "_ts": Object {
+          "Kind": 163,
+          "KindString": "TypeLiteral",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -96,7 +95,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-1": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration1.ts",
@@ -109,13 +108,15 @@ Object {
       },
       "Name": "AnotherType",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "MyType",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeAliasDeclaration-0",
+        "SymbolName": "MyType",
         "Text": "MyType",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {

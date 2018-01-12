@@ -66,12 +66,11 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1024,
-        "FlagsString": "Void",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "void",
+        "_ts": Object {
+          "Kind": 105,
+          "KindString": "VoidKeyword",
+        },
       },
       "TypeParameters": Array [
         Object {
@@ -104,12 +103,11 @@ Object {
       "Name": "args",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 146,

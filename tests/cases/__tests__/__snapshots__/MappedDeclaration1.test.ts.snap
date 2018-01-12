@@ -23,12 +23,11 @@ Object {
       "Name": "__type",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "TypeParameter": "TypeParameter-0",
       "_ts": Object {
@@ -63,7 +62,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-0": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MappedDeclaration1.ts",
@@ -76,13 +75,13 @@ Object {
       },
       "Name": "mapped",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "__type",
+        "ApiTypeKind": "mapped",
         "ReferenceId": "MappedType-0",
         "Text": "mapped",
+        "_ts": Object {
+          "Kind": 172,
+          "KindString": "MappedType",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -94,12 +93,11 @@ Object {
       "ApiKind": "type-parameter",
       "ConstraintType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 32,
-        "FlagsString": "StringLiteral",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "\\"a-b-c\\"",
+        "_ts": Object {
+          "Kind": 173,
+          "KindString": "LastTypeNode",
+        },
       },
       "DefaultType": undefined,
       "Location": Object {
