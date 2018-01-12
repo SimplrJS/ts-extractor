@@ -212,18 +212,10 @@ Creating foo with boolean.",
           },
           Object {
             "ApiTypeKind": "basic",
-            "Text": "true",
+            "Text": "boolean",
             "_ts": Object {
-              "Kind": 101,
-              "KindString": "TrueKeyword",
-            },
-          },
-          Object {
-            "ApiTypeKind": "basic",
-            "Text": "false",
-            "_ts": Object {
-              "Kind": 86,
-              "KindString": "FalseKeyword",
+              "Kind": 122,
+              "KindString": "BooleanKeyword",
             },
           },
         ],
