@@ -115,7 +115,6 @@ export namespace ApiTypeHelpers {
         };
     }
 
-
     export function ResolveApiBasicType(options: ApiItemOptions, type: ts.Type, typeNode: ts.TypeNode): ApiBasicType {
         return {
             ...typeNodeToBaseType(options, type, typeNode),
@@ -162,7 +161,10 @@ export namespace ApiTypeHelpers {
         let typeParameters: ApiType[] | undefined;
         let refenceId: string | undefined;
 
-        if (TSHelpers.IsTypeWithTypeArguments(type)) {
+        if (TSHelpers.IsNodeSynthesized(typeNode) && typeNode.typeArguments != null) {
+            typeParameters = typeNode.typeArguments
+                .map(x => ResolveApiType(options, typeChecker.getTypeFromTypeNode(x), x));
+        } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
             typeParameters = type.typeArguments
                 .map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
         }
@@ -200,8 +202,14 @@ export namespace ApiTypeHelpers {
             apiTypeKind = ApiTypeKind.Intersection;
         }
 
-        const members = type.types
-            .map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
+        let members: ApiType[];
+        if (!TSHelpers.IsNodeSynthesized(typeNode)) {
+            members = typeNode.types
+                .map(x => ResolveApiType(options, typeChecker.getTypeFromTypeNode(x), x));
+        } else {
+            members = type.types
+                .map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
+        }
 
         return {
             ...typeNodeToBaseType(options, type, typeNode),
@@ -219,13 +227,15 @@ export namespace ApiTypeHelpers {
         typeNode: ts.ArrayTypeNode
     ): ArrayType {
         const typeChecker = options.Program.getTypeChecker();
-        let apiType: ApiType;
 
-        if (TSHelpers.IsTypeWithTypeArguments(type)) {
+        let apiType: ApiType;
+        if (!TSHelpers.IsNodeSynthesized(typeNode)) {
+            apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
+        } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
             const arrayType = type.typeArguments[0];
             apiType = ResolveApiType(options, arrayType, typeChecker.typeToTypeNode(arrayType));
         } else {
-            // TODO: Add Warning
+            // TODO: Log Error.
             apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
         }
 
@@ -247,12 +257,14 @@ export namespace ApiTypeHelpers {
         const typeChecker = options.Program.getTypeChecker();
 
         let members: ApiType[];
-        if (TSHelpers.IsTypeWithTypeArguments(type)) {
-            members = type.typeArguments.map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
-        } else {
-            // TODO: Add Warning
+        if (!TSHelpers.IsNodeSynthesized(typeNode)) {
             members = typeNode.elementTypes
                 .map(x => ResolveApiType(options, typeChecker.getTypeFromTypeNode(x), x));
+        } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
+            members = type.typeArguments.map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
+        } else {
+            // TODO: Log Error.
+            members = [];
         }
 
         return {
@@ -358,6 +370,9 @@ export namespace ApiTypeHelpers {
         };
     }
 
+    /**
+     * Example: `typeof Foo`.
+     */
     export function TypeQueryToApiType(options: ApiItemOptions, type: ts.Type, typeNode: ts.TypeQueryNode): TypeQueryType {
         return {
             ...ReferenceBaseTypeToTypeDto(options, type, typeNode),

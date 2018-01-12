@@ -1,7 +1,3 @@
-export interface Foo {
-    Bar: string;
-}
-
-export class FooClass implements Foo {
-    public Bar: string;
+export function Foo(arg: string | number) {
+    return arg;
 }

@@ -142,4 +142,8 @@ export namespace TSHelpers {
     export function IsInternalSymbolName(name: string): boolean {
         return Object.values(ts.InternalSymbolName).indexOf(name) !== -1;
     }
+
+    export function IsNodeSynthesized(node: ts.Node): boolean {
+        return Boolean(node.flags & ts.NodeFlags.Synthesized);
+    }
 }
