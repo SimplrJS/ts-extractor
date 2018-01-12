@@ -41,7 +41,6 @@ export enum TypeKeywords {
     Typeof = "typeof"
 }
 
-
 export interface TypeScriptTypeNodeDebug {
     Kind: ts.SyntaxKind;
     KindString: string;
