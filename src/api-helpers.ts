@@ -5,12 +5,6 @@ import { LogLevel } from "simplr-logger";
 import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiItemReference } from "./contracts/api-item-reference";
-import {
-    TypeDto,
-    TypeBasicDto,
-    TypeUnionOrIntersectionDto
-} from "./contracts/type-dto";
-import { TypeKinds } from "./contracts/type-kinds";
 import { AccessModifier } from "./contracts/access-modifier";
 import { TSHelpers } from "./ts-helpers";
 import { Logger } from "./utils/logger";
@@ -29,7 +23,7 @@ import { ApiInterface } from "./definitions/api-interface";
 import { ApiProperty } from "./definitions/api-property";
 import { ApiMethod } from "./definitions/api-method";
 import { ApiParameter } from "./definitions/api-parameter";
-import { ApiType } from "./definitions/api-type";
+import { ApiTypeAlias } from "./definitions/api-type-alias";
 import { ApiClass } from "./definitions/api-class";
 import { ApiClassConstructor } from "./definitions/api-class-constructor";
 import { ApiClassProperty } from "./definitions/api-class-property";
@@ -42,6 +36,7 @@ import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
 import { ApiFunctionType } from "./definitions/api-function-type";
+import { ApiMapped } from "./definitions/api-mapped";
 import { PathIsInside } from "./utils/path-is-inside";
 
 export namespace ApiHelpers {
@@ -78,7 +73,7 @@ export namespace ApiHelpers {
         } else if (ts.isParameter(declaration)) {
             apiItem = new ApiParameter(declaration, symbol, options);
         } else if (ts.isTypeAliasDeclaration(declaration)) {
-            apiItem = new ApiType(declaration, symbol, options);
+            apiItem = new ApiTypeAlias(declaration, symbol, options);
         } else if (ts.isClassDeclaration(declaration)) {
             apiItem = new ApiClass(declaration, symbol, options);
         } else if (ts.isConstructorDeclaration(declaration)) {
@@ -95,7 +90,7 @@ export namespace ApiHelpers {
             apiItem = new ApiIndex(declaration, symbol, options);
         } else if (ts.isCallSignatureDeclaration(declaration)) {
             apiItem = new ApiCall(declaration, symbol, options);
-        } else if (ts.isConstructSignatureDeclaration(declaration)) {
+        } else if (ts.isConstructSignatureDeclaration(declaration) || ts.isConstructorTypeNode(declaration)) {
             apiItem = new ApiConstruct(declaration, symbol, options);
         } else if (ts.isTypeParameterDeclaration(declaration)) {
             apiItem = new ApiTypeParameter(declaration, symbol, options);
@@ -103,6 +98,8 @@ export namespace ApiHelpers {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
         } else if (ts.isFunctionTypeNode(declaration)) {
             apiItem = new ApiFunctionType(declaration, symbol, options);
+        } else if (ts.isMappedTypeNode(declaration)) {
+            apiItem = new ApiMapped(declaration, symbol, options);
         }
 
         if (apiItem == null) {
@@ -228,104 +225,6 @@ export namespace ApiHelpers {
         });
 
         return items;
-    }
-
-    export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
-
-    export function GetHeritageList(
-        heritageClauses: ts.NodeArray<ts.HeritageClause>,
-        kind: HeritageKinds,
-        options: ApiItemOptions
-    ): TypeDto[] {
-        const typeChecker = options.Program.getTypeChecker();
-        const list: TypeDto[] = [];
-
-        heritageClauses.forEach(heritage => {
-            if (heritage.token !== kind) {
-                return;
-            }
-
-            heritage.types.forEach(expressionType => {
-                const type = typeChecker.getTypeFromTypeNode(expressionType);
-
-                list.push(TypeToApiTypeDto(type, options));
-            });
-        });
-
-        return list;
-    }
-
-    /**
-     * Converts from TypeScript type AST to TypeDto.
-     * @param type TypeScript type
-     * @param options ApiItem options
-     * @param self This is only for `TypeAliasDeclaration`
-     */
-    export function TypeToApiTypeDto(type: ts.Type, options: ApiItemOptions, self?: boolean): TypeDto {
-        const typeChecker = options.Program.getTypeChecker();
-        const text = typeChecker.typeToString(type);
-
-        let generics: TypeDto[] | undefined;
-        let kind = TypeKinds.Basic;
-        let types: TypeDto[] | undefined;
-        let name: string | undefined;
-        let referenceId: string | undefined;
-
-        // Find declaration reference.
-        const symbol = self ? type.getSymbol() : type.aliasSymbol || type.getSymbol();
-        if (symbol != null) {
-            name = symbol.getName();
-
-            if (symbol.declarations != null && symbol.declarations.length > 0) {
-                const declaration: ts.Declaration = symbol.declarations[0];
-
-                referenceId = GetItemId(declaration, symbol, options);
-            }
-        }
-
-        // Generics
-        if (TSHelpers.IsTypeWithTypeArguments(type)) {
-            generics = type.typeArguments.map<TypeDto>(x => TypeToApiTypeDto(x, options));
-        } else if (type.aliasTypeArguments != null) {
-            generics = type.aliasTypeArguments.map<TypeDto>(x => TypeToApiTypeDto(x, options));
-        }
-
-        // Union or Intersection
-        if (TSHelpers.IsTypeUnionOrIntersectionType(type)) {
-            if (TSHelpers.IsTypeUnionType(type)) {
-                kind = TypeKinds.Union;
-            } else {
-                kind = TypeKinds.Intersection;
-            }
-
-            types = type.types.map(x => TypeToApiTypeDto(x, options));
-
-            return {
-                ApiTypeKind: kind,
-                Flags: type.flags,
-                FlagsString: ts.TypeFlags[type.flags],
-                Name: name,
-                Text: text,
-                Types: types,
-                ReferenceId: referenceId
-            } as TypeUnionOrIntersectionDto;
-        }
-
-        // Resolve other type kinds
-        if (TSHelpers.IsTypeTypeParameter(type)) {
-            kind = TypeKinds.TypeParameter;
-        }
-
-        // Basic
-        return {
-            ApiTypeKind: kind,
-            Flags: type.flags,
-            FlagsString: ts.TypeFlags[type.flags],
-            Name: name,
-            Text: text,
-            Generics: generics,
-            ReferenceId: referenceId
-        } as TypeBasicDto;
     }
 
     export function ResolveAccessModifierFromModifiers(modifiers?: ts.NodeArray<ts.Modifier>): AccessModifier {

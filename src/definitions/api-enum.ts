@@ -28,12 +28,11 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
         return {
             ApiKind: ApiItemKinds.Enum,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsConst: this.isConst,
-            Members: this.members
+            Members: this.members,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

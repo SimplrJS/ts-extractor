@@ -6,14 +6,15 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiIndexDto } from "../contracts/definitions/api-index-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto> {
     private parameter: string;
-    private type: TypeDto;
+    private type: ApiType;
     private isReadonly: boolean;
 
     protected OnGatherData(): void {
@@ -36,7 +37,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
          * getTypeFromTypeNode method handles undefined and returns `any` type.
          */
         const type = this.TypeChecker.getTypeFromTypeNode(this.Declaration.type!);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
 
         // Modifiers
         this.isReadonly = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.ReadonlyKeyword);
@@ -49,13 +50,12 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
         return {
             ApiKind: ApiItemKinds.Index,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             Parameter: this.parameter,
             IsReadonly: this.isReadonly,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

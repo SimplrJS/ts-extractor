@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeAliasDeclaration8 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ConstructorType-0": Object {
+      "ApiKind": "construct",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 18,
+        "FileName": "./cases/TypeAliasDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "Parameters": Array [],
+      "ReturnType": Object {
+        "ApiTypeKind": "type-literal",
+        "ReferenceId": "TypeLiteral-0",
+        "Text": "{ Name: string; Age: number; }",
+        "_ts": Object {
+          "Kind": 163,
+          "KindString": "TypeLiteral",
+        },
+      },
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 161,
+        "KindString": "ConstructorType",
+      },
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Name",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/TypeAliasDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Age",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TypeAliasDeclaration8.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
+    },
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/TypeAliasDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "Type": Object {
+        "ApiTypeKind": "constructor",
+        "ReferenceId": "ConstructorType-0",
+        "Text": "Foo",
+        "_ts": Object {
+          "Kind": 161,
+          "KindString": "ConstructorType",
+        },
+      },
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
+    },
+    "TypeLiteral-0": Object {
+      "ApiKind": "type-literal",
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./cases/TypeAliasDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Name",
+          "Ids": Array [
+            "PropertySignature-0",
+          ],
+        },
+        Object {
+          "Alias": "Age",
+          "Ids": Array [
+            "PropertySignature-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "_ts": Object {
+        "Kind": 163,
+        "KindString": "TypeLiteral",
+      },
+    },
+  },
+}
+`;

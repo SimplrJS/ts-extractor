@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": true,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -40,42 +38,47 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ClassDeclaration-1": Object {
       "ApiKind": "class",
       "Extends": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": Array [
+        "ApiTypeKind": "reference",
+        "ReferenceId": "ClassDeclaration-0",
+        "SymbolName": "FooBase",
+        "Text": "FooBase<number>",
+        "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
-            "Flags": 4,
-            "FlagsString": "Number",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
             "Text": "number",
+            "_ts": Object {
+              "Kind": 133,
+              "KindString": "NumberKeyword",
+            },
           },
         ],
-        "Name": "FooBase",
-        "ReferenceId": "ClassDeclaration-0",
-        "Text": "FooBase<number>",
+        "_ts": Object {
+          "Kind": 201,
+          "KindString": "ExpressionWithTypeArguments",
+        },
       },
       "Implements": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "Bar",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-0",
+          "SymbolName": "Bar",
           "Text": "Bar",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -102,12 +105,14 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -128,6 +133,10 @@ Object {
       },
       "Name": "Bar",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
@@ -137,8 +146,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -152,15 +159,21 @@ Object {
       "Name": "GetValue",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "TValue",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "TValue",
         "Text": "TValue",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
@@ -170,8 +183,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -186,14 +197,17 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "PropertyDeclaration-0": Object {
       "AccessModifier": "public",
@@ -202,8 +216,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -217,20 +229,21 @@ Object {
       "Name": "BarName",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
       },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -244,18 +257,19 @@ Object {
       "Name": "BarName",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
       },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -287,13 +301,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration6.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 30,
         "FileName": "./cases/ClassDeclaration6.ts",
@@ -305,6 +321,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
   },
 }

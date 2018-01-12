@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FunctionDeclaration6 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "IsAsync": false,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration6.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "Parameters": Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ReturnType": Object {
+        "ApiTypeKind": "reference",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "SymbolName": "Foo",
+        "Text": "Foo",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
+      },
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 228,
+        "KindString": "FunctionDeclaration",
+      },
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration6.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./cases/FunctionDeclaration6.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "SymbolName": "Foo",
+        "Text": "Foo",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration6.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
+            "FunctionDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FunctionDeclaration6.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
+    },
+  },
+}
+`;

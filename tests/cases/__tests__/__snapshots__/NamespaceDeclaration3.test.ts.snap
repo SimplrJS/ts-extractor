@@ -8,8 +8,6 @@ Object {
   "Registry": Object {
     "ModuleDeclaration-0": Object {
       "ApiKind": "namespace",
-      "Kind": 233,
-      "KindString": "ModuleDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/NamespaceDeclaration3.ts",
@@ -29,11 +27,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "_ts": Object {
+        "Kind": 233,
+        "KindString": "ModuleDeclaration",
+      },
     },
     "ModuleDeclaration-1": Object {
       "ApiKind": "namespace",
-      "Kind": 233,
-      "KindString": "ModuleDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/NamespaceDeclaration3.ts",
@@ -53,11 +53,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "_ts": Object {
+        "Kind": 233,
+        "KindString": "ModuleDeclaration",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/NamespaceDeclaration3.ts",
@@ -77,11 +79,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "NamespaceDeclaration3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 21,
         "FileName": "./cases/NamespaceDeclaration3.ts",
@@ -95,14 +99,17 @@ Object {
       "Name": "Hello",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1048608,
-        "FlagsString": undefined,
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "\\"world!\\"",
+        "_ts": Object {
+          "Kind": 173,
+          "KindString": "LastTypeNode",
+        },
       },
       "VariableDeclarationType": "const",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
   },
 }

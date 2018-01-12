@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": true,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/SetAccessor3.ts",
@@ -51,14 +49,16 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 28,
         "FileName": "./cases/SetAccessor3.ts",
@@ -72,12 +72,15 @@ Object {
       "Name": "arg",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-1": Object {
@@ -85,8 +88,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 32,
         "FileName": "./cases/SetAccessor3.ts",
@@ -100,12 +101,15 @@ Object {
       "Name": "arg",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-2": Object {
@@ -113,8 +117,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 20,
         "FileName": "./cases/SetAccessor3.ts",
@@ -128,12 +130,15 @@ Object {
       "Name": "arg",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-3": Object {
@@ -141,8 +146,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 31,
         "FileName": "./cases/SetAccessor3.ts",
@@ -156,12 +159,15 @@ Object {
       "Name": "arg",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "SetAccessor-0": Object {
@@ -169,8 +175,6 @@ Object {
       "ApiKind": "set-accessor",
       "IsAbstract": true,
       "IsStatic": false,
-      "Kind": 154,
-      "KindString": "SetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/SetAccessor3.ts",
@@ -188,14 +192,16 @@ Object {
           "Parameter-0",
         ],
       },
+      "_ts": Object {
+        "Kind": 154,
+        "KindString": "SetAccessor",
+      },
     },
     "SetAccessor-1": Object {
       "AccessModifier": "public",
       "ApiKind": "set-accessor",
       "IsAbstract": false,
       "IsStatic": true,
-      "Kind": 154,
-      "KindString": "SetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/SetAccessor3.ts",
@@ -213,14 +219,16 @@ Object {
           "Parameter-1",
         ],
       },
+      "_ts": Object {
+        "Kind": 154,
+        "KindString": "SetAccessor",
+      },
     },
     "SetAccessor-2": Object {
       "AccessModifier": "private",
       "ApiKind": "set-accessor",
       "IsAbstract": false,
       "IsStatic": false,
-      "Kind": 154,
-      "KindString": "SetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/SetAccessor3.ts",
@@ -238,14 +246,16 @@ Object {
           "Parameter-2",
         ],
       },
+      "_ts": Object {
+        "Kind": 154,
+        "KindString": "SetAccessor",
+      },
     },
     "SetAccessor-3": Object {
       "AccessModifier": "protected",
       "ApiKind": "set-accessor",
       "IsAbstract": false,
       "IsStatic": false,
-      "Kind": 154,
-      "KindString": "SetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/SetAccessor3.ts",
@@ -263,11 +273,13 @@ Object {
           "Parameter-3",
         ],
       },
+      "_ts": Object {
+        "Kind": 154,
+        "KindString": "SetAccessor",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/SetAccessor3.ts",
@@ -287,6 +299,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "SetAccessor3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

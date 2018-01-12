@@ -9,8 +9,6 @@ Object {
     "ConstructSignature-0": Object {
       "ApiKind": "construct",
       "IsOverloadBase": false,
-      "Kind": 156,
-      "KindString": "ConstructSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ConstructSignature2.ts",
@@ -24,13 +22,15 @@ Object {
       "Name": "__new",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "T",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "T",
         "Text": "T",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "TypeParameters": Array [
         Object {
@@ -40,12 +40,14 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 156,
+        "KindString": "ConstructSignature",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ConstructSignature2.ts",
@@ -66,11 +68,13 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ConstructSignature2.ts",
@@ -90,13 +94,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ConstructSignature2.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ConstructSignature2.ts",
@@ -108,6 +114,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
   },
 }

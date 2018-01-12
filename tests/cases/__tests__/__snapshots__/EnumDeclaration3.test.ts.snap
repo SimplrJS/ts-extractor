@@ -9,8 +9,6 @@ Object {
     "EnumDeclaration-0": Object {
       "ApiKind": "enum",
       "IsConst": false,
-      "Kind": 232,
-      "KindString": "EnumDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -66,11 +64,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "LogLevel",
+      "_ts": Object {
+        "Kind": 232,
+        "KindString": "EnumDeclaration",
+      },
     },
     "EnumMember-0": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -83,11 +83,13 @@ Object {
       },
       "Name": "None",
       "Value": "\\"none\\"",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-1": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -101,11 +103,13 @@ or a catastrophic failure that requires immediate attention.",
       },
       "Name": "Critical",
       "Value": "\\"critical\\"",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-2": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -119,11 +123,13 @@ These should indicate a failure in the current activity, not an application-wide
       },
       "Name": "Error",
       "Value": "\\"error\\"",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-3": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -137,11 +143,13 @@ but do not otherwise cause the application execution to stop.",
       },
       "Name": "Warning",
       "Value": "\\"warning\\"",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-4": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -154,11 +162,13 @@ but do not otherwise cause the application execution to stop.",
       },
       "Name": "Information",
       "Value": "\\"information\\"",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-5": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -172,11 +182,13 @@ These logs should primarily contain information useful for debugging and have no
       },
       "Name": "Debug",
       "Value": "\\"debug\\"",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-6": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -190,11 +202,13 @@ These messages are disabled by default and should never be enabled in a producti
       },
       "Name": "Trace",
       "Value": "\\"trace\\"",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration3.ts",
@@ -214,6 +228,10 @@ These messages are disabled by default and should never be enabled in a producti
         "JSDocTags": Array [],
       },
       "Name": "EnumDeclaration3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

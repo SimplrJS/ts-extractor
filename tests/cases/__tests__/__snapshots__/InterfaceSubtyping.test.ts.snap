@@ -11,18 +11,18 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "Face",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-0",
+          "SymbolName": "Face",
           "Text": "Face",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
@@ -49,13 +49,15 @@ Object {
       },
       "Name": "Camera",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "Constructor-0": Object {
       "AccessModifier": "public",
       "ApiKind": "class-constructor",
       "IsOverloadBase": false,
-      "Kind": 152,
-      "KindString": "Constructor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
@@ -75,12 +77,14 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 152,
+        "KindString": "Constructor",
+      },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
@@ -101,6 +105,10 @@ Object {
       },
       "Name": "Face",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "public",
@@ -110,8 +118,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
@@ -126,21 +132,22 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceSubtyping.ts",
@@ -155,22 +162,23 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1024,
-        "FlagsString": "Void",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "void",
+        "_ts": Object {
+          "Kind": 105,
+          "KindString": "VoidKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 16,
         "FileName": "./cases/InterfaceSubtyping.ts",
@@ -184,18 +192,19 @@ Object {
       "Name": "str",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceSubtyping.ts",
@@ -221,6 +230,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceSubtyping.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

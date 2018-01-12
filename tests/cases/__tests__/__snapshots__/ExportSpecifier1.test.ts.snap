@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": true,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ClassDeclaration2.ts",
@@ -57,14 +55,16 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ExportSpecifier-0": Object {
       "ApiItems": Array [
         "ClassDeclaration-0",
       ],
       "ApiKind": "export-specifier",
-      "Kind": 246,
-      "KindString": "ExportSpecifier",
       "Location": Object {
         "Character": 9,
         "FileName": "./cases/ExportSpecifier1.ts",
@@ -76,6 +76,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "_ts": Object {
+        "Kind": 246,
+        "KindString": "ExportSpecifier",
+      },
     },
     "MethodDeclaration-0": Object {
       "AccessModifier": "protected",
@@ -85,8 +89,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
@@ -108,14 +110,17 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1024,
-        "FlagsString": "Void",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "void",
+        "_ts": Object {
+          "Kind": 105,
+          "KindString": "VoidKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "MethodDeclaration-1": Object {
       "AccessModifier": "public",
@@ -125,8 +130,6 @@ Object {
       "IsOptional": false,
       "IsOverloadBase": false,
       "IsStatic": false,
-      "Kind": 151,
-      "KindString": "MethodDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
@@ -141,22 +144,23 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 151,
+        "KindString": "MethodDeclaration",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 30,
         "FileName": "./cases/ClassDeclaration2.ts",
@@ -170,12 +174,15 @@ Object {
       "Name": "foo",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "PropertyDeclaration-0": Object {
@@ -185,8 +192,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
@@ -200,12 +205,15 @@ Object {
       "Name": "property",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
       },
     },
     "PropertyDeclaration-1": Object {
@@ -215,8 +223,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": true,
       "IsStatic": false,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
@@ -230,12 +236,15 @@ Object {
       "Name": "Id",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
       },
     },
     "PropertyDeclaration-2": Object {
@@ -245,8 +254,6 @@ Object {
       "IsOptional": false,
       "IsReadonly": false,
       "IsStatic": true,
-      "Kind": 149,
-      "KindString": "PropertyDeclaration",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/ClassDeclaration2.ts",
@@ -260,18 +267,19 @@ Object {
       "Name": "Bar",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 149,
+        "KindString": "PropertyDeclaration",
       },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/ExportSpecifier1.ts",
@@ -291,6 +299,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ExportSpecifier1.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

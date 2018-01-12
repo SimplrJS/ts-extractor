@@ -29,11 +29,10 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
         return {
             ApiKind: ApiItemKinds.SourceFile,
             Name: name,
-            Kind: this.Declaration.kind,
             Metadata: metadata,
             Location: location,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
-            Members: this.members
+            Members: this.members,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

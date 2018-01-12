@@ -9,7 +9,7 @@ export enum ApiItemKinds {
     Parameter = "parameter",
     Property = "property",
     Variable = "variable",
-    Type = "type",
+    TypeAlias = "type-alias",
     Class = "class",
     ClassProperty = "class-property",
     ClassMethod = "class-method",
@@ -24,5 +24,6 @@ export enum ApiItemKinds {
     ImportSpecifier = "import-specifier",
     TypeParameter = "type-parameter",
     TypeLiteral = "type-literal",
-    FunctionType = "function-type"
+    FunctionType = "function-type",
+    Mapped = "mapped"
 }

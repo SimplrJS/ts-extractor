@@ -9,4 +9,8 @@ export interface ExtractorOptions {
     Exclude?: string[];
     OutputPathSeparator?: string;
     ExternalPackages?: string[];
+    /**
+     * Include TypeScript specific information in extracted data.
+     */
+    IncludeTsDebugInfo?: boolean;
 }

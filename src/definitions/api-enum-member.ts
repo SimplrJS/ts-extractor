@@ -8,7 +8,6 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
-
     public GetValue(): string {
         for (const item of this.Declaration.getChildren()) {
             if (ts.isNumericLiteral(item) ||
@@ -44,11 +43,10 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
         return {
             ApiKind: ApiItemKinds.EnumMember,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
-            Value: value
+            Value: value,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

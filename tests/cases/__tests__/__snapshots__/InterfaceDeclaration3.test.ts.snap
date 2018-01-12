@@ -9,8 +9,6 @@ Object {
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration3.ts",
@@ -38,13 +36,15 @@ Object {
           ],
         },
       ],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration3.ts",
@@ -57,19 +57,23 @@ Object {
       },
       "Name": "x",
       "Type": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "T",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "T",
         "Text": "T",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
       },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration3.ts",
@@ -95,13 +99,15 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": undefined,
       "DefaultType": undefined,
-      "Kind": 145,
-      "KindString": "TypeParameter",
       "Location": Object {
         "Character": 25,
         "FileName": "./cases/InterfaceDeclaration3.ts",
@@ -113,11 +119,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 13,
         "FileName": "./cases/InterfaceDeclaration3.ts",
@@ -130,25 +138,30 @@ Object {
       },
       "Name": "y",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": Array [
+        "ApiTypeKind": "reference",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "SymbolName": "Generic",
+        "Text": "Generic<number>",
+        "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
-            "Flags": 4,
-            "FlagsString": "Number",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
             "Text": "number",
+            "_ts": Object {
+              "Kind": 133,
+              "KindString": "NumberKeyword",
+            },
           },
         ],
-        "Name": "Generic",
-        "ReferenceId": "InterfaceDeclaration-0",
-        "Text": "Generic<number>",
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "VariableDeclarationType": "const",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
   },
 }

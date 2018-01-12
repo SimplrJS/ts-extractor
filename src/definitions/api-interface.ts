@@ -5,15 +5,16 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
     /**
      * Interfaces can extend multiple interfaces.
      */
-    private extends: TypeDto[] = [];
+    private extends: ApiType[] = [];
     private typeParameters: ApiItemReference[] = [];
     private members: ApiItemReference[] = [];
 
@@ -23,7 +24,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
 
         // Extends
         if (this.Declaration.heritageClauses != null) {
-            this.extends = ApiHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
+            this.extends = ApiTypeHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
         }
 
         // TypeParameters
@@ -39,13 +40,12 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
         return {
             ApiKind: ApiItemKinds.Interface,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             Members: this.members,
             Extends: this.extends,
-            TypeParameters: this.typeParameters
+            TypeParameters: this.typeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

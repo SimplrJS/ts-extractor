@@ -9,8 +9,6 @@ Object {
     "CallSignature-0": Object {
       "ApiKind": "call",
       "IsOverloadBase": false,
-      "Kind": 155,
-      "KindString": "CallSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -25,20 +23,21 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 155,
+        "KindString": "CallSignature",
+      },
     },
     "CallSignature-1": Object {
       "ApiKind": "call",
       "IsOverloadBase": false,
-      "Kind": 155,
-      "KindString": "CallSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -72,32 +71,35 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 155,
+        "KindString": "CallSignature",
+      },
     },
     "ClassDeclaration-0": Object {
       "ApiKind": "class",
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "a",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
           "Text": "a",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
       "IsAbstract": false,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -111,12 +113,14 @@ Object {
       },
       "Name": "c1",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "ConstructSignature-0": Object {
       "ApiKind": "construct",
       "IsOverloadBase": false,
-      "Kind": 156,
-      "KindString": "ConstructSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -131,20 +135,21 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 156,
+        "KindString": "ConstructSignature",
+      },
     },
     "ConstructSignature-1": Object {
       "ApiKind": "construct",
       "IsOverloadBase": false,
-      "Kind": 156,
-      "KindString": "ConstructSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -166,20 +171,21 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 156,
+        "KindString": "ConstructSignature",
+      },
     },
     "FunctionType-0": Object {
       "ApiKind": "function-type",
       "IsOverloadBase": false,
-      "Kind": 160,
-      "KindString": "FunctionType",
       "Location": Object {
         "Character": 17,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -194,20 +200,21 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 160,
+        "KindString": "FunctionType",
+      },
     },
     "IndexSignature-0": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -221,20 +228,22 @@ Object {
       "Name": "__index",
       "Parameter": "Parameter-4",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "__type",
+        "ApiTypeKind": "function-type",
         "ReferenceId": "FunctionType-0",
         "Text": "() => string",
+        "_ts": Object {
+          "Kind": 160,
+          "KindString": "FunctionType",
+        },
+      },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
       },
     },
     "IndexSignature-1": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -249,19 +258,20 @@ Object {
       "Parameter": "Parameter-5",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
       },
     },
     "IndexSignature-2": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -276,19 +286,20 @@ Object {
       "Parameter": "Parameter-9",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
       },
     },
     "IndexSignature-3": Object {
       "ApiKind": "index",
       "IsReadonly": false,
-      "Kind": 157,
-      "KindString": "IndexSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -303,19 +314,20 @@ Object {
       "Parameter": "Parameter-10",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 157,
+        "KindString": "IndexSignature",
       },
     },
     "InterfaceDeclaration-0": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -405,12 +417,14 @@ Object {
       },
       "Name": "a0",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-1": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -431,12 +445,14 @@ Object {
       },
       "Name": "a1",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-2": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -457,12 +473,14 @@ Object {
       },
       "Name": "a2",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-3": Object {
       "ApiKind": "interface",
       "Extends": Array [],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -476,22 +494,26 @@ Object {
       },
       "Name": "a",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-4": Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "a",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
           "Text": "a",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -505,31 +527,37 @@ Object {
       },
       "Name": "b",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-5": Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "a",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
           "Text": "a",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "b",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-4",
+          "SymbolName": "b",
           "Text": "b",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -543,22 +571,26 @@ Object {
       },
       "Name": "c",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "InterfaceDeclaration-6": Object {
       "ApiKind": "interface",
       "Extends": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "a",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
           "Text": "a",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
-      "Kind": 230,
-      "KindString": "InterfaceDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -572,13 +604,15 @@ Object {
       },
       "Name": "d",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
     },
     "MethodSignature-0": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -600,21 +634,22 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-1": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -629,21 +664,22 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-2": Object {
       "ApiKind": "method",
       "IsOptional": true,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -658,21 +694,22 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-3": Object {
       "ApiKind": "method",
       "IsOptional": false,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -694,21 +731,22 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "MethodSignature-4": Object {
       "ApiKind": "method",
       "IsOptional": true,
       "IsOverloadBase": false,
-      "Kind": 150,
-      "KindString": "MethodSignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -730,22 +768,23 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 150,
+        "KindString": "MethodSignature",
+      },
     },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -759,12 +798,15 @@ Object {
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-1": Object {
@@ -772,8 +814,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -787,12 +827,15 @@ Object {
       "Name": "b",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-10": Object {
@@ -800,8 +843,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -815,12 +856,15 @@ Object {
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-2": Object {
@@ -828,8 +872,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": true,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -843,12 +885,15 @@ Object {
       "Name": "c",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-3": Object {
@@ -856,8 +901,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -871,12 +914,15 @@ Object {
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-4": Object {
@@ -884,8 +930,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -899,12 +943,15 @@ Object {
       "Name": "n",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-5": Object {
@@ -912,8 +959,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -927,12 +972,15 @@ Object {
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-6": Object {
@@ -940,8 +988,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 7,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -955,12 +1001,15 @@ Object {
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-7": Object {
@@ -968,8 +1017,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 7,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -983,12 +1030,15 @@ Object {
       "Name": "a",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-8": Object {
@@ -996,8 +1046,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 8,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1011,12 +1059,15 @@ Object {
       "Name": "s",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "Parameter-9": Object {
@@ -1024,8 +1075,6 @@ Object {
       "Initializer": undefined,
       "IsOptional": false,
       "IsSpread": false,
-      "Kind": 146,
-      "KindString": "Parameter",
       "Location": Object {
         "Character": 5,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1039,20 +1088,21 @@ Object {
       "Name": "n",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
       },
     },
     "PropertySignature-0": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1066,20 +1116,21 @@ Object {
       "Name": "p1",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
       },
     },
     "PropertySignature-1": Object {
       "ApiKind": "property",
       "IsOptional": true,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1093,20 +1144,21 @@ Object {
       "Name": "p3",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1,
-        "FlagsString": "Any",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "any",
+        "_ts": Object {
+          "Kind": 119,
+          "KindString": "AnyKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
       },
     },
     "PropertySignature-2": Object {
       "ApiKind": "property",
       "IsOptional": false,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1120,20 +1172,21 @@ Object {
       "Name": "p2",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
       },
     },
     "PropertySignature-3": Object {
       "ApiKind": "property",
       "IsOptional": true,
       "IsReadonly": false,
-      "Kind": 148,
-      "KindString": "PropertySignature",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1147,18 +1200,19 @@ Object {
       "Name": "p4",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
       },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1226,11 +1280,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration4.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
     "VariableDeclaration-0": Object {
       "ApiKind": "variable",
-      "Kind": 226,
-      "KindString": "VariableDeclaration",
       "Location": Object {
         "Character": 11,
         "FileName": "./cases/InterfaceDeclaration4.ts",
@@ -1243,15 +1299,21 @@ Object {
       },
       "Name": "instance2",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "c1",
+        "ApiTypeKind": "reference",
         "ReferenceId": "ClassDeclaration-0",
+        "SymbolName": "c1",
         "Text": "c1",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "VariableDeclarationType": "var",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
     },
   },
 }

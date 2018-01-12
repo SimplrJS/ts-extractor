@@ -15,14 +15,13 @@ export class ApiCall extends ApiCallableBase<ts.CallSignatureDeclaration, ApiCal
         return {
             ApiKind: ApiItemKinds.Call,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
             Parameters: this.Parameters,
             ReturnType: this.ReturnType,
-            TypeParameters: this.TypeParameters
+            TypeParameters: this.TypeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

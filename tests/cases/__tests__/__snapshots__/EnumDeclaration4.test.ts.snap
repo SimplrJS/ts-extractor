@@ -9,8 +9,6 @@ Object {
     "EnumDeclaration-0": Object {
       "ApiKind": "enum",
       "IsConst": true,
-      "Kind": 232,
-      "KindString": "EnumDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -66,11 +64,13 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "LogLevel",
+      "_ts": Object {
+        "Kind": 232,
+        "KindString": "EnumDeclaration",
+      },
     },
     "EnumMember-0": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -83,11 +83,13 @@ Object {
       },
       "Name": "None",
       "Value": "0",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-1": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -100,11 +102,13 @@ Object {
       },
       "Name": "Critical",
       "Value": "1",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-2": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -117,11 +121,13 @@ Object {
       },
       "Name": "Error",
       "Value": "2",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-3": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -134,11 +140,13 @@ Object {
       },
       "Name": "Warning",
       "Value": "3",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-4": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -151,11 +159,13 @@ Object {
       },
       "Name": "Information",
       "Value": "4",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-5": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -168,11 +178,13 @@ Object {
       },
       "Name": "Debug",
       "Value": "5",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "EnumMember-6": Object {
       "ApiKind": "enum-member",
-      "Kind": 267,
-      "KindString": "EnumMember",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -185,11 +197,13 @@ Object {
       },
       "Name": "Trace",
       "Value": "6",
+      "_ts": Object {
+        "Kind": 267,
+        "KindString": "EnumMember",
+      },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/EnumDeclaration4.ts",
@@ -209,6 +223,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "EnumDeclaration4.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

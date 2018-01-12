@@ -4,18 +4,19 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiVariableDto, ApiVariableDeclarationType } from "../contracts/definitions/api-variable-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
-    private type: TypeDto;
+    private type: ApiType;
     private variableDeclarationType: ApiVariableDeclarationType;
 
     protected OnGatherData(): void {
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
 
         // VariableDeclarationType
         if (this.Declaration.parent != null) {
@@ -42,12 +43,11 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
         return {
             ApiKind: ApiItemKinds.Variable,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             VariableDeclarationType: this.variableDeclarationType,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

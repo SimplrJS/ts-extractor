@@ -5,16 +5,17 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/definitions/api-class-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
     /**
      * Interfaces can extend multiple interfaces.
      */
-    private extends: TypeDto | undefined;
-    private implements: TypeDto[] = [];
+    private extends: ApiType | undefined;
+    private implements: ApiType[] = [];
     private typeParameters: ApiItemReference[] = [];
     private members: ApiItemReference[] = [];
     private isAbstract: boolean = false;
@@ -25,7 +26,8 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
 
         // Extends
         if (this.Declaration.heritageClauses != null) {
-            const extendingList = ApiHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
+            const extendingList = ApiTypeHelpers
+                .GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
 
             if (extendingList.length > 0) {
                 this.extends = extendingList[0];
@@ -34,7 +36,8 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
 
         // Implements
         if (this.Declaration.heritageClauses != null) {
-            this.implements = ApiHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ImplementsKeyword, this.Options);
+            this.implements = ApiTypeHelpers
+                .GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ImplementsKeyword, this.Options);
         }
 
         // IsAbstract
@@ -53,15 +56,14 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
         return {
             ApiKind: ApiItemKinds.Class,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsAbstract: this.isAbstract,
             Members: this.members,
             Extends: this.extends,
             Implements: this.implements,
-            TypeParameters: this.typeParameters
+            TypeParameters: this.typeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

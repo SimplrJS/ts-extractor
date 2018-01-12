@@ -6,14 +6,15 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiGetAccessorDto } from "../contracts/definitions/api-get-accessor-dto";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 import { AccessModifier } from "../contracts/access-modifier";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiGetAccessor extends ApiItem<ts.GetAccessorDeclaration, ApiGetAccessorDto> {
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;
-    private type: TypeDto;
+    private type: ApiType;
 
     protected OnGatherData(): void {
         // Modifiers
@@ -23,7 +24,7 @@ export class ApiGetAccessor extends ApiItem<ts.GetAccessorDeclaration, ApiGetAcc
 
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
     }
 
     public OnExtract(): ApiGetAccessorDto {
@@ -33,14 +34,13 @@ export class ApiGetAccessor extends ApiItem<ts.GetAccessorDeclaration, ApiGetAcc
         return {
             ApiKind: ApiItemKinds.GetAccessor,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsStatic: this.isStatic,
-            Type: this.type
+            Type: this.type,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }

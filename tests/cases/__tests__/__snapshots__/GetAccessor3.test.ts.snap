@@ -11,8 +11,6 @@ Object {
       "Extends": undefined,
       "Implements": Array [],
       "IsAbstract": true,
-      "Kind": 229,
-      "KindString": "ClassDeclaration",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/GetAccessor3.ts",
@@ -51,14 +49,16 @@ Object {
       },
       "Name": "Foo",
       "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 229,
+        "KindString": "ClassDeclaration",
+      },
     },
     "GetAccessor-0": Object {
       "AccessModifier": "public",
       "ApiKind": "get-accessor",
       "IsAbstract": true,
       "IsStatic": false,
-      "Kind": 153,
-      "KindString": "GetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/GetAccessor3.ts",
@@ -72,12 +72,15 @@ Object {
       "Name": "Foo",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 153,
+        "KindString": "GetAccessor",
       },
     },
     "GetAccessor-1": Object {
@@ -85,8 +88,6 @@ Object {
       "ApiKind": "get-accessor",
       "IsAbstract": false,
       "IsStatic": true,
-      "Kind": 153,
-      "KindString": "GetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/GetAccessor3.ts",
@@ -100,12 +101,15 @@ Object {
       "Name": "StaticFoo",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 153,
+        "KindString": "GetAccessor",
       },
     },
     "GetAccessor-2": Object {
@@ -113,8 +117,6 @@ Object {
       "ApiKind": "get-accessor",
       "IsAbstract": false,
       "IsStatic": false,
-      "Kind": 153,
-      "KindString": "GetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/GetAccessor3.ts",
@@ -128,12 +130,15 @@ Object {
       "Name": "foo",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 153,
+        "KindString": "GetAccessor",
       },
     },
     "GetAccessor-3": Object {
@@ -141,8 +146,6 @@ Object {
       "ApiKind": "get-accessor",
       "IsAbstract": false,
       "IsStatic": false,
-      "Kind": 153,
-      "KindString": "GetAccessor",
       "Location": Object {
         "Character": 4,
         "FileName": "./cases/GetAccessor3.ts",
@@ -156,18 +159,19 @@ Object {
       "Name": "ProtectedFoo",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 153,
+        "KindString": "GetAccessor",
       },
     },
     "SourceFile-0": Object {
       "ApiKind": "source-file",
-      "Kind": 268,
-      "KindString": "SourceFile",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/GetAccessor3.ts",
@@ -187,6 +191,10 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetAccessor3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
     },
   },
 }

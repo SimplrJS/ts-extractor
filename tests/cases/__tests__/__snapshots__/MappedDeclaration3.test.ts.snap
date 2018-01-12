@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MappedDeclaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MappedDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Name",
+          "Ids": Array [
+            "PropertySignature-0",
+          ],
+        },
+        Object {
+          "Alias": "Age",
+          "Ids": Array [
+            "PropertySignature-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 230,
+        "KindString": "InterfaceDeclaration",
+      },
+    },
+    "MappedType-0": Object {
+      "ApiKind": "mapped",
+      "IsOptional": false,
+      "IsReadonly": true,
+      "Location": Object {
+        "Character": 21,
+        "FileName": "./cases/MappedDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "TypeParameter": "TypeParameter-0",
+      "_ts": Object {
+        "Kind": 172,
+        "KindString": "MappedType",
+      },
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/MappedDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Name",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./cases/MappedDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Age",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
+      },
+      "_ts": Object {
+        "Kind": 148,
+        "KindString": "PropertySignature",
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MappedDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "mapped",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "MappedDeclaration3.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
+    },
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/MappedDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "mapped",
+      "Type": Object {
+        "ApiTypeKind": "mapped",
+        "ReferenceId": "MappedType-0",
+        "Text": "mapped",
+        "_ts": Object {
+          "Kind": 172,
+          "KindString": "MappedType",
+        },
+      },
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 231,
+        "KindString": "TypeAliasDeclaration",
+      },
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": Object {
+        "ApiTypeKind": "type-operator",
+        "Keyword": "keyof",
+        "Text": "keyof Foo",
+        "Type": Object {
+          "ApiTypeKind": "reference",
+          "ReferenceId": "InterfaceDeclaration-0",
+          "SymbolName": "Foo",
+          "Text": "Foo",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 159,
+            "KindString": "TypeReference",
+          },
+        },
+        "_ts": Object {
+          "Kind": 170,
+          "KindString": "TypeOperator",
+        },
+      },
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 14,
+        "FileName": "./cases/MappedDeclaration3.ts",
+        "IsExternalPackage": false,
+        "Line": 6,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "K",
+      "_ts": Object {
+        "Kind": 145,
+        "KindString": "TypeParameter",
+      },
+    },
+  },
+}
+`;

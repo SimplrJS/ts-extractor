@@ -36,8 +36,6 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
         return {
             ApiKind: ApiItemKinds.ClassMethod,
             Name: this.Symbol.name,
-            Kind: this.Declaration.kind,
-            KindString: ts.SyntaxKind[this.Declaration.kind],
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
@@ -48,7 +46,8 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
             IsStatic: this.isStatic,
             IsOptional: this.isOptional,
             IsAsync: this.isAsync,
-            TypeParameters: this.TypeParameters
+            TypeParameters: this.TypeParameters,
+            _ts: this.GetTsDebugInfo()
         };
     }
 }
