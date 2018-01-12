@@ -23,23 +23,24 @@ Object {
       "Name": "AsyncFoo",
       "Parameters": Array [],
       "ReturnType": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": Array [
+        "ApiTypeKind": "reference",
+        "ReferenceId": undefined,
+        "SymbolName": "Promise",
+        "Text": "Promise<void>",
+        "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
-            "Flags": 1024,
-            "FlagsString": "Void",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
             "Text": "void",
+            "_ts": Object {
+              "Kind": 105,
+              "KindString": "VoidKeyword",
+            },
           },
         ],
-        "Name": "Promise",
-        "ReferenceId": undefined,
-        "Text": "Promise<void>",
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {

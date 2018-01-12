@@ -57,13 +57,15 @@ Object {
       },
       "Name": "x",
       "Type": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "T",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "T",
         "Text": "T",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -136,23 +138,24 @@ Object {
       },
       "Name": "y",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": Array [
+        "ApiTypeKind": "reference",
+        "ReferenceId": "InterfaceDeclaration-0",
+        "SymbolName": "Generic",
+        "Text": "Generic<number>",
+        "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
-            "Flags": 4,
-            "FlagsString": "Number",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
             "Text": "number",
+            "_ts": Object {
+              "Kind": 133,
+              "KindString": "NumberKeyword",
+            },
           },
         ],
-        "Name": "Generic",
-        "ReferenceId": "InterfaceDeclaration-0",
-        "Text": "Generic<number>",
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "VariableDeclarationType": "const",
       "_ts": Object {

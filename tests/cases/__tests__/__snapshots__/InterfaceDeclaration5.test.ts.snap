@@ -29,13 +29,15 @@ Object {
         },
       ],
       "ReturnType": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "TValue",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "TValue",
         "Text": "TValue",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "TypeParameters": Array [
         Object {
@@ -95,13 +97,15 @@ Object {
       },
       "Name": "value",
       "Type": Object {
-        "ApiTypeKind": "type-parameter",
-        "Flags": 16384,
-        "FlagsString": "TypeParameter",
-        "Generics": undefined,
-        "Name": "TValue",
+        "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
+        "SymbolName": "TValue",
         "Text": "TValue",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "_ts": Object {
         "Kind": 146,

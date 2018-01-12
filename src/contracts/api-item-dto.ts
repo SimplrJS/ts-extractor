@@ -18,7 +18,7 @@ import { ApiNamespaceDto } from "./definitions/api-namespace-dto";
 import { ApiParameterDto } from "./definitions/api-parameter-dto";
 import { ApiPropertyDto } from "./definitions/api-property-dto";
 import { ApiSourceFileDto } from "./definitions/api-source-file-dto";
-import { ApiTypeDto } from "./definitions/api-type-dto";
+import { ApiTypeAliasDto } from "./definitions/api-type-alias-dto";
 import { ApiTypeLiteralDto } from "./definitions/api-type-literal-dto";
 import { ApiTypeParameterDto } from "./definitions/api-type-parameter-dto";
 import { ApiVariableDto } from "./definitions/api-variable-dto";
@@ -45,7 +45,7 @@ export type ApiItemDto = ApiCallDto |
     ApiParameterDto |
     ApiPropertyDto |
     ApiSourceFileDto |
-    ApiTypeDto |
+    ApiTypeAliasDto |
     ApiTypeLiteralDto |
     ApiTypeParameterDto |
     ApiVariableDto |

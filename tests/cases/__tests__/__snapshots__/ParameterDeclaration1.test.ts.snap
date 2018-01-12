@@ -31,12 +31,11 @@ Object {
       ],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1024,
-        "FlagsString": "Void",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "void",
+        "_ts": Object {
+          "Kind": 105,
+          "KindString": "VoidKeyword",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -61,32 +60,12 @@ Object {
       },
       "Name": "bar",
       "Type": Object {
-        "ApiTypeKind": "union",
-        "Flags": 65544,
-        "FlagsString": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
+        "ApiTypeKind": "basic",
         "Text": "boolean",
-        "Types": Array [
-          Object {
-            "ApiTypeKind": "basic",
-            "Flags": 128,
-            "FlagsString": "BooleanLiteral",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
-            "Text": "true",
-          },
-          Object {
-            "ApiTypeKind": "basic",
-            "Flags": 128,
-            "FlagsString": "BooleanLiteral",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
-            "Text": "false",
-          },
-        ],
+        "_ts": Object {
+          "Kind": 122,
+          "KindString": "BooleanKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 146,

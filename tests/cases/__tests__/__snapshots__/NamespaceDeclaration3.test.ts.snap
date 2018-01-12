@@ -99,12 +99,11 @@ Object {
       "Name": "Hello",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1048608,
-        "FlagsString": undefined,
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "\\"world!\\"",
+        "_ts": Object {
+          "Kind": 173,
+          "KindString": "LastTypeNode",
+        },
       },
       "VariableDeclarationType": "const",
       "_ts": Object {

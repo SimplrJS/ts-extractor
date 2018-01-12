@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FunctionDeclaration8 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "IsAsync": false,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "Parameters": Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ReturnType": Object {
+        "ApiTypeKind": "tuple",
+        "Members": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Text": "string",
+            "_ts": Object {
+              "Kind": 136,
+              "KindString": "StringKeyword",
+            },
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Text": "number",
+            "_ts": Object {
+              "Kind": 133,
+              "KindString": "NumberKeyword",
+            },
+          },
+        ],
+        "Text": "[string, number]",
+        "_ts": Object {
+          "Kind": 165,
+          "KindString": "TupleType",
+        },
+      },
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 228,
+        "KindString": "FunctionDeclaration",
+      },
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./cases/FunctionDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "Type": Object {
+        "ApiTypeKind": "tuple",
+        "Members": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Text": "string",
+            "_ts": Object {
+              "Kind": 136,
+              "KindString": "StringKeyword",
+            },
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Text": "number",
+            "_ts": Object {
+              "Kind": 133,
+              "KindString": "NumberKeyword",
+            },
+          },
+        ],
+        "Text": "[string, number]",
+        "_ts": Object {
+          "Kind": 165,
+          "KindString": "TupleType",
+        },
+      },
+      "_ts": Object {
+        "Kind": 146,
+        "KindString": "Parameter",
+      },
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/FunctionDeclaration8.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "FunctionDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FunctionDeclaration8.ts",
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
+    },
+  },
+}
+`;

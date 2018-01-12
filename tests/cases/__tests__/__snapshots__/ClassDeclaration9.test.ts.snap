@@ -47,13 +47,15 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "Point",
+          "ApiTypeKind": "reference",
           "ReferenceId": "ClassDeclaration-0",
+          "SymbolName": "Point",
           "Text": "Point",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
       "IsAbstract": false,
@@ -114,12 +116,11 @@ Object {
       "Name": "x",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -146,12 +147,11 @@ Object {
       "Name": "y",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -178,12 +178,11 @@ Object {
       "Name": "x",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -210,12 +209,11 @@ Object {
       "Name": "y",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,
@@ -242,12 +240,11 @@ Object {
       "Name": "z",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 149,

@@ -23,12 +23,11 @@ Object {
       "Name": "Name",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -68,7 +67,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-0": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration4.ts",
@@ -81,13 +80,13 @@ Object {
       },
       "Name": "User",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "__type",
+        "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-0",
         "Text": "User",
+        "_ts": Object {
+          "Kind": 163,
+          "KindString": "TypeLiteral",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -96,7 +95,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-1": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/TypeAliasDeclaration4.ts",
@@ -109,23 +108,15 @@ Object {
       },
       "Name": "ReadonlyUser",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": Array [
-          Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32768,
-            "FlagsString": "Object",
-            "Generics": undefined,
-            "Name": "User",
-            "ReferenceId": "TypeAliasDeclaration-0",
-            "Text": "User",
-          },
-        ],
-        "Name": "Readonly",
+        "ApiTypeKind": "reference",
         "ReferenceId": undefined,
+        "SymbolName": "Readonly",
         "Text": "Readonly<User>",
+        "TypeParameters": undefined,
+        "_ts": Object {
+          "Kind": 159,
+          "KindString": "TypeReference",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {

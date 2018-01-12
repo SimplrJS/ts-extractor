@@ -57,12 +57,11 @@ Object {
       "Name": "__type",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "TypeParameter": "TypeParameter-0",
       "_ts": Object {
@@ -87,12 +86,11 @@ Object {
       "Name": "Name",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -116,12 +114,11 @@ Object {
       "Name": "Age",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 4,
-        "FlagsString": "Number",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "number",
+        "_ts": Object {
+          "Kind": 133,
+          "KindString": "NumberKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 148,
@@ -161,7 +158,7 @@ Object {
       },
     },
     "TypeAliasDeclaration-0": Object {
-      "ApiKind": "type",
+      "ApiKind": "type-alias",
       "Location": Object {
         "Character": 0,
         "FileName": "./cases/MappedDeclaration4.ts",
@@ -174,13 +171,13 @@ Object {
       },
       "Name": "mapped",
       "Type": Object {
-        "ApiTypeKind": "basic",
-        "Flags": 32768,
-        "FlagsString": "Object",
-        "Generics": undefined,
-        "Name": "__type",
+        "ApiTypeKind": "mapped",
         "ReferenceId": "MappedType-0",
         "Text": "mapped",
+        "_ts": Object {
+          "Kind": 172,
+          "KindString": "MappedType",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -191,32 +188,24 @@ Object {
     "TypeParameter-0": Object {
       "ApiKind": "type-parameter",
       "ConstraintType": Object {
-        "ApiTypeKind": "union",
-        "Flags": 65536,
-        "FlagsString": "Union",
-        "Name": undefined,
-        "ReferenceId": undefined,
-        "Text": "\\"Name\\" | \\"Age\\"",
-        "Types": Array [
-          Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32,
-            "FlagsString": "StringLiteral",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
-            "Text": "\\"Name\\"",
+        "ApiTypeKind": "type-operator",
+        "Keyword": "keyof",
+        "Text": "keyof Foo",
+        "Type": Object {
+          "ApiTypeKind": "reference",
+          "ReferenceId": "InterfaceDeclaration-0",
+          "SymbolName": "Foo",
+          "Text": "Foo",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 159,
+            "KindString": "TypeReference",
           },
-          Object {
-            "ApiTypeKind": "basic",
-            "Flags": 32,
-            "FlagsString": "StringLiteral",
-            "Generics": undefined,
-            "Name": undefined,
-            "ReferenceId": undefined,
-            "Text": "\\"Age\\"",
-          },
-        ],
+        },
+        "_ts": Object {
+          "Kind": 170,
+          "KindString": "TypeOperator",
+        },
       },
       "DefaultType": undefined,
       "Location": Object {

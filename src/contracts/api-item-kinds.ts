@@ -9,7 +9,7 @@ export enum ApiItemKinds {
     Parameter = "parameter",
     Property = "property",
     Variable = "variable",
-    Type = "type",
+    TypeAlias = "type-alias",
     Class = "class",
     ClassProperty = "class-property",
     ClassMethod = "class-method",

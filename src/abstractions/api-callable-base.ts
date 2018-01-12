@@ -3,8 +3,9 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 import { ApiCallableDto } from "../contracts/api-callable-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 /**
  * A callable api item base.
@@ -18,7 +19,7 @@ export abstract class ApiCallableBase<
     protected IsOverloadBase: boolean;
     protected Parameters: ApiItemReference[] = [];
     protected TypeParameters: ApiItemReference[] = [];
-    protected ReturnType: TypeDto | undefined;
+    protected ReturnType: ApiType | undefined;
 
     protected OnGatherData(): void {
         // Overload
@@ -37,7 +38,7 @@ export abstract class ApiCallableBase<
         if (signature != null) {
             const type = this.TypeChecker.getReturnTypeOfSignature(signature);
 
-            this.ReturnType = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+            this.ReturnType = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
         }
     }
 }

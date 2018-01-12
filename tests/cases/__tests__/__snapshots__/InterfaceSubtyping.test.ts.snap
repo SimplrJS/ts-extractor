@@ -11,13 +11,15 @@ Object {
       "Extends": undefined,
       "Implements": Array [
         Object {
-          "ApiTypeKind": "basic",
-          "Flags": 32768,
-          "FlagsString": "Object",
-          "Generics": undefined,
-          "Name": "Face",
+          "ApiTypeKind": "reference",
           "ReferenceId": "InterfaceDeclaration-0",
+          "SymbolName": "Face",
           "Text": "Face",
+          "TypeParameters": undefined,
+          "_ts": Object {
+            "Kind": 201,
+            "KindString": "ExpressionWithTypeArguments",
+          },
         },
       ],
       "IsAbstract": false,
@@ -130,12 +132,11 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -161,12 +162,11 @@ Object {
       "Parameters": Array [],
       "ReturnType": Object {
         "ApiTypeKind": "basic",
-        "Flags": 1024,
-        "FlagsString": "Void",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "void",
+        "_ts": Object {
+          "Kind": 105,
+          "KindString": "VoidKeyword",
+        },
       },
       "TypeParameters": Array [],
       "_ts": Object {
@@ -192,12 +192,11 @@ Object {
       "Name": "str",
       "Type": Object {
         "ApiTypeKind": "basic",
-        "Flags": 2,
-        "FlagsString": "String",
-        "Generics": undefined,
-        "Name": undefined,
-        "ReferenceId": undefined,
         "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
       },
       "_ts": Object {
         "Kind": 146,

@@ -4,10 +4,11 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassPropertyDto } from "../contracts/definitions/api-class-property-dto";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { TypeDto } from "../contracts/type-dto";
+import { ApiType } from "../contracts/api-type";
 import { AccessModifier } from "../contracts/access-modifier";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
+import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPropertyDto> {
     private accessModifier: AccessModifier;
@@ -15,7 +16,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
     private isStatic: boolean;
     private isReadonly: boolean;
     private isOptional: boolean;
-    private type: TypeDto;
+    private type: ApiType;
 
     protected OnGatherData(): void {
         // Modifiers
@@ -29,7 +30,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
 
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-        this.type = ApiHelpers.TypeToApiTypeDto(type, this.Options);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
     }
 
     public OnExtract(): ApiClassPropertyDto {
