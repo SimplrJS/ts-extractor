@@ -29,6 +29,7 @@
         "dist",
         "@types",
         "tests",
-        "examples"
+        "examples",
+        "tools"
     ]
 }
