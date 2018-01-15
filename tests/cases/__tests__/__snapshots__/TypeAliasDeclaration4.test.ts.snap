@@ -112,7 +112,19 @@ Object {
         "ReferenceId": undefined,
         "SymbolName": "Readonly",
         "Text": "Readonly<User>",
-        "TypeParameters": undefined,
+        "TypeParameters": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "ReferenceId": "TypeAliasDeclaration-0",
+            "SymbolName": "User",
+            "Text": "User",
+            "TypeParameters": undefined,
+            "_ts": Object {
+              "Kind": 159,
+              "KindString": "TypeReference",
+            },
+          },
+        ],
         "_ts": Object {
           "Kind": 159,
           "KindString": "TypeReference",

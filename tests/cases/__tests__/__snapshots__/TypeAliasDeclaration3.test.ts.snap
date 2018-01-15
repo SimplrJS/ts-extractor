@@ -367,7 +367,16 @@ Object {
             "ReferenceId": "TypeAliasDeclaration-0",
             "SymbolName": "NoCommonFields1",
             "Text": "NoCommonFields1<number>",
-            "TypeParameters": undefined,
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Text": "number",
+                "_ts": Object {
+                  "Kind": 133,
+                  "KindString": "NumberKeyword",
+                },
+              },
+            ],
             "_ts": Object {
               "Kind": 159,
               "KindString": "TypeReference",
@@ -378,7 +387,16 @@ Object {
             "ReferenceId": "TypeAliasDeclaration-1",
             "SymbolName": "NoCommonFields2",
             "Text": "NoCommonFields2<string>",
-            "TypeParameters": undefined,
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Text": "string",
+                "_ts": Object {
+                  "Kind": 136,
+                  "KindString": "StringKeyword",
+                },
+              },
+            ],
             "_ts": Object {
               "Kind": 159,
               "KindString": "TypeReference",
@@ -488,7 +506,16 @@ Object {
             "ReferenceId": "TypeAliasDeclaration-3",
             "SymbolName": "OneCommonField1",
             "Text": "OneCommonField1<number>",
-            "TypeParameters": undefined,
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Text": "number",
+                "_ts": Object {
+                  "Kind": 133,
+                  "KindString": "NumberKeyword",
+                },
+              },
+            ],
             "_ts": Object {
               "Kind": 159,
               "KindString": "TypeReference",
@@ -499,7 +526,16 @@ Object {
             "ReferenceId": "TypeAliasDeclaration-4",
             "SymbolName": "OneCommonField2",
             "Text": "OneCommonField2<number>",
-            "TypeParameters": undefined,
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Text": "number",
+                "_ts": Object {
+                  "Kind": 133,
+                  "KindString": "NumberKeyword",
+                },
+              },
+            ],
             "_ts": Object {
               "Kind": 159,
               "KindString": "TypeReference",
@@ -539,7 +575,16 @@ Object {
             "ReferenceId": "TypeAliasDeclaration-3",
             "SymbolName": "OneCommonField1",
             "Text": "OneCommonField1<number>",
-            "TypeParameters": undefined,
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Text": "number",
+                "_ts": Object {
+                  "Kind": 133,
+                  "KindString": "NumberKeyword",
+                },
+              },
+            ],
             "_ts": Object {
               "Kind": 159,
               "KindString": "TypeReference",
@@ -550,7 +595,16 @@ Object {
             "ReferenceId": "TypeAliasDeclaration-4",
             "SymbolName": "OneCommonField2",
             "Text": "OneCommonField2<string>",
-            "TypeParameters": undefined,
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Text": "string",
+                "_ts": Object {
+                  "Kind": 136,
+                  "KindString": "StringKeyword",
+                },
+              },
+            ],
             "_ts": Object {
               "Kind": 159,
               "KindString": "TypeReference",
