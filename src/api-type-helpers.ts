@@ -160,7 +160,7 @@ export namespace ApiTypeHelpers {
         let typeParameters: ApiType[] | undefined;
         let refenceId: string | undefined;
 
-        if (TSHelpers.IsNodeSynthesized(typeNode) && typeNode.typeArguments != null) {
+        if (!TSHelpers.IsNodeSynthesized(typeNode) && typeNode.typeArguments != null) {
             typeParameters = typeNode.typeArguments
                 .map(x => ResolveApiType(options, typeChecker.getTypeFromTypeNode(x), x));
         } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
