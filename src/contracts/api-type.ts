@@ -88,12 +88,12 @@ export interface TypeLiteralType extends ApiBaseType {
     ReferenceId?: string;
 }
 
-export interface MappedType extends ApiBaseType, ApiReferenceBaseType {
+export interface MappedType extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.Mapped;
 }
 
-export interface FunctionTypeType extends ApiBaseType, ApiReferenceBaseType {
-    ApiTypeKind: ApiTypeKind.Mapped;
+export interface FunctionTypeType extends ApiReferenceBaseType {
+    ApiTypeKind: ApiTypeKind.FunctionType;
 }
 
 export interface ThisType extends ApiReferenceBaseType {
