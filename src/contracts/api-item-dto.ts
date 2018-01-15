@@ -24,6 +24,7 @@ import { ApiTypeParameterDto } from "./definitions/api-type-parameter-dto";
 import { ApiVariableDto } from "./definitions/api-variable-dto";
 import { ApiGetAccessorDto } from "./definitions/api-get-accessor-dto";
 import { ApiSetAccessorDto } from "./definitions/api-set-accessor-dto";
+import { ApiMappedDto } from "./definitions/api-mapped-dto";
 
 export type ApiItemDto = ApiCallDto |
     ApiClassConstructorDto |
@@ -50,4 +51,5 @@ export type ApiItemDto = ApiCallDto |
     ApiTypeParameterDto |
     ApiVariableDto |
     ApiGetAccessorDto |
-    ApiSetAccessorDto;
+    ApiSetAccessorDto |
+    ApiMappedDto;
