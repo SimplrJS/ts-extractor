@@ -29,6 +29,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "tuple",
         "Members": Array [
@@ -77,6 +78,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "tuple",
         "Members": Array [
@@ -129,6 +131,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FunctionDeclaration8.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

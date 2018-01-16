@@ -33,7 +33,7 @@ export async function TestsBuilder(dirName: string, cwd: string): Promise<void> 
             "",
             Tab(1) + `const extractor = new Extractor({`,
             Tab(2) + `CompilerOptions: ${JSON.stringify(EXTRACTOR_COMPILER_OPTIONS, undefined, Tab(3))},`,
-            Tab(2) + `ProjectDirectory: projectDirectory`,
+            Tab(2) + `ProjectDirectory: projectDirectory,`,
             Tab(2) + `IncludeTsDebugInfo: true`,
             Tab(1) + `});`,
             "",

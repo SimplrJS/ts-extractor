@@ -42,6 +42,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -70,6 +71,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -94,6 +96,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -122,6 +125,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -162,6 +166,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration3.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

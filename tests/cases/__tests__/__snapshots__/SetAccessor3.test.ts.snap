@@ -48,6 +48,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -70,6 +71,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "SetAccessor-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -99,6 +101,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "SetAccessor-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -128,6 +131,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "SetAccessor-2",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -157,6 +161,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "SetAccessor-3",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -192,6 +197,7 @@ Object {
           "Parameter-0",
         ],
       },
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 154,
         "KindString": "SetAccessor",
@@ -219,6 +225,7 @@ Object {
           "Parameter-1",
         ],
       },
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 154,
         "KindString": "SetAccessor",
@@ -246,6 +253,7 @@ Object {
           "Parameter-2",
         ],
       },
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 154,
         "KindString": "SetAccessor",
@@ -273,6 +281,7 @@ Object {
           "Parameter-3",
         ],
       },
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 154,
         "KindString": "SetAccessor",
@@ -299,6 +308,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "SetAccessor3.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

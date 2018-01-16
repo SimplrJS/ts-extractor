@@ -28,6 +28,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "InterfaceDeclaration-0",
@@ -67,6 +68,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -89,6 +91,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "ConstructSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -123,6 +126,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ConstructSignature1.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

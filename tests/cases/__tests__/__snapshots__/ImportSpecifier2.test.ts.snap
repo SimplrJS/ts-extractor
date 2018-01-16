@@ -22,6 +22,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "DoesNotExist",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 246,
         "KindString": "ExportSpecifier",
@@ -41,6 +42,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "unknown",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 242,
         "KindString": "ImportSpecifier",
@@ -67,6 +69,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ImportSpecifier2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

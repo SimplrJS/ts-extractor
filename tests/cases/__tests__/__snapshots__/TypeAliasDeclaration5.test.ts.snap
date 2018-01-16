@@ -27,6 +27,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration5.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -45,6 +46,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooTuple",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "tuple",
         "Members": Array [

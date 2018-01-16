@@ -29,6 +29,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "void",
@@ -66,6 +67,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
@@ -103,6 +105,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeParameterDeclaration2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -133,6 +136,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "ParentId": "FunctionDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

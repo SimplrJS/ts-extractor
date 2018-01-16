@@ -36,6 +36,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Point",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -90,6 +91,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Point3d",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -114,6 +116,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "x",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -145,6 +148,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "y",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -176,6 +180,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "x",
+      "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -207,6 +212,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "y",
+      "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -238,6 +244,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "z",
+      "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -278,6 +285,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration9.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

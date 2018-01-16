@@ -28,6 +28,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "TValue",
@@ -64,6 +65,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "void",
@@ -101,6 +103,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "args",
+      "ParentId": "MethodSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -135,6 +138,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration6.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -155,6 +159,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "ParentId": "MethodSignature-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -175,6 +180,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "ParentId": "InterfaceDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

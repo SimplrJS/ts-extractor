@@ -21,6 +21,7 @@ Object {
       },
       "Name": "__index",
       "Parameter": "Parameter-0",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -56,6 +57,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -78,6 +80,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "key",
+      "ParentId": "IndexSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -112,6 +115,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "IndexSignature2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

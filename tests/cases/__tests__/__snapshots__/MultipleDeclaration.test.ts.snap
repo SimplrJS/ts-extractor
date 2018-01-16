@@ -30,6 +30,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "T",
@@ -67,6 +68,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "T",
@@ -102,6 +104,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "T",
@@ -137,6 +140,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "T",
@@ -164,6 +168,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "M",
+      "ParentId": "SourceFile-0",
       "_ts": Object {
         "Kind": 233,
         "KindString": "ModuleDeclaration",
@@ -187,6 +192,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "b",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -218,6 +224,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "b",
+      "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -246,6 +253,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -274,6 +282,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "ParentId": "InterfaceDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -322,6 +331,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "MultipleDeclaration.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -342,6 +352,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "ParentId": "InterfaceDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -362,6 +373,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -382,6 +394,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "ParentId": "ClassDeclaration-1",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -402,6 +415,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "ParentId": "InterfaceDeclaration-1",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

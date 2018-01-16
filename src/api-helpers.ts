@@ -306,4 +306,21 @@ export namespace ApiHelpers {
             IsExternalPackage: isExternalPackage
         };
     }
+
+    /**
+     * Get parent reference id from declaration.
+     */
+    export function GetParentIdFromDeclaration(declaration: ts.Declaration, options: ApiItemOptions): string | undefined {
+        const parentDeclaration = declaration.parent as ts.Declaration;
+        if (parentDeclaration == null) {
+            return undefined;
+        }
+
+        const parentSymbol = TSHelpers.GetSymbolFromDeclaration(parentDeclaration, options.Program.getTypeChecker());
+        if (parentSymbol == null) {
+            return undefined;
+        }
+
+        return ApiHelpers.GetItemId(parentDeclaration, parentSymbol, options);
+    }
 }

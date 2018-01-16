@@ -21,6 +21,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BarName",
+      "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -61,6 +62,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration1.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -79,6 +81,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "MyType",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-0",
@@ -107,6 +110,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "AnotherType",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeAliasDeclaration-0",
@@ -145,6 +149,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-0",
       "_ts": Object {
         "Kind": 163,
         "KindString": "TypeLiteral",

@@ -52,6 +52,9 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
         return this.ItemStatus;
     }
 
+    /**
+     * It gives precise TypeScript information about item after extracting.
+     */
     protected GetTsDebugInfo(): TypeScriptTypeDeclarationDebug | undefined {
         if (this.Options.ExtractorOptions.IncludeTsDebugInfo) {
             return {
