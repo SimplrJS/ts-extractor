@@ -36,7 +36,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
     }
 
     public OnExtract(): ApiEnumMemberDto {
-        const parentId: string | undefined = this.GetParentId();
+        const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
         const value: string = this.GetValue();

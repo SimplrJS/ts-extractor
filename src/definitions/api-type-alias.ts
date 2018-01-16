@@ -28,7 +28,7 @@ export class ApiTypeAlias extends ApiItem<ts.TypeAliasDeclaration, ApiTypeAliasD
     }
 
     public OnExtract(): ApiTypeAliasDto {
-        const parentId: string | undefined = this.GetParentId();
+        const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 

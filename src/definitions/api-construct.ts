@@ -10,7 +10,7 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiConstruct extends ApiCallableBase<ts.ConstructSignatureDeclaration | ts.ConstructorTypeNode, ApiConstructDto> {
     public OnExtract(): ApiConstructDto {
-        const parentId: string | undefined = this.GetParentId();
+        const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 

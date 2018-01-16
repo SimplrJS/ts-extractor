@@ -4,8 +4,6 @@ import { ApiBaseItemDto, TypeScriptTypeDeclarationDebug } from "../contracts/api
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ExtractorOptions } from "../contracts/extractor-options";
 import { ReadonlyRegistry } from "../contracts/registry";
-import { ApiHelpers } from "../api-helpers";
-import { TSHelpers } from "../index";
 
 export interface ApiItemOptions {
     Program: ts.Program;
@@ -52,23 +50,6 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
 
     public get Status(): ApiItemStatus {
         return this.ItemStatus;
-    }
-
-    /**
-     * Get parent reference id from declaration.
-     */
-    protected GetParentId(): string | undefined {
-        const parentDeclaration = this.Declaration.parent as ts.Declaration;
-        if (parentDeclaration == null) {
-            return undefined;
-        }
-
-        const parentSymbol = TSHelpers.GetSymbolFromDeclaration(parentDeclaration, this.TypeChecker);
-        if (parentSymbol == null) {
-            return undefined;
-        }
-
-        return ApiHelpers.GetItemId(parentDeclaration, parentSymbol, this.Options);
     }
 
     /**
