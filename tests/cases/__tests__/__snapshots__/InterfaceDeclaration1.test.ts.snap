@@ -21,6 +21,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -48,6 +49,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration1.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

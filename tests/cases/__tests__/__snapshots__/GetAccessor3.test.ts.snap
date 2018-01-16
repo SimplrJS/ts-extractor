@@ -48,6 +48,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -70,6 +71,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -99,6 +101,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "StaticFoo",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -128,6 +131,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "foo",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -157,6 +161,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ProtectedFoo",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -191,6 +196,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GetAccessor3.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

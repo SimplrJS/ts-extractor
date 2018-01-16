@@ -21,6 +21,7 @@ Object {
       },
       "Name": "__call",
       "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -69,6 +70,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -112,6 +114,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "c1",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -133,6 +136,7 @@ Object {
       },
       "Name": "__new",
       "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -169,6 +173,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -198,6 +203,7 @@ Object {
       },
       "Name": "__type",
       "Parameters": Array [],
+      "ParentId": "IndexSignature-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -227,6 +233,7 @@ Object {
       },
       "Name": "__index",
       "Parameter": "Parameter-4",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "function-type",
         "ReferenceId": "FunctionType-0",
@@ -256,6 +263,7 @@ Object {
       },
       "Name": "__index",
       "Parameter": "Parameter-5",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -284,6 +292,7 @@ Object {
       },
       "Name": "__index",
       "Parameter": "Parameter-9",
+      "ParentId": "InterfaceDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -312,6 +321,7 @@ Object {
       },
       "Name": "__index",
       "Parameter": "Parameter-10",
+      "ParentId": "InterfaceDeclaration-2",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -416,6 +426,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a0",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -444,6 +455,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a1",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -472,6 +484,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a2",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -493,6 +506,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -526,6 +540,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "b",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -570,6 +585,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "c",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -603,6 +619,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "d",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -632,6 +649,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -662,6 +680,7 @@ Object {
       },
       "Name": "f1",
       "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -692,6 +711,7 @@ Object {
       },
       "Name": "f2",
       "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -729,6 +749,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -766,6 +787,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -796,6 +818,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "ParentId": "CallSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -825,6 +848,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "b",
+      "ParentId": "CallSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -854,6 +878,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "s",
+      "ParentId": "IndexSignature-3",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -883,6 +908,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "c",
+      "ParentId": "CallSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -912,6 +938,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "s",
+      "ParentId": "ConstructSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -941,6 +968,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "n",
+      "ParentId": "IndexSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -970,6 +998,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "s",
+      "ParentId": "IndexSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -999,6 +1028,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "s",
+      "ParentId": "MethodSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -1028,6 +1058,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "ParentId": "MethodSignature-3",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -1057,6 +1088,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "s",
+      "ParentId": "MethodSignature-4",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -1086,6 +1118,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "n",
+      "ParentId": "IndexSignature-2",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -1114,6 +1147,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "p1",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -1142,6 +1176,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "p3",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "any",
@@ -1170,6 +1205,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "p2",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -1198,6 +1234,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "p4",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -1280,6 +1317,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration4.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -1298,6 +1336,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "instance2",
+      "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "ClassDeclaration-0",

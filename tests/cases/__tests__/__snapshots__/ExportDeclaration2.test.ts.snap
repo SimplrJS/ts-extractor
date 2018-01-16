@@ -20,6 +20,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__export",
+      "ParentId": "SourceFile-0",
       "SourceFileId": undefined,
       "_ts": Object {
         "Kind": 244,
@@ -47,6 +48,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ExportDeclaration2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

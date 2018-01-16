@@ -28,6 +28,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Generic",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "T",
@@ -56,6 +57,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "x",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
@@ -99,6 +101,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration3.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -119,6 +122,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "ParentId": "InterfaceDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -137,6 +141,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "y",
+      "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "InterfaceDeclaration-0",

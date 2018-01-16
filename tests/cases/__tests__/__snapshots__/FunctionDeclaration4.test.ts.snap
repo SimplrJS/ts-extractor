@@ -29,6 +29,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "array",
         "Text": "string[]",
@@ -67,6 +68,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "array",
         "Text": "string[]",
@@ -109,6 +111,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FunctionDeclaration4.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

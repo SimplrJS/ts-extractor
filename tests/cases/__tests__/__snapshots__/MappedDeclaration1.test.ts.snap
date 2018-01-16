@@ -21,6 +21,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -56,6 +57,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "MappedDeclaration1.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -74,6 +76,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "mapped",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "mapped",
         "ReferenceId": "MappedType-0",
@@ -111,6 +114,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "K",
+      "ParentId": "MappedType-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

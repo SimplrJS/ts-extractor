@@ -30,6 +30,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooBase",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "TValue",
@@ -104,6 +105,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -132,6 +134,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -158,6 +161,7 @@ Object {
       },
       "Name": "GetValue",
       "Parameters": Array [],
+      "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
@@ -195,6 +199,7 @@ Object {
       },
       "Name": "GetValue",
       "Parameters": Array [],
+      "ParentId": "ClassDeclaration-1",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -227,6 +232,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BarName",
+      "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -255,6 +261,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BarName",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -301,6 +308,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration6.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -321,6 +329,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

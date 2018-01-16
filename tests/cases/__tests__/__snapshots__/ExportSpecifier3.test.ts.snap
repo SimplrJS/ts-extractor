@@ -59,6 +59,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
+      "ParentId": "SourceFile-1",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -81,6 +82,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 246,
         "KindString": "ExportSpecifier",
@@ -102,6 +104,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 246,
         "KindString": "ExportSpecifier",
@@ -129,6 +132,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-1",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -157,6 +161,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo2",
+      "ParentId": "SourceFile-1",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -181,6 +186,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -212,6 +218,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar2",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -240,6 +247,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -268,6 +276,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar2",
+      "ParentId": "InterfaceDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -308,6 +317,46 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ExportSpecifier3.ts",
+      "ParentId": undefined,
+      "_ts": Object {
+        "Kind": 268,
+        "KindString": "SourceFile",
+      },
+    },
+    "SourceFile-1": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./cases/ClassDeclaration4.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Foo2",
+          "Ids": Array [
+            "InterfaceDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ClassDeclaration4.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

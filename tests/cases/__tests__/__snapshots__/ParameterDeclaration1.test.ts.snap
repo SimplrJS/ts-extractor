@@ -29,6 +29,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "void",
@@ -59,6 +60,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "bar",
+      "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "boolean",
@@ -93,6 +95,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ParameterDeclaration1.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

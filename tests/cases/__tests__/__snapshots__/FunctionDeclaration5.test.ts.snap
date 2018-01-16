@@ -29,6 +29,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "type-predicate",
         "ParameterName": "arg",
@@ -68,6 +69,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "union",
         "Members": Array [
@@ -120,6 +122,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FunctionDeclaration5.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

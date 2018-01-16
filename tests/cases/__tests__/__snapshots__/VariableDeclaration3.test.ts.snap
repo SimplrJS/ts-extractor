@@ -27,6 +27,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration3.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -45,6 +46,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "z",
+      "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "type-query",
         "Keyword": "typeof",
