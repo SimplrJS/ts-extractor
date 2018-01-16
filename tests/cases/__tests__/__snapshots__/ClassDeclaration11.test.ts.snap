@@ -30,6 +30,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -56,6 +57,7 @@ Object {
       },
       "Name": "getFoo",
       "Parameters": Array [],
+      "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "this",
         "ReferenceId": "ClassDeclaration-0",
@@ -92,6 +94,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration11.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

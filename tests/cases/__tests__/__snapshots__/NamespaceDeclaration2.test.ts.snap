@@ -27,6 +27,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "_ts": Object {
         "Kind": 233,
         "KindString": "ModuleDeclaration",
@@ -46,6 +47,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 233,
         "KindString": "ModuleDeclaration",
@@ -72,6 +74,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "NamespaceDeclaration2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

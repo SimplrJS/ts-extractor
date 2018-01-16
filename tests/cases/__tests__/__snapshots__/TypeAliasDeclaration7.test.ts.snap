@@ -27,6 +27,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration7.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -45,6 +46,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "array",
         "Text": "(string | number)[]",

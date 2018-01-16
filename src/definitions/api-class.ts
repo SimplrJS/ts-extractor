@@ -50,12 +50,14 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
     }
 
     public OnExtract(): ApiClassDto {
+        const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Class,
             Name: this.Symbol.name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             IsAbstract: this.isAbstract,

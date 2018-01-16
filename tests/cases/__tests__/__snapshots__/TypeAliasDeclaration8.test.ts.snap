@@ -21,6 +21,7 @@ Object {
       },
       "Name": "__type",
       "Parameters": Array [],
+      "ParentId": "TypeAliasDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-0",
@@ -51,6 +52,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Name",
+      "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -79,6 +81,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Age",
+      "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "number",
@@ -113,6 +116,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration8.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -131,6 +135,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "constructor",
         "ReferenceId": "ConstructorType-0",
@@ -173,6 +178,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "ParentId": "ConstructorType-0",
       "_ts": Object {
         "Kind": 163,
         "KindString": "TypeLiteral",

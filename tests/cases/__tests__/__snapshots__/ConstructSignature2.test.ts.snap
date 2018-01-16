@@ -21,6 +21,7 @@ Object {
       },
       "Name": "__new",
       "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
@@ -67,6 +68,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -94,6 +96,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ConstructSignature2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -114,6 +117,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "T",
+      "ParentId": "ConstructSignature-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

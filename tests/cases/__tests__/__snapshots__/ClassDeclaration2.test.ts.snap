@@ -54,6 +54,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -87,6 +88,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "void",
@@ -121,6 +123,7 @@ Object {
       },
       "Name": "GetFoo",
       "Parameters": Array [],
+      "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -151,6 +154,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "foo",
+      "ParentId": "MethodDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -182,6 +186,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "property",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -213,6 +218,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Id",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -244,6 +250,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Bar",
+      "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -278,6 +285,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

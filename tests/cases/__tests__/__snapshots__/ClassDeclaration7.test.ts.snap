@@ -23,6 +23,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooClass",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [
         Object {
           "Alias": "TValue",
@@ -57,6 +58,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "ClassDeclaration7.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -77,6 +79,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

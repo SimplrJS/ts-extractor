@@ -28,6 +28,7 @@ Object {
           ],
         },
       ],
+      "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
@@ -74,6 +75,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "GenericIdentityFn",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -96,6 +98,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "value",
+      "ParentId": "CallSignature-0",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
@@ -133,6 +136,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "InterfaceDeclaration5.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -153,6 +157,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TValue",
+      "ParentId": "CallSignature-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

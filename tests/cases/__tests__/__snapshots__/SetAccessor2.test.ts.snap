@@ -30,6 +30,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "Foo",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 229,
@@ -52,6 +53,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg",
+      "ParentId": "SetAccessor-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -81,6 +83,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "arg2",
+      "ParentId": "SetAccessor-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -111,6 +114,7 @@ Object {
       },
       "Name": "Foo",
       "Parameter": undefined,
+      "ParentId": "ClassDeclaration-0",
       "_ts": Object {
         "Kind": 154,
         "KindString": "SetAccessor",
@@ -137,6 +141,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "SetAccessor2.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",

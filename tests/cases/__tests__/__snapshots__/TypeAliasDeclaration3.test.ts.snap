@@ -21,6 +21,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BarName",
+      "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -49,6 +50,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooName",
+      "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-0",
@@ -80,6 +82,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BazName",
+      "ParentId": "TypeLiteral-1",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-1",
@@ -111,6 +114,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BarName",
+      "ParentId": "TypeLiteral-2",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-2",
@@ -142,6 +146,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "FooName",
+      "ParentId": "TypeLiteral-2",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -170,6 +175,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BarName",
+      "ParentId": "TypeLiteral-3",
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "TypeParameter-3",
@@ -201,6 +207,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "BazName",
+      "ParentId": "TypeLiteral-3",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -271,6 +278,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TypeAliasDeclaration3.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -289,6 +297,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "NoCommonFields1",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-0",
@@ -324,6 +333,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "NoCommonFields2",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-1",
@@ -359,6 +369,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "AnotherType",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "union",
         "Members": Array [
@@ -428,6 +439,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "OneCommonField1",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-2",
@@ -463,6 +475,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "OneCommonField2",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
         "ReferenceId": "TypeLiteral-3",
@@ -498,6 +511,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "OneCommonFieldTypeIntersection",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "union",
         "Members": Array [
@@ -567,6 +581,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+      "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "intersection",
         "Members": Array [
@@ -650,6 +665,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-0",
       "_ts": Object {
         "Kind": 163,
         "KindString": "TypeLiteral",
@@ -676,6 +692,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-1",
       "_ts": Object {
         "Kind": 163,
         "KindString": "TypeLiteral",
@@ -708,6 +725,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-3",
       "_ts": Object {
         "Kind": 163,
         "KindString": "TypeLiteral",
@@ -740,6 +758,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-4",
       "_ts": Object {
         "Kind": 163,
         "KindString": "TypeLiteral",
@@ -760,6 +779,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-0",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -780,6 +800,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-1",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -800,6 +821,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-3",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",
@@ -820,6 +842,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-4",
       "_ts": Object {
         "Kind": 145,
         "KindString": "TypeParameter",

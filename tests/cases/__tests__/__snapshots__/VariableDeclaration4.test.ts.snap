@@ -28,6 +28,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "A",
+      "ParentId": "SourceFile-0",
       "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 230,
@@ -49,6 +50,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "b",
+      "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
         "Text": "string",
@@ -95,6 +97,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "VariableDeclaration4.ts",
+      "ParentId": undefined,
       "_ts": Object {
         "Kind": 268,
         "KindString": "SourceFile",
@@ -113,6 +116,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "a",
+      "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
         "ReferenceId": "InterfaceDeclaration-0",
@@ -143,6 +147,7 @@ Object {
         "JSDocTags": Array [],
       },
       "Name": "z",
+      "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "type-query",
         "Keyword": "typeof",
