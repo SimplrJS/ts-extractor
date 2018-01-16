@@ -28,12 +28,14 @@ export class ApiTypeAlias extends ApiItem<ts.TypeAliasDeclaration, ApiTypeAliasD
     }
 
     public OnExtract(): ApiTypeAliasDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.TypeAlias,
             Name: this.Symbol.name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             Type: this.type,

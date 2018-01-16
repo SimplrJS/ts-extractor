@@ -43,6 +43,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     }
 
     public OnExtract(): ApiExportDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const exportPath: string | undefined = this.getExportPath();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
@@ -50,6 +51,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         return {
             ApiKind: ApiItemKinds.Export,
             Name: this.Symbol.name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             SourceFileId: this.sourceFileId,

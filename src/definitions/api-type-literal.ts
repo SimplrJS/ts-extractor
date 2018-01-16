@@ -17,11 +17,13 @@ export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode, ApiTypeLiteralDt
     }
 
     public OnExtract(): ApiTypeLiteralDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.TypeLiteral,
+            ParentId: parentId,
             Name: this.Symbol.name,
             Metadata: metadata,
             Location: location,

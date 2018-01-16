@@ -16,5 +16,12 @@ export interface ApiBaseItemDto {
     ApiKind: ApiItemKinds;
     Metadata: ApiMetadataDto;
     Location: ApiItemLocationDto;
+    /**
+     * Parent reference id.
+     */
+    ParentId: string | undefined;
+    /**
+     * TypeScript debug info.
+     */
     _ts?: TypeScriptTypeDeclarationDebug;
 }

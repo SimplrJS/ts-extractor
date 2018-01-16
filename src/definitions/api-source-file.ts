@@ -22,6 +22,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     }
 
     public OnExtract(): ApiSourceFileDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
         const name: string = this.getFileName();
@@ -29,6 +30,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
         return {
             ApiKind: ApiItemKinds.SourceFile,
             Name: name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             Members: this.members,

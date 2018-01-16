@@ -27,12 +27,14 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
     }
 
     public OnExtract(): ApiClassConstructorDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ClassConstructor,
             Name: this.Symbol.name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.isOverloadBase,

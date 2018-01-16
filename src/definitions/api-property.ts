@@ -27,12 +27,14 @@ export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
     }
 
     public OnExtract(): ApiPropertyDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Property,
             Name: this.Symbol.name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             IsOptional: this.isOptional,

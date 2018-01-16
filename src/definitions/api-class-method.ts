@@ -30,12 +30,14 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
     }
 
     public OnExtract(): ApiClassMethodDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ClassMethod,
             Name: this.Symbol.name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,

@@ -9,12 +9,14 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiCall extends ApiCallableBase<ts.CallSignatureDeclaration, ApiCallDto> {
     public OnExtract(): ApiCallDto {
+        const parentId: string | undefined = this.GetParentId();
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Call,
             Name: this.Symbol.name,
+            ParentId: parentId,
             Metadata: metadata,
             Location: location,
             IsOverloadBase: this.IsOverloadBase,
