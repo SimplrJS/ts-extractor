@@ -53,7 +53,7 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
     }
 
     /**
-     * It gives precise information about item after extracting.
+     * It gives precise TypeScript information about item after extracting.
      */
     protected GetTsDebugInfo(): TypeScriptTypeDeclarationDebug | undefined {
         if (this.Options.ExtractorOptions.IncludeTsDebugInfo) {
