@@ -3,7 +3,6 @@ import * as ts from "typescript";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassConstructorDto } from "../contracts/definitions/api-class-constructor-dto";
-import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
 
