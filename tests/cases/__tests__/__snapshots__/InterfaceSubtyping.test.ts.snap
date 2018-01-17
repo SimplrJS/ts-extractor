@@ -79,6 +79,7 @@ Object {
         },
       ],
       "ParentId": "ClassDeclaration-0",
+      "TypeParameters": Array [],
       "_ts": Object {
         "Kind": 152,
         "KindString": "Constructor",
