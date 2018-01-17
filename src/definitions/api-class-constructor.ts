@@ -1,6 +1,6 @@
 import * as ts from "typescript";
-import { ApiItem } from "../abstractions/api-item";
 
+import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassConstructorDto } from "../contracts/definitions/api-class-constructor-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
@@ -10,17 +10,11 @@ import { AccessModifier } from "../contracts/access-modifier";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
-export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiClassConstructorDto> {
-    private isOverloadBase: boolean;
-    private parameters: ApiItemReference[] = [];
+export class ApiClassConstructor extends ApiCallableBase<ts.ConstructorDeclaration, ApiClassConstructorDto> {
     private accessModifier: AccessModifier;
 
     protected OnGatherData(): void {
-        // Overload
-        this.isOverloadBase = this.TypeChecker.isImplementationOfOverload(this.Declaration) || false;
-
-        // Parameters
-        this.parameters = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.parameters, this.Options);
+        super.OnGatherData();
 
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);
@@ -37,9 +31,10 @@ export class ApiClassConstructor extends ApiItem<ts.ConstructorDeclaration, ApiC
             ParentId: parentId,
             Metadata: metadata,
             Location: location,
-            IsOverloadBase: this.isOverloadBase,
-            Parameters: this.parameters,
+            IsOverloadBase: this.IsOverloadBase,
+            Parameters: this.Parameters,
             AccessModifier: this.accessModifier,
+            TypeParameters: this.TypeParameters,
             _ts: this.GetTsDebugInfo()
         };
     }
