@@ -26,5 +26,6 @@ export enum ApiItemKinds {
     TypeParameter = "type-parameter",
     TypeLiteral = "type-literal",
     FunctionType = "function-type",
+    ArrowFunction = "arrow-function",
     Mapped = "mapped"
 }
