@@ -96,7 +96,7 @@ export namespace ApiHelpers {
             apiItem = new ApiTypeParameter(declaration, symbol, options);
         } else if (ts.isTypeLiteralNode(declaration)) {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
-        } else if (ts.isFunctionTypeNode(declaration) || ts.isArrowFunction(declaration)) {
+        } else if (ts.isFunctionTypeNode(declaration) || ts.isArrowFunction(declaration) || ts.isFunctionExpression(declaration)) {
             apiItem = new ApiFunctionType(declaration, symbol, options);
         } else if (ts.isMappedTypeNode(declaration)) {
             apiItem = new ApiMapped(declaration, symbol, options);

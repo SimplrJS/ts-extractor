@@ -43,6 +43,36 @@ Object {
         "KindString": "ArrowFunction",
       },
     },
+    "FunctionExpression-0": Object {
+      "ApiKind": "function-expression",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 25,
+        "FileName": "./cases/VariableDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__function",
+      "Parameters": Array [],
+      "ParentId": "VariableDeclaration-2",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Text": "string",
+        "_ts": Object {
+          "Kind": 136,
+          "KindString": "StringKeyword",
+        },
+      },
+      "TypeParameters": Array [],
+      "_ts": Object {
+        "Kind": 186,
+        "KindString": "FunctionExpression",
+      },
+    },
     "Parameter-0": Object {
       "ApiKind": "parameter",
       "Initializer": undefined,
@@ -92,6 +122,12 @@ Object {
           "Alias": "ArrowFunctionConst",
           "Ids": Array [
             "VariableDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "functionVar",
+          "Ids": Array [
+            "VariableDeclaration-2",
           ],
         },
       ],
@@ -158,6 +194,35 @@ Object {
         },
       },
       "VariableDeclarationType": "const",
+      "_ts": Object {
+        "Kind": 226,
+        "KindString": "VariableDeclaration",
+      },
+    },
+    "VariableDeclaration-2": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./cases/VariableDeclaration2.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "functionVar",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "function-type",
+        "ReferenceId": "FunctionExpression-0",
+        "Text": "() => string",
+        "_ts": Object {
+          "Kind": 160,
+          "KindString": "FunctionType",
+        },
+      },
+      "VariableDeclarationType": "var",
       "_ts": Object {
         "Kind": 226,
         "KindString": "VariableDeclaration",

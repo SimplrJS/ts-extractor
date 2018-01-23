@@ -7,10 +7,15 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
-export class ApiFunctionType extends ApiCallableBase<ts.FunctionTypeNode | ts.ArrowFunction, ApiFunctionTypeDto> {
-    protected ResolveApiKind(): ApiItemKinds.FunctionType | ApiItemKinds.ArrowFunction {
+export type FunctionTypes = ts.FunctionTypeNode | ts.ArrowFunction | ts.FunctionExpression;
+
+// TODO: Rename to appropriate class name.
+export class ApiFunctionType extends ApiCallableBase<FunctionTypes, ApiFunctionTypeDto> {
+    protected ResolveApiKind(): ApiItemKinds.FunctionType | ApiItemKinds.ArrowFunction | ApiItemKinds.FunctionExpression {
         if (ts.isFunctionTypeNode(this.Declaration)) {
             return ApiItemKinds.FunctionType;
+        } else if (ts.isFunctionExpression(this.Declaration)) {
+            return ApiItemKinds.FunctionExpression;
         } else {
             return ApiItemKinds.ArrowFunction;
         }
