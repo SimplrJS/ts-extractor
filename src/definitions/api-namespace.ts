@@ -11,6 +11,14 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImport, ApiNamespaceDto> {
     private members: ApiItemReference[] = [];
 
+    protected ResolveApiKind(): ApiItemKinds.Namespace | ApiItemKinds.ImportNamespace {
+        if (ts.isModuleDeclaration(this.Declaration)) {
+            return ApiItemKinds.Namespace;
+        } else {
+            return ApiItemKinds.ImportNamespace;
+        }
+    }
+
     protected OnGatherData(): void {
         // Members
         this.members = ApiHelpers.GetItemsIdsFromSymbolsMap(this.Symbol.exports, this.Options);
@@ -20,9 +28,10 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImp
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+        const apiKind = this.ResolveApiKind();
 
         return {
-            ApiKind: ApiItemKinds.Namespace,
+            ApiKind: apiKind,
             Name: this.Declaration.name.getText(),
             ParentId: parentId,
             Metadata: metadata,

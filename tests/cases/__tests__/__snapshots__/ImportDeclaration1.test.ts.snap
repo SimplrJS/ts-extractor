@@ -312,7 +312,7 @@ GetFoo without A parameter comment line.",
       },
     },
     "NamespaceImport-0": Object {
-      "ApiKind": "namespace",
+      "ApiKind": "import-namespace",
       "Location": Object {
         "Character": 7,
         "FileName": "./cases/ImportDeclaration1.ts",
