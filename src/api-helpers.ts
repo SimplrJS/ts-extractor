@@ -66,7 +66,7 @@ export namespace ApiHelpers {
             apiItem = new ApiEnumMember(declaration, symbol, options);
         } else if (ts.isInterfaceDeclaration(declaration)) {
             apiItem = new ApiInterface(declaration, symbol, options);
-        } else if (ts.isPropertySignature(declaration)) {
+        } else if (ts.isPropertySignature(declaration) || ts.isPropertyAssignment(declaration)) {
             apiItem = new ApiProperty(declaration, symbol, options);
         } else if (ts.isMethodSignature(declaration)) {
             apiItem = new ApiMethod(declaration, symbol, options);
@@ -94,7 +94,7 @@ export namespace ApiHelpers {
             apiItem = new ApiConstruct(declaration, symbol, options);
         } else if (ts.isTypeParameterDeclaration(declaration)) {
             apiItem = new ApiTypeParameter(declaration, symbol, options);
-        } else if (ts.isTypeLiteralNode(declaration)) {
+        } else if (ts.isTypeLiteralNode(declaration) || ts.isObjectLiteralExpression(declaration)) {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
         } else if (ts.isFunctionTypeNode(declaration) || ts.isArrowFunction(declaration) || ts.isFunctionExpression(declaration)) {
             apiItem = new ApiFunctionType(declaration, symbol, options);

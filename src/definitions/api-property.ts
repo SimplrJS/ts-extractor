@@ -9,15 +9,16 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
 
-export class ApiProperty extends ApiItem<ts.PropertySignature, ApiPropertyDto> {
+export class ApiProperty extends ApiItem<ts.PropertySignature | ts.PropertyAssignment, ApiPropertyDto> {
     private type: ApiType;
     private isOptional: boolean;
     private isReadonly: boolean;
 
     protected OnGatherData(): void {
         // Type
+        const typeNode: ts.TypeNode | undefined = ts.isPropertySignature(this.Declaration) ? this.Declaration.type : undefined;
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, typeNode);
 
         // IsOptional
         this.isOptional = Boolean(this.Declaration.questionToken);
