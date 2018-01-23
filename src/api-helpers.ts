@@ -181,12 +181,22 @@ export namespace ApiHelpers {
         }
         const symbolItems: string[] = [];
 
-        symbol.declarations.forEach(declaration => {
+        // Filter out the same namespace.
+        const filteredDeclarations: ts.Declaration[] = [];
+        for (const declaration of symbol.declarations) {
+            if (filteredDeclarations.find(x => ts.isModuleDeclaration(x)) != null) {
+                continue;
+            }
+
+            filteredDeclarations.push(declaration);
+        }
+
+        for (const declaration of filteredDeclarations) {
             const itemId = GetItemId(declaration, symbol, options);
             if (itemId != null) {
                 symbolItems.push(itemId);
             }
-        });
+        }
 
         return {
             Alias: symbol.name,
