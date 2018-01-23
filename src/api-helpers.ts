@@ -66,7 +66,7 @@ export namespace ApiHelpers {
             apiItem = new ApiEnumMember(declaration, symbol, options);
         } else if (ts.isInterfaceDeclaration(declaration)) {
             apiItem = new ApiInterface(declaration, symbol, options);
-        } else if (ts.isPropertySignature(declaration)) {
+        } else if (ts.isPropertySignature(declaration) || ts.isPropertyAssignment(declaration)) {
             apiItem = new ApiProperty(declaration, symbol, options);
         } else if (ts.isMethodSignature(declaration)) {
             apiItem = new ApiMethod(declaration, symbol, options);
@@ -94,9 +94,9 @@ export namespace ApiHelpers {
             apiItem = new ApiConstruct(declaration, symbol, options);
         } else if (ts.isTypeParameterDeclaration(declaration)) {
             apiItem = new ApiTypeParameter(declaration, symbol, options);
-        } else if (ts.isTypeLiteralNode(declaration)) {
+        } else if (ts.isTypeLiteralNode(declaration) || ts.isObjectLiteralExpression(declaration)) {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
-        } else if (ts.isFunctionTypeNode(declaration)) {
+        } else if (ts.isFunctionTypeNode(declaration) || ts.isArrowFunction(declaration) || ts.isFunctionExpression(declaration)) {
             apiItem = new ApiFunctionType(declaration, symbol, options);
         } else if (ts.isMappedTypeNode(declaration)) {
             apiItem = new ApiMapped(declaration, symbol, options);
@@ -181,12 +181,22 @@ export namespace ApiHelpers {
         }
         const symbolItems: string[] = [];
 
-        symbol.declarations.forEach(declaration => {
+        // Filter out the same namespace.
+        const filteredDeclarations: ts.Declaration[] = [];
+        for (const declaration of symbol.declarations) {
+            if (filteredDeclarations.find(x => ts.isModuleDeclaration(x)) != null) {
+                continue;
+            }
+
+            filteredDeclarations.push(declaration);
+        }
+
+        for (const declaration of filteredDeclarations) {
             const itemId = GetItemId(declaration, symbol, options);
             if (itemId != null) {
                 symbolItems.push(itemId);
             }
-        });
+        }
 
         return {
             Alias: symbol.name,
@@ -263,7 +273,7 @@ export namespace ApiHelpers {
     export function LogWithNodePosition(logLevel: LogLevel, declaration: ts.Node, message: string): void {
         const sourceFile = declaration.getSourceFile();
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-        const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
+        const linePrefix = `${sourceFile.fileName}(${position.line + 1},${position.character + 1})`;
         Logger.Log(logLevel, `${linePrefix}: ${message}`);
     }
 

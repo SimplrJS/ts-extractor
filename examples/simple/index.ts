@@ -1,3 +1,1 @@
-export function Foo(arg: string | number) {
-    return arg;
-}
+export const ObjectLiteralConst = { Property: "value" };

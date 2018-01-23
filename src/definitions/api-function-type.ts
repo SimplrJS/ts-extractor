@@ -7,14 +7,28 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
-export class ApiFunctionType extends ApiCallableBase<ts.FunctionTypeNode, ApiFunctionTypeDto> {
+export type FunctionTypes = ts.FunctionTypeNode | ts.ArrowFunction | ts.FunctionExpression;
+
+// TODO: Rename to appropriate class name.
+export class ApiFunctionType extends ApiCallableBase<FunctionTypes, ApiFunctionTypeDto> {
+    protected ResolveApiKind(): ApiItemKinds.FunctionType | ApiItemKinds.ArrowFunction | ApiItemKinds.FunctionExpression {
+        if (ts.isFunctionTypeNode(this.Declaration)) {
+            return ApiItemKinds.FunctionType;
+        } else if (ts.isFunctionExpression(this.Declaration)) {
+            return ApiItemKinds.FunctionExpression;
+        } else {
+            return ApiItemKinds.ArrowFunction;
+        }
+    }
+
     public OnExtract(): ApiFunctionTypeDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+        const apiKind = this.ResolveApiKind();
 
         return {
-            ApiKind: ApiItemKinds.FunctionType,
+            ApiKind: apiKind,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
