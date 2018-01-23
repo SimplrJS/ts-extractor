@@ -273,7 +273,7 @@ export namespace ApiHelpers {
     export function LogWithNodePosition(logLevel: LogLevel, declaration: ts.Node, message: string): void {
         const sourceFile = declaration.getSourceFile();
         const position = sourceFile.getLineAndCharacterOfPosition(declaration.getStart());
-        const linePrefix = `${sourceFile.fileName}[${position.line + 1}:${position.character + 1}]`;
+        const linePrefix = `${sourceFile.fileName}(${position.line + 1},${position.character + 1})`;
         Logger.Log(logLevel, `${linePrefix}: ${message}`);
     }
 
