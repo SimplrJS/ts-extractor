@@ -1,4 +1,6 @@
 import * as ts from "typescript";
+import { LogLevel } from "simplr-logger";
+
 import { ApiItemOptions } from "./abstractions/api-item";
 import { ApiHelpers } from "./api-helpers";
 import { TSHelpers } from "./index";
@@ -25,7 +27,6 @@ import {
     TypeKeywords
 } from "./contracts/api-type";
 import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
-import { LogLevel } from "simplr-logger/@types/abstractions/log-level";
 
 export namespace ApiTypeHelpers {
     /**
