@@ -20,6 +20,7 @@ export enum ApiItemKind {
     Call = "call",
     ClassConstructor = "class-constructor",
     Construct = "construct",
+    ConstructorType = "constructor-type",
     Export = "export",
     ExportSpecifier = "export-specifier",
     ImportSpecifier = "import-specifier",
