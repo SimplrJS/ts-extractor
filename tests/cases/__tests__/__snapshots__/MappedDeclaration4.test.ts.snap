@@ -59,6 +59,12 @@ Object {
       "ParentId": "TypeAliasDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/MappedDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -89,6 +95,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./cases/MappedDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -118,6 +130,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 9,
+          "FileName": "./cases/MappedDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -178,6 +196,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "mapped",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/MappedDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "ReferenceId": "MappedType-0",
         "Text": "mapped",
         "_ts": Object {
@@ -196,9 +220,21 @@ Object {
       "ConstraintType": Object {
         "ApiTypeKind": "type-operator",
         "Keyword": "keyof",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./cases/MappedDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
         "Text": "keyof Foo",
         "Type": Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 16,
+            "FileName": "./cases/MappedDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 6,
+          },
           "ReferenceId": "InterfaceDeclaration-0",
           "SymbolName": "Foo",
           "Text": "Foo",

@@ -24,6 +24,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./cases/TypeAliasDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -84,6 +90,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./cases/TypeAliasDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": "TypeLiteral-0",
         "Text": "User",
         "_ts": Object {
@@ -113,12 +125,24 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 27,
+          "FileName": "./cases/TypeAliasDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "ReferenceId": undefined,
         "SymbolName": "Readonly",
         "Text": "Readonly<User>",
         "TypeParameters": Array [
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 36,
+              "FileName": "./cases/TypeAliasDeclaration4.ts",
+              "IsExternalPackage": false,
+              "Line": 4,
+            },
             "ReferenceId": "TypeAliasDeclaration-0",
             "SymbolName": "User",
             "Text": "User",

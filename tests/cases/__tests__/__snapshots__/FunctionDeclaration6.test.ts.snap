@@ -32,6 +32,12 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 0,
+          "FileName": "./cases/FunctionDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "Foo",
         "Text": "Foo",
@@ -88,6 +94,12 @@ Object {
       "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/FunctionDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "Foo",
         "Text": "Foo",

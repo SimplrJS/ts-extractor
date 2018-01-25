@@ -151,6 +151,12 @@ Creating foo with boolean.",
       "ParentId": "Constructor-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 22,
+          "FileName": "./cases/ClassDeclaration10.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -181,6 +187,12 @@ Creating foo with boolean.",
       "ParentId": "Constructor-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 24,
+          "FileName": "./cases/ClassDeclaration10.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
         "Text": "boolean",
         "_ts": Object {
           "Kind": 122,
@@ -211,9 +223,21 @@ Creating foo with boolean.",
       "ParentId": "Constructor-2",
       "Type": Object {
         "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/ClassDeclaration10.ts",
+          "IsExternalPackage": false,
+          "Line": 14,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 21,
+              "FileName": "./cases/ClassDeclaration10.ts",
+              "IsExternalPackage": false,
+              "Line": 14,
+            },
             "Text": "string",
             "_ts": Object {
               "Kind": 136,
@@ -222,6 +246,12 @@ Creating foo with boolean.",
           },
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 30,
+              "FileName": "./cases/ClassDeclaration10.ts",
+              "IsExternalPackage": false,
+              "Line": 14,
+            },
             "Text": "boolean",
             "_ts": Object {
               "Kind": 122,

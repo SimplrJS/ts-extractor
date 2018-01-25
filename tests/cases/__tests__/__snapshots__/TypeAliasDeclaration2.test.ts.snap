@@ -24,6 +24,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -53,6 +59,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -82,6 +94,12 @@ Object {
       "ParentId": "TypeLiteral-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -111,6 +129,12 @@ Object {
       "ParentId": "TypeLiteral-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -177,6 +201,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 30,
+          "FileName": "./cases/TypeAliasDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": "TypeLiteral-0",
         "Text": "OneCommonField1",
         "_ts": Object {
@@ -206,6 +236,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 30,
+          "FileName": "./cases/TypeAliasDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "ReferenceId": "TypeLiteral-1",
         "Text": "OneCommonField2",
         "_ts": Object {
@@ -235,9 +271,21 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 45,
+          "FileName": "./cases/TypeAliasDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 45,
+              "FileName": "./cases/TypeAliasDeclaration2.ts",
+              "IsExternalPackage": false,
+              "Line": 10,
+            },
             "ReferenceId": "TypeAliasDeclaration-0",
             "SymbolName": "OneCommonField1",
             "Text": "OneCommonField1",
@@ -249,6 +297,12 @@ Object {
           },
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 63,
+              "FileName": "./cases/TypeAliasDeclaration2.ts",
+              "IsExternalPackage": false,
+              "Line": 10,
+            },
             "ReferenceId": "TypeAliasDeclaration-1",
             "SymbolName": "OneCommonField2",
             "Text": "OneCommonField2",

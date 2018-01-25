@@ -32,9 +32,21 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "array",
+        "Location": Object {
+          "Character": 0,
+          "FileName": "./cases/FunctionDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string[]",
         "Type": Object {
           "ApiTypeKind": "basic",
+          "Location": Object {
+            "Character": 0,
+            "FileName": "./cases/FunctionDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 2,
+          },
           "Text": "string",
           "_ts": Object {
             "Kind": 136,
@@ -71,9 +83,21 @@ Object {
       "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "array",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/FunctionDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string[]",
         "Type": Object {
           "ApiTypeKind": "basic",
+          "Location": Object {
+            "Character": 25,
+            "FileName": "./cases/FunctionDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 2,
+          },
           "Text": "string",
           "_ts": Object {
             "Kind": 136,

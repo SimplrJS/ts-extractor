@@ -47,6 +47,12 @@ Object {
       "ApiKind": "class",
       "Extends": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 15,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "Foo",
         "Text": "Foo",
@@ -161,6 +167,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 40,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -203,6 +215,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 30,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 16,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -241,6 +259,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -279,6 +303,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 32,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -310,6 +340,12 @@ Object {
       "ParentId": "MethodSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 14,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -340,6 +376,12 @@ Object {
       "ParentId": "MethodSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -370,6 +412,12 @@ Object {
       "ParentId": "MethodDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 31,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -400,6 +448,12 @@ Object {
       "ParentId": "MethodDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 16,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -432,6 +486,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 31,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -461,6 +521,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 14,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -490,6 +556,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -569,6 +641,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 21,
+        },
         "ReferenceId": "ClassDeclaration-1",
         "SymbolName": "Bar",
         "Text": "Bar",
@@ -600,6 +678,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 22,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "Foo",
         "Text": "Foo",
@@ -631,6 +715,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./cases/InterfaceClassMerging.ts",
+          "IsExternalPackage": false,
+          "Line": 23,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "Foo",
         "Text": "Foo",

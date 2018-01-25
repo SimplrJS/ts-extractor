@@ -32,6 +32,12 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 44,
+          "FileName": "./cases/ParameterDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "void",
         "_ts": Object {
           "Kind": 105,
@@ -63,6 +69,12 @@ Object {
       "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 34,
+          "FileName": "./cases/ParameterDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "boolean",
         "_ts": Object {
           "Kind": 122,

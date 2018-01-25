@@ -24,6 +24,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 28,
+          "FileName": "./cases/IndexSignature2.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -83,6 +89,12 @@ Object {
       "ParentId": "IndexSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./cases/IndexSignature2.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

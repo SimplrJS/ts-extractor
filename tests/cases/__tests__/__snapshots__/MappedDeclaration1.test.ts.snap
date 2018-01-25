@@ -24,6 +24,12 @@ Object {
       "ParentId": "TypeAliasDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 38,
+          "FileName": "./cases/MappedDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -79,6 +85,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "mapped",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/MappedDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": "MappedType-0",
         "Text": "mapped",
         "_ts": Object {
@@ -96,6 +108,12 @@ Object {
       "ApiKind": "type-parameter",
       "ConstraintType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 28,
+          "FileName": "./cases/MappedDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "\\"a-b-c\\"",
         "_ts": Object {
           "Kind": 173,

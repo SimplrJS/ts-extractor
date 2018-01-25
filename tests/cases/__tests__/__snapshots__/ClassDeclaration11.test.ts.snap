@@ -60,6 +60,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "this",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/ClassDeclaration11.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "ReferenceId": "ClassDeclaration-0",
         "Text": "this",
         "_ts": Object {

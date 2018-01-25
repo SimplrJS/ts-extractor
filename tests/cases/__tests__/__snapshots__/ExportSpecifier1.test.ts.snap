@@ -113,6 +113,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 44,
+          "FileName": "./cases/ClassDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "void",
         "_ts": Object {
           "Kind": 105,
@@ -148,6 +154,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/ClassDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -179,6 +191,12 @@ Object {
       "ParentId": "MethodDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 35,
+          "FileName": "./cases/ClassDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -211,6 +229,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 22,
+          "FileName": "./cases/ClassDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -243,6 +267,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 33,
+          "FileName": "./cases/ClassDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 11,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -275,6 +305,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/ClassDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

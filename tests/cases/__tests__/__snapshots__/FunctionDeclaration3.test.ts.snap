@@ -25,12 +25,24 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 34,
+          "FileName": "./cases/FunctionDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": undefined,
         "SymbolName": "Promise",
         "Text": "Promise<void>",
         "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 42,
+              "FileName": "./cases/FunctionDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "void",
             "_ts": Object {
               "Kind": 105,

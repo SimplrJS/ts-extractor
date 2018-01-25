@@ -61,6 +61,12 @@ Object {
         "ApiTypeKind": "indexed-access",
         "IndexType": Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 29,
+            "FileName": "./cases/TypeAliasDeclaration6.ts",
+            "IsExternalPackage": false,
+            "Line": 6,
+          },
           "ReferenceId": "TypeParameter-0",
           "SymbolName": "TKey",
           "Text": "TKey",
@@ -70,8 +76,20 @@ Object {
             "KindString": "TypeReference",
           },
         },
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/TypeAliasDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
         "ObjectType": Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 25,
+            "FileName": "./cases/TypeAliasDeclaration6.ts",
+            "IsExternalPackage": false,
+            "Line": 6,
+          },
           "ReferenceId": "InterfaceDeclaration-0",
           "SymbolName": "Foo",
           "Text": "Foo",
@@ -111,6 +129,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./cases/TypeAliasDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -140,6 +164,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 14,
+          "FileName": "./cases/TypeAliasDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -200,6 +230,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "mapped",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./cases/TypeAliasDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "ReferenceId": "MappedType-0",
         "Text": "Bar",
         "_ts": Object {
@@ -218,9 +254,21 @@ Object {
       "ConstraintType": Object {
         "ApiTypeKind": "type-operator",
         "Keyword": "keyof",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
         "Text": "keyof Foo",
         "Type": Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 19,
+            "FileName": "./cases/TypeAliasDeclaration6.ts",
+            "IsExternalPackage": false,
+            "Line": 6,
+          },
           "ReferenceId": "InterfaceDeclaration-0",
           "SymbolName": "Foo",
           "Text": "Foo",

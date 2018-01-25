@@ -32,6 +32,12 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 49,
+          "FileName": "./cases/TypeParameterDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "void",
         "_ts": Object {
           "Kind": 105,
@@ -70,6 +76,12 @@ Object {
       "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 40,
+          "FileName": "./cases/TypeParameterDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "TValue",
         "Text": "TValue",
@@ -116,6 +128,12 @@ Object {
       "ConstraintType": undefined,
       "DefaultType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 29,
+          "FileName": "./cases/TypeParameterDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
