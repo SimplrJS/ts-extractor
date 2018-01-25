@@ -7,7 +7,7 @@ import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportDto } from "../contracts/definitions/api-export-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
@@ -52,7 +52,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         const exportPath: string | undefined = this.getExportPath();
 
         return {
-            ApiKind: ApiItemKinds.Export,
+            ApiKind: ApiItemKind.Export,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

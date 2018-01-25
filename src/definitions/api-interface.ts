@@ -4,7 +4,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiType } from "../contracts/api-type";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -47,7 +47,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Interface,
+            ApiKind: ApiItemKind.Interface,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

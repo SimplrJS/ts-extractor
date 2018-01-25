@@ -1,7 +1,7 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiEnumMemberDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.EnumMember;
+    ApiKind: ApiItemKind.EnumMember;
     Value: string;
 }

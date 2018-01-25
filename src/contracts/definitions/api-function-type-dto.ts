@@ -1,6 +1,6 @@
 import { ApiCallableDto } from "../api-callable-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiFunctionTypeDto extends ApiCallableDto {
-    ApiKind: ApiItemKinds.FunctionType | ApiItemKinds.ArrowFunction | ApiItemKinds.FunctionExpression;
+    ApiKind: ApiItemKind.FunctionType | ApiItemKind.ArrowFunction | ApiItemKind.FunctionExpression;
 }

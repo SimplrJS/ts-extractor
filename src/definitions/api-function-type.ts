@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiFunctionTypeDto } from "../contracts/definitions/api-function-type-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
@@ -10,13 +10,13 @@ export type FunctionTypes = ts.FunctionTypeNode | ts.ArrowFunction | ts.Function
 
 // TODO: Rename to appropriate class name.
 export class ApiFunctionType extends ApiCallableBase<FunctionTypes, ApiFunctionTypeDto> {
-    protected ResolveApiKind(): ApiItemKinds.FunctionType | ApiItemKinds.ArrowFunction | ApiItemKinds.FunctionExpression {
+    protected ResolveApiKind(): ApiItemKind.FunctionType | ApiItemKind.ArrowFunction | ApiItemKind.FunctionExpression {
         if (ts.isFunctionTypeNode(this.Declaration)) {
-            return ApiItemKinds.FunctionType;
+            return ApiItemKind.FunctionType;
         } else if (ts.isFunctionExpression(this.Declaration)) {
-            return ApiItemKinds.FunctionExpression;
+            return ApiItemKind.FunctionExpression;
         } else {
-            return ApiItemKinds.ArrowFunction;
+            return ApiItemKind.ArrowFunction;
         }
     }
 

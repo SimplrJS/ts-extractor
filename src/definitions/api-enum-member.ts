@@ -3,7 +3,7 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiEnumMemberDto } from "../contracts/definitions/api-enum-member-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
@@ -44,7 +44,7 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
         const value: string = this.GetValue();
 
         return {
-            ApiKind: ApiItemKinds.EnumMember,
+            ApiKind: ApiItemKind.EnumMember,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

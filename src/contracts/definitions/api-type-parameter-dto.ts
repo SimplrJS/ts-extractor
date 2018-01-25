@@ -1,9 +1,9 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
 import { ApiType } from "../api-type";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiTypeParameterDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.TypeParameter;
+    ApiKind: ApiItemKind.TypeParameter;
     ConstraintType: ApiType | undefined;
     DefaultType: ApiType | undefined;
 }

@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiItem } from "../abstractions/api-item";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiGetAccessorDto } from "../contracts/definitions/api-get-accessor-dto";
@@ -36,7 +36,7 @@ export class ApiGetAccessor extends ApiItem<ts.GetAccessorDeclaration, ApiGetAcc
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.GetAccessor,
+            ApiKind: ApiItemKind.GetAccessor,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

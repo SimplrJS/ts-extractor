@@ -1,8 +1,8 @@
 import { AccessModifier } from "../access-modifier";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 import { ApiCallableDto } from "../api-callable-dto";
 
 export interface ApiClassConstructorDto extends ApiCallableDto {
-    ApiKind: ApiItemKinds.ClassConstructor;
+    ApiKind: ApiItemKind.ClassConstructor;
     AccessModifier: AccessModifier;
 }

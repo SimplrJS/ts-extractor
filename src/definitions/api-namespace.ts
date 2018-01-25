@@ -4,7 +4,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiNamespaceDto } from "../contracts/definitions/api-namespace-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
@@ -12,11 +12,11 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImp
     private location: ApiItemLocationDto;
     private members: ApiItemReference[] = [];
 
-    protected ResolveApiKind(): ApiItemKinds.Namespace | ApiItemKinds.ImportNamespace {
+    protected ResolveApiKind(): ApiItemKind.Namespace | ApiItemKind.ImportNamespace {
         if (ts.isModuleDeclaration(this.Declaration)) {
-            return ApiItemKinds.Namespace;
+            return ApiItemKind.Namespace;
         } else {
-            return ApiItemKinds.ImportNamespace;
+            return ApiItemKind.ImportNamespace;
         }
     }
 

@@ -1,10 +1,10 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 import { ApiItemReference } from "../api-item-reference";
 import { AccessModifier } from "../access-modifier";
 
 export interface ApiSetAccessorDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.SetAccessor;
+    ApiKind: ApiItemKind.SetAccessor;
     IsAbstract: boolean;
     IsStatic: boolean;
     AccessModifier: AccessModifier;

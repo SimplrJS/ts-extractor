@@ -3,7 +3,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiItem } from "../abstractions/api-item";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiSetAccessorDto } from "../contracts/definitions/api-set-accessor-dto";
@@ -46,7 +46,7 @@ export class ApiSetAccessor extends ApiItem<ts.SetAccessorDeclaration, ApiSetAcc
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.SetAccessor,
+            ApiKind: ApiItemKind.SetAccessor,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

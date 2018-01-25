@@ -1,8 +1,8 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiExportDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.Export;
+    ApiKind: ApiItemKind.Export;
     SourceFileId: string | undefined;
     ExportPath: string | undefined;
 }

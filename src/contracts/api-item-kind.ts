@@ -1,4 +1,4 @@
-export enum ApiItemKinds {
+export enum ApiItemKind {
     SourceFile = "source-file",
     Enum = "enum",
     EnumMember = "enum-member",

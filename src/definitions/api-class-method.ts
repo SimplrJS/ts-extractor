@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassMethodDto } from "../contracts/definitions/api-class-method-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { AccessModifier } from "../contracts/access-modifier";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -33,7 +33,7 @@ export class ApiClassMethod extends ApiCallableBase<ts.MethodDeclaration, ApiCla
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.ClassMethod,
+            ApiKind: ApiItemKind.ClassMethod,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

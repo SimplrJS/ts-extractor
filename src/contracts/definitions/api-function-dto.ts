@@ -1,7 +1,7 @@
 import { ApiCallableDto } from "../api-callable-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiFunctionDto extends ApiCallableDto {
-    ApiKind: ApiItemKinds.Function;
+    ApiKind: ApiItemKind.Function;
     IsAsync: boolean;
 }

@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiConstructDto } from "../contracts/definitions/api-construct-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
@@ -13,7 +13,7 @@ export class ApiConstruct extends ApiCallableBase<ts.ConstructSignatureDeclarati
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Construct,
+            ApiKind: ApiItemKind.Construct,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

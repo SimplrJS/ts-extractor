@@ -3,7 +3,7 @@ import * as path from "path";
 
 import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFileDto } from "../contracts/definitions/api-source-file-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiHelpers } from "../api-helpers";
 
@@ -32,7 +32,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
         const name: string = this.getFileName();
 
         return {
-            ApiKind: ApiItemKinds.SourceFile,
+            ApiKind: ApiItemKind.SourceFile,
             Name: name,
             ParentId: parentId,
             Metadata: metadata,

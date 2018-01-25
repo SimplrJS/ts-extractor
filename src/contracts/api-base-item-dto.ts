@@ -1,5 +1,5 @@
 import * as ts from "typescript";
-import { ApiItemKinds } from "./api-item-kinds";
+import { ApiItemKind } from "./api-item-kind";
 import { ApiMetadataDto } from "./api-metadata-dto";
 import { ApiItemLocationDto } from "./api-item-location-dto";
 
@@ -13,7 +13,7 @@ export interface TypeScriptTypeDeclarationDebug {
  */
 export interface ApiBaseItemDto {
     Name: string;
-    ApiKind: ApiItemKinds;
+    ApiKind: ApiItemKind;
     Metadata: ApiMetadataDto;
     Location: ApiItemLocationDto;
     /**

@@ -1,9 +1,9 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 import { ApiType } from "../api-type";
 
 export interface ApiMappedDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.Mapped;
+    ApiKind: ApiItemKind.Mapped;
     TypeParameter: string | undefined;
     IsReadonly: boolean;
     IsOptional: boolean;

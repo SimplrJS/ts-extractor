@@ -1,9 +1,9 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
 import { ApiType } from "../api-type";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiIndexDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.Index;
+    ApiKind: ApiItemKind.Index;
     Parameter: string;
     IsReadonly: boolean;
     Type: ApiType;

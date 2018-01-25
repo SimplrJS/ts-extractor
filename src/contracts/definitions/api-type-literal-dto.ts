@@ -1,8 +1,8 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
 import { ApiItemReference } from "../api-item-reference";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiTypeLiteralDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.TypeLiteral | ApiItemKinds.ObjectLiteral;
+    ApiKind: ApiItemKind.TypeLiteral | ApiItemKind.ObjectLiteral;
     Members: ApiItemReference[];
 }

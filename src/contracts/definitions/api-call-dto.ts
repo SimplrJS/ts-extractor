@@ -1,6 +1,6 @@
 import { ApiCallableDto } from "../api-callable-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export interface ApiCallDto extends ApiCallableDto {
-    ApiKind: ApiItemKinds.Call;
+    ApiKind: ApiItemKind.Call;
 }

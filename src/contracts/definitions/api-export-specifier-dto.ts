@@ -1,9 +1,9 @@
 import { ApiBaseItemDto } from "../api-base-item-dto";
-import { ApiItemKinds } from "../api-item-kinds";
+import { ApiItemKind } from "../api-item-kind";
 
 export type ApiExportSpecifierApiItems = string[] | undefined;
 
 export interface ApiExportSpecifierDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKinds.ExportSpecifier;
+    ApiKind: ApiItemKind.ExportSpecifier;
     ApiItems: ApiExportSpecifierApiItems;
 }
