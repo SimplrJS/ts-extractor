@@ -6,6 +6,7 @@ import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiType } from "../contracts/api-type";
 import { ApiCallableDto } from "../contracts/api-callable-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
+import { ApiItemLocationDto } from "../contracts";
 
 /**
  * A callable api item base.
@@ -20,8 +21,12 @@ export abstract class ApiCallableBase<
     protected Parameters: ApiItemReference[] = [];
     protected TypeParameters: ApiItemReference[] = [];
     protected ReturnType: ApiType | undefined;
+    protected Location: ApiItemLocationDto;
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.Location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Overload
         this.IsOverloadBase = this.TypeChecker.isImplementationOfOverload(this.Declaration as ts.FunctionLike) || false;
 
@@ -38,7 +43,7 @@ export abstract class ApiCallableBase<
         if (signature != null) {
             const type = this.TypeChecker.getReturnTypeOfSignature(signature);
 
-            this.ReturnType = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
+            this.ReturnType = ApiTypeHelpers.ResolveApiType(this.Options, this.Location, type, this.Declaration.type);
         }
     }
 }

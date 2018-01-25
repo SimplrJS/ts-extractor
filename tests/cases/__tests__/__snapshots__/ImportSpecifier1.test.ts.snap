@@ -152,6 +152,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 11,
+        },
         "Text": "void",
         "_ts": Object {
           "Kind": 105,
@@ -196,6 +202,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 33,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 17,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -240,6 +252,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 34,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 22,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -284,6 +302,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 42,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 26,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -319,12 +343,24 @@ GetFoo without A parameter comment line.",
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 33,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 30,
+        },
         "ReferenceId": undefined,
         "SymbolName": "Promise",
         "Text": "Promise<string>",
         "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 41,
+              "FileName": "./cases/ClassDeclaration1.ts",
+              "IsExternalPackage": false,
+              "Line": 30,
+            },
             "Text": "string",
             "_ts": Object {
               "Kind": 136,
@@ -362,6 +398,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "MethodDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 28,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 11,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -392,6 +434,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "MethodDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 24,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 17,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -422,6 +470,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "MethodDeclaration-2",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 24,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 22,
+        },
         "Text": "boolean",
         "_ts": Object {
           "Kind": 122,
@@ -452,9 +506,21 @@ GetFoo without A parameter comment line.",
       "ParentId": "MethodDeclaration-3",
       "Type": Object {
         "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 26,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 23,
+              "FileName": "./cases/ClassDeclaration1.ts",
+              "IsExternalPackage": false,
+              "Line": 26,
+            },
             "Text": "string",
             "_ts": Object {
               "Kind": 136,
@@ -463,6 +529,12 @@ GetFoo without A parameter comment line.",
           },
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 32,
+              "FileName": "./cases/ClassDeclaration1.ts",
+              "IsExternalPackage": false,
+              "Line": 26,
+            },
             "Text": "boolean",
             "_ts": Object {
               "Kind": 122,
@@ -507,6 +579,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 32,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 36,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -539,6 +617,12 @@ GetFoo without A parameter comment line.",
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 31,
+          "FileName": "./cases/ClassDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 37,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

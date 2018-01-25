@@ -31,6 +31,12 @@ Object {
       "ParentId": "VariableDeclaration-1",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 34,
+          "FileName": "./cases/VariableDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -61,6 +67,12 @@ Object {
       "ParentId": "VariableDeclaration-2",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 38,
+          "FileName": "./cases/VariableDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -92,6 +104,12 @@ Object {
       "ParentId": "ArrowFunction-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 38,
+          "FileName": "./cases/VariableDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -158,6 +176,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./cases/VariableDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -186,6 +210,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "function-type",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/VariableDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "ReferenceId": "ArrowFunction-0",
         "Text": "(a: string) => string",
         "_ts": Object {
@@ -215,6 +245,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "function-type",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./cases/VariableDeclaration2.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "ReferenceId": "FunctionExpression-0",
         "Text": "() => string",
         "_ts": Object {

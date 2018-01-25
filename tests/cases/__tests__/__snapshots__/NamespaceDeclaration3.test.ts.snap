@@ -103,6 +103,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/NamespaceDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "\\"world!\\"",
         "_ts": Object {
           "Kind": 173,

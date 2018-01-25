@@ -49,6 +49,12 @@ Object {
       "Implements": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 32,
+            "FileName": "./cases/ClassDeclaration9.ts",
+            "IsExternalPackage": false,
+            "Line": 7,
+          },
           "ReferenceId": "ClassDeclaration-0",
           "SymbolName": "Point",
           "Text": "Point",
@@ -119,6 +125,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/ClassDeclaration9.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -151,6 +163,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/ClassDeclaration9.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -183,6 +201,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/ClassDeclaration9.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -215,6 +239,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/ClassDeclaration9.ts",
+          "IsExternalPackage": false,
+          "Line": 9,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -247,6 +277,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/ClassDeclaration9.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,

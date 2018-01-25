@@ -7,7 +7,6 @@ import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { AccessModifier } from "../contracts/access-modifier";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
-import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiClassConstructor extends ApiCallableBase<ts.ConstructorDeclaration, ApiClassConstructorDto> {
     private accessModifier: AccessModifier;
@@ -22,14 +21,13 @@ export class ApiClassConstructor extends ApiCallableBase<ts.ConstructorDeclarati
     public OnExtract(): ApiClassConstructorDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.ClassConstructor,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.Location,
             IsOverloadBase: this.IsOverloadBase,
             Parameters: this.Parameters,
             AccessModifier: this.accessModifier,

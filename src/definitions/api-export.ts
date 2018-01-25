@@ -12,6 +12,7 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
+    private location: ApiItemLocationDto;
     private getExportPath(): string | undefined {
         if (this.apiSourceFile == null) {
             ApiHelpers.LogWithNodePosition(LogLevel.Warning, this.Declaration, "Exported source file is not found!");
@@ -29,6 +30,9 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
     private apiSourceFile: ApiSourceFile | undefined;
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Extract members from Source file.
         const sourceFileDeclaration = TSHelpers.ResolveSourceFile(this.Declaration, this.Options.Program);
 
@@ -46,14 +50,13 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const exportPath: string | undefined = this.getExportPath();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Export,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             SourceFileId: this.sourceFileId,
             ExportPath: exportPath,
             _ts: this.GetTsDebugInfo()

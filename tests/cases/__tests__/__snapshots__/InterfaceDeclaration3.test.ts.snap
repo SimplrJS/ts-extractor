@@ -60,6 +60,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/InterfaceDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "T",
         "Text": "T",
@@ -144,12 +150,24 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 16,
+          "FileName": "./cases/InterfaceDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "Generic",
         "Text": "Generic<number>",
         "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 24,
+              "FileName": "./cases/InterfaceDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 4,
+            },
             "Text": "number",
             "_ts": Object {
               "Kind": 133,

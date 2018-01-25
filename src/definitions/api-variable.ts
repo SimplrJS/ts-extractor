@@ -10,13 +10,17 @@ import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto> {
+    private location: ApiItemLocationDto;
     private type: ApiType;
     private variableDeclarationType: ApiVariableDeclarationType;
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, this.location, type, this.Declaration.type);
 
         // VariableDeclarationType
         if (this.Declaration.parent != null) {
@@ -39,14 +43,13 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
     public OnExtract(): ApiVariableDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.Variable,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             VariableDeclarationType: this.variableDeclarationType,
             Type: this.type,
             _ts: this.GetTsDebugInfo()

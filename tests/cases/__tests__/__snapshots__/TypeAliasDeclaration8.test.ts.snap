@@ -24,6 +24,12 @@ Object {
       "ParentId": "TypeAliasDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 28,
+          "FileName": "./cases/TypeAliasDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": "TypeLiteral-0",
         "Text": "{ Name: string; Age: number; }",
         "_ts": Object {
@@ -55,6 +61,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./cases/TypeAliasDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -84,6 +96,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 9,
+          "FileName": "./cases/TypeAliasDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -138,6 +156,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "constructor",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./cases/TypeAliasDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": "ConstructorType-0",
         "Text": "Foo",
         "_ts": Object {

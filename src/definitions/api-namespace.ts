@@ -9,6 +9,7 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImport, ApiNamespaceDto> {
+    private location: ApiItemLocationDto;
     private members: ApiItemReference[] = [];
 
     protected ResolveApiKind(): ApiItemKinds.Namespace | ApiItemKinds.ImportNamespace {
@@ -20,6 +21,9 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImp
     }
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Members
         this.members = ApiHelpers.GetItemsIdsFromSymbolsMap(this.Symbol.exports, this.Options);
     }
@@ -27,7 +31,6 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImp
     public OnExtract(): ApiNamespaceDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
         const apiKind = this.ResolveApiKind();
 
         return {
@@ -35,7 +38,7 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImp
             Name: this.Declaration.name.getText(),
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             Members: this.members,
             _ts: this.GetTsDebugInfo()
         };

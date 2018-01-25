@@ -68,6 +68,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 31,
+          "FileName": "./cases/InterfaceDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "void",
         "_ts": Object {
           "Kind": 105,
@@ -106,6 +112,12 @@ Object {
       "ParentId": "MethodSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 22,
+          "FileName": "./cases/InterfaceDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

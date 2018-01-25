@@ -51,6 +51,12 @@ Object {
       "ParentId": "ObjectLiteralExpression-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 36,
+          "FileName": "./cases/ObjectLiteral1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -105,6 +111,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/ObjectLiteral1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "ReferenceId": "ObjectLiteralExpression-0",
         "Text": "{ Property: string; }",
         "_ts": Object {

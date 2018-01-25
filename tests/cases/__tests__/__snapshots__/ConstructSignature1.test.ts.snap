@@ -31,6 +31,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 22,
+          "FileName": "./cases/ConstructSignature1.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "Foo",
         "Text": "Foo",
@@ -94,6 +100,12 @@ Object {
       "ParentId": "ConstructSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/ConstructSignature1.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

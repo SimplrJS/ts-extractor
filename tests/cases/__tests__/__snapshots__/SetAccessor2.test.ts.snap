@@ -56,6 +56,12 @@ Object {
       "ParentId": "SetAccessor-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 24,
+          "FileName": "./cases/SetAccessor2.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -86,6 +92,12 @@ Object {
       "ParentId": "SetAccessor-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 38,
+          "FileName": "./cases/SetAccessor2.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

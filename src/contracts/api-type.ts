@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import { ApiItemLocationDto } from "./api-item-location-dto";
 
 export type ApiType = ApiBasicType |
     ApiReferenceType |
@@ -48,6 +49,7 @@ export interface TypeScriptTypeNodeDebug {
 
 export interface ApiBaseType {
     ApiTypeKind: ApiTypeKind;
+    Location: ApiItemLocationDto;
     Text: string;
     _ts?: TypeScriptTypeNodeDebug;
 }

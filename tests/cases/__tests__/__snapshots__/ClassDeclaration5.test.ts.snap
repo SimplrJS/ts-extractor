@@ -48,12 +48,24 @@ Object {
       "ApiKind": "class",
       "Extends": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/ClassDeclaration5.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
         "ReferenceId": "ClassDeclaration-0",
         "SymbolName": "FooBase",
         "Text": "FooBase<number>",
         "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 33,
+              "FileName": "./cases/ClassDeclaration5.ts",
+              "IsExternalPackage": false,
+              "Line": 6,
+            },
             "Text": "number",
             "_ts": Object {
               "Kind": 133,
@@ -117,6 +129,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 32,
+          "FileName": "./cases/ClassDeclaration5.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "TValue",
         "Text": "TValue",
@@ -155,6 +173,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/ClassDeclaration5.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,

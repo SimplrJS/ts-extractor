@@ -50,6 +50,12 @@ Object {
       "Type": Object {
         "ApiTypeKind": "type-query",
         "Keyword": "typeof",
+        "Location": Object {
+          "Character": 16,
+          "FileName": "./cases/VariableDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "ReferenceId": undefined,
         "Text": "string",
         "_ts": Object {

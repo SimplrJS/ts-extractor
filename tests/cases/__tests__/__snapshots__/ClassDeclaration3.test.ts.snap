@@ -12,6 +12,12 @@ Object {
       "Implements": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 33,
+            "FileName": "./cases/ClassDeclaration3.ts",
+            "IsExternalPackage": false,
+            "Line": 6,
+          },
           "ReferenceId": "InterfaceDeclaration-0",
           "SymbolName": "Foo",
           "Text": "Foo",
@@ -99,6 +105,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 16,
+          "FileName": "./cases/ClassDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -128,6 +140,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 9,
+          "FileName": "./cases/ClassDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
