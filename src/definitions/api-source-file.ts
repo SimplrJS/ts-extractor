@@ -11,6 +11,7 @@ import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts";
 
 export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
+    private location: ApiItemLocationDto;
     private members: ApiItemReference[];
 
     private getFileName(): string {
@@ -18,13 +19,16 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
     }
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
+        // Members
         this.members = ApiHelpers.GetItemsIdsFromSymbolsMap(this.Symbol.exports, this.Options);
     }
 
     public OnExtract(): ApiSourceFileDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
         const name: string = this.getFileName();
 
         return {
@@ -32,7 +36,7 @@ export class ApiSourceFile extends ApiItem<ts.SourceFile, ApiSourceFileDto> {
             Name: name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             Members: this.members,
             _ts: this.GetTsDebugInfo()
         };

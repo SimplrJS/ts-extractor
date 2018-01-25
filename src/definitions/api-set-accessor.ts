@@ -11,12 +11,16 @@ import { ApiItemReference } from "../contracts/api-item-reference";
 import { AccessModifier } from "../contracts";
 
 export class ApiSetAccessor extends ApiItem<ts.SetAccessorDeclaration, ApiSetAccessorDto> {
+    private location: ApiItemLocationDto;
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;
     private parameter: ApiItemReference | undefined;
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);
         this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
@@ -40,14 +44,13 @@ export class ApiSetAccessor extends ApiItem<ts.SetAccessorDeclaration, ApiSetAcc
     public OnExtract(): ApiSetAccessorDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
             ApiKind: ApiItemKinds.SetAccessor,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsStatic: this.isStatic,

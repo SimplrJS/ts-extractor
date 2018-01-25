@@ -24,9 +24,24 @@ import {
     TypeQueryType,
     TypeKeywords
 } from "./contracts/api-type";
+import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 
 export namespace ApiTypeHelpers {
-    export function ResolveApiType(options: ApiItemOptions, type: ts.Type, typeNode?: ts.TypeNode, self?: boolean): ApiType {
+    /**
+     * Resolves ApiType from TypeScript type system.
+     * @param options ApiItem otpions
+     * @param location ApiItem location for fallback if typeNode is synthesized.
+     * @param type Type from TypeScript type system.
+     * @param typeNode Type node.
+     * @param self For ApiTypeAlias only. Not to have reference to itself.
+     */
+    export function ResolveApiType(
+        options: ApiItemOptions,
+        location: ApiItemLocationDto,
+        type: ts.Type,
+        typeNode?: ts.TypeNode,
+        self?: boolean
+    ): ApiType {
         const typeChecker = options.Program.getTypeChecker();
 
         if (typeNode == null) {
@@ -34,47 +49,60 @@ export namespace ApiTypeHelpers {
         }
 
         if (ts.isTypeReferenceNode(typeNode) || ts.isExpressionWithTypeArguments(typeNode)) {
-            return TypeReferenceNodeToApiType(options, type, typeNode, self);
+            return TypeReferenceNodeToApiType(options, location, type, typeNode, self);
         } else if (ts.isUnionTypeNode(typeNode) || ts.isIntersectionTypeNode(typeNode)) {
-            return TypeNodeUnionOrIntersectionToApiType(options, type as ts.UnionOrIntersectionType, typeNode);
+            return TypeNodeUnionOrIntersectionToApiType(options, location, type as ts.UnionOrIntersectionType, typeNode);
         } else if (ts.isArrayTypeNode(typeNode)) {
-            return ArrayTypeNodeToApiType(options, type, typeNode);
+            return ArrayTypeNodeToApiType(options, location, type, typeNode);
         } else if (ts.isTupleTypeNode(typeNode)) {
-            return TupleTypeNodeToApiType(options, type, typeNode);
+            return TupleTypeNodeToApiType(options, location, type, typeNode);
         } else if (ts.isTypeLiteralNode(typeNode)) {
-            return ReferenceBaseTypeToTypeDto(options, type, typeNode, ApiTypeKind.TypeLiteral) as TypeLiteralType;
+            return ReferenceBaseTypeToTypeDto(options, location, type, typeNode, ApiTypeKind.TypeLiteral) as TypeLiteralType;
         } else if (ts.isMappedTypeNode(typeNode)) {
-            return ReferenceBaseTypeToTypeDto(options, type, typeNode, ApiTypeKind.Mapped) as MappedType;
+            return ReferenceBaseTypeToTypeDto(options, location, type, typeNode, ApiTypeKind.Mapped) as MappedType;
         } else if (ts.isFunctionTypeNode(typeNode)) {
-            return ReferenceBaseTypeToTypeDto(options, type, typeNode, ApiTypeKind.FunctionType) as FunctionTypeType;
+            return ReferenceBaseTypeToTypeDto(options, location, type, typeNode, ApiTypeKind.FunctionType) as FunctionTypeType;
         } else if (ts.isThisTypeNode(typeNode)) {
-            return ReferenceBaseTypeToTypeDto(options, type, typeNode, ApiTypeKind.This) as ThisType;
+            return ReferenceBaseTypeToTypeDto(options, location, type, typeNode, ApiTypeKind.This) as ThisType;
         } else if (ts.isConstructorTypeNode(typeNode)) {
-            return ReferenceBaseTypeToTypeDto(options, type, typeNode, ApiTypeKind.Constructor) as ConstructorType;
+            return ReferenceBaseTypeToTypeDto(options, location, type, typeNode, ApiTypeKind.Constructor) as ConstructorType;
         } else if (ts.isTypePredicateNode(typeNode)) {
-            return TypePredicateNodeToApiType(options, type, typeNode);
+            return TypePredicateNodeToApiType(options, location, type, typeNode);
         } else if (ts.isTypeOperatorNode(typeNode)) {
-            return TypeOperatorNodeToApiType(options, type, typeNode);
+            return TypeOperatorNodeToApiType(options, location, type, typeNode);
         } else if (ts.isIndexedAccessTypeNode(typeNode)) {
-            return IndexedAccessTypeNodeToApiType(options, type, typeNode);
+            return IndexedAccessTypeNodeToApiType(options, location, type, typeNode);
         } else if (ts.isParenthesizedTypeNode(typeNode)) {
-            return ParenthesizedTypeNodeToApiType(options, type, typeNode);
+            return ParenthesizedTypeNodeToApiType(options, location, type, typeNode);
         } else if (ts.isTypeQueryNode(typeNode)) {
-            return TypeQueryToApiType(options, type, typeNode);
+            return TypeQueryToApiType(options, location, type, typeNode);
         }
 
-        return ResolveApiBasicType(options, type, typeNode);
+        return ResolveApiBasicType(options, location, type, typeNode);
     }
 
     /**
      * @internal
      */
-    export function typeNodeToBaseType(options: ApiItemOptions, type: ts.Type, typeNode: ts.TypeNode): ApiBaseType {
+    export function typeNodeToBaseType(
+        options: ApiItemOptions,
+        apiItemlocation: ApiItemLocationDto,
+        type: ts.Type,
+        typeNode: ts.TypeNode
+    ): ApiBaseType {
         const typeChecker = options.Program.getTypeChecker();
         const text = typeChecker.typeToString(type);
 
+        let location: ApiItemLocationDto;
+        if (TSHelpers.IsNodeSynthesized(typeNode)) {
+            location = apiItemlocation;
+        } else {
+            location = ApiHelpers.GetApiItemLocationDtoFromNode(typeNode, options);
+        }
+
         const result: ApiBaseType = {
             ApiTypeKind: ApiTypeKind.Basic,
+            Location: location,
             Text: text
         };
 
@@ -114,9 +142,14 @@ export namespace ApiTypeHelpers {
         };
     }
 
-    export function ResolveApiBasicType(options: ApiItemOptions, type: ts.Type, typeNode: ts.TypeNode): ApiBasicType {
+    export function ResolveApiBasicType(
+        options: ApiItemOptions,
+        location: ApiItemLocationDto,
+        type: ts.Type,
+        typeNode: ts.TypeNode
+    ): ApiBasicType {
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.Basic
         };
     }
@@ -127,6 +160,7 @@ export namespace ApiTypeHelpers {
      */
     export function ReferenceBaseTypeToTypeDto(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.TypeNode,
         kind?: ApiTypeKind
@@ -139,7 +173,7 @@ export namespace ApiTypeHelpers {
         }
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: kind || ApiTypeKind.Basic,
             ReferenceId: referenceId
         };
@@ -150,6 +184,7 @@ export namespace ApiTypeHelpers {
      */
     export function TypeReferenceNodeToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.TypeReferenceType,
         self?: boolean
@@ -162,10 +197,10 @@ export namespace ApiTypeHelpers {
 
         if (!TSHelpers.IsNodeSynthesized(typeNode) && typeNode.typeArguments != null) {
             typeParameters = typeNode.typeArguments
-                .map(x => ResolveApiType(options, typeChecker.getTypeFromTypeNode(x), x));
+                .map(x => ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(x), x));
         } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
             typeParameters = type.typeArguments
-                .map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
+                .map(x => ResolveApiType(options, location, x, typeChecker.typeToTypeNode(x)));
         }
 
         const symbol = self ? type.getSymbol() : type.aliasSymbol || type.getSymbol();
@@ -176,7 +211,7 @@ export namespace ApiTypeHelpers {
         }
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.Reference,
             ReferenceId: refenceId,
             TypeParameters: typeParameters,
@@ -189,6 +224,7 @@ export namespace ApiTypeHelpers {
      */
     export function TypeNodeUnionOrIntersectionToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.UnionOrIntersectionType,
         typeNode: ts.UnionTypeNode | ts.IntersectionTypeNode
     ): ApiUnionOrIntersectionType {
@@ -204,14 +240,14 @@ export namespace ApiTypeHelpers {
         let members: ApiType[];
         if (!TSHelpers.IsNodeSynthesized(typeNode)) {
             members = typeNode.types
-                .map(x => ResolveApiType(options, typeChecker.getTypeFromTypeNode(x), x));
+                .map(x => ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(x), x));
         } else {
             members = type.types
-                .map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
+                .map(x => ResolveApiType(options, location, x, typeChecker.typeToTypeNode(x)));
         }
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: apiTypeKind,
             Members: members
         };
@@ -222,6 +258,7 @@ export namespace ApiTypeHelpers {
      */
     export function ArrayTypeNodeToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.ArrayTypeNode
     ): ArrayType {
@@ -229,17 +266,17 @@ export namespace ApiTypeHelpers {
 
         let apiType: ApiType;
         if (!TSHelpers.IsNodeSynthesized(typeNode)) {
-            apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
+            apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
         } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
             const arrayType = type.typeArguments[0];
-            apiType = ResolveApiType(options, arrayType, typeChecker.typeToTypeNode(arrayType));
+            apiType = ResolveApiType(options, location, arrayType, typeChecker.typeToTypeNode(arrayType));
         } else {
             // TODO: Log Error.
-            apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
+            apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
         }
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.Array,
             Type: apiType
         };
@@ -250,6 +287,7 @@ export namespace ApiTypeHelpers {
      */
     export function TupleTypeNodeToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.TupleTypeNode
     ): TupleType {
@@ -258,16 +296,16 @@ export namespace ApiTypeHelpers {
         let members: ApiType[];
         if (!TSHelpers.IsNodeSynthesized(typeNode)) {
             members = typeNode.elementTypes
-                .map(x => ResolveApiType(options, typeChecker.getTypeFromTypeNode(x), x));
+                .map(x => ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(x), x));
         } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
-            members = type.typeArguments.map(x => ResolveApiType(options, x, typeChecker.typeToTypeNode(x)));
+            members = type.typeArguments.map(x => ResolveApiType(options, location, x, typeChecker.typeToTypeNode(x)));
         } else {
             // TODO: Log Error.
             members = [];
         }
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.Tuple,
             Members: members
         };
@@ -278,18 +316,19 @@ export namespace ApiTypeHelpers {
      */
     export function TypePredicateNodeToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.TypePredicateNode
     ): TypePredicateType {
         const typeChecker = options.Program.getTypeChecker();
         const parameterName: string = typeNode.parameterName.getText();
-        const apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
+        const apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
 
         // Otherwise text will be "boolean".
         const text = `${parameterName} is ${apiType.Text}`;
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.TypePredicate,
             ParameterName: parameterName,
             Type: apiType,
@@ -302,11 +341,12 @@ export namespace ApiTypeHelpers {
      */
     export function TypeOperatorNodeToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.TypeOperatorNode
     ): TypeOperatorType {
         const typeChecker = options.Program.getTypeChecker();
-        const apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
+        const apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
         let operator: TypeKeywords;
 
         switch (typeNode.operator) {
@@ -323,7 +363,7 @@ export namespace ApiTypeHelpers {
         const text = `${operator} ${apiType.Text}`;
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.TypeOperator,
             Keyword: operator,
             Type: apiType,
@@ -336,15 +376,16 @@ export namespace ApiTypeHelpers {
      */
     export function IndexedAccessTypeNodeToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.IndexedAccessTypeNode
     ): IndexedAccessType {
         const typeChecker = options.Program.getTypeChecker();
-        const objectApiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.objectType), typeNode.objectType);
-        const indexApiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.indexType), typeNode.indexType);
+        const objectApiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.objectType), typeNode.objectType);
+        const indexApiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.indexType), typeNode.indexType);
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.IndexedAccess,
             ObjectType: objectApiType,
             IndexType: indexApiType
@@ -356,14 +397,15 @@ export namespace ApiTypeHelpers {
      */
     export function ParenthesizedTypeNodeToApiType(
         options: ApiItemOptions,
+        location: ApiItemLocationDto,
         type: ts.Type,
         typeNode: ts.ParenthesizedTypeNode
     ): ParenthesizedType {
         const typeChecker = options.Program.getTypeChecker();
-        const apiType = ResolveApiType(options, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
+        const apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
 
         return {
-            ...typeNodeToBaseType(options, type, typeNode),
+            ...typeNodeToBaseType(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.Parenthesized,
             Type: apiType
         };
@@ -372,9 +414,14 @@ export namespace ApiTypeHelpers {
     /**
      * Example: `typeof Foo`.
      */
-    export function TypeQueryToApiType(options: ApiItemOptions, type: ts.Type, typeNode: ts.TypeQueryNode): TypeQueryType {
+    export function TypeQueryToApiType(
+        options: ApiItemOptions,
+        location: ApiItemLocationDto,
+        type: ts.Type,
+        typeNode: ts.TypeQueryNode
+    ): TypeQueryType {
         return {
-            ...ReferenceBaseTypeToTypeDto(options, type, typeNode),
+            ...ReferenceBaseTypeToTypeDto(options, location, type, typeNode),
             ApiTypeKind: ApiTypeKind.TypeQuery,
             Keyword: TypeKeywords.Typeof
         };
@@ -382,10 +429,18 @@ export namespace ApiTypeHelpers {
 
     export type HeritageKinds = ts.SyntaxKind.ImplementsKeyword | ts.SyntaxKind.ExtendsKeyword;
 
+    /**
+     * Gets heritage list by kind.
+     * @param options Api item options.
+     * @param location ApiItem location.
+     * @param heritageClauses Array of heritage clauses.
+     * @param kind Implements or Extends keyword.
+     */
     export function GetHeritageList(
+        options: ApiItemOptions,
+        location: ApiItemLocationDto,
         heritageClauses: ts.NodeArray<ts.HeritageClause>,
-        kind: HeritageKinds,
-        options: ApiItemOptions
+        kind: HeritageKinds
     ): ApiType[] {
         const typeChecker = options.Program.getTypeChecker();
         const list: ApiType[] = [];
@@ -398,7 +453,7 @@ export namespace ApiTypeHelpers {
             heritage.types.forEach(expressionType => {
                 const type = typeChecker.getTypeFromTypeNode(expressionType);
 
-                list.push(ResolveApiType(options, type, expressionType));
+                list.push(ResolveApiType(options, location, type, expressionType));
             });
         });
 
