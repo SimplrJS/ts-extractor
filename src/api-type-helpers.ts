@@ -25,6 +25,7 @@ import {
     TypeKeywords
 } from "./contracts/api-type";
 import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
+import { LogLevel } from "simplr-logger/@types/abstractions/log-level";
 
 export namespace ApiTypeHelpers {
     /**
@@ -271,7 +272,7 @@ export namespace ApiTypeHelpers {
             const arrayType = type.typeArguments[0];
             apiType = ResolveApiType(options, location, arrayType, typeChecker.typeToTypeNode(arrayType));
         } else {
-            // TODO: Log Error.
+            ApiHelpers.LogWithLocation(LogLevel.Error, location, "Couldn't resolve ArrayTypeNode element type.");
             apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
         }
 
@@ -300,7 +301,7 @@ export namespace ApiTypeHelpers {
         } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
             members = type.typeArguments.map(x => ResolveApiType(options, location, x, typeChecker.typeToTypeNode(x)));
         } else {
-            // TODO: Log Error.
+            ApiHelpers.LogWithLocation(LogLevel.Error, location, "Couldn't resolve TupleType members.");
             members = [];
         }
 

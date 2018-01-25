@@ -277,6 +277,11 @@ export namespace ApiHelpers {
         Logger.Log(logLevel, `${linePrefix}: ${message}`);
     }
 
+    export function LogWithLocation(logLevel: LogLevel, location: ApiItemLocationDto, message: string): void {
+        const linePrefix = `${location.FileName}(${location.Line + 1},${location.Character + 1})`;
+        Logger.Log(logLevel, `${linePrefix}: ${message}`);
+    }
+
     export function StandardizeRelativePath(location: string, options: ApiItemOptions): string {
         const workingSep = options.ExtractorOptions.OutputPathSeparator;
         const fixedLocation = location.split(path.sep).join(workingSep);
