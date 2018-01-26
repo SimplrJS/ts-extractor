@@ -6,8 +6,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFile } from "./api-source-file";
 import { TSHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
-import { ApiExportDto } from "../contracts/api-definitions";
-import { ApiDefinitionKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind, ApiExportDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 

@@ -3,12 +3,11 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiItem } from "../abstractions/api-item";
-import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiSetAccessorDto } from "../contracts/api-definitions";
+import { ApiDefinitionKind, ApiSetAccessorDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { AccessModifier } from "../contracts";
+import { AccessModifier } from "../contracts/access-modifier";
 
 export class ApiSetAccessor extends ApiItem<ts.SetAccessorDeclaration, ApiSetAccessorDto> {
     private location: ApiItemLocationDto;

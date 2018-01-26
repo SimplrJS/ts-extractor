@@ -4,8 +4,7 @@ import { LogLevel } from "simplr-logger";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiIndexDto } from "../contracts/api-definitions";
-import { ApiDefinitionKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind, ApiIndexDto } from "../contracts/api-definitions";
 import { ApiType } from "../contracts/api-types";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";

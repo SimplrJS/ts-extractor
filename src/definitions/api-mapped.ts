@@ -3,8 +3,7 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 
-import { ApiMappedDto } from "../contracts/api-definitions";
-import { ApiDefinitionKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind, ApiMappedDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiType } from "../contracts/api-types";

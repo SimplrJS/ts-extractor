@@ -2,8 +2,7 @@ import * as ts from "typescript";
 import * as path from "path";
 
 import { ApiItem } from "../abstractions/api-item";
-import { ApiSourceFileDto } from "../contracts/api-definitions";
-import { ApiDefinitionKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind, ApiSourceFileDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiHelpers } from "../api-helpers";
 

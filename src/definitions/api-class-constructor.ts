@@ -2,8 +2,7 @@ import * as ts from "typescript";
 
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiHelpers } from "../api-helpers";
-import { ApiClassConstructorDto } from "../contracts/api-definitions";
-import { ApiDefinitionKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind, ApiClassConstructorDto } from "../contracts/api-definitions";
 import { AccessModifier } from "../contracts/access-modifier";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
