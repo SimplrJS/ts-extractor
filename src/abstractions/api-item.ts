@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 
-import { ApiBaseItemDto, TypeScriptTypeDeclarationDebug } from "../contracts/api-base-item-dto";
+import { ApiBaseDefinition, TypeScriptTypeDeclarationDebug } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ExtractorOptions } from "../contracts/extractor-options";
 import { ReadonlyRegistry } from "../contracts/registry";
@@ -20,7 +20,7 @@ export enum ApiItemStatus {
     GatheredAndExtracted = Gathered | Extracted
 }
 
-export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declaration, TExtractDto = ApiBaseItemDto> {
+export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declaration, TExtractDto = ApiBaseDefinition> {
     constructor(private declaration: TDeclaration, private symbol: ts.Symbol, private options: ApiItemOptions) {
         this.TypeChecker = options.Program.getTypeChecker();
     }

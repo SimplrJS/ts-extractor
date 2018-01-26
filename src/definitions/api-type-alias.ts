@@ -3,12 +3,11 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 
-import { ApiTypeAliasDto } from "../contracts/definitions/api-type-alias-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiDefinitionKind, ApiTypeAliasDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiType } from "../contracts";
+import { ApiType } from "../contracts/api-types";
 import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiTypeAlias extends ApiItem<ts.TypeAliasDeclaration, ApiTypeAliasDto> {
@@ -36,7 +35,7 @@ export class ApiTypeAlias extends ApiItem<ts.TypeAliasDeclaration, ApiTypeAliasD
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.TypeAlias,
+            ApiKind: ApiDefinitionKind.TypeAlias,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

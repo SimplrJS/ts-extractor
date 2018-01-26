@@ -4,9 +4,8 @@ import { LogLevel } from "simplr-logger";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiIndexDto } from "../contracts/definitions/api-index-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiType } from "../contracts/api-type";
+import { ApiDefinitionKind, ApiIndexDto } from "../contracts/api-definitions";
+import { ApiType } from "../contracts/api-types";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -52,7 +51,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Index,
+            ApiKind: ApiDefinitionKind.Index,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

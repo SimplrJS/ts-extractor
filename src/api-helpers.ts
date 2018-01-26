@@ -6,7 +6,7 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiItemReference } from "./contracts/api-item-reference";
 import { AccessModifier } from "./contracts/access-modifier";
-import { TSHelpers } from "./ts-helpers";
+import { TsHelpers } from "./ts-helpers";
 import { Logger } from "./utils/logger";
 import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 
@@ -35,7 +35,7 @@ import { ApiCall } from "./definitions/api-call";
 import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
-import { ApiFunctionType } from "./definitions/api-function-type";
+import { ApiFunctionExpression } from "./definitions/api-function-expression";
 import { ApiMapped } from "./definitions/api-mapped";
 import { PathIsInside } from "./utils/path-is-inside";
 
@@ -97,7 +97,7 @@ export namespace ApiHelpers {
         } else if (ts.isTypeLiteralNode(declaration) || ts.isObjectLiteralExpression(declaration)) {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
         } else if (ts.isFunctionTypeNode(declaration) || ts.isArrowFunction(declaration) || ts.isFunctionExpression(declaration)) {
-            apiItem = new ApiFunctionType(declaration, symbol, options);
+            apiItem = new ApiFunctionExpression(declaration, symbol, options);
         } else if (ts.isMappedTypeNode(declaration)) {
             apiItem = new ApiMapped(declaration, symbol, options);
         }
@@ -147,7 +147,7 @@ export namespace ApiHelpers {
             return options.Registry.GetDeclarationId(declaration);
         }
 
-        const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
+        const resolveRealSymbol = TsHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
         const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
         if (apiItem == null) {
             return undefined;
@@ -212,7 +212,7 @@ export namespace ApiHelpers {
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {
-            const symbol = TSHelpers.GetSymbolFromDeclaration(declaration, typeChecker);
+            const symbol = TsHelpers.GetSymbolFromDeclaration(declaration, typeChecker);
             if (symbol == null) {
                 return;
             }
@@ -331,7 +331,7 @@ export namespace ApiHelpers {
             return undefined;
         }
 
-        const parentSymbol = TSHelpers.GetSymbolFromDeclaration(parentDeclaration, options.Program.getTypeChecker());
+        const parentSymbol = TsHelpers.GetSymbolFromDeclaration(parentDeclaration, options.Program.getTypeChecker());
         if (parentSymbol == null) {
             return undefined;
         }

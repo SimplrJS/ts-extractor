@@ -4,8 +4,8 @@ import * as fs from "fs-extra";
 import * as path from "path";
 
 import { Logger } from "./utils/logger";
-import { ApiSourceFile } from "./definitions/api-source-file";
 import { ApiItem } from "./abstractions/api-item";
+import { ApiSourceFile } from "./definitions/api-source-file";
 import { ExtractorOptions } from "./contracts/extractor-options";
 import { ApiRegistry, ExtractedApiRegistry } from "./api-registry";
 

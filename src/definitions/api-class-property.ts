@@ -2,9 +2,8 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiClassPropertyDto } from "../contracts/definitions/api-class-property-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiType } from "../contracts/api-type";
+import { ApiDefinitionKind, ApiClassPropertyDto } from "../contracts/api-definitions";
+import { ApiType } from "../contracts/api-types";
 import { AccessModifier } from "../contracts/access-modifier";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -42,7 +41,7 @@ export class ApiClassProperty extends ApiItem<ts.PropertyDeclaration, ApiClassPr
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.ClassProperty,
+            ApiKind: ApiDefinitionKind.ClassProperty,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 
-export namespace TSHelpers {
+export namespace TsHelpers {
     /**
      * Returns the string part of `export * from "./module";`
      */

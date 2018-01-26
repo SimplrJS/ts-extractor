@@ -2,9 +2,8 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiVariableDto, ApiVariableDeclarationType } from "../contracts/definitions/api-variable-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiType } from "../contracts/api-type";
+import { ApiDefinitionKind, ApiVariableDto, ApiVariableDeclarationType } from "../contracts/api-definitions";
+import { ApiType } from "../contracts/api-types";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
@@ -45,7 +44,7 @@ export class ApiVariable extends ApiItem<ts.VariableDeclaration, ApiVariableDto>
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Variable,
+            ApiKind: ApiDefinitionKind.Variable,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

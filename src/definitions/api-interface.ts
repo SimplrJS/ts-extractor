@@ -2,10 +2,9 @@ import * as ts from "typescript";
 
 import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
-import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
+import { ApiDefinitionKind, ApiInterfaceDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiType } from "../contracts/api-type";
+import { ApiType } from "../contracts/api-types";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
@@ -47,7 +46,7 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Interface,
+            ApiKind: ApiDefinitionKind.Interface,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

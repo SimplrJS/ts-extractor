@@ -1,8 +1,7 @@
 import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiCallDto } from "../contracts/definitions/api-call-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiDefinitionKind, ApiCallDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
@@ -12,7 +11,7 @@ export class ApiCall extends ApiCallableBase<ts.CallSignatureDeclaration, ApiCal
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Call,
+            ApiKind: ApiDefinitionKind.Call,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

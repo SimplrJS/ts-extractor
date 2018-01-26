@@ -2,9 +2,8 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiNamespaceDto } from "../contracts/definitions/api-namespace-dto";
+import { ApiDefinitionKind, ApiNamespaceDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
@@ -12,11 +11,11 @@ export class ApiNamespace extends ApiItem<ts.ModuleDeclaration | ts.NamespaceImp
     private location: ApiItemLocationDto;
     private members: ApiItemReference[] = [];
 
-    protected ResolveApiKind(): ApiItemKinds.Namespace | ApiItemKinds.ImportNamespace {
+    protected ResolveApiKind(): ApiDefinitionKind.Namespace | ApiDefinitionKind.ImportNamespace {
         if (ts.isModuleDeclaration(this.Declaration)) {
-            return ApiItemKinds.Namespace;
+            return ApiDefinitionKind.Namespace;
         } else {
-            return ApiItemKinds.ImportNamespace;
+            return ApiDefinitionKind.ImportNamespace;
         }
     }
 

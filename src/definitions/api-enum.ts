@@ -2,9 +2,8 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiEnumDto } from "../contracts/definitions/api-enum-dto";
+import { ApiDefinitionKind, ApiEnumDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
@@ -30,7 +29,7 @@ export class ApiEnum extends ApiItem<ts.EnumDeclaration, ApiEnumDto> {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKinds.Enum,
+            ApiKind: ApiDefinitionKind.Enum,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
