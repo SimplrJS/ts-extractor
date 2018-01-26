@@ -4,7 +4,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiType } from "../contracts/api-types";
-import { ApiCallableDto } from "../contracts/api-definitions";
+import { ApiCallableBaseDefinition } from "../contracts/api-definitions";
 import { ApiTypeHelpers } from "../api-type-helpers";
 import { ApiItemLocationDto } from "../contracts";
 
@@ -13,7 +13,7 @@ import { ApiItemLocationDto } from "../contracts";
  */
 export abstract class ApiCallableBase<
     TDeclaration extends ts.SignatureDeclaration,
-    TExtractDto extends ApiCallableDto
+    TExtractDto extends ApiCallableBaseDefinition
     >
     extends ApiItem<TDeclaration, TExtractDto> {
 
