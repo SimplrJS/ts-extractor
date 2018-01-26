@@ -7,7 +7,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiImportSpecifierDto, ApiImportSpecifierApiItems } from "../contracts/definitions/api-import-specifier-dto";
+import { ApiImportSpecifierDto, ApiImportSpecifierApiItems } from "../contracts/api-definitions";
 
 export class ApiImportSpecifier extends ApiItem<ts.ImportSpecifier, ApiImportSpecifierDto> {
     private location: ApiItemLocationDto;

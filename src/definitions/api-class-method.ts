@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiClassMethodDto } from "../contracts/definitions/api-class-method-dto";
+import { ApiClassMethodDto } from "../contracts/api-definitions";
 import { ApiItemKind } from "../contracts/api-item-kind";
 import { AccessModifier } from "../contracts/access-modifier";
 

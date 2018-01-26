@@ -3,7 +3,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
-import { ApiExportSpecifierDto, ApiExportSpecifierApiItems } from "../contracts/definitions/api-export-specifier-dto";
+import { ApiExportSpecifierDto, ApiExportSpecifierApiItems } from "../contracts/api-definitions";
 import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";

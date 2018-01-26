@@ -107,6 +107,13 @@ export interface ApiImportSpecifierDto extends ApiBaseItemDto {
     ApiItems: ApiImportSpecifierApiItems;
 }
 
+export interface ApiIndexDto extends ApiBaseItemDto {
+    ApiKind: ApiItemKind.Index;
+    Parameter: string;
+    IsReadonly: boolean;
+    Type: ApiType;
+}
+
 export interface ApiInterfaceDto extends ApiBaseItemDto {
     ApiKind: ApiItemKind.Interface;
     TypeParameters: ApiItemReference[];

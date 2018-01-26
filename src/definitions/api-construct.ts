@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiConstructDto } from "../contracts/definitions/api-construct-dto";
+import { ApiConstructDto } from "../contracts/api-definitions";
 import { ApiItemKind } from "../contracts/api-item-kind";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";

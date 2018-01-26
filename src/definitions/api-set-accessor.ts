@@ -6,7 +6,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiSetAccessorDto } from "../contracts/definitions/api-set-accessor-dto";
+import { ApiSetAccessorDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { AccessModifier } from "../contracts";
 
