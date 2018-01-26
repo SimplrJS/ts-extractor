@@ -7,7 +7,7 @@ Object {
   ],
   "Registry": Object {
     "ConstructorType-0": Object {
-      "ApiKind": "construct",
+      "ApiKind": "constructor-type",
       "IsOverloadBase": false,
       "Location": Object {
         "Character": 18,

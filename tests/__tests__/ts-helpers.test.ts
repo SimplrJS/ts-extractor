@@ -1,11 +1,11 @@
-import { TSHelpers } from "@src/ts-helpers";
+import { TsHelpers } from "@src/ts-helpers";
 
 describe("IsTypeScriptInternalSymbolName", () => {
     it("Internal names", () => {
         const internalNames = ["__type", "__call"];
 
         internalNames.forEach(x =>
-            expect(TSHelpers.IsInternalSymbolName(x)).toBe(true)
+            expect(TsHelpers.IsInternalSymbolName(x)).toBe(true)
         );
     });
 
@@ -13,7 +13,7 @@ describe("IsTypeScriptInternalSymbolName", () => {
         const internalNames = ["Foo", "Bar"];
 
         internalNames.forEach(x =>
-            expect(TSHelpers.IsInternalSymbolName(x)).toBe(false)
+            expect(TsHelpers.IsInternalSymbolName(x)).toBe(false)
         );
     });
 });
