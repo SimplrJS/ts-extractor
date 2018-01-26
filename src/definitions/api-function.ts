@@ -1,11 +1,9 @@
 import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiFunctionDto } from "../contracts/definitions/api-function-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiDefinitionKind, ApiFunctionDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
-import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunctionDto> {
     private isAsync: boolean;
@@ -20,14 +18,13 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
     public OnExtract(): ApiFunctionDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.Function,
+            ApiKind: ApiDefinitionKind.Function,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.Location,
             IsOverloadBase: this.IsOverloadBase,
             TypeParameters: this.TypeParameters,
             Parameters: this.Parameters,

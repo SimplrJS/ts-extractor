@@ -31,6 +31,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 29,
+          "FileName": "./cases/InterfaceDeclaration5.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "TValue",
         "Text": "TValue",
@@ -101,6 +107,12 @@ Object {
       "ParentId": "CallSignature-0",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 20,
+          "FileName": "./cases/InterfaceDeclaration5.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "TValue",
         "Text": "TValue",

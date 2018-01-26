@@ -195,6 +195,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 14,
+          "FileName": "./cases/MultipleDeclaration.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -227,6 +233,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 14,
+          "FileName": "./cases/MultipleDeclaration.ts",
+          "IsExternalPackage": false,
+          "Line": 16,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -256,6 +268,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/MultipleDeclaration.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -285,6 +303,12 @@ Object {
       "ParentId": "InterfaceDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/MultipleDeclaration.ts",
+          "IsExternalPackage": false,
+          "Line": 20,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

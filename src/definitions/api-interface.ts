@@ -2,15 +2,15 @@ import * as ts from "typescript";
 
 import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
-import { ApiInterfaceDto } from "../contracts/definitions/api-interface-dto";
+import { ApiDefinitionKind, ApiInterfaceDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiType } from "../contracts/api-type";
+import { ApiType } from "../contracts/api-types";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceDto> {
+    private location: ApiItemLocationDto;
     /**
      * Interfaces can extend multiple interfaces.
      */
@@ -19,12 +19,20 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
     private members: ApiItemReference[] = [];
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Members
         this.members = ApiHelpers.GetItemsIdsFromDeclarations(this.Declaration.members, this.Options);
 
         // Extends
         if (this.Declaration.heritageClauses != null) {
-            this.extends = ApiTypeHelpers.GetHeritageList(this.Declaration.heritageClauses, ts.SyntaxKind.ExtendsKeyword, this.Options);
+            this.extends = ApiTypeHelpers.GetHeritageList(
+                this.Options,
+                this.location,
+                this.Declaration.heritageClauses,
+                ts.SyntaxKind.ExtendsKeyword
+            );
         }
 
         // TypeParameters
@@ -36,14 +44,13 @@ export class ApiInterface extends ApiItem<ts.InterfaceDeclaration, ApiInterfaceD
     public OnExtract(): ApiInterfaceDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.Interface,
+            ApiKind: ApiDefinitionKind.Interface,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             Members: this.members,
             Extends: this.extends,
             TypeParameters: this.typeParameters,

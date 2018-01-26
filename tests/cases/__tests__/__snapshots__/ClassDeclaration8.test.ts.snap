@@ -41,6 +41,12 @@ Object {
       "ApiKind": "class",
       "Extends": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 28,
+          "FileName": "./cases/ClassDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "ReferenceId": "ClassDeclaration-0",
         "SymbolName": "Control",
         "Text": "Control",
@@ -53,6 +59,12 @@ Object {
       "Implements": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 47,
+            "FileName": "./cases/ClassDeclaration8.ts",
+            "IsExternalPackage": false,
+            "Line": 8,
+          },
           "ReferenceId": "InterfaceDeclaration-0",
           "SymbolName": "SelectableControl",
           "Text": "SelectableControl",
@@ -95,6 +107,12 @@ Object {
       "Extends": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 43,
+            "FileName": "./cases/ClassDeclaration8.ts",
+            "IsExternalPackage": false,
+            "Line": 4,
+          },
           "ReferenceId": "ClassDeclaration-0",
           "SymbolName": "Control",
           "Text": "Control",
@@ -154,6 +172,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./cases/ClassDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 9,
+        },
         "Text": "void",
         "_ts": Object {
           "Kind": 105,
@@ -185,6 +209,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 14,
+          "FileName": "./cases/ClassDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "Text": "void",
         "_ts": Object {
           "Kind": 105,
@@ -218,6 +248,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./cases/ClassDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,

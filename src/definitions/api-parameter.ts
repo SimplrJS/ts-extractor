@@ -2,23 +2,26 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiParameterDto } from "../contracts/definitions/api-parameter-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
-import { ApiType } from "../contracts/api-type";
+import { ApiDefinitionKind, ApiParameterDto } from "../contracts/api-definitions";
+import { ApiType } from "../contracts/api-types";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterDto> {
+    private location: ApiItemLocationDto;
     private type: ApiType;
     private isOptional: boolean;
     private isSpread: boolean;
     private initializer: string | undefined;
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Type
         const type = this.TypeChecker.getTypeOfSymbolAtLocation(this.Symbol, this.Declaration);
-        this.type = ApiTypeHelpers.ResolveApiType(this.Options, type, this.Declaration.type);
+        this.type = ApiTypeHelpers.ResolveApiType(this.Options, this.location, type, this.Declaration.type);
 
         // IsOptional
         this.isOptional = Boolean(this.Declaration.questionToken);
@@ -33,14 +36,13 @@ export class ApiParameter extends ApiItem<ts.ParameterDeclaration, ApiParameterD
     public OnExtract(): ApiParameterDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.Parameter,
+            ApiKind: ApiDefinitionKind.Parameter,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             IsOptional: this.isOptional,
             IsSpread: this.isSpread,
             Initializer: this.initializer,

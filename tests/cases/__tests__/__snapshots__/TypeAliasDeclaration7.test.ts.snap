@@ -49,15 +49,39 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "array",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./cases/TypeAliasDeclaration7.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "(string | number)[]",
         "Type": Object {
           "ApiTypeKind": "parenthesized",
+          "Location": Object {
+            "Character": 18,
+            "FileName": "./cases/TypeAliasDeclaration7.ts",
+            "IsExternalPackage": false,
+            "Line": 0,
+          },
           "Text": "string | number",
           "Type": Object {
             "ApiTypeKind": "union",
+            "Location": Object {
+              "Character": 19,
+              "FileName": "./cases/TypeAliasDeclaration7.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Members": Array [
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 19,
+                  "FileName": "./cases/TypeAliasDeclaration7.ts",
+                  "IsExternalPackage": false,
+                  "Line": 0,
+                },
                 "Text": "string",
                 "_ts": Object {
                   "Kind": 136,
@@ -66,6 +90,12 @@ Object {
               },
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 28,
+                  "FileName": "./cases/TypeAliasDeclaration7.ts",
+                  "IsExternalPackage": false,
+                  "Line": 0,
+                },
                 "Text": "number",
                 "_ts": Object {
                   "Kind": 133,

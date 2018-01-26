@@ -48,12 +48,24 @@ Object {
       "ApiKind": "class",
       "Extends": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/ClassDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
         "ReferenceId": "ClassDeclaration-0",
         "SymbolName": "FooBase",
         "Text": "FooBase<number>",
         "TypeParameters": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 33,
+              "FileName": "./cases/ClassDeclaration6.ts",
+              "IsExternalPackage": false,
+              "Line": 10,
+            },
             "Text": "number",
             "_ts": Object {
               "Kind": 133,
@@ -69,6 +81,12 @@ Object {
       "Implements": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 52,
+            "FileName": "./cases/ClassDeclaration6.ts",
+            "IsExternalPackage": false,
+            "Line": 10,
+          },
           "ReferenceId": "InterfaceDeclaration-0",
           "SymbolName": "Bar",
           "Text": "Bar",
@@ -164,6 +182,12 @@ Object {
       "ParentId": "ClassDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 32,
+          "FileName": "./cases/ClassDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "TValue",
         "Text": "TValue",
@@ -202,6 +226,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/ClassDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 11,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -235,6 +265,12 @@ Object {
       "ParentId": "ClassDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 20,
+          "FileName": "./cases/ClassDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 15,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -264,6 +300,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/ClassDeclaration6.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

@@ -24,6 +24,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 15,
+          "FileName": "./cases/ConstructSignature2.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "T",
         "Text": "T",

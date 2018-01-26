@@ -24,6 +24,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -73,6 +79,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 24,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -91,6 +103,12 @@ Object {
       "Implements": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./cases/InterfaceDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 42,
+          },
           "ReferenceId": "InterfaceDeclaration-3",
           "SymbolName": "a",
           "Text": "a",
@@ -139,6 +157,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -176,6 +200,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -206,6 +236,12 @@ Object {
       "ParentId": "IndexSignature-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -236,6 +272,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "function-type",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "ReferenceId": "FunctionType-0",
         "Text": "() => string",
         "_ts": Object {
@@ -266,6 +308,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -295,6 +343,12 @@ Object {
       "ParentId": "InterfaceDeclaration-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 23,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -324,6 +378,12 @@ Object {
       "ParentId": "InterfaceDeclaration-2",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 27,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -518,6 +578,12 @@ Object {
       "Extends": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./cases/InterfaceDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 33,
+          },
           "ReferenceId": "InterfaceDeclaration-3",
           "SymbolName": "a",
           "Text": "a",
@@ -552,6 +618,12 @@ Object {
       "Extends": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./cases/InterfaceDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 36,
+          },
           "ReferenceId": "InterfaceDeclaration-3",
           "SymbolName": "a",
           "Text": "a",
@@ -563,6 +635,12 @@ Object {
         },
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 30,
+            "FileName": "./cases/InterfaceDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 36,
+          },
           "ReferenceId": "InterfaceDeclaration-4",
           "SymbolName": "b",
           "Text": "b",
@@ -597,6 +675,12 @@ Object {
       "Extends": Array [
         Object {
           "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./cases/InterfaceDeclaration4.ts",
+            "IsExternalPackage": false,
+            "Line": 39,
+          },
           "ReferenceId": "InterfaceDeclaration-3",
           "SymbolName": "a",
           "Text": "a",
@@ -652,6 +736,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 14,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -683,6 +773,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 16,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -714,6 +810,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 17,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -752,6 +854,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 18,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -790,6 +898,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 20,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 19,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -821,6 +935,12 @@ Object {
       "ParentId": "CallSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 5,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -851,6 +971,12 @@ Object {
       "ParentId": "CallSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -881,6 +1007,12 @@ Object {
       "ParentId": "IndexSignature-3",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 27,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -911,6 +1043,12 @@ Object {
       "ParentId": "CallSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 15,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -941,6 +1079,12 @@ Object {
       "ParentId": "ConstructSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -971,6 +1115,12 @@ Object {
       "ParentId": "IndexSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -1001,6 +1151,12 @@ Object {
       "ParentId": "IndexSignature-1",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -1031,6 +1187,12 @@ Object {
       "ParentId": "MethodSignature-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 14,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -1061,6 +1223,12 @@ Object {
       "ParentId": "MethodSignature-3",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 18,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -1091,6 +1259,12 @@ Object {
       "ParentId": "MethodSignature-4",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 19,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -1121,6 +1295,12 @@ Object {
       "ParentId": "IndexSignature-2",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 23,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -1150,6 +1330,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -1179,6 +1365,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 11,
+        },
         "Text": "any",
         "_ts": Object {
           "Kind": 119,
@@ -1208,6 +1400,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -1237,6 +1435,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 9,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 13,
+        },
         "Text": "number",
         "_ts": Object {
           "Kind": 133,
@@ -1339,6 +1543,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./cases/InterfaceDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 45,
+        },
         "ReferenceId": "ClassDeclaration-0",
         "SymbolName": "c1",
         "Text": "c1",

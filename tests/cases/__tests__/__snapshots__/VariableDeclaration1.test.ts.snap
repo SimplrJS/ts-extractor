@@ -49,6 +49,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./cases/VariableDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "undefined",
         "_ts": Object {
           "Kind": 139,

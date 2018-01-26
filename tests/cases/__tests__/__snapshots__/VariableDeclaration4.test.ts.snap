@@ -53,6 +53,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./cases/VariableDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -119,6 +125,12 @@ Object {
       "ParentId": undefined,
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 16,
+          "FileName": "./cases/VariableDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "SymbolName": "A",
         "Text": "A",
@@ -151,6 +163,12 @@ Object {
       "Type": Object {
         "ApiTypeKind": "type-query",
         "Keyword": "typeof",
+        "Location": Object {
+          "Character": 16,
+          "FileName": "./cases/VariableDeclaration4.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "ReferenceId": "InterfaceDeclaration-0",
         "Text": "A",
         "_ts": Object {

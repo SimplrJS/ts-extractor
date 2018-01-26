@@ -32,9 +32,21 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "tuple",
+        "Location": Object {
+          "Character": 0,
+          "FileName": "./cases/FunctionDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 0,
+              "FileName": "./cases/FunctionDeclaration8.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "string",
             "_ts": Object {
               "Kind": 136,
@@ -43,6 +55,12 @@ Object {
           },
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 0,
+              "FileName": "./cases/FunctionDeclaration8.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "number",
             "_ts": Object {
               "Kind": 133,
@@ -81,9 +99,21 @@ Object {
       "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "tuple",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/FunctionDeclaration8.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 26,
+              "FileName": "./cases/FunctionDeclaration8.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "string",
             "_ts": Object {
               "Kind": 136,
@@ -92,6 +122,12 @@ Object {
           },
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 34,
+              "FileName": "./cases/FunctionDeclaration8.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "number",
             "_ts": Object {
               "Kind": 133,

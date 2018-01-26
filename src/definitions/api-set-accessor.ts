@@ -3,20 +3,23 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiItem } from "../abstractions/api-item";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiSetAccessorDto } from "../contracts/definitions/api-set-accessor-dto";
+import { ApiDefinitionKind, ApiSetAccessorDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { AccessModifier } from "../contracts";
+import { AccessModifier } from "../contracts/access-modifier";
 
 export class ApiSetAccessor extends ApiItem<ts.SetAccessorDeclaration, ApiSetAccessorDto> {
+    private location: ApiItemLocationDto;
     private accessModifier: AccessModifier;
     private isAbstract: boolean;
     private isStatic: boolean;
     private parameter: ApiItemReference | undefined;
 
     protected OnGatherData(): void {
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
+
         // Modifiers
         this.accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(this.Declaration.modifiers);
         this.isAbstract = ApiHelpers.ModifierKindExistsInModifiers(this.Declaration.modifiers, ts.SyntaxKind.AbstractKeyword);
@@ -40,14 +43,13 @@ export class ApiSetAccessor extends ApiItem<ts.SetAccessorDeclaration, ApiSetAcc
     public OnExtract(): ApiSetAccessorDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         return {
-            ApiKind: ApiItemKinds.SetAccessor,
+            ApiKind: ApiDefinitionKind.SetAccessor,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             AccessModifier: this.accessModifier,
             IsAbstract: this.isAbstract,
             IsStatic: this.isStatic,

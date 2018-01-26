@@ -32,9 +32,21 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 0,
+          "FileName": "./cases/FunctionDeclaration7.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 0,
+              "FileName": "./cases/FunctionDeclaration7.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "string",
             "_ts": Object {
               "Kind": 136,
@@ -43,6 +55,12 @@ Object {
           },
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 0,
+              "FileName": "./cases/FunctionDeclaration7.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "true",
             "_ts": Object {
               "Kind": 101,
@@ -51,6 +69,12 @@ Object {
           },
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 0,
+              "FileName": "./cases/FunctionDeclaration7.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "false",
             "_ts": Object {
               "Kind": 86,
@@ -89,9 +113,21 @@ Object {
       "ParentId": "FunctionDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./cases/FunctionDeclaration7.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 25,
+              "FileName": "./cases/FunctionDeclaration7.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "string",
             "_ts": Object {
               "Kind": 136,
@@ -100,6 +136,12 @@ Object {
           },
           Object {
             "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 34,
+              "FileName": "./cases/FunctionDeclaration7.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
             "Text": "boolean",
             "_ts": Object {
               "Kind": 122,

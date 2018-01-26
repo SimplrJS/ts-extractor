@@ -53,6 +53,12 @@ Object {
       "ParentId": "InterfaceDeclaration-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./cases/InterfaceDeclaration7.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

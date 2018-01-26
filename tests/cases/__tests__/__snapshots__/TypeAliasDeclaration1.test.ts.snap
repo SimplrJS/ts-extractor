@@ -24,6 +24,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -84,6 +90,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./cases/TypeAliasDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
         "ReferenceId": "TypeLiteral-0",
         "Text": "MyType",
         "_ts": Object {
@@ -113,6 +125,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 26,
+          "FileName": "./cases/TypeAliasDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
         "ReferenceId": "TypeAliasDeclaration-0",
         "SymbolName": "MyType",
         "Text": "MyType",

@@ -25,6 +25,12 @@ Object {
       "ParentId": "SourceFile-0",
       "ReturnType": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./cases/FunctionDeclaration1.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,

@@ -2,12 +2,13 @@ import * as ts from "typescript";
 import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiEnumMemberDto } from "../contracts/definitions/api-enum-member-dto";
-import { ApiItemKinds } from "../contracts/api-item-kinds";
+import { ApiDefinitionKind, ApiEnumMemberDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
 export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
+    private location: ApiItemLocationDto;
+
     public GetValue(): string {
         for (const item of this.Declaration.getChildren()) {
             if (ts.isNumericLiteral(item) ||
@@ -32,21 +33,21 @@ export class ApiEnumMember extends ApiItem<ts.EnumMember, ApiEnumMemberDto> {
     }
 
     protected OnGatherData(): void {
-        // No gathering is needed
+        // ApiItemLocation
+        this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
     }
 
     public OnExtract(): ApiEnumMemberDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
-        const location: ApiItemLocationDto = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
         const value: string = this.GetValue();
 
         return {
-            ApiKind: ApiItemKinds.EnumMember,
+            ApiKind: ApiDefinitionKind.EnumMember,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
-            Location: location,
+            Location: this.location,
             Value: value,
             _ts: this.GetTsDebugInfo()
         };

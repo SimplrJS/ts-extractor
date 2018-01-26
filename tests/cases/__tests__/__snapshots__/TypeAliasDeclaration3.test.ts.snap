@@ -24,6 +24,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -53,6 +59,12 @@ Object {
       "ParentId": "TypeLiteral-0",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
         "ReferenceId": "TypeParameter-0",
         "SymbolName": "TType",
         "Text": "TType",
@@ -85,6 +97,12 @@ Object {
       "ParentId": "TypeLiteral-1",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 9,
+        },
         "ReferenceId": "TypeParameter-1",
         "SymbolName": "TType",
         "Text": "TType",
@@ -117,6 +135,12 @@ Object {
       "ParentId": "TypeLiteral-2",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 18,
+        },
         "ReferenceId": "TypeParameter-2",
         "SymbolName": "TType",
         "Text": "TType",
@@ -149,6 +173,12 @@ Object {
       "ParentId": "TypeLiteral-2",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 19,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -178,6 +208,12 @@ Object {
       "ParentId": "TypeLiteral-3",
       "Type": Object {
         "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 23,
+        },
         "ReferenceId": "TypeParameter-3",
         "SymbolName": "TType",
         "Text": "TType",
@@ -210,6 +246,12 @@ Object {
       "ParentId": "TypeLiteral-3",
       "Type": Object {
         "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 24,
+        },
         "Text": "string",
         "_ts": Object {
           "Kind": 136,
@@ -300,6 +342,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
         "ReferenceId": "TypeLiteral-0",
         "Text": "NoCommonFields1<TType>",
         "_ts": Object {
@@ -336,6 +384,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
         "ReferenceId": "TypeLiteral-1",
         "Text": "NoCommonFields2<TType>",
         "_ts": Object {
@@ -372,15 +426,33 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 26,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 26,
+              "FileName": "./cases/TypeAliasDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 12,
+            },
             "ReferenceId": "TypeAliasDeclaration-0",
             "SymbolName": "NoCommonFields1",
             "Text": "NoCommonFields1<number>",
             "TypeParameters": Array [
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 42,
+                  "FileName": "./cases/TypeAliasDeclaration3.ts",
+                  "IsExternalPackage": false,
+                  "Line": 12,
+                },
                 "Text": "number",
                 "_ts": Object {
                   "Kind": 133,
@@ -395,12 +467,24 @@ Object {
           },
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 52,
+              "FileName": "./cases/TypeAliasDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 12,
+            },
             "ReferenceId": "TypeAliasDeclaration-1",
             "SymbolName": "NoCommonFields2",
             "Text": "NoCommonFields2<string>",
             "TypeParameters": Array [
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 68,
+                  "FileName": "./cases/TypeAliasDeclaration3.ts",
+                  "IsExternalPackage": false,
+                  "Line": 12,
+                },
                 "Text": "string",
                 "_ts": Object {
                   "Kind": 136,
@@ -442,6 +526,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 17,
+        },
         "ReferenceId": "TypeLiteral-2",
         "Text": "OneCommonField1<TType>",
         "_ts": Object {
@@ -478,6 +568,12 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 22,
+        },
         "ReferenceId": "TypeLiteral-3",
         "Text": "OneCommonField2<TType>",
         "_ts": Object {
@@ -514,15 +610,33 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 45,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 27,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 45,
+              "FileName": "./cases/TypeAliasDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 27,
+            },
             "ReferenceId": "TypeAliasDeclaration-3",
             "SymbolName": "OneCommonField1",
             "Text": "OneCommonField1<number>",
             "TypeParameters": Array [
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 61,
+                  "FileName": "./cases/TypeAliasDeclaration3.ts",
+                  "IsExternalPackage": false,
+                  "Line": 27,
+                },
                 "Text": "number",
                 "_ts": Object {
                   "Kind": 133,
@@ -537,12 +651,24 @@ Object {
           },
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 71,
+              "FileName": "./cases/TypeAliasDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 27,
+            },
             "ReferenceId": "TypeAliasDeclaration-4",
             "SymbolName": "OneCommonField2",
             "Text": "OneCommonField2<number>",
             "TypeParameters": Array [
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 87,
+                  "FileName": "./cases/TypeAliasDeclaration3.ts",
+                  "IsExternalPackage": false,
+                  "Line": 27,
+                },
                 "Text": "number",
                 "_ts": Object {
                   "Kind": 133,
@@ -584,15 +710,33 @@ Object {
       "ParentId": "SourceFile-0",
       "Type": Object {
         "ApiTypeKind": "intersection",
+        "Location": Object {
+          "Character": 63,
+          "FileName": "./cases/TypeAliasDeclaration3.ts",
+          "IsExternalPackage": false,
+          "Line": 29,
+        },
         "Members": Array [
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 63,
+              "FileName": "./cases/TypeAliasDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 29,
+            },
             "ReferenceId": "TypeAliasDeclaration-3",
             "SymbolName": "OneCommonField1",
             "Text": "OneCommonField1<number>",
             "TypeParameters": Array [
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 79,
+                  "FileName": "./cases/TypeAliasDeclaration3.ts",
+                  "IsExternalPackage": false,
+                  "Line": 29,
+                },
                 "Text": "number",
                 "_ts": Object {
                   "Kind": 133,
@@ -607,12 +751,24 @@ Object {
           },
           Object {
             "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 89,
+              "FileName": "./cases/TypeAliasDeclaration3.ts",
+              "IsExternalPackage": false,
+              "Line": 29,
+            },
             "ReferenceId": "TypeAliasDeclaration-4",
             "SymbolName": "OneCommonField2",
             "Text": "OneCommonField2<string>",
             "TypeParameters": Array [
               Object {
                 "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 105,
+                  "FileName": "./cases/TypeAliasDeclaration3.ts",
+                  "IsExternalPackage": false,
+                  "Line": 29,
+                },
                 "Text": "string",
                 "_ts": Object {
                   "Kind": 136,
