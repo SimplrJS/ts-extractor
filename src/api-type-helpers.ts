@@ -25,7 +25,7 @@ import {
     TypePredicateType,
     TypeQueryType,
     TypeKeywords
-} from "./contracts/api-type";
+} from "./contracts/api-types";
 import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 
 export namespace ApiTypeHelpers {

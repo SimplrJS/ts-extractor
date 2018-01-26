@@ -7,7 +7,7 @@ import { ApiMappedDto } from "../contracts/api-definitions";
 import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiType } from "../contracts/api-type";
+import { ApiType } from "../contracts/api-types";
 import { TSHelpers } from "../ts-helpers";
 import { ApiTypeHelpers } from "../api-type-helpers";
 

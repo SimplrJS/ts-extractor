@@ -10,4 +10,4 @@ export * from "./contracts/extractor-options";
 export * from "./contracts/registry";
 export * from "./contracts/api-item-dto";
 export * from "./contracts/api-item-location-dto";
-export * from "./contracts/api-type";
+export * from "./contracts/api-types";

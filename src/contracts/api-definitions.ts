@@ -3,7 +3,7 @@ import { ApiCallableDto } from "./api-callable-dto";
 import { AccessModifier } from "./access-modifier";
 import { ApiBaseItemDto } from "./api-base-item-dto";
 import { ApiItemReference } from "./api-item-reference";
-import { ApiType } from "./api-type";
+import { ApiType } from "./api-types";
 
 export interface ApiSourceFileDto extends ApiBaseItemDto {
     ApiKind: ApiItemKind.SourceFile;

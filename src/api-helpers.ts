@@ -35,7 +35,7 @@ import { ApiCall } from "./definitions/api-call";
 import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
-import { ApiFunctionType } from "./definitions/api-function-expression";
+import { ApiFunctionExpression } from "./definitions/api-function-expression";
 import { ApiMapped } from "./definitions/api-mapped";
 import { PathIsInside } from "./utils/path-is-inside";
 
@@ -97,7 +97,7 @@ export namespace ApiHelpers {
         } else if (ts.isTypeLiteralNode(declaration) || ts.isObjectLiteralExpression(declaration)) {
             apiItem = new ApiTypeLiteral(declaration, symbol, options);
         } else if (ts.isFunctionTypeNode(declaration) || ts.isArrowFunction(declaration) || ts.isFunctionExpression(declaration)) {
-            apiItem = new ApiFunctionType(declaration, symbol, options);
+            apiItem = new ApiFunctionExpression(declaration, symbol, options);
         } else if (ts.isMappedTypeNode(declaration)) {
             apiItem = new ApiMapped(declaration, symbol, options);
         }

@@ -3,7 +3,7 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiType } from "../contracts/api-type";
+import { ApiType } from "../contracts/api-types";
 import { ApiCallableDto } from "../contracts/api-callable-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
 import { ApiItemLocationDto } from "../contracts";

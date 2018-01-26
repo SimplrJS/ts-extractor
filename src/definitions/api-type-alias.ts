@@ -8,7 +8,7 @@ import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
-import { ApiType } from "../contracts";
+import { ApiType } from "../contracts/api-types";
 import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiTypeAlias extends ApiItem<ts.TypeAliasDeclaration, ApiTypeAliasDto> {

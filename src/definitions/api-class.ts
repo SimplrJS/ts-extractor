@@ -5,7 +5,7 @@ import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemKind } from "../contracts/api-item-kind";
-import { ApiType } from "../contracts/api-type";
+import { ApiType } from "../contracts/api-types";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiTypeHelpers } from "../api-type-helpers";
