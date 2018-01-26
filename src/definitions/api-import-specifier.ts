@@ -2,7 +2,7 @@ import * as ts from "typescript";
 import { LogLevel } from "simplr-logger";
 
 import { ApiHelpers } from "../api-helpers";
-import { TSHelpers } from "../ts-helpers";
+import { TsHelpers } from "../ts-helpers";
 import { ApiItem } from "../abstractions/api-item";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -16,7 +16,7 @@ export class ApiImportSpecifier extends ApiItem<ts.ImportSpecifier, ApiImportSpe
         // ApiItemLocation
         this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
-        const targetSymbol = TSHelpers.GetImportSpecifierLocalTargetSymbol(this.Declaration, this.Options.Program);
+        const targetSymbol = TsHelpers.GetImportSpecifierLocalTargetSymbol(this.Declaration, this.Options.Program);
         const symbolReferences = ApiHelpers.GetItemIdsFromSymbol(targetSymbol, this.Options);
 
         if (symbolReferences != null) {

@@ -7,7 +7,7 @@ import { ApiDefinitionKind, ApiMappedDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiType } from "../contracts/api-types";
-import { TSHelpers } from "../ts-helpers";
+import { TsHelpers } from "../ts-helpers";
 import { ApiTypeHelpers } from "../api-type-helpers";
 
 export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
@@ -22,7 +22,7 @@ export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
         this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         // TypeParameter
-        const typeParameterSymbol = TSHelpers.GetSymbolFromDeclaration(this.Declaration.typeParameter, this.TypeChecker);
+        const typeParameterSymbol = TsHelpers.GetSymbolFromDeclaration(this.Declaration.typeParameter, this.TypeChecker);
         if (typeParameterSymbol != null) {
             this.typeParameter = ApiHelpers.GetItemId(this.Declaration.typeParameter, typeParameterSymbol, this.Options);
         }

@@ -4,7 +4,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItem } from "../abstractions/api-item";
 import { ApiSourceFile } from "./api-source-file";
-import { TSHelpers } from "../ts-helpers";
+import { TsHelpers } from "../ts-helpers";
 import { ApiHelpers } from "../api-helpers";
 import { ApiDefinitionKind, ApiExportDto } from "../contracts/api-definitions";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -33,10 +33,10 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         this.location = ApiHelpers.GetApiItemLocationDtoFromNode(this.Declaration, this.Options);
 
         // Extract members from Source file.
-        const sourceFileDeclaration = TSHelpers.ResolveSourceFile(this.Declaration, this.Options.Program);
+        const sourceFileDeclaration = TsHelpers.ResolveSourceFile(this.Declaration, this.Options.Program);
 
         if (sourceFileDeclaration != null) {
-            const sourceFileSymbol = TSHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
+            const sourceFileSymbol = TsHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
 
             if (sourceFileSymbol != null) {
                 this.apiSourceFile = new ApiSourceFile(sourceFileDeclaration, sourceFileSymbol, this.Options);

@@ -6,7 +6,7 @@ import { ApiItem, ApiItemOptions } from "./abstractions/api-item";
 
 import { ApiItemReference } from "./contracts/api-item-reference";
 import { AccessModifier } from "./contracts/access-modifier";
-import { TSHelpers } from "./ts-helpers";
+import { TsHelpers } from "./ts-helpers";
 import { Logger } from "./utils/logger";
 import { ApiItemLocationDto } from "./contracts/api-item-location-dto";
 
@@ -147,7 +147,7 @@ export namespace ApiHelpers {
             return options.Registry.GetDeclarationId(declaration);
         }
 
-        const resolveRealSymbol = TSHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
+        const resolveRealSymbol = TsHelpers.FollowSymbolAliases(symbol, options.Program.getTypeChecker());
         const apiItem = VisitApiItem(declaration, resolveRealSymbol, options);
         if (apiItem == null) {
             return undefined;
@@ -212,7 +212,7 @@ export namespace ApiHelpers {
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {
-            const symbol = TSHelpers.GetSymbolFromDeclaration(declaration, typeChecker);
+            const symbol = TsHelpers.GetSymbolFromDeclaration(declaration, typeChecker);
             if (symbol == null) {
                 return;
             }
@@ -331,7 +331,7 @@ export namespace ApiHelpers {
             return undefined;
         }
 
-        const parentSymbol = TSHelpers.GetSymbolFromDeclaration(parentDeclaration, options.Program.getTypeChecker());
+        const parentSymbol = TsHelpers.GetSymbolFromDeclaration(parentDeclaration, options.Program.getTypeChecker());
         if (parentSymbol == null) {
             return undefined;
         }
