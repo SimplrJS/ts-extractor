@@ -4,7 +4,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassDto } from "../contracts/api-definitions";
 import { ApiItemReference } from "../contracts/api-item-reference";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiType } from "../contracts/api-types";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -66,7 +66,7 @@ export class ApiClass extends ApiItem<ts.ClassDeclaration, ApiClassDto> {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKind.Class,
+            ApiKind: ApiDefinitionKind.Class,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

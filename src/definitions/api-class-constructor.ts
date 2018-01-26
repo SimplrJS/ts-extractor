@@ -3,7 +3,7 @@ import * as ts from "typescript";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 import { ApiHelpers } from "../api-helpers";
 import { ApiClassConstructorDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { AccessModifier } from "../contracts/access-modifier";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -23,7 +23,7 @@ export class ApiClassConstructor extends ApiCallableBase<ts.ConstructorDeclarati
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKind.ClassConstructor,
+            ApiKind: ApiDefinitionKind.ClassConstructor,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

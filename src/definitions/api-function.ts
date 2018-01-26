@@ -2,7 +2,7 @@ import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiFunctionDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
@@ -21,7 +21,7 @@ export class ApiFunction extends ApiCallableBase<ts.FunctionDeclaration, ApiFunc
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKind.Function,
+            ApiKind: ApiDefinitionKind.Function,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

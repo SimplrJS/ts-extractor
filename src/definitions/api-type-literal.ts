@@ -4,7 +4,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 
 import { ApiTypeLiteralDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemReference } from "../contracts/api-item-reference";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -13,11 +13,11 @@ export class ApiTypeLiteral extends ApiItem<ts.TypeLiteralNode | ts.ObjectLitera
     private location: ApiItemLocationDto;
     private members: ApiItemReference[] = [];
 
-    protected ResolveApiKind(): ApiItemKind.TypeLiteral | ApiItemKind.ObjectLiteral {
+    protected ResolveApiKind(): ApiDefinitionKind.TypeLiteral | ApiDefinitionKind.ObjectLiteral {
         if (ts.isTypeLiteralNode(this.Declaration)) {
-            return ApiItemKind.TypeLiteral;
+            return ApiDefinitionKind.TypeLiteral;
         } else {
-            return ApiItemKind.ObjectLiteral;
+            return ApiDefinitionKind.ObjectLiteral;
         }
     }
 

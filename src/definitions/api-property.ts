@@ -3,7 +3,7 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiPropertyDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiType } from "../contracts/api-types";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
@@ -36,7 +36,7 @@ export class ApiProperty extends ApiItem<ts.PropertySignature | ts.PropertyAssig
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKind.Property,
+            ApiKind: ApiDefinitionKind.Property,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

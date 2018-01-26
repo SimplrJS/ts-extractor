@@ -4,7 +4,7 @@ import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 
 import { ApiMappedDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 import { ApiType } from "../contracts/api-types";
@@ -47,7 +47,7 @@ export class ApiMapped extends ApiItem<ts.MappedTypeNode, ApiMappedDto> {
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKind.Mapped,
+            ApiKind: ApiDefinitionKind.Mapped,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,

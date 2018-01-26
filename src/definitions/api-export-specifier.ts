@@ -4,7 +4,7 @@ import { LogLevel } from "simplr-logger";
 import { ApiItem } from "../abstractions/api-item";
 import { ApiHelpers } from "../api-helpers";
 import { ApiExportSpecifierDto, ApiExportSpecifierApiItems } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiItemLocationDto } from "../contracts/api-item-location-dto";
 
@@ -31,7 +31,7 @@ export class ApiExportSpecifier extends ApiItem<ts.ExportSpecifier, ApiExportSpe
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKind.ExportSpecifier,
+            ApiKind: ApiDefinitionKind.ExportSpecifier,
             Name: this.Declaration.name.getText(),
             ParentId: parentId,
             Metadata: metadata,

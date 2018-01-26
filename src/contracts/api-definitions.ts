@@ -1,21 +1,119 @@
-import { ApiItemKind } from "./api-item-kind";
-import { ApiCallableDto } from "./api-callable-dto";
+import * as ts from "typescript";
 import { AccessModifier } from "./access-modifier";
-import { ApiBaseItemDto } from "./api-base-item-dto";
 import { ApiItemReference } from "./api-item-reference";
 import { ApiType } from "./api-types";
+import { ApiMetadataDto } from "./api-metadata-dto";
+import { ApiItemLocationDto } from "./api-item-location-dto";
+
+export enum ApiDefinitionKind {
+    SourceFile = "source-file",
+    Enum = "enum",
+    EnumMember = "enum-member",
+    Function = "function",
+    Interface = "interface",
+    Method = "method",
+    Namespace = "namespace",
+    ImportNamespace = "import-namespace",
+    Parameter = "parameter",
+    Property = "property",
+    Variable = "variable",
+    TypeAlias = "type-alias",
+    Class = "class",
+    ClassProperty = "class-property",
+    ClassMethod = "class-method",
+    GetAccessor = "get-accessor",
+    SetAccessor = "set-accessor",
+    Index = "index",
+    Call = "call",
+    ClassConstructor = "class-constructor",
+    Construct = "construct",
+    ConstructorType = "constructor-type",
+    Export = "export",
+    ExportSpecifier = "export-specifier",
+    ImportSpecifier = "import-specifier",
+    TypeParameter = "type-parameter",
+    TypeLiteral = "type-literal",
+    ObjectLiteral = "object-literal",
+    FunctionType = "function-type",
+    ArrowFunction = "arrow-function",
+    FunctionExpression = "function-expression",
+    Mapped = "mapped"
+}
+
+export type ApiDefinition = ApiCallDto |
+    ApiClassConstructorDto |
+    ApiClassDto |
+    ApiClassMethodDto |
+    ApiClassPropertyDto |
+    ApiConstructDto |
+    ApiEnumDto |
+    ApiEnumMemberDto |
+    ApiExportDto |
+    ApiExportSpecifierDto |
+    ApiImportSpecifierDto |
+    ApiFunctionDto |
+    ApiFunctionExpressionDto |
+    ApiIndexDto |
+    ApiInterfaceDto |
+    ApiMethodDto |
+    ApiNamespaceDto |
+    ApiParameterDto |
+    ApiPropertyDto |
+    ApiSourceFileDto |
+    ApiTypeAliasDto |
+    ApiTypeLiteralDto |
+    ApiTypeParameterDto |
+    ApiVariableDto |
+    ApiGetAccessorDto |
+    ApiSetAccessorDto |
+    ApiMappedDto;
+
+export interface TypeScriptTypeDeclarationDebug {
+    Kind: ts.SyntaxKind;
+    KindString: string;
+}
+
+//#region Base interfaces
+
+/**
+ * This is the interface for definitions like: interface, class or enum etc.
+ */
+export interface ApiBaseItemDto {
+    Name: string;
+    ApiKind: ApiDefinitionKind;
+    Metadata: ApiMetadataDto;
+    Location: ApiItemLocationDto;
+    /**
+     * Parent reference id.
+     */
+    ParentId: string | undefined;
+    /**
+     * TypeScript debug info.
+     */
+    _ts?: TypeScriptTypeDeclarationDebug;
+}
+
+//#endregion
+//#region Definitions
+
+export interface ApiCallableDto extends ApiBaseItemDto {
+    TypeParameters: ApiItemReference[];
+    Parameters: ApiItemReference[];
+    IsOverloadBase: boolean;
+    ReturnType?: ApiType;
+}
 
 export interface ApiSourceFileDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.SourceFile;
+    ApiKind: ApiDefinitionKind.SourceFile;
     Members: ApiItemReference[];
 }
 
 export interface ApiCallDto extends ApiCallableDto {
-    ApiKind: ApiItemKind.Call;
+    ApiKind: ApiDefinitionKind.Call;
 }
 
 export interface ApiClassDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Class;
+    ApiKind: ApiDefinitionKind.Class;
     TypeParameters: ApiItemReference[];
     Members: ApiItemReference[];
     Extends?: ApiType;
@@ -24,12 +122,12 @@ export interface ApiClassDto extends ApiBaseItemDto {
 }
 
 export interface ApiClassConstructorDto extends ApiCallableDto {
-    ApiKind: ApiItemKind.ClassConstructor;
+    ApiKind: ApiDefinitionKind.ClassConstructor;
     AccessModifier: AccessModifier;
 }
 
 export interface ApiClassMethodDto extends ApiCallableDto {
-    ApiKind: ApiItemKind.ClassMethod;
+    ApiKind: ApiDefinitionKind.ClassMethod;
     AccessModifier: AccessModifier;
     IsOptional: boolean;
     IsAbstract: boolean;
@@ -38,7 +136,7 @@ export interface ApiClassMethodDto extends ApiCallableDto {
 }
 
 export interface ApiClassPropertyDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.ClassProperty;
+    ApiKind: ApiDefinitionKind.ClassProperty;
     AccessModifier: AccessModifier;
     IsAbstract: boolean;
     IsStatic: boolean;
@@ -48,22 +146,22 @@ export interface ApiClassPropertyDto extends ApiBaseItemDto {
 }
 
 export interface ApiConstructDto extends ApiCallableDto {
-    ApiKind: ApiItemKind.Construct | ApiItemKind.ConstructorType;
+    ApiKind: ApiDefinitionKind.Construct | ApiDefinitionKind.ConstructorType;
 }
 
 export interface ApiEnumDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Enum;
+    ApiKind: ApiDefinitionKind.Enum;
     IsConst: boolean;
     Members: ApiItemReference[];
 }
 
 export interface ApiEnumMemberDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.EnumMember;
+    ApiKind: ApiDefinitionKind.EnumMember;
     Value: string;
 }
 
 export interface ApiExportDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Export;
+    ApiKind: ApiDefinitionKind.Export;
     SourceFileId: string | undefined;
     ExportPath: string | undefined;
 }
@@ -71,21 +169,21 @@ export interface ApiExportDto extends ApiBaseItemDto {
 export type ApiExportSpecifierApiItems = string[] | undefined;
 
 export interface ApiExportSpecifierDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.ExportSpecifier;
+    ApiKind: ApiDefinitionKind.ExportSpecifier;
     ApiItems: ApiExportSpecifierApiItems;
 }
 
 export interface ApiFunctionDto extends ApiCallableDto {
-    ApiKind: ApiItemKind.Function;
+    ApiKind: ApiDefinitionKind.Function;
     IsAsync: boolean;
 }
 
 export interface ApiFunctionExpressionDto extends ApiCallableDto {
-    ApiKind: ApiItemKind.FunctionType | ApiItemKind.ArrowFunction | ApiItemKind.FunctionExpression;
+    ApiKind: ApiDefinitionKind.FunctionType | ApiDefinitionKind.ArrowFunction | ApiDefinitionKind.FunctionExpression;
 }
 
 export interface ApiGetAccessorDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.GetAccessor;
+    ApiKind: ApiDefinitionKind.GetAccessor;
     IsAbstract: boolean;
     IsStatic: boolean;
     AccessModifier: AccessModifier;
@@ -93,7 +191,7 @@ export interface ApiGetAccessorDto extends ApiBaseItemDto {
 }
 
 export interface ApiSetAccessorDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.SetAccessor;
+    ApiKind: ApiDefinitionKind.SetAccessor;
     IsAbstract: boolean;
     IsStatic: boolean;
     AccessModifier: AccessModifier;
@@ -103,26 +201,26 @@ export interface ApiSetAccessorDto extends ApiBaseItemDto {
 export type ApiImportSpecifierApiItems = string[] | undefined;
 
 export interface ApiImportSpecifierDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.ImportSpecifier;
+    ApiKind: ApiDefinitionKind.ImportSpecifier;
     ApiItems: ApiImportSpecifierApiItems;
 }
 
 export interface ApiIndexDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Index;
+    ApiKind: ApiDefinitionKind.Index;
     Parameter: string;
     IsReadonly: boolean;
     Type: ApiType;
 }
 
 export interface ApiInterfaceDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Interface;
+    ApiKind: ApiDefinitionKind.Interface;
     TypeParameters: ApiItemReference[];
     Members: ApiItemReference[];
     Extends: ApiType[];
 }
 
 export interface ApiMappedDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Mapped;
+    ApiKind: ApiDefinitionKind.Mapped;
     TypeParameter: string | undefined;
     IsReadonly: boolean;
     IsOptional: boolean;
@@ -130,17 +228,17 @@ export interface ApiMappedDto extends ApiBaseItemDto {
 }
 
 export interface ApiMethodDto extends ApiCallableDto {
-    ApiKind: ApiItemKind.Method;
+    ApiKind: ApiDefinitionKind.Method;
     IsOptional: boolean;
 }
 
 export interface ApiNamespaceDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Namespace | ApiItemKind.ImportNamespace;
+    ApiKind: ApiDefinitionKind.Namespace | ApiDefinitionKind.ImportNamespace;
     Members: ApiItemReference[];
 }
 
 export interface ApiParameterDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Parameter;
+    ApiKind: ApiDefinitionKind.Parameter;
     Type: ApiType;
     IsSpread: boolean;
     Initializer: string | undefined;
@@ -148,25 +246,25 @@ export interface ApiParameterDto extends ApiBaseItemDto {
 }
 
 export interface ApiPropertyDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Property;
+    ApiKind: ApiDefinitionKind.Property;
     IsOptional: boolean;
     IsReadonly: boolean;
     Type: ApiType;
 }
 
 export interface ApiTypeAliasDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.TypeAlias;
+    ApiKind: ApiDefinitionKind.TypeAlias;
     TypeParameters: ApiItemReference[];
     Type: ApiType;
 }
 
 export interface ApiTypeLiteralDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.TypeLiteral | ApiItemKind.ObjectLiteral;
+    ApiKind: ApiDefinitionKind.TypeLiteral | ApiDefinitionKind.ObjectLiteral;
     Members: ApiItemReference[];
 }
 
 export interface ApiTypeParameterDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.TypeParameter;
+    ApiKind: ApiDefinitionKind.TypeParameter;
     ConstraintType: ApiType | undefined;
     DefaultType: ApiType | undefined;
 }
@@ -178,7 +276,9 @@ export enum ApiVariableDeclarationType {
 }
 
 export interface ApiVariableDto extends ApiBaseItemDto {
-    ApiKind: ApiItemKind.Variable;
+    ApiKind: ApiDefinitionKind.Variable;
     Type: ApiType;
     VariableDeclarationType: ApiVariableDeclarationType;
 }
+
+//#endregion

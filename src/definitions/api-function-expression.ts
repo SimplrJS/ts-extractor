@@ -2,20 +2,20 @@ import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiFunctionExpressionDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
 export type FunctionTypes = ts.FunctionExpression | ts.FunctionTypeNode | ts.ArrowFunction;
 
 export class ApiFunctionExpression extends ApiCallableBase<FunctionTypes, ApiFunctionExpressionDto> {
-    protected ResolveApiKind(): ApiItemKind.FunctionExpression | ApiItemKind.FunctionType | ApiItemKind.ArrowFunction {
+    protected ResolveApiKind(): ApiDefinitionKind.FunctionExpression | ApiDefinitionKind.FunctionType | ApiDefinitionKind.ArrowFunction {
         if (ts.isFunctionTypeNode(this.Declaration)) {
-            return ApiItemKind.FunctionType;
+            return ApiDefinitionKind.FunctionType;
         } else if (ts.isFunctionExpression(this.Declaration)) {
-            return ApiItemKind.FunctionExpression;
+            return ApiDefinitionKind.FunctionExpression;
         } else {
-            return ApiItemKind.ArrowFunction;
+            return ApiDefinitionKind.ArrowFunction;
         }
     }
 

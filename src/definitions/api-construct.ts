@@ -2,17 +2,17 @@ import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiConstructDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
 export class ApiConstruct extends ApiCallableBase<ts.ConstructSignatureDeclaration | ts.ConstructorTypeNode, ApiConstructDto> {
-    protected ResolveApiKind(): ApiItemKind.Construct | ApiItemKind.ConstructorType {
+    protected ResolveApiKind(): ApiDefinitionKind.Construct | ApiDefinitionKind.ConstructorType {
         if (ts.isConstructSignatureDeclaration(this.Declaration)) {
-            return ApiItemKind.Construct;
+            return ApiDefinitionKind.Construct;
         } else {
-            return ApiItemKind.ConstructorType;
+            return ApiDefinitionKind.ConstructorType;
         }
     }
 

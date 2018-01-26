@@ -5,7 +5,7 @@ import { ApiItem } from "../abstractions/api-item";
 
 import { ApiHelpers } from "../api-helpers";
 import { ApiIndexDto } from "../contracts/api-definitions";
-import { ApiItemKind } from "../contracts/api-item-kind";
+import { ApiDefinitionKind } from "../contracts/api-item-kind";
 import { ApiType } from "../contracts/api-types";
 
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
@@ -52,7 +52,7 @@ export class ApiIndex extends ApiItem<ts.IndexSignatureDeclaration, ApiIndexDto>
         const metadata: ApiMetadataDto = this.GetItemMetadata();
 
         return {
-            ApiKind: ApiItemKind.Index,
+            ApiKind: ApiDefinitionKind.Index,
             Name: this.Symbol.name,
             ParentId: parentId,
             Metadata: metadata,
