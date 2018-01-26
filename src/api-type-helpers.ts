@@ -3,7 +3,7 @@ import { LogLevel } from "simplr-logger";
 
 import { ApiItemOptions } from "./abstractions/api-item";
 import { ApiHelpers } from "./api-helpers";
-import { TSHelpers } from "./index";
+import { TsHelpers } from "./ts-helpers";
 import {
     ApiType,
     TypeLiteralTypeDto,
@@ -96,7 +96,7 @@ export namespace ApiTypeHelpers {
         const text = typeChecker.typeToString(type);
 
         let location: ApiItemLocationDto;
-        if (TSHelpers.IsNodeSynthesized(typeNode)) {
+        if (TsHelpers.IsNodeSynthesized(typeNode)) {
             location = apiItemlocation;
         } else {
             location = ApiHelpers.GetApiItemLocationDtoFromNode(typeNode, options);
@@ -197,10 +197,10 @@ export namespace ApiTypeHelpers {
         let typeParameters: ApiType[] | undefined;
         let refenceId: string | undefined;
 
-        if (!TSHelpers.IsNodeSynthesized(typeNode) && typeNode.typeArguments != null) {
+        if (!TsHelpers.IsNodeSynthesized(typeNode) && typeNode.typeArguments != null) {
             typeParameters = typeNode.typeArguments
                 .map(x => ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(x), x));
-        } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
+        } else if (TsHelpers.IsTypeWithTypeArguments(type)) {
             typeParameters = type.typeArguments
                 .map(x => ResolveApiType(options, location, x, typeChecker.typeToTypeNode(x)));
         }
@@ -240,7 +240,7 @@ export namespace ApiTypeHelpers {
         }
 
         let members: ApiType[];
-        if (!TSHelpers.IsNodeSynthesized(typeNode)) {
+        if (!TsHelpers.IsNodeSynthesized(typeNode)) {
             members = typeNode.types
                 .map(x => ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(x), x));
         } else {
@@ -267,9 +267,9 @@ export namespace ApiTypeHelpers {
         const typeChecker = options.Program.getTypeChecker();
 
         let apiType: ApiType;
-        if (!TSHelpers.IsNodeSynthesized(typeNode)) {
+        if (!TsHelpers.IsNodeSynthesized(typeNode)) {
             apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.elementType), typeNode.elementType);
-        } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
+        } else if (TsHelpers.IsTypeWithTypeArguments(type)) {
             const arrayType = type.typeArguments[0];
             apiType = ResolveApiType(options, location, arrayType, typeChecker.typeToTypeNode(arrayType));
         } else {
@@ -296,10 +296,10 @@ export namespace ApiTypeHelpers {
         const typeChecker = options.Program.getTypeChecker();
 
         let members: ApiType[];
-        if (!TSHelpers.IsNodeSynthesized(typeNode)) {
+        if (!TsHelpers.IsNodeSynthesized(typeNode)) {
             members = typeNode.elementTypes
                 .map(x => ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(x), x));
-        } else if (TSHelpers.IsTypeWithTypeArguments(type)) {
+        } else if (TsHelpers.IsTypeWithTypeArguments(type)) {
             members = type.typeArguments.map(x => ResolveApiType(options, location, x, typeChecker.typeToTypeNode(x)));
         } else {
             ApiHelpers.LogWithLocation(LogLevel.Error, location, "Couldn't resolve TupleType members.");
