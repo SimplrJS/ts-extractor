@@ -102,16 +102,33 @@ export interface ApiCallableBaseDefinition extends ApiBaseDefinition {
 
 //#endregion
 //#region Definitions
-
+/**
+ * Source file that contains all exported definitions.
+ * Usually an entry file.
+ */
 export interface ApiSourceFileDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.SourceFile;
     Members: ApiItemReference[];
 }
 
+/**
+ * Example:
+ * ```ts
+ * interface Example {
+ *    (arg: string): string;
+ * }
+ * ```
+ */
 export interface ApiCallDto extends ApiCallableBaseDefinition {
     ApiKind: ApiDefinitionKind.Call;
 }
 
+/**
+ * Example:
+ * ```ts
+ * class Foo<TValue> extends AnotherClass implements BaseInterface { }
+ * ```
+ */
 export interface ApiClassDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Class;
     TypeParameters: ApiItemReference[];
@@ -121,11 +138,27 @@ export interface ApiClassDto extends ApiBaseDefinition {
     IsAbstract: boolean;
 }
 
+/**
+ * Example:
+ * ```ts
+ * class Example {
+ *  constructor(arg: string) {}
+ * }
+ * ```
+ */
 export interface ApiClassConstructorDto extends ApiCallableBaseDefinition {
     ApiKind: ApiDefinitionKind.ClassConstructor;
     AccessModifier: AccessModifier;
 }
 
+/**
+ * Example:
+ * ```ts
+ * class Example {
+ *  public Render(): void {}
+ * }
+ * ```
+ */
 export interface ApiClassMethodDto extends ApiCallableBaseDefinition {
     ApiKind: ApiDefinitionKind.ClassMethod;
     AccessModifier: AccessModifier;
@@ -135,6 +168,14 @@ export interface ApiClassMethodDto extends ApiCallableBaseDefinition {
     IsStatic: boolean;
 }
 
+/**
+ * Example:
+ * ```ts
+ * class Example {
+ *  public Property: string = "Hello World!";
+ * }
+ * ```
+ */
 export interface ApiClassPropertyDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.ClassProperty;
     AccessModifier: AccessModifier;
@@ -145,21 +186,70 @@ export interface ApiClassPropertyDto extends ApiBaseDefinition {
     Type: ApiType;
 }
 
+/**
+ * Example:
+ * ```ts
+ * interface Foo {
+ *  Name: string;
+ * }
+ *
+ * interface FooConstructor {
+ *  new (): Foo;
+ * }
+ * ```
+ */
 export interface ApiConstructDto extends ApiCallableBaseDefinition {
     ApiKind: ApiDefinitionKind.Construct | ApiDefinitionKind.ConstructorType;
 }
 
+/**
+ * Example:
+ * ```ts
+ * enum Foo {}
+ * ```
+ */
 export interface ApiEnumDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Enum;
     IsConst: boolean;
     Members: ApiItemReference[];
 }
 
+/**
+ * Examples:
+ * ```ts
+ * // Without specifying value
+ * enum Example {
+ *  None,
+ *  Error,
+ *  Warning
+ * }
+ *
+ * // Specifying number value
+ * enum Example {
+ *  None = 0,
+ *  Error = 8,
+ *  Warning = 16
+ * }
+ *
+ * // Specifying string value
+ * enum Example {
+ *  None = "none",
+ *  Error = "error",
+ *  Warning = "warning"
+ * }
+ * ```
+ */
 export interface ApiEnumMemberDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.EnumMember;
     Value: string;
 }
 
+/**
+ * Example:
+ * ```ts
+ * export * as Foo from "./foo";
+ * ```
+ */
 export interface ApiExportDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Export;
     SourceFileId: string | undefined;
@@ -168,20 +258,55 @@ export interface ApiExportDto extends ApiBaseDefinition {
 
 export type ApiExportSpecifierApiItems = string[] | undefined;
 
+/**
+ * Example:
+ * ```ts
+ * export { Foo } from "./foo";
+ * ```
+ */
 export interface ApiExportSpecifierDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.ExportSpecifier;
     ApiItems: ApiExportSpecifierApiItems;
 }
 
+/**
+ * Example:
+ * ```ts
+ * function Foo(arg: string): void {}
+ * ```
+ */
 export interface ApiFunctionDto extends ApiCallableBaseDefinition {
     ApiKind: ApiDefinitionKind.Function;
     IsAsync: boolean;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * // Function expression
+ * const foo = function(arg: string): void {};
+ *
+ * // Arrow function
+ * const foo = (arg: string): void => {};
+ *
+ * // Function type
+ * const foo: (arg: string) => void;
+ * ```
+ */
 export interface ApiFunctionExpressionDto extends ApiCallableBaseDefinition {
-    ApiKind: ApiDefinitionKind.FunctionType | ApiDefinitionKind.ArrowFunction | ApiDefinitionKind.FunctionExpression;
+    ApiKind: ApiDefinitionKind.FunctionExpression | ApiDefinitionKind.FunctionType | ApiDefinitionKind.ArrowFunction;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * class Example {
+ *  public get Foo(): string {
+ *      return "Hello World";
+ *  }
+ * }
+ * ```
+ */
 export interface ApiGetAccessorDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.GetAccessor;
     IsAbstract: boolean;
@@ -190,6 +315,18 @@ export interface ApiGetAccessorDto extends ApiBaseDefinition {
     Type: ApiType;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * class Example {
+ *  private foo: string;
+ *
+ *  public set Foo(arg: string) {
+ *      this.foo = arg;
+ *  }
+ * }
+ * ```
+ */
 export interface ApiSetAccessorDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.SetAccessor;
     IsAbstract: boolean;
@@ -200,11 +337,25 @@ export interface ApiSetAccessorDto extends ApiBaseDefinition {
 
 export type ApiImportSpecifierApiItems = string[] | undefined;
 
+/**
+ * Examples:
+ * ```ts
+ * import { Foo } from "./foo";
+ * ```
+ */
 export interface ApiImportSpecifierDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.ImportSpecifier;
     ApiItems: ApiImportSpecifierApiItems;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * interface Example {
+ *  [key: string]: string;
+ * }
+ * ```
+ */
 export interface ApiIndexDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Index;
     Parameter: string;
@@ -212,6 +363,12 @@ export interface ApiIndexDto extends ApiBaseDefinition {
     Type: ApiType;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * interface Foo<TValue> extends OtherInterface<TValue> {}
+ * ```
+ */
 export interface ApiInterfaceDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Interface;
     TypeParameters: ApiItemReference[];
@@ -219,6 +376,18 @@ export interface ApiInterfaceDto extends ApiBaseDefinition {
     Extends: ApiType[];
 }
 
+/**
+ * Examples:
+ * ```ts
+ * interface Bar {
+ *  Name: string;
+ * }
+ *
+ * type Foo = {
+ *  readonly [T in keyof Bar]: Bar[T]
+ * };
+ * ```
+ */
 export interface ApiMappedDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Mapped;
     TypeParameter: string | undefined;
@@ -227,16 +396,36 @@ export interface ApiMappedDto extends ApiBaseDefinition {
     Type: ApiType;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * interface Foo {
+ *  Bar(): string;
+ * }
+ * ```
+ */
 export interface ApiMethodDto extends ApiCallableBaseDefinition {
     ApiKind: ApiDefinitionKind.Method;
     IsOptional: boolean;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * namespace Foo {}
+ * ```
+ */
 export interface ApiNamespaceDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Namespace | ApiDefinitionKind.ImportNamespace;
     Members: ApiItemReference[];
 }
 
+/**
+ * Examples:
+ * ```ts
+ * function Foo(parameter: string): void {}
+ * ```
+ */
 export interface ApiParameterDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Parameter;
     Type: ApiType;
@@ -245,6 +434,14 @@ export interface ApiParameterDto extends ApiBaseDefinition {
     IsOptional: boolean;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * interface Example {
+ *  Foo: string;
+ * }
+ * ```
+ */
 export interface ApiPropertyDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Property;
     IsOptional: boolean;
@@ -252,17 +449,43 @@ export interface ApiPropertyDto extends ApiBaseDefinition {
     Type: ApiType;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * type StringAlias = string;
+ * ```
+ */
 export interface ApiTypeAliasDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.TypeAlias;
     TypeParameters: ApiItemReference[];
     Type: ApiType;
 }
 
+/**
+ * Examples:
+ * ```ts
+ * // Type literal
+ * type TypeLiteral = {
+ *  Name: string;
+ * };
+ *
+ * // Object literal
+ * const a = {
+ *  Name: "Bob"
+ * };
+ * ```
+ */
 export interface ApiTypeLiteralDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.TypeLiteral | ApiDefinitionKind.ObjectLiteral;
     Members: ApiItemReference[];
 }
 
+/**
+ * Examples:
+ * ```ts
+ * interface Foo<TTypeParameter> {}
+ * ```
+ */
 export interface ApiTypeParameterDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.TypeParameter;
     ConstraintType: ApiType | undefined;
@@ -275,10 +498,17 @@ export enum ApiVariableDeclarationType {
     Const = "const"
 }
 
+/**
+ * Examples:
+ * ```ts
+ * var foo = "Hello World";
+ * let foo = "Hello World";
+ * const foo = "Hello World";
+ * ```
+ */
 export interface ApiVariableDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.Variable;
     Type: ApiType;
     VariableDeclarationType: ApiVariableDeclarationType;
 }
-
 //#endregion
