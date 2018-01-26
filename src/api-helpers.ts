@@ -35,7 +35,7 @@ import { ApiCall } from "./definitions/api-call";
 import { ApiConstruct } from "./definitions/api-construct";
 import { ApiTypeParameter } from "./definitions/api-type-parameter";
 import { ApiTypeLiteral } from "./definitions/api-type-literal";
-import { ApiFunctionType } from "./definitions/api-function-type";
+import { ApiFunctionType } from "./definitions/api-function-expression";
 import { ApiMapped } from "./definitions/api-mapped";
 import { PathIsInside } from "./utils/path-is-inside";
 

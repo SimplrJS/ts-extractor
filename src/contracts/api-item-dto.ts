@@ -11,7 +11,7 @@ import {
     ApiExportSpecifierDto,
     ApiImportSpecifierDto,
     ApiFunctionDto,
-    ApiFunctionTypeDto,
+    ApiFunctionExpressionDto,
     ApiIndexDto,
     ApiInterfaceDto,
     ApiMethodDto,
@@ -40,7 +40,7 @@ export type ApiItemDto = ApiCallDto |
     ApiExportSpecifierDto |
     ApiImportSpecifierDto |
     ApiFunctionDto |
-    ApiFunctionTypeDto |
+    ApiFunctionExpressionDto |
     ApiIndexDto |
     ApiInterfaceDto |
     ApiMethodDto |

@@ -1,16 +1,15 @@
 import * as ts from "typescript";
 
 import { ApiHelpers } from "../api-helpers";
-import { ApiFunctionTypeDto } from "../contracts/api-definitions";
+import { ApiFunctionExpressionDto } from "../contracts/api-definitions";
 import { ApiItemKind } from "../contracts/api-item-kind";
 import { ApiMetadataDto } from "../contracts/api-metadata-dto";
 import { ApiCallableBase } from "../abstractions/api-callable-base";
 
-export type FunctionTypes = ts.FunctionTypeNode | ts.ArrowFunction | ts.FunctionExpression;
+export type FunctionTypes = ts.FunctionExpression | ts.FunctionTypeNode | ts.ArrowFunction;
 
-// TODO: Rename to appropriate class name.
-export class ApiFunctionType extends ApiCallableBase<FunctionTypes, ApiFunctionTypeDto> {
-    protected ResolveApiKind(): ApiItemKind.FunctionType | ApiItemKind.ArrowFunction | ApiItemKind.FunctionExpression {
+export class ApiFunctionExpression extends ApiCallableBase<FunctionTypes, ApiFunctionExpressionDto> {
+    protected ResolveApiKind(): ApiItemKind.FunctionExpression | ApiItemKind.FunctionType | ApiItemKind.ArrowFunction {
         if (ts.isFunctionTypeNode(this.Declaration)) {
             return ApiItemKind.FunctionType;
         } else if (ts.isFunctionExpression(this.Declaration)) {
@@ -20,7 +19,7 @@ export class ApiFunctionType extends ApiCallableBase<FunctionTypes, ApiFunctionT
         }
     }
 
-    public OnExtract(): ApiFunctionTypeDto {
+    public OnExtract(): ApiFunctionExpressionDto {
         const parentId: string | undefined = ApiHelpers.GetParentIdFromDeclaration(this.Declaration, this.Options);
         const metadata: ApiMetadataDto = this.GetItemMetadata();
         const apiKind = this.ResolveApiKind();

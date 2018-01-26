@@ -80,7 +80,7 @@ export interface ApiFunctionDto extends ApiCallableDto {
     IsAsync: boolean;
 }
 
-export interface ApiFunctionTypeDto extends ApiCallableDto {
+export interface ApiFunctionExpressionDto extends ApiCallableDto {
     ApiKind: ApiItemKind.FunctionType | ApiItemKind.ArrowFunction | ApiItemKind.FunctionExpression;
 }
 
