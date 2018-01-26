@@ -107,7 +107,7 @@ export interface TupleTypeDto extends ApiMembersBaseType {
 }
 
 /**
- * @see ApiTypeLiteralDto
+ * @see ApiTypeLiteralDto in `./api-definitions.ts`.
  */
 export interface TypeLiteralTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.TypeLiteral;
@@ -115,14 +115,14 @@ export interface TypeLiteralTypeDto extends ApiBaseType {
 }
 
 /**
- * @see ApiMappedDto
+ * @see ApiMappedDto in `./api-definitions.ts`.
  */
 export interface MappedTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.Mapped;
 }
 
 /**
- * @see ApiFunctionExpressionDto
+ * @see ApiFunctionExpressionDto in `./api-definitions.ts`.
  */
 export interface FunctionTypeTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.FunctionType;
@@ -133,7 +133,7 @@ export interface ThisTypeDto extends ApiReferenceBaseType {
 }
 
 /**
- * @see ApiConstructDto
+ * @see ApiConstructDto in `./api-definitions.ts`.
  */
 export interface ConstructorTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.Constructor;
