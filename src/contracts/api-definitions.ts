@@ -256,6 +256,9 @@ export interface ApiExportDto extends ApiBaseDefinition {
     ExportPath: string | undefined;
 }
 
+/**
+ * Array of api item reference ids.
+ */
 export type ApiExportSpecifierApiItems = string[] | undefined;
 
 /**
@@ -266,6 +269,9 @@ export type ApiExportSpecifierApiItems = string[] | undefined;
  */
 export interface ApiExportSpecifierDto extends ApiBaseDefinition {
     ApiKind: ApiDefinitionKind.ExportSpecifier;
+    /**
+     * Array of api item reference ids.
+     */
     ApiItems: ApiExportSpecifierApiItems;
 }
 
