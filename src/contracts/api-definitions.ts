@@ -112,7 +112,7 @@ export interface ApiSourceFileDto extends ApiBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * interface Example {
  *    (arg: string): string;
@@ -124,7 +124,7 @@ export interface ApiCallDto extends ApiCallableBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * class Foo<TValue> extends AnotherClass implements BaseInterface { }
  * ```
@@ -139,7 +139,7 @@ export interface ApiClassDto extends ApiBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * class Example {
  *  constructor(arg: string) {}
@@ -152,7 +152,7 @@ export interface ApiClassConstructorDto extends ApiCallableBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * class Example {
  *  public Render(): void {}
@@ -169,7 +169,7 @@ export interface ApiClassMethodDto extends ApiCallableBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * class Example {
  *  public Property: string = "Hello World!";
@@ -187,7 +187,7 @@ export interface ApiClassPropertyDto extends ApiBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * interface Foo {
  *  Name: string;
@@ -203,7 +203,7 @@ export interface ApiConstructDto extends ApiCallableBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * enum Foo {}
  * ```
@@ -215,7 +215,7 @@ export interface ApiEnumDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * // Without specifying value
  * enum Example {
@@ -245,7 +245,7 @@ export interface ApiEnumMemberDto extends ApiBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * export * as Foo from "./foo";
  * ```
@@ -262,7 +262,7 @@ export interface ApiExportDto extends ApiBaseDefinition {
 export type ApiExportSpecifierApiItems = string[] | undefined;
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * export { Foo } from "./foo";
  * ```
@@ -276,7 +276,7 @@ export interface ApiExportSpecifierDto extends ApiBaseDefinition {
 }
 
 /**
- * Example:
+ * Definition code example:
  * ```ts
  * function Foo(arg: string): void {}
  * ```
@@ -287,7 +287,7 @@ export interface ApiFunctionDto extends ApiCallableBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * // Function expression
  * const foo = function(arg: string): void {};
@@ -304,7 +304,7 @@ export interface ApiFunctionExpressionDto extends ApiCallableBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * class Example {
  *  public get Foo(): string {
@@ -322,7 +322,7 @@ export interface ApiGetAccessorDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * class Example {
  *  private foo: string;
@@ -344,7 +344,7 @@ export interface ApiSetAccessorDto extends ApiBaseDefinition {
 export type ApiImportSpecifierApiItems = string[] | undefined;
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * import { Foo } from "./foo";
  * ```
@@ -355,7 +355,7 @@ export interface ApiImportSpecifierDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * interface Example {
  *  [key: string]: string;
@@ -370,7 +370,7 @@ export interface ApiIndexDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * interface Foo<TValue> extends OtherInterface<TValue> {}
  * ```
@@ -383,7 +383,7 @@ export interface ApiInterfaceDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * interface Bar {
  *  Name: string;
@@ -403,7 +403,7 @@ export interface ApiMappedDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * interface Foo {
  *  Bar(): string;
@@ -416,7 +416,7 @@ export interface ApiMethodDto extends ApiCallableBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * namespace Foo {}
  * ```
@@ -427,7 +427,7 @@ export interface ApiNamespaceDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * function Foo(parameter: string): void {}
  * ```
@@ -441,7 +441,7 @@ export interface ApiParameterDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * interface Example {
  *  Foo: string;
@@ -456,7 +456,7 @@ export interface ApiPropertyDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * type StringAlias = string;
  * ```
@@ -468,7 +468,7 @@ export interface ApiTypeAliasDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * // Type literal
  * type TypeLiteral = {
@@ -487,7 +487,7 @@ export interface ApiTypeLiteralDto extends ApiBaseDefinition {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * interface Foo<TTypeParameter> {}
  * ```
@@ -505,7 +505,7 @@ export enum ApiVariableDeclarationType {
 }
 
 /**
- * Examples:
+ * Definition code examples:
  * ```ts
  * var foo = "Hello World";
  * let foo = "Hello World";
