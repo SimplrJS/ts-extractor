@@ -69,34 +69,61 @@ export interface ApiBasicTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.Basic;
 }
 
+/**
+ * @example
+ * - `Foo`
+ * - `Foo<string>`
+ */
 export interface ApiReferenceTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.Reference;
     TypeParameters: ApiType[] | undefined;
     SymbolName?: string;
 }
 
+/**
+ * @example
+ * - `string | number`
+ * - `Foo & Bar`
+ */
 export interface ApiUnionOrIntersectionTypeDto extends ApiMembersBaseType {
     ApiTypeKind: ApiTypeKind.Intersection | ApiTypeKind.Union;
 }
 
+/**
+ * @example
+ * `string[]`
+ */
 export interface ArrayTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.Array;
     Type: ApiType;
 }
 
+/**
+ * @example
+ * `[string, number]`
+ */
 export interface TupleTypeDto extends ApiMembersBaseType {
     ApiTypeKind: ApiTypeKind.Tuple;
 }
 
+/**
+ * @see ApiTypeLiteralDto
+ */
 export interface TypeLiteralTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.TypeLiteral;
     ReferenceId?: string;
 }
 
+/**
+ * @see ApiMappedDto
+ */
 export interface MappedTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.Mapped;
 }
 
+/**
+ * @see ApiFunctionExpressionDto
+ */
 export interface FunctionTypeTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.FunctionType;
 }
@@ -105,33 +132,57 @@ export interface ThisTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.This;
 }
 
+/**
+ * @see ApiConstructDto
+ */
 export interface ConstructorTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.Constructor;
 }
 
+/**
+ * @example
+ * `arg is string`
+ */
 export interface TypePredicateTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.TypePredicate;
     ParameterName: string;
     Type: ApiType;
 }
 
+/**
+ * @example
+ * `keyof Foo`
+ */
 export interface TypeOperatorTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.TypeOperator;
     Keyword: TypeKeywords.Keyof | TypeKeywords.Unknown;
     Type: ApiType;
 }
 
+/**
+ * @example
+ * `Foo["Name"]`
+ */
 export interface IndexedAccessTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.IndexedAccess;
     ObjectType: ApiType;
     IndexType: ApiType;
 }
 
+/**
+ * @example
+ * - `(string)`
+ * - `(string | undefined)`
+ */
 export interface ParenthesizedTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.Parenthesized;
     Type: ApiType;
 }
 
+/**
+ * @example
+ * `typeof Foo`
+ */
 export interface TypeQueryTypeDto extends ApiReferenceBaseType {
     ApiTypeKind: ApiTypeKind.TypeQuery;
     Keyword: TypeKeywords.Typeof;
