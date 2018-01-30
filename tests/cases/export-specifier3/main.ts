@@ -1,2 +1,2 @@
-export { FooClass as Bar } from "./ClassDeclaration4";
-export { FooClass } from "./ClassDeclaration4";
+export { Foo as Bar } from "./foo";
+export { Foo } from "./foo";

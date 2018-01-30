@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class-declaration7 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooClass",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
+            "TypeParameter-0",
+          ],
+        },
+      ],
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 22,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
+      "ParentId": "ClassDeclaration-0",
+      "_ts": undefined,
+    },
+  },
+}
+`;

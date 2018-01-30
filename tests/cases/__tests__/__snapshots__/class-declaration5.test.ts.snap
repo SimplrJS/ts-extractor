@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class-declaration5 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": true,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "GetValue",
+          "Ids": Array [
+            "MethodDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooBase",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
+            "TypeParameter-0",
+          ],
+        },
+      ],
+      "_ts": undefined,
+    },
+    "ClassDeclaration-1": Object {
+      "ApiKind": "class",
+      "Extends": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
+        "ReferenceId": "ClassDeclaration-0",
+        "SymbolName": "FooBase",
+        "Text": "FooBase<number>",
+        "TypeParameters": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 33,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 6,
+            },
+            "Text": "number",
+          },
+        ],
+      },
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 6,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "GetValue",
+          "Ids": Array [
+            "MethodDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": true,
+      "IsAsync": false,
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "GetValue",
+      "Parameters": Array [],
+      "ParentId": "ClassDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 32,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
+        "ReferenceId": "TypeParameter-0",
+        "SymbolName": "TValue",
+        "Text": "TValue",
+        "TypeParameters": undefined,
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsAsync": false,
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "GetValue",
+      "Parameters": Array [],
+      "ParentId": "ClassDeclaration-1",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
+        "Text": "number",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooBase",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "ClassDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 30,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
+      "ParentId": "ClassDeclaration-0",
+      "_ts": undefined,
+    },
+  },
+}
+`;

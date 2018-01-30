@@ -1,3 +1,3 @@
-import * as Something from "./ClassDeclaration1";
+import * as Something from "./foo";
 
 export { Something };

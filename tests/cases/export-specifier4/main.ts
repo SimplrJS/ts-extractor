@@ -1,3 +1,3 @@
-export { Foo } from "./ClassDeclaration2";
+export { Foo } from "./foo";
 // @ts-ignore
 export { NotValid } from "./aaaa";

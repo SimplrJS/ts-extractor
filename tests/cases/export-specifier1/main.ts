@@ -1,1 +1,1 @@
-export { Foo } from "./ClassDeclaration2";
+export { Foo } from "./foo";

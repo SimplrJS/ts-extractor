@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enum-declaration4 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "EnumDeclaration-0": Object {
+      "ApiKind": "enum",
+      "IsConst": true,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "None",
+          "Ids": Array [
+            "EnumMember-0",
+          ],
+        },
+        Object {
+          "Alias": "Critical",
+          "Ids": Array [
+            "EnumMember-1",
+          ],
+        },
+        Object {
+          "Alias": "Error",
+          "Ids": Array [
+            "EnumMember-2",
+          ],
+        },
+        Object {
+          "Alias": "Warning",
+          "Ids": Array [
+            "EnumMember-3",
+          ],
+        },
+        Object {
+          "Alias": "Information",
+          "Ids": Array [
+            "EnumMember-4",
+          ],
+        },
+        Object {
+          "Alias": "Debug",
+          "Ids": Array [
+            "EnumMember-5",
+          ],
+        },
+        Object {
+          "Alias": "Trace",
+          "Ids": Array [
+            "EnumMember-6",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "LogLevel",
+      "ParentId": "SourceFile-0",
+      "_ts": undefined,
+    },
+    "EnumMember-0": Object {
+      "ApiKind": "enum-member",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "None",
+      "ParentId": "EnumDeclaration-0",
+      "Value": "0",
+      "_ts": undefined,
+    },
+    "EnumMember-1": Object {
+      "ApiKind": "enum-member",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Critical",
+      "ParentId": "EnumDeclaration-0",
+      "Value": "1",
+      "_ts": undefined,
+    },
+    "EnumMember-2": Object {
+      "ApiKind": "enum-member",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Error",
+      "ParentId": "EnumDeclaration-0",
+      "Value": "2",
+      "_ts": undefined,
+    },
+    "EnumMember-3": Object {
+      "ApiKind": "enum-member",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 6,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Warning",
+      "ParentId": "EnumDeclaration-0",
+      "Value": "3",
+      "_ts": undefined,
+    },
+    "EnumMember-4": Object {
+      "ApiKind": "enum-member",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Information",
+      "ParentId": "EnumDeclaration-0",
+      "Value": "4",
+      "_ts": undefined,
+    },
+    "EnumMember-5": Object {
+      "ApiKind": "enum-member",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Debug",
+      "ParentId": "EnumDeclaration-0",
+      "Value": "5",
+      "_ts": undefined,
+    },
+    "EnumMember-6": Object {
+      "ApiKind": "enum-member",
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 9,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Trace",
+      "ParentId": "EnumDeclaration-0",
+      "Value": "6",
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "LogLevel",
+          "Ids": Array [
+            "EnumDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+  },
+}
+`;

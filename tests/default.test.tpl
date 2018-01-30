@@ -3,7 +3,7 @@ import { Extractor, GetCompilerOptions } from "@src/index";
 test("{{caseName}}", async done => {
     const projectDirectory = "{{projectDirectory}}";
     const { EntryFiles, ...rest } = {{{json testConfig}}};
-    const compilerOptions = await GetCompilerOptions("./tsconfig.json");
+    const compilerOptions = await GetCompilerOptions("./tests/tsconfig.test.json");
 
     try {
         const extractor = new Extractor({

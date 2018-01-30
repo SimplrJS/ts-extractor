@@ -27,7 +27,7 @@
         "test-watch": "start npm run build-tests -- --watchAll && jest --watchAll",
         "build": "tsc -p .",
         "build-watch": "npm run build -- -w",
-        "build-tests": "cd tests && ts-node ./build-tests.ts -p ./",
+        "build-tests": "test-generator-cli",
         "prepublishOnly": "npm run build && rimraf dist/debug.*",
         "travis-release": "node ./tools/travis-release/release.js"
     },
@@ -50,7 +50,6 @@
         "@types/globby": "^6.1.0",
         "@types/jest": "^21.1.9",
         "coveralls": "^3.0.0",
-        "globby": "^7.1.1",
         "jest": "^22.0.3",
         "rimraf": "^2.6.2",
         "simplr-tslint": "0.0.1",

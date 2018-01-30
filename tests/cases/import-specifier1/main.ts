@@ -1,3 +1,3 @@
-import { FooClass } from "./ClassDeclaration1";
+import { Foo } from "./foo";
 
-export { FooClass };
+export { Foo };

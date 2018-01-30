@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mapped-declaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Name",
+          "Ids": Array [
+            "PropertySignature-0",
+          ],
+        },
+        Object {
+          "Alias": "Age",
+          "Ids": Array [
+            "PropertySignature-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MappedType-0": Object {
+      "ApiKind": "mapped",
+      "IsOptional": false,
+      "IsReadonly": true,
+      "Location": Object {
+        "Character": 21,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 31,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
+        "Text": "number",
+      },
+      "TypeParameter": "TypeParameter-0",
+      "_ts": undefined,
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Name",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Age",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 9,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "mapped",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "mapped",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "mapped",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
+        "ReferenceId": "MappedType-0",
+        "Text": "mapped",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": Object {
+        "ApiTypeKind": "type-operator",
+        "Keyword": "keyof",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 6,
+        },
+        "Text": "keyof Foo",
+        "Type": Object {
+          "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 25,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 6,
+          },
+          "ReferenceId": "InterfaceDeclaration-0",
+          "SymbolName": "Foo",
+          "Text": "Foo",
+          "TypeParameters": undefined,
+        },
+      },
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 14,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 6,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "K",
+      "ParentId": "MappedType-0",
+      "_ts": undefined,
+    },
+  },
+}
+`;

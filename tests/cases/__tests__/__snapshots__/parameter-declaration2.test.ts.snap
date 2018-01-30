@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parameter-declaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "IsAsync": false,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooFunction",
+      "Parameters": Array [
+        Object {
+          "Alias": "bar",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ParentId": "SourceFile-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 47,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "void",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": true,
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "bar",
+      "ParentId": "FunctionDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "array",
+        "Location": Object {
+          "Character": 36,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "string[]",
+        "Type": Object {
+          "ApiTypeKind": "basic",
+          "Location": Object {
+            "Character": 36,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 2,
+          },
+          "Text": "string",
+        },
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooFunction",
+          "Ids": Array [
+            "FunctionDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+  },
+}
+`;

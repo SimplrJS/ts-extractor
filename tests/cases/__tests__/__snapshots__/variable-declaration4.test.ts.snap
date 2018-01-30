@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`variable-declaration4 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "b",
+          "Ids": Array [
+            "PropertySignature-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "A",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "b",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "A",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "a",
+          "Ids": Array [
+            "VariableDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "z",
+          "Ids": Array [
+            "VariableDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 16,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
+        "ReferenceId": "InterfaceDeclaration-0",
+        "SymbolName": "A",
+        "Text": "A",
+        "TypeParameters": undefined,
+      },
+      "VariableDeclarationType": "const",
+      "_ts": undefined,
+    },
+    "VariableDeclaration-1": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "z",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "type-query",
+        "Keyword": "typeof",
+        "Location": Object {
+          "Character": 16,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
+        "ReferenceId": "InterfaceDeclaration-0",
+        "Text": "A",
+      },
+      "VariableDeclarationType": "const",
+      "_ts": undefined,
+    },
+  },
+}
+`;
