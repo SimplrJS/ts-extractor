@@ -35,7 +35,7 @@ export class ApiExport extends ApiItem<ts.ExportDeclaration, ApiExportDto> {
         // Extract members from Source file.
         const sourceFileDeclaration = TsHelpers.ResolveSourceFile(this.Declaration, this.Options.Program);
 
-        if (sourceFileDeclaration != null) {
+        if (sourceFileDeclaration != null && ApiHelpers.ShouldVisit(sourceFileDeclaration, this.Options)) {
             const sourceFileSymbol = TsHelpers.GetSymbolFromDeclaration(sourceFileDeclaration, this.TypeChecker);
 
             if (sourceFileSymbol != null) {
