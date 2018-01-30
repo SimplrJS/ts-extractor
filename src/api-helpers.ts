@@ -120,11 +120,19 @@ export namespace ApiHelpers {
         const declarationSourceFile = declaration.getSourceFile();
         const declarationFileName = declarationSourceFile.fileName;
 
+        // Exclude file name.
+        if (options.ExtractorOptions.Exclude != null) {
+            return options.ExtractorOptions.Exclude
+                .findIndex(x => path.resolve(options.ExtractorOptions.ProjectDirectory, x) === declarationFileName) === -1;
+        }
+
+        // External library.
         if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
             const match = declarationSourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
             const packageName = match != null ? match[1] : undefined;
 
             if (packageName != null) {
+                // Check if PackageName is in external packages.
                 return options.ExternalPackages.
                     findIndex(x => x.toLowerCase() === packageName.toLowerCase()) !== -1;
             } else {
