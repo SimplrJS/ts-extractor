@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class-declaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": true,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "SetFoo",
+          "Ids": Array [
+            "MethodDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "property",
+          "Ids": Array [
+            "PropertyDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "GetFoo",
+          "Ids": Array [
+            "MethodDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "Id",
+          "Ids": Array [
+            "PropertyDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "Bar",
+          "Ids": Array [
+            "PropertyDeclaration-2",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodDeclaration-0": Object {
+      "AccessModifier": "protected",
+      "ApiKind": "class-method",
+      "IsAbstract": true,
+      "IsAsync": false,
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "SetFoo",
+      "Parameters": Array [
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ParentId": "ClassDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 44,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
+        "Text": "void",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-method",
+      "IsAbstract": false,
+      "IsAsync": false,
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "GetFoo",
+      "Parameters": Array [],
+      "ParentId": "ClassDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 30,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "foo",
+      "ParentId": "MethodDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 35,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-0": Object {
+      "AccessModifier": "private",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "property",
+      "ParentId": "ClassDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 22,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": true,
+      "IsOptional": false,
+      "IsReadonly": true,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 11,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Id",
+      "ParentId": "ClassDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 33,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 11,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-2": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": true,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 12,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Bar",
+      "ParentId": "ClassDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+  },
+}
+`;

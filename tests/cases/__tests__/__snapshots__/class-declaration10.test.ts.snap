@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class-declaration10 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "__constructor",
+          "Ids": Array [
+            "Constructor-0",
+            "Constructor-1",
+            "Constructor-2",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooClass",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Constructor-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-constructor",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
+        "JSDocTags": Array [],
+      },
+      "Name": "__constructor",
+      "Parameters": Array [
+        Object {
+          "Alias": "text",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ParentId": "ClassDeclaration-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Constructor-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-constructor",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 12,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
+        "JSDocTags": Array [],
+      },
+      "Name": "__constructor",
+      "Parameters": Array [
+        Object {
+          "Alias": "should",
+          "Ids": Array [
+            "Parameter-1",
+          ],
+        },
+      ],
+      "ParentId": "ClassDeclaration-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Constructor-2": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-constructor",
+      "IsOverloadBase": true,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 14,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Creating foo with text.
+Creating foo with boolean.",
+        "JSDocTags": Array [],
+      },
+      "Name": "__constructor",
+      "Parameters": Array [
+        Object {
+          "Alias": "arg",
+          "Ids": Array [
+            "Parameter-2",
+          ],
+        },
+      ],
+      "ParentId": "ClassDeclaration-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 16,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Text for the foo class.",
+        "JSDocTags": Array [],
+      },
+      "Name": "text",
+      "ParentId": "Constructor-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 22,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 16,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 12,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "Boolean for foo class.",
+        "JSDocTags": Array [],
+      },
+      "Name": "should",
+      "ParentId": "Constructor-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 24,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
+        "Text": "boolean",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 16,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 14,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "ParentId": "Constructor-2",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 21,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 14,
+        },
+        "Members": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 21,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 14,
+            },
+            "Text": "string",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 30,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 14,
+            },
+            "Text": "boolean",
+          },
+        ],
+        "Text": "string | boolean",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooClass",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+  },
+}
+`;

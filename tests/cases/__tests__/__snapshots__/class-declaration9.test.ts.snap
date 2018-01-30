@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class-declaration9 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
+            "PropertyDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
+            "PropertyDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Point",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "ClassDeclaration-1": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 32,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 7,
+          },
+          "ReferenceId": "ClassDeclaration-0",
+          "SymbolName": "Point",
+          "Text": "Point",
+          "TypeParameters": undefined,
+        },
+      ],
+      "IsAbstract": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "x",
+          "Ids": Array [
+            "PropertyDeclaration-2",
+          ],
+        },
+        Object {
+          "Alias": "y",
+          "Ids": Array [
+            "PropertyDeclaration-3",
+          ],
+        },
+        Object {
+          "Alias": "z",
+          "Ids": Array [
+            "PropertyDeclaration-4",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Point3d",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "x",
+      "ParentId": "ClassDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "y",
+      "ParentId": "ClassDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-2": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "x",
+      "ParentId": "ClassDeclaration-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-3": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 9,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "y",
+      "ParentId": "ClassDeclaration-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 9,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "PropertyDeclaration-4": Object {
+      "AccessModifier": "public",
+      "ApiKind": "class-property",
+      "IsAbstract": false,
+      "IsOptional": false,
+      "IsReadonly": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 10,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "z",
+      "ParentId": "ClassDeclaration-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 7,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Point",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "Point3d",
+          "Ids": Array [
+            "ClassDeclaration-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+  },
+}
+`;

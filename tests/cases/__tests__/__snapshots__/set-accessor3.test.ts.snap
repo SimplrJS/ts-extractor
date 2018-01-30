@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`set-accessor3 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [],
+      "IsAbstract": true,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "SetAccessor-0",
+          ],
+        },
+        Object {
+          "Alias": "StaticFoo",
+          "Ids": Array [
+            "SetAccessor-1",
+          ],
+        },
+        Object {
+          "Alias": "foo",
+          "Ids": Array [
+            "SetAccessor-2",
+          ],
+        },
+        Object {
+          "Alias": "ProtectedFoo",
+          "Ids": Array [
+            "SetAccessor-3",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "ParentId": "SetAccessor-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 33,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 32,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "ParentId": "SetAccessor-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "ParentId": "SetAccessor-2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 25,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-3": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 31,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "arg",
+      "ParentId": "SetAccessor-3",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 36,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "SetAccessor-0": Object {
+      "AccessModifier": "public",
+      "ApiKind": "set-accessor",
+      "IsAbstract": true,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-0",
+        ],
+      },
+      "ParentId": "ClassDeclaration-0",
+      "_ts": undefined,
+    },
+    "SetAccessor-1": Object {
+      "AccessModifier": "public",
+      "ApiKind": "set-accessor",
+      "IsAbstract": false,
+      "IsStatic": true,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "StaticFoo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-1",
+        ],
+      },
+      "ParentId": "ClassDeclaration-0",
+      "_ts": undefined,
+    },
+    "SetAccessor-2": Object {
+      "AccessModifier": "private",
+      "ApiKind": "set-accessor",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "foo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-2",
+        ],
+      },
+      "ParentId": "ClassDeclaration-0",
+      "_ts": undefined,
+    },
+    "SetAccessor-3": Object {
+      "AccessModifier": "protected",
+      "ApiKind": "set-accessor",
+      "IsAbstract": false,
+      "IsStatic": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ProtectedFoo",
+      "Parameter": Object {
+        "Alias": "arg",
+        "Ids": Array [
+          "Parameter-3",
+        ],
+      },
+      "ParentId": "ClassDeclaration-0",
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+  },
+}
+`;

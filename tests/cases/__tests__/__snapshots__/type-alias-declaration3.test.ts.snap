@@ -1,0 +1,836 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type-alias-declaration3 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "ParentId": "TypeLiteral-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooName",
+      "ParentId": "TypeLiteral-0",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
+        "ReferenceId": "TypeParameter-0",
+        "SymbolName": "TType",
+        "Text": "TType",
+        "TypeParameters": undefined,
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-2": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 9,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "BazName",
+      "ParentId": "TypeLiteral-1",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 9,
+        },
+        "ReferenceId": "TypeParameter-1",
+        "SymbolName": "TType",
+        "Text": "TType",
+        "TypeParameters": undefined,
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-3": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 18,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "ParentId": "TypeLiteral-2",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 18,
+        },
+        "ReferenceId": "TypeParameter-2",
+        "SymbolName": "TType",
+        "Text": "TType",
+        "TypeParameters": undefined,
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-4": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 19,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooName",
+      "ParentId": "TypeLiteral-2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 19,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-5": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 23,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "BarName",
+      "ParentId": "TypeLiteral-3",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 23,
+        },
+        "ReferenceId": "TypeParameter-3",
+        "SymbolName": "TType",
+        "Text": "TType",
+        "TypeParameters": undefined,
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-6": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 24,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "BazName",
+      "ParentId": "TypeLiteral-3",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 24,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "NoCommonFields1",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "NoCommonFields2",
+          "Ids": Array [
+            "TypeAliasDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "AnotherType",
+          "Ids": Array [
+            "TypeAliasDeclaration-2",
+          ],
+        },
+        Object {
+          "Alias": "OneCommonField1",
+          "Ids": Array [
+            "TypeAliasDeclaration-3",
+          ],
+        },
+        Object {
+          "Alias": "OneCommonField2",
+          "Ids": Array [
+            "TypeAliasDeclaration-4",
+          ],
+        },
+        Object {
+          "Alias": "OneCommonFieldTypeIntersection",
+          "Ids": Array [
+            "TypeAliasDeclaration-5",
+          ],
+        },
+        Object {
+          "Alias": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+          "Ids": Array [
+            "TypeAliasDeclaration-6",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "NoCommonFields1",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 3,
+        },
+        "ReferenceId": "TypeLiteral-0",
+        "Text": "NoCommonFields1<TType>",
+      },
+      "TypeParameters": Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
+            "TypeParameter-0",
+          ],
+        },
+      ],
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-1": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "NoCommonFields2",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
+        "ReferenceId": "TypeLiteral-1",
+        "Text": "NoCommonFields2<TType>",
+      },
+      "TypeParameters": Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
+            "TypeParameter-1",
+          ],
+        },
+      ],
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-2": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 12,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "AnotherType",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 26,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
+        "Members": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 26,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 12,
+            },
+            "ReferenceId": "TypeAliasDeclaration-0",
+            "SymbolName": "NoCommonFields1",
+            "Text": "NoCommonFields1<number>",
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 42,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 12,
+                },
+                "Text": "number",
+              },
+            ],
+          },
+          Object {
+            "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 52,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 12,
+            },
+            "ReferenceId": "TypeAliasDeclaration-1",
+            "SymbolName": "NoCommonFields2",
+            "Text": "NoCommonFields2<string>",
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 68,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 12,
+                },
+                "Text": "string",
+              },
+            ],
+          },
+        ],
+        "Text": "AnotherType",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-3": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 17,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonField1",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 17,
+        },
+        "ReferenceId": "TypeLiteral-2",
+        "Text": "OneCommonField1<TType>",
+      },
+      "TypeParameters": Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
+            "TypeParameter-2",
+          ],
+        },
+      ],
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-4": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 22,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonField2",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "type-literal",
+        "Location": Object {
+          "Character": 37,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 22,
+        },
+        "ReferenceId": "TypeLiteral-3",
+        "Text": "OneCommonField2<TType>",
+      },
+      "TypeParameters": Array [
+        Object {
+          "Alias": "TType",
+          "Ids": Array [
+            "TypeParameter-3",
+          ],
+        },
+      ],
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-5": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 27,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonFieldTypeIntersection",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "union",
+        "Location": Object {
+          "Character": 45,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 27,
+        },
+        "Members": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 45,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 27,
+            },
+            "ReferenceId": "TypeAliasDeclaration-3",
+            "SymbolName": "OneCommonField1",
+            "Text": "OneCommonField1<number>",
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 61,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 27,
+                },
+                "Text": "number",
+              },
+            ],
+          },
+          Object {
+            "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 71,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 27,
+            },
+            "ReferenceId": "TypeAliasDeclaration-4",
+            "SymbolName": "OneCommonField2",
+            "Text": "OneCommonField2<number>",
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 87,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 27,
+                },
+                "Text": "number",
+              },
+            ],
+          },
+        ],
+        "Text": "OneCommonFieldTypeIntersection",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-6": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 29,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "intersection",
+        "Location": Object {
+          "Character": 63,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 29,
+        },
+        "Members": Array [
+          Object {
+            "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 63,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 29,
+            },
+            "ReferenceId": "TypeAliasDeclaration-3",
+            "SymbolName": "OneCommonField1",
+            "Text": "OneCommonField1<number>",
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 79,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 29,
+                },
+                "Text": "number",
+              },
+            ],
+          },
+          Object {
+            "ApiTypeKind": "reference",
+            "Location": Object {
+              "Character": 89,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 29,
+            },
+            "ReferenceId": "TypeAliasDeclaration-4",
+            "SymbolName": "OneCommonField2",
+            "Text": "OneCommonField2<string>",
+            "TypeParameters": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 105,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 29,
+                },
+                "Text": "string",
+              },
+            ],
+          },
+        ],
+        "Text": "OneCommonFieldTypeIntersectionWithDifferentTypes",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "TypeLiteral-0": Object {
+      "ApiKind": "type-literal",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
+            "PropertySignature-0",
+          ],
+        },
+        Object {
+          "Alias": "FooName",
+          "Ids": Array [
+            "PropertySignature-1",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-0",
+      "_ts": undefined,
+    },
+    "TypeLiteral-1": Object {
+      "ApiKind": "type-literal",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "BazName",
+          "Ids": Array [
+            "PropertySignature-2",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-1",
+      "_ts": undefined,
+    },
+    "TypeLiteral-2": Object {
+      "ApiKind": "type-literal",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 17,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
+            "PropertySignature-3",
+          ],
+        },
+        Object {
+          "Alias": "FooName",
+          "Ids": Array [
+            "PropertySignature-4",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-3",
+      "_ts": undefined,
+    },
+    "TypeLiteral-3": Object {
+      "ApiKind": "type-literal",
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 22,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "BarName",
+          "Ids": Array [
+            "PropertySignature-5",
+          ],
+        },
+        Object {
+          "Alias": "BazName",
+          "Ids": Array [
+            "PropertySignature-6",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "ParentId": "TypeAliasDeclaration-4",
+      "_ts": undefined,
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-0",
+      "_ts": undefined,
+    },
+    "TypeParameter-1": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-1",
+      "_ts": undefined,
+    },
+    "TypeParameter-2": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 17,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-3",
+      "_ts": undefined,
+    },
+    "TypeParameter-3": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": undefined,
+      "Location": Object {
+        "Character": 28,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 22,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TType",
+      "ParentId": "TypeAliasDeclaration-4",
+      "_ts": undefined,
+    },
+  },
+}
+`;
