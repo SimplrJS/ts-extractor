@@ -122,8 +122,17 @@ export namespace ApiHelpers {
 
         // Exclude file name.
         if (options.ExtractorOptions.Exclude != null) {
-            return options.ExtractorOptions.Exclude
-                .findIndex(x => path.resolve(options.ExtractorOptions.ProjectDirectory, x) === declarationFileName) === -1;
+            const result = options.ExtractorOptions.Exclude
+                .findIndex(excludeItem => {
+                    const fullPath = path
+                        .resolve(options.ExtractorOptions.ProjectDirectory, excludeItem)
+                        .split(path.sep)
+                        .join(options.ExtractorOptions.OutputPathSeparator);
+
+                    return fullPath === declarationFileName;
+                });
+
+            return result === -1;
         }
 
         // External library.
@@ -206,6 +215,11 @@ export namespace ApiHelpers {
             }
         }
 
+        // If symbol doesn't have resolved api definitions.
+        if (symbolItems.length === 0) {
+            return undefined;
+        }
+
         return {
             Alias: symbol.name,
             Ids: symbolItems
@@ -216,7 +230,7 @@ export namespace ApiHelpers {
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
     ): ApiItemReference[] {
-        const items: ApiItemReference[] = [];
+        let items: ApiItemReference[] = [];
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {
@@ -241,6 +255,9 @@ export namespace ApiHelpers {
                 items[index].Ids.push(itemId);
             }
         });
+
+        // If symbol doesn't have resolved api definitions.
+        items = items.filter(x => x.Ids.length !== 0);
 
         return items;
     }
