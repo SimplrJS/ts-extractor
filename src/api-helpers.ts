@@ -120,21 +120,6 @@ export namespace ApiHelpers {
         const declarationSourceFile = declaration.getSourceFile();
         const declarationFileName = declarationSourceFile.fileName;
 
-        // Exclude file name.
-        if (options.ExtractorOptions.Exclude != null) {
-            const result = options.ExtractorOptions.Exclude
-                .findIndex(excludeItem => {
-                    const fullPath = path
-                        .resolve(options.ExtractorOptions.ProjectDirectory, excludeItem)
-                        .split(path.sep)
-                        .join(options.ExtractorOptions.OutputPathSeparator);
-
-                    return fullPath === declarationFileName;
-                });
-
-            return result === -1;
-        }
-
         // External library.
         if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
             const match = declarationSourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
@@ -150,6 +135,19 @@ export namespace ApiHelpers {
         } else if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
             // If it's not external package, it should be in project directory.
             return false;
+        } else if (options.ExtractorOptions.Exclude != null) {
+            // Exclude file name.
+            const result = options.ExtractorOptions.Exclude
+                .findIndex(excludeItem => {
+                    const fullPath = path
+                        .resolve(options.ExtractorOptions.ProjectDirectory, excludeItem)
+                        .split(path.sep)
+                        .join(options.ExtractorOptions.OutputPathSeparator);
+
+                    return fullPath === declarationFileName;
+                });
+
+            return result === -1;
         }
 
         return true;
