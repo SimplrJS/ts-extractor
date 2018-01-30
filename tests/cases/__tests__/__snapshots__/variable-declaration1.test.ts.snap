@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`variable-declaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FOO",
+          "Ids": Array [
+            "VariableDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FOO",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
+        "Text": "undefined",
+      },
+      "VariableDeclarationType": "const",
+      "_ts": undefined,
+    },
+  },
+}
+`;

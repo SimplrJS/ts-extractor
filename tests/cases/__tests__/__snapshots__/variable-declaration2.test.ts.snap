@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`variable-declaration2 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ArrowFunction-0": Object {
+      "ApiKind": "arrow-function",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 34,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__function",
+      "Parameters": Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ParentId": "VariableDeclaration-1",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 34,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "FunctionExpression-0": Object {
+      "ApiKind": "function-expression",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 25,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__function",
+      "Parameters": Array [],
+      "ParentId": "VariableDeclaration-2",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 38,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 35,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "ParentId": "ArrowFunction-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 38,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "VariableDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "ArrowFunctionConst",
+          "Ids": Array [
+            "VariableDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "functionVar",
+          "Ids": Array [
+            "VariableDeclaration-2",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
+        "Text": "string",
+      },
+      "VariableDeclarationType": "const",
+      "_ts": undefined,
+    },
+    "VariableDeclaration-1": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 13,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "ArrowFunctionConst",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "function-type",
+        "Location": Object {
+          "Character": 13,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "ReferenceId": "ArrowFunction-0",
+        "Text": "(a: string) => string",
+      },
+      "VariableDeclarationType": "const",
+      "_ts": undefined,
+    },
+    "VariableDeclaration-2": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "functionVar",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "function-type",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
+        "ReferenceId": "FunctionExpression-0",
+        "Text": "() => string",
+      },
+      "VariableDeclarationType": "var",
+      "_ts": undefined,
+    },
+  },
+}
+`;

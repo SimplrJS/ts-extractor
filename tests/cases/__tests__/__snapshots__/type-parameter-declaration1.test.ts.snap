@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type-parameter-declaration1 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "FunctionDeclaration-0": Object {
+      "ApiKind": "function",
+      "IsAsync": false,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "Parameters": Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+      ],
+      "ParentId": "SourceFile-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 49,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
+        "Text": "void",
+      },
+      "TypeParameters": Array [
+        Object {
+          "Alias": "TValue",
+          "Ids": Array [
+            "TypeParameter-0",
+          ],
+        },
+      ],
+      "_ts": undefined,
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 37,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "ParentId": "FunctionDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 40,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
+        "ReferenceId": "TypeParameter-0",
+        "SymbolName": "TValue",
+        "Text": "TValue",
+        "TypeParameters": undefined,
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "FunctionDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "TypeParameter-0": Object {
+      "ApiKind": "type-parameter",
+      "ConstraintType": undefined,
+      "DefaultType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 29,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
+        "Text": "string",
+      },
+      "Location": Object {
+        "Character": 20,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "TValue",
+      "ParentId": "FunctionDeclaration-0",
+      "_ts": undefined,
+    },
+  },
+}
+`;

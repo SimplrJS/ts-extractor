@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`import-specifier2 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "ExportSpecifier-0": Object {
+      "ApiItems": Array [
+        "ImportSpecifier-0",
+      ],
+      "ApiKind": "export-specifier",
+      "Location": Object {
+        "Character": 9,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 3,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "DoesNotExist",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "ImportSpecifier-0": Object {
+      "ApiItems": undefined,
+      "ApiKind": "import-specifier",
+      "Location": Object {
+        "Character": 9,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "unknown",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "DoesNotExist",
+          "Ids": Array [
+            "ExportSpecifier-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+  },
+}
+`;

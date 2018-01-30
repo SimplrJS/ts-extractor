@@ -120,11 +120,13 @@ export namespace ApiHelpers {
         const declarationSourceFile = declaration.getSourceFile();
         const declarationFileName = declarationSourceFile.fileName;
 
+        // External library.
         if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
             const match = declarationSourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
             const packageName = match != null ? match[1] : undefined;
 
             if (packageName != null) {
+                // Check if PackageName is in external packages.
                 return options.ExternalPackages.
                     findIndex(x => x.toLowerCase() === packageName.toLowerCase()) !== -1;
             } else {
@@ -133,6 +135,19 @@ export namespace ApiHelpers {
         } else if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
             // If it's not external package, it should be in project directory.
             return false;
+        } else if (options.ExtractorOptions.Exclude != null) {
+            // Exclude file name.
+            const result = options.ExtractorOptions.Exclude
+                .findIndex(excludeItem => {
+                    const fullPath = path
+                        .resolve(options.ExtractorOptions.ProjectDirectory, excludeItem)
+                        .split(path.sep)
+                        .join(options.ExtractorOptions.OutputPathSeparator);
+
+                    return fullPath === declarationFileName;
+                });
+
+            return result === -1;
         }
 
         return true;
@@ -198,6 +213,11 @@ export namespace ApiHelpers {
             }
         }
 
+        // If symbol doesn't have resolved api definitions.
+        if (symbolItems.length === 0) {
+            return undefined;
+        }
+
         return {
             Alias: symbol.name,
             Ids: symbolItems
@@ -208,7 +228,7 @@ export namespace ApiHelpers {
         declarations: ts.NodeArray<ts.Declaration>,
         options: ApiItemOptions
     ): ApiItemReference[] {
-        const items: ApiItemReference[] = [];
+        let items: ApiItemReference[] = [];
         const typeChecker = options.Program.getTypeChecker();
 
         declarations.forEach(declaration => {
@@ -233,6 +253,9 @@ export namespace ApiHelpers {
                 items[index].Ids.push(itemId);
             }
         });
+
+        // If symbol doesn't have resolved api definitions.
+        items = items.filter(x => x.Ids.length !== 0);
 
         return items;
     }

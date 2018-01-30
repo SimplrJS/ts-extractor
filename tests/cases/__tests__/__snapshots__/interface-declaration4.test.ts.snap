@@ -1,0 +1,1312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`interface-declaration4 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "CallSignature-0": Object {
+      "ApiKind": "call",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 1,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__call",
+      "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 1,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "CallSignature-1": Object {
+      "ApiKind": "call",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__call",
+      "Parameters": Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
+            "Parameter-0",
+          ],
+        },
+        Object {
+          "Alias": "b",
+          "Ids": Array [
+            "Parameter-1",
+          ],
+        },
+        Object {
+          "Alias": "c",
+          "Ids": Array [
+            "Parameter-2",
+          ],
+        },
+      ],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 24,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "number",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "ClassDeclaration-0": Object {
+      "ApiKind": "class",
+      "Extends": undefined,
+      "Implements": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 42,
+          },
+          "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
+          "Text": "a",
+          "TypeParameters": undefined,
+        },
+      ],
+      "IsAbstract": false,
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 42,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "c1",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "ConstructSignature-0": Object {
+      "ApiKind": "construct",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 4,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__new",
+      "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 4,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "ConstructSignature-1": Object {
+      "ApiKind": "construct",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__new",
+      "Parameters": Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
+            "Parameter-3",
+          ],
+        },
+      ],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
+        "Text": "any",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "FunctionType-0": Object {
+      "ApiKind": "function-type",
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 17,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__type",
+      "Parameters": Array [],
+      "ParentId": "IndexSignature-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "IndexSignature-0": Object {
+      "ApiKind": "index",
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__index",
+      "Parameter": "Parameter-4",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "function-type",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
+        "ReferenceId": "FunctionType-0",
+        "Text": "() => string",
+      },
+      "_ts": undefined,
+    },
+    "IndexSignature-1": Object {
+      "ApiKind": "index",
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__index",
+      "Parameter": "Parameter-5",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
+        "Text": "any",
+      },
+      "_ts": undefined,
+    },
+    "IndexSignature-2": Object {
+      "ApiKind": "index",
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 23,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__index",
+      "Parameter": "Parameter-9",
+      "ParentId": "InterfaceDeclaration-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 23,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "IndexSignature-3": Object {
+      "ApiKind": "index",
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 27,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "__index",
+      "Parameter": "Parameter-10",
+      "ParentId": "InterfaceDeclaration-2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 17,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 27,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "InterfaceDeclaration-0": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "__call",
+          "Ids": Array [
+            "CallSignature-0",
+            "CallSignature-1",
+          ],
+        },
+        Object {
+          "Alias": "__new",
+          "Ids": Array [
+            "ConstructSignature-0",
+            "ConstructSignature-1",
+          ],
+        },
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
+            "IndexSignature-0",
+            "IndexSignature-1",
+          ],
+        },
+        Object {
+          "Alias": "p1",
+          "Ids": Array [
+            "PropertySignature-0",
+          ],
+        },
+        Object {
+          "Alias": "p3",
+          "Ids": Array [
+            "PropertySignature-1",
+          ],
+        },
+        Object {
+          "Alias": "p2",
+          "Ids": Array [
+            "PropertySignature-2",
+          ],
+        },
+        Object {
+          "Alias": "p4",
+          "Ids": Array [
+            "PropertySignature-3",
+          ],
+        },
+        Object {
+          "Alias": "p5",
+          "Ids": Array [
+            "MethodSignature-0",
+          ],
+        },
+        Object {
+          "Alias": "f1",
+          "Ids": Array [
+            "MethodSignature-1",
+          ],
+        },
+        Object {
+          "Alias": "f2",
+          "Ids": Array [
+            "MethodSignature-2",
+          ],
+        },
+        Object {
+          "Alias": "f3",
+          "Ids": Array [
+            "MethodSignature-3",
+          ],
+        },
+        Object {
+          "Alias": "f4",
+          "Ids": Array [
+            "MethodSignature-4",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a0",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "InterfaceDeclaration-1": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 22,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
+            "IndexSignature-2",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a1",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "InterfaceDeclaration-2": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 26,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "__index",
+          "Ids": Array [
+            "IndexSignature-3",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a2",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "InterfaceDeclaration-3": Object {
+      "ApiKind": "interface",
+      "Extends": Array [],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 30,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "InterfaceDeclaration-4": Object {
+      "ApiKind": "interface",
+      "Extends": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 33,
+          },
+          "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
+          "Text": "a",
+          "TypeParameters": undefined,
+        },
+      ],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 33,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "b",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "InterfaceDeclaration-5": Object {
+      "ApiKind": "interface",
+      "Extends": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 36,
+          },
+          "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
+          "Text": "a",
+          "TypeParameters": undefined,
+        },
+        Object {
+          "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 30,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 36,
+          },
+          "ReferenceId": "InterfaceDeclaration-4",
+          "SymbolName": "b",
+          "Text": "b",
+          "TypeParameters": undefined,
+        },
+      ],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 36,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "c",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "InterfaceDeclaration-6": Object {
+      "ApiKind": "interface",
+      "Extends": Array [
+        Object {
+          "ApiTypeKind": "reference",
+          "Location": Object {
+            "Character": 27,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 39,
+          },
+          "ReferenceId": "InterfaceDeclaration-3",
+          "SymbolName": "a",
+          "Text": "a",
+          "TypeParameters": undefined,
+        },
+      ],
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 39,
+      },
+      "Members": Array [],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "d",
+      "ParentId": "SourceFile-0",
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodSignature-0": Object {
+      "ApiKind": "method",
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 14,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "p5",
+      "Parameters": Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
+            "Parameter-6",
+          ],
+        },
+      ],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 14,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodSignature-1": Object {
+      "ApiKind": "method",
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 16,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "f1",
+      "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 16,
+        },
+        "Text": "any",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodSignature-2": Object {
+      "ApiKind": "method",
+      "IsOptional": true,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 17,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "f2",
+      "Parameters": Array [],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 17,
+        },
+        "Text": "any",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodSignature-3": Object {
+      "ApiKind": "method",
+      "IsOptional": false,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 18,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "f3",
+      "Parameters": Array [
+        Object {
+          "Alias": "a",
+          "Ids": Array [
+            "Parameter-7",
+          ],
+        },
+      ],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 19,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 18,
+        },
+        "Text": "number",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "MethodSignature-4": Object {
+      "ApiKind": "method",
+      "IsOptional": true,
+      "IsOverloadBase": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 19,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "f4",
+      "Parameters": Array [
+        Object {
+          "Alias": "s",
+          "Ids": Array [
+            "Parameter-8",
+          ],
+        },
+      ],
+      "ParentId": "InterfaceDeclaration-0",
+      "ReturnType": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 20,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 19,
+        },
+        "Text": "string",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+    "Parameter-0": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "ParentId": "CallSignature-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 5,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "any",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-1": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "b",
+      "ParentId": "CallSignature-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "any",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-10": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 27,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "s",
+      "ParentId": "IndexSignature-3",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 27,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-2": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": true,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 2,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "c",
+      "ParentId": "CallSignature-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 15,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 2,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-3": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 5,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "s",
+      "ParentId": "ConstructSignature-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 5,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-4": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 7,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "n",
+      "ParentId": "IndexSignature-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 7,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-5": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 8,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "s",
+      "ParentId": "IndexSignature-1",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 8,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-6": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 7,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 14,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "s",
+      "ParentId": "MethodSignature-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 14,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-7": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 7,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 18,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "a",
+      "ParentId": "MethodSignature-3",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 10,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 18,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-8": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 8,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 19,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "s",
+      "ParentId": "MethodSignature-4",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 19,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "Parameter-9": Object {
+      "ApiKind": "parameter",
+      "Initializer": undefined,
+      "IsOptional": false,
+      "IsSpread": false,
+      "Location": Object {
+        "Character": 5,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 23,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "n",
+      "ParentId": "IndexSignature-2",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 23,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-0": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 10,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "p1",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 10,
+        },
+        "Text": "any",
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-1": Object {
+      "ApiKind": "property",
+      "IsOptional": true,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 11,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "p3",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 4,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 11,
+        },
+        "Text": "any",
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-2": Object {
+      "ApiKind": "property",
+      "IsOptional": false,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 12,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "p2",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 8,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 12,
+        },
+        "Text": "string",
+      },
+      "_ts": undefined,
+    },
+    "PropertySignature-3": Object {
+      "ApiKind": "property",
+      "IsOptional": true,
+      "IsReadonly": false,
+      "Location": Object {
+        "Character": 4,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 13,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "p4",
+      "ParentId": "InterfaceDeclaration-0",
+      "Type": Object {
+        "ApiTypeKind": "basic",
+        "Location": Object {
+          "Character": 9,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 13,
+        },
+        "Text": "number",
+      },
+      "_ts": undefined,
+    },
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "a0",
+          "Ids": Array [
+            "InterfaceDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "a1",
+          "Ids": Array [
+            "InterfaceDeclaration-1",
+          ],
+        },
+        Object {
+          "Alias": "a2",
+          "Ids": Array [
+            "InterfaceDeclaration-2",
+          ],
+        },
+        Object {
+          "Alias": "a",
+          "Ids": Array [
+            "InterfaceDeclaration-3",
+          ],
+        },
+        Object {
+          "Alias": "b",
+          "Ids": Array [
+            "InterfaceDeclaration-4",
+          ],
+        },
+        Object {
+          "Alias": "c",
+          "Ids": Array [
+            "InterfaceDeclaration-5",
+          ],
+        },
+        Object {
+          "Alias": "d",
+          "Ids": Array [
+            "InterfaceDeclaration-6",
+          ],
+        },
+        Object {
+          "Alias": "c1",
+          "Ids": Array [
+            "ClassDeclaration-0",
+          ],
+        },
+        Object {
+          "Alias": "instance2",
+          "Ids": Array [
+            "VariableDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "VariableDeclaration-0": Object {
+      "ApiKind": "variable",
+      "Location": Object {
+        "Character": 11,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 45,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "instance2",
+      "ParentId": undefined,
+      "Type": Object {
+        "ApiTypeKind": "reference",
+        "Location": Object {
+          "Character": 11,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 45,
+        },
+        "ReferenceId": "ClassDeclaration-0",
+        "SymbolName": "c1",
+        "Text": "c1",
+        "TypeParameters": undefined,
+      },
+      "VariableDeclarationType": "var",
+      "_ts": undefined,
+    },
+  },
+}
+`;

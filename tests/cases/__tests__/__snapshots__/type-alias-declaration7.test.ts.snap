@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type-alias-declaration7 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "Foo",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "Foo",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "array",
+        "Location": Object {
+          "Character": 18,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
+        "Text": "(string | number)[]",
+        "Type": Object {
+          "ApiTypeKind": "parenthesized",
+          "Location": Object {
+            "Character": 18,
+            "FileName": "./main.ts",
+            "IsExternalPackage": false,
+            "Line": 0,
+          },
+          "Text": "string | number",
+          "Type": Object {
+            "ApiTypeKind": "union",
+            "Location": Object {
+              "Character": 19,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
+            "Members": Array [
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 19,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 0,
+                },
+                "Text": "string",
+              },
+              Object {
+                "ApiTypeKind": "basic",
+                "Location": Object {
+                  "Character": 28,
+                  "FileName": "./main.ts",
+                  "IsExternalPackage": false,
+                  "Line": 0,
+                },
+                "Text": "number",
+              },
+            ],
+            "Text": "string | number",
+          },
+        },
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+  },
+}
+`;

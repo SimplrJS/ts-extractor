@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type-alias-declaration5 1`] = `
+Object {
+  "EntryFiles": Array [
+    "SourceFile-0",
+  ],
+  "Registry": Object {
+    "SourceFile-0": Object {
+      "ApiKind": "source-file",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Members": Array [
+        Object {
+          "Alias": "FooTuple",
+          "Ids": Array [
+            "TypeAliasDeclaration-0",
+          ],
+        },
+      ],
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "main.ts",
+      "ParentId": undefined,
+      "_ts": undefined,
+    },
+    "TypeAliasDeclaration-0": Object {
+      "ApiKind": "type-alias",
+      "Location": Object {
+        "Character": 0,
+        "FileName": "./main.ts",
+        "IsExternalPackage": false,
+        "Line": 0,
+      },
+      "Metadata": Object {
+        "DocumentationComment": "",
+        "JSDocTags": Array [],
+      },
+      "Name": "FooTuple",
+      "ParentId": "SourceFile-0",
+      "Type": Object {
+        "ApiTypeKind": "tuple",
+        "Location": Object {
+          "Character": 23,
+          "FileName": "./main.ts",
+          "IsExternalPackage": false,
+          "Line": 0,
+        },
+        "Members": Array [
+          Object {
+            "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 24,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
+            "Text": "string",
+          },
+          Object {
+            "ApiTypeKind": "basic",
+            "Location": Object {
+              "Character": 32,
+              "FileName": "./main.ts",
+              "IsExternalPackage": false,
+              "Line": 0,
+            },
+            "Text": "number",
+          },
+        ],
+        "Text": "[string, number]",
+      },
+      "TypeParameters": Array [],
+      "_ts": undefined,
+    },
+  },
+}
+`;
