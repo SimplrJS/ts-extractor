@@ -1,1 +1,6 @@
-export const ObjectLiteralConst = { Property: "value" };
+/**
+ * @private
+ */
+export class Foo {
+    private privateFoo: string = "";
+}

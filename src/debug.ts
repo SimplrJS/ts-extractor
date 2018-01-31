@@ -3,6 +3,8 @@ import { GetCompilerOptions } from "./utils/tsconfig-json";
 import * as fs from "fs-extra";
 
 import { Extractor } from "./extractor";
+import { ApiHelpers } from "./api-helpers";
+import { AccessModifier } from "./contracts";
 
 async function main(): Promise<void> {
     const projectDirectory = path.resolve(__dirname, "../examples/simple/");
@@ -12,7 +14,20 @@ async function main(): Promise<void> {
     const extractor = new Extractor({
         CompilerOptions: compilerOptions,
         ProjectDirectory: projectDirectory,
-        ExternalPackages: ["typescript"]
+        ExternalPackages: ["typescript"],
+        FilterApiItems: apiItem => {
+            const accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(apiItem.Declaration.modifiers);
+            if (accessModifier === AccessModifier.Private) {
+                return false;
+            }
+
+            const metadata = apiItem.GetItemMetadata();
+            if (metadata.JSDocTags.findIndex(x => x.name === "private") !== -1) {
+                return false;
+            }
+
+            return true;
+        }
     });
 
     const extract1 = extractor.Extract([path.resolve("examples/simple/index.ts")]);

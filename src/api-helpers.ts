@@ -102,6 +102,13 @@ export namespace ApiHelpers {
             apiItem = new ApiMapped(declaration, symbol, options);
         }
 
+        // Filters declarations.
+        if (apiItem != null &&
+            options.ExtractorOptions.FilterApiItems != null &&
+            !options.ExtractorOptions.FilterApiItems(apiItem)) {
+            return undefined;
+        }
+
         if (apiItem == null) {
             // This declaration is not supported, show a Warning message.
             LogWithNodePosition(
