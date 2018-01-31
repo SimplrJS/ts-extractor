@@ -130,7 +130,7 @@ export namespace ApiHelpers {
         if (externalLibraryName != null) {
             // Check if PackageName is in external packages.
             return options.ExternalPackages.
-                findIndex(x => x.toLowerCase() === externalLibraryName.toLowerCase()) !== -1;
+                findIndex(x => x === externalLibraryName) !== -1;
         } else if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
             // If it's not external package, it should be in project directory.
             return false;
