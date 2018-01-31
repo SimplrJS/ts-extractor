@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import { ApiItem } from "../abstractions/api-item";
 
 export interface ExtractorOptions {
     /**
@@ -25,4 +26,32 @@ export interface ExtractorOptions {
      * Include TypeScript specific information in extracted data.
      */
     IncludeTsDebugInfo?: boolean;
+    /**
+     * Filters ApiItems that should not appear in extracted data.
+     * Example: ApiItem with private access modifiers should be omitted from extracted data.
+     * ```ts
+     * const extractor = new Extractor({
+     *     CompilerOptions: compilerOptions,
+     *     ProjectDirectory: projectDirectory,
+     *     FilterApiItems: apiItem => {
+     *         // Check Access Modifier.
+     *         const accessModifier = ApiHelpers.ResolveAccessModifierFromModifiers(apiItem.Declaration.modifiers);
+     *         if (accessModifier === AccessModifier.Private) {
+     *             return false;
+     *         }
+     *
+     *         // Look for JSDocTag "@private"
+     *         const metadata = apiItem.GetItemMetadata();
+     *         if (metadata.JSDocTags.findIndex(x => x.name === "private") !== -1) {
+     *             return false;
+     *         }
+     *
+     *         return true;
+     *     }
+     * });
+     * ```
+     */
+    FilterApiItems?: FilterApiItemsHandler;
 }
+
+export type FilterApiItemsHandler = (apiitem: ApiItem) => boolean;

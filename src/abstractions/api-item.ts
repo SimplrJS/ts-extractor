@@ -29,7 +29,7 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
     protected ItemStatus: ApiItemStatus = ApiItemStatus.Initial;
     protected ExtractedData: TExtractDto;
 
-    protected GetItemMetadata(): ApiMetadataDto {
+    public GetItemMetadata(): ApiMetadataDto {
         return {
             DocumentationComment: ts.displayPartsToString(this.Symbol.getDocumentationComment()),
             JSDocTags: this.Symbol.getJsDocTags()
