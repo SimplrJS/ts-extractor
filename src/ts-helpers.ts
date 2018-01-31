@@ -130,4 +130,35 @@ export namespace TsHelpers {
     export function IsNodeSynthesized(node: ts.Node): boolean {
         return Boolean(node.flags & ts.NodeFlags.Synthesized);
     }
+
+    export const NODE_MODULES_PACKAGE_REGEX = /\/node_modules\/(.+?)\/.*/;
+
+    /**
+     * @param onlyName if true, returns only package name.
+     */
+    export function GetSourceFileExternalLibraryLocation(
+        sourceFile: ts.SourceFile,
+        program: ts.Program,
+        onlyName?: boolean
+    ): string | undefined {
+        const externalLibraryMatch = sourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
+
+        if (program.isSourceFileFromExternalLibrary(sourceFile) || externalLibraryMatch != null) {
+            if (externalLibraryMatch != null) {
+                if (onlyName) {
+                    // returns `typescript`
+                    return externalLibraryMatch[1];
+                } else {
+                    // Returns `typescript/lib/lib.es5.d.ts`
+                    return externalLibraryMatch[0].replace("/node_modules/", "");
+                }
+            }
+        }
+
+        return undefined;
+    }
+
+    export function IsSourceFileFromExternalPackage(sourceFile: ts.SourceFile, program: ts.Program): boolean {
+        return GetSourceFileExternalLibraryLocation(sourceFile, program) != null;
+    }
 }

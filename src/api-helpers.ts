@@ -102,6 +102,13 @@ export namespace ApiHelpers {
             apiItem = new ApiMapped(declaration, symbol, options);
         }
 
+        // Filters declarations.
+        if (apiItem != null &&
+            options.ExtractorOptions.FilterApiItems != null &&
+            !options.ExtractorOptions.FilterApiItems(apiItem)) {
+            return undefined;
+        }
+
         if (apiItem == null) {
             // This declaration is not supported, show a Warning message.
             LogWithNodePosition(
@@ -114,24 +121,16 @@ export namespace ApiHelpers {
         return apiItem;
     }
 
-    export const NODE_MODULES_PACKAGE_REGEX = /\/node_modules\/(.+?)\//;
-
     export function ShouldVisit(declaration: ts.Declaration, options: ApiItemOptions): boolean {
         const declarationSourceFile = declaration.getSourceFile();
         const declarationFileName = declarationSourceFile.fileName;
 
         // External library.
-        if (options.Program.isSourceFileFromExternalLibrary(declarationSourceFile)) {
-            const match = declarationSourceFile.fileName.match(NODE_MODULES_PACKAGE_REGEX);
-            const packageName = match != null ? match[1] : undefined;
-
-            if (packageName != null) {
-                // Check if PackageName is in external packages.
-                return options.ExternalPackages.
-                    findIndex(x => x.toLowerCase() === packageName.toLowerCase()) !== -1;
-            } else {
-                return false;
-            }
+        const externalLibraryName = TsHelpers.GetSourceFileExternalLibraryLocation(declarationSourceFile, options.Program, true);
+        if (externalLibraryName != null) {
+            // Check if PackageName is in external packages.
+            return options.ExternalPackages.
+                findIndex(x => x === externalLibraryName) !== -1;
         } else if (!PathIsInside(declarationFileName, options.ExtractorOptions.ProjectDirectory)) {
             // If it's not external package, it should be in project directory.
             return false;
@@ -323,18 +322,15 @@ export namespace ApiHelpers {
     export function GetApiItemLocationDtoFromNode(node: ts.Node, options: ApiItemOptions): ApiItemLocationDto {
         const sourceFile = node.getSourceFile();
 
-        const isExternalPackage = options.Program.isSourceFileFromExternalLibrary(sourceFile);
         const position = sourceFile.getLineAndCharacterOfPosition(node.getStart());
         const fileNamePath = path.relative(options.ExtractorOptions.ProjectDirectory, sourceFile.fileName);
         let fileName = StandardizeRelativePath(fileNamePath, options);
 
-        if (isExternalPackage) {
-            const packageFullPath = fileName.match(/\/node_modules\/(.+?)$/);
-
-            if (packageFullPath != null) {
-                const [, packagePath] = packageFullPath;
-                fileName = packagePath;
-            }
+        // Resolve package location if source file from external library.
+        const externalPackagePath = TsHelpers.GetSourceFileExternalLibraryLocation(sourceFile, options.Program);
+        const isExternalPackage = externalPackagePath != null;
+        if (externalPackagePath != null) {
+            fileName = externalPackagePath;
         }
 
         return {
