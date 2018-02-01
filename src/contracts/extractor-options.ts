@@ -1,4 +1,6 @@
 import * as ts from "typescript";
+import { LogLevel } from "simplr-logger";
+
 import { ApiItem } from "../abstractions/api-item";
 
 export interface ExtractorOptions {
@@ -52,6 +54,7 @@ export interface ExtractorOptions {
      * ```
      */
     FilterApiItems?: FilterApiItemsHandler;
+    Verbosity?: LogLevel;
 }
 
 export type FilterApiItemsHandler = (apiitem: ApiItem) => boolean;
