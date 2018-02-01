@@ -13,6 +13,7 @@
         "pretty": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
+        "strictPropertyInitialization": false,
         "lib": [
             "es6",
             "es2017.object"

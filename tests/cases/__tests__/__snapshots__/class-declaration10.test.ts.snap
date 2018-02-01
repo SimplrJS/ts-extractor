@@ -49,7 +49,16 @@ Object {
       "Metadata": Object {
         "DocumentationComment": "Creating foo with text.
 Creating foo with boolean.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text Text for the foo class.",
+          },
+          Object {
+            "name": "param",
+            "text": "should Boolean for foo class.",
+          },
+        ],
       },
       "Name": "__constructor",
       "Parameters": Array [
@@ -77,7 +86,16 @@ Creating foo with boolean.",
       "Metadata": Object {
         "DocumentationComment": "Creating foo with text.
 Creating foo with boolean.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text Text for the foo class.",
+          },
+          Object {
+            "name": "param",
+            "text": "should Boolean for foo class.",
+          },
+        ],
       },
       "Name": "__constructor",
       "Parameters": Array [
@@ -105,7 +123,16 @@ Creating foo with boolean.",
       "Metadata": Object {
         "DocumentationComment": "Creating foo with text.
 Creating foo with boolean.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text Text for the foo class.",
+          },
+          Object {
+            "name": "param",
+            "text": "should Boolean for foo class.",
+          },
+        ],
       },
       "Name": "__constructor",
       "Parameters": Array [
@@ -133,7 +160,12 @@ Creating foo with boolean.",
       },
       "Metadata": Object {
         "DocumentationComment": "Text for the foo class.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text Text for the foo class.",
+          },
+        ],
       },
       "Name": "text",
       "ParentId": "Constructor-0",
@@ -162,7 +194,12 @@ Creating foo with boolean.",
       },
       "Metadata": Object {
         "DocumentationComment": "Boolean for foo class.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "should Boolean for foo class.",
+          },
+        ],
       },
       "Name": "should",
       "ParentId": "Constructor-1",

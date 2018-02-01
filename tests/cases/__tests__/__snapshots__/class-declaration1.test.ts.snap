@@ -81,7 +81,12 @@ Object {
       },
       "Metadata": Object {
         "DocumentationComment": "Sets foo.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "foo foo",
+          },
+        ],
       },
       "Name": "SetFoo",
       "Parameters": Array [
@@ -124,7 +129,16 @@ Object {
         "DocumentationComment": "GetFoo overload comment.
 GetFoo overload comment.
 GetFoo without A parameter comment line.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text GetFoo property comment.",
+          },
+          Object {
+            "name": "param",
+            "text": "open GetFoo property comment.",
+          },
+        ],
       },
       "Name": "GetFoo",
       "Parameters": Array [
@@ -167,7 +181,16 @@ GetFoo without A parameter comment line.",
         "DocumentationComment": "GetFoo overload comment.
 GetFoo overload comment.
 GetFoo without A parameter comment line.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text GetFoo property comment.",
+          },
+          Object {
+            "name": "param",
+            "text": "open GetFoo property comment.",
+          },
+        ],
       },
       "Name": "GetFoo",
       "Parameters": Array [
@@ -210,7 +233,16 @@ GetFoo without A parameter comment line.",
         "DocumentationComment": "GetFoo overload comment.
 GetFoo overload comment.
 GetFoo without A parameter comment line.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text GetFoo property comment.",
+          },
+          Object {
+            "name": "param",
+            "text": "open GetFoo property comment.",
+          },
+        ],
       },
       "Name": "GetFoo",
       "Parameters": Array [
@@ -296,7 +328,12 @@ GetFoo without A parameter comment line.",
       },
       "Metadata": Object {
         "DocumentationComment": "foo",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "foo foo",
+          },
+        ],
       },
       "Name": "foo",
       "ParentId": "MethodDeclaration-0",
@@ -325,7 +362,12 @@ GetFoo without A parameter comment line.",
       },
       "Metadata": Object {
         "DocumentationComment": "GetFoo property comment.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "text GetFoo property comment.",
+          },
+        ],
       },
       "Name": "text",
       "ParentId": "MethodDeclaration-1",
@@ -354,7 +396,12 @@ GetFoo without A parameter comment line.",
       },
       "Metadata": Object {
         "DocumentationComment": "GetFoo property comment.",
-        "JSDocTags": Array [],
+        "JSDocTags": Array [
+          Object {
+            "name": "param",
+            "text": "open GetFoo property comment.",
+          },
+        ],
       },
       "Name": "open",
       "ParentId": "MethodDeclaration-2",
