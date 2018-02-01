@@ -366,7 +366,7 @@ export namespace ApiTypeHelpers {
         switch (typeNode.operator) {
             case ts.SyntaxKind.KeyOfKeyword: {
                 operator = TypeKeywords.Keyof;
-                // Otherwise text will be union.
+                // Otherwise text will be union of keys.
                 text = `${operator} ${apiType.Text}`;
                 break;
             }
