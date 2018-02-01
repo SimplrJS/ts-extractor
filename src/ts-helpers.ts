@@ -131,7 +131,8 @@ export namespace TsHelpers {
         return Boolean(node.flags & ts.NodeFlags.Synthesized);
     }
 
-    export const NODE_MODULES_PACKAGE_REGEX = /\/node_modules\/(.+?)\/.*/;
+    export const NODE_MODULES = "node_modules";
+    export const NODE_MODULES_PACKAGE_REGEX = new RegExp(`\\/${NODE_MODULES}\\/(\\@.+\\/.+?|.+?)\\/.*`);
 
     /**
      * @param onlyName if true, returns only package name.
@@ -150,7 +151,7 @@ export namespace TsHelpers {
                     return externalLibraryMatch[1];
                 } else {
                     // Returns `typescript/lib/lib.es5.d.ts`
-                    return externalLibraryMatch[0].replace("/node_modules/", "");
+                    return externalLibraryMatch[0].replace(`/${NODE_MODULES}/`, "");
                 }
             }
         }
