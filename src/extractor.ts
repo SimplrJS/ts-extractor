@@ -21,6 +21,11 @@ export class Extractor {
             ProjectDirectory: fs.realpathSync(options.ProjectDirectory),
             OutputPathSeparator: options.OutputPathSeparator || "/"
         };
+
+        // Verbosity log level
+        if (options.Verbosity != null) {
+            Logger.UpdateConfiguration(updater => updater.SetDefaultLogLevel(options.Verbosity!).Build(), false);
+        }
     }
 
     protected Options: ExtractorOptions;
