@@ -31,7 +31,7 @@ export abstract class ApiItem<TDeclaration extends ts.Declaration = ts.Declarati
 
     public GetItemMetadata(): ApiMetadataDto {
         return {
-            DocumentationComment: ts.displayPartsToString(this.Symbol.getDocumentationComment()),
+            DocumentationComment: ts.displayPartsToString(this.Symbol.getDocumentationComment(this.TypeChecker)),
             JSDocTags: this.Symbol.getJsDocTags()
         };
     }

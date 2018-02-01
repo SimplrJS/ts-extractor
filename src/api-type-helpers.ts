@@ -150,9 +150,19 @@ export namespace ApiTypeHelpers {
         type: ts.Type,
         typeNode: ts.TypeNode
     ): ApiBasicTypeDto {
+        const typeChecker = options.Program.getTypeChecker();
+        let text: string | undefined;
+        if (TsHelpers.IsNodeSynthesized(typeNode)) {
+            text = ts.tokenToString(typeNode.kind);
+        }
+        if (text == null) {
+            text = typeChecker.typeToString(type);
+        }
+
         return {
             ...typeNodeToBaseType(options, location, type, typeNode),
-            ApiTypeKind: ApiTypeKind.Basic
+            ApiTypeKind: ApiTypeKind.Basic,
+            Text: text
         };
     }
 
@@ -348,21 +358,31 @@ export namespace ApiTypeHelpers {
         typeNode: ts.TypeOperatorNode
     ): TypeOperatorTypeDto {
         const typeChecker = options.Program.getTypeChecker();
-        const apiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
+        const apiType: ApiType = ResolveApiType(options, location, typeChecker.getTypeFromTypeNode(typeNode.type), typeNode.type);
+
+        let text = typeChecker.typeToString(type);
         let operator: TypeKeywords;
 
         switch (typeNode.operator) {
             case ts.SyntaxKind.KeyOfKeyword: {
                 operator = TypeKeywords.Keyof;
+                // Otherwise text will be union of keys.
+                text = `${operator} ${apiType.Text}`;
+                break;
+            }
+            case ts.SyntaxKind.UniqueKeyword: {
+                operator = TypeKeywords.Unique;
                 break;
             }
             default: {
+                ApiHelpers.LogWithLocation(
+                    LogLevel.Debug,
+                    location,
+                    `Unknown TypeOperator "${ts.SyntaxKind[typeNode.operator]}" keyword.`
+                );
                 operator = TypeKeywords.Unknown;
             }
         }
-
-        // Otherwise text will be union.
-        const text = `${operator} ${apiType.Text}`;
 
         return {
             ...typeNodeToBaseType(options, location, type, typeNode),

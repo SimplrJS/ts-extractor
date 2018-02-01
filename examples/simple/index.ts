@@ -1,6 +1,1 @@
-/**
- * @private
- */
-export class Foo {
-    private privateFoo: string = "";
-}
+export const a = Symbol("Hello");

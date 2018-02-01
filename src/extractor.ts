@@ -73,9 +73,12 @@ export class Extractor {
         // Go through all given files.
         const rootFiles = program.getRootFileNames();
         rootFiles.forEach(fileName => {
-            const sourceFile: ts.SourceFile = program.getSourceFile(fileName);
-            const symbol = typeChecker.getSymbolAtLocation(sourceFile);
+            const sourceFile: ts.SourceFile | undefined = program.getSourceFile(fileName);
+            if (sourceFile == null) {
+                return;
+            }
 
+            const symbol = typeChecker.getSymbolAtLocation(sourceFile);
             if (symbol == null) {
                 Logger.Warn(`Source file "${fileName}" is skipped, because no exported members were found.`);
                 return;

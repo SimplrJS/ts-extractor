@@ -39,7 +39,8 @@ export enum ApiTypeKind {
 export enum TypeKeywords {
     Unknown = "???",
     Keyof = "keyof",
-    Typeof = "typeof"
+    Typeof = "typeof",
+    Unique = "unique"
 }
 
 export interface TypeScriptTypeNodeDebug {
@@ -155,7 +156,7 @@ export interface TypePredicateTypeDto extends ApiBaseType {
  */
 export interface TypeOperatorTypeDto extends ApiBaseType {
     ApiTypeKind: ApiTypeKind.TypeOperator;
-    Keyword: TypeKeywords.Keyof | TypeKeywords.Unknown;
+    Keyword: TypeKeywords.Keyof | TypeKeywords.Unique | TypeKeywords.Unknown;
     Type: ApiType;
 }
 
