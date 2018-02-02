@@ -7,11 +7,18 @@
 [![devDependencies Status](https://david-dm.org/SimplrJS/ts-extractor/dev-status.svg)](https://david-dm.org/SimplrJS/ts-extractor?type=dev)
 [![devDependencies Status](https://img.shields.io/npm/l/ts-extractor.svg)](https://npmjs.org/package/ts-extractor)
 
-TypeScript AST extractor to useful JSON structure.
+TypeScript AST extractor to a useful JSON structure.
 
-The purpose of this package is to extract AST into flat JSON structures.
+The purpose of this package is to extract AST into a flat JSON structure.
 
-Later on, it can be used for documentation generation tool, easier code analysis with without compiler, etc.
+After extraction, it can be used for documentation generation tool, easier code analysis without compiler, etc.
+
+## Relation to API Extractor
+The library is inspired by [API Extractor](https://github.com/Microsoft/web-build-tools/tree/master/apps/api-extractor) created by [Microsoft](https://microsoft.com).
+
+`ts-extractor` does everything `api-extractor` was supposed to do and supports ALL things that latest TypeScript has, compared to a limited support in `api-extractor`.
+
+In essence, it is an evolution of what `api-extractor` does, though outputs are not interchangable directly.
 
 ## Usage example
 
