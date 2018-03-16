@@ -52,10 +52,11 @@
         "coveralls": "^3.0.0",
         "jest": "^22.1.4",
         "rimraf": "^2.6.2",
-        "simplr-tslint": "0.0.1",
+        "simplr-tslint": "^1.0.0-alpha.9",
         "ts-jest": "^22.0.2",
         "ts-node": "^4.1.0",
-        "tslint": "^5.9.1"
+        "tslint": "^5.9.1",
+        "tslint-language-service": "^0.9.8"
     },
     "files": [
         "dist",

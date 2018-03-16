@@ -13,7 +13,6 @@
         "pretty": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "strictPropertyInitialization": false,
         "lib": [
             "es6",
             "es2017.object"
@@ -23,6 +22,11 @@
         ],
         "typeRoots": [
             "./node_modules/@types"
+        ],
+        "plugins": [
+            {
+                "name": "tslint-language-service"
+            }
         ]
     },
     "exclude": [
