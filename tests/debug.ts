@@ -7,7 +7,7 @@ import { ApiHelpers } from "./api-helpers";
 import { AccessModifier } from "./contracts";
 
 async function main(): Promise<void> {
-    const projectDirectory = path.resolve(__dirname, "../examples/simple/");
+    const projectDirectory = path.resolve(__dirname, "./examples/simple/");
     const tsconfigPath = path.join(projectDirectory, "tsconfig.json");
     const compilerOptions = await GetCompilerOptions(tsconfigPath);
 
