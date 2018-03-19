@@ -46,7 +46,7 @@ export class TsExtractor {
 
     /**
      * Checks and resolves absolute path of given files.
-     * @throws When file does not exists or files is not in project directory.
+     * @throws When file does not exists or files are not in project directory.
      */
     private resolveFilesLocation(files: string[]): string[] {
         const resolvedFilesLocation = files.map(file => {
