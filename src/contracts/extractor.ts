@@ -1,4 +1,4 @@
-import { BaseApiItem } from "./api-item";
+import { AstItemBaseDto } from "./ast-item";
 
 export interface ExtractorDto {
     name: string;
@@ -7,5 +7,5 @@ export interface ExtractorDto {
 }
 
 export interface ExtractorRegistryDto {
-    [key: string]: BaseApiItem;
+    [key: string]: AstItemBaseDto;
 }

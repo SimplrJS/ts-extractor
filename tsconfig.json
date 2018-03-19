@@ -35,6 +35,7 @@
         "@types",
         "tests",
         "examples",
-        "tools"
+        "tools",
+        "src_"
     ]
 }
