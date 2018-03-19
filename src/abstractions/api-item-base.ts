@@ -1,5 +1,5 @@
 import * as ts from "typescript";
-import { AstItemBaseDto } from "../contracts/ast-item";
+import { AstItemBaseDto, AstItemMemberReference } from "../contracts/ast-item";
 
 export enum AstItemStatus {
     Initial = 0,
@@ -16,8 +16,10 @@ export interface AstItemOptions {
     parentId?: string;
 }
 
-export abstract class AstItemBase<TExtractDto extends AstItemBaseDto> {
-    constructor(protected readonly options: AstItemOptions) {}
+export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
+    constructor(protected readonly options: AstItemOptions, protected readonly item: TItem) {
+        this.parentId = this.options.parentId;
+    }
 
     protected get typeChecker(): ts.TypeChecker {
         return this.options.program.getTypeChecker();
@@ -32,7 +34,9 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto> {
     /**
      * This name will be used for Id generating.
      */
-    public abstract name: string;
+    public readonly abstract name: string;
+
+    public readonly parentId: string | undefined;
 
     private extractedData: TExtractDto | undefined;
     protected abstract onExtract(): TExtractDto;
@@ -48,7 +52,9 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto> {
         return this.extractedData;
     }
 
-    protected abstract onGatherMembers(): void;
+    protected membersReferences: AstItemMemberReference[] | undefined;
+
+    protected abstract onGatherMembers(): AstItemMemberReference[];
 
     /**
      * Used only in the extraction phase to prevent from circular references.
@@ -57,7 +63,7 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto> {
         if (this.itemStatus & AstItemStatus.GatheredMembers) {
             return;
         }
-        this.onGatherMembers();
+        this.membersReferences = this.onGatherMembers();
         this.status |= AstItemStatus.GatheredMembers;
     }
 }
