@@ -19,11 +19,20 @@ export interface AstItemOptions {
 export abstract class AstItemBase<TExtractDto extends AstItemBaseDto> {
     constructor(protected readonly options: AstItemOptions) {}
 
+    protected get typeChecker(): ts.TypeChecker {
+        return this.options.program.getTypeChecker();
+    }
+
     private status: AstItemStatus = AstItemStatus.Initial;
 
     public get itemStatus(): AstItemStatus {
         return this.status;
     }
+
+    /**
+     * This name will be used for Id generating.
+     */
+    public abstract name: string;
 
     private extractedData: TExtractDto | undefined;
     protected abstract onExtract(): TExtractDto;
