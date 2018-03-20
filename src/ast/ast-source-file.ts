@@ -58,11 +58,9 @@ export class AstSourceFile extends AstItemBase<AstSourceFileDto, ts.SourceFile> 
                 symbol
             );
 
-            if (this.options.itemsRegistry.has(astSymbol.itemId)) {
-                return;
+            if (!this.options.itemsRegistry.has(astSymbol.itemId)) {
+                this.options.addItemToRegistry(astSymbol);
             }
-
-            this.options.addItemToRegistry(astSymbol);
             membersReferences.push({ alias: astSymbol.name, id: astSymbol.itemId });
         });
 
