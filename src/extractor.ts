@@ -3,9 +3,11 @@ import * as os from "os";
 import * as path from "path";
 import * as fs from "fs-extra";
 import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logger";
+
 import { ExtractorDto } from "./contracts/extractor";
 import { AstSourceFile } from "./ast/ast-source-file";
-import { AddItemToRegistryHandler, AstItemBase } from "./abstractions/api-item-base";
+import { AddItemToRegistryHandler, AstItemBase, ResolveDeclarationHandler } from "./abstractions/api-item-base";
+import { AstDeclarations } from "./ast-declarations";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -86,6 +88,16 @@ export class TsExtractor {
             item.gatherMembers();
         };
 
+        const resolveDeclaration: ResolveDeclarationHandler = (options, declaration) => {
+            const $constructor = AstDeclarations.get(declaration.kind);
+            if ($constructor == null) {
+                this.logger.Warn(`Unsupported declaration kind "${ts.SyntaxKind[declaration.kind]}".`);
+                return undefined;
+            }
+
+            return new $constructor(options, declaration);
+        };
+
         // Go through all given files.
         const sourceFiles: AstSourceFile[] = [];
         program.getRootFileNames().forEach(fileName => {
@@ -101,7 +113,8 @@ export class TsExtractor {
                     projectDirectory: this.config.projectDirectory,
                     addItemToRegistry: addItemHandler,
                     itemsRegistry: registry,
-                    logger: this.logger
+                    logger: this.logger,
+                    resolveDeclaration: resolveDeclaration
                 },
                 sourceFile
             );

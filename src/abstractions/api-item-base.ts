@@ -13,6 +13,10 @@ export interface AddItemToRegistryHandler {
     (item: AstItemBase<any, any>): void;
 }
 
+export interface ResolveDeclarationHandler {
+    (options: AstItemOptions, item: ts.Declaration): AstItemBase<any, ts.Declaration> | undefined;
+}
+
 export interface AstItemOptions {
     program: ts.Program;
     /**
@@ -26,6 +30,8 @@ export interface AstItemOptions {
     itemCounter?: number;
     projectDirectory: string;
     addItemToRegistry: AddItemToRegistryHandler;
+    /** TODO: NAMING */
+    resolveDeclaration: ResolveDeclarationHandler;
     itemsRegistry: ReadonlyMap<string, AstItemBase<any, any>>;
     logger: LoggerBuilder;
 }

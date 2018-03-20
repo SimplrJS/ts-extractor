@@ -43,7 +43,22 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
         }
 
         for (const declaration of this.item.declarations) {
-            // TODO: Resolve AstItem.
+            const astItem = this.options.resolveDeclaration(
+                {
+                    ...this.options,
+                    parentId: this.itemId
+                },
+                declaration
+            );
+
+            if (astItem == null) {
+                continue;
+            }
+
+            if (!this.options.itemsRegistry.has(astItem.itemId)) {
+                this.options.addItemToRegistry(astItem);
+            }
+            membersReferences.push({ alias: astItem.name, id: astItem.itemId });
         }
 
         return membersReferences;
