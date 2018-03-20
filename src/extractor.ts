@@ -80,8 +80,7 @@ export class TsExtractor {
 
         // Go through all given files.
         const sourceFiles: AstSourceFile[] = [];
-        const rootFiles = program.getRootFileNames();
-        rootFiles.forEach(fileName => {
+        program.getRootFileNames().forEach(fileName => {
             const sourceFile: ts.SourceFile | undefined = program.getSourceFile(fileName);
             if (sourceFile == null) {
                 return;
@@ -99,7 +98,7 @@ export class TsExtractor {
             sourceFiles.push(astSourceFile);
             // TODO: Add to AstRegistry.
         });
-
+        debugger;
         return sourceFiles;
     }
 

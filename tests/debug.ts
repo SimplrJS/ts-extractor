@@ -12,7 +12,6 @@ export async function main(): Promise<void> {
         compilerOptions: compilerOptions,
         projectDirectory: projectDirectory
     });
-    debugger;
 
     extractor.extract([path.resolve("examples/simple/index.ts")]);
 }

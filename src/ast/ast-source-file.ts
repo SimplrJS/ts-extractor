@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import * as path from "path";
 
 import { AstItemBase } from "../abstractions/api-item-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
@@ -12,11 +13,11 @@ export class AstSourceFile extends AstItemBase<AstSourceFileDto, ts.SourceFile> 
     }
 
     public get itemId(): string {
-        return `${this.parentId}.${this.name}`;
+        return `${this.parentId}/${this.name}`;
     }
 
     public get name(): string {
-        return this.item.fileName;
+        return path.relative(this.options.projectDirectory, this.item.fileName);
     }
 
     protected onExtract(): AstSourceFileDto {
