@@ -36,6 +36,16 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
     }
 
     protected onGatherMembers(): AstItemMemberReference[] {
-        return [];
+        const membersReferences: AstItemMemberReference[] = [];
+        if (this.item.declarations == null) {
+            this.logger.Error(`[${this.itemId}] Symbol declarations list is undefined.`);
+            return membersReferences;
+        }
+
+        for (const declaration of this.item.declarations) {
+            // TODO: Resolve AstItem.
+        }
+
+        return membersReferences;
     }
 }
