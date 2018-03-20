@@ -1,3 +1,24 @@
+import * as path from "path";
+import { GetCompilerOptions } from "../src/utils/tsconfig-json";
+
+import { TsExtractor } from "../src/extractor";
+
+export async function main(): Promise<void> {
+    const projectDirectory = path.resolve(__dirname, "./examples/simple/");
+    const tsconfigPath = path.join(projectDirectory, "tsconfig.json");
+    const compilerOptions = await GetCompilerOptions(tsconfigPath);
+
+    const extractor = new TsExtractor({
+        compilerOptions: compilerOptions,
+        projectDirectory: projectDirectory
+    });
+    debugger;
+
+    extractor.extract([path.resolve("examples/simple/index.ts")]);
+}
+
+main();
+
 // import * as path from "path";
 // import { GetCompilerOptions } from "./utils/tsconfig-json";
 // import * as fs from "fs-extra";
