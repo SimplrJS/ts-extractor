@@ -5,6 +5,7 @@ import * as fs from "fs-extra";
 import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logger";
 import { ExtractorDto } from "./contracts/extractor";
 import { AstSourceFile } from "./ast/ast-source-file";
+import { AddItemToRegistryHandler, AstItemBase } from "./abstractions/api-item-base";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -75,8 +76,15 @@ export class TsExtractor {
     public extract(files: string[]): AstSourceFile[] {
         const rootNames = this.resolveFilesLocation(files);
         const program = ts.createProgram(rootNames, this.config.compilerOptions);
+        const registry = new Map<string, AstItemBase<any, any>>();
 
         this.checkTsErrors(program);
+
+        const addItemHandler: AddItemToRegistryHandler = item => {
+            registry.set(item.itemId, item);
+            // After adding item to registry we gather members.
+            item.gatherMembers();
+        };
 
         // Go through all given files.
         const sourceFiles: AstSourceFile[] = [];
@@ -90,7 +98,9 @@ export class TsExtractor {
                 {
                     program: program,
                     parentId: "@simplrjs/package-name",
-                    projectDirectory: this.config.projectDirectory
+                    projectDirectory: this.config.projectDirectory,
+                    addItemToRegistry: addItemHandler,
+                    itemsRegistry: registry
                 },
                 sourceFile
             );
@@ -98,7 +108,7 @@ export class TsExtractor {
             sourceFiles.push(astSourceFile);
             // TODO: Add to AstRegistry.
         });
-        debugger;
+
         return sourceFiles;
     }
 

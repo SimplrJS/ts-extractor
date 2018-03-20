@@ -8,6 +8,10 @@ export enum AstItemStatus {
     GatheredAndExtracted = GatheredMembers | Extracted
 }
 
+export interface AddItemToRegistryHandler {
+    (item: AstItemBase<any, any>): void;
+}
+
 export interface AstItemOptions {
     program: ts.Program;
     /**
@@ -20,6 +24,8 @@ export interface AstItemOptions {
      */
     itemCounter?: number;
     projectDirectory: string;
+    addItemToRegistry: AddItemToRegistryHandler;
+    itemsRegistry: ReadonlyMap<string, AstItemBase<any, any>>;
 }
 
 export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
