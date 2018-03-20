@@ -100,13 +100,14 @@ export class TsExtractor {
                     parentId: "@simplrjs/package-name",
                     projectDirectory: this.config.projectDirectory,
                     addItemToRegistry: addItemHandler,
-                    itemsRegistry: registry
+                    itemsRegistry: registry,
+                    logger: this.logger
                 },
                 sourceFile
             );
 
+            addItemHandler(astSourceFile);
             sourceFiles.push(astSourceFile);
-            // TODO: Add to AstRegistry.
         });
 
         return sourceFiles;

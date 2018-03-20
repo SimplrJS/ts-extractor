@@ -1,5 +1,6 @@
 import * as ts from "typescript";
-import { AstItemBaseDto, AstItemMemberReference } from "../contracts/ast-item";
+import { LoggerBuilder } from "simplr-logger";
+import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 
 export enum AstItemStatus {
     Initial = 0,
@@ -26,12 +27,16 @@ export interface AstItemOptions {
     projectDirectory: string;
     addItemToRegistry: AddItemToRegistryHandler;
     itemsRegistry: ReadonlyMap<string, AstItemBase<any, any>>;
+    logger: LoggerBuilder;
 }
 
 export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
     constructor(protected readonly options: AstItemOptions, protected readonly item: TItem) {
-        this.parentId = this.options.parentId;
+        this.parentId = options.parentId;
+        this.logger = options.logger;
     }
+
+    protected readonly logger: LoggerBuilder;
 
     protected get typeChecker(): ts.TypeChecker {
         return this.options.program.getTypeChecker();

@@ -12,7 +12,16 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
     }
 
     public get itemId(): string {
-        return `${this.parentId}.${this.name}`;
+        // Separate SourceFile from other items.
+        let itemSeparator: string;
+        const parentItem = this.options.itemsRegistry.get(this.options.parentId);
+        if (parentItem != null && parentItem.itemKind === AstItemKind.SourceFile) {
+            itemSeparator = ":";
+        } else {
+            itemSeparator = ".";
+        }
+
+        return `${this.parentId}${itemSeparator}${this.name}`;
     }
 
     public get name(): string {
