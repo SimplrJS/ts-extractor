@@ -4,6 +4,7 @@ import * as path from "path";
 import * as fs from "fs-extra";
 import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logger";
 import { ExtractorDto } from "./contracts/extractor";
+import { AstSourceFile } from "./ast/ast-source-file";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -71,16 +72,43 @@ export class TsExtractor {
         return resolvedFilesLocation;
     }
 
-    public extract(files: string[]): ExtractorDto {
+    public extract(files: string[]): AstSourceFile[] {
         const rootNames = this.resolveFilesLocation(files);
         const program = ts.createProgram(rootNames, this.config.compilerOptions);
 
         this.checkTsErrors(program);
 
+        // Go through all given files.
+        const sourceFiles: AstSourceFile[] = [];
+        const rootFiles = program.getRootFileNames();
+        rootFiles.forEach(fileName => {
+            const sourceFile: ts.SourceFile | undefined = program.getSourceFile(fileName);
+            if (sourceFile == null) {
+                return;
+            }
+
+            const astSourceFile = new AstSourceFile(
+                {
+                    program: program,
+                    parentId: "@simplrjs/package-name",
+                    projectDirectory: this.config.projectDirectory
+                },
+                sourceFile
+            );
+
+            sourceFiles.push(astSourceFile);
+            // TODO: Add to AstRegistry.
+        });
+
+        return sourceFiles;
+    }
+
+    public extractToJson(files: string[]): ExtractorDto {
         return {
             name: "package_name",
             version: "_0.0.0",
-            registry: {}
+            registry: {},
+            files: []
         };
     }
 }

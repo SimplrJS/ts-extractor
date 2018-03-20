@@ -13,7 +13,13 @@ export interface AstItemOptions {
     /**
      * Api item's parent id.
      */
-    parentId?: string;
+    parentId: string;
+    /**
+     * Used to identify AstItem when it has the same name and kind.
+     * For example function overloads.
+     */
+    itemCounter?: number;
+    projectDirectory: string;
 }
 
 export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
@@ -31,12 +37,19 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
         return this.status;
     }
 
+    public abstract readonly itemKind: string;
+
+    public get itemId(): string {
+        const counter: string = this.options.itemCounter != null ? `&${this.options.itemCounter}` : "";
+        return `${this.parentId}.${this.name}#${this.itemKind}${counter}`;
+    }
+
     /**
      * This name will be used for Id generating.
      */
-    public readonly abstract name: string;
+    public abstract readonly name: string;
 
-    public readonly parentId: string | undefined;
+    public readonly parentId: string;
 
     private extractedData: TExtractDto | undefined;
     protected abstract onExtract(): TExtractDto;
