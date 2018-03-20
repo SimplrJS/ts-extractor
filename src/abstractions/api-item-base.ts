@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 import { LoggerBuilder } from "simplr-logger";
-import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
+import { AstItemBaseDto, AstItemMemberReference } from "../contracts/ast-item";
 
 export enum AstItemStatus {
     Initial = 0,
