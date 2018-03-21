@@ -56,10 +56,7 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
 
     public abstract readonly itemKind: string;
 
-    public get itemId(): string {
-        const counter: string = this.options.itemCounter != null ? `&${this.options.itemCounter}` : "";
-        return `${this.parentId}#${this.itemKind}${counter}`;
-    }
+    public abstract readonly itemId: string;
 
     /**
      * This name will be used for Id generating.

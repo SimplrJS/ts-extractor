@@ -1,12 +1,12 @@
 import * as ts from "typescript";
-import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstDeclarationBase } from "../abstractions/ast-declaration-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 
 export interface AstVariableDto extends AstItemBaseDto {
     type: any;
 }
 
-export class AstVariable extends AstItemBase<AstVariableDto, ts.VariableDeclaration> {
+export class AstVariable extends AstDeclarationBase<AstVariableDto, ts.VariableDeclaration> {
     public get itemKind(): AstItemKind {
         return AstItemKind.Variable;
     }
