@@ -58,7 +58,7 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
 
     public get itemId(): string {
         const counter: string = this.options.itemCounter != null ? `&${this.options.itemCounter}` : "";
-        return `${this.parentId}.${this.name}#${this.itemKind}${counter}`;
+        return `${this.parentId}#${this.itemKind}${counter}`;
     }
 
     /**

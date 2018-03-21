@@ -6,7 +6,7 @@ import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logg
 
 import { ExtractorDto } from "./contracts/extractor";
 import { AstSourceFile } from "./ast/ast-source-file";
-import { AddItemToRegistryHandler, AstItemBase, ResolveDeclarationHandler } from "./abstractions/api-item-base";
+import { AddItemToRegistryHandler, AstItemBase, ResolveDeclarationHandler } from "./abstractions/ast-item-base";
 import { AstDeclarations } from "./ast-declarations";
 
 export interface TsExtractorConfig {

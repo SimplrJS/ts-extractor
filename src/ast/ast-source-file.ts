@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 import * as path from "path";
 
-import { AstItemBase } from "../abstractions/api-item-base";
+import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 import { AstSymbol } from "./ast-symbol";
 import { TsHelpers } from "../ts-helpers";

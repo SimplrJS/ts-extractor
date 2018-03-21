@@ -1,5 +1,5 @@
 import * as ts from "typescript";
-import { AstItemBase } from "../abstractions/api-item-base";
+import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 
 export interface AstSymbolDto extends AstItemBaseDto {
