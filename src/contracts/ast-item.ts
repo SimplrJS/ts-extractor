@@ -1,7 +1,9 @@
 export enum AstItemKind {
     SourceFile = "source-file",
     Symbol = "symbol",
-    Variable = "variable"
+    Variable = "variable",
+    Function = "function",
+    Parameter = "parameter"
 }
 
 export interface AstItemBaseDto {

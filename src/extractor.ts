@@ -123,6 +123,8 @@ export class TsExtractor {
             sourceFiles.push(astSourceFile);
         });
 
+        debugger;
+
         return sourceFiles;
     }
 

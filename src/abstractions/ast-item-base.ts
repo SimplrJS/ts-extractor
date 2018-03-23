@@ -65,6 +65,10 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
 
     public readonly parentId: string;
 
+    public getParent(): AstItemBase<any, any> | undefined {
+        return this.options.itemsRegistry.get(this.parentId);
+    }
+
     private extractedData: TExtractDto | undefined;
     protected abstract onExtract(): TExtractDto;
 

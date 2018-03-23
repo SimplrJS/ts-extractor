@@ -1,1 +1,1 @@
-export const a = Symbol("Hello");
+export function a(a: string, b: string): void {}

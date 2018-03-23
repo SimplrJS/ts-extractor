@@ -24,8 +24,27 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
         return `${this.parentId}${itemSeparator}${this.name}`;
     }
 
+    private _name: string | undefined;
+
     public get name(): string {
-        return this.item.name;
+        if (this._name == null) {
+            // Resolve name from Declarations.
+            if (this.item.declarations != null) {
+                for (const declaration of this.item.declarations) {
+                    const namedDeclaration: ts.NamedDeclaration = declaration;
+
+                    if (namedDeclaration.name != null) {
+                        this._name = namedDeclaration.name.getText();
+                        return this._name;
+                    }
+                }
+            }
+
+            // Fallback to a Symbol name.
+            this._name = this.item.name;
+        }
+
+        return this._name;
     }
 
     protected onExtract(): AstSymbolDto {
