@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 import * as path from "path";
 
-import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstDeclarationBase } from "./ast-declaration-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 import { AstSymbol } from "./ast-symbol";
 import { TsHelpers } from "../ts-helpers";
@@ -9,7 +9,7 @@ import { TsHelpers } from "../ts-helpers";
 // tslint:disable-next-line no-empty-interface
 export interface AstSourceFileDto extends AstItemBaseDto {}
 
-export class AstSourceFile extends AstItemBase<AstSourceFileDto, ts.SourceFile> {
+export class AstSourceFile extends AstDeclarationBase<AstSourceFileDto, ts.SourceFile> {
     public get itemKind(): AstItemKind {
         return AstItemKind.SourceFile;
     }

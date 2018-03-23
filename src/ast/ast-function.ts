@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 import { AstDeclarationBase } from "./ast-declaration-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
-import { TsHelpers } from "../ts-helpers";
 import { AstSymbol } from "./ast-symbol";
 
 export interface AstFunctionDto extends AstItemBaseDto {
@@ -35,28 +34,10 @@ export class AstFunction extends AstDeclarationBase<AstFunctionDto, ts.FunctionD
     private parametersReferences: AstItemMemberReference[] = [];
 
     protected onGatherMembers(): AstItemMemberReference[] {
-        const membersReferences: AstItemMemberReference[] = [];
+        this.parametersReferences = this.getMemberReferencesFromDeclarationList(this.item.parameters);
 
-        for (const parameter of this.item.parameters) {
-            const symbol = TsHelpers.GetSymbolFromDeclaration(parameter, this.typeChecker);
-
-            if (symbol != null) {
-                const astSymbol = new AstSymbol(
-                    {
-                        ...this.options,
-                        parentId: this.itemId
-                    },
-                    symbol
-                );
-
-                if (!this.options.itemsRegistry.has(astSymbol.itemId)) {
-                    this.options.addItemToRegistry(astSymbol);
-                }
-                membersReferences.push({ alias: astSymbol.name, id: astSymbol.itemId });
-                this.parametersReferences.push({ alias: astSymbol.name, id: astSymbol.itemId });
-            }
-        }
-
-        return membersReferences;
+        return [
+            ...this.parametersReferences
+        ];
     }
 }
