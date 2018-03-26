@@ -37,7 +37,7 @@ export interface AstItemOptions {
 }
 
 export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
-    constructor(protected readonly options: AstItemOptions, protected readonly item: TItem) {
+    constructor(protected readonly options: AstItemOptions, public readonly item: TItem) {
         this.parentId = options.parentId;
         this.logger = options.logger;
     }

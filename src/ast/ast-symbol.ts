@@ -61,11 +61,18 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
             return membersReferences;
         }
 
+        let counter: number = 0;
         for (const declaration of this.item.declarations) {
+            const sameKind = this.item.declarations.findIndex(x => x.kind === declaration.kind) !== -1;
+            if (sameKind) {
+                counter++;
+            }
+
             const astItem = this.options.resolveDeclaration(
                 {
                     ...this.options,
-                    parentId: this.itemId
+                    parentId: this.itemId,
+                    itemCounter: counter
                 },
                 declaration
             );
