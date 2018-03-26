@@ -63,7 +63,7 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
 
         let counter: number = 0;
         for (const declaration of this.item.declarations) {
-            const sameKind = this.item.declarations.findIndex(x => x.kind === declaration.kind) !== -1;
+            const sameKind = this.item.declarations.findIndex(x => x.kind === declaration.kind && x !== declaration) !== -1;
             if (sameKind) {
                 counter++;
             }
@@ -72,7 +72,7 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
                 {
                     ...this.options,
                     parentId: this.itemId,
-                    itemCounter: counter
+                    itemCounter: sameKind ? counter : undefined
                 },
                 declaration
             );

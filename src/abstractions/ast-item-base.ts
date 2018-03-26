@@ -17,6 +17,10 @@ export interface ResolveDeclarationHandler {
     (options: AstItemOptions, item: ts.Declaration): AstItemBase<any, ts.Declaration> | undefined;
 }
 
+export interface ResolveTypeHandler {
+    (options: AstItemOptions, item: ts.Type, typeNode?: ts.TypeNode): AstItemBase<any, ts.Type>;
+}
+
 export interface AstItemOptions {
     program: ts.Program;
     /**
@@ -32,6 +36,7 @@ export interface AstItemOptions {
     addItemToRegistry: AddItemToRegistryHandler;
     /** TODO: NAMING */
     resolveDeclaration: ResolveDeclarationHandler;
+    resolveType: ResolveTypeHandler;
     itemsRegistry: ReadonlyMap<string, AstItemBase<any, any>>;
     logger: LoggerBuilder;
 }

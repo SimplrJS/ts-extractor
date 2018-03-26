@@ -1,6 +1,7 @@
 import * as ts from "typescript";
 import { AstDeclarationBase } from "./ast-declaration-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
+import { AstTypeBase } from "./ast-type-base";
 
 export interface AstParameterDto extends AstItemBaseDto {
     type: any;
@@ -22,7 +23,20 @@ export class AstParameter extends AstDeclarationBase<AstParameterDto, ts.Paramet
         };
     }
 
+    private typeReference: AstItemMemberReference | undefined;
+
+    public get type(): AstTypeBase<any, any> {
+        if (this.typeReference == null) {
+            throw new Error(`Failed to resolve parameter reference.`);
+        }
+
+        return this.options.itemsRegistry.get(this.typeReference.id) as AstTypeBase<any, any>;
+    }
+
     protected onGatherMembers(): AstItemMemberReference[] {
-        return [];
+        const type: ts.Type = this.typeChecker.getTypeOfSymbolAtLocation(this.getParent().item, this.item);
+        this.typeReference = this.getMemberReferenceFromType(type, this.item.type);
+
+        return [this.typeReference];
     }
 }

@@ -6,8 +6,10 @@ import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logg
 
 import { ExtractorDto } from "./contracts/extractor";
 import { AstSourceFile } from "./ast/ast-source-file";
-import { AddItemToRegistryHandler, AstItemBase, ResolveDeclarationHandler } from "./abstractions/ast-item-base";
+import { AddItemToRegistryHandler, AstItemBase, ResolveDeclarationHandler, ResolveTypeHandler } from "./abstractions/ast-item-base";
 import { AstDeclarations } from "./ast-declarations";
+import { AstTypes } from "./ast-types";
+import { AstTypeDefault } from "./ast/ast-type-default";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -98,6 +100,19 @@ export class TsExtractor {
             return new $constructor(options, declaration);
         };
 
+        const resolveType: ResolveTypeHandler = (options, type, typeNode) => {
+            if (typeNode == null) {
+                typeNode = program.getTypeChecker().typeToTypeNode(type);
+            }
+
+            let $constructor = AstTypes.get(typeNode.kind);
+            if ($constructor == null) {
+                $constructor = AstTypeDefault;
+            }
+
+            return new $constructor(options, type, typeNode);
+        };
+
         // Go through all given files.
         const sourceFiles: AstSourceFile[] = [];
         program.getRootFileNames().forEach(fileName => {
@@ -114,7 +129,8 @@ export class TsExtractor {
                     addItemToRegistry: addItemHandler,
                     itemsRegistry: registry,
                     logger: this.logger,
-                    resolveDeclaration: resolveDeclaration
+                    resolveDeclaration: resolveDeclaration,
+                    resolveType: resolveType
                 },
                 sourceFile
             );
@@ -122,8 +138,6 @@ export class TsExtractor {
             addItemHandler(astSourceFile);
             sourceFiles.push(astSourceFile);
         });
-
-        debugger;
 
         return sourceFiles;
     }
