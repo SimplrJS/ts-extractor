@@ -5,11 +5,11 @@ import * as fs from "fs-extra";
 import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logger";
 
 import { ExtractorDto } from "./contracts/extractor";
-import { AstSourceFile } from "./ast/ast-source-file";
+import { AstSourceFile } from "./ast/declarations/ast-source-file";
 import { AddItemToRegistryHandler, AstItemBase, ResolveDeclarationHandler, ResolveTypeHandler } from "./abstractions/ast-item-base";
-import { AstDeclarations } from "./ast-declarations";
-import { AstTypes } from "./ast-types";
-import { AstTypeDefault } from "./ast/ast-type-default";
+import { AstDeclarations } from "./ast/ast-declarations";
+import { AstTypes } from "./ast/ast-types";
+import { AstTypeBasic } from "./ast/types/ast-type-basic";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -107,7 +107,7 @@ export class TsExtractor {
 
             let $constructor = AstTypes.get(typeNode.kind);
             if ($constructor == null) {
-                $constructor = AstTypeDefault;
+                $constructor = AstTypeBasic;
             }
 
             return new $constructor(options, type, typeNode);

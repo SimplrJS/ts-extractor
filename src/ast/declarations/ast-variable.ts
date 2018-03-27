@@ -1,6 +1,6 @@
 import * as ts from "typescript";
-import { AstDeclarationBase } from "./ast-declaration-base";
-import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
+import { AstDeclarationBase } from "../ast-declaration-base";
+import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 
 export interface AstVariableDto extends AstItemBaseDto {
     type: any;

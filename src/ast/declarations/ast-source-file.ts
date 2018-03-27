@@ -1,10 +1,10 @@
 import * as ts from "typescript";
 import * as path from "path";
 
-import { AstDeclarationBase } from "./ast-declaration-base";
-import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
-import { AstSymbol } from "./ast-symbol";
-import { TsHelpers } from "../ts-helpers";
+import { AstDeclarationBase } from "../ast-declaration-base";
+import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
+import { AstSymbol } from "../ast-symbol";
+import { TsHelpers } from "../../ts-helpers";
 
 // tslint:disable-next-line no-empty-interface
 export interface AstSourceFileDto extends AstItemBaseDto {}

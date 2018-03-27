@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 
-import { AstTypeBase } from "./ast/ast-type-base";
-import { AstItemOptions } from "./abstractions/ast-item-base";
+import { AstTypeBase } from "./ast-type-base";
+import { AstItemOptions } from "../abstractions/ast-item-base";
 
 // Types
 

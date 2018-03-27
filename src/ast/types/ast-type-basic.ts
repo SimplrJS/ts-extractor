@@ -1,13 +1,13 @@
 import * as ts from "typescript";
-import { AstTypeBase, AstTypeBaseDto } from "./ast-type-base";
-import { AstItemKind, AstItemMemberReference } from "../contracts/ast-item";
-import { TsHelpers } from "../ts-helpers";
+import { AstTypeBase, AstTypeBaseDto } from "../ast-type-base";
+import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
+import { TsHelpers } from "../../ts-helpers";
 
 export interface AstTypeBasicDto extends AstTypeBaseDto {
     text: string;
 }
 
-export class AstTypeDefault extends AstTypeBase<AstTypeBasicDto, ts.TypeNode> {
+export class AstTypeBasic extends AstTypeBase<AstTypeBasicDto, ts.TypeNode> {
     public get itemKind(): string {
         return AstItemKind.TypeBasic;
     }
@@ -30,7 +30,7 @@ export class AstTypeDefault extends AstTypeBase<AstTypeBasicDto, ts.TypeNode> {
     protected onExtract(): AstTypeBasicDto {
         return {
             name: this.name,
-            text: "____"
+            text: this.text
         };
     }
 

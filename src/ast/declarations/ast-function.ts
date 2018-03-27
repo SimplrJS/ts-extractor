@@ -1,7 +1,7 @@
 import * as ts from "typescript";
-import { AstDeclarationBase } from "./ast-declaration-base";
-import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
-import { AstSymbol } from "./ast-symbol";
+import { AstDeclarationBase } from "../ast-declaration-base";
+import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
+import { AstSymbol } from "../ast-symbol";
 
 export interface AstFunctionDto extends AstItemBaseDto {
     returnType: any;
