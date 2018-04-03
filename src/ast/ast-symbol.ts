@@ -1,5 +1,5 @@
 import * as ts from "typescript";
-import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstItemBase, AstItemGatherMembersOptions } from "../abstractions/ast-item-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 
 export interface AstSymbolDto extends AstItemBaseDto {
@@ -54,7 +54,7 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
         };
     }
 
-    protected onGatherMembers(): AstItemMemberReference[] {
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         const membersReferences: AstItemMemberReference[] = [];
         if (this.item.declarations == null) {
             this.logger.Error(`[${this.itemId}] Symbol declarations list is undefined.`);
@@ -68,7 +68,7 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
                 counter++;
             }
 
-            const astItem = this.options.resolveDeclaration(
+            const astItem = options.resolveDeclaration(
                 {
                     ...this.options,
                     parentId: this.itemId,
@@ -82,7 +82,7 @@ export class AstSymbol extends AstItemBase<AstSymbolDto, ts.Symbol> {
             }
 
             if (!this.options.itemsRegistry.has(astItem.itemId)) {
-                this.options.addItemToRegistry(astItem);
+                options.addItemToRegistry(astItem);
             }
             membersReferences.push({ alias: astItem.name, id: astItem.itemId });
         }

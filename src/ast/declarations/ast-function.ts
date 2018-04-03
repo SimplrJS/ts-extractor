@@ -2,6 +2,7 @@ import * as ts from "typescript";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
+import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
 
 export interface AstFunctionDto extends AstItemBaseDto {
     returnType: any;
@@ -33,8 +34,8 @@ export class AstFunction extends AstDeclarationBase<AstFunctionDto, ts.FunctionD
 
     private parametersReferences: AstItemMemberReference[] = [];
 
-    protected onGatherMembers(): AstItemMemberReference[] {
-        this.parametersReferences = this.getMemberReferencesFromDeclarationList(this.item.parameters);
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
+        this.parametersReferences = this.getMemberReferencesFromDeclarationList(options, this.item.parameters);
 
         return [
             ...this.parametersReferences

@@ -3,9 +3,8 @@ import { AstTypeBase, AstTypeBaseDto } from "../ast-type-base";
 import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
 import { TsHelpers } from "../../ts-helpers";
 
-export interface AstTypeBasicDto extends AstTypeBaseDto {
-    text: string;
-}
+// tslint:disable-next-line no-empty-interface
+export interface AstTypeBasicDto extends AstTypeBaseDto {}
 
 export class AstTypeBasic extends AstTypeBase<AstTypeBasicDto, ts.TypeNode> {
     public get itemKind(): string {

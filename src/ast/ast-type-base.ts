@@ -14,7 +14,9 @@ export abstract class AstTypeBase<TExtractDto extends AstTypeBaseDto, TTypeNode 
         super(options, item);
     }
 
-    public readonly abstract text: string;
+    public get text(): string {
+        return this.typeChecker.typeToString(this.item);
+    }
 
     public get itemId(): string {
         const counter: string = this.options.itemCounter != null ? `&${this.options.itemCounter}` : "";

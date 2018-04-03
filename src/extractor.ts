@@ -87,7 +87,11 @@ export class TsExtractor {
         const addItemHandler: AddItemToRegistryHandler = item => {
             registry.set(item.itemId, item);
             // After adding item to registry we gather members.
-            item.gatherMembers();
+            item.gatherMembers({
+                resolveDeclaration: resolveDeclaration,
+                resolveType: resolveType,
+                addItemToRegistry: addItemHandler
+            });
         };
 
         const resolveDeclaration: ResolveDeclarationHandler = (options, declaration) => {
@@ -126,11 +130,8 @@ export class TsExtractor {
                     program: program,
                     parentId: "@simplrjs/package-name",
                     projectDirectory: this.config.projectDirectory,
-                    addItemToRegistry: addItemHandler,
                     itemsRegistry: registry,
-                    logger: this.logger,
-                    resolveDeclaration: resolveDeclaration,
-                    resolveType: resolveType
+                    logger: this.logger
                 },
                 sourceFile
             );
@@ -138,6 +139,8 @@ export class TsExtractor {
             addItemHandler(astSourceFile);
             sourceFiles.push(astSourceFile);
         });
+
+        debugger;
 
         return sourceFiles;
     }

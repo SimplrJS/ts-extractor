@@ -2,6 +2,7 @@ import * as ts from "typescript";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { AstTypeBase } from "../ast-type-base";
+import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
 
 export interface AstParameterDto extends AstItemBaseDto {
     type: any;
@@ -33,9 +34,9 @@ export class AstParameter extends AstDeclarationBase<AstParameterDto, ts.Paramet
         return this.options.itemsRegistry.get(this.typeReference.id) as AstTypeBase<any, any>;
     }
 
-    protected onGatherMembers(): AstItemMemberReference[] {
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         const type: ts.Type = this.typeChecker.getTypeOfSymbolAtLocation(this.getParent().item, this.item);
-        this.typeReference = this.getMemberReferenceFromType(type, this.item.type);
+        this.typeReference = this.getMemberReferenceFromType(options, type, this.item.type);
 
         return [this.typeReference];
     }

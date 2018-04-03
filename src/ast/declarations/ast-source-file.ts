@@ -5,6 +5,7 @@ import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 import { TsHelpers } from "../../ts-helpers";
+import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
 
 // tslint:disable-next-line no-empty-interface
 export interface AstSourceFileDto extends AstItemBaseDto {}
@@ -36,7 +37,7 @@ export class AstSourceFile extends AstDeclarationBase<AstSourceFileDto, ts.Sourc
         };
     }
 
-    protected onGatherMembers(): AstItemMemberReference[] {
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         const membersReferences: AstItemMemberReference[] = [];
         const sourceFileSymbol = TsHelpers.GetSymbolFromDeclaration(this.item, this.typeChecker);
 
@@ -59,7 +60,7 @@ export class AstSourceFile extends AstDeclarationBase<AstSourceFileDto, ts.Sourc
             );
 
             if (!this.options.itemsRegistry.has(astSymbol.itemId)) {
-                this.options.addItemToRegistry(astSymbol);
+                options.addItemToRegistry(astSymbol);
             }
             membersReferences.push({ alias: astSymbol.name, id: astSymbol.itemId });
         });

@@ -1,5 +1,5 @@
 import * as ts from "typescript";
-import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstItemBase, AstItemGatherMembersOptions } from "../abstractions/ast-item-base";
 import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 import { AstSymbol } from "./ast-symbol";
@@ -26,7 +26,10 @@ export abstract class AstDeclarationBase<TExtractDto extends AstItemBaseDto, TDe
         return parent as AstSymbol;
     }
 
-    protected getMemberReferencesFromDeclarationList(declarations: ts.NodeArray<ts.Declaration>): AstItemMemberReference[] {
+    protected getMemberReferencesFromDeclarationList(
+        options: AstItemGatherMembersOptions,
+        declarations: ts.NodeArray<ts.Declaration>
+    ): AstItemMemberReference[] {
         const result: AstItemMemberReference[] = [];
 
         for (const declaration of declarations) {
@@ -42,7 +45,7 @@ export abstract class AstDeclarationBase<TExtractDto extends AstItemBaseDto, TDe
                 );
 
                 if (!this.options.itemsRegistry.has(astSymbol.itemId)) {
-                    this.options.addItemToRegistry(astSymbol);
+                    options.addItemToRegistry(astSymbol);
                 }
                 result.push({ alias: astSymbol.name, id: astSymbol.itemId });
             }
@@ -51,8 +54,12 @@ export abstract class AstDeclarationBase<TExtractDto extends AstItemBaseDto, TDe
         return result;
     }
 
-    protected getMemberReferenceFromType(type: ts.Type, typeNode?: ts.TypeNode): AstItemMemberReference {
-        const astType = this.options.resolveType(
+    protected getMemberReferenceFromType(
+        options: AstItemGatherMembersOptions,
+        type: ts.Type,
+        typeNode?: ts.TypeNode
+    ): AstItemMemberReference {
+        const astType = options.resolveType(
             {
                 ...this.options,
                 parentId: this.itemId
@@ -62,7 +69,7 @@ export abstract class AstDeclarationBase<TExtractDto extends AstItemBaseDto, TDe
         ) as AstTypeBase<any, any>;
 
         if (!this.options.itemsRegistry.has(astType.itemId)) {
-            this.options.addItemToRegistry(astType);
+            options.addItemToRegistry(astType);
         }
 
         return { alias: astType.name, id: astType.itemId };

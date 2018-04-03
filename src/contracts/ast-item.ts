@@ -6,7 +6,8 @@ export enum AstItemKind {
     Function = "function",
     Parameter = "parameter",
     // Types
-    TypeBasic = "type-basic"
+    TypeBasic = "type-basic",
+    TypeReferenceType = "type-reference-type"
 }
 
 export interface AstItemBaseDto {

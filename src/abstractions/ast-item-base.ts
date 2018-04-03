@@ -33,12 +33,15 @@ export interface AstItemOptions {
      */
     itemCounter?: number;
     projectDirectory: string;
+    itemsRegistry: ReadonlyMap<string, AstItemBase<any, any>>;
+    logger: LoggerBuilder;
+}
+
+export interface AstItemGatherMembersOptions {
     addItemToRegistry: AddItemToRegistryHandler;
     /** TODO: NAMING */
     resolveDeclaration: ResolveDeclarationHandler;
     resolveType: ResolveTypeHandler;
-    itemsRegistry: ReadonlyMap<string, AstItemBase<any, any>>;
-    logger: LoggerBuilder;
 }
 
 export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
@@ -90,16 +93,16 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
 
     protected membersReferences: AstItemMemberReference[] | undefined;
 
-    protected abstract onGatherMembers(): AstItemMemberReference[];
+    protected abstract onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[];
 
     /**
      * Used only in the extraction phase to prevent from circular references.
      */
-    public gatherMembers(): void {
+    public gatherMembers(options: AstItemGatherMembersOptions): void {
         if (this.itemStatus & AstItemStatus.GatheredMembers) {
             return;
         }
-        this.membersReferences = this.onGatherMembers();
+        this.membersReferences = this.onGatherMembers(options);
         this.status |= AstItemStatus.GatheredMembers;
     }
 }
