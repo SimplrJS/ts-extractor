@@ -265,4 +265,3 @@ dist
 **/*.js.map
 
 coverage
-src_
