@@ -25,7 +25,9 @@
         ],
         "plugins": [
             {
-                "name": "tslint-language-service"
+                "name": "tslint-language-service",
+                "alwaysShowRuleFailuresAsWarnings": true,
+                "ignoreDefinitionFiles": true
             }
         ]
     },
