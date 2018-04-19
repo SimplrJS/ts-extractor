@@ -4,6 +4,7 @@ import * as path from "path";
 import { AstItemGatherMembersOptions, AstItemOptions, AstItemBase } from "../../abstractions/ast-item-base";
 import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { TsHelpers } from "../../ts-helpers";
+import { Helpers } from "../../utils/helpers";
 
 export class AstSourceFile extends AstItemBase<ts.SourceFile, {}> {
     constructor(options: AstItemOptions, sourceFile: ts.SourceFile, private packageName?: string) {
@@ -16,17 +17,19 @@ export class AstSourceFile extends AstItemBase<ts.SourceFile, {}> {
         return AstSourceFile.itemKind;
     }
 
+    public getParentId(): string | undefined {
+        return undefined;
+    }
+
     public getId(): string {
         const filePath = path.relative(this.options.projectDirectory, this.item.fileName);
         return `${this.parentId}/${filePath}`;
     }
 
-    public static getName(sourceFile: ts.SourceFile, projectDirectory?: string): string {
-        if (projectDirectory == null) {
-            return path.basename(sourceFile.fileName, path.extname(sourceFile.fileName));
-        }
+    public getName(): string {
+        const relativePath = path.relative(this.options.projectDirectory, path.extname(this.item.fileName));
 
-        return path.relative(projectDirectory, path.extname(sourceFile.fileName));
+        return Helpers.removeExt(relativePath);
     }
 
     public get parentId(): string {
