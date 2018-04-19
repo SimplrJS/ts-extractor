@@ -5,6 +5,7 @@ export interface ReadonlyAstRegistry {
     get(id: string): AstItemBase<any, any> | undefined;
     has(id: string): boolean;
     hasItem(item: ts.Symbol | ts.Declaration): boolean;
+    getItemId(item: ts.Symbol | ts.Declaration): string | undefined;
 }
 
 export type Item = ts.Symbol | ts.Declaration | ts.Type;
@@ -18,8 +19,8 @@ export class AstRegistry implements ReadonlyAstRegistry {
     }
 
     public set(item: AstItemBase<any, any>): void {
-        this.registry.set(item.itemId, item);
-        this.itemToItemId.set(item.item, item.itemId);
+        this.registry.set(item.getId(), item);
+        this.itemToItemId.set(item.item, item.getId());
     }
 
     public has(itemId: string): boolean {
@@ -28,5 +29,9 @@ export class AstRegistry implements ReadonlyAstRegistry {
 
     public hasItem(item: Item): boolean {
         return this.itemToItemId.has(item);
+    }
+
+    public getItemId(item: Item): string | undefined {
+        return this.itemToItemId.get(item);
     }
 }

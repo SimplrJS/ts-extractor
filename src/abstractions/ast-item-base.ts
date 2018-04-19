@@ -18,17 +18,19 @@ export interface AstItemOptions {
 }
 
 export interface AstItemGatherMembersOptions {
-    addItemToRegistry: any;
-    resolveAstDeclaration: any;
-    resolveAstType: any;
+    addItemToRegistry: (item: AstItemBase<any, any>) => void;
+    resolveAstDeclaration: (declaration: ts.Declaration) => AstItemBase<ts.Declaration, any> | undefined;
+    resolveAstType: (type: ts.Type, typeNode?: ts.TypeNode) => AstItemBase<ts.Type, any>;
 }
 
 export abstract class AstItemBase<TItem, TExtractedData> {
     constructor(protected readonly options: AstItemOptions, public readonly item: TItem) {
         this.logger = options.logger;
+        this.typeChecker = options.program.getTypeChecker();
     }
 
-    protected logger: LoggerBuilder;
+    protected readonly logger: LoggerBuilder;
+    protected readonly typeChecker: ts.TypeChecker;
 
     private status: AstItemStatus = AstItemStatus.Initial;
 
