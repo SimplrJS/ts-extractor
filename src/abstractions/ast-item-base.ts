@@ -18,7 +18,7 @@ export interface AstItemOptions {
 }
 
 export interface AstItemGatherMembersOptions {
-    addItemToRegistry: (item: AstItemBase<any, any>) => void;
+    addAstItemToRegistry: (item: AstItemBase<any, any>) => void;
     resolveAstDeclaration: (declaration: ts.Declaration) => AstItemBase<ts.Declaration, any> | undefined;
     resolveAstType: (type: ts.Type, typeNode?: ts.TypeNode) => AstItemBase<ts.Type, any>;
 }
@@ -39,6 +39,8 @@ export abstract class AstItemBase<TItem, TExtractedData> {
     }
 
     public abstract getId(): string;
+    public abstract getParentId(): string | undefined;
+    public abstract get itemKind(): string;
 
     private extractedData: TExtractedData | undefined;
     protected abstract onExtract(): TExtractedData;

@@ -92,7 +92,7 @@ export class TsExtractor {
         };
 
         const gatheringOptions: AstItemGatherMembersOptions = {
-            addItemToRegistry: item => {
+            addAstItemToRegistry: item => {
                 registry.set(item);
                 // After adding item to registry we gather members.
                 // This way prevents infinite loops.
@@ -134,7 +134,7 @@ export class TsExtractor {
             }
 
             const astSourceFile = new AstSourceFile(options, sourceFile, "@simplrjs/package-name");
-            gatheringOptions.addItemToRegistry(astSourceFile);
+            gatheringOptions.addAstItemToRegistry(astSourceFile);
             sourceFiles.push(astSourceFile);
         });
 
