@@ -4,9 +4,7 @@ export namespace TsHelpers {
     /**
      * Returns the string part of `export * from "./module";`
      */
-    export function GetExportImportString(
-        declaration: ts.ExportDeclaration | ts.ImportDeclaration
-    ): string | undefined {
+    export function GetExportImportString(declaration: ts.ExportDeclaration | ts.ImportDeclaration): string | undefined {
         const stringLiteralNode = declaration.getChildren().find(x => ts.isStringLiteral(x));
         if (stringLiteralNode == null || !ts.isStringLiteral(stringLiteralNode)) {
             return undefined;
@@ -161,5 +159,20 @@ export namespace TsHelpers {
 
     export function IsSourceFileFromExternalPackage(sourceFile: ts.SourceFile, program: ts.Program): boolean {
         return GetSourceFileExternalLibraryLocation(sourceFile, program) != null;
+    }
+
+    export function resolveSymbolName(symbol: ts.Symbol): string {
+        if (symbol.declarations != null) {
+            for (const declaration of symbol.declarations) {
+                const namedDeclaration: ts.NamedDeclaration = declaration;
+
+                if (namedDeclaration.name != null) {
+                    return namedDeclaration.name.getText();
+                }
+            }
+        }
+
+        // Fallback to a Symbol name.
+        return symbol.name;
     }
 }
