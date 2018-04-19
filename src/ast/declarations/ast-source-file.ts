@@ -1,21 +1,18 @@
 import * as ts from "typescript";
 import * as path from "path";
 
-import { AstItemGatherMembersOptions, AstItemOptions, AstItemBase } from "../../abstractions/ast-item-base";
+import { AstItemGatherMembersOptions, AstItemOptions } from "../../abstractions/ast-item-base";
 import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { TsHelpers } from "../../ts-helpers";
 import { Helpers } from "../../utils/helpers";
+import { AstDeclarationBase } from "../ast-declaration-base";
 
-export class AstSourceFile extends AstItemBase<ts.SourceFile, {}> {
-    constructor(options: AstItemOptions, sourceFile: ts.SourceFile, private packageName?: string) {
+export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
+    constructor(options: AstItemOptions, sourceFile: ts.SourceFile, private _packageName?: string) {
         super(options, sourceFile);
     }
 
-    public static readonly itemKind: AstItemKind = AstItemKind.SourceFile;
-
-    public get itemKind(): AstItemKind {
-        return AstSourceFile.itemKind;
-    }
+    public readonly itemKind: AstItemKind = AstItemKind.SourceFile;
 
     public getParentId(): string | undefined {
         return undefined;
@@ -23,7 +20,7 @@ export class AstSourceFile extends AstItemBase<ts.SourceFile, {}> {
 
     public getId(): string {
         const filePath = path.relative(this.options.projectDirectory, this.item.fileName);
-        return `${this.parentId}/${filePath}`;
+        return `${this.packageName}/${filePath}`;
     }
 
     public getName(): string {
@@ -32,13 +29,13 @@ export class AstSourceFile extends AstItemBase<ts.SourceFile, {}> {
         return Helpers.removeExt(relativePath);
     }
 
-    public get parentId(): string {
-        if (this.packageName == null) {
+    public get packageName(): string {
+        if (this._packageName == null) {
             // TODO: Resolve package-name by going up file path and finding package.json.
-            this.packageName = "___@scope/package-name";
+            this._packageName = "___@scope/package-name";
         }
 
-        return this.packageName;
+        return this._packageName;
     }
 
     protected onExtract(): {} {

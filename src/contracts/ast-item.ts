@@ -2,6 +2,7 @@ export enum AstItemKind {
     SourceFile = "source-file",
     Symbol = "symbol",
     // Declarations
+    Namespace = "namespace",
     Variable = "variable",
     Function = "function",
     Parameter = "parameter",
