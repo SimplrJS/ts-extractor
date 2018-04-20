@@ -15,7 +15,7 @@ export interface AstItemOptions {
     projectDirectory: string;
     itemsRegistry: ReadonlyAstRegistry;
     logger: LoggerBuilder;
-    resolveAstDeclaration: (declaration: ts.Declaration) => AstItemBase<ts.Declaration, any> | undefined;
+    resolveAstDeclaration: (declaration: ts.Declaration, symbol: ts.Symbol) => AstItemBase<ts.Declaration, any> | undefined;
     resolveAstType: (type: ts.Type, typeNode?: ts.TypeNode) => AstItemBase<ts.Type, any>;
 }
 

@@ -10,6 +10,7 @@ import { AstItemOptions, AstItemGatherMembersOptions } from "./abstractions/ast-
 import { AstRegistry } from "./ast-registry";
 import { AstDeclarations } from "./ast/ast-declarations";
 import { AstTypes } from "./ast/ast-types";
+import { TsHelpers } from "./ts-helpers";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -89,7 +90,7 @@ export class TsExtractor {
             projectDirectory: this.config.projectDirectory,
             itemsRegistry: registry,
             logger: this.logger,
-            resolveAstDeclaration: declaration => {
+            resolveAstDeclaration: (declaration, symbol) => {
                 if (registry.hasItem(declaration)) {
                     return registry.get(registry.getItemId(declaration)!);
                 }
@@ -100,7 +101,7 @@ export class TsExtractor {
                     return undefined;
                 }
 
-                return new $constructor(options, declaration);
+                return new $constructor(options, declaration, symbol);
             },
             resolveAstType: (type, typeNode) => {
                 if (typeNode == null) {
@@ -132,8 +133,12 @@ export class TsExtractor {
             if (sourceFile == null) {
                 return;
             }
+            const symbolSourceFile = TsHelpers.GetSymbolFromDeclaration(sourceFile, program.getTypeChecker());
+            if (symbolSourceFile == null) {
+                return;
+            }
 
-            const astSourceFile = new AstSourceFile(options, sourceFile, "@simplrjs/package-name");
+            const astSourceFile = new AstSourceFile(options, sourceFile, symbolSourceFile, "@simplrjs/package-name");
             gatheringOptions.addAstItemToRegistry(astSourceFile);
             sourceFiles.push(astSourceFile);
         });

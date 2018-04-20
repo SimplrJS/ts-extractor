@@ -9,7 +9,7 @@ import { AstNamespace } from "./declarations/ast-namespace";
 import { AstFunction } from "./declarations/ast-function";
 
 export interface AstDeclarationConstructor<TItem extends ts.Declaration = ts.Declaration> {
-    new (options: AstItemOptions, item: TItem): AstDeclarationBase<TItem, any>;
+    new (options: AstItemOptions, declaration: TItem, symbol: ts.Symbol): AstDeclarationBase<TItem, any>;
 }
 
 const declarationsArray: ReadonlyArray<[ts.SyntaxKind, AstDeclarationConstructor<any>]> = [

@@ -8,8 +8,8 @@ import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
 
 export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
-    constructor(options: AstItemOptions, sourceFile: ts.SourceFile, private _packageName?: string) {
-        super(options, sourceFile);
+    constructor(options: AstItemOptions, sourceFile: ts.SourceFile, symbol: ts.Symbol, private _packageName?: string) {
+        super(options, sourceFile, symbol);
     }
 
     public readonly itemKind: AstItemKind = AstItemKind.SourceFile;
