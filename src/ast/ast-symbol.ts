@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 import { AstItemBase, AstItemGatherMembersOptions, AstItemOptions } from "../abstractions/ast-item-base";
 import { AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
-import { AstDeclarations } from "./ast-declarations";
 import { TsHelpers } from "../ts-helpers";
 
 export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
@@ -27,12 +26,12 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
         if (this.options.itemsRegistry.hasItem(declaration)) {
             return this.options.itemsRegistry.get(this.options.itemsRegistry.getItemId(declaration)!)!;
         }
-        const astDeclarationConstructor = AstDeclarations.get(declaration.kind);
-        if (astDeclarationConstructor == null) {
-            throw new Error("____ Not supported declaration kind.");
+        const astDeclaration = this.options.resolveAstDeclaration(declaration);
+        if (astDeclaration == null) {
+            throw new Error("____ Not supported kind declaration.");
         }
 
-        return new astDeclarationConstructor(this.options, declaration);
+        return astDeclaration;
     }
 
     public getParentId(): string | undefined {
@@ -79,7 +78,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
         }
 
         for (const declaration of this.item.declarations) {
-            const astItem = options.resolveAstDeclaration(declaration);
+            const astItem = this.options.resolveAstDeclaration(declaration);
             if (astItem == null) {
                 continue;
             }

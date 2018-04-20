@@ -15,12 +15,12 @@ export interface AstItemOptions {
     projectDirectory: string;
     itemsRegistry: ReadonlyAstRegistry;
     logger: LoggerBuilder;
+    resolveAstDeclaration: (declaration: ts.Declaration) => AstItemBase<ts.Declaration, any> | undefined;
+    resolveAstType: (type: ts.Type, typeNode?: ts.TypeNode) => AstItemBase<ts.Type, any>;
 }
 
 export interface AstItemGatherMembersOptions {
     addAstItemToRegistry: (item: AstItemBase<any, any>) => void;
-    resolveAstDeclaration: (declaration: ts.Declaration) => AstItemBase<ts.Declaration, any> | undefined;
-    resolveAstType: (type: ts.Type, typeNode?: ts.TypeNode) => AstItemBase<ts.Type, any>;
 }
 
 export abstract class AstItemBase<TItem, TExtractedData> {

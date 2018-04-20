@@ -19,12 +19,11 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
     }
 
     public getId(): string {
-        const filePath = path.relative(this.options.projectDirectory, this.item.fileName);
-        return `${this.packageName}/${filePath}`;
+        return `${this.packageName}/${this.getName()}`;
     }
 
     public getName(): string {
-        const relativePath = path.relative(this.options.projectDirectory, path.extname(this.item.fileName));
+        const relativePath = path.relative(this.options.projectDirectory, this.item.fileName);
 
         return Helpers.removeExt(relativePath);
     }

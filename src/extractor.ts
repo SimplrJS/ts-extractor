@@ -88,16 +88,7 @@ export class TsExtractor {
             program: program,
             projectDirectory: this.config.projectDirectory,
             itemsRegistry: registry,
-            logger: this.logger
-        };
-
-        const gatheringOptions: AstItemGatherMembersOptions = {
-            addAstItemToRegistry: item => {
-                registry.set(item);
-                // After adding item to registry we gather members.
-                // This way prevents infinite loops.
-                item.gatherMembers(gatheringOptions);
-            },
+            logger: this.logger,
             resolveAstDeclaration: declaration => {
                 if (registry.hasItem(declaration)) {
                     return registry.get(registry.getItemId(declaration)!);
@@ -122,6 +113,15 @@ export class TsExtractor {
                 }
 
                 return new $constructor(options, type, typeNode);
+            }
+        };
+
+        const gatheringOptions: AstItemGatherMembersOptions = {
+            addAstItemToRegistry: item => {
+                registry.set(item);
+                // After adding item to registry we gather members.
+                // This way prevents infinite loops.
+                item.gatherMembers(gatheringOptions);
             }
         };
 

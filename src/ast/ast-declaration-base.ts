@@ -1,6 +1,5 @@
 import * as ts from "typescript";
 import { AstItemBase } from "../abstractions/ast-item-base";
-import { AstDeclarations } from "./ast-declarations";
 import { AstSymbol } from "./ast-symbol";
 import { TsHelpers } from "../ts-helpers";
 
@@ -16,12 +15,10 @@ export abstract class AstDeclarationBase<TItem extends ts.Declaration, TExtracte
             return parentId;
         }
 
-        const astDeclarationConstructor = AstDeclarations.get(parentDeclaration.kind);
-        if (astDeclarationConstructor == null) {
+        const parentAstDeclaration = this.options.resolveAstDeclaration(parentDeclaration);
+        if (parentAstDeclaration == null) {
             return undefined;
         }
-
-        const parentAstDeclaration = new astDeclarationConstructor(this.options, parentDeclaration);
 
         return parentAstDeclaration.getId();
     }
