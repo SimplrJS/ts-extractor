@@ -4,40 +4,28 @@ import { AstSymbol } from "./ast-symbol";
 import { TsHelpers } from "../ts-helpers";
 
 export abstract class AstDeclarationBase<TItem extends ts.Declaration, TExtractedData> extends AstItemBase<TItem, TExtractedData> {
-    public getParentId(): string | undefined {
-        if (this.item.parent == null) {
-            return undefined;
+    public abstract readonly name: string;
+
+    private parentSymbol: AstSymbol | undefined;
+    public getParent(): AstSymbol {
+        if (this.parentSymbol == null) {
+            const parentSymbol = TsHelpers.GetSymbolFromDeclaration(this.item, this.typeChecker);
+            if (parentSymbol == null) {
+                throw new Error("Declaration doesn't have symbol.");
+            }
+
+            const parentSymbolId = this.options.itemsRegistry.getItemId(parentSymbol);
+            if (parentSymbolId != null) {
+                return this.options.itemsRegistry.get(parentSymbolId) as AstSymbol;
+            }
+
+            this.parentSymbol = new AstSymbol(this.options, parentSymbol);
         }
 
-        const parentDeclaration = this.item.parent as ts.Declaration;
-        const parentId = this.options.itemsRegistry.getItemId(parentDeclaration);
-        if (parentId != null) {
-            return parentId;
-        }
-
-        const parentAstDeclaration = this.options.resolveAstDeclaration(parentDeclaration);
-        if (parentAstDeclaration == null) {
-            return undefined;
-        }
-
-        return parentAstDeclaration.getId();
-    }
-
-    public getParent(): AstSymbol | undefined {
-        const parentId = this.getParentId();
-        if (parentId != null) {
-            return this.options.itemsRegistry.get(parentId) as AstSymbol | undefined;
-        }
-
-        const parentSymbol = TsHelpers.GetSymbolFromDeclaration(this.item, this.typeChecker);
-        if (parentSymbol == null) {
-            return undefined;
-        }
-
-        return new AstSymbol(this.options, parentSymbol);
+        return this.parentSymbol;
     }
 
     public getId(): string {
-        return `${this.getParentId()}#${this.itemKind}`;
+        return `${this.getParent().getId()}#${this.itemKind}`;
     }
 }

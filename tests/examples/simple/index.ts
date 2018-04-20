@@ -18,8 +18,10 @@ export interface MyStuff {
     length: number;
 }
 
-export function pickCard(p1: string): string;
-export function pickCard(p1: MyStuff): string;
-export function pickCard(p1: string | MyStuff): string {
-    return "card";
+export namespace NamespaceCards {
+    export function pickCard(p1: string): string;
+    export function pickCard(p1: MyStuff): string;
+    export function pickCard(p1: string | MyStuff): string {
+        return "card";
+    }
 }

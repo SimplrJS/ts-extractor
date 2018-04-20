@@ -22,10 +22,6 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
             throw new Error("____ Symbol does not have declarations.`");
         }
         const declaration = this.item.declarations[0];
-
-        if (this.options.itemsRegistry.hasItem(declaration)) {
-            return this.options.itemsRegistry.get(this.options.itemsRegistry.getItemId(declaration)!)!;
-        }
         const astDeclaration = this.options.resolveAstDeclaration(declaration);
         if (astDeclaration == null) {
             throw new Error("____ Not supported kind declaration.");
@@ -38,11 +34,16 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
         if (this.parentId == null) {
             // Resolve parent id from declarations list.
             const astDeclaration = this.getFirstAstDeclaration();
-            if (ts.isSourceFile(astDeclaration.item)) {
+            if (astDeclaration.item.parent == null) {
                 return undefined;
             }
 
-            this.parentId = astDeclaration.getParentId();
+            const parentAstDeclaration = this.options.resolveAstDeclaration(astDeclaration.item.parent as ts.Declaration);
+            if (parentAstDeclaration == null) {
+                return undefined;
+            }
+
+            this.parentId = parentAstDeclaration.getId();
         }
 
         return this.parentId;

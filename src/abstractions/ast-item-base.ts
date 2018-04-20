@@ -39,7 +39,6 @@ export abstract class AstItemBase<TItem, TExtractedData> {
     }
 
     public abstract getId(): string;
-    public abstract getParentId(): string | undefined;
     public abstract itemKind: string;
 
     private extractedData: TExtractedData | undefined;

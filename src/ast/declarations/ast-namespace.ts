@@ -6,6 +6,10 @@ import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 
 export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, {}> {
+    public get name(): string {
+        return this.item.name.getText();
+    }
+
     public readonly itemKind: AstItemKind = AstItemKind.Namespace;
 
     protected onExtract(): {} {
