@@ -11,6 +11,7 @@ import { AstRegistry } from "./ast-registry";
 import { AstDeclarations } from "./ast/ast-declarations";
 import { AstTypes } from "./ast/ast-types";
 import { TsHelpers } from "./ts-helpers";
+import { AstTypeBasic } from "./ast/types/ast-type-basic";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -103,17 +104,17 @@ export class TsExtractor {
 
                 return new $constructor(options, declaration, symbol);
             },
-            resolveAstType: (type, typeNode) => {
+            resolveAstType: (type, typeNode, identifiers) => {
                 if (typeNode == null) {
                     typeNode = program.getTypeChecker().typeToTypeNode(type);
                 }
 
                 const $constructor = AstTypes.get(typeNode.kind);
                 if ($constructor == null) {
-                    throw new Error("TODO: Add AstTypeBasic.");
+                    return new AstTypeBasic(options, type, typeNode, identifiers);
                 }
 
-                return new $constructor(options, type, typeNode);
+                return new $constructor(options, type, typeNode, identifiers);
             }
         };
 

@@ -2,6 +2,7 @@ import * as ts from "typescript";
 import { AstItemMemberReference } from "../contracts/ast-item";
 import { ReadonlyAstRegistry } from "../ast-registry";
 import { LoggerBuilder } from "simplr-logger";
+import { AstTypeIdentifiers } from "../contracts/ast-type";
 
 export enum AstItemStatus {
     Initial = 0,
@@ -16,7 +17,7 @@ export interface AstItemOptions {
     itemsRegistry: ReadonlyAstRegistry;
     logger: LoggerBuilder;
     resolveAstDeclaration: (declaration: ts.Declaration, symbol: ts.Symbol) => AstItemBase<ts.Declaration, any> | undefined;
-    resolveAstType: (type: ts.Type, typeNode?: ts.TypeNode) => AstItemBase<ts.Type, any>;
+    resolveAstType: (type: ts.Type, typeNode: ts.TypeNode | undefined, identifiers: AstTypeIdentifiers) => AstItemBase<ts.Type, any>;
 }
 
 export interface AstItemGatherMembersOptions {
