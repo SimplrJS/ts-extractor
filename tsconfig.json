@@ -12,6 +12,7 @@
         "declaration": true,
         "pretty": true,
         "strict": true,
+        "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
         "lib": [
             "es6",
