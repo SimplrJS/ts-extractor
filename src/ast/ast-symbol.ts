@@ -22,7 +22,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
             throw new Error("____ Symbol does not have declarations.`");
         }
         const declaration = this.item.declarations[0];
-        const astDeclaration = this.options.resolveAstDeclaration(declaration);
+        const astDeclaration = this.options.resolveAstDeclaration(declaration, this.item);
         if (astDeclaration == null) {
             throw new Error("____ Not supported kind declaration.");
         }
@@ -37,8 +37,14 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
             if (astDeclaration.item.parent == null) {
                 return undefined;
             }
+            const parentDeclaration = astDeclaration.item.parent as ts.Declaration;
+            const parentSymbol = TsHelpers.GetSymbolFromDeclaration(parentDeclaration, this.typeChecker);
+            if (parentSymbol == null) {
+                this.logger.Error("___ Failed to resolve parent symbol.");
+                return undefined;
+            }
 
-            const parentAstDeclaration = this.options.resolveAstDeclaration(astDeclaration.item.parent as ts.Declaration);
+            const parentAstDeclaration = this.options.resolveAstDeclaration(parentDeclaration, parentSymbol);
             if (parentAstDeclaration == null) {
                 return undefined;
             }
@@ -79,7 +85,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
         }
 
         for (const declaration of this.item.declarations) {
-            const astItem = this.options.resolveAstDeclaration(declaration);
+            const astItem = this.options.resolveAstDeclaration(declaration, this.item);
             if (astItem == null) {
                 continue;
             }
