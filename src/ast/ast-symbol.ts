@@ -48,7 +48,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}, {}> {
             return undefined;
         }
 
-        const parentSymbol = TsHelpers.GetSymbolFromDeclaration(parentDeclaration, this.typeChecker);
+        const parentSymbol = TsHelpers.getSymbolFromDeclaration(parentDeclaration, this.typeChecker);
         if (parentSymbol == null) {
             return undefined;
         }

@@ -135,7 +135,7 @@ export class TsExtractor {
             if (sourceFile == null) {
                 return;
             }
-            const symbolSourceFile = TsHelpers.GetSymbolFromDeclaration(sourceFile, program.getTypeChecker());
+            const symbolSourceFile = TsHelpers.getSymbolFromDeclaration(sourceFile, program.getTypeChecker());
             if (symbolSourceFile == null) {
                 return;
             }

@@ -7,7 +7,7 @@ export class AstTypeBasic extends AstTypeBase<ts.TypeNode, {}, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.TypeBasic;
 
     protected onExtract(): {} {
-        if (TsHelpers.IsNodeSynthesized(this.itemNode)) {
+        if (TsHelpers.isNodeSynthesized(this.itemNode)) {
             const text = ts.tokenToString(this.itemNode.kind);
             if (text != null) {
                 return text;
