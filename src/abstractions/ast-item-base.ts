@@ -66,7 +66,7 @@ export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersRe
         return this.extractedData;
     }
 
-    protected gatheredMembers: TGatherResult = {} as TGatherResult;
+    protected abstract gatheredMembers: TGatherResult;
 
     protected abstract onGatherMembers(options: AstItemGatherMembersOptions): TGatherResult;
 

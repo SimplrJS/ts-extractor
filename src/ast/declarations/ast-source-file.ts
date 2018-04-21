@@ -59,6 +59,10 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFi
         return {};
     }
 
+    protected gatheredMembers: AstSourceFileGatheredResult = {
+        members: []
+    };
+
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstSourceFileGatheredResult {
         const result: AstSourceFileGatheredResult = {
             members: []

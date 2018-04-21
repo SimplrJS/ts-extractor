@@ -22,6 +22,8 @@ export class AstDeclarationNotSupported extends AstDeclarationBase<ts.Declaratio
         return {};
     }
 
+    protected gatheredMembers: GatheredMembersResult = {};
+
     protected onGatherMembers(options: AstItemGatherMembersOptions): GatheredMembersResult {
         return {};
     }

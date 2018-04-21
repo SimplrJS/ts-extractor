@@ -23,6 +23,8 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstT
         return this.options.itemsRegistry.get(this.gatheredMembers.reference.id) as AstSymbol;
     }
 
+    protected gatheredMembers: AstTypeReferenceTypeGatheredResult = {};
+
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstTypeReferenceTypeGatheredResult {
         const result: AstTypeReferenceTypeGatheredResult = {};
 

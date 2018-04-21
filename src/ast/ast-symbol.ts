@@ -1,9 +1,13 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase, AstItemGatherMembersOptions, AstItemOptions } from "../abstractions/ast-item-base";
+import { AstItemBase, AstItemGatherMembersOptions, AstItemOptions, GatheredMembersResult } from "../abstractions/ast-item-base";
 import { AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
+
+export interface AstSymbolGatheredResult extends GatheredMembersResult {
+    members: AstItemMemberReference[];
+}
 
 export interface AstSymbolIdentifiers {
     parentId?: string;
@@ -91,12 +95,18 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}, {}> {
         return {};
     }
 
+    protected gatheredMembers: AstSymbolGatheredResult = {
+        members: []
+    };
+
     // TODO: Refactor code.
-    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
-        const membersReferences: AstItemMemberReference[] = [];
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstSymbolGatheredResult {
+        const result: AstSymbolGatheredResult = {
+            members: []
+        };
         if (this.item.declarations == null) {
             this.logger.Error(`[${this.id}] Symbol declarations list is undefined.`);
-            return membersReferences;
+            return result;
         }
 
         let counter: number = 0;
@@ -111,13 +121,13 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}, {}> {
             if (!this.options.itemsRegistry.hasItem(declaration)) {
                 options.addAstItemToRegistry(astItem);
             }
-            membersReferences.push({ id: astItem.id });
+            result.members.push({ id: astItem.id });
 
             if (sameKind) {
                 counter++;
             }
         }
 
-        return membersReferences;
+        return result;
     }
 }

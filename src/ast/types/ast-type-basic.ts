@@ -1,9 +1,10 @@
 import * as ts from "typescript";
 import { AstTypeBase } from "../ast-type-base";
-import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
+import { AstItemKind } from "../../contracts/ast-item";
 import { TsHelpers } from "../../ts-helpers";
+import { GatheredMembersResult } from "../../abstractions/ast-item-base";
 
-export class AstTypeBasic extends AstTypeBase<ts.TypeNode, {}, {}> {
+export class AstTypeBasic extends AstTypeBase<ts.TypeNode, GatheredMembersResult, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.TypeBasic;
 
     protected onExtract(): {} {
@@ -17,7 +18,9 @@ export class AstTypeBasic extends AstTypeBase<ts.TypeNode, {}, {}> {
         return this.typeChecker.typeToString(this.item);
     }
 
-    protected onGatherMembers(): AstItemMemberReference[] {
-        return [];
+    protected gatheredMembers: GatheredMembersResult = {};
+
+    protected onGatherMembers(): GatheredMembersResult {
+        return {};
     }
 }
