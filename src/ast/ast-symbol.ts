@@ -77,6 +77,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
         return {};
     }
 
+    // TODO: Refactor code.
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         const membersReferences: AstItemMemberReference[] = [];
         if (this.item.declarations == null) {
@@ -84,8 +85,11 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
             return membersReferences;
         }
 
+        let counter: number = 0;
         for (const declaration of this.item.declarations) {
-            const astItem = this.options.resolveAstDeclaration(declaration, this.item);
+            const sameKind = this.item.declarations.findIndex(x => x.kind === declaration.kind && x !== declaration) !== -1;
+
+            const astItem = this.options.resolveAstDeclaration(declaration, this.item, { itemCounter: sameKind ? counter : undefined });
             if (astItem == null) {
                 continue;
             }
@@ -94,6 +98,10 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
                 options.addAstItemToRegistry(astItem);
             }
             membersReferences.push({ id: astItem.getId() });
+
+            if (sameKind) {
+                counter++;
+            }
         }
 
         return membersReferences;

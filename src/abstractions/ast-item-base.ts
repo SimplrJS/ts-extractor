@@ -3,6 +3,7 @@ import { AstItemMemberReference } from "../contracts/ast-item";
 import { ReadonlyAstRegistry } from "../ast-registry";
 import { LoggerBuilder } from "simplr-logger";
 import { AstTypeIdentifiers } from "../contracts/ast-type";
+import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 
 export enum AstItemStatus {
     Initial = 0,
@@ -16,7 +17,11 @@ export interface AstItemOptions {
     projectDirectory: string;
     itemsRegistry: ReadonlyAstRegistry;
     logger: LoggerBuilder;
-    resolveAstDeclaration: (declaration: ts.Declaration, symbol: ts.Symbol) => AstItemBase<ts.Declaration, any> | undefined;
+    resolveAstDeclaration: (
+        declaration: ts.Declaration,
+        symbol: ts.Symbol,
+        identifiers?: AstDeclarationIdentifiers
+    ) => AstItemBase<ts.Declaration, any> | undefined;
     resolveAstType: (type: ts.Type, typeNode: ts.TypeNode | undefined, identifiers: AstTypeIdentifiers) => AstItemBase<ts.Type, any>;
 }
 

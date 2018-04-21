@@ -91,7 +91,7 @@ export class TsExtractor {
             projectDirectory: this.config.projectDirectory,
             itemsRegistry: registry,
             logger: this.logger,
-            resolveAstDeclaration: (declaration, symbol) => {
+            resolveAstDeclaration: (declaration, symbol, identifiers) => {
                 if (registry.hasItem(declaration)) {
                     return registry.get(registry.getItemId(declaration)!);
                 }
@@ -102,7 +102,7 @@ export class TsExtractor {
                     return undefined;
                 }
 
-                return new $constructor(options, declaration, symbol);
+                return new $constructor(options, declaration, symbol, identifiers);
             },
             resolveAstType: (type, typeNode, identifiers) => {
                 if (typeNode == null) {
@@ -139,7 +139,7 @@ export class TsExtractor {
                 return;
             }
 
-            const astSourceFile = new AstSourceFile(options, sourceFile, symbolSourceFile, "@simplrjs/package-name");
+            const astSourceFile = new AstSourceFile(options, sourceFile, symbolSourceFile, { packageName: "@simplrjs/package-name" });
             gatheringOptions.addAstItemToRegistry(astSourceFile);
             sourceFiles.push(astSourceFile);
         });

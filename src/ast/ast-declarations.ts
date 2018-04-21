@@ -7,9 +7,13 @@ import { AstDeclarationBase } from "./ast-declaration-base";
 import { AstSourceFile } from "./declarations/ast-source-file";
 import { AstNamespace } from "./declarations/ast-namespace";
 import { AstFunction } from "./declarations/ast-function";
+import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 
 export interface AstDeclarationConstructor<TItem extends ts.Declaration = ts.Declaration> {
-    new (options: AstItemOptions, declaration: TItem, symbol: ts.Symbol): AstDeclarationBase<TItem, any>;
+    new (options: AstItemOptions, declaration: TItem, symbol: ts.Symbol, identifiers?: AstDeclarationIdentifiers): AstDeclarationBase<
+        TItem,
+        any
+    >;
 }
 
 const declarationsArray: ReadonlyArray<[ts.SyntaxKind, AstDeclarationConstructor<any>]> = [
