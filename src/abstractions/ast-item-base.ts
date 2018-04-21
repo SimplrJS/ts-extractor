@@ -1,6 +1,9 @@
 import * as ts from "typescript";
+import { AstItemMemberReference } from "../contracts/ast-item";
+import { ReadonlyAstRegistry } from "../ast-registry";
 import { LoggerBuilder } from "simplr-logger";
-import { AstItemBaseDto, AstItemMemberReference } from "../contracts/ast-item";
+import { AstTypeIdentifiers } from "../contracts/ast-type";
+import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 
 export enum AstItemStatus {
     Initial = 0,
@@ -9,52 +12,35 @@ export enum AstItemStatus {
     GatheredAndExtracted = GatheredMembers | Extracted
 }
 
-export interface AddItemToRegistryHandler {
-    (item: AstItemBase<any, any>): void;
-}
-
-export interface ResolveDeclarationHandler {
-    (options: AstItemOptions, item: ts.Declaration): AstItemBase<any, ts.Declaration> | undefined;
-}
-
-export interface ResolveTypeHandler {
-    (options: AstItemOptions, item: ts.Type, typeNode?: ts.TypeNode): AstItemBase<any, ts.Type>;
+export interface GatheredMembersResult {
+    [key: string]: AstItemMemberReference | AstItemMemberReference[] | undefined;
 }
 
 export interface AstItemOptions {
     program: ts.Program;
-    /**
-     * Api item's parent id.
-     */
-    parentId: string;
-    /**
-     * Used to identify AstItem when it has the same name and kind.
-     * For example function overloads.
-     */
-    itemCounter?: number;
     projectDirectory: string;
-    itemsRegistry: ReadonlyMap<string, AstItemBase<any, any>>;
+    itemsRegistry: ReadonlyAstRegistry;
     logger: LoggerBuilder;
+    resolveAstDeclaration: (
+        declaration: ts.Declaration,
+        symbol: ts.Symbol,
+        identifiers?: AstDeclarationIdentifiers
+    ) => AstItemBase<ts.Declaration, any, any>;
+    resolveAstType: (type: ts.Type, typeNode: ts.TypeNode | undefined, identifiers: AstTypeIdentifiers) => AstItemBase<ts.Type, any, any>;
 }
 
 export interface AstItemGatherMembersOptions {
-    addItemToRegistry: AddItemToRegistryHandler;
-    /** TODO: NAMING */
-    resolveDeclaration: ResolveDeclarationHandler;
-    resolveType: ResolveTypeHandler;
+    addAstItemToRegistry: (item: AstItemBase<any, any, any>) => void;
 }
 
-export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
+export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersResult, TExtractedData> {
     constructor(protected readonly options: AstItemOptions, public readonly item: TItem) {
-        this.parentId = options.parentId;
         this.logger = options.logger;
+        this.typeChecker = options.program.getTypeChecker();
     }
 
     protected readonly logger: LoggerBuilder;
-
-    protected get typeChecker(): ts.TypeChecker {
-        return this.options.program.getTypeChecker();
-    }
+    protected readonly typeChecker: ts.TypeChecker;
 
     private status: AstItemStatus = AstItemStatus.Initial;
 
@@ -62,38 +48,37 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
         return this.status;
     }
 
+    public abstract readonly id: string;
     public abstract readonly itemKind: string;
 
-    public abstract readonly itemId: string;
-
-    /**
-     * This name will be used for Id generating.
-     */
-    public abstract readonly name: string;
-
-    public readonly parentId: string;
-
-    public getParent(): AstItemBase<any, any> | undefined {
-        return this.options.itemsRegistry.get(this.parentId);
-    }
-
-    private extractedData: TExtractDto | undefined;
-    protected abstract onExtract(): TExtractDto;
+    private extractedData: TExtractedData | undefined;
+    protected abstract onExtract(): TExtractedData;
 
     /**
      * Extract api item's data to JSON.
      */
-    public extract(): TExtractDto {
+    public extract(): TExtractedData {
         if (this.itemStatus === AstItemStatus.Initial || this.extractedData == null) {
             this.extractedData = this.onExtract();
             this.status |= AstItemStatus.Extracted;
         }
+
         return this.extractedData;
     }
 
-    protected membersReferences: AstItemMemberReference[] | undefined;
+    private gatheredMembersResult: TGatherResult | undefined;
 
-    protected abstract onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[];
+    protected get gatheredMembers(): TGatherResult {
+        if (this.gatheredMembersResult == null) {
+            this.gatheredMembersResult = this.getDefaultGatheredMembers();
+        }
+
+        return this.gatheredMembersResult;
+    }
+
+    protected abstract getDefaultGatheredMembers(): TGatherResult;
+
+    protected abstract onGatherMembers(options: AstItemGatherMembersOptions): TGatherResult;
 
     /**
      * Used only in the extraction phase to prevent from circular references.
@@ -102,7 +87,8 @@ export abstract class AstItemBase<TExtractDto extends AstItemBaseDto, TItem> {
         if (this.itemStatus & AstItemStatus.GatheredMembers) {
             return;
         }
-        this.membersReferences = this.onGatherMembers(options);
+
+        this.gatheredMembersResult = this.onGatherMembers(options);
         this.status |= AstItemStatus.GatheredMembers;
     }
 }

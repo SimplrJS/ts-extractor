@@ -1,20 +1,18 @@
 export enum AstItemKind {
-    SourceFile = "source-file",
-    Symbol = "symbol",
+    SourceFile = "SourceFile",
+    Symbol = "Symbol",
     // Declarations
-    Variable = "variable",
-    Function = "function",
-    Parameter = "parameter",
+    DeclarationNotSupported = "DeclarationNotSupported",
+    Namespace = "Namespace",
+    Variable = "Variable",
+    Function = "Function",
+    Parameter = "Parameter",
     // Types
-    TypeBasic = "type-basic",
-    TypeReferenceType = "type-reference-type"
-}
-
-export interface AstItemBaseDto {
-    name: string;
+    TypeBasic = "TypeBasic",
+    TypeReferenceType = "TypeReferenceType"
 }
 
 export interface AstItemMemberReference {
-    alias: string;
     id: string;
+    alias?: string;
 }

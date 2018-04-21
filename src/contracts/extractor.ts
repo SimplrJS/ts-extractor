@@ -1,5 +1,3 @@
-import { AstItemBaseDto } from "./ast-item";
-
 export interface ExtractorDto {
     name: string;
     version: string;
@@ -8,5 +6,5 @@ export interface ExtractorDto {
 }
 
 export interface ExtractorRegistryDto {
-    [key: string]: AstItemBaseDto;
+    [key: string]: {}; // TODO: FIX this.
 }

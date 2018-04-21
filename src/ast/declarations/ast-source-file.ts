@@ -1,70 +1,90 @@
 import * as ts from "typescript";
+import { LazyGetter } from "typescript-lazy-get-decorator";
 import * as path from "path";
 
+import { AstItemGatherMembersOptions, AstItemOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
+import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
+import { Helpers } from "../../utils/helpers";
 import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
-import { TsHelpers } from "../../ts-helpers";
-import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
+import { AstDeclarationIdentifiers } from "../../contracts/ast-declaration";
 
-// tslint:disable-next-line no-empty-interface
-export interface AstSourceFileDto extends AstItemBaseDto {}
+export interface AstSourceFileIdentifiers extends AstDeclarationIdentifiers {
+    packageName?: string;
+}
 
-export class AstSourceFile extends AstDeclarationBase<AstSourceFileDto, ts.SourceFile> {
-    public get itemKind(): AstItemKind {
-        return AstItemKind.SourceFile;
+export interface AstSourceFileGatheredResult extends GatheredMembersResult {
+    members: AstItemMemberReference[];
+}
+
+export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFileGatheredResult, {}> {
+    constructor(
+        options: AstItemOptions,
+        sourceFile: ts.SourceFile,
+        symbol: ts.Symbol,
+        protected readonly identifiers: AstSourceFileIdentifiers = {}
+    ) {
+        super(options, sourceFile, symbol);
     }
 
-    public get itemId(): string {
-        return `${this.parentId}/${this.name}`;
+    public readonly itemKind: AstItemKind = AstItemKind.SourceFile;
+
+    public get parentId(): string | undefined {
+        return undefined;
     }
 
+    @LazyGetter()
+    public get id(): string {
+        return `${this.packageName}/${this.name}`;
+    }
+
+    @LazyGetter()
     public get name(): string {
-        return path.relative(this.options.projectDirectory, this.item.fileName);
+        const relativePath = path.relative(this.options.projectDirectory, this.item.fileName);
+
+        return Helpers.removeExt(relativePath);
     }
 
-    public getMembers(): AstSymbol[] {
-        if (this.membersReferences == null) {
-            return [];
+    @LazyGetter()
+    public get packageName(): string {
+        if (this.identifiers.packageName != null) {
+            return this.identifiers.packageName;
         }
 
-        return this.membersReferences.map(x => this.options.itemsRegistry.get(x.id)) as AstSymbol[];
+        // TODO: Resolve package-name by going up file path and finding package.json.
+        return "___@scope/package-name";
     }
 
-    protected onExtract(): AstSourceFileDto {
+    protected onExtract(): {} {
+        return {};
+    }
+
+    protected getDefaultGatheredMembers(): AstSourceFileGatheredResult {
         return {
-            name: this.name
+            members: []
         };
     }
 
-    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
-        const membersReferences: AstItemMemberReference[] = [];
-        const sourceFileSymbol = TsHelpers.GetSymbolFromDeclaration(this.item, this.typeChecker);
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstSourceFileGatheredResult {
+        const result: AstSourceFileGatheredResult = {
+            members: []
+        };
 
-        if (sourceFileSymbol == null) {
-            this.logger.Error(`[${this.item.fileName}] Failed to resolve source file symbol.`);
-            return membersReferences;
-        }
-        if (sourceFileSymbol.exports == null) {
+        if (this.symbol == null || this.symbol.exports == null) {
             this.logger.Error(`[${this.item.fileName}] No exported members were found in source file.`);
-            return membersReferences;
+            return result;
         }
 
-        sourceFileSymbol.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(
-                {
-                    ...this.options,
-                    parentId: this.itemId
-                },
-                symbol
-            );
+        this.symbol.exports.forEach(symbol => {
+            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
 
-            if (!this.options.itemsRegistry.has(astSymbol.itemId)) {
-                options.addItemToRegistry(astSymbol);
+            if (!this.options.itemsRegistry.hasItem(symbol)) {
+                options.addAstItemToRegistry(astSymbol);
             }
-            membersReferences.push({ alias: astSymbol.name, id: astSymbol.itemId });
+
+            result.members.push({ id: astSymbol.id });
         });
 
-        return membersReferences;
+        return result;
     }
 }

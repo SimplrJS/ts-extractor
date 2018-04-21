@@ -4,9 +4,7 @@ export namespace TsHelpers {
     /**
      * Returns the string part of `export * from "./module";`
      */
-    export function GetExportImportString(
-        declaration: ts.ExportDeclaration | ts.ImportDeclaration
-    ): string | undefined {
+    export function getExportImportString(declaration: ts.ExportDeclaration | ts.ImportDeclaration): string | undefined {
         const stringLiteralNode = declaration.getChildren().find(x => ts.isStringLiteral(x));
         if (stringLiteralNode == null || !ts.isStringLiteral(stringLiteralNode)) {
             return undefined;
@@ -18,19 +16,19 @@ export namespace TsHelpers {
     /**
      * Returns `ts.SourceFile` from `ts.ExportDeclaration`.
      */
-    export function ResolveSourceFile(
+    export function resolveSourceFile(
         declaration: ts.ExportDeclaration | ts.ImportDeclaration,
         program: ts.Program
     ): ts.SourceFile | undefined {
         const declarationSourceFile = declaration.getSourceFile();
-        const importString = GetExportImportString(declaration);
+        const importString = getExportImportString(declaration);
         if (importString == null) {
             return undefined;
         }
 
         // TODO: Resolve custom paths with custom paths.
         // const compilerPaths = program.getCompilerOptions().paths;
-        const resolvedModule = GetResolvedModule(declarationSourceFile, importString);
+        const resolvedModule = getResolvedModule(declarationSourceFile, importString);
         if (resolvedModule == null) {
             return undefined;
         }
@@ -40,7 +38,7 @@ export namespace TsHelpers {
     /**
      * Returns Symbol from declaration.
      */
-    export function GetSymbolFromDeclaration(declaration: ts.Declaration | undefined, typeChecker: ts.TypeChecker): ts.Symbol | undefined {
+    export function getSymbolFromDeclaration(declaration: ts.Declaration | undefined, typeChecker: ts.TypeChecker): ts.Symbol | undefined {
         if (declaration == null) {
             return undefined;
         }
@@ -57,7 +55,7 @@ export namespace TsHelpers {
         return (declaration as any).symbol;
     }
 
-    export function GetDeclarationParentByKind(declaration: ts.Declaration, kind: ts.SyntaxKind): ts.Node | undefined {
+    export function getDeclarationParentByKind(declaration: ts.Declaration, kind: ts.SyntaxKind): ts.Node | undefined {
         let current: ts.Node | undefined = declaration;
 
         while (true) {
@@ -73,17 +71,17 @@ export namespace TsHelpers {
         return current;
     }
 
-    export function GetImportSpecifierLocalTargetSymbol(declaration: ts.ImportSpecifier, program: ts.Program): ts.Symbol | undefined {
+    export function getImportSpecifierLocalTargetSymbol(declaration: ts.ImportSpecifier, program: ts.Program): ts.Symbol | undefined {
         // Get ImportDeclaration
-        const importDeclaration = GetDeclarationParentByKind(declaration, ts.SyntaxKind.ImportDeclaration);
+        const importDeclaration = getDeclarationParentByKind(declaration, ts.SyntaxKind.ImportDeclaration);
         if (importDeclaration == null || !ts.isImportDeclaration(importDeclaration)) {
             return undefined;
         }
 
         // Resolve target SourceFile
-        const symbol = GetSymbolFromDeclaration(declaration, program.getTypeChecker());
-        const sourceFile = ResolveSourceFile(importDeclaration, program);
-        const sourceFileSymbol = GetSymbolFromDeclaration(sourceFile, program.getTypeChecker());
+        const symbol = getSymbolFromDeclaration(declaration, program.getTypeChecker());
+        const sourceFile = resolveSourceFile(importDeclaration, program);
+        const sourceFileSymbol = getSymbolFromDeclaration(sourceFile, program.getTypeChecker());
         if (sourceFile == null || symbol == null || sourceFileSymbol == null || sourceFileSymbol.exports == null) {
             return undefined;
         }
@@ -94,11 +92,11 @@ export namespace TsHelpers {
 
     export type TypeWithTypeArguments = ts.Type & { typeArguments: ts.Type[] };
 
-    export function IsTypeWithTypeArguments(type: ts.Type): type is TypeWithTypeArguments {
+    export function isTypeWithTypeArguments(type: ts.Type): type is TypeWithTypeArguments {
         return (type as TypeWithTypeArguments).typeArguments != null;
     }
 
-    export function GetResolvedModule(sourceFile: ts.SourceFile, moduleNameText: string): ts.ResolvedModuleFull | undefined {
+    export function getResolvedModule(sourceFile: ts.SourceFile, moduleNameText: string): ts.ResolvedModuleFull | undefined {
         return sourceFile && (sourceFile as any).resolvedModules && (sourceFile as any).resolvedModules.get(moduleNameText);
     }
 
@@ -106,7 +104,7 @@ export namespace TsHelpers {
      * Source: @microsoft/api-extractor (MIT)
      * Github: https://goo.gl/tLoJUe
      */
-    export function FollowSymbolAliases(symbol: ts.Symbol, typeChecker: ts.TypeChecker): ts.Symbol {
+    export function followSymbolAliases(symbol: ts.Symbol, typeChecker: ts.TypeChecker): ts.Symbol {
         let current: ts.Symbol = symbol;
 
         while (true) {
@@ -123,11 +121,11 @@ export namespace TsHelpers {
         return current;
     }
 
-    export function IsInternalSymbolName(name: string): boolean {
+    export function isInternalSymbolName(name: string): boolean {
         return Object.values(ts.InternalSymbolName).indexOf(name) !== -1;
     }
 
-    export function IsNodeSynthesized(node: ts.Node): boolean {
+    export function isNodeSynthesized(node: ts.Node): boolean {
         return Boolean(node.flags & ts.NodeFlags.Synthesized);
     }
 
@@ -137,7 +135,7 @@ export namespace TsHelpers {
     /**
      * @param onlyName if true, returns only package name.
      */
-    export function GetSourceFileExternalLibraryLocation(
+    export function getSourceFileExternalLibraryLocation(
         sourceFile: ts.SourceFile,
         program: ts.Program,
         onlyName?: boolean
@@ -159,7 +157,22 @@ export namespace TsHelpers {
         return undefined;
     }
 
-    export function IsSourceFileFromExternalPackage(sourceFile: ts.SourceFile, program: ts.Program): boolean {
-        return GetSourceFileExternalLibraryLocation(sourceFile, program) != null;
+    export function isSourceFileFromExternalPackage(sourceFile: ts.SourceFile, program: ts.Program): boolean {
+        return getSourceFileExternalLibraryLocation(sourceFile, program) != null;
+    }
+
+    export function resolveSymbolName(symbol: ts.Symbol): string {
+        if (symbol.declarations != null) {
+            for (const declaration of symbol.declarations) {
+                const namedDeclaration: ts.NamedDeclaration = declaration;
+
+                if (namedDeclaration.name != null) {
+                    return namedDeclaration.name.getText();
+                }
+            }
+        }
+
+        // Fallback to a Symbol name.
+        return symbol.name;
     }
 }

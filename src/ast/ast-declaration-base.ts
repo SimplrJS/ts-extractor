@@ -1,29 +1,44 @@
 import * as ts from "typescript";
-import { AstItemBase, AstItemGatherMembersOptions } from "../abstractions/ast-item-base";
-import { AstItemBaseDto, AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
-import { TsHelpers } from "../ts-helpers";
-import { AstSymbol } from "./ast-symbol";
-import { AstTypeBase } from "./ast-type-base";
+import { LazyGetter } from "typescript-lazy-get-decorator";
 
-export abstract class AstDeclarationBase<TExtractDto extends AstItemBaseDto, TDeclaration extends ts.Declaration> extends AstItemBase<
-    TExtractDto,
-    TDeclaration
-> {
-    public get itemId(): string {
-        const counter: string = this.options.itemCounter != null ? `&${this.options.itemCounter}` : "";
-        return `${this.parentId}#${this.itemKind}${counter}`;
+import { AstItemBase, AstItemOptions, GatheredMembersResult, AstItemGatherMembersOptions } from "../abstractions/ast-item-base";
+import { AstSymbol } from "./ast-symbol";
+import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
+import { AstItemMemberReference } from "../contracts/ast-item";
+import { TsHelpers } from "../ts-helpers";
+
+export abstract class AstDeclarationBase<
+    TItem extends ts.Declaration,
+    TGatherResult extends GatheredMembersResult,
+    TExtractedData
+> extends AstItemBase<TItem, TGatherResult, TExtractedData> {
+    constructor(
+        options: AstItemOptions,
+        declaration: TItem,
+        protected readonly symbol: ts.Symbol,
+        protected readonly identifiers: AstDeclarationIdentifiers = {}
+    ) {
+        super(options, declaration);
     }
 
-    /**
-     * Returns this declaration Symbol.
-     */
-    public getParent(): AstSymbol {
-        const parent = this.options.itemsRegistry.get(this.parentId);
-        if (parent == null || parent.itemKind !== AstItemKind.Symbol) {
-            throw new Error(`Failed to resolve symbol "${this.itemId}"`);
+    public abstract readonly name: string;
+
+    @LazyGetter()
+    public get parent(): AstSymbol {
+        const parentSymbolId = this.options.itemsRegistry.getItemId(this.symbol);
+        if (parentSymbolId != null) {
+            return this.options.itemsRegistry.get(parentSymbolId) as AstSymbol;
         }
 
-        return parent as AstSymbol;
+        return new AstSymbol(this.options, this.symbol);
+    }
+
+    @LazyGetter()
+    public get id(): string {
+        const parentId: string = this.identifiers.parentId != null ? this.identifiers.parentId : this.parent.id;
+        const counter: string = this.identifiers.itemCounter != null ? `#${this.identifiers.itemCounter}` : "";
+
+        return `${parentId}#${this.itemKind}${counter}`;
     }
 
     protected getMemberReferencesFromDeclarationList(
@@ -33,45 +48,18 @@ export abstract class AstDeclarationBase<TExtractDto extends AstItemBaseDto, TDe
         const result: AstItemMemberReference[] = [];
 
         for (const declaration of declarations) {
-            const symbol = TsHelpers.GetSymbolFromDeclaration(declaration, this.typeChecker);
+            const symbol = TsHelpers.getSymbolFromDeclaration(declaration, this.typeChecker);
 
             if (symbol != null) {
-                const astSymbol = new AstSymbol(
-                    {
-                        ...this.options,
-                        parentId: this.itemId
-                    },
-                    symbol
-                );
+                const astSymbol = new AstSymbol(this.options, symbol, {parentId: this.id});
 
-                if (!this.options.itemsRegistry.has(astSymbol.itemId)) {
-                    options.addItemToRegistry(astSymbol);
+                if (!this.options.itemsRegistry.has(astSymbol.id)) {
+                    options.addAstItemToRegistry(astSymbol);
                 }
-                result.push({ alias: astSymbol.name, id: astSymbol.itemId });
+                result.push({ alias: astSymbol.name, id: astSymbol.id });
             }
         }
 
         return result;
-    }
-
-    protected getMemberReferenceFromType(
-        options: AstItemGatherMembersOptions,
-        type: ts.Type,
-        typeNode?: ts.TypeNode
-    ): AstItemMemberReference {
-        const astType = options.resolveType(
-            {
-                ...this.options,
-                parentId: this.itemId
-            },
-            type,
-            typeNode
-        ) as AstTypeBase<any, any>;
-
-        if (!this.options.itemsRegistry.has(astType.itemId)) {
-            options.addItemToRegistry(astType);
-        }
-
-        return { alias: astType.name, id: astType.itemId };
     }
 }

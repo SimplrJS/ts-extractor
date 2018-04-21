@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "es2015",
         "target": "es6",
         "removeComments": false,
         "outDir": "dist",
@@ -12,7 +12,9 @@
         "declaration": true,
         "pretty": true,
         "strict": true,
+        "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
         "lib": [
             "es6",
             "es2017.object"
@@ -25,7 +27,9 @@
         ],
         "plugins": [
             {
-                "name": "tslint-language-service"
+                "name": "tslint-language-service",
+                "alwaysShowRuleFailuresAsWarnings": true,
+                "ignoreDefinitionFiles": true
             }
         ]
     },
@@ -35,7 +39,6 @@
         "@types",
         "tests",
         "examples",
-        "tools",
-        "src_"
+        "tools"
     ]
 }

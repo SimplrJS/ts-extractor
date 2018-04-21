@@ -6,10 +6,13 @@ import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logg
 
 import { ExtractorDto } from "./contracts/extractor";
 import { AstSourceFile } from "./ast/declarations/ast-source-file";
-import { AddItemToRegistryHandler, AstItemBase, ResolveDeclarationHandler, ResolveTypeHandler } from "./abstractions/ast-item-base";
+import { AstItemOptions, AstItemGatherMembersOptions } from "./abstractions/ast-item-base";
+import { AstRegistry } from "./ast-registry";
 import { AstDeclarations } from "./ast/ast-declarations";
 import { AstTypes } from "./ast/ast-types";
+import { TsHelpers } from "./ts-helpers";
 import { AstTypeBasic } from "./ast/types/ast-type-basic";
+import { AstDeclarationNotSupported } from "./ast/declarations/ast-declaration-not-supported";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -80,41 +83,49 @@ export class TsExtractor {
     public extract(files: string[]): AstSourceFile[] {
         const rootNames = this.resolveFilesLocation(files);
         const program = ts.createProgram(rootNames, this.config.compilerOptions);
-        const registry = new Map<string, AstItemBase<any, any>>();
+        const registry = new AstRegistry();
 
         this.checkTsErrors(program);
 
-        const addItemHandler: AddItemToRegistryHandler = item => {
-            registry.set(item.itemId, item);
-            // After adding item to registry we gather members.
-            item.gatherMembers({
-                resolveDeclaration: resolveDeclaration,
-                resolveType: resolveType,
-                addItemToRegistry: addItemHandler
-            });
+        const options: AstItemOptions = {
+            program: program,
+            projectDirectory: this.config.projectDirectory,
+            itemsRegistry: registry,
+            logger: this.logger,
+            resolveAstDeclaration: (declaration, symbol, identifiers) => {
+                if (registry.hasItem(declaration)) {
+                    return registry.get(registry.getItemId(declaration)!)!;
+                }
+
+                const $constructor = AstDeclarations.get(declaration.kind);
+                if ($constructor == null) {
+                    this.logger.Warn(`Unsupported declaration kind "${ts.SyntaxKind[declaration.kind]}".`);
+                    return new AstDeclarationNotSupported(options, declaration, symbol, identifiers);
+                }
+
+                return new $constructor(options, declaration, symbol, identifiers);
+            },
+            resolveAstType: (type, typeNode, identifiers) => {
+                if (typeNode == null) {
+                    typeNode = program.getTypeChecker().typeToTypeNode(type);
+                }
+
+                const $constructor = AstTypes.get(typeNode.kind);
+                if ($constructor == null) {
+                    return new AstTypeBasic(options, type, typeNode, identifiers);
+                }
+
+                return new $constructor(options, type, typeNode, identifiers);
+            }
         };
 
-        const resolveDeclaration: ResolveDeclarationHandler = (options, declaration) => {
-            const $constructor = AstDeclarations.get(declaration.kind);
-            if ($constructor == null) {
-                this.logger.Warn(`Unsupported declaration kind "${ts.SyntaxKind[declaration.kind]}".`);
-                return undefined;
+        const gatheringOptions: AstItemGatherMembersOptions = {
+            addAstItemToRegistry: item => {
+                registry.set(item);
+                // After adding item to registry we gather members.
+                // This way prevents infinite loops.
+                item.gatherMembers(gatheringOptions);
             }
-
-            return new $constructor(options, declaration);
-        };
-
-        const resolveType: ResolveTypeHandler = (options, type, typeNode) => {
-            if (typeNode == null) {
-                typeNode = program.getTypeChecker().typeToTypeNode(type);
-            }
-
-            let $constructor = AstTypes.get(typeNode.kind);
-            if ($constructor == null) {
-                $constructor = AstTypeBasic;
-            }
-
-            return new $constructor(options, type, typeNode);
         };
 
         // Go through all given files.
@@ -124,19 +135,13 @@ export class TsExtractor {
             if (sourceFile == null) {
                 return;
             }
+            const symbolSourceFile = TsHelpers.getSymbolFromDeclaration(sourceFile, program.getTypeChecker());
+            if (symbolSourceFile == null) {
+                return;
+            }
 
-            const astSourceFile = new AstSourceFile(
-                {
-                    program: program,
-                    parentId: "@simplrjs/package-name",
-                    projectDirectory: this.config.projectDirectory,
-                    itemsRegistry: registry,
-                    logger: this.logger
-                },
-                sourceFile
-            );
-
-            addItemHandler(astSourceFile);
+            const astSourceFile = new AstSourceFile(options, sourceFile, symbolSourceFile, { packageName: "@simplrjs/package-name" });
+            gatheringOptions.addAstItemToRegistry(astSourceFile);
             sourceFiles.push(astSourceFile);
         });
 

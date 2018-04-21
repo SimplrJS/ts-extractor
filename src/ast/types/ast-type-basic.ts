@@ -1,22 +1,14 @@
 import * as ts from "typescript";
-import { AstTypeBase, AstTypeBaseDto } from "../ast-type-base";
-import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
+import { AstTypeBase } from "../ast-type-base";
+import { AstItemKind } from "../../contracts/ast-item";
 import { TsHelpers } from "../../ts-helpers";
+import { GatheredMembersResult } from "../../abstractions/ast-item-base";
 
-// tslint:disable-next-line no-empty-interface
-export interface AstTypeBasicDto extends AstTypeBaseDto {}
+export class AstTypeBasic extends AstTypeBase<ts.TypeNode, {}, {}> {
+    public readonly itemKind: AstItemKind = AstItemKind.TypeBasic;
 
-export class AstTypeBasic extends AstTypeBase<AstTypeBasicDto, ts.TypeNode> {
-    public get itemKind(): string {
-        return AstItemKind.TypeBasic;
-    }
-
-    public get name(): string {
-        return ts.InternalSymbolName.Type;
-    }
-
-    public get text(): string {
-        if (TsHelpers.IsNodeSynthesized(this.itemNode)) {
+    protected onExtract(): {} {
+        if (TsHelpers.isNodeSynthesized(this.itemNode)) {
             const text = ts.tokenToString(this.itemNode.kind);
             if (text != null) {
                 return text;
@@ -26,14 +18,11 @@ export class AstTypeBasic extends AstTypeBase<AstTypeBasicDto, ts.TypeNode> {
         return this.typeChecker.typeToString(this.item);
     }
 
-    protected onExtract(): AstTypeBasicDto {
-        return {
-            name: this.name,
-            text: this.text
-        };
+    protected getDefaultGatheredMembers(): {} {
+        return {};
     }
 
-    protected onGatherMembers(): AstItemMemberReference[] {
-        return [];
+    protected onGatherMembers(): GatheredMembersResult {
+        return {};
     }
 }

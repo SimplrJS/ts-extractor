@@ -1,80 +1,61 @@
 import * as ts from "typescript";
-import { AstTypeBase, AstTypeBaseDto } from "../ast-type-base";
+import { AstTypeBase } from "../ast-type-base";
 import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
-import { TsHelpers } from "../../ts-helpers";
+import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
-import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
 
-export interface AstTypeReferenceTypeDto extends AstTypeBaseDto {
-    referenceId?: string;
-    // TODO: MemberReference...
-    typeParameters: string[];
+export interface AstTypeReferenceTypeGatheredResult extends GatheredMembersResult {
+    reference?: AstItemMemberReference;
 }
 
-export class AstTypeReferenceType extends AstTypeBase<AstTypeReferenceTypeDto, ts.TypeReferenceType> {
-    public get itemKind(): string {
-        return AstItemKind.TypeReferenceType;
+export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstTypeReferenceTypeGatheredResult, {}> {
+    public readonly itemKind: AstItemKind = AstItemKind.TypeReferenceType;
+    protected onExtract(): {} {
+        return {};
     }
 
-    public get name(): string {
-        return ts.InternalSymbolName.Type;
-    }
-
-    protected onExtract(): AstTypeReferenceTypeDto {
-        return {
-            name: this.name,
-            text: this.text,
-            typeParameters: [],
-            referenceId: "___"
-        };
-    }
-
-    public get symbol(): AstSymbol | undefined {
-        if (this.symbolReference == null) {
+    public get reference(): AstSymbol | undefined {
+        if (this.gatheredMembers.reference == null) {
             return undefined;
         }
 
-        return this.options.itemsRegistry.get(this.symbolReference.id) as AstSymbol;
+        return this.options.itemsRegistry.get(this.gatheredMembers.reference.id) as AstSymbol;
     }
 
-    protected symbolReference: AstItemMemberReference | undefined;
+    protected getDefaultGatheredMembers(): AstTypeReferenceTypeGatheredResult {
+        return {};
+    }
 
-    protected typeParametersReferences: AstItemMemberReference[] = [];
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstTypeReferenceTypeGatheredResult {
+        const result: AstTypeReferenceTypeGatheredResult = {};
 
-    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         // Resolving symbol
         const parent = this.getParent();
-        // Checking if this type is referecing to itself.
+        // Checking if this type is referencing to itself.
         let isSelf: boolean;
         if (parent != null && parent instanceof AstDeclarationBase) {
-            const parentSymbol = parent.getParent();
+            const parentSymbol = parent.parent;
             isSelf = this.item.aliasSymbol === parentSymbol.item;
         } else {
             isSelf = false;
         }
-        const resolvedSymbol = isSelf ? this.item.getSymbol : this.item.aliasSymbol || this.item.getSymbol();
-        // if (resolvedSymbol != null) {
-        //     const astSymbol = new AstSymbol
-        // }
 
-        // Resolving type parameters.
-        let typeParameters: Array<AstTypeBase<any, any>> = [];
-        if (!TsHelpers.IsNodeSynthesized(this.itemNode) && this.itemNode.typeArguments != null) {
-            typeParameters = this.itemNode.typeArguments.map(x =>
-                options.resolveType({ ...this.options, parentId: this.itemId }, this.typeChecker.getTypeFromTypeNode(x), x)
-            ) as Array<AstTypeBase<any, any>>;
-        } else if (TsHelpers.IsTypeWithTypeArguments(this.item)) {
-            typeParameters = this.item.typeArguments.map(x =>
-                options.resolveType({ ...this.options, parentId: this.itemId }, x, this.typeChecker.typeToTypeNode(x))
-            ) as Array<AstTypeBase<any, any>>;
-        }
-        // Adding type parameters to registry.
-        for (const typeParameter of typeParameters) {
-            options.addItemToRegistry(typeParameter);
-            this.typeParametersReferences.push({ alias: typeParameter.name, id: typeParameter.itemId });
+        const resolvedSymbol = isSelf ? this.item.getSymbol() : this.item.aliasSymbol || this.item.getSymbol();
+        if (resolvedSymbol != null) {
+            let astSymbol: AstSymbol;
+            if (this.options.itemsRegistry.hasItem(resolvedSymbol)) {
+                astSymbol = this.options.itemsRegistry.get(this.options.itemsRegistry.getItemId(resolvedSymbol)!) as AstSymbol;
+            } else {
+                astSymbol = new AstSymbol(this.options, resolvedSymbol);
+                options.addAstItemToRegistry(astSymbol);
+            }
+
+            result.reference = {
+                id: astSymbol.id
+            };
         }
 
-        return [];
+        return result;
     }
 }

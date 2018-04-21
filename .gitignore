@@ -265,4 +265,4 @@ dist
 **/*.js.map
 
 coverage
-src_
+.rpt2_cache
