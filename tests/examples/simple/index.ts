@@ -18,7 +18,7 @@ export interface MyStuff {
     length: number;
 }
 
-export namespace NamespaceCards {
+export namespace CardHelpers {
     export function pickCard(p1: string): string;
     export function pickCard(p1: MyStuff): string;
     export function pickCard(p1: string | MyStuff): string {
