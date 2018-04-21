@@ -1,9 +1,11 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase, AstItemOptions, GatheredMembersResult } from "../abstractions/ast-item-base";
+import { AstItemBase, AstItemOptions, GatheredMembersResult, AstItemGatherMembersOptions } from "../abstractions/ast-item-base";
 import { AstSymbol } from "./ast-symbol";
 import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
+import { AstItemMemberReference } from "../contracts/ast-item";
+import { TsHelpers } from "../ts-helpers";
 
 export abstract class AstDeclarationBase<
     TItem extends ts.Declaration,
@@ -37,5 +39,27 @@ export abstract class AstDeclarationBase<
         const counter: string = this.identifiers.itemCounter != null ? `#${this.identifiers.itemCounter}` : "";
 
         return `${parentId}#${this.itemKind}${counter}`;
+    }
+
+    protected getMemberReferencesFromDeclarationList(
+        options: AstItemGatherMembersOptions,
+        declarations: ts.NodeArray<ts.Declaration>
+    ): AstItemMemberReference[] {
+        const result: AstItemMemberReference[] = [];
+
+        for (const declaration of declarations) {
+            const symbol = TsHelpers.getSymbolFromDeclaration(declaration, this.typeChecker);
+
+            if (symbol != null) {
+                const astSymbol = new AstSymbol(this.options, symbol, {parentId: this.id});
+
+                if (!this.options.itemsRegistry.has(astSymbol.id)) {
+                    options.addAstItemToRegistry(astSymbol);
+                }
+                result.push({ alias: astSymbol.name, id: astSymbol.id });
+            }
+        }
+
+        return result;
     }
 }

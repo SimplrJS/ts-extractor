@@ -39,7 +39,7 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstF
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstFunctionGatheredResult {
         const result: AstFunctionGatheredResult = {
-            parameters: []
+            parameters: this.getMemberReferencesFromDeclarationList(options, this.item.parameters)
         };
 
         // Resolved return Type.
