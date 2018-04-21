@@ -46,10 +46,11 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, {}> 
             const type = this.typeChecker.getReturnTypeOfSignature(signature);
 
             const returnAstType = this.options.resolveAstType(type, undefined, { parentId: this.getId() });
-            if (!this.options.itemsRegistry.hasItem(type)) {
+            const returnAstTypeId = returnAstType.getId();
+            if (!this.options.itemsRegistry.has(returnAstTypeId)) {
                 options.addAstItemToRegistry(returnAstType);
             }
-            this.returnTypeReference = { id: returnAstType.getId() };
+            this.returnTypeReference = { id: returnAstTypeId };
             members.push(this.returnTypeReference);
         }
 
