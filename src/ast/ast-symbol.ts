@@ -77,7 +77,8 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
     @LazyGetter()
     public get id(): string {
         if (this.parent == null) {
-            return "???";
+            this.logger.Error("___ Failed to resolve symbol's parent id.");
+            return `???:${this.name}`;
         }
 
         // Separate SourceFile from other items.
