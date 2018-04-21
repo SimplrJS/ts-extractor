@@ -13,7 +13,7 @@ export interface AstSymbolIdentifiers {
     parentId?: string;
 }
 
-export class AstSymbol extends AstItemBase<ts.Symbol, {}, {}> {
+export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {}> {
     constructor(options: AstItemOptions, symbol: ts.Symbol, private readonly identifiers: AstSymbolIdentifiers = {}) {
         super(options, symbol);
     }
@@ -95,9 +95,11 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}, {}> {
         return {};
     }
 
-    protected gatheredMembers: AstSymbolGatheredResult = {
-        members: []
-    };
+    protected getDefaultGatheredMembers(): AstSymbolGatheredResult {
+        return {
+            members: []
+        };
+    }
 
     // TODO: Refactor code.
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstSymbolGatheredResult {

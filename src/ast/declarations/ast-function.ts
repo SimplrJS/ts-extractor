@@ -37,9 +37,11 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstF
         return this.options.itemsRegistry.get(this.gatheredMembers.returnType.id) as AstTypeBase;
     }
 
-    protected gatheredMembers: AstFunctionGatheredResult = {
-        parameters: []
-    };
+    protected getDefaultGatheredMembers(): AstFunctionGatheredResult {
+        return {
+            parameters: []
+        };
+    }
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstFunctionGatheredResult {
         const result: AstFunctionGatheredResult = {

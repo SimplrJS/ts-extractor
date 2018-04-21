@@ -22,9 +22,11 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNa
         return {};
     }
 
-    protected gatheredMembers: AstNamespaceGatheredResult = {
-        members: []
-    };
+    protected getDefaultGatheredMembers(): AstNamespaceGatheredResult {
+        return {
+            members: []
+        };
+    }
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstNamespaceGatheredResult {
         const results: AstNamespaceGatheredResult = {

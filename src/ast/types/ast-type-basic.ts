@@ -4,7 +4,7 @@ import { AstItemKind } from "../../contracts/ast-item";
 import { TsHelpers } from "../../ts-helpers";
 import { GatheredMembersResult } from "../../abstractions/ast-item-base";
 
-export class AstTypeBasic extends AstTypeBase<ts.TypeNode, GatheredMembersResult, {}> {
+export class AstTypeBasic extends AstTypeBase<ts.TypeNode, {}, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.TypeBasic;
 
     protected onExtract(): {} {
@@ -18,7 +18,9 @@ export class AstTypeBasic extends AstTypeBase<ts.TypeNode, GatheredMembersResult
         return this.typeChecker.typeToString(this.item);
     }
 
-    protected gatheredMembers: GatheredMembersResult = {};
+    protected getDefaultGatheredMembers(): {} {
+        return {};
+    }
 
     protected onGatherMembers(): GatheredMembersResult {
         return {};

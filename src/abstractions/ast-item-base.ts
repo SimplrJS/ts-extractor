@@ -66,7 +66,17 @@ export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersRe
         return this.extractedData;
     }
 
-    protected abstract gatheredMembers: TGatherResult;
+    private gatheredMembersResult: TGatherResult | undefined;
+
+    protected get gatheredMembers(): TGatherResult {
+        if (this.gatheredMembersResult == null) {
+            this.gatheredMembersResult = this.getDefaultGatheredMembers();
+        }
+
+        return this.gatheredMembersResult;
+    }
+
+    protected abstract getDefaultGatheredMembers(): TGatherResult;
 
     protected abstract onGatherMembers(options: AstItemGatherMembersOptions): TGatherResult;
 
@@ -78,7 +88,7 @@ export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersRe
             return;
         }
 
-        this.gatheredMembers = this.onGatherMembers(options);
+        this.gatheredMembersResult = this.onGatherMembers(options);
         this.status |= AstItemStatus.GatheredMembers;
     }
 }
