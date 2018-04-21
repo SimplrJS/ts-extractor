@@ -2,11 +2,15 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
 import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
+import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
 import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 
-export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, {}> {
+export interface AstNamespaceGatheredResult extends GatheredMembersResult {
+    members: AstItemMemberReference[];
+}
+
+export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNamespaceGatheredResult, {}> {
     @LazyGetter()
     public get name(): string {
         return this.item.name.getText();
@@ -18,14 +22,16 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, {}> {
         return {};
     }
 
-    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
-        const membersReferences: AstItemMemberReference[] = [];
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstNamespaceGatheredResult {
+        const results: AstNamespaceGatheredResult = {
+            members: []
+        };
         if (this.parent == null) {
             this.logger.Error(`____ Failed to resolve namespace symbol.`);
-            return membersReferences;
+            return results;
         }
         if (this.parent.item.exports == null) {
-            return membersReferences;
+            return results;
         }
 
         this.parent.item.exports.forEach(symbol => {
@@ -35,9 +41,9 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, {}> {
                 options.addAstItemToRegistry(astSymbol);
             }
 
-            membersReferences.push({ id: astSymbol.id });
+            results.members.push({ id: astSymbol.id });
         });
 
-        return membersReferences;
+        return results;
     }
 }

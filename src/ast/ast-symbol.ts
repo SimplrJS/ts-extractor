@@ -9,7 +9,7 @@ export interface AstSymbolIdentifiers {
     parentId?: string;
 }
 
-export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
+export class AstSymbol extends AstItemBase<ts.Symbol, {}, {}> {
     constructor(options: AstItemOptions, symbol: ts.Symbol, private readonly identifiers: AstSymbolIdentifiers = {}) {
         super(options, symbol);
     }
@@ -24,7 +24,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
     /**
      * Returns initialized AstDeclaration instance.
      */
-    private getFirstAstDeclaration(): AstItemBase<ts.Declaration, {}> | undefined {
+    private getFirstAstDeclaration(): AstItemBase<ts.Declaration, any, any> | undefined {
         if (this.item.declarations == null || this.item.declarations.length === 0) {
             return undefined;
         }
@@ -33,7 +33,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
     }
 
     @LazyGetter()
-    private get parent(): AstItemBase<any, any> | undefined {
+    private get parent(): AstItemBase<any, any, any> | undefined {
         if (this.identifiers.parentId != null && this.options.itemsRegistry.has(this.identifiers.parentId)) {
             return this.options.itemsRegistry.get(this.identifiers.parentId);
         }

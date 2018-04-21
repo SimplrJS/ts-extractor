@@ -3,7 +3,7 @@ import { AstTypeBase } from "../ast-type-base";
 import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
 import { TsHelpers } from "../../ts-helpers";
 
-export class AstTypeBasic extends AstTypeBase<ts.TypeNode, {}> {
+export class AstTypeBasic extends AstTypeBase<ts.TypeNode, {}, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.TypeBasic;
 
     protected onExtract(): {} {

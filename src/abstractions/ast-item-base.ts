@@ -12,6 +12,10 @@ export enum AstItemStatus {
     GatheredAndExtracted = GatheredMembers | Extracted
 }
 
+export interface GatheredMembersResult {
+    [key: string]: AstItemMemberReference | AstItemMemberReference[] | undefined;
+}
+
 export interface AstItemOptions {
     program: ts.Program;
     projectDirectory: string;
@@ -21,15 +25,15 @@ export interface AstItemOptions {
         declaration: ts.Declaration,
         symbol: ts.Symbol,
         identifiers?: AstDeclarationIdentifiers
-    ) => AstItemBase<ts.Declaration, any>;
-    resolveAstType: (type: ts.Type, typeNode: ts.TypeNode | undefined, identifiers: AstTypeIdentifiers) => AstItemBase<ts.Type, any>;
+    ) => AstItemBase<ts.Declaration, any, any>;
+    resolveAstType: (type: ts.Type, typeNode: ts.TypeNode | undefined, identifiers: AstTypeIdentifiers) => AstItemBase<ts.Type, any, any>;
 }
 
 export interface AstItemGatherMembersOptions {
-    addAstItemToRegistry: (item: AstItemBase<any, any>) => void;
+    addAstItemToRegistry: (item: AstItemBase<any, any, any>) => void;
 }
 
-export abstract class AstItemBase<TItem, TExtractedData> {
+export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersResult, TExtractedData> {
     constructor(protected readonly options: AstItemOptions, public readonly item: TItem) {
         this.logger = options.logger;
         this.typeChecker = options.program.getTypeChecker();
@@ -44,7 +48,7 @@ export abstract class AstItemBase<TItem, TExtractedData> {
         return this.status;
     }
 
-    public readonly abstract id: string;
+    public abstract readonly id: string;
     public abstract itemKind: string;
 
     private extractedData: TExtractedData | undefined;
@@ -62,9 +66,9 @@ export abstract class AstItemBase<TItem, TExtractedData> {
         return this.extractedData;
     }
 
-    protected membersReferences: AstItemMemberReference[] | undefined;
+    protected gatheredMembers: TGatherResult = {} as TGatherResult;
 
-    protected abstract onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[];
+    protected abstract onGatherMembers(options: AstItemGatherMembersOptions): TGatherResult;
 
     /**
      * Used only in the extraction phase to prevent from circular references.
@@ -74,7 +78,7 @@ export abstract class AstItemBase<TItem, TExtractedData> {
             return;
         }
 
-        this.membersReferences = this.onGatherMembers(options);
+        this.gatheredMembers = this.onGatherMembers(options);
         this.status |= AstItemStatus.GatheredMembers;
     }
 }

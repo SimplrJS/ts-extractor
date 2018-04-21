@@ -2,7 +2,7 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 import * as path from "path";
 
-import { AstItemGatherMembersOptions, AstItemOptions } from "../../abstractions/ast-item-base";
+import { AstItemGatherMembersOptions, AstItemOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
 import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { Helpers } from "../../utils/helpers";
 import { AstDeclarationBase } from "../ast-declaration-base";
@@ -13,7 +13,11 @@ export interface AstSourceFileIdentifiers extends AstDeclarationIdentifiers {
     packageName?: string;
 }
 
-export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
+export interface AstSourceFileGatheredResult extends GatheredMembersResult {
+    members: AstItemMemberReference[];
+}
+
+export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFileGatheredResult, {}> {
     constructor(
         options: AstItemOptions,
         sourceFile: ts.SourceFile,
@@ -55,12 +59,14 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
         return {};
     }
 
-    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
-        const membersReferences: AstItemMemberReference[] = [];
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstSourceFileGatheredResult {
+        const result: AstSourceFileGatheredResult = {
+            members: []
+        };
 
         if (this.symbol == null || this.symbol.exports == null) {
             this.logger.Error(`[${this.item.fileName}] No exported members were found in source file.`);
-            return membersReferences;
+            return result;
         }
 
         this.symbol.exports.forEach(symbol => {
@@ -70,9 +76,9 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
                 options.addAstItemToRegistry(astSymbol);
             }
 
-            membersReferences.push({ id: astSymbol.id });
+            result.members.push({ id: astSymbol.id });
         });
 
-        return membersReferences;
+        return result;
     }
 }

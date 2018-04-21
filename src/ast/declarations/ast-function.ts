@@ -2,10 +2,15 @@ import * as ts from "typescript";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
-import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
+import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
 import { AstTypeBase } from "../ast-type-base";
 
-export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, {}> {
+export interface AstFunctionGatheredResult extends GatheredMembersResult {
+    parameters?: AstItemMemberReference[];
+    returnType?: AstItemMemberReference;
+}
+
+export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstFunctionGatheredResult, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.Function;
 
     public get name(): string {
@@ -21,23 +26,22 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, {}> 
     }
 
     public get parameters(): AstSymbol[] {
-        return this.parametersReferences.map(x => this.options.itemsRegistry.get(x.id)) as AstSymbol[];
+        if (this.gatheredMembers.parameters == null) {
+            return [];
+        }
+        return this.gatheredMembers.parameters.map(x => this.options.itemsRegistry.get(x.id)) as AstSymbol[];
     }
 
     public get returnType(): AstTypeBase | undefined {
-        if (this.returnTypeReference == null) {
+        if (this.gatheredMembers.returnType == null) {
             return undefined;
         }
 
-        return this.options.itemsRegistry.get(this.returnTypeReference.id) as AstTypeBase;
+        return this.options.itemsRegistry.get(this.gatheredMembers.returnType.id) as AstTypeBase;
     }
 
-    private parametersReferences: AstItemMemberReference[] = [];
-
-    private returnTypeReference: AstItemMemberReference | undefined;
-
-    protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
-        const members: AstItemMemberReference[] = [];
+    protected onGatherMembers(options: AstItemGatherMembersOptions): AstFunctionGatheredResult {
+        const result: AstFunctionGatheredResult = {};
 
         // Resolved return Type.
         const signature = this.typeChecker.getSignatureFromDeclaration(this.item);
@@ -48,10 +52,12 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, {}> 
             if (!this.options.itemsRegistry.has(returnAstType.id)) {
                 options.addAstItemToRegistry(returnAstType);
             }
-            this.returnTypeReference = { id: returnAstType.id };
-            members.push(this.returnTypeReference);
+
+            result.returnType = {
+                id: returnAstType.id
+            };
         }
 
-        return members;
+        return result;
     }
 }

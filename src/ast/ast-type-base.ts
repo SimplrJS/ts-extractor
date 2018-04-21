@@ -1,14 +1,15 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase, AstItemOptions } from "../abstractions/ast-item-base";
+import { AstItemBase, AstItemOptions, GatheredMembersResult } from "../abstractions/ast-item-base";
 import { AstTypeIdentifiers } from "../contracts/ast-type";
 import { AstDeclarationBase } from "./ast-declaration-base";
 
-export abstract class AstTypeBase<TTypeNode extends ts.TypeNode = ts.TypeNode, TExtractedData = {}> extends AstItemBase<
-    ts.Type,
-    TExtractedData
-> {
+export abstract class AstTypeBase<
+    TTypeNode extends ts.TypeNode = ts.TypeNode,
+    TGatherResult extends GatheredMembersResult = {},
+    TExtractedData = {}
+> extends AstItemBase<ts.Type, TGatherResult, TExtractedData> {
     constructor(
         options: AstItemOptions,
         item: ts.Type,
@@ -18,8 +19,8 @@ export abstract class AstTypeBase<TTypeNode extends ts.TypeNode = ts.TypeNode, T
         super(options, item);
     }
 
-    public getParent(): AstDeclarationBase<ts.Declaration, any> | AstTypeBase {
-        return this.options.itemsRegistry.get(this.identifiers.parentId) as AstDeclarationBase<ts.Declaration, any> | AstTypeBase;
+    public getParent(): AstDeclarationBase<ts.Declaration, any, any> | AstTypeBase {
+        return this.options.itemsRegistry.get(this.identifiers.parentId) as AstDeclarationBase<ts.Declaration, any, any> | AstTypeBase;
     }
 
     @LazyGetter()

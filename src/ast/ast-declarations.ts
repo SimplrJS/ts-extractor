@@ -12,6 +12,7 @@ import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 export interface AstDeclarationConstructor<TItem extends ts.Declaration = ts.Declaration> {
     new (options: AstItemOptions, declaration: TItem, symbol: ts.Symbol, identifiers?: AstDeclarationIdentifiers): AstDeclarationBase<
         TItem,
+        any,
         any
     >;
 }
