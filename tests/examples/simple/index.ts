@@ -18,10 +18,12 @@ export interface MyStuff {
     length: number;
 }
 
+export type A = "something";
+
 export namespace CardHelpers {
-    export function pickCard(p1: string): string;
+    export function pickCard(p1: string): MyStuff;
     export function pickCard(p1: MyStuff): string;
-    export function pickCard(p1: string | MyStuff): string {
+    export function pickCard(p1: string | MyStuff): MyStuff | string {
         return "card";
     }
 }
