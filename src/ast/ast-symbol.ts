@@ -1,70 +1,82 @@
 import * as ts from "typescript";
+import { LazyGetter } from "typescript-lazy-get-decorator";
+
 import { AstItemBase, AstItemGatherMembersOptions, AstItemOptions } from "../abstractions/ast-item-base";
 import { AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 
+export interface AstSymbolIdentifiers {
+    parentId?: string;
+}
+
 export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
-    constructor(options: AstItemOptions, symbol: ts.Symbol, private parentId?: string) {
+    constructor(options: AstItemOptions, symbol: ts.Symbol, private readonly identifiers: AstSymbolIdentifiers = {}) {
         super(options, symbol);
     }
+
+    public readonly itemKind: AstItemKind = AstItemKind.Symbol;
 
     public getName(): string {
         return TsHelpers.resolveSymbolName(this.item);
     }
 
-    public readonly itemKind: AstItemKind = AstItemKind.Symbol;
-
     /**
      * Returns initialized AstDeclaration instance.
      */
-    private getFirstAstDeclaration(): AstItemBase<ts.Declaration, {}> {
+    private getFirstAstDeclaration(): AstItemBase<ts.Declaration, {}> | undefined {
         if (this.item.declarations == null || this.item.declarations.length === 0) {
-            throw new Error("____ Symbol does not have declarations.`");
+            return undefined;
         }
         const declaration = this.item.declarations[0];
-        const astDeclaration = this.options.resolveAstDeclaration(declaration, this.item);
-        if (astDeclaration == null) {
-            throw new Error("____ Not supported kind declaration.");
-        }
-
-        return astDeclaration;
+        return this.options.resolveAstDeclaration(declaration, this.item);
     }
 
-    public getParentId(): string | undefined {
-        if (this.parentId == null) {
-            // Resolve parent id from declarations list.
-            const astDeclaration = this.getFirstAstDeclaration();
-            if (astDeclaration.item.parent == null) {
-                return undefined;
-            }
-            const parentDeclaration = astDeclaration.item.parent as ts.Declaration;
-            const parentSymbol = TsHelpers.GetSymbolFromDeclaration(parentDeclaration, this.typeChecker);
-            if (parentSymbol == null) {
-                this.logger.Error("___ Failed to resolve parent symbol.");
-                return undefined;
-            }
-
-            const parentAstDeclaration = this.options.resolveAstDeclaration(parentDeclaration, parentSymbol);
-            if (parentAstDeclaration == null) {
-                return undefined;
-            }
-
-            this.parentId = parentAstDeclaration.getId();
+    @LazyGetter()
+    private get parent(): AstItemBase<any, any> | undefined {
+        if (this.identifiers.parentId != null && this.options.itemsRegistry.has(this.identifiers.parentId)) {
+            return this.options.itemsRegistry.get(this.identifiers.parentId);
         }
 
-        return this.parentId;
+        const firstAstDeclaration = this.getFirstAstDeclaration();
+        if (firstAstDeclaration == null) {
+            return undefined;
+        }
+
+        const parentDeclaration = firstAstDeclaration.item.parent as ts.Declaration | undefined;
+        if (parentDeclaration == null) {
+            return undefined;
+        }
+
+        const parentSymbol = TsHelpers.GetSymbolFromDeclaration(parentDeclaration, this.typeChecker);
+        if (parentSymbol == null) {
+            return undefined;
+        }
+
+        return this.options.resolveAstDeclaration(parentDeclaration, parentSymbol);
+    }
+
+    @LazyGetter()
+    public get parentId(): string | undefined {
+        if (this.identifiers.parentId != null) {
+            return this.identifiers.parentId;
+        }
+
+        const resolvedParentAstDeclaration = this.parent;
+        if (resolvedParentAstDeclaration == null) {
+            return undefined;
+        }
+
+        return resolvedParentAstDeclaration.getId();
     }
 
     public getId(): string {
-        const parentId = this.getParentId();
-        if (parentId == null) {
-            throw new Error("____ SourceFile Symbol?");
+        if (this.parent == null) {
+            return "???";
         }
 
         // Separate SourceFile from other items.
         let itemSeparator: string;
-        const parentItem = this.options.itemsRegistry.get(parentId);
-        if (parentItem != null && parentItem.itemKind === AstItemKind.SourceFile) {
+        if (this.parent.itemKind === AstItemKind.SourceFile) {
             itemSeparator = ":";
         } else {
             itemSeparator = ".";

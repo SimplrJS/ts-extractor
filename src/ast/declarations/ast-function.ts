@@ -4,7 +4,6 @@ import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 import { AstItemGatherMembersOptions } from "../../abstractions/ast-item-base";
 import { AstTypeBase } from "../ast-type-base";
-// import { TsHelpers } from "../../ts-helpers";
 
 export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.Function;

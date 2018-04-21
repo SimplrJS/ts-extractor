@@ -29,7 +29,7 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, {}> {
         }
 
         sourceFileAstSymbol.item.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(this.options, symbol, this.getId());
+            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.getId() });
 
             if (!this.options.itemsRegistry.hasItem(symbol)) {
                 options.addAstItemToRegistry(astSymbol);

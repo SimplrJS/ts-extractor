@@ -21,7 +21,7 @@ export interface AstItemOptions {
         declaration: ts.Declaration,
         symbol: ts.Symbol,
         identifiers?: AstDeclarationIdentifiers
-    ) => AstItemBase<ts.Declaration, any> | undefined;
+    ) => AstItemBase<ts.Declaration, any>;
     resolveAstType: (type: ts.Type, typeNode: ts.TypeNode | undefined, identifiers: AstTypeIdentifiers) => AstItemBase<ts.Type, any>;
 }
 

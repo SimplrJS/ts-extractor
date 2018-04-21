@@ -70,7 +70,7 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
         }
 
         sourceFileAstSymbol.item.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(this.options, symbol, this.getId());
+            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.getId() });
 
             if (!this.options.itemsRegistry.hasItem(symbol)) {
                 options.addAstItemToRegistry(astSymbol);
