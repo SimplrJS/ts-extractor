@@ -6,7 +6,7 @@ import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstra
 import { AstTypeBase } from "../ast-type-base";
 
 export interface AstFunctionGatheredResult extends GatheredMembersResult {
-    parameters?: AstItemMemberReference[];
+    parameters: AstItemMemberReference[];
     returnType?: AstItemMemberReference;
 }
 
@@ -26,9 +26,6 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstF
     }
 
     public get parameters(): AstSymbol[] {
-        if (this.gatheredMembers.parameters == null) {
-            return [];
-        }
         return this.gatheredMembers.parameters.map(x => this.options.itemsRegistry.get(x.id)) as AstSymbol[];
     }
 
@@ -41,7 +38,9 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstF
     }
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstFunctionGatheredResult {
-        const result: AstFunctionGatheredResult = {};
+        const result: AstFunctionGatheredResult = {
+            parameters: []
+        };
 
         // Resolved return Type.
         const signature = this.typeChecker.getSignatureFromDeclaration(this.item);

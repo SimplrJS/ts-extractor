@@ -49,7 +49,7 @@ export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersRe
     }
 
     public abstract readonly id: string;
-    public abstract itemKind: string;
+    public abstract readonly itemKind: string;
 
     private extractedData: TExtractedData | undefined;
     protected abstract onExtract(): TExtractedData;
