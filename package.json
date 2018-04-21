@@ -43,7 +43,8 @@
         "fs-extra": "^5.0.0",
         "read-package-json": "^2.0.13",
         "simplr-logger": "^1.0.1",
-        "typescript": "^2.7.2"
+        "typescript": "^2.7.2",
+        "typescript-lazy-get-decorator": "^1.1.2"
     },
     "devDependencies": {
         "@simplrjs/test-generator-cli": "^0.1.3",
