@@ -4,15 +4,15 @@ import { AstItemBase } from "./abstractions/ast-item-base";
 export interface ReadonlyAstRegistry {
     get(id: string): AstItemBase<any, any> | undefined;
     has(id: string): boolean;
-    hasItem(item: ts.Symbol | ts.Declaration): boolean;
-    getItemId(item: ts.Symbol | ts.Declaration): string | undefined;
+    hasItem(item: TsItem): boolean;
+    getItemId(item: TsItem): string | undefined;
 }
 
-export type Item = ts.Symbol | ts.Declaration | ts.Type;
+export type TsItem = ts.Symbol | ts.Declaration | ts.Type;
 
 export class AstRegistry implements ReadonlyAstRegistry {
     protected registry: Map<string, AstItemBase<any, any>> = new Map();
-    protected itemToItemId: Map<Item, string> = new Map();
+    protected itemToItemId: Map<TsItem, string> = new Map();
 
     public get(id: string): AstItemBase<any, any> | undefined {
         return this.registry.get(id);
@@ -27,11 +27,11 @@ export class AstRegistry implements ReadonlyAstRegistry {
         return this.registry.has(itemId);
     }
 
-    public hasItem(item: Item): boolean {
+    public hasItem(item: TsItem): boolean {
         return this.itemToItemId.has(item);
     }
 
-    public getItemId(item: Item): string | undefined {
+    public getItemId(item: TsItem): string | undefined {
         return this.itemToItemId.get(item);
     }
 }
