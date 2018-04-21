@@ -16,7 +16,8 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
 
     public readonly itemKind: AstItemKind = AstItemKind.Symbol;
 
-    public getName(): string {
+    @LazyGetter()
+    public get name(): string {
         return TsHelpers.resolveSymbolName(this.item);
     }
 
@@ -66,10 +67,11 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
             return undefined;
         }
 
-        return resolvedParentAstDeclaration.getId();
+        return resolvedParentAstDeclaration.id;
     }
 
-    public getId(): string {
+    @LazyGetter()
+    public get id(): string {
         if (this.parent == null) {
             return "???";
         }
@@ -82,7 +84,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
             itemSeparator = ".";
         }
 
-        return `${this.parentId}${itemSeparator}${this.getName()}`;
+        return `${this.parentId}${itemSeparator}${this.name}`;
     }
 
     protected onExtract(): {} {
@@ -93,7 +95,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         const membersReferences: AstItemMemberReference[] = [];
         if (this.item.declarations == null) {
-            this.logger.Error(`[${this.getId}] Symbol declarations list is undefined.`);
+            this.logger.Error(`[${this.id}] Symbol declarations list is undefined.`);
             return membersReferences;
         }
 
@@ -109,7 +111,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, {}> {
             if (!this.options.itemsRegistry.hasItem(declaration)) {
                 options.addAstItemToRegistry(astItem);
             }
-            membersReferences.push({ id: astItem.getId() });
+            membersReferences.push({ id: astItem.id });
 
             if (sameKind) {
                 counter++;

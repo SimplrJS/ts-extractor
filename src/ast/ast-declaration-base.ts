@@ -1,4 +1,6 @@
 import * as ts from "typescript";
+import { LazyGetter } from "typescript-lazy-get-decorator";
+
 import { AstItemBase, AstItemOptions } from "../abstractions/ast-item-base";
 import { AstSymbol } from "./ast-symbol";
 import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
@@ -15,23 +17,19 @@ export abstract class AstDeclarationBase<TItem extends ts.Declaration, TExtracte
 
     public abstract readonly name: string;
 
-    private parentSymbol: AstSymbol | undefined;
-
-    public getParent(): AstSymbol {
-        if (this.parentSymbol == null) {
-            const parentSymbolId = this.options.itemsRegistry.getItemId(this.symbol);
-            if (parentSymbolId != null) {
-                return this.options.itemsRegistry.get(parentSymbolId) as AstSymbol;
-            }
-
-            this.parentSymbol = new AstSymbol(this.options, this.symbol);
+    @LazyGetter()
+    public get parent(): AstSymbol {
+        const parentSymbolId = this.options.itemsRegistry.getItemId(this.symbol);
+        if (parentSymbolId != null) {
+            return this.options.itemsRegistry.get(parentSymbolId) as AstSymbol;
         }
 
-        return this.parentSymbol;
+        return new AstSymbol(this.options, this.symbol);
     }
 
-    public getId(): string {
-        const parentId: string = this.identifiers.parentId != null ? this.identifiers.parentId : this.getParent().getId();
+    @LazyGetter()
+    public get id(): string {
+        const parentId: string = this.identifiers.parentId != null ? this.identifiers.parentId : this.parent.id;
         const counter: string = this.identifiers.itemCounter != null ? `#${this.identifiers.itemCounter}` : "";
 
         return `${parentId}#${this.itemKind}${counter}`;

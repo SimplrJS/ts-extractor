@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+import { LazyGetter } from "typescript-lazy-get-decorator";
 import * as path from "path";
 
 import { AstItemGatherMembersOptions, AstItemOptions } from "../../abstractions/ast-item-base";
@@ -24,32 +25,30 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
 
     public readonly itemKind: AstItemKind = AstItemKind.SourceFile;
 
-    public getParentId(): string | undefined {
+    public get parentId(): string | undefined {
         return undefined;
     }
 
-    public getId(): string {
+    @LazyGetter()
+    public get id(): string {
         return `${this.packageName}/${this.name}`;
     }
 
+    @LazyGetter()
     public get name(): string {
         const relativePath = path.relative(this.options.projectDirectory, this.item.fileName);
 
         return Helpers.removeExt(relativePath);
     }
 
-    private _packageName: string | undefined;
+    @LazyGetter()
     public get packageName(): string {
-        if (this._packageName == null) {
-            if (this.identifiers.packageName != null) {
-                this._packageName = this.identifiers.packageName;
-            } else {
-                // TODO: Resolve package-name by going up file path and finding package.json.
-                this._packageName = "___@scope/package-name";
-            }
+        if (this.identifiers.packageName != null) {
+            return this.identifiers.packageName;
         }
 
-        return this._packageName;
+        // TODO: Resolve package-name by going up file path and finding package.json.
+        return "___@scope/package-name";
     }
 
     protected onExtract(): {} {
@@ -58,25 +57,20 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, {}> {
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         const membersReferences: AstItemMemberReference[] = [];
-        const sourceFileAstSymbol = this.getParent();
 
-        if (sourceFileAstSymbol == null) {
-            this.logger.Error(`[${this.item.fileName}] Failed to resolve source file symbol.`);
-            return membersReferences;
-        }
-        if (sourceFileAstSymbol.item.exports == null) {
+        if (this.symbol == null || this.symbol.exports == null) {
             this.logger.Error(`[${this.item.fileName}] No exported members were found in source file.`);
             return membersReferences;
         }
 
-        sourceFileAstSymbol.item.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.getId() });
+        this.symbol.exports.forEach(symbol => {
+            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
 
             if (!this.options.itemsRegistry.hasItem(symbol)) {
                 options.addAstItemToRegistry(astSymbol);
             }
 
-            membersReferences.push({ id: astSymbol.getId() });
+            membersReferences.push({ id: astSymbol.id });
         });
 
         return membersReferences;

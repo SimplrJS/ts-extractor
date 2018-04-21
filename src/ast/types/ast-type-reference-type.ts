@@ -11,8 +11,6 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, {}> 
         return {};
     }
 
-    private referenceSymbol: AstItemMemberReference | undefined;
-
     public get reference(): AstSymbol | undefined {
         if (this.referenceSymbol == null) {
             return undefined;
@@ -20,6 +18,8 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, {}> 
 
         return this.options.itemsRegistry.get(this.referenceSymbol.id) as AstSymbol;
     }
+
+    private referenceSymbol: AstItemMemberReference | undefined;
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstItemMemberReference[] {
         const members: AstItemMemberReference[] = [];
@@ -29,7 +29,7 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, {}> 
         // Checking if this type is referencing to itself.
         let isSelf: boolean;
         if (parent != null && parent instanceof AstDeclarationBase) {
-            const parentSymbol = parent.getParent();
+            const parentSymbol = parent.parent;
             isSelf = this.item.aliasSymbol === parentSymbol.item;
         } else {
             isSelf = false;
@@ -37,7 +37,6 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, {}> 
 
         const resolvedSymbol = isSelf ? this.item.getSymbol() : this.item.aliasSymbol || this.item.getSymbol();
         if (resolvedSymbol != null) {
-
             let astSymbol: AstSymbol;
             if (this.options.itemsRegistry.hasItem(resolvedSymbol)) {
                 astSymbol = this.options.itemsRegistry.get(this.options.itemsRegistry.getItemId(resolvedSymbol)!)! as AstSymbol;
@@ -46,7 +45,7 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, {}> 
                 options.addAstItemToRegistry(astSymbol);
             }
 
-            this.referenceSymbol = { id: astSymbol.getId() };
+            this.referenceSymbol = { id: astSymbol.id };
             members.push(this.referenceSymbol);
         }
 

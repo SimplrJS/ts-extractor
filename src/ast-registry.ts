@@ -19,8 +19,8 @@ export class AstRegistry implements ReadonlyAstRegistry {
     }
 
     public set(item: AstItemBase<any, any>): void {
-        this.registry.set(item.getId(), item);
-        this.itemToItemId.set(item.item, item.getId());
+        this.registry.set(item.id, item);
+        this.itemToItemId.set(item.item, item.id);
     }
 
     public has(itemId: string): boolean {

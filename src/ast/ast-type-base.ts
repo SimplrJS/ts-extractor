@@ -1,4 +1,6 @@
 import * as ts from "typescript";
+import { LazyGetter } from "typescript-lazy-get-decorator";
+
 import { AstItemBase, AstItemOptions } from "../abstractions/ast-item-base";
 import { AstTypeIdentifiers } from "../contracts/ast-type";
 import { AstDeclarationBase } from "./ast-declaration-base";
@@ -20,7 +22,8 @@ export abstract class AstTypeBase<TTypeNode extends ts.TypeNode = ts.TypeNode, T
         return this.options.itemsRegistry.get(this.identifiers.parentId) as AstDeclarationBase<ts.Declaration, any> | AstTypeBase;
     }
 
-    public getId(): string {
+    @LazyGetter()
+    public get id(): string {
         const parent = this.getParent();
 
         // Separate Declaration from types.
@@ -36,6 +39,7 @@ export abstract class AstTypeBase<TTypeNode extends ts.TypeNode = ts.TypeNode, T
         return `${this.identifiers.parentId}${itemSeparator}${this.itemKind}${counter}`;
     }
 
+    @LazyGetter()
     public get text(): string {
         return this.typeChecker.typeToString(this.item);
     }

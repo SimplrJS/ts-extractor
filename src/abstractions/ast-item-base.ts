@@ -44,7 +44,7 @@ export abstract class AstItemBase<TItem, TExtractedData> {
         return this.status;
     }
 
-    public abstract getId(): string;
+    public readonly abstract id: string;
     public abstract itemKind: string;
 
     private extractedData: TExtractedData | undefined;

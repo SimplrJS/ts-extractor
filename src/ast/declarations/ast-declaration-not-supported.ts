@@ -15,7 +15,7 @@ export class AstDeclarationNotSupported extends AstDeclarationBase<ts.Declaratio
             return this.item.name.getText();
         }
 
-        return "???";
+        return this.parent.name;
     }
 
     protected onExtract(): {} {
