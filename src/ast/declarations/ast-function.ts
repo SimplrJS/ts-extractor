@@ -1,68 +1,18 @@
 import * as ts from "typescript";
-import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemMemberReference, AstItemKind, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
-import { AstSymbol } from "../ast-symbol";
-import { AstTypeBase } from "../ast-type-base";
+import { AstItemKind } from "../../contracts/ast-item";
+import { AstCallableBase, AstCallableGatheredResult } from "../ast-callable-base";
 
-export interface AstFunctionGatheredResult extends GatheredMembersResult {
-    parameters: AstItemMemberReference[];
-    returnType?: AstItemMemberReference;
-}
-
-export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstFunctionGatheredResult, {}> {
+export class AstFunction extends AstCallableBase<ts.FunctionDeclaration, AstCallableGatheredResult, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.Function;
-
-    public get name(): string {
-        if (this.item.name != null) {
-            return this.item.name.getText();
-        }
-
-        // Fallback to a Symbol name.
-        return this.parent.name;
-    }
 
     protected onExtract(): {} {
         return {};
     }
 
-    public get parameters(): AstSymbol[] {
-        return this.gatheredMembers.parameters.map(x => this.options.itemsRegistry.get(x.id)) as AstSymbol[];
-    }
-
-    public get returnType(): AstTypeBase | undefined {
-        if (this.gatheredMembers.returnType == null) {
-            return undefined;
-        }
-
-        return this.options.itemsRegistry.get(this.gatheredMembers.returnType.id) as AstTypeBase;
-    }
-
-    protected getDefaultGatheredMembers(): AstFunctionGatheredResult {
+    protected getDefaultGatheredMembers(): AstCallableGatheredResult {
         return {
+            typeParameters: [],
             parameters: []
         };
-    }
-
-    protected onGatherMembers(options: AstItemGatherMembersOptions): AstFunctionGatheredResult {
-        const result: AstFunctionGatheredResult = {
-            parameters: this.getMemberReferencesFromDeclarationList(options, this.item.parameters)
-        };
-
-        // Resolved return Type.
-        const signature = this.typeChecker.getSignatureFromDeclaration(this.item);
-        if (signature != null) {
-            const type = this.typeChecker.getReturnTypeOfSignature(signature);
-
-            const returnAstType = this.options.resolveAstType(type, undefined, { parentId: this.id });
-            if (!this.options.itemsRegistry.has(returnAstType.id)) {
-                options.addAstItemToRegistry(returnAstType);
-            }
-
-            result.returnType = {
-                id: returnAstType.id
-            };
-        }
-
-        return result;
     }
 }

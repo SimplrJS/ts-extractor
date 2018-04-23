@@ -14,16 +14,20 @@
 //     }
 // }
 
-export interface MyStuff {
-    length: number;
-}
+// export interface MyStuff {
+//     length: number;
+// }
 
-import { MyInterface } from "./my-types";
+// import { MyInterface } from "./my-types";
 
-export namespace CardHelpers {
-    export function pickCard(p1: string): MyInterface;
-    export function pickCard(p1: MyStuff): string;
-    export function pickCard(p1: string | MyStuff): MyInterface | string {
-        return "card";
-    }
+// export namespace CardHelpers {
+//     export function pickCard(p1: string): MyInterface;
+//     export function pickCard(p1: MyStuff): string;
+//     export function pickCard(p1: string | MyStuff): MyInterface | string {
+//         return "card";
+//     }
+// }
+
+export function foo<TValue>(value: TValue): TValue {
+    return value;
 }

@@ -8,13 +8,13 @@ import { AstItemMemberReference, GatheredMembersResult, AstItemOptions, AstItemG
 import { TsHelpers } from "../ts-helpers";
 
 export abstract class AstDeclarationBase<
-    TItem extends ts.Declaration,
+    TDeclaration extends ts.Declaration,
     TGatherResult extends GatheredMembersResult,
     TExtractedData
-> extends AstItemBase<TItem, TGatherResult, TExtractedData> {
+> extends AstItemBase<TDeclaration, TGatherResult, TExtractedData> {
     constructor(
         options: AstItemOptions,
-        declaration: TItem,
+        declaration: TDeclaration,
         protected readonly symbol: ts.Symbol,
         protected readonly identifiers: AstDeclarationIdentifiers = {}
     ) {
@@ -43,7 +43,7 @@ export abstract class AstDeclarationBase<
 
     protected getMemberReferencesFromDeclarationList(
         options: AstItemGatherMembersOptions,
-        declarations: ts.NodeArray<ts.Declaration>
+        declarations: ts.NodeArray<ts.Declaration> | ts.Declaration[]
     ): AstItemMemberReference[] {
         const result: AstItemMemberReference[] = [];
 
