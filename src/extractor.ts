@@ -13,6 +13,7 @@ import { TsHelpers } from "./ts-helpers";
 import { AstTypeBasic } from "./ast/types/ast-type-basic";
 import { AstDeclarationNotSupported } from "./ast/declarations/ast-declaration-not-supported";
 import { AstItemOptions, AstItemGatherMembersOptions } from "./contracts/ast-item";
+import { ExtractorHelpers } from "./extractor-helpers";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -99,7 +100,11 @@ export class TsExtractor {
 
                 const $constructor = AstDeclarations.get(declaration.kind);
                 if ($constructor == null) {
-                    this.logger.Warn(`Unsupported declaration kind "${ts.SyntaxKind[declaration.kind]}".`);
+                    ExtractorHelpers.logWithNodePosition(
+                        declaration,
+                        `Unsupported declaration kind "${ts.SyntaxKind[declaration.kind]}".`,
+                        x => this.logger.Warn(x)
+                    );
                     return new AstDeclarationNotSupported(options, declaration, symbol, identifiers);
                 }
 

@@ -13,6 +13,7 @@ import { Helpers } from "../../utils/helpers";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
 import { AstDeclarationIdentifiers } from "../../contracts/ast-declaration";
+import { ExtractorHelpers } from "../../extractor-helpers";
 
 export interface AstSourceFileIdentifiers extends AstDeclarationIdentifiers {
     packageName?: string;
@@ -76,7 +77,7 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFi
         };
 
         if (this.symbol == null || this.symbol.exports == null) {
-            this.logger.Error(`[${this.item.fileName}] No exported members were found in source file.`);
+            ExtractorHelpers.logWithNodePosition(this.item, "No exported members were found in source file.", x => this.logger.Warn(x));
             return result;
         }
 

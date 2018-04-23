@@ -10,6 +10,7 @@ import {
     AstItemGatherMembersOptions
 } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
+import { ExtractorHelpers } from "../extractor-helpers";
 
 export interface AstSymbolGatheredResult extends GatheredMembersResult {
     members: AstItemMemberReference[];
@@ -83,7 +84,15 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
     @LazyGetter()
     public get id(): string {
         if (this.parent == null) {
-            this.logger.Error("___ Failed to resolve symbol's parent id.");
+            const astDeclaration = this.getFirstAstDeclaration();
+            const message = "Failed to resolve symbol's parent id.";
+
+            if (astDeclaration == null) {
+                this.logger.Error(message);
+            } else {
+                ExtractorHelpers.logWithNodePosition(astDeclaration.item, message, x => this.logger.Error(x));
+            }
+
             return `???:${this.name}`;
         }
 
