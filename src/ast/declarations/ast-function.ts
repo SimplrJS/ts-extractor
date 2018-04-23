@@ -15,7 +15,8 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstF
 
     public get name(): string {
         if (this.item.name == null) {
-            return "???";
+            // Fallback to a Symbol name.
+            return this.parent.name;
         }
 
         return this.item.name.getText();
