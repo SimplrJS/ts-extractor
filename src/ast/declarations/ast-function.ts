@@ -13,12 +13,12 @@ export class AstFunction extends AstDeclarationBase<ts.FunctionDeclaration, AstF
     public readonly itemKind: AstItemKind = AstItemKind.Function;
 
     public get name(): string {
-        if (this.item.name == null) {
-            // Fallback to a Symbol name.
-            return this.parent.name;
+        if (this.item.name != null) {
+            return this.item.name.getText();
         }
 
-        return this.item.name.getText();
+        // Fallback to a Symbol name.
+        return this.parent.name;
     }
 
     protected onExtract(): {} {
