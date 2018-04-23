@@ -1,10 +1,10 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase, AstItemOptions, GatheredMembersResult, AstItemGatherMembersOptions } from "../abstractions/ast-item-base";
+import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstSymbol } from "./ast-symbol";
 import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
-import { AstItemMemberReference } from "../contracts/ast-item";
+import { AstItemMemberReference, GatheredMembersResult, AstItemOptions, AstItemGatherMembersOptions } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 
 export abstract class AstDeclarationBase<
@@ -51,7 +51,7 @@ export abstract class AstDeclarationBase<
             const symbol = TsHelpers.getSymbolFromDeclaration(declaration, this.typeChecker);
 
             if (symbol != null) {
-                const astSymbol = new AstSymbol(this.options, symbol, {parentId: this.id});
+                const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
 
                 if (!this.options.itemsRegistry.has(astSymbol.id)) {
                     options.addAstItemToRegistry(astSymbol);

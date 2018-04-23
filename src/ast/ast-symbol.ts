@@ -1,8 +1,14 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase, AstItemGatherMembersOptions, AstItemOptions, GatheredMembersResult } from "../abstractions/ast-item-base";
-import { AstItemMemberReference, AstItemKind } from "../contracts/ast-item";
+import { AstItemBase } from "../abstractions/ast-item-base";
+import {
+    AstItemMemberReference,
+    AstItemKind,
+    GatheredMembersResult,
+    AstItemOptions,
+    AstItemGatherMembersOptions
+} from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 
 export interface AstSymbolGatheredResult extends GatheredMembersResult {

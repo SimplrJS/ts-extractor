@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 import { AstTypeBase } from "../ast-type-base";
-import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
-import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
+import { AstItemKind, AstItemMemberReference, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
 

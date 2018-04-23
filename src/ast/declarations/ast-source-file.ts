@@ -2,8 +2,13 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 import * as path from "path";
 
-import { AstItemGatherMembersOptions, AstItemOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
-import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
+import {
+    AstItemMemberReference,
+    AstItemKind,
+    GatheredMembersResult,
+    AstItemOptions,
+    AstItemGatherMembersOptions
+} from "../../contracts/ast-item";
 import { Helpers } from "../../utils/helpers";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";

@@ -1,13 +1,13 @@
 import * as ts from "typescript";
 
-import { AstItemOptions } from "../abstractions/ast-item-base";
 import { AstDeclarationBase } from "./ast-declaration-base";
+import { AstItemOptions } from "../contracts/ast-item";
+import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 
 // Declarations
 import { AstSourceFile } from "./declarations/ast-source-file";
 import { AstNamespace } from "./declarations/ast-namespace";
 import { AstFunction } from "./declarations/ast-function";
-import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 
 export interface AstDeclarationConstructor<TItem extends ts.Declaration = ts.Declaration> {
     new (options: AstItemOptions, declaration: TItem, symbol: ts.Symbol, identifiers?: AstDeclarationIdentifiers): AstDeclarationBase<
@@ -23,4 +23,4 @@ const declarationsArray: ReadonlyArray<[ts.SyntaxKind, AstDeclarationConstructor
     [ts.SyntaxKind.FunctionDeclaration, AstFunction]
 ];
 
-export const AstDeclarations: Map<ts.SyntaxKind, AstDeclarationConstructor<any>> = new Map(declarationsArray);
+export const AstDeclarations: Map<ts.SyntaxKind, AstDeclarationConstructor<ts.Declaration>> = new Map(declarationsArray);

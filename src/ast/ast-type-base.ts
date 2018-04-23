@@ -1,9 +1,10 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase, AstItemOptions, GatheredMembersResult } from "../abstractions/ast-item-base";
+import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstTypeIdentifiers } from "../contracts/ast-type";
 import { AstDeclarationBase } from "./ast-declaration-base";
+import { GatheredMembersResult, AstItemOptions } from "../contracts/ast-item";
 
 export abstract class AstTypeBase<
     TTypeNode extends ts.TypeNode = ts.TypeNode,

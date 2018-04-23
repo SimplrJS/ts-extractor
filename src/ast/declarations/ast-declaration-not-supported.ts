@@ -1,7 +1,6 @@
 import * as ts from "typescript";
 import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemKind } from "../../contracts/ast-item";
-import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
+import { AstItemKind, AstItemGatherMembersOptions, GatheredMembersResult } from "../../contracts/ast-item";
 
 export class AstDeclarationNotSupported extends AstDeclarationBase<ts.Declaration | ts.NamedDeclaration, {}, {}> {
     public readonly itemKind: AstItemKind = AstItemKind.DeclarationNotSupported;

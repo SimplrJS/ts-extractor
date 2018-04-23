@@ -1,37 +1,11 @@
 import * as ts from "typescript";
-import { AstItemMemberReference } from "../contracts/ast-item";
-import { ReadonlyAstRegistry } from "../ast-registry";
+import {
+    GatheredMembersResult,
+    AstItemOptions,
+    AstItemStatus,
+    AstItemGatherMembersOptions
+} from "../contracts/ast-item";
 import { LoggerBuilder } from "simplr-logger";
-import { AstTypeIdentifiers } from "../contracts/ast-type";
-import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
-
-export enum AstItemStatus {
-    Initial = 0,
-    GatheredMembers = 1 << 0,
-    Extracted = 1 << 1,
-    GatheredAndExtracted = GatheredMembers | Extracted
-}
-
-export interface GatheredMembersResult {
-    [key: string]: AstItemMemberReference | AstItemMemberReference[] | undefined;
-}
-
-export interface AstItemOptions {
-    program: ts.Program;
-    projectDirectory: string;
-    itemsRegistry: ReadonlyAstRegistry;
-    logger: LoggerBuilder;
-    resolveAstDeclaration: (
-        declaration: ts.Declaration,
-        symbol: ts.Symbol,
-        identifiers?: AstDeclarationIdentifiers
-    ) => AstItemBase<ts.Declaration, any, any>;
-    resolveAstType: (type: ts.Type, typeNode: ts.TypeNode | undefined, identifiers: AstTypeIdentifiers) => AstItemBase<ts.Type, any, any>;
-}
-
-export interface AstItemGatherMembersOptions {
-    addAstItemToRegistry: (item: AstItemBase<any, any, any>) => void;
-}
 
 export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersResult, TExtractedData> {
     constructor(protected readonly options: AstItemOptions, public readonly item: TItem) {

@@ -6,13 +6,13 @@ import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logg
 
 import { ExtractorDto } from "./contracts/extractor";
 import { AstSourceFile } from "./ast/declarations/ast-source-file";
-import { AstItemOptions, AstItemGatherMembersOptions } from "./abstractions/ast-item-base";
 import { AstRegistry } from "./ast-registry";
 import { AstDeclarations } from "./ast/ast-declarations";
 import { AstTypes } from "./ast/ast-types";
 import { TsHelpers } from "./ts-helpers";
 import { AstTypeBasic } from "./ast/types/ast-type-basic";
 import { AstDeclarationNotSupported } from "./ast/declarations/ast-declaration-not-supported";
+import { AstItemOptions, AstItemGatherMembersOptions } from "./contracts/ast-item";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -103,7 +103,8 @@ export class TsExtractor {
                     return new AstDeclarationNotSupported(options, declaration, symbol, identifiers);
                 }
 
-                return new $constructor(options, declaration, symbol, identifiers);
+                // TODO: Fix any.
+                return new $constructor(options, declaration, symbol, identifiers) as any;
             },
             resolveAstType: (type, typeNode, identifiers) => {
                 if (typeNode == null) {

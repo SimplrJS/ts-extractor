@@ -1,8 +1,7 @@
 import * as ts from "typescript";
 import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemMemberReference, AstItemKind } from "../../contracts/ast-item";
+import { AstItemMemberReference, AstItemKind, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
-import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
 import { AstTypeBase } from "../ast-type-base";
 
 export interface AstFunctionGatheredResult extends GatheredMembersResult {

@@ -2,8 +2,7 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
 import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemGatherMembersOptions, GatheredMembersResult } from "../../abstractions/ast-item-base";
-import { AstItemKind, AstItemMemberReference } from "../../contracts/ast-item";
+import { AstItemKind, AstItemMemberReference, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 
 export interface AstNamespaceGatheredResult extends GatheredMembersResult {
@@ -32,15 +31,11 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNa
         const results: AstNamespaceGatheredResult = {
             members: []
         };
-        if (this.parent == null) {
-            this.logger.Error(`____ Failed to resolve namespace symbol.`);
-            return results;
-        }
-        if (this.parent.item.exports == null) {
+        if (this.symbol.exports == null) {
             return results;
         }
 
-        this.parent.item.exports.forEach(symbol => {
+        this.symbol.exports.forEach(symbol => {
             const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
 
             if (!this.options.itemsRegistry.hasItem(symbol)) {
