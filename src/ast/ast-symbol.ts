@@ -73,12 +73,11 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
             return this.identifiers.parentId;
         }
 
-        const resolvedParentAstDeclaration = this.parent;
-        if (resolvedParentAstDeclaration == null) {
+        if (this.parent == null) {
             return undefined;
         }
 
-        return resolvedParentAstDeclaration.id;
+        return this.parent.id;
     }
 
     @LazyGetter()
@@ -117,28 +116,25 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
         };
     }
 
-    // TODO: Refactor code.
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstSymbolGatheredResult {
         const result: AstSymbolGatheredResult = {
             members: []
         };
+
         if (this.item.declarations == null) {
-            this.logger.Error(`[${this.id}] Symbol declarations list is undefined.`);
+            this.logger.Error(`${this.id}: Symbol declarations list is undefined.`);
             return result;
         }
 
         let counter: number = 0;
         for (const declaration of this.item.declarations) {
             const sameKind = this.item.declarations.findIndex(x => x.kind === declaration.kind && x !== declaration) !== -1;
-
             const astItem = this.options.resolveAstDeclaration(declaration, this.item, { itemCounter: sameKind ? counter : undefined });
-            if (astItem == null) {
-                continue;
-            }
 
             if (!this.options.itemsRegistry.hasItem(declaration)) {
                 options.addAstItemToRegistry(astItem);
             }
+
             result.members.push({ id: astItem.id });
 
             if (sameKind) {
