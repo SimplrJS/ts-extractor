@@ -28,6 +28,12 @@
 //     }
 // }
 
-export function foo<TValue>(value: TValue): TValue {
-    return value;
+export class Foo {
+	public bar(): string {
+    	return "";
+    }
+
+	public static bar(): string {
+    	return "";
+    }
 }

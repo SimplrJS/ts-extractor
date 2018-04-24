@@ -17,6 +17,7 @@ export enum AstItemKind {
     Variable = "Variable",
     Function = "Function",
     Parameter = "Parameter",
+    Class = "Class",
     // Types
     TypeBasic = "TypeBasic",
     TypeReferenceType = "TypeReferenceType"
