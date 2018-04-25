@@ -10,8 +10,9 @@ export interface AstSymbolsContainerOptions {
 }
 
 export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
-    constructor(options: AstSymbolsContainerOptions) {
+    constructor(options: AstSymbolsContainerOptions, items: AstSymbol[] = []) {
         this.logger = options.logger;
+        this.items = items;
     }
 
     protected readonly logger: LoggerBuilder;
@@ -28,7 +29,7 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
 
     public readonly itemKind: AstItemKind = AstItemKind.SymbolsContainer;
 
-    private items: AstSymbol[] = [];
+    private items: AstSymbol[];
 
     public get item(): AstSymbol[] {
         return this.items;

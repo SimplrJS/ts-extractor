@@ -28,12 +28,17 @@
 //     }
 // }
 
-export class Foo {
-	public bar(): string {
-    	return "";
-    }
+// FIXME: Doesn't work.
+// export class Foo {
+// 	public bar(): string {
+//     	return "";
+//     }
 
-	public static bar(): string {
-    	return "";
-    }
+// 	public static bar(): string {
+//     	return "";
+//     }
+// }
+
+export function foo<p1>(p1: p1): p1 {
+	return p1;
 }

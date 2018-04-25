@@ -54,10 +54,12 @@ export class AstRegistry implements ReadonlyAstRegistry {
         const itemId = symbol.id;
 
         let astSymbolsContainer: AstSymbolsContainer;
-        if (this.registry.has(itemId)) {
-            astSymbolsContainer = this.registry.get(itemId) as AstSymbolsContainer;
+        if (!this.registry.has(itemId)) {
+            astSymbolsContainer = new AstSymbolsContainer({ logger: this.logger }, [symbol]);
+            this.registry.set(itemId, astSymbolsContainer);
+            return;
         } else {
-            astSymbolsContainer = new AstSymbolsContainer({ logger: this.logger });
+            astSymbolsContainer = this.registry.get(itemId) as AstSymbolsContainer;
         }
 
         astSymbolsContainer.addAstSymbol(symbol);
