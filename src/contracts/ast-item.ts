@@ -3,14 +3,16 @@ import { LoggerBuilder } from "simplr-logger";
 
 import { ReadonlyAstRegistry } from "../ast-registry";
 import { AstDeclarationIdentifiers } from "./ast-declaration";
-import { AstDeclarationBase } from "../ast/ast-declaration-base";
+import { AstDeclarationBase, AstDeclaration } from "../ast/ast-declaration-base";
 import { AstTypeIdentifiers } from "./ast-type";
-import { AstTypeBase } from "../ast/ast-type-base";
+import { AstTypeBase, AstType } from "../ast/ast-type-base";
 import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstSymbol } from "../ast/ast-symbol";
 
 export enum AstItemKind {
     SourceFile = "SourceFile",
     Symbol = "Symbol",
+    SymbolsContainer = "SymbolsContainer",
     // Declarations
     DeclarationNotSupported = "DeclarationNotSupported",
     Namespace = "Namespace",
@@ -39,6 +41,13 @@ export interface GatheredMembersResult {
     [key: string]: AstItemMemberReference | AstItemMemberReference[] | undefined;
 }
 
+export interface AstItem<TItem, TExtractedData> {
+    readonly id: string;
+    readonly itemKind: AstItemKind;
+    readonly item: TItem;
+    extract(): TExtractedData;
+}
+
 export interface AstItemOptions {
     program: ts.Program;
     projectDirectory: string;
@@ -57,5 +66,6 @@ export interface AstItemOptions {
 }
 
 export interface AstItemGatherMembersOptions {
-    addAstItemToRegistry: (item: AstItemBase<any, any, any>) => void;
+    addAstItemToRegistry: (item: AstDeclaration | AstType) => void;
+    addAstSymbolToRegistry: (symbol: AstSymbol) => void;
 }
