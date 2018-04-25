@@ -1,3 +1,4 @@
+import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 import { LoggerBuilder } from "simplr-logger";
 
@@ -39,6 +40,10 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
      */
     public addAstSymbol(astSymbol: AstSymbol): void {
         this.item.push(astSymbol);
+    }
+
+    public getAstSymbol(symbol: ts.Symbol): AstSymbol | undefined {
+        return this.items.find(x => x.item === symbol);
     }
 
     public extract(): {} {

@@ -3,13 +3,15 @@ import { LazyGetter } from "typescript-lazy-get-decorator";
 
 import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstTypeIdentifiers } from "../contracts/ast-type";
-import { AstDeclarationBase } from "./ast-declaration-base";
+import { AstDeclarationBase, AstDeclaration } from "./ast-declaration-base";
 import { GatheredMembersResult, AstItemOptions } from "../contracts/ast-item";
 
+export type AstType = AstTypeBase<ts.TypeNode, {}, {}>;
+
 export abstract class AstTypeBase<
-    TTypeNode extends ts.TypeNode = ts.TypeNode,
-    TGatherResult extends GatheredMembersResult = {},
-    TExtractedData = {}
+    TTypeNode extends ts.TypeNode,
+    TGatherResult extends GatheredMembersResult,
+    TExtractedData
 > extends AstItemBase<ts.Type, TGatherResult, TExtractedData> {
     constructor(
         options: AstItemOptions,
@@ -20,8 +22,8 @@ export abstract class AstTypeBase<
         super(options, item);
     }
 
-    public getParent(): AstDeclarationBase<ts.Declaration, any, any> | AstTypeBase {
-        return this.options.itemsRegistry.get(this.identifiers.parentId) as AstDeclarationBase<ts.Declaration, any, any> | AstTypeBase;
+    public getParent(): AstDeclaration | AstType {
+        return this.options.itemsRegistry.getAstItemById(this.identifiers.parentId) as AstDeclaration | AstType;
     }
 
     @LazyGetter()

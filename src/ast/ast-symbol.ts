@@ -3,17 +3,19 @@ import { LazyGetter } from "typescript-lazy-get-decorator";
 
 import { AstItemBase } from "../abstractions/ast-item-base";
 import {
-    AstItemMemberReference,
     AstItemKind,
     GatheredMembersResult,
     AstItemOptions,
-    AstItemGatherMembersOptions
+    AstItemGatherMembersOptions,
+    GatheredMemberMetadata
 } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 import { ExtractorHelpers } from "../extractor-helpers";
+import { AstItem } from "../contracts/ast-item";
+import { AstDeclaration } from "./ast-declaration-base";
 
 export interface AstSymbolGatheredResult extends GatheredMembersResult {
-    members: AstItemMemberReference[];
+    members: Array<GatheredMemberMetadata<AstDeclaration>>;
 }
 
 export interface AstSymbolIdentifiers {
@@ -43,10 +45,11 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
         return this.options.resolveAstDeclaration(declaration, this.item);
     }
 
+    // TODO: Check return type.
     @LazyGetter()
-    private get parent(): AstItemBase<any, any, any> | undefined {
-        if (this.identifiers.parentId != null && this.options.itemsRegistry.has(this.identifiers.parentId)) {
-            return this.options.itemsRegistry.get(this.identifiers.parentId);
+    private get parent(): AstItem<any, any> | undefined {
+        if (this.identifiers.parentId != null && this.options.itemsRegistry.hasItemById(this.identifiers.parentId)) {
+            return this.options.itemsRegistry.getAstItemById(this.identifiers.parentId);
         }
 
         const firstAstDeclaration = this.getFirstAstDeclaration();
@@ -135,7 +138,7 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
                 options.addAstItemToRegistry(astItem);
             }
 
-            result.members.push({ id: astItem.id });
+            result.members.push({ item: astItem });
 
             if (sameKind) {
                 counter++;

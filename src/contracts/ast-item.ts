@@ -6,7 +6,6 @@ import { AstDeclarationIdentifiers } from "./ast-declaration";
 import { AstDeclarationBase, AstDeclaration } from "../ast/ast-declaration-base";
 import { AstTypeIdentifiers } from "./ast-type";
 import { AstTypeBase, AstType } from "../ast/ast-type-base";
-import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstSymbol } from "../ast/ast-symbol";
 
 export enum AstItemKind {
@@ -25,8 +24,8 @@ export enum AstItemKind {
     TypeReferenceType = "TypeReferenceType"
 }
 
-export interface AstItemMemberReference {
-    id: string;
+export interface GatheredMemberMetadata<TAstItem extends AstItem<any, any> = any> {
+    item: TAstItem;
     alias?: string;
 }
 
@@ -38,7 +37,7 @@ export enum AstItemStatus {
 }
 
 export interface GatheredMembersResult {
-    [key: string]: AstItemMemberReference | AstItemMemberReference[] | undefined;
+    [key: string]: GatheredMemberMetadata | GatheredMemberMetadata[] | undefined;
 }
 
 export interface AstItem<TItem, TExtractedData> {

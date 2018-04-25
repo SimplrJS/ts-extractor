@@ -4,8 +4,16 @@ import { LazyGetter } from "typescript-lazy-get-decorator";
 import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstSymbol } from "./ast-symbol";
 import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
-import { AstItemMemberReference, GatheredMembersResult, AstItemOptions, AstItemGatherMembersOptions } from "../contracts/ast-item";
+import {
+    GatheredMembersResult,
+    AstItemOptions,
+    AstItemGatherMembersOptions,
+    GatheredMemberMetadata
+} from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
+import { AstSymbolsContainer } from "./ast-symbols-container";
+
+export type AstDeclaration = AstDeclarationBase<ts.Declaration, {}, {}>;
 
 export abstract class AstDeclarationBase<
     TDeclaration extends ts.Declaration,
@@ -25,9 +33,14 @@ export abstract class AstDeclarationBase<
 
     @LazyGetter()
     public get parent(): AstSymbol {
-        const parentSymbolId = this.options.itemsRegistry.getItemId(this.symbol);
+        const parentSymbolId = this.options.itemsRegistry.getIdByItem(this.symbol);
         if (parentSymbolId != null) {
-            return this.options.itemsRegistry.get(parentSymbolId) as AstSymbol;
+            const astSymbolsContainer = this.options.itemsRegistry.getAstItemById(parentSymbolId) as AstSymbolsContainer;
+            const astSymbol = astSymbolsContainer.getAstSymbol(this.symbol);
+
+            if (astSymbol != null) {
+                return astSymbol;
+            }
         }
 
         return new AstSymbol(this.options, this.symbol);
@@ -44,8 +57,8 @@ export abstract class AstDeclarationBase<
     protected getMemberReferencesFromDeclarationList(
         options: AstItemGatherMembersOptions,
         declarations: ts.NodeArray<ts.Declaration> | ts.Declaration[]
-    ): AstItemMemberReference[] {
-        const result: AstItemMemberReference[] = [];
+    ): Array<GatheredMemberMetadata<AstSymbol>> {
+        const result: Array<GatheredMemberMetadata<AstSymbol>> = [];
 
         for (const declaration of declarations) {
             const symbol = TsHelpers.getSymbolFromDeclaration(declaration, this.typeChecker);
@@ -53,10 +66,10 @@ export abstract class AstDeclarationBase<
             if (symbol != null) {
                 const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
 
-                if (!this.options.itemsRegistry.has(astSymbol.id)) {
-                    options.addAstItemToRegistry(astSymbol);
+                if (!this.options.itemsRegistry.hasItemById(astSymbol.id)) {
+                    options.addAstSymbolToRegistry(astSymbol);
                 }
-                result.push({ alias: astSymbol.name, id: astSymbol.id });
+                result.push({ alias: astSymbol.name, item: astSymbol });
             }
         }
 
