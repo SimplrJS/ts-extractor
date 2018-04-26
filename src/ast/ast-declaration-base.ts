@@ -4,12 +4,7 @@ import { LazyGetter } from "typescript-lazy-get-decorator";
 import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstSymbol } from "./ast-symbol";
 import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
-import {
-    GatheredMembersResult,
-    AstItemOptions,
-    AstItemGatherMembersOptions,
-    GatheredMemberMetadata
-} from "../contracts/ast-item";
+import { GatheredMembersResult, AstItemOptions, AstItemGatherMembersOptions, GatheredMemberMetadata } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 import { AstSymbolsContainer } from "./ast-symbols-container";
 
@@ -64,11 +59,16 @@ export abstract class AstDeclarationBase<
             const symbol = TsHelpers.getSymbolFromDeclaration(declaration, this.typeChecker);
 
             if (symbol != null) {
-                const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
+                let astSymbol: AstSymbol | undefined;
+                if (!this.options.itemsRegistry.hasItem(symbol)) {
+                    astSymbol = this.options.itemsRegistry.getAstSymbol(symbol);
+                }
 
-                if (!this.options.itemsRegistry.hasItemById(astSymbol.id)) {
+                if (astSymbol == null) {
+                    astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
                     options.addAstSymbolToRegistry(astSymbol);
                 }
+
                 result.push({ alias: astSymbol.name, item: astSymbol });
             }
         }

@@ -40,7 +40,9 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
      * @internal
      */
     public addAstSymbol(astSymbol: AstSymbol): void {
-        this.item.push(astSymbol);
+        if (this.item.findIndex(x => x.item === x.item) === -1) {
+            this.item.push(astSymbol);
+        }
     }
 
     public getAstSymbol(symbol: ts.Symbol): AstSymbol | undefined {

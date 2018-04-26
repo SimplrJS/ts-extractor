@@ -65,6 +65,7 @@ export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersRe
             return;
         }
 
+        this.logger.Debug(`${this.constructor.name} [${this.id}] Gathering members.`);
         this.gatheredMembersResult = this.onGatherMembers(options);
         this.status |= AstItemStatus.GatheredMembers;
     }

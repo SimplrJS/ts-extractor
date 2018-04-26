@@ -129,6 +129,7 @@ export class TsExtractor {
         // This way prevents infinite loops.
         const gatheringOptions: AstItemGatherMembersOptions = {
             addAstItemToRegistry: item => {
+                this.logger.Debug(`Extractor [${item.id}] Adding ${item.itemKind} to registry.`);
                 registry.addItem(item);
                 item.gatherMembers(gatheringOptions);
             },
@@ -154,8 +155,6 @@ export class TsExtractor {
             gatheringOptions.addAstItemToRegistry(astSourceFile);
             sourceFiles.push(astSourceFile);
         });
-
-        debugger;
 
         return sourceFiles;
     }
