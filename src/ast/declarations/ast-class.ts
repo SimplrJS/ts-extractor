@@ -18,8 +18,8 @@ export interface AstClassGatheredResult extends GatheredMembersResult {
 
 export interface AstClassDto extends AstDeclarationBaseDto {
     kind: AstItemKind.Class;
-    members: any[];
-    typeParameters: any[];
+    members: GatheredMemberReference[];
+    typeParameters: GatheredMemberReference[];
     extends?: AstType;
     implements: AstType[];
     isAbstract: boolean;
