@@ -18,9 +18,9 @@ if (production) {
 export default {
     input: "./src/index.ts",
     output: {
-        file: "./dist/simplr-dropdown.js",
+        file: "./dist/ts-extractor.js",
         format: "cjs",
-        name: "simplr-dropdown"
+        name: "ts-extractor"
     },
     plugins: [
         typescript(),
