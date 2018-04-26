@@ -1,37 +1,66 @@
 import * as ts from "typescript";
-import { AstItemBase } from "./abstractions/ast-item-base";
+import { LoggerBuilder } from "simplr-logger";
+
+import { AstDeclaration } from "./ast/ast-declaration-base";
+import { AstType } from "./ast/ast-type-base";
+import { AstSymbol } from "./ast/ast-symbol";
 
 export interface ReadonlyAstRegistry {
-    get(id: string): AstItemBase<any, any, any> | undefined;
-    has(id: string): boolean;
+    getAstItem(item: ts.Declaration): AstDeclaration | undefined;
+    getAstItem(item: ts.Type): AstType | undefined;
+    getAstItem(item: ts.Symbol): AstSymbol | undefined;
+
+    getAstItemById(id: string): AstDeclaration | AstType | AstSymbol | undefined;
+    hasItemById(id: string): boolean;
     hasItem(item: TsItem): boolean;
-    getItemId(item: TsItem): string | undefined;
+    getIdByItem(item: TsItem): string | undefined;
 }
 
 export type TsItem = ts.Symbol | ts.Declaration | ts.Type;
 
+export interface AstRegistryOptions {
+    logger: LoggerBuilder;
+}
+
 export class AstRegistry implements ReadonlyAstRegistry {
-    protected registry: Map<string, AstItemBase<any, any, any>> = new Map();
+    constructor(options: AstRegistryOptions) {
+        this.logger = options.logger;
+    }
+
+    protected readonly logger: LoggerBuilder;
+    protected registry: Map<string, AstDeclaration | AstType | AstSymbol> = new Map();
     protected itemToItemId: Map<TsItem, string> = new Map();
 
-    public get(id: string): AstItemBase<any, any, any> | undefined {
+    public getAstItem(item: ts.Declaration): AstDeclaration | undefined;
+    public getAstItem(item: ts.Type): AstType | undefined;
+    public getAstItem(item: ts.Symbol): AstSymbol | undefined;
+    public getAstItem(item: TsItem): AstDeclaration | AstType | AstSymbol | undefined {
+        const id = this.itemToItemId.get(item);
+        if (id == null) {
+            return undefined;
+        }
+
         return this.registry.get(id);
     }
 
-    public set(item: AstItemBase<any, any, any>): void {
-        this.registry.set(item.id, item);
-        this.itemToItemId.set(item.item, item.id);
+    public getAstItemById(id: string): AstDeclaration | AstType | AstSymbol | undefined {
+        return this.registry.get(id);
     }
 
-    public has(itemId: string): boolean {
-        return this.registry.has(itemId);
+    public hasItemById(id: string): boolean {
+        return this.registry.has(id);
     }
 
     public hasItem(item: TsItem): boolean {
         return this.itemToItemId.has(item);
     }
 
-    public getItemId(item: TsItem): string | undefined {
+    public getIdByItem(item: TsItem): string | undefined {
         return this.itemToItemId.get(item);
+    }
+
+    public addItem(item: AstDeclaration | AstType | AstSymbol): void {
+        this.registry.set(item.id, item);
+        this.itemToItemId.set(item.item, item.id);
     }
 }

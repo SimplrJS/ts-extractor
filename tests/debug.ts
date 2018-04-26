@@ -2,6 +2,7 @@ import * as path from "path";
 import { GetCompilerOptions } from "../src/utils/tsconfig-json";
 
 import { TsExtractor } from "../src/extractor";
+import { LogLevel } from "simplr-logger";
 
 export async function main(): Promise<void> {
     const projectDirectory = path.resolve(__dirname, "./examples/simple/");
@@ -10,7 +11,8 @@ export async function main(): Promise<void> {
 
     const extractor = new TsExtractor({
         compilerOptions: compilerOptions,
-        projectDirectory: projectDirectory
+        projectDirectory: projectDirectory,
+        logLevel: LogLevel.Debug
     });
 
     extractor.extract([path.resolve("examples/simple/index.ts")]);

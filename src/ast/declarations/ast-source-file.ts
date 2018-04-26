@@ -3,7 +3,7 @@ import { LazyGetter } from "typescript-lazy-get-decorator";
 import * as path from "path";
 
 import {
-    AstItemMemberReference,
+    GatheredMemberMetadata,
     AstItemKind,
     GatheredMembersResult,
     AstItemOptions,
@@ -20,7 +20,7 @@ export interface AstSourceFileIdentifiers extends AstDeclarationIdentifiers {
 }
 
 export interface AstSourceFileGatheredResult extends GatheredMembersResult {
-    members: AstItemMemberReference[];
+    members: Array<GatheredMemberMetadata<AstSymbol>>;
 }
 
 export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFileGatheredResult, {}> {
@@ -73,23 +73,12 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFi
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstSourceFileGatheredResult {
         const result: AstSourceFileGatheredResult = {
-            members: []
+            members: this.getMembersFromSymbolList(options, this.symbol.exports)
         };
 
-        if (this.symbol == null || this.symbol.exports == null) {
+        if (result.members.length === 0) {
             ExtractorHelpers.logWithNodePosition(this.item, "No exported members were found in source file.", x => this.logger.Warn(x));
-            return result;
         }
-
-        this.symbol.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
-
-            if (!this.options.itemsRegistry.hasItem(symbol)) {
-                options.addAstItemToRegistry(astSymbol);
-            }
-
-            result.members.push({ id: astSymbol.id });
-        });
 
         return result;
     }

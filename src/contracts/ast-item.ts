@@ -3,10 +3,10 @@ import { LoggerBuilder } from "simplr-logger";
 
 import { ReadonlyAstRegistry } from "../ast-registry";
 import { AstDeclarationIdentifiers } from "./ast-declaration";
-import { AstDeclarationBase } from "../ast/ast-declaration-base";
+import { AstDeclarationBase, AstDeclaration } from "../ast/ast-declaration-base";
 import { AstTypeIdentifiers } from "./ast-type";
-import { AstTypeBase } from "../ast/ast-type-base";
-import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstTypeBase, AstType } from "../ast/ast-type-base";
+import { AstSymbol } from "../ast/ast-symbol";
 
 export enum AstItemKind {
     SourceFile = "SourceFile",
@@ -17,13 +17,14 @@ export enum AstItemKind {
     Variable = "Variable",
     Function = "Function",
     Parameter = "Parameter",
+    Class = "Class",
     // Types
     TypeBasic = "TypeBasic",
     TypeReferenceType = "TypeReferenceType"
 }
 
-export interface AstItemMemberReference {
-    id: string;
+export interface GatheredMemberMetadata<TAstItem extends AstItem<any, any> = any> {
+    item: TAstItem;
     alias?: string;
 }
 
@@ -35,7 +36,14 @@ export enum AstItemStatus {
 }
 
 export interface GatheredMembersResult {
-    [key: string]: AstItemMemberReference | AstItemMemberReference[] | undefined;
+    [key: string]: GatheredMemberMetadata | GatheredMemberMetadata[] | undefined;
+}
+
+export interface AstItem<TItem, TExtractedData> {
+    readonly id: string;
+    readonly itemKind: AstItemKind;
+    readonly item: TItem;
+    extract(): TExtractedData;
 }
 
 export interface AstItemOptions {
@@ -56,5 +64,5 @@ export interface AstItemOptions {
 }
 
 export interface AstItemGatherMembersOptions {
-    addAstItemToRegistry: (item: AstItemBase<any, any, any>) => void;
+    addAstItemToRegistry: (item: AstDeclaration | AstType | AstSymbol) => void;
 }

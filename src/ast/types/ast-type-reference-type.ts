@@ -1,11 +1,12 @@
 import * as ts from "typescript";
+
 import { AstTypeBase } from "../ast-type-base";
-import { AstItemKind, AstItemMemberReference, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
+import { AstItemKind, GatheredMembersResult, AstItemGatherMembersOptions, GatheredMemberMetadata } from "../../contracts/ast-item";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
 
 export interface AstTypeReferenceTypeGatheredResult extends GatheredMembersResult {
-    reference?: AstItemMemberReference;
+    reference?: GatheredMemberMetadata<AstSymbol>;
 }
 
 export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstTypeReferenceTypeGatheredResult, {}> {
@@ -19,7 +20,7 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstT
             return undefined;
         }
 
-        return this.options.itemsRegistry.get(this.gatheredMembers.reference.id) as AstSymbol;
+        return this.gatheredMembers.reference.item;
     }
 
     protected getDefaultGatheredMembers(): AstTypeReferenceTypeGatheredResult {
@@ -42,17 +43,14 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstT
 
         const resolvedSymbol = isSelf ? this.item.getSymbol() : this.item.aliasSymbol || this.item.getSymbol();
         if (resolvedSymbol != null) {
-            let astSymbol: AstSymbol;
-            if (this.options.itemsRegistry.hasItem(resolvedSymbol)) {
-                astSymbol = this.options.itemsRegistry.get(this.options.itemsRegistry.getItemId(resolvedSymbol)!) as AstSymbol;
-            } else {
+            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstItem(resolvedSymbol);
+
+            if (astSymbol == null) {
                 astSymbol = new AstSymbol(this.options, resolvedSymbol);
                 options.addAstItemToRegistry(astSymbol);
             }
 
-            result.reference = {
-                id: astSymbol.id
-            };
+            result.reference = { item: astSymbol };
         }
 
         return result;
