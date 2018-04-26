@@ -1,8 +1,14 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemKind, GatheredMember, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
+import { AstDeclarationBase, AstDeclarationBaseDto } from "../ast-declaration-base";
+import {
+    AstItemKind,
+    GatheredMember,
+    GatheredMembersResult,
+    AstItemGatherMembersOptions,
+    GatheredMemberReference
+} from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 import { AstType } from "../ast-type-base";
 
@@ -10,7 +16,16 @@ export interface AstClassGatheredResult extends GatheredMembersResult {
     members: Array<GatheredMember<AstSymbol>>;
 }
 
-export class AstClass extends AstDeclarationBase<ts.ClassDeclaration, AstClassGatheredResult, {}> {
+export interface AstClassDto extends AstDeclarationBaseDto {
+    kind: AstItemKind.Class;
+    members: any[];
+    typeParameters: any[];
+    extends?: AstType;
+    implements: AstType[];
+    isAbstract: boolean;
+}
+
+export class AstClass extends AstDeclarationBase<ts.ClassDeclaration, AstClassGatheredResult, AstClassDto> {
     @LazyGetter()
     public get name(): string {
         if (this.item.name != null) {
@@ -21,10 +36,18 @@ export class AstClass extends AstDeclarationBase<ts.ClassDeclaration, AstClassGa
         return this.parent.name;
     }
 
-    public readonly itemKind: AstItemKind = AstItemKind.Class;
+    public readonly itemKind: AstItemKind.Class = AstItemKind.Class;
 
-    protected onExtract(): {} {
-        return {};
+    protected onExtract(): AstClassDto {
+        return {
+            kind: this.itemKind,
+            name: this.name,
+            members: this.gatheredMembers.members.map<GatheredMemberReference>(x => ({ id: x.item.id, alias: x.alias })),
+            extends: undefined,
+            implements: [],
+            isAbstract: false,
+            typeParameters: []
+        };
     }
 
     protected getDefaultGatheredMembers(): AstClassGatheredResult {

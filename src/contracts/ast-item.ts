@@ -23,6 +23,11 @@ export enum AstItemKind {
     TypeReferenceType = "TypeReferenceType"
 }
 
+export interface GatheredMemberReference {
+    id: String;
+    alias?: string;
+}
+
 export interface GatheredMember<TAstItem extends AstItem<any, any> = any> {
     item: TAstItem;
     alias?: string;
