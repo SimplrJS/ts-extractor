@@ -10,7 +10,6 @@
         "inlineSources": true,
         "skipDefaultLibCheck": true,
         "declaration": true,
-        "pretty": true,
         "strict": true,
         "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
