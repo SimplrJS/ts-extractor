@@ -39,10 +39,12 @@ export class AstClass extends AstDeclarationBase<ts.ClassDeclaration, AstClassGa
     public readonly itemKind: AstItemKind.Class = AstItemKind.Class;
 
     protected onExtract(): AstClassDto {
+        const members = this.gatheredMembers.members.map<GatheredMemberReference>(x => ({ id: x.item.id, alias: x.alias }));
+
         return {
             kind: this.itemKind,
             name: this.name,
-            members: this.gatheredMembers.members.map<GatheredMemberReference>(x => ({ id: x.item.id, alias: x.alias })),
+            members: members,
             extends: undefined,
             implements: [],
             isAbstract: false,
