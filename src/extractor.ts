@@ -125,17 +125,13 @@ export class TsExtractor {
             }
         };
 
-        // After adding item to registry we gather members.
-        // This way prevents infinite loops.
         const gatheringOptions: AstItemGatherMembersOptions = {
             addAstItemToRegistry: item => {
                 this.logger.Debug(`Extractor [${item.id}] Adding ${item.itemKind} to registry.`);
                 registry.addItem(item);
+                // After adding item to registry we gather members.
+                // This way prevents infinite loops.
                 item.gatherMembers(gatheringOptions);
-            },
-            addAstSymbolToRegistry: symbol => {
-                registry.addSymbol(symbol);
-                symbol.gatherMembers(gatheringOptions);
             }
         };
 

@@ -43,11 +43,11 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstT
 
         const resolvedSymbol = isSelf ? this.item.getSymbol() : this.item.aliasSymbol || this.item.getSymbol();
         if (resolvedSymbol != null) {
-            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstSymbol(resolvedSymbol);
+            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstItem(resolvedSymbol);
 
             if (astSymbol == null) {
                 astSymbol = new AstSymbol(this.options, resolvedSymbol);
-                options.addAstSymbolToRegistry(astSymbol);
+                options.addAstItemToRegistry(astSymbol);
             }
 
             result.reference = { item: astSymbol };
