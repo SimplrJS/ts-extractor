@@ -34,7 +34,7 @@ export class AstClass extends AstDeclarationBase<ts.ClassDeclaration, AstClassGa
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstClassGatheredResult {
         const results: AstClassGatheredResult = {
-            members: this.getMemberReferencesFromDeclarationList(options, this.item.members)
+            members: this.getMembersFromDeclarationList(options, this.item.members)
         };
 
         return results;

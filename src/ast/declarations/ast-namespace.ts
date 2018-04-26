@@ -29,21 +29,8 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNa
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstNamespaceGatheredResult {
         const results: AstNamespaceGatheredResult = {
-            members: []
+            members: this.getMembersFromSymbolsList(options, this.symbol.exports)
         };
-        if (this.symbol.exports == null) {
-            return results;
-        }
-
-        this.symbol.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
-
-            if (!this.options.itemsRegistry.hasItem(symbol)) {
-                options.addAstSymbolToRegistry(astSymbol);
-            }
-
-            results.members.push({ item: astSymbol });
-        });
 
         return results;
     }

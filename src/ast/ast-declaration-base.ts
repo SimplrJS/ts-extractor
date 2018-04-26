@@ -6,7 +6,6 @@ import { AstSymbol } from "./ast-symbol";
 import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 import { GatheredMembersResult, AstItemOptions, AstItemGatherMembersOptions, GatheredMemberMetadata } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
-import { AstSymbolsContainer } from "./ast-symbols-container";
 
 export type AstDeclaration = AstDeclarationBase<ts.Declaration, {}, {}>;
 
@@ -28,14 +27,9 @@ export abstract class AstDeclarationBase<
 
     @LazyGetter()
     public get parent(): AstSymbol {
-        const parentSymbolId = this.options.itemsRegistry.getIdByItem(this.symbol);
-        if (parentSymbolId != null) {
-            const astSymbolsContainer = this.options.itemsRegistry.getAstItemById(parentSymbolId) as AstSymbolsContainer;
-            const astSymbol = astSymbolsContainer.getAstSymbol(this.symbol);
-
-            if (astSymbol != null) {
-                return astSymbol;
-            }
+        const astSymbol = this.options.itemsRegistry.getAstSymbol(this.symbol);
+        if (astSymbol != null) {
+            return astSymbol;
         }
 
         return new AstSymbol(this.options, this.symbol);
@@ -49,11 +43,15 @@ export abstract class AstDeclarationBase<
         return `${parentId}#${this.itemKind}${counter}`;
     }
 
-    protected getMemberReferencesFromDeclarationList(
+    protected getMembersFromDeclarationList(
         options: AstItemGatherMembersOptions,
-        declarations: ts.NodeArray<ts.Declaration> | ts.Declaration[]
+        declarations: ts.NodeArray<ts.Declaration> | ts.Declaration[] | undefined
     ): Array<GatheredMemberMetadata<AstSymbol>> {
         const result: Array<GatheredMemberMetadata<AstSymbol>> = [];
+
+        if (declarations == null) {
+            return result;
+        }
 
         for (const declaration of declarations) {
             const symbol = TsHelpers.getSymbolFromDeclaration(declaration, this.typeChecker);
@@ -72,6 +70,30 @@ export abstract class AstDeclarationBase<
                 result.push({ alias: astSymbol.name, item: astSymbol });
             }
         }
+
+        return result;
+    }
+
+    protected getMembersFromSymbolsList(
+        options: AstItemGatherMembersOptions,
+        symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined
+    ): Array<GatheredMemberMetadata<AstSymbol>> {
+        const result: Array<GatheredMemberMetadata<AstSymbol>> = [];
+        if (symbols == null) {
+            return result;
+        }
+
+        symbols.forEach(symbol => {
+            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstSymbol(symbol);
+            if (astSymbol == null) {
+                astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
+                options.addAstSymbolToRegistry(astSymbol);
+            }
+
+            result.push({
+                item: astSymbol
+            });
+        });
 
         return result;
     }

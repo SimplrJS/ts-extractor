@@ -50,8 +50,8 @@ export abstract class AstCallableBase<
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): TGatherResult {
         const result: AstCallableGatheredResult = {
-            parameters: this.getMemberReferencesFromDeclarationList(options, this.item.parameters),
-            typeParameters: this.getMemberReferencesFromDeclarationList(options, this.item.typeParameters || [])
+            parameters: this.getMembersFromDeclarationList(options, this.item.parameters),
+            typeParameters: this.getMembersFromDeclarationList(options, this.item.typeParameters || [])
         };
 
         // Resolved return Type.

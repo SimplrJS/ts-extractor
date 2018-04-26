@@ -73,23 +73,12 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFi
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstSourceFileGatheredResult {
         const result: AstSourceFileGatheredResult = {
-            members: []
+            members: this.getMembersFromSymbolsList(options, this.symbol.exports)
         };
 
-        if (this.symbol == null || this.symbol.exports == null) {
+        if (result.members.length === 0) {
             ExtractorHelpers.logWithNodePosition(this.item, "No exported members were found in source file.", x => this.logger.Warn(x));
-            return result;
         }
-
-        this.symbol.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
-
-            if (!this.options.itemsRegistry.hasItem(symbol)) {
-                options.addAstSymbolToRegistry(astSymbol);
-            }
-
-            result.members.push({ item: astSymbol });
-        });
 
         return result;
     }
