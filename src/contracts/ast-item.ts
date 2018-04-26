@@ -11,7 +11,6 @@ import { AstSymbol } from "../ast/ast-symbol";
 export enum AstItemKind {
     SourceFile = "SourceFile",
     Symbol = "Symbol",
-    SymbolsContainer = "SymbolsContainer",
     // Declarations
     DeclarationNotSupported = "DeclarationNotSupported",
     Namespace = "Namespace",
