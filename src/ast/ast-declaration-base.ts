@@ -74,7 +74,7 @@ export abstract class AstDeclarationBase<
         return result;
     }
 
-    protected getMembersFromSymbolsList(
+    protected getMembersFromSymbolList(
         options: AstItemGatherMembersOptions,
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined
     ): Array<GatheredMemberMetadata<AstSymbol>> {

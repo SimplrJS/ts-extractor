@@ -73,7 +73,7 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFi
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstSourceFileGatheredResult {
         const result: AstSourceFileGatheredResult = {
-            members: this.getMembersFromSymbolsList(options, this.symbol.exports)
+            members: this.getMembersFromSymbolList(options, this.symbol.exports)
         };
 
         if (result.members.length === 0) {

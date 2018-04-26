@@ -29,7 +29,7 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNa
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstNamespaceGatheredResult {
         const results: AstNamespaceGatheredResult = {
-            members: this.getMembersFromSymbolsList(options, this.symbol.exports)
+            members: this.getMembersFromSymbolList(options, this.symbol.exports)
         };
 
         return results;
