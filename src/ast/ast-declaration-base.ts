@@ -7,7 +7,7 @@ import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
 import { GatheredMembersResult, AstItemOptions, AstItemGatherMembersOptions, GatheredMember, AstItemKind } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 
-export type AstDeclaration = AstDeclarationBase<ts.Declaration, {}, {}>;
+export type AstDeclaration = AstDeclarationBase<ts.Declaration>;
 
 export interface AstDeclarationBaseDto {
     kind: AstItemKind;
@@ -16,8 +16,8 @@ export interface AstDeclarationBaseDto {
 
 export abstract class AstDeclarationBase<
     TDeclaration extends ts.Declaration,
-    TGatherResult extends GatheredMembersResult,
-    TExtractedData extends AstDeclarationBaseDto
+    TGatherResult extends GatheredMembersResult = GatheredMembersResult,
+    TExtractedData extends AstDeclarationBaseDto = AstDeclarationBaseDto
 > extends AstItemBase<TDeclaration, TGatherResult, TExtractedData> {
     constructor(
         options: AstItemOptions,
