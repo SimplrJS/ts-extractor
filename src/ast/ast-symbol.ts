@@ -45,7 +45,6 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
         return this.options.resolveAstDeclaration(declaration, this.item);
     }
 
-    // TODO: Check return type.
     @LazyGetter()
     private get parent(): AstItem<any, any> | undefined {
         if (this.identifiers.parentId != null && this.options.itemsRegistry.hasItemById(this.identifiers.parentId)) {
