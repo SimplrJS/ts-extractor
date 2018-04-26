@@ -2,11 +2,11 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
 import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemKind, GatheredMemberMetadata, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
+import { AstItemKind, GatheredMember, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 
 export interface AstNamespaceGatheredResult extends GatheredMembersResult {
-    members: Array<GatheredMemberMetadata<AstSymbol>>;
+    members: Array<GatheredMember<AstSymbol>>;
 }
 
 export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNamespaceGatheredResult, {}> {

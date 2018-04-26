@@ -3,7 +3,7 @@ import { LazyGetter } from "typescript-lazy-get-decorator";
 import * as path from "path";
 
 import {
-    GatheredMemberMetadata,
+    GatheredMember,
     AstItemKind,
     GatheredMembersResult,
     AstItemOptions,
@@ -20,7 +20,7 @@ export interface AstSourceFileIdentifiers extends AstDeclarationIdentifiers {
 }
 
 export interface AstSourceFileGatheredResult extends GatheredMembersResult {
-    members: Array<GatheredMemberMetadata<AstSymbol>>;
+    members: Array<GatheredMember<AstSymbol>>;
 }
 
 export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFileGatheredResult, {}> {

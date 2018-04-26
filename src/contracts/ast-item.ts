@@ -23,7 +23,7 @@ export enum AstItemKind {
     TypeReferenceType = "TypeReferenceType"
 }
 
-export interface GatheredMemberMetadata<TAstItem extends AstItem<any, any> = any> {
+export interface GatheredMember<TAstItem extends AstItem<any, any> = any> {
     item: TAstItem;
     alias?: string;
 }
@@ -36,7 +36,7 @@ export enum AstItemStatus {
 }
 
 export interface GatheredMembersResult {
-    [key: string]: GatheredMemberMetadata | GatheredMemberMetadata[] | undefined;
+    [key: string]: GatheredMember | GatheredMember[] | undefined;
 }
 
 export interface AstItem<TItem, TExtractedData> {

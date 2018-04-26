@@ -7,7 +7,7 @@ import {
     GatheredMembersResult,
     AstItemOptions,
     AstItemGatherMembersOptions,
-    GatheredMemberMetadata
+    GatheredMember
 } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 import { ExtractorHelpers } from "../extractor-helpers";
@@ -15,7 +15,7 @@ import { AstItem } from "../contracts/ast-item";
 import { AstDeclaration } from "./ast-declaration-base";
 
 export interface AstSymbolGatheredResult extends GatheredMembersResult {
-    members: Array<GatheredMemberMetadata<AstDeclaration>>;
+    members: Array<GatheredMember<AstDeclaration>>;
 }
 
 export interface AstSymbolIdentifiers {

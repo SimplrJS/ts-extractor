@@ -1,12 +1,12 @@
 import * as ts from "typescript";
 
 import { AstTypeBase } from "../ast-type-base";
-import { AstItemKind, GatheredMembersResult, AstItemGatherMembersOptions, GatheredMemberMetadata } from "../../contracts/ast-item";
+import { AstItemKind, GatheredMembersResult, AstItemGatherMembersOptions, GatheredMember } from "../../contracts/ast-item";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
 
 export interface AstTypeReferenceTypeGatheredResult extends GatheredMembersResult {
-    reference?: GatheredMemberMetadata<AstSymbol>;
+    reference?: GatheredMember<AstSymbol>;
 }
 
 export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstTypeReferenceTypeGatheredResult, {}> {

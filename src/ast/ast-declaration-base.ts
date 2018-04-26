@@ -4,7 +4,7 @@ import { LazyGetter } from "typescript-lazy-get-decorator";
 import { AstItemBase } from "../abstractions/ast-item-base";
 import { AstSymbol } from "./ast-symbol";
 import { AstDeclarationIdentifiers } from "../contracts/ast-declaration";
-import { GatheredMembersResult, AstItemOptions, AstItemGatherMembersOptions, GatheredMemberMetadata } from "../contracts/ast-item";
+import { GatheredMembersResult, AstItemOptions, AstItemGatherMembersOptions, GatheredMember } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 
 export type AstDeclaration = AstDeclarationBase<ts.Declaration, {}, {}>;
@@ -46,8 +46,8 @@ export abstract class AstDeclarationBase<
     protected getMembersFromDeclarationList(
         options: AstItemGatherMembersOptions,
         declarations: ts.NodeArray<ts.Declaration> | ts.Declaration[] | undefined
-    ): Array<GatheredMemberMetadata<AstSymbol>> {
-        const result: Array<GatheredMemberMetadata<AstSymbol>> = [];
+    ): Array<GatheredMember<AstSymbol>> {
+        const result: Array<GatheredMember<AstSymbol>> = [];
 
         if (declarations == null) {
             return result;
@@ -77,8 +77,8 @@ export abstract class AstDeclarationBase<
     protected getMembersFromSymbolList(
         options: AstItemGatherMembersOptions,
         symbols: ts.UnderscoreEscapedMap<ts.Symbol> | undefined
-    ): Array<GatheredMemberMetadata<AstSymbol>> {
-        const result: Array<GatheredMemberMetadata<AstSymbol>> = [];
+    ): Array<GatheredMember<AstSymbol>> {
+        const result: Array<GatheredMember<AstSymbol>> = [];
         if (symbols == null) {
             return result;
         }
