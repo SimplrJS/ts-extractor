@@ -3,11 +3,14 @@ import {
     GatheredMembersResult,
     AstItemOptions,
     AstItemStatus,
-    AstItemGatherMembersOptions
+    AstItemGatherMembersOptions,
+    AstItem,
+    AstItemKind
 } from "../contracts/ast-item";
 import { LoggerBuilder } from "simplr-logger";
 
-export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersResult, TExtractedData> {
+export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersResult, TExtractedData>
+    implements AstItem<TItem, TExtractedData> {
     constructor(protected readonly options: AstItemOptions, public readonly item: TItem) {
         this.logger = options.logger;
         this.typeChecker = options.program.getTypeChecker();
@@ -23,7 +26,7 @@ export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersRe
     }
 
     public abstract readonly id: string;
-    public abstract readonly itemKind: string;
+    public abstract readonly itemKind: AstItemKind;
 
     private extractedData: TExtractedData | undefined;
     protected abstract onExtract(): TExtractedData;
@@ -62,6 +65,7 @@ export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersRe
             return;
         }
 
+        this.logger.Debug(`${this.constructor.name} [${this.id}] Gathering members.`);
         this.gatheredMembersResult = this.onGatherMembers(options);
         this.status |= AstItemStatus.GatheredMembers;
     }

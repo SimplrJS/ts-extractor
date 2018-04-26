@@ -2,14 +2,14 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
 import { AstDeclarationBase } from "./ast-declaration-base";
-import { GatheredMembersResult, AstItemMemberReference, AstItemGatherMembersOptions } from "../contracts/ast-item";
+import { GatheredMembersResult, AstItemGatherMembersOptions, GatheredMemberMetadata } from "../contracts/ast-item";
 import { AstSymbol } from "./ast-symbol";
-import { AstTypeBase } from "./ast-type-base";
+import { AstType } from "./ast-type-base";
 
 export interface AstCallableGatheredResult extends GatheredMembersResult {
-    parameters: AstItemMemberReference[];
-    typeParameters: AstItemMemberReference[];
-    returnType?: AstItemMemberReference;
+    parameters: Array<GatheredMemberMetadata<AstSymbol>>;
+    typeParameters: Array<GatheredMemberMetadata<AstSymbol>>;
+    returnType?: GatheredMemberMetadata<AstType>;
 }
 
 export abstract class AstCallableBase<
@@ -33,25 +33,25 @@ export abstract class AstCallableBase<
     }
 
     public get typeParameters(): AstSymbol[] {
-        return this.gatheredMembers.typeParameters.map(x => this.options.itemsRegistry.get(x.id)) as AstSymbol[];
+        return this.gatheredMembers.typeParameters.map(x => x.item);
     }
 
     public get parameters(): AstSymbol[] {
-        return this.gatheredMembers.parameters.map(x => this.options.itemsRegistry.get(x.id)) as AstSymbol[];
+        return this.gatheredMembers.parameters.map(x => x.item);
     }
 
-    public get returnType(): AstTypeBase | undefined {
+    public get returnType(): AstType | undefined {
         if (this.gatheredMembers.returnType == null) {
             return undefined;
         }
 
-        return this.options.itemsRegistry.get(this.gatheredMembers.returnType.id) as AstTypeBase;
+        return this.gatheredMembers.returnType.item;
     }
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): TGatherResult {
         const result: AstCallableGatheredResult = {
-            parameters: this.getMemberReferencesFromDeclarationList(options, this.item.parameters),
-            typeParameters: this.getMemberReferencesFromDeclarationList(options, this.item.typeParameters || [])
+            parameters: this.getMembersFromDeclarationList(options, this.item.parameters),
+            typeParameters: this.getMembersFromDeclarationList(options, this.item.typeParameters || [])
         };
 
         // Resolved return Type.
@@ -60,12 +60,12 @@ export abstract class AstCallableBase<
             const type = this.typeChecker.getReturnTypeOfSignature(signature);
 
             const returnAstType = this.options.resolveAstType(type, undefined, { parentId: this.id });
-            if (!this.options.itemsRegistry.has(returnAstType.id)) {
+            if (!this.options.itemsRegistry.hasItemById(returnAstType.id)) {
                 options.addAstItemToRegistry(returnAstType);
             }
 
             result.returnType = {
-                id: returnAstType.id
+                item: returnAstType
             };
         }
 

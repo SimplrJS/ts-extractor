@@ -84,7 +84,7 @@ export class TsExtractor {
     public extract(files: string[]): AstSourceFile[] {
         const rootNames = this.resolveFilesLocation(files);
         const program = ts.createProgram(rootNames, this.config.compilerOptions);
-        const registry = new AstRegistry();
+        const registry = new AstRegistry({ logger: this.logger });
 
         this.checkTsErrors(program);
 
@@ -95,7 +95,7 @@ export class TsExtractor {
             logger: this.logger,
             resolveAstDeclaration: (declaration, symbol, identifiers) => {
                 if (registry.hasItem(declaration)) {
-                    return registry.get(registry.getItemId(declaration)!)!;
+                    return registry.getAstItemById(registry.getIdByItem(declaration)!)!;
                 }
 
                 const $constructor = AstDeclarations.get(declaration.kind);
@@ -125,12 +125,17 @@ export class TsExtractor {
             }
         };
 
+        // After adding item to registry we gather members.
+        // This way prevents infinite loops.
         const gatheringOptions: AstItemGatherMembersOptions = {
             addAstItemToRegistry: item => {
-                registry.set(item);
-                // After adding item to registry we gather members.
-                // This way prevents infinite loops.
+                this.logger.Debug(`Extractor [${item.id}] Adding ${item.itemKind} to registry.`);
+                registry.addItem(item);
                 item.gatherMembers(gatheringOptions);
+            },
+            addAstSymbolToRegistry: symbol => {
+                registry.addSymbol(symbol);
+                symbol.gatherMembers(gatheringOptions);
             }
         };
 

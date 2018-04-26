@@ -2,11 +2,11 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
 import { AstDeclarationBase } from "../ast-declaration-base";
-import { AstItemKind, AstItemMemberReference, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
+import { AstItemKind, GatheredMemberMetadata, GatheredMembersResult, AstItemGatherMembersOptions } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 
 export interface AstNamespaceGatheredResult extends GatheredMembersResult {
-    members: AstItemMemberReference[];
+    members: Array<GatheredMemberMetadata<AstSymbol>>;
 }
 
 export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNamespaceGatheredResult, {}> {
@@ -29,21 +29,8 @@ export class AstNamespace extends AstDeclarationBase<ts.ModuleDeclaration, AstNa
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstNamespaceGatheredResult {
         const results: AstNamespaceGatheredResult = {
-            members: []
+            members: this.getMembersFromSymbolList(options, this.symbol.exports)
         };
-        if (this.symbol.exports == null) {
-            return results;
-        }
-
-        this.symbol.exports.forEach(symbol => {
-            const astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
-
-            if (!this.options.itemsRegistry.hasItem(symbol)) {
-                options.addAstItemToRegistry(astSymbol);
-            }
-
-            results.members.push({ id: astSymbol.id });
-        });
 
         return results;
     }

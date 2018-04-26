@@ -1,37 +1,82 @@
 import * as ts from "typescript";
-import { AstItemBase } from "./abstractions/ast-item-base";
+import { LoggerBuilder } from "simplr-logger";
+
+import { AstDeclaration } from "./ast/ast-declaration-base";
+import { AstType } from "./ast/ast-type-base";
+import { AstSymbol } from "./ast/ast-symbol";
+import { AstSymbolsContainer } from "./ast/ast-symbols-container";
 
 export interface ReadonlyAstRegistry {
-    get(id: string): AstItemBase<any, any, any> | undefined;
-    has(id: string): boolean;
+    getAstItemById(id: string): AstDeclaration | AstType | AstSymbolsContainer | undefined;
+    hasItemById(id: string): boolean;
     hasItem(item: TsItem): boolean;
-    getItemId(item: TsItem): string | undefined;
+    getIdByItem(item: TsItem): string | undefined;
+    getAstSymbol(symbol: ts.Symbol): AstSymbol | undefined;
 }
 
 export type TsItem = ts.Symbol | ts.Declaration | ts.Type;
 
+export interface AstRegistryOptions {
+    logger: LoggerBuilder;
+}
+
 export class AstRegistry implements ReadonlyAstRegistry {
-    protected registry: Map<string, AstItemBase<any, any, any>> = new Map();
+    constructor(options: AstRegistryOptions) {
+        this.logger = options.logger;
+    }
+
+    protected readonly logger: LoggerBuilder;
+    protected registry: Map<string, AstDeclaration | AstType | AstSymbolsContainer> = new Map();
     protected itemToItemId: Map<TsItem, string> = new Map();
 
-    public get(id: string): AstItemBase<any, any, any> | undefined {
+    public getAstItemById(id: string): AstDeclaration | AstType | AstSymbolsContainer | undefined {
         return this.registry.get(id);
     }
 
-    public set(item: AstItemBase<any, any, any>): void {
-        this.registry.set(item.id, item);
-        this.itemToItemId.set(item.item, item.id);
-    }
-
-    public has(itemId: string): boolean {
-        return this.registry.has(itemId);
+    public hasItemById(id: string): boolean {
+        return this.registry.has(id);
     }
 
     public hasItem(item: TsItem): boolean {
         return this.itemToItemId.has(item);
     }
 
-    public getItemId(item: TsItem): string | undefined {
+    public getIdByItem(item: TsItem): string | undefined {
         return this.itemToItemId.get(item);
+    }
+
+    public addItem(item: AstDeclaration | AstType): void {
+        this.registry.set(item.id, item);
+        this.itemToItemId.set(item.item, item.id);
+    }
+
+    public addSymbol(symbol: AstSymbol): void {
+        const itemId = symbol.id;
+        this.itemToItemId.set(symbol.item, itemId);
+
+        let astSymbolsContainer: AstSymbolsContainer;
+        if (!this.registry.has(itemId)) {
+            this.logger.Debug(`Registry [${itemId}] Symbols container is missing. Creating...`);
+            astSymbolsContainer = new AstSymbolsContainer({ logger: this.logger }, [symbol]);
+            this.registry.set(itemId, astSymbolsContainer);
+        } else {
+            astSymbolsContainer = this.registry.get(itemId) as AstSymbolsContainer;
+            this.logger.Debug(`Registry [${itemId}] Symbol added to Symbols container.`);
+            astSymbolsContainer.addAstSymbol(symbol);
+        }
+    }
+
+    public getAstSymbol(symbol: ts.Symbol): AstSymbol | undefined {
+        const id = this.itemToItemId.get(symbol);
+        if (id == null) {
+            return undefined;
+        }
+
+        const item = this.registry.get(id);
+        if (item != null && item instanceof AstSymbolsContainer) {
+            return item.getAstSymbol(symbol);
+        }
+
+        return undefined;
     }
 }
