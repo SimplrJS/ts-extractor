@@ -9,7 +9,6 @@ export interface ReadonlyAstRegistry {
     getAstItem(item: ts.Declaration): AstDeclaration | undefined;
     getAstItem(item: ts.Type): AstType | undefined;
     getAstItem(item: ts.Symbol): AstSymbol | undefined;
-    getAstItem(item: TsItem): AstDeclaration | AstType | AstSymbol | undefined;
 
     getAstItemById(id: string): AstDeclaration | AstType | AstSymbol | undefined;
     hasItemById(id: string): boolean;
