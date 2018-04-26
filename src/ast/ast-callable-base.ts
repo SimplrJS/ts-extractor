@@ -1,8 +1,8 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstDeclarationBase } from "./ast-declaration-base";
-import { GatheredMembersResult, AstItemGatherMembersOptions, GatheredMember } from "../contracts/ast-item";
+import { AstDeclarationBase, AstDeclarationBaseDto } from "./ast-declaration-base";
+import { GatheredMembersResult, AstItemGatherMembersOptions, GatheredMember, GatheredMemberReference } from "../contracts/ast-item";
 import { AstSymbol } from "./ast-symbol";
 import { AstType } from "./ast-type-base";
 
@@ -12,10 +12,17 @@ export interface AstCallableGatheredResult extends GatheredMembersResult {
     returnType?: GatheredMember<AstType>;
 }
 
+export interface AstCallableBaseDto extends AstDeclarationBaseDto {
+    typeParameters: GatheredMemberReference[];
+    parameters: GatheredMemberReference[];
+    isOverloadBase: boolean;
+    returnType?: GatheredMemberReference;
+}
+
 export abstract class AstCallableBase<
     TDeclaration extends ts.SignatureDeclaration,
     TGatherResult extends AstCallableGatheredResult,
-    TExtractedData
+    TExtractedData extends AstCallableBaseDto = AstCallableBaseDto
 > extends AstDeclarationBase<TDeclaration, TGatherResult, TExtractedData> {
     @LazyGetter()
     public get name(): string {
