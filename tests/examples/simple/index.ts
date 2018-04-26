@@ -28,7 +28,6 @@
 //     }
 // }
 
-// FIXME: Doesn't work.
 // export class Foo {
 // 	public bar(): string {
 //     	return "";
