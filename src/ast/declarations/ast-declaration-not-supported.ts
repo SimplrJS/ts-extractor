@@ -1,10 +1,10 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstDeclarationBase } from "../ast-declaration-base";
+import { AstDeclarationBase, AstDeclarationBaseDto } from "../ast-declaration-base";
 import { AstItemKind, AstItemGatherMembersOptions, GatheredMembersResult } from "../../contracts/ast-item";
 
-export class AstDeclarationNotSupported extends AstDeclarationBase<ts.Declaration | ts.NamedDeclaration, {}, {}> {
+export class AstDeclarationNotSupported extends AstDeclarationBase<ts.Declaration | ts.NamedDeclaration> {
     private static counter: number = 0;
 
     /**
@@ -38,8 +38,11 @@ export class AstDeclarationNotSupported extends AstDeclarationBase<ts.Declaratio
         return this.parent.name;
     }
 
-    protected onExtract(): {} {
-        return {};
+    protected onExtract(): AstDeclarationBaseDto {
+        return {
+            kind: this.itemKind,
+            name: this.name
+        };
     }
 
     protected getDefaultGatheredMembers(): {} {
