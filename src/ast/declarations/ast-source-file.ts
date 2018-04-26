@@ -7,10 +7,11 @@ import {
     AstItemKind,
     GatheredMembersResult,
     AstItemOptions,
-    AstItemGatherMembersOptions
+    AstItemGatherMembersOptions,
+    GatheredMemberReference
 } from "../../contracts/ast-item";
 import { Helpers } from "../../utils/helpers";
-import { AstDeclarationBase } from "../ast-declaration-base";
+import { AstDeclarationBase, AstDeclarationBaseDto } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
 import { AstDeclarationIdentifiers } from "../../contracts/ast-declaration";
 import { ExtractorHelpers } from "../../extractor-helpers";
@@ -23,7 +24,12 @@ export interface AstSourceFileGatheredResult extends GatheredMembersResult {
     members: Array<GatheredMember<AstSymbol>>;
 }
 
-export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFileGatheredResult, {}> {
+export interface AstSourceFileDto extends AstDeclarationBaseDto {
+    kind: AstItemKind.SourceFile;
+    members: GatheredMemberReference[];
+}
+
+export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFileGatheredResult, AstSourceFileDto> {
     constructor(
         options: AstItemOptions,
         sourceFile: ts.SourceFile,
@@ -33,7 +39,7 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFi
         super(options, sourceFile, symbol);
     }
 
-    public readonly itemKind: AstItemKind = AstItemKind.SourceFile;
+    public readonly itemKind: AstItemKind.SourceFile = AstItemKind.SourceFile;
 
     public get parentId(): string | undefined {
         return undefined;
@@ -61,8 +67,14 @@ export class AstSourceFile extends AstDeclarationBase<ts.SourceFile, AstSourceFi
         return "___@scope/package-name";
     }
 
-    protected onExtract(): {} {
-        return {};
+    protected onExtract(): AstSourceFileDto {
+        const members = this.gatheredMembers.members.map<GatheredMemberReference>(x => ({ id: x.item.id, alias: x.alias }));
+
+        return {
+            kind: this.itemKind,
+            name: this.name,
+            members: members
+        };
     }
 
     protected getDefaultGatheredMembers(): AstSourceFileGatheredResult {
