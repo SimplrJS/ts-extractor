@@ -2,21 +2,27 @@ import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 import { LoggerBuilder } from "simplr-logger";
 
-import { AstSymbol } from "./ast-symbol";
+import { AstSymbol, AstSymbolDto } from "./ast-symbol";
 import { AstItem, AstItemKind } from "../contracts/ast-item";
 
 export interface AstSymbolsContainerOptions {
     logger: LoggerBuilder;
 }
 
-export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
+export interface AstSymbolsContainerDto {
+    kind: AstItemKind.SymbolsContainer;
+    name: string;
+    symbols: AstSymbolDto[];
+}
+
+export class AstSymbolsContainer implements AstItem<AstSymbol[], AstSymbolsContainerDto> {
     constructor(options: AstSymbolsContainerOptions, items: AstSymbol[] = []) {
         this.logger = options.logger;
         this.items = items;
     }
 
     protected readonly logger: LoggerBuilder;
-    public readonly itemKind: AstItemKind = AstItemKind.SymbolsContainer;
+    public readonly itemKind: AstItemKind.SymbolsContainer = AstItemKind.SymbolsContainer;
 
     @LazyGetter()
     public get id(): string {
@@ -26,6 +32,16 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
 
         this.logger.Error("Failed to resolve AstSymbolsContainer's id.");
         return "__UNRESOLVED-ID";
+    }
+
+    @LazyGetter()
+    public get name(): string {
+        for (const item of this.item) {
+            return item.name;
+        }
+
+        this.logger.Error("Failed to resolve AstSymbolsContainer's name.");
+        return "__UNRESOLVED-NAME";
     }
 
     private items: AstSymbol[];
@@ -48,7 +64,13 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
         return this.items.find(x => x.item === symbol);
     }
 
-    public extract(): {} {
-        throw new Error("Method not implemented.");
+    public extract(): AstSymbolsContainerDto {
+        const symbols = this.items.map<AstSymbolDto>(x => x.extract());
+
+        return {
+            kind: this.itemKind,
+            name: this.name,
+            symbols: symbols
+        };
     }
 }
