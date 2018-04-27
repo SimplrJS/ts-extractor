@@ -6,7 +6,7 @@ declare module "read-package-json" {
      * @param strict True to enforce SemVer 2.0 version strings, and other strict requirements.
      * @param callback Gets called with (er, data), as is The Node Way.
      */
-    function readJson<TData>(file: string, logFunction: Function, strict: boolean, callback: (err: Error, data: TData) => void): void;
+    function readJson<TData>(file: string, logFunction?: Function, strict?: boolean, callback?: (err: Error, data: TData) => void): void;
     namespace readJson {
         export namespace PackageJsonSchema {
             /**

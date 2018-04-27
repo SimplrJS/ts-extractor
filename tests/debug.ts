@@ -1,5 +1,6 @@
 import * as path from "path";
 import { getCompilerOptions } from "../src/utils/tsconfig-json";
+import { readPackageJson } from "../src/utils/package-json";
 
 import { TsExtractor } from "../src/extractor";
 import { LogLevel } from "simplr-logger";
@@ -7,10 +8,13 @@ import { LogLevel } from "simplr-logger";
 export async function main(): Promise<void> {
     const projectDirectory = path.resolve(__dirname, "./examples/simple/");
     const tsconfigPath = path.join(projectDirectory, "tsconfig.json");
+    const packageJsonPath = path.join(projectDirectory, "package.json");
     const compilerOptions = await getCompilerOptions(tsconfigPath);
+    const packageJson = await readPackageJson(packageJsonPath);
 
     const extractor = new TsExtractor({
         compilerOptions: compilerOptions,
+        packageJson: packageJson,
         projectDirectory: projectDirectory,
         logLevel: LogLevel.Debug
     });

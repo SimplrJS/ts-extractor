@@ -1,6 +1,6 @@
 export interface ExtractorDto {
-    name: string;
-    version: string;
+    name?: string;
+    version?: string;
     registry: ExtractorRegistryDto;
     files: string[];
 }

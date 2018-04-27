@@ -3,7 +3,7 @@ import { PackageJson } from "read-package-json";
 
 export async function readPackageJson(
     packageJsonPath: string,
-    errorReporter: (...messages: string[]) => void,
+    errorReporter?: (...messages: string[]) => void,
     strict: boolean = false
 ): Promise<PackageJson> {
     return new Promise<PackageJson>((resolve, reject) => {

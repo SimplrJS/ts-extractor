@@ -2,6 +2,7 @@ import * as ts from "typescript";
 import * as os from "os";
 import * as path from "path";
 import * as fs from "fs-extra";
+import { PackageJson } from "read-package-json";
 import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logger";
 
 import { ExtractorDto } from "./contracts/extractor";
@@ -19,6 +20,7 @@ import { pathIsInside } from "./utils/path-is-inside";
 export interface TsExtractorConfig {
     projectDirectory: string;
     compilerOptions: ts.CompilerOptions;
+    packageJson: PackageJson;
     logLevel?: LogLevel;
 }
 
@@ -35,6 +37,10 @@ export class TsExtractor {
             .SetDefaultLogLevel(this.config.logLevel || LogLevel.Information)
             .Build();
         this.logger = new LoggerBuilder(loggerConfiguration);
+
+        if (config.packageJson.name == null || config.packageJson.version) {
+            this.logger.Error("[package.json] Package name and version must be defined.");
+        }
     }
 
     protected logger: LoggerBuilder;
@@ -157,7 +163,7 @@ export class TsExtractor {
                 return;
             }
 
-            const astSourceFile = new AstSourceFile(options, sourceFile, symbolSourceFile, { packageName: "@simplrjs/package-name" });
+            const astSourceFile = new AstSourceFile(options, sourceFile, symbolSourceFile, { packageName: this.config.packageJson.name });
             gatheringOptions.addAstItemToRegistry(astSourceFile);
             sourceFiles.push(astSourceFile);
         });
@@ -179,8 +185,8 @@ export class TsExtractor {
         }
 
         return {
-            name: "package_name",
-            version: "_0.0.0",
+            name: this.config.packageJson.name,
+            version: this.config.packageJson.version,
             registry: registry,
             files: filesIds
         };
