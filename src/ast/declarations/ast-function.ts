@@ -25,7 +25,7 @@ export class AstFunction extends AstCallableBase<ts.FunctionDeclaration, AstCall
             typeParameters: typeParameters,
             parameters: parameters,
             returnType: returnType,
-            isOverloadBase: false
+            isOverloadBase: this.isOverloadBase
         };
     }
 
