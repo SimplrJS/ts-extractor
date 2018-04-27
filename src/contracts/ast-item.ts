@@ -11,6 +11,7 @@ import { AstSymbol } from "../ast/ast-symbol";
 export enum AstItemKind {
     SourceFile = "SourceFile",
     Symbol = "Symbol",
+    SymbolsContainer = "SymbolsContainer",
     // Declarations
     DeclarationNotSupported = "DeclarationNotSupported",
     Namespace = "Namespace",
@@ -69,5 +70,6 @@ export interface AstItemOptions {
 }
 
 export interface AstItemGatherMembersOptions {
-    addAstItemToRegistry: (item: AstDeclaration | AstType | AstSymbol) => void;
+    addAstItemToRegistry: (item: AstDeclaration | AstType) => void;
+    addAstSymbolToRegistry: (symbol: AstSymbol) => void;
 }

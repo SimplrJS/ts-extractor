@@ -1,7 +1,13 @@
 import * as ts from "typescript";
 
-import { AstTypeBase } from "../ast-type-base";
-import { AstItemKind, GatheredMembersResult, AstItemGatherMembersOptions, GatheredMember } from "../../contracts/ast-item";
+import { AstTypeBase, AstTypeBaseDto } from "../ast-type-base";
+import {
+    AstItemKind,
+    GatheredMembersResult,
+    AstItemGatherMembersOptions,
+    GatheredMember,
+    GatheredMemberReference
+} from "../../contracts/ast-item";
 import { AstDeclarationBase } from "../ast-declaration-base";
 import { AstSymbol } from "../ast-symbol";
 
@@ -9,10 +15,15 @@ export interface AstTypeReferenceTypeGatheredResult extends GatheredMembersResul
     reference?: GatheredMember<AstSymbol>;
 }
 
-export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstTypeReferenceTypeGatheredResult, {}> {
+export interface AstTypeReferenceTypeDto extends AstTypeBaseDto {
+    reference?: GatheredMemberReference;
+}
+
+export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstTypeReferenceTypeGatheredResult, AstTypeReferenceTypeDto> {
     public readonly itemKind: AstItemKind = AstItemKind.TypeReferenceType;
-    protected onExtract(): {} {
-        return {};
+
+    protected onExtract(): AstTypeReferenceTypeDto {
+        throw new Error(`[${this.constructor.name}] ${this.onExtract.name} is not implemented.`);
     }
 
     public get reference(): AstSymbol | undefined {
@@ -43,11 +54,11 @@ export class AstTypeReferenceType extends AstTypeBase<ts.TypeReferenceType, AstT
 
         const resolvedSymbol = isSelf ? this.item.getSymbol() : this.item.aliasSymbol || this.item.getSymbol();
         if (resolvedSymbol != null) {
-            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstItem(resolvedSymbol);
+            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstSymbol(resolvedSymbol);
 
             if (astSymbol == null) {
                 astSymbol = new AstSymbol(this.options, resolvedSymbol);
-                options.addAstItemToRegistry(astSymbol);
+                options.addAstSymbolToRegistry(astSymbol);
             }
 
             result.reference = { item: astSymbol };

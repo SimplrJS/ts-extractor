@@ -31,7 +31,7 @@ export abstract class AstDeclarationBase<
 
     @LazyGetter()
     public get parent(): AstSymbol {
-        const astSymbol = this.options.itemsRegistry.getAstItem(this.symbol);
+        const astSymbol = this.options.itemsRegistry.getAstSymbol(this.symbol);
         if (astSymbol != null) {
             return astSymbol;
         }
@@ -62,13 +62,13 @@ export abstract class AstDeclarationBase<
 
             if (symbol != null) {
                 let astSymbol: AstSymbol | undefined;
-                if (!this.options.itemsRegistry.hasItem(symbol)) {
-                    astSymbol = this.options.itemsRegistry.getAstItem(symbol);
+                if (this.options.itemsRegistry.hasItem(symbol)) {
+                    astSymbol = this.options.itemsRegistry.getAstSymbol(symbol);
                 }
 
                 if (astSymbol == null) {
                     astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
-                    options.addAstItemToRegistry(astSymbol);
+                    options.addAstSymbolToRegistry(astSymbol);
                 }
 
                 result.push({ alias: astSymbol.name, item: astSymbol });
@@ -88,10 +88,10 @@ export abstract class AstDeclarationBase<
         }
 
         symbols.forEach(symbol => {
-            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstItem(symbol);
+            let astSymbol: AstSymbol | undefined = this.options.itemsRegistry.getAstSymbol(symbol);
             if (astSymbol == null) {
                 astSymbol = new AstSymbol(this.options, symbol, { parentId: this.id });
-                options.addAstItemToRegistry(astSymbol);
+                options.addAstSymbolToRegistry(astSymbol);
             }
 
             result.push({
