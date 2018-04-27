@@ -28,16 +28,18 @@
 //     }
 // }
 
-// export class Foo {
-// 	public bar(): string {
-//     	return "";
-//     }
+export class Bar {}
 
-// 	public static bar(): string {
-//     	return "";
-//     }
-// }
+export class Foo extends Bar {
+    public bar(): string {
+        return "";
+    }
 
-export function foo<p1>(p1: p1): p1 {
-	return p1;
+    public static bar(): string {
+        return "";
+    }
 }
+
+// export function foo<p1>(p1: p1): p1 {
+// 	return p1;
+// }

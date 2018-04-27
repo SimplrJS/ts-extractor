@@ -11,17 +11,22 @@ import {
 } from "../../contracts/ast-item";
 import { AstSymbol } from "../ast-symbol";
 import { AstType } from "../ast-type-base";
+import { TsHelpers } from "../../ts-helpers";
+import { ExtractorHelpers } from "../../extractor-helpers";
 
 export interface AstClassGatheredResult extends GatheredMembersResult {
     members: Array<GatheredMember<AstSymbol>>;
+    typeParameters: Array<GatheredMember<AstSymbol>>;
+    implements: Array<GatheredMember<AstType>>;
+    extends?: GatheredMember<AstType>;
 }
 
 export interface AstClassDto extends AstDeclarationBaseDto {
     kind: AstItemKind.Class;
     members: GatheredMemberReference[];
     typeParameters: GatheredMemberReference[];
-    extends?: AstType;
-    implements: AstType[];
+    extends?: GatheredMemberReference;
+    implements: GatheredMemberReference[];
     isAbstract: boolean;
 }
 
@@ -40,28 +45,73 @@ export class AstClass extends AstDeclarationBase<ts.ClassDeclaration, AstClassGa
 
     protected onExtract(): AstClassDto {
         const members = this.gatheredMembers.members.map<GatheredMemberReference>(x => ({ id: x.item.id, alias: x.alias }));
+        const typeParameters = this.gatheredMembers.typeParameters.map<GatheredMemberReference>(x => ({ id: x.item.id, alias: x.alias }));
+        const isAbstract = TsHelpers.modifierKindExistsInModifiers(this.item.modifiers, ts.SyntaxKind.AbstractKeyword);
+
+        // Extends and implements
+        const $implements = this.gatheredMembers.implements.map<GatheredMemberReference>(x => ({ id: x.item.id }));
+        let $extends: GatheredMemberReference | undefined;
+        if (this.gatheredMembers.extends != null) {
+            $extends = { id: this.gatheredMembers.extends.item.id };
+        }
 
         return {
             kind: this.itemKind,
             name: this.name,
+            typeParameters: typeParameters,
             members: members,
-            extends: undefined,
-            implements: [],
-            isAbstract: false,
-            typeParameters: []
+            extends: $extends,
+            implements: $implements,
+            isAbstract: isAbstract
         };
     }
 
     protected getDefaultGatheredMembers(): AstClassGatheredResult {
         return {
-            members: []
+            members: [],
+            typeParameters: [],
+            implements: []
         };
     }
 
     protected onGatherMembers(options: AstItemGatherMembersOptions): AstClassGatheredResult {
         const results: AstClassGatheredResult = {
-            members: this.getMembersFromDeclarationList(options, this.item.members)
+            ...this.getDefaultGatheredMembers(),
+            members: this.getMembersFromDeclarationList(options, this.item.members),
+            typeParameters: this.getMembersFromDeclarationList(options, this.item.typeParameters)
         };
+
+        // extends and implements.
+        if (this.item.heritageClauses != null) {
+            const $implements = this.item.heritageClauses.find(x => x.token === ts.SyntaxKind.ImplementsKeyword);
+            const $extends = this.item.heritageClauses.find(x => x.token === ts.SyntaxKind.ExtendsKeyword);
+
+            if ($implements != null) {
+                $implements.types.forEach(expressionType => {
+                    const type = this.typeChecker.getTypeFromTypeNode(expressionType);
+                    const astType = this.options.resolveAstType(type, expressionType, { parentId: this.id });
+
+                    results.implements.push({ item: astType });
+                });
+            }
+
+            if ($extends != null) {
+                $extends.types.forEach(expressionType => {
+                    const type = this.typeChecker.getTypeFromTypeNode(expressionType);
+                    const astType = this.options.resolveAstType(type, expressionType, { parentId: this.id });
+
+                    if (results.extends == null) {
+                        results.extends = { item: astType };
+                    } else {
+                        ExtractorHelpers.logWithNodePosition(
+                            expressionType,
+                            "Class extends has more than one type. Please report this bug.",
+                            x => this.logger.Warn(x)
+                        );
+                    }
+                });
+            }
+        }
 
         return results;
     }

@@ -175,4 +175,12 @@ export namespace TsHelpers {
         // Fallback to a Symbol name.
         return symbol.name;
     }
+
+    export function modifierKindExistsInModifiers(modifiers: ts.NodeArray<ts.Modifier> | undefined, kind: ts.SyntaxKind): boolean {
+        if (modifiers != null) {
+            return modifiers.some(x => x.kind === kind);
+        }
+
+        return false;
+    }
 }
