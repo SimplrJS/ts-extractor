@@ -39,7 +39,7 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], {}> {
      * @internal
      */
     public addAstSymbol(astSymbol: AstSymbol): void {
-        if (this.item.findIndex(x => x.item === x.item) === -1) {
+        if (this.item.findIndex(x => x.item === astSymbol.item) === -1) {
             this.item.push(astSymbol);
         }
     }

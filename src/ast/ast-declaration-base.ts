@@ -62,7 +62,7 @@ export abstract class AstDeclarationBase<
 
             if (symbol != null) {
                 let astSymbol: AstSymbol | undefined;
-                if (!this.options.itemsRegistry.hasItem(symbol)) {
+                if (this.options.itemsRegistry.hasItem(symbol)) {
                     astSymbol = this.options.itemsRegistry.getAstSymbol(symbol);
                 }
 
