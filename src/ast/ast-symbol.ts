@@ -1,13 +1,14 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstItemBase, AstItemBaseDto } from "../abstractions/ast-item-base";
 import {
     AstItemKind,
     GatheredMembersResult,
     AstItemOptions,
     AstItemGatherMembersOptions,
-    GatheredMember
+    GatheredMember,
+    GatheredMemberReference
 } from "../contracts/ast-item";
 import { TsHelpers } from "../ts-helpers";
 import { ExtractorHelpers } from "../extractor-helpers";
@@ -22,12 +23,18 @@ export interface AstSymbolIdentifiers {
     parentId?: string;
 }
 
-export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {}> {
+export interface AstSymbolDto extends AstItemBaseDto {
+    kind: AstItemKind.Symbol;
+    name: string;
+    members: GatheredMemberReference[];
+}
+
+export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, AstSymbolDto> {
     constructor(options: AstItemOptions, symbol: ts.Symbol, private readonly identifiers: AstSymbolIdentifiers = {}) {
         super(options, symbol);
     }
 
-    public readonly itemKind: AstItemKind = AstItemKind.Symbol;
+    public readonly itemKind: AstItemKind.Symbol = AstItemKind.Symbol;
 
     @LazyGetter()
     public get name(): string {
@@ -108,8 +115,14 @@ export class AstSymbol extends AstItemBase<ts.Symbol, AstSymbolGatheredResult, {
         return `${this.parentId}${itemSeparator}${this.name}`;
     }
 
-    protected onExtract(): {} {
-        return {};
+    protected onExtract(): AstSymbolDto {
+        const members = this.gatheredMembers.members.map<GatheredMemberReference>(x => ({ id: x.item.id }));
+
+        return {
+            kind: this.itemKind,
+            name: this.name,
+            members: members
+        };
     }
 
     protected getDefaultGatheredMembers(): AstSymbolGatheredResult {

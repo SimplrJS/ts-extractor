@@ -9,7 +9,11 @@ import {
 } from "../contracts/ast-item";
 import { LoggerBuilder } from "simplr-logger";
 
-export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersResult, TExtractedData>
+export interface AstItemBaseDto {
+    kind: AstItemKind;
+}
+
+export abstract class AstItemBase<TItem, TGatherResult extends GatheredMembersResult, TExtractedData extends AstItemBaseDto>
     implements AstItem<TItem, TExtractedData> {
     constructor(protected readonly options: AstItemOptions, public readonly item: TItem) {
         this.logger = options.logger;
