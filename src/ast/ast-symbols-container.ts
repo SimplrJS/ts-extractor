@@ -5,6 +5,10 @@ import { LoggerBuilder } from "simplr-logger";
 import { AstSymbol, AstSymbolDto } from "./ast-symbol";
 import { AstItem, AstItemKind } from "../contracts/ast-item";
 
+export interface SymbolsContainer {
+    symbols: AstSymbol[];
+}
+
 export interface AstSymbolsContainerOptions {
     logger: LoggerBuilder;
 }
@@ -15,19 +19,22 @@ export interface AstSymbolsContainerDto {
     symbols: AstSymbolDto[];
 }
 
-export class AstSymbolsContainer implements AstItem<AstSymbol[], AstSymbolsContainerDto> {
-    constructor(options: AstSymbolsContainerOptions, items: AstSymbol[] = []) {
+export class AstSymbolsContainer implements AstItem<SymbolsContainer, AstSymbolsContainerDto> {
+    constructor(options: AstSymbolsContainerOptions, symbols: AstSymbol[] = []) {
         this.logger = options.logger;
-        this.items = items;
+        this.item = {
+            symbols: symbols
+        };
     }
 
     protected readonly logger: LoggerBuilder;
     public readonly itemKind: AstItemKind.SymbolsContainer = AstItemKind.SymbolsContainer;
+    public readonly item: SymbolsContainer;
 
     @LazyGetter()
     public get id(): string {
-        for (const item of this.item) {
-            return item.id;
+        for (const astSymbol of this.item.symbols) {
+            return astSymbol.id;
         }
 
         this.logger.Error("Failed to resolve AstSymbolsContainer's id.");
@@ -36,7 +43,7 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], AstSymbolsConta
 
     @LazyGetter()
     public get name(): string {
-        for (const item of this.item) {
+        for (const item of this.item.symbols) {
             return item.name;
         }
 
@@ -44,28 +51,22 @@ export class AstSymbolsContainer implements AstItem<AstSymbol[], AstSymbolsConta
         return "__UNRESOLVED-NAME";
     }
 
-    private items: AstSymbol[];
-
-    public get item(): AstSymbol[] {
-        return this.items;
-    }
-
     /**
      * Used by AstRegistry.
      * @internal
      */
     public addAstSymbol(astSymbol: AstSymbol): void {
-        if (this.item.findIndex(x => x.item === astSymbol.item) === -1) {
-            this.item.push(astSymbol);
+        if (this.item.symbols.findIndex(x => x.item === astSymbol.item) === -1) {
+            this.item.symbols.push(astSymbol);
         }
     }
 
     public getAstSymbol(symbol: ts.Symbol): AstSymbol | undefined {
-        return this.items.find(x => x.item === symbol);
+        return this.item.symbols.find(x => x.item === symbol);
     }
 
     public extract(): AstSymbolsContainerDto {
-        const symbols = this.items.map<AstSymbolDto>(x => x.extract());
+        const symbols = this.item.symbols.map<AstSymbolDto>(x => x.extract());
 
         return {
             kind: this.itemKind,
