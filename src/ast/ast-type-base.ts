@@ -1,17 +1,21 @@
 import * as ts from "typescript";
 import { LazyGetter } from "typescript-lazy-get-decorator";
 
-import { AstItemBase } from "../abstractions/ast-item-base";
+import { AstItemBase, AstItemBaseDto } from "../abstractions/ast-item-base";
 import { AstTypeIdentifiers } from "../contracts/ast-type";
 import { AstDeclarationBase, AstDeclaration } from "./ast-declaration-base";
 import { GatheredMembersResult, AstItemOptions } from "../contracts/ast-item";
 
-export type AstType = AstTypeBase<ts.TypeNode, {}, {}>;
+export type AstType = AstTypeBase<ts.TypeNode, any, any>;
+
+export interface AstTypeBaseDto extends AstItemBaseDto {
+    text: string;
+}
 
 export abstract class AstTypeBase<
     TTypeNode extends ts.TypeNode,
     TGatherResult extends GatheredMembersResult,
-    TExtractedData
+    TExtractedData extends AstTypeBaseDto
 > extends AstItemBase<ts.Type, TGatherResult, TExtractedData> {
     constructor(
         options: AstItemOptions,
