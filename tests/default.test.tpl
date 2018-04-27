@@ -1,17 +1,16 @@
-import { Extractor, GetCompilerOptions } from "@src/index";
+import { TsExtractor, getCompilerOptions } from "@src/index";
 
 test("{{caseName}}", async done => {
     const projectDirectory = "{{projectDirectory}}";
-    const { EntryFiles, ...rest } = {{{json testConfig}}};
-    const compilerOptions = await GetCompilerOptions("./tests/tsconfig.test.json");
+    const { EntryFiles, ...rest }: any = {{{json testConfig}}};
+    const compilerOptions = await getCompilerOptions("./tsconfig.json");
 
     try {
-        const extractor = new Extractor({
-            ProjectDirectory: projectDirectory,
-            CompilerOptions: compilerOptions,
-            ...rest
+        const extractor = new TsExtractor({
+            projectDirectory: projectDirectory,
+            compilerOptions: compilerOptions
         });
-        expect(extractor.Extract(EntryFiles)).toMatchSnapshot();
+        expect(extractor.extractToJson(EntryFiles)).toMatchSnapshot();
         done();
     } catch (error) {
         done.fail(error);

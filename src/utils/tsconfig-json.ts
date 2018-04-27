@@ -6,7 +6,7 @@ import * as ts from "typescript";
 /**
  * Get TypeScript compiler options from tsconfig.json.
  */
-export async function GetCompilerOptions(fileLocation: string): Promise<ts.CompilerOptions> {
+export async function getCompilerOptions(fileLocation: string): Promise<ts.CompilerOptions> {
     const json = await fs.readJSON(fileLocation);
 
     const fullPath = path.resolve(fileLocation);

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple-function 1`] = `
+Object {
+  "files": Array [
+    "@simplrjs/package-name/index",
+  ],
+  "name": "package_name",
+  "registry": Object {
+    "@simplrjs/package-name/index": Object {
+      "kind": "SourceFile",
+      "members": Array [
+        Object {
+          "alias": undefined,
+          "id": "@simplrjs/package-name/index:foo",
+        },
+      ],
+      "name": "index",
+    },
+    "@simplrjs/package-name/index:foo": Object {
+      "kind": "SymbolsContainer",
+      "name": "foo",
+      "symbols": Array [
+        Object {
+          "kind": "Symbol",
+          "members": Array [
+            Object {
+              "id": "@simplrjs/package-name/index:foo#Function",
+            },
+          ],
+          "name": "foo",
+        },
+      ],
+    },
+    "@simplrjs/package-name/index:foo#Function": Object {
+      "isOverloadBase": false,
+      "kind": "Function",
+      "name": "foo",
+      "parameters": Array [],
+      "returnType": Object {
+        "id": "@simplrjs/package-name/index:foo#Function:TypeBasic",
+      },
+      "typeParameters": Array [],
+    },
+    "@simplrjs/package-name/index:foo#Function:TypeBasic": Object {
+      "kind": "TypeBasic",
+      "text": "string",
+    },
+  },
+  "version": "_0.0.0",
+}
+`;

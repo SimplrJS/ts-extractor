@@ -14,6 +14,7 @@ import { AstTypeBasic } from "./ast/types/ast-type-basic";
 import { AstDeclarationNotSupported } from "./ast/declarations/ast-declaration-not-supported";
 import { AstItemOptions, AstItemGatherMembersOptions } from "./contracts/ast-item";
 import { ExtractorHelpers } from "./extractor-helpers";
+import { pathIsInside } from "./utils/path-is-inside";
 
 export interface TsExtractorConfig {
     projectDirectory: string;
@@ -78,7 +79,7 @@ export class TsExtractor {
                 throw new Error(`Given file "${filePath}", does not exist.`);
             }
 
-            if (fs.realpathSync(filePath).indexOf(this.config.projectDirectory) === -1) {
+            if (!pathIsInside(filePath, this.config.projectDirectory)) {
                 throw new Error(`Given file "${filePath}", is not in project directory "${this.config.projectDirectory}".`);
             }
         });
