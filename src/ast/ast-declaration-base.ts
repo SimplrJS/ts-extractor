@@ -53,6 +53,7 @@ export abstract class AstDeclarationBase<
         declarations: ts.NodeArray<ts.Declaration> | ts.Declaration[] | undefined
     ): Array<GatheredMember<AstSymbol>> {
         const result: Array<GatheredMember<AstSymbol>> = [];
+        const uniqueIds: string[] = [];
 
         if (declarations == null) {
             return result;
@@ -72,7 +73,10 @@ export abstract class AstDeclarationBase<
                     options.addAstItemToRegistry(astSymbol);
                 }
 
-                result.push({ alias: astSymbol.name, item: astSymbol });
+                if (uniqueIds.findIndex(x => x === astSymbol!.id) === -1) {
+                    result.push({ alias: astSymbol.name, item: astSymbol });
+                    uniqueIds.push(astSymbol.id);
+                }
             }
         }
 
