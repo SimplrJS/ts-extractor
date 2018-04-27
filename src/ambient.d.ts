@@ -77,11 +77,11 @@ declare module "read-package-json" {
                 /**
                  * The name of the package.
                  */
-                name?: string;
+                name: string;
                 /**
                  * Version must be parseable by node-semver, which is bundled with npm as a dependency.
                  */
-                version?: string;
+                version: string;
                 /**
                  * This helps people discover your package, as it's listed in 'npm search'.
                  */

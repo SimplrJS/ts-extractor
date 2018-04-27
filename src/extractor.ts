@@ -37,10 +37,6 @@ export class TsExtractor {
             .SetDefaultLogLevel(this.config.logLevel || LogLevel.Information)
             .Build();
         this.logger = new LoggerBuilder(loggerConfiguration);
-
-        if (config.packageJson.name == null || config.packageJson.version) {
-            this.logger.Error("[package.json] Package name and version must be defined.");
-        }
     }
 
     protected logger: LoggerBuilder;

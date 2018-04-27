@@ -1,5 +1,6 @@
 {
     "name": "simple",
+    "version": "1.1.1",
     "main": "index.ts",
     "dependencies": {
         "react": "^15.6.1"
