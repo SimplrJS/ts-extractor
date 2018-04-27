@@ -15,7 +15,8 @@ export async function main(): Promise<void> {
         logLevel: LogLevel.Debug
     });
 
-    extractor.extract([path.resolve("examples/simple/index.ts")]);
+    console.log(extractor.extractToJson([path.resolve("examples/simple/index.ts")]));
+    debugger;
 }
 
 main();

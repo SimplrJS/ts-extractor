@@ -6,7 +6,7 @@ import { LogLevel, LoggerBuilder, LoggerConfigurationBuilder } from "simplr-logg
 
 import { ExtractorDto } from "./contracts/extractor";
 import { AstSourceFile } from "./ast/declarations/ast-source-file";
-import { AstRegistry } from "./ast-registry";
+import { AstRegistry, ReadonlyAstRegistry } from "./ast-registry";
 import { AstDeclarations } from "./ast/ast-declarations";
 import { AstTypes } from "./ast/ast-types";
 import { TsHelpers } from "./ts-helpers";
@@ -19,6 +19,11 @@ export interface TsExtractorConfig {
     projectDirectory: string;
     compilerOptions: ts.CompilerOptions;
     logLevel?: LogLevel;
+}
+
+export interface ExtractionResult {
+    files: AstSourceFile[];
+    registry: ReadonlyAstRegistry;
 }
 
 // TODO: Normalize paths.
@@ -81,7 +86,7 @@ export class TsExtractor {
         return resolvedFilesLocation;
     }
 
-    public extract(files: string[]): AstSourceFile[] {
+    public extract(files: string[]): ExtractionResult {
         const rootNames = this.resolveFilesLocation(files);
         const program = ts.createProgram(rootNames, this.config.compilerOptions);
         const registry = new AstRegistry({ logger: this.logger });
@@ -156,17 +161,27 @@ export class TsExtractor {
             sourceFiles.push(astSourceFile);
         });
 
-        debugger;
-
-        return sourceFiles;
+        return {
+            files: sourceFiles,
+            registry: registry
+        };
     }
 
     public extractToJson(files: string[]): ExtractorDto {
+        const extractionResult = this.extract(files);
+        const filesIds = extractionResult.files.map<string>(x => x.id);
+        // TODO: Fix any.
+        const registry: { [key: string]: any } = {};
+
+        for (const [itemId, astItem] of extractionResult.registry) {
+            registry[itemId] = astItem.extract();
+        }
+
         return {
             name: "package_name",
             version: "_0.0.0",
-            registry: {},
-            files: []
+            registry: registry,
+            files: filesIds
         };
     }
 }

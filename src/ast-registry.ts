@@ -6,7 +6,9 @@ import { AstType } from "./ast/ast-type-base";
 import { AstSymbol } from "./ast/ast-symbol";
 import { AstSymbolsContainer } from "./ast/ast-symbols-container";
 
-export interface ReadonlyAstRegistry {
+export type IteratorItem = [string, AstDeclaration | AstType | AstSymbolsContainer];
+
+export interface ReadonlyAstRegistry extends Iterable<IteratorItem> {
     getAstItem(item: ts.Declaration): AstDeclaration | undefined;
     getAstItem(item: ts.Type): AstType | undefined;
     getAstSymbol(item: ts.Symbol): AstSymbol | undefined;
@@ -31,6 +33,10 @@ export class AstRegistry implements ReadonlyAstRegistry {
     protected readonly logger: LoggerBuilder;
     protected registry: Map<string, AstDeclaration | AstType | AstSymbolsContainer> = new Map();
     protected itemToItemId: Map<TsItem, string> = new Map();
+
+    public [Symbol.iterator](): Iterator<IteratorItem> {
+        return this.registry[Symbol.iterator]();
+    }
 
     public getAstItem(item: ts.Declaration): AstDeclaration | undefined;
     public getAstItem(item: ts.Type): AstType | undefined;
