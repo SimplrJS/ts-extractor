@@ -70,5 +70,6 @@ export interface AstItemOptions {
 }
 
 export interface AstItemGatherMembersOptions {
-    addAstItemToRegistry: (item: AstDeclaration | AstType | AstSymbol) => void;
+    addAstItemToRegistry: (item: AstDeclaration | AstType) => void;
+    addAstSymbolToRegistry: (symbol: AstSymbol) => void;
 }
